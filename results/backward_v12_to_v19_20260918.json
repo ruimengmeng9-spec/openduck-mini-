@@ -1,35 +1,110 @@
 {
   "status": "reverse gait restored in speed but still falls after ~2 s; open problem",
   "summary": "A robustly stable reverse reference gait exists in the dataset (-0.074), yet every trained backward policy from v12 to v19 falls in 1.5-2.8 s. Reward direction was genuinely broken and is now fixed, which restored reverse motion from -0.004 to -0.11 m/s; stability did not follow.",
-
   "reward_fix": {
     "what_was_wrong_1": "Command quantisation. The reference grid is dx in {-0.148, -0.074, 0.0, +0.074, +0.148, +0.222}; the v12/v13 curriculum of -0.025..-0.035 resolves to the nearest grid entry dx=0.000 (verified: max|low_cmd_ref - standing_ref| = 0.0000). With imitation=0.25 that pinned the policy to the standing reference.",
     "what_was_wrong_2": "Overspeed band collapsed. Old allowance was 1.10*|v_cmd|+0.005 = 0.049 m/s at a -0.04 command, below a walking gait's natural velocity oscillation, so overspeed cost ~4000*excess*dt ~= -8/step while progress was worth ~+2.5. Standing still scored better.",
     "fix": "imitation default 0 for backward (exposed as BACKWARD_IMITATION); overspeed allowance max(1.5*|v_cmd|, 0.15) with weight 600.",
-    "arithmetic_check": {"script": "diagnostics/diag_backward_reward.py", "before": {"moving": -4.080, "stationary": -4.328, "gap": 0.248}, "after": {"moving": 3.200, "stationary": -0.248, "gap": 3.448}}
+    "arithmetic_check": {
+      "script": "diagnostics/diag_backward_reward.py",
+      "before": {
+        "moving": -4.08,
+        "stationary": -4.328,
+        "gap": 0.248
+      },
+      "after": {
+        "moving": 3.2,
+        "stationary": -0.248,
+        "gap": 3.448
+      }
+    }
   },
-
   "reference_gait_is_stable": {
     "script": "diagnostics/test_ref_robustness.py",
     "method": "open-loop replay of the reference joint trajectory as position targets, 5 s, 5 random seeds per perturbation level",
-    "reverse_-0.074": {"qvel_noise_0.0": "0/5 fell", "1e-6": "0/5", "1e-4": "0/5", "0.01": "0/5", "0.05": "0/5", "verdict": "robustly stable"},
-    "forward_+0.074": {"qvel_noise_0.0": "5/5 fell in 1.50-2.18 s", "1e-6": "5/5", "1e-4": "5/5", "0.01": "5/5", "0.05": "5/5", "verdict": "not stable open-loop; the shipped walk ONNX is a feedback controller that stabilises it"},
-    "amplitude_check": {"script": "diagnostics/check_ref_amplitude.py", "note": "both entries have real stepping motion (per-cycle per-joint span ~0.28 rad), so the reverse entry is a genuine gait, not a standing pose"}
+    "reverse_-0.074": {
+      "qvel_noise_0.0": "0/5 fell",
+      "1e-6": "0/5",
+      "1e-4": "0/5",
+      "0.01": "0/5",
+      "0.05": "0/5",
+      "verdict": "robustly stable"
+    },
+    "forward_+0.074": {
+      "qvel_noise_0.0": "5/5 fell in 1.50-2.18 s",
+      "1e-6": "5/5",
+      "1e-4": "5/5",
+      "0.01": "5/5",
+      "0.05": "5/5",
+      "verdict": "not stable open-loop; the shipped walk ONNX is a feedback controller that stabilises it"
+    },
+    "amplitude_check": {
+      "script": "diagnostics/check_ref_amplitude.py",
+      "note": "both entries have real stepping motion (per-cycle per-joint span ~0.28 rad), so the reverse entry is a genuine gait, not a standing pose"
+    }
   },
-
   "policy_results_native_mujoco": [
-    {"candidate": "v12", "at_-0.04": -0.06912, "at_-0.06": -0.09712, "fallen": true, "duration_s": "1.9-2.5"},
-    {"candidate": "v13_degenerate", "at_-0.04": -0.00402, "at_-0.06": -0.00604, "fallen": false, "note": "stood still; speed useless"},
-    {"candidate": "v14", "at_-0.04": -0.00649, "at_-0.06": -0.00668, "fallen": false, "note": "stood still"},
-    {"candidate": "v15_fixed", "at_-0.04": -0.07226, "at_-0.06": -0.09521, "fallen": true, "duration_s": "1.8-2.5"},
-    {"candidate": "v16_stable", "at_-0.04": -0.06646, "at_-0.06": -0.09001, "fallen": true, "duration_s": "1.9-2.6"},
-    {"candidate": "v17_grid_imit05", "at_-0.074": -0.10501, "fallen": true},
-    {"candidate": "v17_grid_imit10", "at_-0.074": -0.11196, "fallen": true},
-    {"candidate": "v18_imit20p0", "at_-0.074": -0.10696, "fallen": true},
-    {"candidate": "v19_pure_imit8", "at_-0.074": -0.09968, "fallen": true},
-    {"candidate": "v19_pure_imit20", "at_-0.074": -0.09936, "fallen": true}
+    {
+      "candidate": "v12",
+      "at_-0.04": -0.06912,
+      "at_-0.06": -0.09712,
+      "fallen": true,
+      "duration_s": "1.9-2.5"
+    },
+    {
+      "candidate": "v13_degenerate",
+      "at_-0.04": -0.00402,
+      "at_-0.06": -0.00604,
+      "fallen": false,
+      "note": "stood still; speed useless"
+    },
+    {
+      "candidate": "v14",
+      "at_-0.04": -0.00649,
+      "at_-0.06": -0.00668,
+      "fallen": false,
+      "note": "stood still"
+    },
+    {
+      "candidate": "v15_fixed",
+      "at_-0.04": -0.07226,
+      "at_-0.06": -0.09521,
+      "fallen": true,
+      "duration_s": "1.8-2.5"
+    },
+    {
+      "candidate": "v16_stable",
+      "at_-0.04": -0.06646,
+      "at_-0.06": -0.09001,
+      "fallen": true,
+      "duration_s": "1.9-2.6"
+    },
+    {
+      "candidate": "v17_grid_imit05",
+      "at_-0.074": -0.10501,
+      "fallen": true
+    },
+    {
+      "candidate": "v17_grid_imit10",
+      "at_-0.074": -0.11196,
+      "fallen": true
+    },
+    {
+      "candidate": "v18_imit20p0",
+      "at_-0.074": -0.10696,
+      "fallen": true
+    },
+    {
+      "candidate": "v19_pure_imit8",
+      "at_-0.074": -0.09968,
+      "fallen": true
+    },
+    {
+      "candidate": "v19_pure_imit20",
+      "at_-0.074": -0.09936,
+      "fallen": true
+    }
   ],
-
   "rules_out": [
     "reward arithmetic (fixed in v15, verified positive gap for moving)",
     "imitation weight (swept 0, 0.5, 1, 8, 20 with no change)",
@@ -37,9 +112,10 @@
     "zero-command mixing (v19 samples pure negative commands)",
     "posture/termination costs (v16 raised them, no effect)",
     "physics tampering (the shipped walk ONNX behaves identically in the getup-collision scene: final up_z 0.9953 both)",
-    "JAX-vs-MuJoCo mismatch (the policy also terminates at 1.48 s, done=1.0, inside its own JAX training env)"
+    "JAX-vs-MuJoCo mismatch (the policy also terminates at 1.48 s, done=1.0, inside its own JAX training env)",
+    "reference vector dimensionality (verified 40-dim: 16 joint pos, 16 joint vel, 2 foot contacts, 3 base linvel, 3 base angvel -- every imitation sub-term is live, so no reward term is silently empty)",
+    "missing gait phase in the observation (imitation_phase is included in the policy's state vector, so the periodic reference is phase-observable)"
   ],
-
   "conclusion": "The blocker is that PPO never learns to track the stable reverse reference: with imitation weight 20 the joint-tracking penalty (~-5.4/step) already dominates the progress reward (~+1.6/step), yet tracking does not emerge within the 12M-step budget. Either the budget is far too small for phase-locked tracking, or the imitation term's phase alignment is not observable enough from the policy input.",
   "next_steps": [
     "Train far longer (the walk policy used 150M timesteps; these used 12M).",
