@@ -170,17 +170,40 @@ class FocusedSkill(walk_turn_stop.WalkTurnStop):
             return state
 
         info = dict(state.info)
-        joints = self._default_actuator
+        # Start with randomised joint angles rather than the standing pose.  A
+        # robot dropped on its back with the home (straight-leg) posture has to
+        # discover leg folding on its own, and from-scratch PPO never found it:
+        # both runs converged to a fixed lying pose.  Sampling inside the joint
+        # limits supplies the tucked/lopsided configurations that make pushing
+        # off the floor reachable by gradient.
+        rng, joint_rng = jax.random.split(rng)
+        lowers, uppers = self._soft_lowers, self._soft_uppers
+        joints = jax.random.uniform(
+            joint_rng,
+            (self._actuators,),
+            minval=lowers.astype(jp.float32),
+            maxval=uppers.astype(jp.float32),
+        )
         qpos = self.set_actuator_joints_qpos(joints, state.data.qpos)
 
         rng, tilt_rng, side_rng, sign_rng, yaw_rng, height_rng = jax.random.split(
             rng, 6
         )
-        # Tilt the base by roughly 80--105 degrees so the robot is genuinely on
-        # the floor, then randomise the heading.  Four fallen attitudes are
-        # covered: face down / on the back (pitch about world x) and on either
-        # side (roll about world y).
-        tilt = jax.random.uniform(tilt_rng, (), minval=1.40, maxval=1.83)
+        # Tilt the base and randomise the heading.  Fully fallen attitudes
+        # (80--105 deg, covering face down / on the back / either side) cannot be
+        # recovered by from-scratch exploration: measured returns sat at exactly
+        # one episode's worth of the lying-still tilt penalty (-2900 for 1000
+        # steps), i.e. the policy never attempted to rise.  Mixing in milder
+        # tilts (29--51 deg) keeps a reachable path to standing so the same
+        # network can first learn to push up from a near-standing lean and then
+        # extend that skill to the fully fallen poses.
+        tilt_rng, mode_rng = jax.random.split(tilt_rng)
+        fallen = jax.random.bernoulli(mode_rng, p=0.7)
+        tilt = jp.where(
+            fallen,
+            jax.random.uniform(tilt_rng, (), minval=1.40, maxval=1.83),
+            jax.random.uniform(tilt_rng, (), minval=0.50, maxval=0.90),
+        )
         sign = jp.where(jax.random.bernoulli(sign_rng), 1.0, -1.0)
         side = jax.random.bernoulli(side_rng)
         axis = jp.where(
@@ -193,10 +216,17 @@ class FocusedSkill(walk_turn_stop.WalkTurnStop):
         # independent of the heading.
         base_quat = math.quat_mul(yaw_quat, tilt_quat)
 
-        # The settled height of a lying Open Duck Mini is a few centimetres;
-        # starting slightly above lets the first physics steps resolve contact
-        # gently instead of ejecting the robot out of the floor.
-        height = jax.random.uniform(height_rng, (), minval=0.055, maxval=0.090)
+        # The settled height depends on how far the robot is tilted: a fully
+        # fallen robot rests a few centimetres off the floor while a mildly
+        # leaning one still stands on extended legs.  Starting slightly above the
+        # resting height lets contact resolve gently; starting below it drives the
+        # trunk collision box through the floor and ejects the robot.
+        fallen_height_rng, lean_height_rng = jax.random.split(height_rng)
+        height = jp.where(
+            fallen,
+            jax.random.uniform(fallen_height_rng, (), minval=0.088, maxval=0.120),
+            jax.random.uniform(lean_height_rng, (), minval=0.125, maxval=0.155),
+        )
         base_qpos = jp.concatenate([jp.zeros(3).at[2].set(height), base_quat])
         qpos = self.set_floating_base_qpos(base_qpos, qpos)
 

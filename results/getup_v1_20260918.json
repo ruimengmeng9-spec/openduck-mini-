@@ -1,0 +1,10 @@
+{
+  "note": "getup v1 (fixed fallen start, home joints, 70% fully fallen) failed to learn: both runs sat at a lying pose.",
+  "scratch": {"attempts": 4, "stood_up": 0, "peak_up_z_range": [0.1669, 0.1669], "final_up_z_range": [0.1352, 0.3772]},
+  "from_standing_policy": {"attempts": 4, "stood_up": 0, "peak_up_z_max": 0.4795},
+  "training_returns": {
+    "scratch": {"step_0": -2886.0, "step_12779520": -2631.0},
+    "standing": {"step_0": -2841.2, "step_12779520": -2509.0}
+  },
+  "diagnosis": "Return equals one episode of the lying-still penalty (-3.8/step x 1000 = -3800), i.e. the policy never attempted to rise. Two causes addressed in v3: home (straight-leg) joint init offers no tucked configurations to push off from, and a fully fallen start has no reachable gradient path to standing."
+}
