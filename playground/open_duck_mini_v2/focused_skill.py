@@ -344,8 +344,8 @@ class FocusedSkill(walk_turn_stop.WalkTurnStop):
         mode_rng, x_rng, y_rng, yaw_rng, sign_x_rng, sign_y_rng, sign_yaw_rng = (
             jax.random.split(rng, 7)
         )
-        backward_min = 0.025 if self.skill == "backward" else 0.06
-        backward_max = 0.035 if self.skill == "backward" else 0.15
+        backward_min = 0.06
+        backward_max = 0.15
         x_mag = jax.random.uniform(
             x_rng, minval=backward_min, maxval=backward_max
         )
@@ -357,14 +357,16 @@ class FocusedSkill(walk_turn_stop.WalkTurnStop):
 
         if self.skill == "backward":
             # Magnitude comes from the configurable curriculum band so a run can
-            # be retargeted without touching this file.
+            # be retargeted without touching this file.  Every episode gets a
+            # reverse command: mixing in zero (standing) commands makes the
+            # imitation target inconsistent with the command in a fraction of
+            # steps, which fights the reference that the policy is trying to
+            # track.
             lo, hi = (abs(float(v)) for v in self._config.lin_vel_x)
             mag = jax.random.uniform(
                 x_rng, minval=min(lo, hi), maxval=max(lo, hi)
             )
-            moving = jax.random.bernoulli(mode_rng, p=0.95)
-            vx = jp.where(moving, -mag, 0.0)
-            return jp.array([vx, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0])
+            return jp.array([-mag, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0])
 
         if self.skill == "lateral":
             moving = jax.random.bernoulli(mode_rng, p=0.85)
