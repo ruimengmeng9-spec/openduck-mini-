@@ -7,11 +7,18 @@ from typing import Any, Dict, Optional, Union
 import jax
 import jax.numpy as jp
 from ml_collections import config_dict
+from mujoco.mjx._src import math
+from mujoco_playground._src import mjx_env
+from mujoco_playground._src.collision import geoms_colliding
 
 from . import walk_turn_stop
 
 
-SUPPORTED_SKILLS = ("backward", "lateral", "arc", "turn", "unified")
+SUPPORTED_SKILLS = ("backward", "lateral", "arc", "turn", "unified", "getup")
+
+# Base height of the robot in the `home` keyframe.  Everything that has to reason
+# about "how tall is the robot when it is standing" derives from this value.
+STANDING_BASE_HEIGHT = 0.15
 
 
 def focused_config(skill: str) -> config_dict.ConfigDict:
@@ -19,31 +26,60 @@ def focused_config(skill: str) -> config_dict.ConfigDict:
     if skill not in SUPPORTED_SKILLS:
         raise ValueError(f"Unsupported skill {skill!r}; choose from {SUPPORTED_SKILLS}")
 
+    is_getup = skill == "getup"
     config = walk_turn_stop.default_config()
     # Backward uses a staged curriculum.  Keep perturbations gentle until the
     # policy learns a repeatable reverse gait, then add robustness separately.
-    config.noise_config.level = 0.05 if skill == "backward" else 0.35
+    # Recovery is also learned with reduced sensor noise: the task itself is
+    # already hard enough without a noisy gravity vector.
+    if skill == "backward":
+        config.noise_config.level = 0.05
+    elif is_getup:
+        config.noise_config.level = 0.10
+    else:
+        config.noise_config.level = 0.35
     config.push_config.enable = False
+    if skill == "backward":
+        # V14 widens the reverse-speed curriculum slightly beyond V13's narrow
+        # -0.025..-0.035 window: the target was so small that the progress signal
+        # could not outbid the posture costs.  Bounds are stored as a negative
+        # [min, max] interval so the runner can override them from the CLI.
+        config.lin_vel_x = [-0.05, -0.03]
 
     # Keep every term positive enough that the upstream reward clipping does not
     # erase the velocity gradient.  Direct squared errors remain small shaping
     # costs, while the exponential terms give a clear improvement near target.
     scales = config.reward_config.scales
     scales.tracking_lin_vel = 0.0
-    scales.tracking_ang_vel = 14.0
-    scales.lin_vel_error = -3.0
-    scales.tracking_xy = 60.0 if skill == "backward" else 18.0
-    scales.lin_vel_xy_error = -10.0 if skill == "backward" else -8.0
-    scales.yaw_error = -3.0
-    scales.upright = 20.0 if skill == "backward" else 10.0
-    scales.vertical_velocity = -5.0 if skill == "backward" else -2.0
-    scales.angular_xy = -2.0 if skill == "backward" else -0.5
+    scales.tracking_ang_vel = 0.0 if is_getup else 14.0
+    scales.lin_vel_error = 0.0 if is_getup else -3.0
+    scales.tracking_xy = (
+        0.0 if is_getup else (60.0 if skill == "backward" else 18.0)
+    )
+    # Recovery has no velocity command, so this term degenerates into a plain
+    # penalty on dragging/sliding the chassis across the floor.
+    scales.lin_vel_xy_error = (
+        -5.0 if is_getup else (-10.0 if skill == "backward" else -8.0)
+    )
+    scales.yaw_error = 0.0 if is_getup else -3.0
+    # Recovery needs a strong, always-present gradient towards "upright": the
+    # squared projection gives 0 while lying and 1 while standing.
+    scales.upright = 40.0 if is_getup else (20.0 if skill == "backward" else 10.0)
+    scales.vertical_velocity = (
+        -1.0 if is_getup else (-5.0 if skill == "backward" else -2.0)
+    )
+    # Tumbling generates very large gyro values, so a mild cost is enough to
+    # discourage spinning without forbidding the vigorous motion recovery needs.
+    scales.angular_xy = (
+        -0.5 if is_getup else (-2.0 if skill == "backward" else -0.5)
+    )
     scales.command_progress = {
         "backward": 0.0,
         "lateral": 80.0,
         "arc": 40.0,
         "turn": 0.0,
         "unified": 40.0,
+        "getup": 0.0,
     }[skill]
     scales.yaw_progress = {
         "backward": 0.0,
@@ -51,38 +87,60 @@ def focused_config(skill: str) -> config_dict.ConfigDict:
         "arc": 20.0,
         "turn": 35.0,
         "unified": 20.0,
+        "getup": 0.0,
     }[skill]
-    scales.speed_limit = -300.0
-    scales.yaw_limit = -20.0
-    # The upstream environment clips the summed reward at zero.  These linear
-    # backward-only terms prevent the positive upright/alive reward from making
-    # stationary behaviour a profitable local optimum.
-    scales.normalized_progress = 40.0 if skill == "backward" else 0.0
-    scales.progress_shortfall = -40.0 if skill == "backward" else 0.0
+    scales.speed_limit = -50.0 if is_getup else -300.0
+    scales.yaw_limit = 0.0 if is_getup else -20.0
+    # V13 stabilised the reverse gait by making the posture costs overwhelming,
+    # and the policy responded by collapsing back onto the near-stationary local
+    # optimum (measured -0.004 m/s for a -0.04 m/s command).  V14 keeps the
+    # stability terms meaningful but no longer dominant, and doubles the progress
+    # incentive so that "stand still" is clearly worse than "walk backwards".
+    scales.normalized_progress = 80.0 if skill == "backward" else 0.0
+    scales.progress_shortfall = -80.0 if skill == "backward" else 0.0
     scales.wrong_way = -80.0 if skill == "backward" else 0.0
     scales.overspeed = -4000.0 if skill == "backward" else 0.0
-    scales.tilt_margin = -2000.0 if skill == "backward" else 0.0
-    scales.height_margin = -2000.0 if skill == "backward" else 0.0
-    scales.tilt = -500.0 if skill == "backward" else -30.0
-    scales.termination = -3000.0 if skill == "backward" else -50.0
-    scales.alive = 0.0 if skill == "backward" else 8.0
+    scales.tilt_margin = -600.0 if skill == "backward" else 0.0
+    scales.height_margin = -600.0 if skill == "backward" else 0.0
+    scales.tilt = -200.0 if is_getup else (-500.0 if skill == "backward" else -30.0)
+    # Recovery never terminates on a fall, so there is nothing to penalise here;
+    # an inverted robot is instead pushed back by the `tilt` cost.
+    scales.termination = (
+        0.0
+        if is_getup
+        else (-1200.0 if skill == "backward" else -50.0)
+    )
+    # No free reward for lying still: `alive` must stay 0 for recovery or the
+    # optimal policy is to never move.  The `stand_up` term replaces it.
+    scales.alive = 0.0 if (skill == "backward" or is_getup) else 8.0
     scales.imitation = {
         # The official imitation target is excellent for balance but tends to
         # anchor a backward command near standing.  Keep a small stabilizing
-        # prior while allowing the learned gait to depart from it.
+        # prior while allowing the learned gait to depart from it.  The standing
+        # reference is simply wrong for a robot that is on the floor.
         "backward": 0.25,
         "lateral": 0.5,
         "arc": 1.5,
         "turn": 1.0,
         "unified": 1.5,
+        "getup": 0.0,
     }[skill]
-    scales.stand_still = -0.5
-    scales.action_rate = -0.3
+    scales.stand_still = 0.0 if is_getup else -0.5
+    scales.action_rate = -0.4 if is_getup else -0.3
     scales.torques = -5.0e-4
+    # Recovery-only terms.  `stand_up` is the product of "is upright" and "is
+    # tall", so it is 0 while lying and 1 while standing: it cannot be farmed by
+    # balancing on the head or by pressing the chassis against the floor.
+    scales.stand_up = 80.0 if is_getup else 0.0
+    scales.height_progress = 20.0 if is_getup else 0.0
+    scales.joint_velocity = -0.002 if is_getup else 0.0
     config.reward_config.tracking_sigma = 0.0025 if skill == "backward" else 0.015
     # Focused backward learning needs signed feedback: clipping every negative
-    # total to zero creates a flat region around the stationary policy.
-    config.reward_config.reward_floor = -10000.0 if skill == "backward" else 0.0
+    # total to zero creates a flat region around the stationary policy.  The same
+    # applies to recovery, where the lying-down penalty must survive.
+    config.reward_config.reward_floor = (
+        -10000.0 if (skill == "backward" or is_getup) else 0.0
+    )
     return config
 
 
@@ -105,8 +163,79 @@ class FocusedSkill(walk_turn_stop.WalkTurnStop):
             config_overrides=config_overrides,
         )
 
+    def reset(self, rng: jax.Array) -> mjx_env.State:
+        """Start recovery episodes from a randomised fallen pose."""
+        state = super().reset(rng)
+        if self.skill != "getup":
+            return state
+
+        info = dict(state.info)
+        joints = self._default_actuator
+        qpos = self.set_actuator_joints_qpos(joints, state.data.qpos)
+
+        rng, tilt_rng, side_rng, sign_rng, yaw_rng, height_rng = jax.random.split(
+            rng, 6
+        )
+        # Tilt the base by roughly 80--105 degrees so the robot is genuinely on
+        # the floor, then randomise the heading.  Four fallen attitudes are
+        # covered: face down / on the back (pitch about world x) and on either
+        # side (roll about world y).
+        tilt = jax.random.uniform(tilt_rng, (), minval=1.40, maxval=1.83)
+        sign = jp.where(jax.random.bernoulli(sign_rng), 1.0, -1.0)
+        side = jax.random.bernoulli(side_rng)
+        axis = jp.where(
+            side, jp.array([0.0, 1.0, 0.0]), jp.array([1.0, 0.0, 0.0])
+        )
+        tilt_quat = math.axis_angle_to_quat(axis, sign * tilt)
+        yaw = jax.random.uniform(yaw_rng, (), minval=-jp.pi, maxval=jp.pi)
+        yaw_quat = math.axis_angle_to_quat(jp.array([0.0, 0.0, 1.0]), yaw)
+        # Applying yaw in the world frame last keeps the fallen direction
+        # independent of the heading.
+        base_quat = math.quat_mul(yaw_quat, tilt_quat)
+
+        # The settled height of a lying Open Duck Mini is a few centimetres;
+        # starting slightly above lets the first physics steps resolve contact
+        # gently instead of ejecting the robot out of the floor.
+        height = jax.random.uniform(height_rng, (), minval=0.055, maxval=0.090)
+        base_qpos = jp.concatenate([jp.zeros(3).at[2].set(height), base_quat])
+        qpos = self.set_floating_base_qpos(base_qpos, qpos)
+
+        qvel = jp.zeros(self.mjx_model.nv)
+        data = mjx_env.init(self.mjx_model, qpos=qpos, qvel=qvel, ctrl=joints)
+
+        zeros = jp.zeros(self.mjx_model.nu)
+        info["command"] = jp.zeros(7)
+        info["last_act"] = zeros
+        info["last_last_act"] = zeros
+        info["last_last_last_act"] = zeros
+        info["motor_targets"] = joints
+        info["action_history"] = jp.zeros(
+            self._config.noise_config.action_max_delay * self._actuators
+        )
+        info["imu_history"] = jp.zeros(
+            self._config.noise_config.imu_max_delay * 3
+        )
+        info["feet_air_time"] = jp.zeros(2)
+        info["last_contact"] = jp.zeros(2, dtype=bool)
+        info["swing_peak"] = jp.zeros(2)
+        info["step"] = 0
+
+        contact = jp.array(
+            [
+                geoms_colliding(data, geom_id, self._floor_geom_id)
+                for geom_id in self._feet_geom_id
+            ]
+        )
+        obs = self._get_obs(data, info, contact)
+        return state.replace(data=data, obs=obs, info=info)
+
     def sample_command(self, rng: jax.Array) -> jax.Array:
         """Sample balanced commands without a zero-gradient dead zone."""
+        if self.skill == "getup":
+            # Recovery is not a tracking task: hold the standing command so the
+            # observation layout stays identical to the deployed controller.
+            return jp.zeros(7)
+
         mode_rng, x_rng, y_rng, yaw_rng, sign_x_rng, sign_y_rng, sign_yaw_rng = (
             jax.random.split(rng, 7)
         )
@@ -122,8 +251,14 @@ class FocusedSkill(walk_turn_stop.WalkTurnStop):
         yaw_sign = jp.where(jax.random.bernoulli(sign_yaw_rng), 1.0, -1.0)
 
         if self.skill == "backward":
+            # Magnitude comes from the configurable curriculum band so a run can
+            # be retargeted without touching this file.
+            lo, hi = (abs(float(v)) for v in self._config.lin_vel_x)
+            mag = jax.random.uniform(
+                x_rng, minval=min(lo, hi), maxval=max(lo, hi)
+            )
             moving = jax.random.bernoulli(mode_rng, p=0.95)
-            vx = jp.where(moving, -x_mag, 0.0)
+            vx = jp.where(moving, -mag, 0.0)
             return jp.array([vx, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0])
 
         if self.skill == "lateral":
@@ -161,6 +296,11 @@ class FocusedSkill(walk_turn_stop.WalkTurnStop):
     def _get_termination(self, data: Any) -> jax.Array:
         """Match backward training failures to the runtime safety envelope."""
         done = super()._get_termination(data)
+        if self.skill == "getup":
+            # The whole point of recovery is that the robot starts on the floor,
+            # so the upstream "upside down" termination must be disabled.  Only
+            # genuinely unusable (non-finite) states end an episode.
+            return jp.isnan(data.qpos).any() | jp.isnan(data.qvel).any()
         if self.skill != "backward":
             return done
         gravity_z = self.get_gravity(data)[-1]
@@ -211,13 +351,18 @@ class FocusedSkill(walk_turn_stop.WalkTurnStop):
         base_height = self.get_floating_base_qpos(data.qpos)[2]
         height_margin = jp.maximum(0.145 - base_height, 0.0)
         yaw_progress = jp.sign(command[2]) * gyro[2]
+        # Recovery shaping: "upright" alone can be satisfied by balancing on the
+        # head or the back, so the height ratio is multiplied in.  The product is
+        # 0 on the floor and 1 in the home stance.
+        upright_signal = jp.square(jp.clip(gravity[2], 0.0, 1.0))
+        height_signal = jp.clip(base_height / STANDING_BASE_HEIGHT, 0.0, 1.0)
         rewards.update(
             tracking_xy=jp.nan_to_num(
                 jp.exp(-xy_error / self._config.reward_config.tracking_sigma)
             ),
             lin_vel_xy_error=jp.nan_to_num(xy_error),
             yaw_error=jp.nan_to_num(yaw_error),
-            upright=jp.nan_to_num(jp.square(jp.clip(gravity[2], 0.0, 1.0))),
+            upright=jp.nan_to_num(upright_signal),
             vertical_velocity=jp.nan_to_num(jp.square(local_velocity[2])),
             angular_xy=jp.nan_to_num(jp.sum(jp.square(gyro[:2]))),
             command_progress=jp.nan_to_num(command_progress),
@@ -236,5 +381,10 @@ class FocusedSkill(walk_turn_stop.WalkTurnStop):
             ),
             tilt=jp.nan_to_num(jp.square(1.0 - jp.clip(gravity[2], -1.0, 1.0))),
             termination=done,
+            stand_up=jp.nan_to_num(upright_signal * height_signal),
+            height_progress=jp.nan_to_num(height_signal),
+            joint_velocity=jp.nan_to_num(
+                jp.sum(jp.square(self.get_actuator_joints_qvel(data.qvel)))
+            ),
         )
         return rewards

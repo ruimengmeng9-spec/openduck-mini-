@@ -28,13 +28,22 @@ class FocusedSkillRunner(BaseRunner):
     def __init__(self, args: argparse.Namespace) -> None:
         super().__init__(args)
         self.env_config = focused_skill.focused_config(args.skill)
+        # Allow retargeting the command curriculum from the command line so a
+        # sweep does not require editing (and re-reviewing) the skill definition.
+        if args.vx_min is not None or args.vx_max is not None:
+            lo = args.vx_min if args.vx_min is not None else self.env_config.lin_vel_x[0]
+            hi = args.vx_max if args.vx_max is not None else self.env_config.lin_vel_x[1]
+            self.env_config.lin_vel_x = [lo, hi]
+            print(f"Velocity command overridden to [{lo}, {hi}]")
         self.env = focused_skill.FocusedSkill(
             skill=args.skill, task=args.task, config=self.env_config
         )
+        eval_config = focused_skill.focused_config(args.skill)
+        eval_config.lin_vel_x = list(self.env_config.lin_vel_x)
         self.eval_env = focused_skill.FocusedSkill(
             skill=args.skill,
             task=args.task,
-            config=focused_skill.focused_config(args.skill),
+            config=eval_config,
         )
         self.randomizer = (
             randomize.domain_randomize if args.domain_randomization else None
@@ -71,6 +80,12 @@ class FocusedSkillRunner(BaseRunner):
             # nearly irrelevant, so use a longer effective planning horizon.
             self.ppo_params.discounting = 0.995
             self.ppo_params.entropy_cost = 0.002
+        elif self.args.skill == "getup":
+            # Standing up is a multi-second manoeuvre: with the default 0.97
+            # discount (~33 step horizon) the posture that finally pays off is
+            # invisible from the floor, and the policy settles for lying still.
+            self.ppo_params.discounting = 0.993
+            self.ppo_params.entropy_cost = 0.003
         self.ppo_training_params = dict(self.ppo_params)
 
         if "network_factory" in self.ppo_params:
@@ -122,6 +137,18 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--task", default="flat_terrain")
     parser.add_argument("--restore_checkpoint_path", default=None)
     parser.add_argument("--learning_rate", type=float, default=1.0e-4)
+    parser.add_argument(
+        "--vx-min",
+        type=float,
+        default=None,
+        help="Override the lower bound of the lin_vel_x command curriculum.",
+    )
+    parser.add_argument(
+        "--vx-max",
+        type=float,
+        default=None,
+        help="Override the upper bound of the lin_vel_x command curriculum.",
+    )
     parser.add_argument("--domain_randomization", action="store_true")
     parser.add_argument("--skip_onnx_export", action="store_true")
     return parser

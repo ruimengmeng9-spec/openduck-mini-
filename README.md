@@ -40,6 +40,48 @@ cp "$OPEN_DUCK_ROOT/projects/openduck-mini-training/"*.py \
 
 `focused_skill.py` 定义专项指令分布、奖励项和安全终止条件；`focused_skill_runner.py` 负责 PPO 训练、Orbax checkpoint 和 ONNX 导出。
 
+## 2.1 爬起（getup）专项：上游模型缺少身体碰撞体
+
+训练爬起前必须先解决一个模型层面的问题：**上游 `open_duck_mini_v2.xml` 只有两只脚底带碰撞体**
+（47 个 geom 中仅 `left_foot_bottom_tpu`、`right_foot_bottom_tpu` 设置了
+`contype/conaffinity`，其类型为 `mesh`）。机器人一旦躺倒，躯干和头部没有任何碰撞面，
+会直接穿过地面（实测机身高度从 0.08 m 一路降到 `-0.169 m`，`up_vector_z ≈ -1`）。
+也就是说，在当前模型里「倒地」不是一个可表示的物理状态，爬起无从学起。
+
+`playground/open_duck_mini_v2/make_getup_model.py` 由原模型派生出一份**带躯干与头部碰撞盒**的副本：
+
+```bash
+cd "$OPEN_DUCK_ROOT/projects/Open_Duck_Playground"
+.venv/bin/python playground/open_duck_mini_v2/make_getup_model.py
+# 生成 xmls/open_duck_mini_v2_getup.xml 与 xmls/scene_flat_terrain_getup.xml
+```
+
+**原始 XML 不被修改**，已部署策略继续在原有物理参数上训练和验证。碰撞盒尺寸由
+`geom_aabb.py` 量出的可视网格包围盒确定（躯干壳 x[-0.155,+0.046] y[-0.079,+0.076] z[-0.079,+0.141]，
+头部壳 x[-0.024,+0.042] y[-0.107,+0.092] z[-0.103,+0.122]）；腿部各连杆本来也没有碰撞体，
+因此不会引入腿部自碰撞。
+
+`verify_getup_model.py` 会核对原模型未变（仍是 3 个碰撞 geom）、新模型恰好多出
+`trunk_collision`、`head_collision`，并把机器人摆成 90° 倾倒姿态空跑 4000 步确认它停在
+地板上（实测 `base z = 0.097`）而不是沉下去。
+
+爬起环境的其余差异都在 `focused_skill.py` 里：
+
+- `reset()` 重写为**从倒地姿态开始**：倾斜 80–105°、随机朝向、高度 0.055–0.090 m，
+  覆盖俯卧/仰卧/左右侧卧四种姿态；
+- `_get_termination()` **关闭了上游的「翻倒即终止」**，否则每回合第一步就结束；
+- 奖励用 `stand_up = upright² × clip(高度/0.15)`，该乘积在躺平时为 0、标准站姿为 1，
+  因此无法靠"用头撑地"或"把机身压在地上"骗分；
+- `alive` 置 0（否则原地不动最划算），`imitation` 置 0（站立参考对躺着的机器人是错的）；
+- PPO `discounting = 0.993`，因为起身是持续数秒的动作，默认 0.97（约 33 步视野）看不到回报。
+
+启动两路对照训练（从零学习 vs 从站立策略微调）：
+
+```bash
+scripts/launch_getup.sh 1 getup_v1_scratch  scratch
+scripts/launch_getup.sh 6 getup_v1_standing /path/to/stand-capable/checkpoint
+```
+
 ## 3. 启动后退专项训练
 
 V13 使用低速课程（约 `-0.025` 到 `-0.035 m/s`）、归一化进度奖励、紧超速限制和提前倾倒终止。建议只暴露一张空闲 GPU：
@@ -111,9 +153,13 @@ export TF_FORCE_GPU_ALLOW_GROWTH=true
 - 站立、直走、停止、重新起步均可用；
 - V11 后退策略 15/15 组完成 5 秒安全验证，但速度约 `-0.006 m/s`，未达到部署标准；
 - V12 已产生明显后退（约 `-0.056` 到 `-0.097 m/s`），但会在 2–4 秒内后仰倾倒，未部署；
-- V13 已收紧目标速度、倾角、机身高度和超速约束，部署模型仍保留已验证基线；
+- V13 收紧约束后策略退化回近乎站立（`-0.04` 指令仅 `-0.004 m/s`）；
+- V14 加倍进度奖励并放宽姿态约束，仅恢复到 `-0.0065 m/s`，仍未解决。根因已定位为
+  「模仿参考对负速度无效」与「超速惩罚相对目标过于严苛」，见
+  [TRAINING_NOTES.md](TRAINING_NOTES.md)；
 - Turn V2 把 `-0.3 rad/s` 指令下的实测转速从 `-0.127` 提升到 `-0.207 rad/s`，
   四组正负测试均 5 秒不跌倒，负向偏弱问题已缓解；提升幅度见
-  [results/turn_v1_vs_v2_20260918.json](results/turn_v1_vs_v2_20260918.json)。
+  [results/turn_v1_vs_v2_20260918.json](results/turn_v1_vs_v2_20260918.json)；
+- 爬起（getup）专项已具备可训练的物理前提（躯干碰撞体），训练进行中。
 
 详细实验演进见 [TRAINING_NOTES.md](TRAINING_NOTES.md)。
