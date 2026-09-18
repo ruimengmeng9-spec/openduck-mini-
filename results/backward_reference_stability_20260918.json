@@ -1,0 +1,19 @@
+{
+  "finding": "The reverse reference gait at -0.074 is open-loop stable, so a viable reverse gait DOES exist in the dataset. The learned policies from v12 to v17 all fall after ~2 s, so the remaining problem is policy tracking of that reference, not the absence of a reverse gait.",
+  "test": "diagnostics/test_ref_stability.py - replay each reference joint trajectory open-loop as position targets from the home keyframe, 5 s, flat terrain.",
+  "results": [
+    {"reference": "forward +0.074", "final_up_z": -0.971, "min_up_z": -1.000, "final_height_m": -0.1502, "fell_at_s": 1.70},
+    {"reference": "reverse -0.074", "final_up_z": 0.987,  "min_up_z": 0.975,  "final_height_m": 0.1616,  "fell_at_s": null},
+    {"reference": "standing 0.000", "final_up_z": -0.967, "min_up_z": -1.000, "final_height_m": -0.1490, "fell_at_s": 2.22}
+  ],
+  "note": "The negative final heights (-0.15 m) of the two failing replays are the no-body-collision artefact: once tipped past recovery the robot has no torso contact geometry and sinks through the floor. This is why falls are terminal in scene_flat_terrain (see make_getup_model.py).",
+  "v17_result": {
+    "config": "curriculum -0.06..-0.09 (grid-aligned to -0.074), imitation 0.5 and 1.0, restored from v15",
+    "native_mujoco": [
+      {"candidate": "v17_grid_imit05", "at_-0.04": -0.06818, "at_-0.06": -0.09221, "at_-0.074": -0.10501, "fallen": true},
+      {"candidate": "v17_grid_imit10", "at_-0.04": -0.0685,  "at_-0.06": -0.09905, "at_-0.074": -0.11196, "fallen": true}
+    ],
+    "conclusion": "Speed improves to -0.11 m/s (the fastest reverse gait measured), but stability does not: both still fall in 1.6-2.6 s. The imitation weight (1.0, i.e. 15 after the internal joint-pos factor) is small next to normalized_progress (80), so the stable reference does not dominate."
+  },
+  "next": "Weight the now-proven-stable -0.074 reference heavily (imitation 8 and 20) so it dominates the progress term; runs launched as backward_v18_imit8p0 / backward_v18_imit20p0."
+}
