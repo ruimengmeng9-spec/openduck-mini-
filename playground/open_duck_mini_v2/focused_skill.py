@@ -27,9 +27,24 @@ def _env_pair(name: str, default_lo: float, default_hi: float) -> tuple[float, f
 
 
 def _env_scale(name: str, default: float) -> float:
-    """Read a single reward weight from the environment (see BACKWARD_* knobs)."""
+    """Read a cost magnitude from the environment.
+
+    Values are magnitudes: the skill definition applies the negative sign.  A
+    negative input is rejected rather than silently accepted, because
+    ``-(-1500)`` turns a stability *cost* into a stability *reward* -- a mistake
+    that is invisible in the training log until the return jumps upward.
+    """
     raw = os.environ.get(name)
-    return float(raw) if raw else default
+    if not raw:
+        return default
+    value = float(raw)
+    if value < 0:
+        raise ValueError(
+            f"{name} must be a non-negative magnitude (got {value}); "
+            f"the sign is applied internally, so a negative value would invert "
+            f"this cost into a reward."
+        )
+    return value
 
 
 SUPPORTED_SKILLS = ("backward", "lateral", "arc", "turn", "unified", "getup")
@@ -155,11 +170,15 @@ def focused_config(skill: str) -> config_dict.ConfigDict:
         # prior while allowing the learned gait to depart from it.  The standing
         # reference is simply wrong for a robot that is on the floor.
         #
-        # Backward must be exactly zero: the reference generator returns the same
-        # forward-walking frames for -0.03 as for +0.03 (measured: both have
-        # reference-vector norm 17.3596), so any positive weight here actively
-        # pulls a reverse command towards a forward gait.
-        "backward": 0.0,
+        # Backward defaults to 0 because of command quantisation: the reference
+        # grid is {-0.148, -0.074, 0.0, +0.074, ...}, so the v13 curriculum of
+        # -0.025..-0.035 resolves to dx = 0.000, i.e. the *standing* reference
+        # (measured: max|low_cmd - standing| = 0.0000).  Weighting that at 0.25
+        # actively pinned the policy to standing.  The dataset does contain real
+        # reverse gaits at -0.074 (which differ from +0.074 by 8471 in max
+        # absolute coefficient), so a reverse command that lands on the grid can
+        # safely use a positive weight -- see BACKWARD_IMITATION.
+        "backward": _env_scale("BACKWARD_IMITATION", 0.0),
         "lateral": 0.5,
         "arc": 1.5,
         "turn": 1.0,
