@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import os
 from typing import Any, Dict, Optional, Union
 
 import jax
@@ -12,6 +13,17 @@ from mujoco_playground._src import mjx_env
 from mujoco_playground._src.collision import geoms_colliding
 
 from . import walk_turn_stop
+
+
+def _env_pair(name: str, default_lo: float, default_hi: float) -> tuple[float, float]:
+    """Read a two-value range such as "0.50,0.90" from the environment."""
+    raw = os.environ.get(name)
+    if not raw:
+        return default_lo, default_hi
+    parts = [p.strip() for p in raw.split(",")]
+    if len(parts) != 2:
+        raise ValueError(f"{name} must be 'low,high', got {raw!r}")
+    return float(parts[0]), float(parts[1])
 
 
 SUPPORTED_SKILLS = ("backward", "lateral", "arc", "turn", "unified", "getup")
@@ -157,6 +169,16 @@ class FocusedSkill(walk_turn_stop.WalkTurnStop):
         if skill not in SUPPORTED_SKILLS:
             raise ValueError(f"Unsupported skill {skill!r}")
         self.skill = skill
+        # Difficulty knobs for the recovery curriculum.  Exposed through the
+        # environment so a sweep can stage the task (easy lean -> full fall)
+        # without editing this file.  Defaults are the hard, deployment-relevant
+        # setting; a mild value is used to verify the task is learnable at all.
+        self._getup_fallen_prob = float(os.environ.get("GETUP_FALLEN_PROB", "0.7"))
+        fallen_lo, fallen_hi = _env_pair("GETUP_FALLEN_TILT", 1.40, 1.83)
+        lean_lo, lean_hi = _env_pair("GETUP_LEAN_TILT", 0.50, 0.90)
+        self._getup_fallen_tilt = (fallen_lo, fallen_hi)
+        self._getup_lean_tilt = (lean_lo, lean_hi)
+        self._getup_random_joints = os.environ.get("GETUP_RANDOM_JOINTS", "1") != "0"
         super().__init__(
             task=task,
             config=config if config is not None else focused_config(skill),
@@ -178,12 +200,13 @@ class FocusedSkill(walk_turn_stop.WalkTurnStop):
         # off the floor reachable by gradient.
         rng, joint_rng = jax.random.split(rng)
         lowers, uppers = self._soft_lowers, self._soft_uppers
-        joints = jax.random.uniform(
+        sampled_joints = jax.random.uniform(
             joint_rng,
             (self._actuators,),
             minval=lowers.astype(jp.float32),
             maxval=uppers.astype(jp.float32),
         )
+        joints = jp.where(self._getup_random_joints, sampled_joints, self._default_actuator)
         qpos = self.set_actuator_joints_qpos(joints, state.data.qpos)
 
         rng, tilt_rng, side_rng, sign_rng, yaw_rng, height_rng = jax.random.split(
@@ -198,11 +221,15 @@ class FocusedSkill(walk_turn_stop.WalkTurnStop):
         # network can first learn to push up from a near-standing lean and then
         # extend that skill to the fully fallen poses.
         tilt_rng, mode_rng = jax.random.split(tilt_rng)
-        fallen = jax.random.bernoulli(mode_rng, p=0.7)
+        fallen = jax.random.bernoulli(mode_rng, p=self._getup_fallen_prob)
         tilt = jp.where(
             fallen,
-            jax.random.uniform(tilt_rng, (), minval=1.40, maxval=1.83),
-            jax.random.uniform(tilt_rng, (), minval=0.50, maxval=0.90),
+            jax.random.uniform(
+                tilt_rng, (), minval=self._getup_fallen_tilt[0], maxval=self._getup_fallen_tilt[1]
+            ),
+            jax.random.uniform(
+                tilt_rng, (), minval=self._getup_lean_tilt[0], maxval=self._getup_lean_tilt[1]
+            ),
         )
         sign = jp.where(jax.random.bernoulli(sign_rng), 1.0, -1.0)
         side = jax.random.bernoulli(side_rng)

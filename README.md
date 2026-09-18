@@ -160,6 +160,11 @@ export TF_FORCE_GPU_ALLOW_GROWTH=true
 - Turn V2 把 `-0.3 rad/s` 指令下的实测转速从 `-0.127` 提升到 `-0.207 rad/s`，
   四组正负测试均 5 秒不跌倒，负向偏弱问题已缓解；提升幅度见
   [results/turn_v1_vs_v2_20260918.json](results/turn_v1_vs_v2_20260918.json)；
-- 爬起（getup）专项已具备可训练的物理前提（躯干碰撞体），训练进行中。
+- 爬起（getup）专项已打通物理前提（躯干碰撞体，原模型不受影响），但**8 轮训练
+  均未学会起身**。诊断结论：奖励设计无误（站立 +2.34/步 vs 躺平 −3.34/步），
+  但随机探索从完全倒地出发最高只能到 `up_z≈0.87`，站立奖励在概率上不可达；
+  且已验证的行走策略在新旧场景中表现完全一致，说明物理未被破坏。
+  主因是训练步数不足（600 万–1200 万 vs 行走策略的 1.5 亿）。详见
+  [results/getup_findings_20260918.json](results/getup_findings_20260918.json)。
 
 详细实验演进见 [TRAINING_NOTES.md](TRAINING_NOTES.md)。

@@ -1,0 +1,41 @@
+{
+  "status": "not_learned",
+  "runs": [
+    {"name": "getup_v1_scratch", "config": "70% fully fallen, home joints", "final_return": -2818.7, "success": "0/4"},
+    {"name": "getup_v1_standing", "config": "70% fully fallen, restore walk policy", "final_return": -2865.2, "success": "0/4"},
+    {"name": "getup_v2_randjoint_scratch", "config": "70% fallen, random joints", "final_return": null, "note": "superseded by v3"},
+    {"name": "getup_v3_tilt_scratch", "config": "70% fallen + 30% mild lean, random joints", "final_return": -2818.7, "success": "0/4"},
+    {"name": "getup_v3_tilt_standing", "config": "same, restore walk policy", "final_return": -2865.2, "success": "0/4"},
+    {"name": "getup_easy_lean", "config": "mild lean only (20-40deg), home joints, no restore", "final_return": -3112.6, "success": null},
+    {"name": "getup_s1_lean_ft", "config": "mild lean only, restore walk policy", "final_return": -3195.2, "success": null},
+    {"name": "getup_s2_mixed_ft", "config": "35% fallen + mild lean, restore walk policy", "final_return": -3146.9, "success": null}
+  ],
+  "reward_reference": {
+    "standing_home_pose": "+2.34 per step (up_z=0.934, height=0.140)",
+    "lying_still": "about -3.34 per step",
+    "note": "A policy that simply stayed at the lean start would score about +2300 per episode; every run scored about -2900 to -3200, i.e. the robot falls even from a mild lean."
+  },
+  "exploration_ceiling": {
+    "test": "random uniform actions, 500 steps, 12 seeds, from the getup start distribution",
+    "best_peak_up_z": 0.867,
+    "reached_up_z_gt_0.85": "1/12 (that seed started already upright at 0.873)",
+    "reached_up_z_gt_0.50": "6/12",
+    "conclusion": "From a fully fallen start, random exploration cannot reach an upright attitude, so the standing reward is unreachable by chance."
+  },
+  "model_integrity": {
+    "test": "official BEST_WALK_ONNX_2 starting from the home keyframe, 10 s, both scenes",
+    "original_scene": {"final_up_z": 0.9953, "min_up_z": 0.9937, "final_height": 0.1656},
+    "getup_scene": {"final_up_z": 0.9953, "min_up_z": 0.9937, "final_height": 0.1656},
+    "conclusion": "Adding the trunk/head collision boxes did not change the physics: the verified walk policy behaves identically. The getup failures are a learning problem, not a model problem."
+  },
+  "fixed_blocker": {
+    "issue": "Upstream open_duck_mini_v2.xml gives collision geometry only to the two foot soles (3 of 47 geoms), so a fallen robot has nothing to rest on and sinks through the floor (measured base height -0.169 m, up_z about -1).",
+    "fix": "make_getup_model.py derives open_duck_mini_v2_getup.xml / scene_flat_terrain_getup.xml with trunk and head collision boxes; the originals are untouched.",
+    "verified": "Robot settles at base z=0.097 when dropped at 90 degrees instead of sinking."
+  },
+  "recommendations": [
+    "Train far longer: the verified walk policy used 150M timesteps; these runs used 6-12M (about 300-600 PPO updates).",
+    "Add a reference-motion or scripted-getup imitation signal; pure sparse standing reward is not reachable from a full fall.",
+    "Stage the curriculum much more gradually and verify the start poses rest on the floor without an initial impact impulse."
+  ]
+}
