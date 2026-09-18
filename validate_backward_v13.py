@@ -12,15 +12,13 @@ from playground.common.onnx_infer import OnnxInfer
 
 REPO = Path("/data/shijinsheng/open_duck/projects/Open_Duck_Playground")
 OFFICIAL = Path("/data/shijinsheng/open_duck/projects/Open_Duck_Mini/BEST_WALK_ONNX_2.onnx")
-TRAINING = Path("/data/shijinsheng/open_duck/training/backward_v11_signed_reward_20260915")
-OUTPUT = Path("/data/shijinsheng/open_duck/outputs/backward_v11_validation_20260915")
+TRAINING = Path("/data/shijinsheng/open_duck/training/backward_v13_stabilize_ratio_20260915")
+OUTPUT = Path("/data/shijinsheng/open_duck/outputs/backward_v13_validation_20260916")
 
 CANDIDATES = {
-    "v11_2p13m": TRAINING / "step_2129920.onnx",
-    "v11_4p26m": TRAINING / "step_4259840.onnx",
-    "v11_6p39m": TRAINING / "step_6389760.onnx",
-    "v11_10p65m": TRAINING / "step_10649600.onnx",
-    "v11_12p78m": TRAINING / "final.onnx",
+    "v13_4p26m": TRAINING / "step_4259840.onnx",
+    "v13_8p52m": TRAINING / "step_8519680.onnx",
+    "v13_12p78m": TRAINING / "final.onnx",
 }
 
 

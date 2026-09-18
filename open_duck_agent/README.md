@@ -5,15 +5,14 @@
 当前默认采用双策略路由：官方 `BEST_WALK_ONNX_2.onnx` 负责 `stand`、`walk` 和 `stop`，本项目训练的 `open_duck_turn_v1.onnx` 负责 `turn`。在动作切换时会自动选择策略，`stop` 使用前一动作的策略完成平稳收尾。转向模型通过环境变量指定：
 
 ```bash
-export OPEN_DUCK_ROOT="${OPEN_DUCK_ROOT:-$HOME/open_duck}"
-export OPEN_DUCK_TURN_ONNX_MODEL="$OPEN_DUCK_ROOT/models/control/open_duck_turn_v1.onnx"
+export OPEN_DUCK_TURN_ONNX_MODEL=/data/shijinsheng/open_duck/models/control/open_duck_turn_v1.onnx
 ```
 
 ## 安装到服务器
 
 把整个 `open_duck_agent` 目录放到：
 
-`$OPEN_DUCK_ROOT/projects/Open_Duck_Playground/open_duck_agent`
+`/data/shijinsheng/open_duck/projects/Open_Duck_Playground/open_duck_agent`
 
 把大模型客户端安装到 `/data` 下的独立目录。这样不会升级或覆盖已经验证过的 JAX、MuJoCo 和 ONNX Runtime：
 
@@ -28,25 +27,25 @@ UV_HTTP_TIMEOUT=600 "$OPEN_DUCK_ROOT/bin/uv" pip install \
 ## 第一步：不接大模型，验证四个动作
 
 ```bash
-source "$OPEN_DUCK_ROOT/env_walk.sh"
-cd "$OPEN_DUCK_ROOT/projects/Open_Duck_Playground"
+source /data/shijinsheng/open_duck/env_walk.sh
+cd /data/shijinsheng/open_duck/projects/Open_Duck_Playground
 CUDA_VISIBLE_DEVICES="" JAX_PLATFORMS=cpu OMP_NUM_THREADS=1 \
   .venv/bin/python -m open_duck_agent.agent --demo
 ```
 
-它会依次执行：站立 1 秒、以 0.10 m/s 行走 2 秒、以 0.20 rad/s 转向 2 秒、停止。每个动作返回位置、局部速度、竖直方向和是否摔倒。日志保存在 `$OPEN_DUCK_ROOT/outputs/agent_*/actions.jsonl`。
+它会依次执行：站立 1 秒、以 0.10 m/s 行走 2 秒、以 0.20 rad/s 转向 2 秒、停止。每个动作返回位置、局部速度、竖直方向和是否摔倒。日志保存在 `/data/shijinsheng/open_duck/outputs/agent_*/actions.jsonl`。
 
 ## 第二步：接入本地 MiniCPM-o 4.5（默认）
 
 模型规划环境与仿真环境分离：MiniCPM-o 使用 Python 3.10 和 GPU，Open Duck 继续使用现有 Python 3.11 原生 MuJoCo 环境。默认模型目录为：
 
-`$OPEN_DUCK_ROOT/models/MiniCPM-o-4_5-awq`
+`/data/shijinsheng/open_duck/models/MiniCPM-o-4_5-awq`
 
 单次自然语言端到端测试：
 
 ```bash
-source "$OPEN_DUCK_ROOT/env_walk.sh"
-cd "$OPEN_DUCK_ROOT/projects/Open_Duck_Playground"
+source /data/shijinsheng/open_duck/env_walk.sh
+cd /data/shijinsheng/open_duck/projects/Open_Duck_Playground
 CUDA_VISIBLE_DEVICES="" JAX_PLATFORMS=cpu OMP_NUM_THREADS=1 \
   .venv/bin/python -m open_duck_agent.agent \
   --backend minicpmo \
@@ -71,15 +70,15 @@ export OPENAI_MODEL=gpt-5-mini
 
 ```bash
 set -a
-source /path/to/proxy.env
+source /data/shijinsheng/isaaclab/proxy.env
 set +a
 ```
 
 单次自然语言测试：
 
 ```bash
-source "$OPEN_DUCK_ROOT/env_walk.sh"
-cd "$OPEN_DUCK_ROOT/projects/Open_Duck_Playground"
+source /data/shijinsheng/open_duck/env_walk.sh
+cd /data/shijinsheng/open_duck/projects/Open_Duck_Playground
 CUDA_VISIBLE_DEVICES="" JAX_PLATFORMS=cpu OMP_NUM_THREADS=1 \
   .venv/bin/python -m open_duck_agent.agent \
   --backend openai \

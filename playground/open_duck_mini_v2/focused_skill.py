@@ -25,9 +25,9 @@ def focused_config(skill: str) -> config_dict.ConfigDict:
     config.noise_config.level = 0.05 if skill == "backward" else 0.35
     config.push_config.enable = False
 
-    # Direct squared errors provide shaping while exponential terms give a clear
-    # improvement near target.  Backward training enables signed total rewards
-    # below so the velocity-gradient signal is not erased.
+    # Keep every term positive enough that the upstream reward clipping does not
+    # erase the velocity gradient.  Direct squared errors remain small shaping
+    # costs, while the exponential terms give a clear improvement near target.
     scales = config.reward_config.scales
     scales.tracking_lin_vel = 0.0
     scales.tracking_ang_vel = 14.0
@@ -54,8 +54,9 @@ def focused_config(skill: str) -> config_dict.ConfigDict:
     }[skill]
     scales.speed_limit = -300.0
     scales.yaw_limit = -20.0
-    # Backward-only costs prevent upright near-stationary behaviour from becoming
-    # a profitable local optimum.
+    # The upstream environment clips the summed reward at zero.  These linear
+    # backward-only terms prevent the positive upright/alive reward from making
+    # stationary behaviour a profitable local optimum.
     scales.normalized_progress = 40.0 if skill == "backward" else 0.0
     scales.progress_shortfall = -40.0 if skill == "backward" else 0.0
     scales.wrong_way = -80.0 if skill == "backward" else 0.0

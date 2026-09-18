@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import argparse
 import functools
-import os
 from datetime import datetime
 from pathlib import Path
 
@@ -111,7 +110,7 @@ class FocusedSkillRunner(BaseRunner):
 
 
 def build_parser() -> argparse.ArgumentParser:
-    root = Path(os.environ.get("OPEN_DUCK_ROOT", Path.home() / "open_duck"))
+    root = Path("/data/shijinsheng/open_duck")
     parser = argparse.ArgumentParser()
     parser.add_argument("--skill", choices=focused_skill.SUPPORTED_SKILLS, required=True)
     parser.add_argument("--output_dir", default=str(root / "training/focused_skill"))

@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import argparse
 import functools
-import os
 from datetime import datetime
 from pathlib import Path
 
@@ -124,7 +123,7 @@ class WalkTurnStopRunner(BaseRunner):
 
 
 def build_parser() -> argparse.ArgumentParser:
-    root = Path(os.environ.get("OPEN_DUCK_ROOT", Path.home() / "open_duck"))
+    root = Path("/data/shijinsheng/open_duck")
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--output_dir",

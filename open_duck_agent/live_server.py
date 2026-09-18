@@ -354,7 +354,7 @@ class Handler(BaseHTTPRequestHandler):
 
 
 def build_parser() -> argparse.ArgumentParser:
-    root = Path(os.environ.get("OPEN_DUCK_ROOT", Path.home() / "open_duck"))
+    root = Path(os.environ.get("OPEN_DUCK_ROOT", "/data/shijinsheng/open_duck"))
     p = argparse.ArgumentParser()
     p.add_argument("--root", type=Path, default=root)
     p.add_argument("--repo-root", type=Path, default=root / "projects/Open_Duck_Playground")

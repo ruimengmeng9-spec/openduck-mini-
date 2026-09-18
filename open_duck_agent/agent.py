@@ -257,7 +257,7 @@ def run_minicpmo_turn(
 
 
 def build_parser() -> argparse.ArgumentParser:
-    root = Path(os.environ.get("OPEN_DUCK_ROOT", Path.home() / "open_duck"))
+    root = Path(os.environ.get("OPEN_DUCK_ROOT", "/data/shijinsheng/open_duck"))
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--repo-root",
@@ -327,7 +327,7 @@ def main() -> None:
                     tools,
                     text,
                     repo_root=args.repo_root,
-                    root=Path(os.environ.get("OPEN_DUCK_ROOT", Path.home() / "open_duck")),
+                    root=Path(os.environ.get("OPEN_DUCK_ROOT", "/data/shijinsheng/open_duck")),
                     planner_python=args.minicpmo_python,
                     model_path=args.minicpmo_model,
                     gpu=args.minicpmo_gpu,
@@ -364,7 +364,7 @@ def main() -> None:
     vendor_dir = Path(
         os.environ.get(
             "OPENAI_VENDOR_DIR",
-            str(Path(os.environ.get("OPEN_DUCK_ROOT", Path.home() / "open_duck"))
+            str(Path(os.environ.get("OPEN_DUCK_ROOT", "/data/shijinsheng/open_duck"))
                 / "python/openai-client"),
         )
     )
