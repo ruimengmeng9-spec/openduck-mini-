@@ -26,6 +26,12 @@ def _env_pair(name: str, default_lo: float, default_hi: float) -> tuple[float, f
     return float(parts[0]), float(parts[1])
 
 
+def _env_scale(name: str, default: float) -> float:
+    """Read a single reward weight from the environment (see BACKWARD_* knobs)."""
+    raw = os.environ.get(name)
+    return float(raw) if raw else default
+
+
 SUPPORTED_SKILLS = ("backward", "lateral", "arc", "turn", "unified", "getup")
 
 # Base height of the robot in the `home` keyframe.  Everything that has to reason
@@ -111,16 +117,34 @@ def focused_config(skill: str) -> config_dict.ConfigDict:
     scales.normalized_progress = 80.0 if skill == "backward" else 0.0
     scales.progress_shortfall = -80.0 if skill == "backward" else 0.0
     scales.wrong_way = -80.0 if skill == "backward" else 0.0
-    scales.overspeed = -4000.0 if skill == "backward" else 0.0
-    scales.tilt_margin = -600.0 if skill == "backward" else 0.0
-    scales.height_margin = -600.0 if skill == "backward" else 0.0
-    scales.tilt = -200.0 if is_getup else (-500.0 if skill == "backward" else -30.0)
+    # V12--V14 kept tightening this term and every run collapsed onto the
+    # near-stationary optimum.  The reason is arithmetic, not tuning: with a
+    # -0.04 m/s target the old band (1.10*|v_cmd| + 0.005 = 0.049 m/s) sits below
+    # the natural velocity oscillation of a walking gait, so *moving at all* cost
+    # 4000 * overspeed * dt ~ -8 per step while the progress reward was worth
+    # about +2.5.  Standing still (overspeed = 0) was therefore strictly better.
+    # Weight is cut and the band widened so this only catches a genuine lunge;
+    # tracking_xy and lin_vel_xy_error already punish deviation from the command,
+    # so nothing here needs to carry the whole burden.
+    scales.overspeed = -600.0 if skill == "backward" else 0.0
+    # Backward stability group.  V15 relaxed these to break the "stand still"
+    # optimum and succeeded at producing a real reverse gait (-0.072 m/s), but
+    # the policy then fell after 1.8-2.5 s.  With the incentive direction now
+    # correct these can be raised again to buy stability, and they are exposed as
+    # environment knobs so a sweep does not require editing this file.
+    scales.tilt_margin = -_env_scale("BACKWARD_TILT_MARGIN", 600.0) if skill == "backward" else 0.0
+    scales.height_margin = -_env_scale("BACKWARD_HEIGHT_MARGIN", 600.0) if skill == "backward" else 0.0
+    scales.tilt = (
+        -200.0
+        if is_getup
+        else (-_env_scale("BACKWARD_TILT", 500.0) if skill == "backward" else -30.0)
+    )
     # Recovery never terminates on a fall, so there is nothing to penalise here;
     # an inverted robot is instead pushed back by the `tilt` cost.
     scales.termination = (
         0.0
         if is_getup
-        else (-1200.0 if skill == "backward" else -50.0)
+        else (-_env_scale("BACKWARD_TERMINATION", 1200.0) if skill == "backward" else -50.0)
     )
     # No free reward for lying still: `alive` must stay 0 for recovery or the
     # optimal policy is to never move.  The `stand_up` term replaces it.
@@ -130,7 +154,12 @@ def focused_config(skill: str) -> config_dict.ConfigDict:
         # anchor a backward command near standing.  Keep a small stabilizing
         # prior while allowing the learned gait to depart from it.  The standing
         # reference is simply wrong for a robot that is on the floor.
-        "backward": 0.25,
+        #
+        # Backward must be exactly zero: the reference generator returns the same
+        # forward-walking frames for -0.03 as for +0.03 (measured: both have
+        # reference-vector norm 17.3596), so any positive weight here actively
+        # pulls a reverse command towards a forward gait.
+        "backward": 0.0,
         "lateral": 0.5,
         "arc": 1.5,
         "turn": 1.0,
@@ -402,7 +431,10 @@ class FocusedSkill(walk_turn_stop.WalkTurnStop):
             moving_command, jp.maximum(0.80 - progress_ratio, 0.0), 0.0
         )
         wrong_way = jp.where(moving_command, jp.maximum(-progress_ratio, 0.0), 0.0)
-        allowed_speed = 1.10 * command_speed + 0.005
+        # Allow the natural velocity oscillation of a gait.  The previous band
+        # (1.10 * command + 0.005) was narrower than that oscillation at the
+        # low-speed backward curriculum, which made any movement unprofitable.
+        allowed_speed = jp.maximum(1.5 * command_speed, 0.15)
         overspeed = jp.maximum(jp.linalg.norm(local_velocity[:2]) - allowed_speed, 0.0)
         tilt_margin = jp.maximum(0.985 - gravity[2], 0.0)
         base_height = self.get_floating_base_qpos(data.qpos)[2]

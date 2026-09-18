@@ -1,0 +1,31 @@
+{
+  "summary": "Root-cause fix for the backward regression. Setting imitation=0 for reverse commands and widening the overspeed band restores a real reverse gait in native MuJoCo: v15 reaches -0.072 / -0.095 m/s, versus -0.004 / -0.006 m/s for v13/v14. It still falls after 1.8-2.5 s, which is the original v12 instability and the open problem.",
+  "native_mujoco_5s_rollouts": [
+    {"candidate": "v12_best_reverse",      "command_mps": -0.04, "achieved_forward_speed_mps": -0.06912, "fallen": true,  "executed_duration_s": 2.54, "up_vector_z": 0.487571},
+    {"candidate": "v12_best_reverse",      "command_mps": -0.06, "achieved_forward_speed_mps": -0.09712, "fallen": true,  "executed_duration_s": 1.92, "up_vector_z": 0.41841},
+    {"candidate": "v13_degenerate",        "command_mps": -0.04, "achieved_forward_speed_mps": -0.00402, "fallen": false, "executed_duration_s": 5.0,  "up_vector_z": 0.986753},
+    {"candidate": "v13_degenerate",        "command_mps": -0.06, "achieved_forward_speed_mps": -0.00604, "fallen": false, "executed_duration_s": 5.0,  "up_vector_z": 0.972112},
+    {"candidate": "v14_progress_balance",  "command_mps": -0.04, "achieved_forward_speed_mps": -0.00649, "fallen": false, "executed_duration_s": 5.0,  "up_vector_z": 0.968949},
+    {"candidate": "v14_progress_balance",  "command_mps": -0.06, "achieved_forward_speed_mps": -0.00668, "fallen": false, "executed_duration_s": 5.0,  "up_vector_z": 0.967357},
+    {"candidate": "v15_fixed",             "command_mps": -0.04, "achieved_forward_speed_mps": -0.07226, "fallen": true,  "executed_duration_s": 2.5,  "up_vector_z": 0.450626},
+    {"candidate": "v15_fixed",             "command_mps": -0.06, "achieved_forward_speed_mps": -0.09521, "fallen": true,  "executed_duration_s": 1.84, "up_vector_z": 0.471711}
+  ],
+  "root_causes_fixed": {
+    "imitation_reference_is_wrong_for_reverse": {
+      "measurement": "PolyReferenceMotion.get_reference_motion returns identical frames for negative and positive vx: reference-vector norm 17.3596 for both +0.03 and -0.03, and 17.9686 for both +0.05 and -0.05.",
+      "effect": "A positive imitation weight (0.25 in v13/v14) actively pulled a reverse command toward a forward gait.",
+      "fix": "imitation scale is now 0.0 for the backward skill."
+    },
+    "overspeed_band_narrower_than_gait_oscillation": {
+      "measurement": "At a -0.04 m/s command the old allowance was 1.10*0.04+0.005 = 0.049 m/s, below the normal velocity oscillation of a walking gait, so overspeed cost ~= 4000 * overspeed * dt ~= -8 per step while progress was worth about +2.5. Standing still scored strictly better.",
+      "effect": "Every run from v12 to v14 converged to the near-stationary optimum.",
+      "fix": "allowance is max(1.5 * command, 0.15) and the weight is 600 instead of 4000."
+    }
+  },
+  "arithmetic_check": {
+    "script": "diagnostics/diag_backward_reward.py",
+    "before": {"moving_per_step": -4.080, "stationary_per_step": -4.328, "gap": 0.248, "verdict": "moving only marginally better; noise dominates"},
+    "after":  {"moving_per_step": 3.200,  "stationary_per_step": -0.248, "gap": 3.448, "verdict": "moving is clearly rewarded"}
+  },
+  "next": "v16 keeps the corrected incentive and re-raises the posture costs (tilt/height margins and termination) to add stability, since the direction of the reward is no longer the blocker."
+}
