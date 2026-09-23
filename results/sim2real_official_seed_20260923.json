@@ -1,0 +1,85 @@
+{
+  "date": "2026-09-23",
+  "hardware_constraints": {
+    "policy_hz": 50,
+    "physics_hz": 500,
+    "servos": 14,
+    "control_mode": "position",
+    "imu_upside_down": true,
+    "hardware_walk_confirmed": false
+  },
+  "onnx_import": {
+    "teacher": "BEST_WALK_ONNX_2.onnx",
+    "teacher_sha256": "3c606f9381a1710cc8fecdb7442787dcbfce3ee9bc02a6f1224774ab2b3a1067",
+    "roundtrip_sha256": "51e9c4e351686680302cdc258673b54d04c2fcfab7ac31d6885fcb58b07dac9e",
+    "equivalence_samples": 512,
+    "max_abs_action_error": 1.40070915e-06,
+    "base_checkpoint_count": 100270080
+  },
+  "validation": [
+    {
+      "name": "official_teacher_roundtrip",
+      "seeds": 1,
+      "completed_phases": 9,
+      "expected_phases": 9,
+      "falls": 0,
+      "walk_speed_mean_mps": 0.028662,
+      "turn_positive_mean_deg_5s": 11.846,
+      "turn_negative_mean_deg_5s": -1.464,
+      "stop_abs_speed_max_mps": 0.001228,
+      "status": "teacher baseline"
+    },
+    {
+      "name": "official_seed_sim2real_v1",
+      "timesteps": 5079040,
+      "learning_rate": 1e-06,
+      "model_sha256": "3d8a062331bc873b9af60ace390d52872899d9571161eb6045ad90d6e82e2175",
+      "seeds": 3,
+      "completed_phases": 27,
+      "expected_phases": 27,
+      "falls": 0,
+      "walk_speed_mean_mps": 0.09215,
+      "turn_positive_mean_deg_5s": 23.725,
+      "turn_negative_mean_deg_5s": -1.828,
+      "stop_abs_speed_max_mps": 0.004377,
+      "status": "retained forward candidate"
+    },
+    {
+      "name": "official_seed_turn_balance_v2",
+      "timesteps": 5079040,
+      "learning_rate": 5e-07,
+      "model_sha256": "1e583024e11f1441abf13d54730831de79bcff928e0a6d465756641afa9d0872",
+      "seeds": 3,
+      "completed_phases": 27,
+      "expected_phases": 27,
+      "falls": 0,
+      "walk_speed_mean_mps": 0.110097,
+      "turn_positive_mean_deg_5s": 52.414,
+      "turn_negative_mean_deg_5s": -21.057,
+      "stop_abs_speed_max_mps": 0.006012,
+      "status": "best simulation candidate; not approved for hardware"
+    },
+    {
+      "name": "official_seed_turn_balance_v3",
+      "timesteps": 2621440,
+      "learning_rate": 2e-07,
+      "negative_turn_sampling_probability": 0.75,
+      "model_sha256": "52bd1bdb64a9047f7f670cd6b360a3825da014b614237c2c80422b252b49b2e4",
+      "seeds": 3,
+      "completed_phases": 27,
+      "expected_phases": 27,
+      "falls": 0,
+      "walk_speed_mean_mps": 0.117225,
+      "turn_positive_mean_deg_5s": 45.019,
+      "turn_negative_mean_deg_5s": -10.791,
+      "stop_abs_speed_max_mps": 0.006045,
+      "status": "rejected: negative turn regressed"
+    }
+  ],
+  "server_paths": {
+    "teacher_seed_checkpoint": "/data/shijinsheng/open_duck/training/official_teacher_seed_v1/checkpoint",
+    "best_candidate_onnx": "/data/shijinsheng/open_duck/training/official_seed_turn_balance_v2/final.onnx",
+    "best_candidate_checkpoint": "/data/shijinsheng/open_duck/training/official_seed_turn_balance_v2/2026_09_23_122903_5079040",
+    "best_validation": "/data/shijinsheng/open_duck/outputs/official_seed_turn_balance_v2_validation_20260923/results.json"
+  }
+}

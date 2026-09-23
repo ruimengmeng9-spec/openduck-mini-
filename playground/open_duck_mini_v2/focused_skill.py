@@ -65,8 +65,29 @@ def focused_config(skill: str) -> config_dict.ConfigDict:
     # policy learns a repeatable reverse gait, then add robustness separately.
     # Recovery is also learned with reduced sensor noise: the task itself is
     # already hard enough without a noisy gravity vector.
-    if skill == "backward":
-        config.noise_config.level = 0.05
+    backward_teacher_stage = (
+        skill == "backward"
+        and os.environ.get("BACKWARD_TEACHER_STAGE", "0") == "1"
+    )
+    if backward_teacher_stage:
+        # First learn the action-space projection of the known-good reference
+        # without delays or sensor noise. Robustness is added only after the
+        # policy can reproduce this executable teacher trajectory.
+        config.noise_config.level = 0.0
+        config.noise_config.action_min_delay = 0
+        config.noise_config.action_max_delay = 1
+        config.noise_config.imu_min_delay = 0
+        config.noise_config.imu_max_delay = 1
+    elif skill == "backward":
+        config.noise_config.level = float(
+            os.environ.get("BACKWARD_NOISE_LEVEL", "0.05")
+        )
+        config.noise_config.action_max_delay = int(
+            os.environ.get("BACKWARD_ACTION_MAX_DELAY", "3")
+        )
+        config.noise_config.imu_max_delay = int(
+            os.environ.get("BACKWARD_IMU_MAX_DELAY", "3")
+        )
     elif is_getup:
         config.noise_config.level = 0.10
     else:
@@ -77,14 +98,26 @@ def focused_config(skill: str) -> config_dict.ConfigDict:
         # -0.025..-0.035 window: the target was so small that the progress signal
         # could not outbid the posture costs.  Bounds are stored as a negative
         # [min, max] interval so the runner can override them from the CLI.
-        config.lin_vel_x = [-0.05, -0.03]
+        config.lin_vel_x = (
+            [-0.074, -0.074]
+            if backward_teacher_stage
+            else [-0.05, -0.03]
+        )
 
     # Keep every term positive enough that the upstream reward clipping does not
     # erase the velocity gradient.  Direct squared errors remain small shaping
     # costs, while the exponential terms give a clear improvement near target.
     scales = config.reward_config.scales
     scales.tracking_lin_vel = 0.0
-    scales.tracking_ang_vel = 0.0 if is_getup else 14.0
+    scales.tracking_ang_vel = (
+        0.0
+        if is_getup
+        else (
+            _env_scale("BACKWARD_TRACKING_ANG_VEL", 14.0)
+            if skill == "backward"
+            else 14.0
+        )
+    )
     scales.lin_vel_error = 0.0 if is_getup else -3.0
     scales.tracking_xy = (
         0.0 if is_getup else (60.0 if skill == "backward" else 18.0)
@@ -92,9 +125,28 @@ def focused_config(skill: str) -> config_dict.ConfigDict:
     # Recovery has no velocity command, so this term degenerates into a plain
     # penalty on dragging/sliding the chassis across the floor.
     scales.lin_vel_xy_error = (
-        -5.0 if is_getup else (-10.0 if skill == "backward" else -8.0)
+        -5.0
+        if is_getup
+        else (
+            -_env_scale("BACKWARD_LIN_VEL_XY_ERROR", 10.0)
+            if skill == "backward"
+            else -8.0
+        )
     )
-    scales.yaw_error = 0.0 if is_getup else -3.0
+    scales.yaw_error = (
+        0.0
+        if is_getup
+        else (
+            -_env_scale("BACKWARD_YAW_ERROR", 3.0)
+            if skill == "backward"
+            else -3.0
+        )
+    )
+    scales.heading_error = (
+        -_env_scale("BACKWARD_HEADING_ERROR", 0.0)
+        if skill == "backward"
+        else 0.0
+    )
     # Recovery needs a strong, always-present gradient towards "upright": the
     # squared projection gives 0 while lying and 1 while standing.
     scales.upright = 40.0 if is_getup else (20.0 if skill == "backward" else 10.0)
@@ -185,9 +237,61 @@ def focused_config(skill: str) -> config_dict.ConfigDict:
         "unified": 1.5,
         "getup": 0.0,
     }[skill]
+    # State imitation alone is too indirect for the reverse gait: after 100M
+    # PPO steps the policy still ran faster than commanded and fell at ~1.7 s.
+    # Project the known reference joint targets into the policy's real [-1, 1]
+    # action range and reward that executable action directly.
+    scales.action_imitation = (
+        _env_scale(
+            "BACKWARD_ACTION_IMITATION",
+            100.0 if backward_teacher_stage else 0.0,
+        )
+        if skill == "backward"
+        else 0.0
+    )
+    # Unlike the bounded positive similarity above, this term keeps supplying a
+    # gradient when PPO moves far away from the stable reference gait.  It is
+    # intentionally opt-in so old experiments remain reproducible.
+    scales.action_imitation_error = (
+        -_env_scale("BACKWARD_ACTION_IMITATION_ERROR", 0.0)
+        if skill == "backward"
+        else 0.0
+    )
     scales.stand_still = 0.0 if is_getup else -0.5
     scales.action_rate = -0.4 if is_getup else -0.3
     scales.torques = -5.0e-4
+    if backward_teacher_stage:
+        # Stage 1 is deliberately a clean teacher-tracking problem. Competing
+        # locomotion costs previously let PPO discover a fast, unstable shortcut.
+        for name in (
+            "tracking_lin_vel",
+            "tracking_ang_vel",
+            "lin_vel_error",
+            "tracking_xy",
+            "lin_vel_xy_error",
+            "yaw_error",
+            "vertical_velocity",
+            "angular_xy",
+            "command_progress",
+            "normalized_progress",
+            "progress_shortfall",
+            "wrong_way",
+            "overspeed",
+            "tilt_margin",
+            "height_margin",
+            "yaw_progress",
+            "speed_limit",
+            "yaw_limit",
+            "tilt",
+            "alive",
+            "imitation",
+            "stand_still",
+            "action_rate",
+            "torques",
+        ):
+            setattr(scales, name, 0.0)
+        scales.upright = 10.0
+        scales.termination = -1200.0
     # Recovery-only terms.  `stand_up` is the product of "is upright" and "is
     # tall", so it is 0 while lying and 1 while standing: it cannot be farmed by
     # balancing on the head or by pressing the chassis against the floor.
@@ -227,6 +331,7 @@ class FocusedSkill(walk_turn_stop.WalkTurnStop):
         self._getup_fallen_tilt = (fallen_lo, fallen_hi)
         self._getup_lean_tilt = (lean_lo, lean_hi)
         self._getup_random_joints = os.environ.get("GETUP_RANDOM_JOINTS", "1") != "0"
+        self._backward_yaw_range = _env_pair("BACKWARD_YAW_RANGE", 0.0, 0.0)
         super().__init__(
             task=task,
             config=config if config is not None else focused_config(skill),
@@ -236,10 +341,17 @@ class FocusedSkill(walk_turn_stop.WalkTurnStop):
     def reset(self, rng: jax.Array) -> mjx_env.State:
         """Start recovery episodes from a randomised fallen pose."""
         state = super().reset(rng)
+        info = dict(state.info)
+        initial_quat = self.get_floating_base_qpos(state.data.qpos)[3:7]
+        iw, ix, iy, iz = initial_quat
+        info["initial_yaw"] = jp.arctan2(
+            2.0 * (iw * iz + ix * iy),
+            1.0 - 2.0 * (iy * iy + iz * iz),
+        )
+        state = state.replace(info=info)
         if self.skill != "getup":
             return state
 
-        info = dict(state.info)
         # Start with randomised joint angles rather than the standing pose.  A
         # robot dropped on its back with the home (straight-leg) posture has to
         # discover leg folding on its own, and from-scratch PPO never found it:
@@ -366,7 +478,11 @@ class FocusedSkill(walk_turn_stop.WalkTurnStop):
             mag = jax.random.uniform(
                 x_rng, minval=min(lo, hi), maxval=max(lo, hi)
             )
-            return jp.array([-mag, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0])
+            yaw_lo, yaw_hi = self._backward_yaw_range
+            yaw_command = jax.random.uniform(
+                yaw_rng, minval=min(yaw_lo, yaw_hi), maxval=max(yaw_lo, yaw_hi)
+            )
+            return jp.array([-mag, 0.0, yaw_command, 0.0, 0.0, 0.0, 0.0])
 
         if self.skill == "lateral":
             moving = jax.random.bernoulli(mode_rng, p=0.85)
@@ -461,17 +577,54 @@ class FocusedSkill(walk_turn_stop.WalkTurnStop):
         base_height = self.get_floating_base_qpos(data.qpos)[2]
         height_margin = jp.maximum(0.145 - base_height, 0.0)
         yaw_progress = jp.sign(command[2]) * gyro[2]
+        base_quat = self.get_floating_base_qpos(data.qpos)[3:7]
+        qw, qx, qy, qz = base_quat
+        current_yaw = jp.arctan2(
+            2.0 * (qw * qz + qx * qy),
+            1.0 - 2.0 * (qy * qy + qz * qz),
+        )
+        yaw_delta = jp.arctan2(
+            jp.sin(current_yaw - info["initial_yaw"]),
+            jp.cos(current_yaw - info["initial_yaw"]),
+        )
         # Recovery shaping: "upright" alone can be satisfied by balancing on the
         # head or the back, so the height ratio is multiplied in.  The product is
         # 0 on the floor and 1 in the home stance.
         upright_signal = jp.square(jp.clip(gravity[2], 0.0, 1.0))
         height_signal = jp.clip(base_height / STANDING_BASE_HEIGHT, 0.0, 1.0)
+        # The actor chose `action` from the observation emitted by the previous
+        # state. Joystick.step advances imitation_i before rewards are computed,
+        # so use i-1 to align the teacher action with the phase the actor saw.
+        reference_i = (
+            info["imitation_i"] - 1
+        ) % self.PRM.nb_steps_in_period
+        reference = self.PRM.get_reference_motion(
+            info["command"][0],
+            info["command"][1],
+            info["command"][2],
+            reference_i,
+        )
+        # Reference layout starts with 16 joint positions. The model has no arm
+        # actuators, so skip entries 9 and 10 exactly as native inference does.
+        reference_joints = jp.concatenate([reference[:9], reference[11:16]])
+        reference_action = jp.clip(
+            (reference_joints - self._default_actuator)
+            / self._config.action_scale,
+            -1.0,
+            1.0,
+        )
+        action_mse = jp.mean(jp.square(action - reference_action))
+        action_imitation = jp.exp(
+            -action_mse
+            / float(os.environ.get("BACKWARD_ACTION_IMITATION_SIGMA", "0.25"))
+        )
         rewards.update(
             tracking_xy=jp.nan_to_num(
                 jp.exp(-xy_error / self._config.reward_config.tracking_sigma)
             ),
             lin_vel_xy_error=jp.nan_to_num(xy_error),
             yaw_error=jp.nan_to_num(yaw_error),
+            heading_error=jp.nan_to_num(jp.square(yaw_delta)),
             upright=jp.nan_to_num(upright_signal),
             vertical_velocity=jp.nan_to_num(jp.square(local_velocity[2])),
             angular_xy=jp.nan_to_num(jp.sum(jp.square(gyro[:2]))),
@@ -496,5 +649,7 @@ class FocusedSkill(walk_turn_stop.WalkTurnStop):
             joint_velocity=jp.nan_to_num(
                 jp.sum(jp.square(self.get_actuator_joints_qvel(data.qvel)))
             ),
+            action_imitation=jp.nan_to_num(action_imitation),
+            action_imitation_error=jp.nan_to_num(action_mse),
         )
         return rewards

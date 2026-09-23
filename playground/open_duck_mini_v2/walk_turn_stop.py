@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import os
 from typing import Any, Dict, Optional, Union
 
 import jax
@@ -35,10 +36,27 @@ def default_config() -> config_dict.ConfigDict:
     # so a useful gait is discoverable from scratch, but do not let it dominate.
     config.reward_config.scales.tracking_lin_vel = 20.0
     config.reward_config.scales.lin_vel_error = -50.0
-    config.reward_config.scales.tracking_ang_vel = 8.0
+    config.reward_config.scales.tracking_ang_vel = float(
+        os.environ.get("TRACKING_ANG_VEL_SCALE", "8.0")
+    )
     config.reward_config.scales.imitation = 1.0
     config.reward_config.scales.stand_still = -0.2
     config.reward_config.scales.action_rate = -0.5
+    # A stationary policy still receives substantial tracking reward at modest
+    # commands.  Signed, normalized progress makes "do not move" distinctly
+    # worse than following the requested direction without rewarding overspeed.
+    config.reward_config.scales.normalized_progress = 30.0
+    config.reward_config.scales.progress_shortfall = -30.0
+    config.reward_config.scales.wrong_way = -30.0
+    config.reward_config.scales.normalized_yaw_progress = float(
+        os.environ.get("TURN_PROGRESS_SCALE", "0.0")
+    )
+    config.reward_config.scales.yaw_shortfall = float(
+        os.environ.get("TURN_SHORTFALL_SCALE", "0.0")
+    )
+    config.reward_config.scales.wrong_yaw = float(
+        os.environ.get("TURN_WRONG_WAY_SCALE", "0.0")
+    )
     config.reward_config.tracking_sigma = 0.02
     return config
 
@@ -107,16 +125,42 @@ class WalkTurnStop(joystick.Joystick):
             jax.random.split(rng, 5)
         )
         # 0=stand, 1=walk, 2=turn, 3=walk+turn.
-        mode = jax.random.categorical(
-            mode_rng,
-            jp.log(jp.array([0.10, 0.75, 0.10, 0.05])),
+        mode_weights = [
+            float(value)
+            for value in os.environ.get(
+                "COMMAND_MODE_WEIGHTS", "0.10,0.75,0.10,0.05"
+            ).split(",")
+        ]
+        if len(mode_weights) != 4 or any(value <= 0.0 for value in mode_weights):
+            raise ValueError("COMMAND_MODE_WEIGHTS must contain four positive values")
+        mode_probabilities = jp.asarray(mode_weights) / sum(mode_weights)
+        mode = jax.random.categorical(mode_rng, jp.log(mode_probabilities))
+        min_speed = float(os.environ.get("WALK_MIN_SPEED", "0.10"))
+        max_speed = float(os.environ.get("WALK_MAX_SPEED", "0.15"))
+        x_magnitude = jax.random.uniform(
+            x_mag_rng, minval=min_speed, maxval=max_speed
         )
-        x_magnitude = jax.random.uniform(x_mag_rng, minval=0.10, maxval=0.15)
-        x_sign = jp.where(jax.random.bernoulli(x_sign_rng), 1.0, -1.0)
+        forward_only = os.environ.get("WALK_FORWARD_ONLY", "0") == "1"
+        x_sign = jp.where(
+            forward_only,
+            1.0,
+            jp.where(jax.random.bernoulli(x_sign_rng), 1.0, -1.0),
+        )
+        min_yaw = float(os.environ.get("TURN_MIN_YAW", "0.10"))
+        max_yaw = float(os.environ.get("TURN_MAX_YAW", "0.30"))
         yaw_magnitude = jax.random.uniform(
-            yaw_mag_rng, minval=0.10, maxval=0.30
+            yaw_mag_rng, minval=min_yaw, maxval=max_yaw
         )
-        yaw_sign = jp.where(jax.random.bernoulli(yaw_sign_rng), 1.0, -1.0)
+        positive_yaw_probability = float(
+            os.environ.get("TURN_POSITIVE_PROBABILITY", "0.5")
+        )
+        if not 0.0 <= positive_yaw_probability <= 1.0:
+            raise ValueError("TURN_POSITIVE_PROBABILITY must be between 0 and 1")
+        yaw_sign = jp.where(
+            jax.random.bernoulli(yaw_sign_rng, positive_yaw_probability),
+            1.0,
+            -1.0,
+        )
 
         use_x = (mode == 1) | (mode == 3)
         use_yaw = (mode == 2) | (mode == 3)
@@ -138,7 +182,39 @@ class WalkTurnStop(joystick.Joystick):
             data, action, info, metrics, done, first_contact, contact
         )
         local_velocity = self.get_local_linvel(data)
+        command_x = info["command"][0]
+        command_speed = jp.abs(command_x)
+        direction = jp.sign(command_x)
+        progress_ratio = direction * local_velocity[0] / jp.maximum(
+            command_speed, 0.02
+        )
+        moving = command_speed > 0.01
         rewards["lin_vel_error"] = jp.abs(
-            info["command"][0] - local_velocity[0]
+            command_x - local_velocity[0]
+        )
+        rewards["normalized_progress"] = jp.where(
+            moving, jp.clip(progress_ratio, -1.0, 1.0), 0.0
+        )
+        rewards["progress_shortfall"] = jp.where(
+            moving, jp.maximum(0.8 - progress_ratio, 0.0), 0.0
+        )
+        rewards["wrong_way"] = jp.where(
+            moving, jp.maximum(-progress_ratio, 0.0), 0.0
+        )
+        command_yaw = info["command"][2]
+        yaw_speed = jp.abs(command_yaw)
+        yaw_direction = jp.sign(command_yaw)
+        yaw_ratio = yaw_direction * self.get_gyro(data)[2] / jp.maximum(
+            yaw_speed, 0.05
+        )
+        turning = yaw_speed > 0.01
+        rewards["normalized_yaw_progress"] = jp.where(
+            turning, jp.clip(yaw_ratio, -1.0, 1.0), 0.0
+        )
+        rewards["yaw_shortfall"] = jp.where(
+            turning, jp.maximum(0.8 - yaw_ratio, 0.0), 0.0
+        )
+        rewards["wrong_yaw"] = jp.where(
+            turning, jp.maximum(-yaw_ratio, 0.0), 0.0
         )
         return rewards

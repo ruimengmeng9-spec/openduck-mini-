@@ -84,6 +84,7 @@ class WalkTurnStopRunner(BaseRunner):
         self.ppo_params.num_evals = self.args.num_evals
         self.ppo_params.num_eval_envs = self.args.num_eval_envs
         self.ppo_params.seed = self.args.seed
+        self.ppo_params.learning_rate = self.args.learning_rate
         self.ppo_training_params = dict(self.ppo_params)
 
         if "network_factory" in self.ppo_params:
@@ -134,6 +135,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--num_evals", type=int, default=10)
     parser.add_argument("--num_eval_envs", type=int, default=128)
     parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--learning_rate", type=float, default=1.0e-4)
     parser.add_argument("--task", default="flat_terrain")
     parser.add_argument("--restore_checkpoint_path", default=None)
     parser.add_argument("--no_domain_randomization", action="store_true")
