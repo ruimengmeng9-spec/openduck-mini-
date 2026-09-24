@@ -57,6 +57,15 @@ def default_config() -> config_dict.ConfigDict:
     config.reward_config.scales.wrong_yaw = float(
         os.environ.get("TURN_WRONG_WAY_SCALE", "0.0")
     )
+    config.reward_config.scales.yaw_tracking_error = float(
+        os.environ.get("YAW_TRACKING_ERROR_SCALE", "0.0")
+    )
+    config.reward_config.scales.turn_double_support = float(
+        os.environ.get("TURN_DOUBLE_SUPPORT_SCALE", "0.0")
+    )
+    config.reward_config.reward_floor = float(
+        os.environ.get("REWARD_FLOOR", "0.0")
+    )
     config.reward_config.tracking_sigma = 0.02
     return config
 
@@ -216,5 +225,19 @@ class WalkTurnStop(joystick.Joystick):
         )
         rewards["wrong_yaw"] = jp.where(
             turning, jp.maximum(-yaw_ratio, 0.0), 0.0
+        )
+        # Unlike the clipped progress reward, this term penalizes both
+        # underspeed and overspeed.  Normalizing by the requested yaw rate
+        # keeps its meaning stable across the turn-command curriculum.
+        rewards["yaw_tracking_error"] = jp.where(
+            turning,
+            jp.abs(command_yaw - self.get_gyro(data)[2])
+            / jp.maximum(yaw_speed, 0.05),
+            0.0,
+        )
+        rewards["turn_double_support"] = jp.where(
+            turning,
+            jp.all(contact).astype(jp.float32),
+            0.0,
         )
         return rewards

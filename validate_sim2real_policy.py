@@ -12,6 +12,7 @@ import numpy as np
 
 from open_duck_agent.duck_sim import DuckSimulation
 from playground.common.onnx_infer import OnnxInfer
+from playground.open_duck_mini_v2 import constants
 
 
 ROOT = Path("/data/shijinsheng/open_duck")
@@ -48,7 +49,10 @@ def main() -> None:
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--seeds", type=int, default=3)
     parser.add_argument("--qvel-noise", type=float, default=0.02)
+    parser.add_argument("--contact-friction", type=float)
     args = parser.parse_args()
+    if args.contact_friction is not None and args.contact_friction <= 0:
+        parser.error("--contact-friction must be positive")
     args.output_dir.mkdir(parents=True, exist_ok=True)
 
     rows = []
@@ -58,6 +62,14 @@ def main() -> None:
         )
         simulation.sim.policy = OnnxInfer(str(args.model), awd=True)
         simulation._active_policy_name = args.model.parent.name
+        if args.contact_friction is not None:
+            model = simulation.sim.model
+            contact_geoms = (
+                model.geom("floor").id,
+                model.geom(constants.LEFT_FEET_GEOMS[0]).id,
+                model.geom(constants.RIGHT_FEET_GEOMS[0]).id,
+            )
+            model.geom_friction[list(contact_geoms), 0] = args.contact_friction
         rng = np.random.default_rng(seed)
         simulation.sim.data.qvel[:] += rng.uniform(
             -args.qvel_noise, args.qvel_noise, size=simulation.sim.model.nv
@@ -109,6 +121,7 @@ def main() -> None:
     expected_phases = args.seeds * len(PHASES)
     summary = {
         "model": str(args.model),
+        "contact_friction": args.contact_friction,
         "completed_all_phases": len(rows) == expected_phases
         and not any(row["fallen"] for row in rows),
         "completed_phases": len(rows),

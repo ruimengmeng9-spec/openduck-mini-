@@ -58,7 +58,19 @@ class WalkTurnStopRunner(BaseRunner):
             task=args.task,
             config=walk_turn_stop.default_config(),
         )
-        self.randomizer = None if args.no_domain_randomization else randomize.domain_randomize
+        self.randomizer = None
+        if not args.no_domain_randomization:
+            floor_geom_id = int(self.env._floor_geom_id)
+            foot_geom_ids = tuple(int(value) for value in self.env._feet_geom_id)
+            self.randomizer = functools.partial(
+                randomize.domain_randomize,
+                floor_geom_id=floor_geom_id,
+                foot_geom_ids=foot_geom_ids,
+            )
+            print(
+                "Contact friction randomization geoms:",
+                {"floor": floor_geom_id, "feet": foot_geom_ids},
+            )
         self.action_size = self.env.action_size
         self.obs_size = int(self.env.observation_size["state"][0])
         self.restore_checkpoint_path = args.restore_checkpoint_path
