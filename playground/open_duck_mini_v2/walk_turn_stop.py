@@ -66,6 +66,18 @@ def default_config() -> config_dict.ConfigDict:
     config.reward_config.reward_floor = float(
         os.environ.get("REWARD_FLOOR", "0.0")
     )
+    config.reward_config.negative_turn_imitation_factor = float(
+        os.environ.get("NEGATIVE_TURN_IMITATION_FACTOR", "1.0")
+    )
+    config.reward_config.negative_turn_joint_imitation_factor = float(
+        os.environ.get("NEGATIVE_TURN_JOINT_IMITATION_FACTOR", "1.0")
+    )
+    config.reward_config.negative_turn_reference_speedup = float(
+        os.environ.get("NEGATIVE_TURN_REFERENCE_SPEEDUP", "1.0")
+    )
+    config.reward_config.negative_turn_double_support_multiplier = float(
+        os.environ.get("NEGATIVE_TURN_DOUBLE_SUPPORT_MULTIPLIER", "1.0")
+    )
     config.reward_config.tracking_sigma = 0.02
     return config
 
@@ -157,9 +169,10 @@ class WalkTurnStop(joystick.Joystick):
         )
         min_yaw = float(os.environ.get("TURN_MIN_YAW", "0.10"))
         max_yaw = float(os.environ.get("TURN_MAX_YAW", "0.30"))
-        yaw_magnitude = jax.random.uniform(
-            yaw_mag_rng, minval=min_yaw, maxval=max_yaw
-        )
+        negative_min_yaw = float(os.environ.get("TURN_MIN_YAW_NEG", str(min_yaw)))
+        negative_max_yaw = float(os.environ.get("TURN_MAX_YAW_NEG", str(max_yaw)))
+        if not 0.0 < min_yaw <= max_yaw or not 0.0 < negative_min_yaw <= negative_max_yaw:
+            raise ValueError("Turn command ranges must satisfy 0 < minimum <= maximum")
         positive_yaw_probability = float(
             os.environ.get("TURN_POSITIVE_PROBABILITY", "0.5")
         )
@@ -169,6 +182,11 @@ class WalkTurnStop(joystick.Joystick):
             jax.random.bernoulli(yaw_sign_rng, positive_yaw_probability),
             1.0,
             -1.0,
+        )
+        yaw_magnitude = jax.random.uniform(
+            yaw_mag_rng,
+            minval=jp.where(yaw_sign > 0.0, min_yaw, negative_min_yaw),
+            maxval=jp.where(yaw_sign > 0.0, max_yaw, negative_max_yaw),
         )
 
         use_x = (mode == 1) | (mode == 3)
@@ -187,8 +205,42 @@ class WalkTurnStop(joystick.Joystick):
         first_contact: jax.Array,
         contact: jax.Array,
     ) -> dict[str, jax.Array]:
+        reference_speedup = self._config.reward_config.negative_turn_reference_speedup
+        if reference_speedup != 1.0:
+            command = info["command"]
+            reference_yaw = jp.where(
+                command[2] < -0.01,
+                command[2] * reference_speedup,
+                command[2],
+            )
+            info = dict(info)
+            info["current_reference_motion"] = self.PRM.get_reference_motion(
+                command[0], command[1], reference_yaw, info["imitation_i"]
+            )
         rewards = super()._get_reward(
             data, action, info, metrics, done, first_contact, contact
+        )
+        # The nearest reference gait for a -0.15 rad/s command is sampled at
+        # about -0.074 rad/s, while +0.15 samples +0.185.  The reference
+        # reward's joint-position term is -15 * squared error.  Varying it
+        # separately preserves contact/velocity guidance in a focused test.
+        negative_turn = info["command"][2] < -0.01
+        ref = info["current_reference_motion"]
+        ref_leg_pos = jp.concatenate([ref[:5], ref[11:16]])
+        actuator_pos = self.get_actuator_joints_qpos(data.qpos)
+        leg_pos = jp.concatenate([actuator_pos[:5], actuator_pos[9:]])
+        joint_error = jp.sum(jp.square(leg_pos - ref_leg_pos))
+        rewards["imitation"] += jp.where(
+            negative_turn,
+            15.0
+            * (1.0 - self._config.reward_config.negative_turn_joint_imitation_factor)
+            * joint_error,
+            0.0,
+        )
+        rewards["imitation"] *= jp.where(
+            negative_turn,
+            self._config.reward_config.negative_turn_imitation_factor,
+            1.0,
         )
         local_velocity = self.get_local_linvel(data)
         command_x = info["command"][0]
@@ -239,5 +291,10 @@ class WalkTurnStop(joystick.Joystick):
             turning,
             jp.all(contact).astype(jp.float32),
             0.0,
+        )
+        rewards["turn_double_support"] *= jp.where(
+            command_yaw < -0.01,
+            self._config.reward_config.negative_turn_double_support_multiplier,
+            1.0,
         )
         return rewards

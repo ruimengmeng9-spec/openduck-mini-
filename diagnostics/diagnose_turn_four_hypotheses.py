@@ -91,7 +91,7 @@ def foot_contact_sample(sim) -> dict[str, dict[str, float]]:
     return values
 
 
-def run(model_path: Path, output: Path, yaw_command: float, friction: float) -> dict:
+def run(model_path: Path, output: Path, yaw_command: float, friction: float | None) -> dict:
     simulation = DuckSimulation(REPO, OFFICIAL, output_root=output, warmup_s=0.0)
     sim = simulation.sim
     sim.policy = OnnxInfer(str(model_path), awd=True)
@@ -100,8 +100,9 @@ def run(model_path: Path, output: Path, yaw_command: float, friction: float) -> 
         sim.model.geom(constants.LEFT_FEET_GEOMS[0]).id,
         sim.model.geom(constants.RIGHT_FEET_GEOMS[0]).id,
     ]
-    sim.model.geom_friction[geom_ids, 0] = friction
-    mujoco.mj_forward(sim.model, sim.data)
+    if friction is not None:
+        sim.model.geom_friction[geom_ids, 0] = friction
+        mujoco.mj_forward(sim.model, sim.data)
 
     dt = sim.sim_dt * sim.decimation
     joint_names = [
@@ -259,12 +260,21 @@ def main() -> None:
     parser.add_argument(
         "--frictions", type=float, nargs="+", default=[0.3, 0.6, 1.0, 1.4]
     )
+    parser.add_argument(
+        "--native-friction", action="store_true",
+        help="Keep the XML's floor and sole friction values unchanged",
+    )
+    parser.add_argument(
+        "--commands", type=float, nargs="+", default=[0.15, -0.15],
+        help="Yaw commands in rad/s; each run starts from the same settled pose",
+    )
     args = parser.parse_args()
     args.output_dir.mkdir(parents=True, exist_ok=True)
 
     rows = []
-    for friction in args.frictions:
-        for command in (0.15, -0.15):
+    frictions = [None] if args.native_friction else args.frictions
+    for friction in frictions:
+        for command in args.commands:
             row = run(args.model, args.output_dir, command, friction)
             rows.append(row)
             print(json.dumps(row, ensure_ascii=False), flush=True)

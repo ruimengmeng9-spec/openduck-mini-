@@ -1,0 +1,33 @@
+{
+  "model": "/data/shijinsheng/open_duck/training/official_seed_turn_balance_v5_yaw_error/final.onnx",
+  "reward_floor_in_training": -5.0,
+  "diagnostic_reward_floor": -1000000.0,
+  "rows": [
+    {
+      "yaw_command_rad_s": 0.15,
+      "frames_after_1s": 201,
+      "wrong_way_frames": 11,
+      "wrong_way_fraction": 0.054726,
+      "negative_raw_reward_fraction": 0.044776,
+      "below_training_floor_fraction": 0.00995,
+      "wrong_way_negative_reward_fraction": 0.818182,
+      "mean_raw_reward_correct_way": 1.14563,
+      "mean_raw_reward_wrong_way": -2.500783,
+      "phase_0p4_to_0p7_negative_reward_fraction": 0.015625,
+      "negative_reward_removed_by_floor_sum": 0.999878
+    },
+    {
+      "yaw_command_rad_s": -0.15,
+      "frames_after_1s": 201,
+      "wrong_way_frames": 59,
+      "wrong_way_fraction": 0.293532,
+      "negative_raw_reward_fraction": 0.243781,
+      "below_training_floor_fraction": 0.004975,
+      "wrong_way_negative_reward_fraction": 0.830508,
+      "mean_raw_reward_correct_way": 1.161125,
+      "mean_raw_reward_wrong_way": -1.223816,
+      "phase_0p4_to_0p7_negative_reward_fraction": 0.484375,
+      "negative_reward_removed_by_floor_sum": 0.380949
+    }
+  ]
+}

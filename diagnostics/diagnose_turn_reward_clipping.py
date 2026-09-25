@@ -38,6 +38,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--model", type=Path, default=DEFAULT_MODEL)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
+    parser.add_argument("--training-floor", type=float, default=0.0)
     args = parser.parse_args()
 
     # Reconstruct the reward configuration used by turn-balance v2, but remove
@@ -106,13 +107,20 @@ def main() -> None:
         def mean_reward(items: list[dict]) -> float:
             return float(np.mean([item["raw_reward"] for item in items]))
 
-        lost_negative = sum(max(-item["raw_reward"], 0.0) for item in late)
+        lost_negative = sum(
+            max(args.training_floor - item["raw_reward"], 0.0)
+            for item in late
+        )
         row = {
             "yaw_command_rad_s": yaw_command,
             "frames_after_1s": len(late),
             "wrong_way_frames": len(wrong),
             "wrong_way_fraction": round(len(wrong) / len(late), 6),
             "negative_raw_reward_fraction": round(negative_fraction(late), 6),
+            "below_training_floor_fraction": round(
+                float(np.mean([item["raw_reward"] < args.training_floor for item in late])),
+                6,
+            ),
             "wrong_way_negative_reward_fraction": round(
                 negative_fraction(wrong) if wrong else 0.0, 6
             ),
@@ -132,7 +140,7 @@ def main() -> None:
 
     payload = {
         "model": str(args.model),
-        "reward_floor_in_training": 0.0,
+        "reward_floor_in_training": args.training_floor,
         "diagnostic_reward_floor": -1.0e6,
         "rows": rows,
     }

@@ -41,6 +41,9 @@ def domain_randomize(
     )
     friction_min = float(os.environ.get("CONTACT_FRICTION_MIN", "0.3"))
     friction_max = float(os.environ.get("CONTACT_FRICTION_MAX", "1.4"))
+    randomize_contact_friction = os.environ.get(
+        "RANDOMIZE_CONTACT_FRICTION", "1"
+    ) != "0"
     if not 0.0 < friction_min <= friction_max:
         raise ValueError("CONTACT_FRICTION_MIN/MAX must satisfy 0 < min <= max")
 
@@ -50,8 +53,10 @@ def domain_randomize(
         contact_friction = jax.random.uniform(
             key, minval=friction_min, maxval=friction_max
         )
-        geom_friction = model.geom_friction.at[contact_geom_ids, 0].set(
-            contact_friction
+        geom_friction = (
+            model.geom_friction.at[contact_geom_ids, 0].set(contact_friction)
+            if randomize_contact_friction
+            else model.geom_friction
         )
 
         one_rng, key = jax.random.split(one_rng)
