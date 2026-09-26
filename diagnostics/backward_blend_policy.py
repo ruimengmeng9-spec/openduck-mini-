@@ -29,3 +29,33 @@ class BlendedBackwardPolicy:
             (1.0 - self.reverse_weight) * base + self.reverse_weight * reverse,
             dtype=np.float32,
         )
+
+
+class PitchGuardBackwardPolicy(BlendedBackwardPolicy):
+    """Diagnostic only: fade a reverse policy when measured pitch is negative."""
+
+    def __init__(self, base, reverse, pitch_degrees, full_reverse_deg,
+                 full_guard_deg, guard_reverse_weight):
+        super().__init__(base, reverse, guard_reverse_weight)
+        if not full_guard_deg < full_reverse_deg:
+            raise ValueError("full_guard_deg must be below full_reverse_deg")
+        self.pitch_degrees = pitch_degrees
+        self.full_reverse_deg = full_reverse_deg
+        self.full_guard_deg = full_guard_deg
+        self.guard_reverse_weight = guard_reverse_weight
+
+    def infer(self, obs: np.ndarray) -> np.ndarray:
+        pitch = float(self.pitch_degrees())
+        if not np.isfinite(pitch):
+            raise ValueError("Pitch must be finite")
+        fraction = float(np.clip(
+            (pitch - self.full_guard_deg)
+            / (self.full_reverse_deg - self.full_guard_deg), 0.0, 1.0
+        ))
+        self.reverse_weight = self.guard_reverse_weight + (1.0 - self.guard_reverse_weight) * fraction
+        # Apply a temporary weight; never let a previous step's weight become
+        # the next step's guard floor.
+        try:
+            return super().infer(obs)
+        finally:
+            self.reverse_weight = self.guard_reverse_weight

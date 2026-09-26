@@ -34,6 +34,8 @@ def main() -> None:
     parser.add_argument("--no-motor-slew-limit", action="store_true")
     parser.add_argument("--base-model", type=Path, help="Optional balanced model for reverse blending")
     parser.add_argument("--reverse-weight", type=float, default=1.0)
+    parser.add_argument("--pitch-guard-full-reverse-deg", type=float)
+    parser.add_argument("--pitch-guard-full-guard-deg", type=float, default=-18.0)
     parser.add_argument(
         "--heading-kp",
         type=float,
@@ -48,6 +50,8 @@ def main() -> None:
         parser.error("--reverse-weight must be in [0, 1]")
     if args.reverse_weight != 1.0 and not args.base_model:
         parser.error("--base-model is required when --reverse-weight is not 1")
+    if args.pitch_guard_full_reverse_deg is not None and not args.base_model:
+        parser.error("--base-model is required for pitch guarding")
     args.output_dir.mkdir(parents=True, exist_ok=True)
 
     rows = []
@@ -58,13 +62,29 @@ def main() -> None:
         )
         simulation.sim.policy = OnnxInfer(str(args.model), awd=True)
         if args.base_model:
-            from diagnostics.backward_blend_policy import BlendedBackwardPolicy
-
-            simulation.sim.policy = BlendedBackwardPolicy(
-                OnnxInfer(str(args.base_model), awd=True),
-                simulation.sim.policy,
-                args.reverse_weight,
+            from diagnostics.backward_blend_policy import (
+                BlendedBackwardPolicy, PitchGuardBackwardPolicy,
             )
+
+            base = OnnxInfer(str(args.base_model), awd=True)
+            if args.pitch_guard_full_reverse_deg is None:
+                simulation.sim.policy = BlendedBackwardPolicy(
+                    base, simulation.sim.policy, args.reverse_weight,
+                )
+            else:
+                def current_pitch_degrees() -> float:
+                    q = simulation.sim.get_floating_base_qpos(simulation.sim.data.qpos)
+                    w, x, y, z = (float(v) for v in q[3:7])
+                    return math.degrees(math.asin(float(np.clip(
+                        2 * (w * y - z * x), -1.0, 1.0
+                    ))))
+
+                simulation.sim.policy = PitchGuardBackwardPolicy(
+                    base, simulation.sim.policy, current_pitch_degrees,
+                    args.pitch_guard_full_reverse_deg,
+                    args.pitch_guard_full_guard_deg,
+                    args.reverse_weight,
+                )
         simulation._active_policy_name = args.model.parent.name
         if args.reset_phase_on_start:
             simulation.sim.imitation_i = 0
@@ -136,6 +156,8 @@ def main() -> None:
             "model": str(args.model),
             "base_model": str(args.base_model) if args.base_model else None,
             "reverse_weight": args.reverse_weight,
+            "pitch_guard_full_reverse_deg": args.pitch_guard_full_reverse_deg,
+            "pitch_guard_full_guard_deg": args.pitch_guard_full_guard_deg,
             "command_mps": args.speed,
             "qvel_noise": args.qvel_noise,
             "warmup_s": args.warmup_s,

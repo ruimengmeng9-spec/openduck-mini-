@@ -1,0 +1,38 @@
+{
+  "model": "/data/shijinsheng/open_duck/training/backward_regularized_v26/final.onnx",
+  "base_model": "/data/shijinsheng/open_duck/training/official_seed_turn_balance_v5_yaw_error/final.onnx",
+  "reverse_weight": 0.9,
+  "seed": 0,
+  "motor_slew_limit_enabled": true,
+  "command_mps": -0.074,
+  "duration_s": 5.0,
+  "fallen": false,
+  "forward_displacement_m": -0.03617537110953322,
+  "min_up_z": 0.9709342706839421,
+  "max_abs_pitch_deg": 13.786886980432914,
+  "max_abs_roll_deg": 5.13907702546853,
+  "max_slew_clip_rad": 0.13583361436128616,
+  "max_joint_tracking_error_rad": 0.20393362233866802,
+  "windows": {
+    "first_second": {
+      "up_z": 0.989215,
+      "pitch_deg": -6.833776,
+      "roll_deg": 0.537009,
+      "local_vx_mps": -0.044351,
+      "left_contact_n": 9.088571,
+      "right_contact_n": 11.563443,
+      "max_slew_clip_rad": 0.00292,
+      "joint_tracking_mae_rad": 0.025634
+    },
+    "prefall_half_second": {
+      "up_z": 0.973836,
+      "pitch_deg": -12.894232,
+      "roll_deg": 2.291879,
+      "local_vx_mps": 0.000691,
+      "left_contact_n": 9.734885,
+      "right_contact_n": 10.935499,
+      "max_slew_clip_rad": 0.0,
+      "joint_tracking_mae_rad": 0.014577
+    }
+  }
+}
