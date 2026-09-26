@@ -29,6 +29,11 @@ def main() -> None:
     parser.add_argument("--speed", type=float, default=-0.074)
     parser.add_argument("--seeds", type=int, default=5)
     parser.add_argument("--qvel-noise", type=float, default=0.02)
+    parser.add_argument("--warmup-s", type=float, default=3.0)
+    parser.add_argument("--reset-phase-on-start", action="store_true")
+    parser.add_argument("--no-motor-slew-limit", action="store_true")
+    parser.add_argument("--base-model", type=Path, help="Optional balanced model for reverse blending")
+    parser.add_argument("--reverse-weight", type=float, default=1.0)
     parser.add_argument(
         "--heading-kp",
         type=float,
@@ -39,16 +44,33 @@ def main() -> None:
     parser.add_argument("--yaw-command", type=float, default=0.0)
     parser.add_argument("--control-period-s", type=float, default=0.2)
     args = parser.parse_args()
+    if not 0.0 <= args.reverse_weight <= 1.0:
+        parser.error("--reverse-weight must be in [0, 1]")
+    if args.reverse_weight != 1.0 and not args.base_model:
+        parser.error("--base-model is required when --reverse-weight is not 1")
     args.output_dir.mkdir(parents=True, exist_ok=True)
 
     rows = []
     for seed in range(args.seeds):
         rng = np.random.default_rng(seed)
         simulation = DuckSimulation(
-            REPO, OFFICIAL, output_root=args.output_dir, warmup_s=3.0
+            REPO, OFFICIAL, output_root=args.output_dir, warmup_s=args.warmup_s
         )
         simulation.sim.policy = OnnxInfer(str(args.model), awd=True)
+        if args.base_model:
+            from diagnostics.backward_blend_policy import BlendedBackwardPolicy
+
+            simulation.sim.policy = BlendedBackwardPolicy(
+                OnnxInfer(str(args.base_model), awd=True),
+                simulation.sim.policy,
+                args.reverse_weight,
+            )
         simulation._active_policy_name = args.model.parent.name
+        if args.reset_phase_on_start:
+            simulation.sim.imitation_i = 0
+            simulation.sim.imitation_phase = np.array([1.0, 0.0], dtype=np.float32)
+        if args.no_motor_slew_limit:
+            simulation.sim.max_motor_velocity = float("inf")
         simulation.sim.data.qvel[:] += rng.uniform(
             -args.qvel_noise, args.qvel_noise, size=simulation.sim.model.nv
         )
@@ -112,8 +134,13 @@ def main() -> None:
         row = {
             "seed": seed,
             "model": str(args.model),
+            "base_model": str(args.base_model) if args.base_model else None,
+            "reverse_weight": args.reverse_weight,
             "command_mps": args.speed,
             "qvel_noise": args.qvel_noise,
+            "warmup_s": args.warmup_s,
+            "reset_phase_on_start": args.reset_phase_on_start,
+            "motor_slew_limit_enabled": not args.no_motor_slew_limit,
             "heading_kp": args.heading_kp,
             "executed_duration_s": round(elapsed, 6),
             "fallen": fallen,

@@ -289,7 +289,7 @@ def main() -> None:
     )
     parser.add_argument("--negative-residual", type=Path)
     parser.add_argument(
-        "--negative-residual-band", choices=("narrow", "wide"), default="narrow"
+        "--negative-residual-band", choices=("narrow", "wide", "extended"), default="narrow"
     )
     args = parser.parse_args()
     args.output_dir.mkdir(parents=True, exist_ok=True)

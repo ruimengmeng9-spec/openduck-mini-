@@ -52,6 +52,14 @@ def main() -> None:
     parser.add_argument("--qvel-noise", type=float, default=0.02)
     parser.add_argument("--contact-friction", type=float)
     parser.add_argument(
+        "--mass-scale", type=float, default=1.0,
+        help="Diagnostic only: scale body masses and inertias before warm-up",
+    )
+    parser.add_argument(
+        "--no-motor-slew-limit", action="store_true",
+        help="Diagnostic only: match a runtime with motor-target slew clipping disabled",
+    )
+    parser.add_argument(
         "--mirror-negative-phase", choices=("same", "flip"),
         help="Diagnostic only: mirror the policy for negative yaw commands",
     )
@@ -64,12 +72,14 @@ def main() -> None:
         help="Diagnostic only: learned ONNX action residual for -0.15 rad/s",
     )
     parser.add_argument(
-        "--negative-residual-band", choices=("narrow", "wide"), default="narrow",
+        "--negative-residual-band", choices=("narrow", "wide", "extended"), default="narrow",
     )
     parser.add_argument("--negative-yaw", type=float, default=-0.15)
     args = parser.parse_args()
     if args.contact_friction is not None and args.contact_friction <= 0:
         parser.error("--contact-friction must be positive")
+    if not 0.5 <= args.mass_scale <= 1.5:
+        parser.error("--mass-scale must be in [0.5, 1.5]")
     if not 0.0 <= args.mirror_negative_blend <= 1.0:
         parser.error("--mirror-negative-blend must be in [0, 1]")
     if args.negative_residual and args.mirror_negative_phase:
@@ -81,8 +91,18 @@ def main() -> None:
     rows = []
     for seed in range(args.seed_start, args.seed_start + args.seeds):
         simulation = DuckSimulation(
-            REPO, OFFICIAL, output_root=args.output_dir, warmup_s=3.0
+            REPO, OFFICIAL, output_root=args.output_dir,
+            warmup_s=0.0 if args.mass_scale != 1.0 else 3.0,
         )
+        if args.mass_scale != 1.0:
+            simulation.sim.model.body_mass[1:] *= args.mass_scale
+            simulation.sim.model.body_inertia[1:] *= args.mass_scale
+            mujoco.mj_setConst(simulation.sim.model, simulation.sim.data)
+            # mj_setConst may replace the data pose while rebuilding constants.
+            simulation.reset()
+            simulation.stand(3.0, source="mass_scaled_warmup")
+        if args.no_motor_slew_limit:
+            simulation.sim.max_motor_velocity = float("inf")
         simulation.sim.policy = OnnxInfer(str(args.model), awd=True)
         if args.negative_residual:
             from diagnostics.negative_turn_residual import ResidualNegativePolicy
@@ -164,6 +184,8 @@ def main() -> None:
         "model": str(args.model),
         "seed_start": args.seed_start,
         "contact_friction": args.contact_friction,
+        "mass_scale": args.mass_scale,
+        "motor_slew_limit_enabled": not args.no_motor_slew_limit,
         "mirror_negative_phase": args.mirror_negative_phase,
         "mirror_negative_blend": args.mirror_negative_blend,
         "negative_residual": str(args.negative_residual) if args.negative_residual else None,

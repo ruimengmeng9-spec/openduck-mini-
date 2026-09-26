@@ -8,6 +8,7 @@ cloning problem; PPO can later add state feedback and robustness.
 from __future__ import annotations
 
 import argparse
+import json
 import sys
 from pathlib import Path
 
@@ -43,7 +44,7 @@ REF_TO_ACT = [0, 1, 2, 3, 4, 5, 6, 7, 8, 11, 12, 13, 14, 15]
 
 
 class PhasePolicy(nn.Module):
-    def __init__(self) -> None:
+    def __init__(self, unbounded: bool = False) -> None:
         super().__init__()
         self.network = nn.Sequential(
             nn.Linear(3, 256),
@@ -51,7 +52,7 @@ class PhasePolicy(nn.Module):
             nn.Linear(256, 256),
             nn.Tanh(),
             nn.Linear(256, 14),
-            nn.Tanh(),
+            nn.Identity() if unbounded else nn.Tanh(),
         )
 
     def forward(self, obs: torch.Tensor) -> torch.Tensor:
@@ -67,6 +68,10 @@ def main() -> None:
     parser.add_argument("--speed", type=float, default=-0.074)
     parser.add_argument("--epochs", type=int, default=8000)
     parser.add_argument("--learning-rate", type=float, default=2e-3)
+    parser.add_argument(
+        "--unbounded", action="store_true",
+        help="Fit the full reference instead of clipping actions to [-1, 1]",
+    )
     args = parser.parse_args()
 
     sys.path.insert(0, str(REPO))
@@ -83,13 +88,14 @@ def main() -> None:
             prm.get_reference_motion(args.speed, 0.0, 0.0, phase_i),
             dtype=np.float32,
         )
-        targets[phase_i] = np.clip(
-            (ref[REF_TO_ACT] - DEFAULT_ACTUATOR) / 0.25, -1.0, 1.0
+        full_target = (ref[REF_TO_ACT] - DEFAULT_ACTUATOR) / 0.25
+        targets[phase_i] = (
+            full_target if args.unbounded else np.clip(full_target, -1.0, 1.0)
         )
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     torch.manual_seed(21)
-    model = PhasePolicy().to(device)
+    model = PhasePolicy(unbounded=args.unbounded).to(device)
     obs_tensor = torch.from_numpy(observations).to(device)
     target_tensor = torch.from_numpy(targets).to(device)
     optimizer = torch.optim.AdamW(model.parameters(), lr=args.learning_rate)
@@ -130,8 +136,23 @@ def main() -> None:
         opset_version=17,
         dynamo=False,
     )
+    summary = {
+        "speed_mps": args.speed,
+        "epochs": args.epochs,
+        "unbounded": args.unbounded,
+        "phase_samples": int(observations.shape[0]),
+        "target_max_abs": float(np.max(np.abs(targets))),
+        "best_training_mse": best_loss,
+        "final_mse": final_mse,
+        "max_abs_error": max_error,
+        "onnx_path": str(args.output),
+    }
+    (args.output.parent / "training_summary.json").write_text(
+        json.dumps(summary, indent=2), encoding="utf-8"
+    )
     print(f"device={device}")
     print(f"final_mse={final_mse:.10f} max_abs_error={max_error:.8f}")
+    print(f"unbounded={args.unbounded} target_max_abs={float(np.max(np.abs(targets))):.6f}")
     print(f"saved={args.output}")
 
 
