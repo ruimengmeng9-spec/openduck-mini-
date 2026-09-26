@@ -1,0 +1,29 @@
+{
+  "dataset": "/data/shijinsheng/open_duck/training/negative_mirror_distill_v1/dataset.npz",
+  "additional_datasets": [
+    "/data/shijinsheng/open_duck/training/negative_mirror_distill_v1/dataset_dagger1.npz"
+  ],
+  "train_samples": 9500,
+  "validation_samples": 2500,
+  "validation_seeds": [
+    0,
+    5,
+    10,
+    15,
+    20,
+    25,
+    30,
+    35,
+    40,
+    45
+  ],
+  "best_epoch": 118,
+  "validation_mse": 1.986151073651854e-05,
+  "teacher_residual_rmse": 0.3057643473148346,
+  "model_type": "residual_mlp_115x128x128x14",
+  "residual_activation_range_rad_s": [
+    -0.16,
+    -0.14
+  ],
+  "simulation_only": true
+}

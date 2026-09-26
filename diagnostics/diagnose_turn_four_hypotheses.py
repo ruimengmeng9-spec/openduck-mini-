@@ -91,10 +91,20 @@ def foot_contact_sample(sim) -> dict[str, dict[str, float]]:
     return values
 
 
-def run(model_path: Path, output: Path, yaw_command: float, friction: float | None) -> dict:
+def run(
+    model_path: Path, output: Path, yaw_command: float,
+    friction: float | None, negative_residual: Path | None = None,
+    negative_residual_band: str = "narrow",
+) -> dict:
     simulation = DuckSimulation(REPO, OFFICIAL, output_root=output, warmup_s=0.0)
     sim = simulation.sim
     sim.policy = OnnxInfer(str(model_path), awd=True)
+    if negative_residual:
+        from diagnostics.negative_turn_residual import ResidualNegativePolicy
+
+        sim.policy = ResidualNegativePolicy(
+            sim.policy, negative_residual, command_band=negative_residual_band
+        )
     geom_ids = [
         sim.model.geom("floor").id,
         sim.model.geom(constants.LEFT_FEET_GEOMS[0]).id,
@@ -137,10 +147,15 @@ def run(model_path: Path, output: Path, yaw_command: float, friction: float | No
         clipping = np.abs(requested - applied)
         contacts = foot_contact_sample(sim)
         if collect:
+            base_qpos = sim.get_floating_base_qpos(sim.data.qpos)
+            up_z = float(
+                1.0 - 2.0 * (base_qpos[4] ** 2 + base_qpos[5] ** 2)
+            )
             turn_rows.append(
                 {
                     "phase": phase,
                     "gyro_z": float(observation[2]),
+                    "up_z": up_z,
                     "clip": clipping,
                     "contacts": contacts,
                 }
@@ -203,6 +218,10 @@ def run(model_path: Path, output: Path, yaw_command: float, friction: float | No
         "heading_change_deg": round(math.degrees(wrap(end_yaw - start_yaw)), 6),
         "mean_yaw_rate_rad_s": round(float(np.mean(gyros[50:])), 6),
         "wrong_way_fraction_after_1s": round(float(np.mean(wrong[50:])), 6),
+        "minimum_up_vector_z": round(
+            float(min(row["up_z"] for row in turn_rows)), 6
+        ),
+        "final_up_vector_z": round(float(turn_rows[-1]["up_z"]), 6),
         "motor_slew": {
             "any_joint_clipped_frame_fraction": round(
                 float(np.mean(np.any(clips > 1e-7, axis=1))), 6
@@ -268,6 +287,10 @@ def main() -> None:
         "--commands", type=float, nargs="+", default=[0.15, -0.15],
         help="Yaw commands in rad/s; each run starts from the same settled pose",
     )
+    parser.add_argument("--negative-residual", type=Path)
+    parser.add_argument(
+        "--negative-residual-band", choices=("narrow", "wide"), default="narrow"
+    )
     args = parser.parse_args()
     args.output_dir.mkdir(parents=True, exist_ok=True)
 
@@ -275,10 +298,18 @@ def main() -> None:
     frictions = [None] if args.native_friction else args.frictions
     for friction in frictions:
         for command in args.commands:
-            row = run(args.model, args.output_dir, command, friction)
+            row = run(
+                args.model, args.output_dir, command, friction,
+                args.negative_residual, args.negative_residual_band,
+            )
             rows.append(row)
             print(json.dumps(row, ensure_ascii=False), flush=True)
-    payload = {"model": str(args.model), "rows": rows}
+    payload = {
+        "model": str(args.model),
+        "negative_residual": str(args.negative_residual) if args.negative_residual else None,
+        "negative_residual_band": args.negative_residual_band,
+        "rows": rows,
+    }
     result_path = args.output_dir / "results.json"
     result_path.write_text(
         json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8"

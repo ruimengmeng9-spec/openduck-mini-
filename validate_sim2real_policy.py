@@ -48,19 +48,58 @@ def main() -> None:
     parser.add_argument("--model", type=Path, default=DEFAULT_MODEL)
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--seeds", type=int, default=3)
+    parser.add_argument("--seed-start", type=int, default=0)
     parser.add_argument("--qvel-noise", type=float, default=0.02)
     parser.add_argument("--contact-friction", type=float)
+    parser.add_argument(
+        "--mirror-negative-phase", choices=("same", "flip"),
+        help="Diagnostic only: mirror the policy for negative yaw commands",
+    )
+    parser.add_argument(
+        "--mirror-negative-blend", type=float, default=1.0,
+        help="Diagnostic only: weight of mirrored action versus original action",
+    )
+    parser.add_argument(
+        "--negative-residual", type=Path,
+        help="Diagnostic only: learned ONNX action residual for -0.15 rad/s",
+    )
+    parser.add_argument(
+        "--negative-residual-band", choices=("narrow", "wide"), default="narrow",
+    )
+    parser.add_argument("--negative-yaw", type=float, default=-0.15)
     args = parser.parse_args()
     if args.contact_friction is not None and args.contact_friction <= 0:
         parser.error("--contact-friction must be positive")
+    if not 0.0 <= args.mirror_negative_blend <= 1.0:
+        parser.error("--mirror-negative-blend must be in [0, 1]")
+    if args.negative_residual and args.mirror_negative_phase:
+        parser.error("Choose either --negative-residual or --mirror-negative-phase")
+    if not -0.3 <= args.negative_yaw < 0.0:
+        parser.error("--negative-yaw must be in [-0.3, 0)")
     args.output_dir.mkdir(parents=True, exist_ok=True)
 
     rows = []
-    for seed in range(args.seeds):
+    for seed in range(args.seed_start, args.seed_start + args.seeds):
         simulation = DuckSimulation(
             REPO, OFFICIAL, output_root=args.output_dir, warmup_s=3.0
         )
         simulation.sim.policy = OnnxInfer(str(args.model), awd=True)
+        if args.negative_residual:
+            from diagnostics.negative_turn_residual import ResidualNegativePolicy
+
+            simulation.sim.policy = ResidualNegativePolicy(
+                simulation.sim.policy, args.negative_residual,
+                command_band=args.negative_residual_band,
+            )
+        if args.mirror_negative_phase:
+            from diagnostics.test_turn_mirror_policy import MirrorNegativePolicy
+
+            simulation.sim.policy = MirrorNegativePolicy(
+                simulation.sim.policy,
+                simulation.sim.default_actuator,
+                flip_phase=args.mirror_negative_phase == "flip",
+                blend=args.mirror_negative_blend,
+            )
         simulation._active_policy_name = args.model.parent.name
         if args.contact_friction is not None:
             model = simulation.sim.model
@@ -77,6 +116,8 @@ def main() -> None:
         mujoco.mj_forward(simulation.sim.model, simulation.sim.data)
 
         for phase, duration, command in PHASES:
+            if phase == "turn_negative":
+                command = [0.0, 0.0, args.negative_yaw, 0.0, 0.0, 0.0, 0.0]
             start = simulation.sim.get_floating_base_qpos(
                 simulation.sim.data.qpos
             ).copy()
@@ -121,7 +162,13 @@ def main() -> None:
     expected_phases = args.seeds * len(PHASES)
     summary = {
         "model": str(args.model),
+        "seed_start": args.seed_start,
         "contact_friction": args.contact_friction,
+        "mirror_negative_phase": args.mirror_negative_phase,
+        "mirror_negative_blend": args.mirror_negative_blend,
+        "negative_residual": str(args.negative_residual) if args.negative_residual else None,
+        "negative_residual_band": args.negative_residual_band,
+        "negative_yaw": args.negative_yaw,
         "completed_all_phases": len(rows) == expected_phases
         and not any(row["fallen"] for row in rows),
         "completed_phases": len(rows),
