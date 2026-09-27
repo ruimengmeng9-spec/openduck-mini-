@@ -678,13 +678,24 @@ class FocusedSkill(walk_turn_stop.WalkTurnStop):
             -action_mse
             / float(os.environ.get("BACKWARD_ACTION_IMITATION_SIGMA", "0.25"))
         )
+        # Accumulated heading drift is staged in backward training.  A delayed
+        # ramp preserves the stable contact gait while PPO first learns to move;
+        # the default (zero warmup, one-step ramp) preserves existing behavior.
         rewards.update(
             tracking_xy=jp.nan_to_num(
                 jp.exp(-xy_error / self._config.reward_config.tracking_sigma)
             ),
             lin_vel_xy_error=jp.nan_to_num(xy_error),
             yaw_error=jp.nan_to_num(yaw_error),
-            heading_error=jp.nan_to_num(jp.square(yaw_delta)),
+            heading_error=jp.nan_to_num(
+                jp.square(yaw_delta)
+                * jp.clip(
+                    (info["step"] - float(os.environ.get("BACKWARD_HEADING_WARMUP_STEPS", "0")))
+                    / max(float(os.environ.get("BACKWARD_HEADING_RAMP_STEPS", "1")), 1.0),
+                    0.0,
+                    1.0,
+                )
+            ),
             upright=jp.nan_to_num(upright_signal),
             vertical_velocity=jp.nan_to_num(jp.square(local_velocity[2])),
             angular_xy=jp.nan_to_num(jp.sum(jp.square(gyro[:2]))),
