@@ -1,0 +1,54 @@
+{
+  "question": "Can a reverse policy satisfy the independent acceptance gate: 10 s upright on 5 perturbed seeds AND mean reverse speed at least half the -0.074 m/s command?",
+  "gate": "duration >= 10 s, 5/5 seeds, |mean forward speed| >= 0.037 m/s",
+  "method": "validate_backward_sustained.py, native MuJoCo, unchanged flat-terrain XML, motor slew limit on, 3 s standing warm-up, independent +/-0.02 qvel perturbations per seed, command -0.074 m/s",
+  "runs": [
+    {
+      "candidate": "backward_rear_support_v29",
+      "steps": 4259840,
+      "reward_terms": "rear support-shortfall penalty",
+      "completed_10s": "0/5",
+      "mean_forward_speed_mps": -0.11151,
+      "durations_s": [
+        1.56,
+        1.54,
+        1.56,
+        1.54,
+        1.56
+      ],
+      "verdict": "Fails: fast reverse (-0.112) but falls at ~1.55 s. Penalising the COM-behind-support precursor alone does not fix it."
+    },
+    {
+      "candidate": "backward_contact_step_v30",
+      "steps": 4259840,
+      "reward_terms": "rear support-shortfall + single support + swing rear foot reward",
+      "completed_10s": "5/5",
+      "mean_forward_speed_mps": -0.02761,
+      "durations_s": [
+        10.0,
+        10.0,
+        10.0,
+        10.0,
+        10.0
+      ],
+      "verdict": "FIRST REVERSE POLICY TO PASS THE STABILITY HALF: 5/5 upright for the full window. Speed -0.028 is below the 0.037 requirement, so the gate as a whole is not met yet."
+    },
+    {
+      "candidate": "backward_heading_v31",
+      "steps": 4259840,
+      "reward_terms": "v30 contact group + heading error + yaw error + lin-vel XY error",
+      "completed_10s": "1/5",
+      "mean_forward_speed_mps": -0.04492,
+      "durations_s": [
+        10.0,
+        4.56,
+        6.34,
+        7.36,
+        5.8
+      ],
+      "verdict": "Regression: adding the heading/yaw/lin-vel group on top of v30 drops completion from 5/5 to 1/5."
+    }
+  ],
+  "conclusion": "Contact-aware stepping (v30) is the first mechanism to buy sustained reverse stability, confirming the 2026-09-26 prediction that the failure is rear foot placement and pitch recovery rather than reward magnitude. The remaining gap is speed: v30 trades speed for stability. The heading constraints in v31 are counterproductive on top of v30 and should not be used when pursuing speed.",
+  "next": "v32 restores v30's contact group, drops the v31 heading group, and raises only the two speed-pressure terms (normalized_progress / progress_shortfall) to 2x and 4x."
+}

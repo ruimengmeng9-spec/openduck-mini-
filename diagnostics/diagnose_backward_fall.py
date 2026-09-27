@@ -45,6 +45,9 @@ def main() -> None:
     parser.add_argument("--speed", type=float, default=-0.074)
     parser.add_argument("--duration-s", type=float, default=5.0)
     parser.add_argument("--no-motor-slew-limit", action="store_true")
+    parser.add_argument("--temporal-mode", type=str)
+    parser.add_argument("--flip-strength", type=float, default=1.0)
+    parser.add_argument("--forward-teacher-speed", type=float)
     parser.add_argument("--output-dir", type=Path, required=True)
     args = parser.parse_args()
     if not -0.15 <= args.speed < 0:
@@ -58,6 +61,12 @@ def main() -> None:
     simulation = DuckSimulation(REPO, OFFICIAL, output_root=args.output_dir, warmup_s=3.0)
     sim = simulation.sim
     candidate = OnnxInfer(str(args.model), awd=True)
+    if args.temporal_mode:
+        from diagnostics.test_backward_temporal_mirror import TemporalMirrorPolicy
+        candidate = TemporalMirrorPolicy(
+            candidate, args.temporal_mode, args.flip_strength,
+            forward_teacher_speed=args.forward_teacher_speed,
+        )
     sim.policy = (
         BlendedBackwardPolicy(OnnxInfer(str(args.base_model), awd=True), candidate,
                               args.reverse_weight)
@@ -79,6 +88,7 @@ def main() -> None:
     from playground.open_duck_mini_v2 import constants
     foot_ids = [sim.model.geom(constants.LEFT_FEET_GEOMS[0]).id,
                 sim.model.geom(constants.RIGHT_FEET_GEOMS[0]).id]
+    foot_site_ids = [sim.model.site(name).id for name in constants.FEET_SITES]
     floor_id = sim.model.geom("floor").id
 
     rows: list[dict] = []
@@ -98,7 +108,9 @@ def main() -> None:
         roll, pitch, yaw = orientation(base)
         contacts = foot_contact_sample(sim)
         feet = np.asarray(sim.data.geom_xpos[foot_ids], dtype=float)
+        foot_sites = np.asarray(sim.data.site_xpos[foot_site_ids], dtype=float)
         com = np.asarray(sim.data.subtree_com[sim.model.body("base").id], dtype=float)
+        heading_xy = np.asarray([math.cos(start_yaw), math.sin(start_yaw)])
         support_x = [
             float(np.dot(np.asarray(sim.data.contact[i].pos[:2]) - com[:2],
                          [math.cos(start_yaw), math.sin(start_yaw)]))
@@ -108,6 +120,10 @@ def main() -> None:
                                 int(sim.data.contact[i].geom2)) for foot_id in foot_ids)
         ]
         actual_joints = np.asarray(sim.data.qpos[joint_addresses], dtype=float)
+        site_rear_margin = max(
+            -float(np.dot(site[:2] - com[:2], heading_xy))
+            for site in foot_sites
+        )
         dx, dy = base[0] - start[0], base[1] - start[1]
         forward = math.cos(start_yaw) * dx + math.sin(start_yaw) * dy
         row = {
@@ -121,6 +137,7 @@ def main() -> None:
             "local_vx_mps": float(sensor(sim, "local_linvel")[0]),
             "pitch_rate_rad_s": float(sensor(sim, "gyro")[1]),
             "com_rear_support_margin_m": -min(support_x) if support_x else None,
+            "site_rear_margin_m": site_rear_margin,
             "com_front_support_margin_m": max(support_x) if support_x else None,
             "left_contact_n": contacts["left"]["normal_n"],
             "right_contact_n": contacts["right"]["normal_n"],
@@ -158,6 +175,9 @@ def main() -> None:
     summary = {
         "model": str(args.model), "base_model": str(args.base_model) if args.base_model else None,
         "reverse_weight": args.reverse_weight, "seed": args.seed,
+        "temporal_mode": args.temporal_mode,
+        "flip_strength": args.flip_strength,
+        "forward_teacher_speed": args.forward_teacher_speed,
         "motor_slew_limit_enabled": not args.no_motor_slew_limit,
         "command_mps": args.speed, "duration_s": rows[-1]["time_s"],
         "fallen": rows[-1]["up_z"] < 0.5 or rows[-1]["base_height_m"] < 0.08,

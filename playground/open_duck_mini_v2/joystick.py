@@ -1,3 +1,4 @@
+import os
 # Copyright 2025 DeepMind Technologies Limited
 # Copyright 2025 Antoine Pirrone - Steve Nguyen
 #
@@ -574,6 +575,21 @@ class Joystick(open_duck_mini_v2_base.OpenDuckMiniV2Env):
         #     * self._config.noise_config.scales.linvel
         # )
 
+        # V8 diagnostic/training:
+        # For negative yaw commands, expose the gait phase to the actor
+        # shifted by half a cycle:
+        # [cos(phi+pi), sin(phi+pi)] = [-cos(phi), -sin(phi)].
+        #
+        # This changes only the actor observation. The physical gait clock,
+        # reference motion and reward phase remain untouched.
+        actor_imitation_phase = info["imitation_phase"]
+        if os.environ.get("NEGATIVE_TURN_PHASE_FLIP", "0") == "1":
+            actor_imitation_phase = jp.where(
+                info["command"][2] < -0.01,
+                -actor_imitation_phase,
+                actor_imitation_phase,
+            )
+
         state = jp.hstack(
             [
                 # noisy_linvel,  # 3
@@ -591,7 +607,7 @@ class Joystick(open_duck_mini_v2_base.OpenDuckMiniV2Env):
                 contact,  # 2
                 # info["current_reference_motion"],
                 # info["imitation_i"],
-                info["imitation_phase"],
+                actor_imitation_phase,
             ]
         )
 

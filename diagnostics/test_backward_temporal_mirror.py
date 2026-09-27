@@ -40,7 +40,11 @@ class TemporalMirrorPolicy:
     def __init__(self, base: OnnxInfer, mode: str, flip_strength: float = 1.0,
                  pitch_degrees=None, guard_start_deg: float | None = None,
                  guard_full_deg: float = -15.0,
-                 guard_strength: float = 0.3):
+                 guard_strength: float = 0.3,
+                 forward_teacher_speed: float | None = None,
+                 phase_window_start: float | None = None,
+                 phase_window_end: float | None = None,
+                 phase_window_strength: float | None = None):
         self.base = base
         self.mode = mode
         self.flip_strength = flip_strength
@@ -48,25 +52,61 @@ class TemporalMirrorPolicy:
         self.guard_start_deg = guard_start_deg
         self.guard_full_deg = guard_full_deg
         self.guard_strength = guard_strength
+        self.forward_teacher_speed = forward_teacher_speed
+        self.phase_window_start = phase_window_start
+        self.phase_window_end = phase_window_end
+        self.phase_window_strength = phase_window_strength
 
     def infer(self, obs: np.ndarray) -> np.ndarray:
         if float(obs[6]) >= -0.001 or self.mode == "baseline":
             return np.asarray(self.base.infer(obs), dtype=np.float32)
         transformed = np.asarray(obs, dtype=np.float32).copy()
         if "command_flip" in self.mode:
-            transformed[6] *= -1
+            transformed[6] = (
+                self.forward_teacher_speed
+                if self.forward_teacher_speed is not None else -obs[6]
+            )
         if "phase_reverse" in self.mode:
             transformed[100] *= -1
         action = np.asarray(self.base.infer(transformed), dtype=np.float32).copy()
         strength = self.flip_strength
+
+        # Optional phase-dependent strength.
+        # Phase is encoded as [cos(theta), sin(theta)] in obs[99:101].
+        if (
+            self.phase_window_start is not None
+            and self.phase_window_end is not None
+            and self.phase_window_strength is not None
+        ):
+            phase = (
+                math.atan2(float(obs[100]), float(obs[99])) /
+                (2.0 * math.pi)
+            ) % 1.0
+
+            if self.phase_window_start <= self.phase_window_end:
+                in_window = (
+                    self.phase_window_start <= phase <
+                    self.phase_window_end
+                )
+            else:
+                # Also support wrap-around windows such as 0.9 -> 0.1.
+                in_window = (
+                    phase >= self.phase_window_start or
+                    phase < self.phase_window_end
+                )
+
+            if in_window:
+                strength = self.phase_window_strength
+
         if self.guard_start_deg is not None:
             pitch = self.pitch_degrees()
             weight = np.clip(
                 (pitch - self.guard_full_deg) /
                 (self.guard_start_deg - self.guard_full_deg), 0.0, 1.0
             )
+            unguarded_strength = strength
             strength = self.guard_strength + weight * (
-                self.flip_strength - self.guard_strength
+                unguarded_strength - self.guard_strength
             )
         for marker, indices in ACTION_FLIPS.items():
             if self.mode.endswith(marker):
@@ -85,7 +125,11 @@ def yaw(qpos: np.ndarray) -> float:
 def run_case(model: Path, output: Path, mode: str, speed: float,
              duration: float, seed: int, flip_strength: float,
              guard_start_deg: float | None, guard_full_deg: float,
-             guard_strength: float) -> dict:
+             guard_strength: float,
+             forward_teacher_speed: float | None,
+             phase_window_start: float | None = None,
+             phase_window_end: float | None = None,
+             phase_window_strength: float | None = None) -> dict:
     simulation = DuckSimulation(REPO, OFFICIAL, output_root=output, warmup_s=3.0)
     sim = simulation.sim
     def current_pitch_degrees() -> float:
@@ -98,6 +142,8 @@ def run_case(model: Path, output: Path, mode: str, speed: float,
     sim.policy = TemporalMirrorPolicy(
         OnnxInfer(str(model), awd=True), mode, flip_strength,
         current_pitch_degrees, guard_start_deg, guard_full_deg, guard_strength,
+        forward_teacher_speed,
+        phase_window_start, phase_window_end, phase_window_strength,
     )
     rng = np.random.default_rng(seed)
     sim.data.qvel[:] += rng.uniform(-0.02, 0.02, size=sim.model.nv)
@@ -124,6 +170,10 @@ def run_case(model: Path, output: Path, mode: str, speed: float,
     return {
         "mode": mode, "seed": seed, "command_mps": speed,
         "flip_strength": flip_strength,
+        "forward_teacher_speed": forward_teacher_speed,
+        "phase_window_start": phase_window_start,
+        "phase_window_end": phase_window_end,
+        "phase_window_strength": phase_window_strength,
         "guard_start_deg": guard_start_deg,
         "guard_full_deg": guard_full_deg if guard_start_deg is not None else None,
         "guard_strength": guard_strength if guard_start_deg is not None else None,
@@ -144,6 +194,10 @@ def main() -> None:
     parser.add_argument("--guard-start-deg", type=float)
     parser.add_argument("--guard-full-deg", type=float, default=-15.0)
     parser.add_argument("--guard-strength", type=float, default=0.3)
+    parser.add_argument("--forward-teacher-speed", type=float)
+    parser.add_argument("--phase-window-start", type=float)
+    parser.add_argument("--phase-window-end", type=float)
+    parser.add_argument("--phase-window-strength", type=float)
     parser.add_argument("--modes", nargs="+", default=[
         "baseline", "command_flip", "phase_reverse",
         "command_flip_phase_reverse", "command_flip_sagittal_flip",
@@ -157,6 +211,31 @@ def main() -> None:
         not 0.0 <= args.guard_strength <= args.flip_strength
     ):
         parser.error("invalid pitch guard configuration")
+    if args.forward_teacher_speed is not None and not (
+        0.0 < args.forward_teacher_speed <= 0.15
+    ):
+        parser.error("--forward-teacher-speed must be in (0, 0.15]")
+
+    phase_args = (
+        args.phase_window_start,
+        args.phase_window_end,
+        args.phase_window_strength,
+    )
+    if any(v is not None for v in phase_args) and not all(
+        v is not None for v in phase_args
+    ):
+        parser.error(
+            "phase window requires --phase-window-start, "
+            "--phase-window-end and --phase-window-strength"
+        )
+
+    if args.phase_window_start is not None:
+        if not 0.0 <= args.phase_window_start < 1.0:
+            parser.error("--phase-window-start must be in [0, 1)")
+        if not 0.0 <= args.phase_window_end <= 1.0:
+            parser.error("--phase-window-end must be in [0, 1]")
+        if not 0.0 <= args.phase_window_strength <= 1.0:
+            parser.error("--phase-window-strength must be in [0, 1]")
     args.output_dir.mkdir(parents=True, exist_ok=True)
     rows = []
     for mode in args.modes:
@@ -164,7 +243,9 @@ def main() -> None:
             row = run_case(args.model, args.output_dir, mode, args.speed,
                            args.duration_s, seed, args.flip_strength,
                            args.guard_start_deg, args.guard_full_deg,
-                           args.guard_strength)
+                           args.guard_strength, args.forward_teacher_speed,
+                           args.phase_window_start, args.phase_window_end,
+                           args.phase_window_strength)
             rows.append(row)
             print(json.dumps(row), flush=True)
     summary = {}
@@ -182,6 +263,10 @@ def main() -> None:
               "guard_start_deg": args.guard_start_deg,
               "guard_full_deg": args.guard_full_deg,
               "guard_strength": args.guard_strength,
+              "forward_teacher_speed": args.forward_teacher_speed,
+              "phase_window_start": args.phase_window_start,
+              "phase_window_end": args.phase_window_end,
+              "phase_window_strength": args.phase_window_strength,
               "command_mps": args.speed, "summary": summary, "rows": rows}
     (args.output_dir / "results.json").write_text(
         json.dumps(result, indent=2), encoding="utf-8"

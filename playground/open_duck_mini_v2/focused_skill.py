@@ -54,6 +54,21 @@ SUPPORTED_SKILLS = ("backward", "lateral", "arc", "turn", "unified", "getup")
 STANDING_BASE_HEIGHT = 0.15
 
 
+def rear_contact_margin(data: Any, floor_id: int, foot_geom_ids: Any,
+                        com_xy: jax.Array, heading_xy: jax.Array) -> jax.Array:
+    """Rear-most *active foot-floor contact point* relative to whole-body COM."""
+    geom = data.contact.geom
+    feet = jp.asarray(foot_geom_ids)
+    first_is_foot = jp.any(geom[:, 0, None] == feet[None, :], axis=1)
+    second_is_foot = jp.any(geom[:, 1, None] == feet[None, :], axis=1)
+    foot_floor = ((geom[:, 0] == floor_id) & second_is_foot) | (
+        (geom[:, 1] == floor_id) & first_is_foot
+    )
+    active = foot_floor & (data.contact.dist < 0.0)
+    forward = jp.sum((data.contact.pos[:, :2] - com_xy) * heading_xy, axis=1)
+    return jp.max(jp.where(active, -forward, -1.0))
+
+
 def focused_config(skill: str) -> config_dict.ConfigDict:
     """Return rewards and command bounds for one focused curriculum."""
     if skill not in SUPPORTED_SKILLS:
@@ -181,8 +196,18 @@ def focused_config(skill: str) -> config_dict.ConfigDict:
     # optimum (measured -0.004 m/s for a -0.04 m/s command).  V14 keeps the
     # stability terms meaningful but no longer dominant, and doubles the progress
     # incentive so that "stand still" is clearly worse than "walk backwards".
-    scales.normalized_progress = 80.0 if skill == "backward" else 0.0
-    scales.progress_shortfall = -80.0 if skill == "backward" else 0.0
+    # V30 became the first reverse policy to stay upright for the full 10 s
+    # acceptance window (5/5 seeds) once the contact-aware terms below were
+    # enabled, but it settled at -0.028 m/s -- just under the gate's requirement
+    # of half the -0.074 command.  These two terms are the actual speed pressure,
+    # so expose them as knobs to trade speed against the stability terms without
+    # editing this file.  Defaults preserve the previous behaviour exactly.
+    scales.normalized_progress = (
+        _env_scale("BACKWARD_NORMALIZED_PROGRESS", 80.0) if skill == "backward" else 0.0
+    )
+    scales.progress_shortfall = (
+        -_env_scale("BACKWARD_PROGRESS_SHORTFALL", 80.0) if skill == "backward" else 0.0
+    )
     scales.wrong_way = -80.0 if skill == "backward" else 0.0
     # V12--V14 kept tightening this term and every run collapsed onto the
     # near-stationary optimum.  The reason is arithmetic, not tuning: with a
@@ -194,6 +219,21 @@ def focused_config(skill: str) -> config_dict.ConfigDict:
     # tracking_xy and lin_vel_xy_error already punish deviation from the command,
     # so nothing here needs to carry the whole burden.
     scales.overspeed = -600.0 if skill == "backward" else 0.0
+    # In native MuJoCo the reverse lunge starts when the COM passes behind
+    # both support feet. Penalize that precursor while it is still recoverable.
+    # Off by default so existing checkpoints/experiments keep their rewards.
+    scales.rear_support_shortfall = (
+        -_env_scale("BACKWARD_REAR_SUPPORT_SHORTFALL", 0.0)
+        if skill == "backward" else 0.0
+    )
+    scales.reverse_single_support = (
+        _env_scale("BACKWARD_SINGLE_SUPPORT", 0.0)
+        if skill == "backward" else 0.0
+    )
+    scales.reverse_swing_rear = (
+        _env_scale("BACKWARD_SWING_REAR", 0.0)
+        if skill == "backward" else 0.0
+    )
     # Backward stability group.  V15 relaxed these to break the "stand still"
     # optimum and succeeded at producing a real reverse gait (-0.072 m/s), but
     # the policy then fell after 1.8-2.5 s.  With the incentive direction now
@@ -277,6 +317,9 @@ def focused_config(skill: str) -> config_dict.ConfigDict:
             "progress_shortfall",
             "wrong_way",
             "overspeed",
+            "rear_support_shortfall",
+            "reverse_single_support",
+            "reverse_swing_rear",
             "tilt_margin",
             "height_margin",
             "yaw_progress",
@@ -587,6 +630,23 @@ class FocusedSkill(walk_turn_stop.WalkTurnStop):
             jp.sin(current_yaw - info["initial_yaw"]),
             jp.cos(current_yaw - info["initial_yaw"]),
         )
+        foot_xy = data.site_xpos[self._feet_site_id, :2]
+        com_xy = data.subtree_com[self._torso_body_id, :2]
+        heading_xy = jp.array([jp.cos(current_yaw), jp.sin(current_yaw)])
+        foot_forward = jp.sum((foot_xy - com_xy) * heading_xy, axis=1)
+        rear_margin = rear_contact_margin(
+            data, self._floor_geom_id, self._feet_geom_id,
+            com_xy, heading_xy,
+        )
+        rear_support_shortfall = jp.clip(
+            (0.015 - rear_margin) / 0.020, 0.0, 3.0
+        )
+        single_support = jp.logical_xor(contact[0], contact[1]).astype(jp.float32)
+        swing_rear = jp.max(jp.where(
+            ~contact,
+            jp.clip((-foot_forward - 0.010) / 0.030, 0.0, 1.0),
+            0.0,
+        )) * single_support
         # Recovery shaping: "upright" alone can be satisfied by balancing on the
         # head or the back, so the height ratio is multiplied in.  The product is
         # 0 on the floor and 1 in the home stance.
@@ -633,6 +693,9 @@ class FocusedSkill(walk_turn_stop.WalkTurnStop):
             progress_shortfall=jp.nan_to_num(progress_shortfall),
             wrong_way=jp.nan_to_num(wrong_way),
             overspeed=jp.nan_to_num(overspeed),
+            rear_support_shortfall=jp.nan_to_num(rear_support_shortfall),
+            reverse_single_support=jp.nan_to_num(single_support),
+            reverse_swing_rear=jp.nan_to_num(swing_rear),
             tilt_margin=jp.nan_to_num(tilt_margin),
             height_margin=jp.nan_to_num(height_margin),
             yaw_progress=jp.nan_to_num(yaw_progress),
