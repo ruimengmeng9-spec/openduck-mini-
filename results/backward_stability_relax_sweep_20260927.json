@@ -1,0 +1,55 @@
+{
+  "question": "Now that v30 gives a stable reverse gait, is the low speed unlocked by relaxing the stability terms themselves?",
+  "gate": "10 s upright on 5 perturbed seeds AND |mean forward speed| >= 0.037 m/s (half the -0.074 command)",
+  "method": "validate_backward_sustained.py, native MuJoCo, unchanged flat-terrain XML, slew limit on, 3 s warm-up, +/-0.02 qvel perturbations, command -0.074 m/s",
+  "full_sweep": {
+    "note": "Every configuration below is a 12M-step PPO run from the v30 checkpoint, 4.1M steps of eval, 1024 envs; only the named weights change.",
+    "speed_pressure_sweep": [
+      {
+        "candidate": "v30",
+        "speed_terms": "80 / 80",
+        "stability_terms": "shortfall 60, single 40, swing 30",
+        "completed_10s": "5/5",
+        "mean_speed_mps": -0.02761
+      },
+      {
+        "candidate": "v32_speed2x",
+        "speed_terms": "160 / 160",
+        "stability_terms": "shortfall 60, single 40, swing 30",
+        "completed_10s": "5/5",
+        "mean_speed_mps": -0.02898
+      },
+      {
+        "candidate": "v32_speed4x",
+        "speed_terms": "320 / 320",
+        "stability_terms": "shortfall 60, single 40, swing 30",
+        "completed_10s": "5/5",
+        "mean_speed_mps": -0.02512
+      }
+    ],
+    "stability_relaxation_sweep": [
+      {
+        "candidate": "v33_relaxed",
+        "speed_terms": "160 / 160",
+        "stability_terms": "shortfall 40, single 25, swing 20",
+        "completed_10s": "5/5",
+        "mean_speed_mps": -0.02681
+      },
+      {
+        "candidate": "v33_released",
+        "speed_terms": "160 / 160",
+        "stability_terms": "shortfall 20, single 10, swing 8",
+        "completed_10s": "5/5",
+        "mean_speed_mps": -0.02505
+      }
+    ]
+  },
+  "conclusion": "The achieved reverse speed is ~-0.026 m/s under every reward weighting tried, from quadrupling the speed pressure to cutting the stability group to roughly one seventh. All seven configurations are 5/5 stable for the full 10 s. Speed is therefore neither reward-limited nor stability-limited: the fine-tune lands in the same stable reverse gait regardless. This is consistent with the earlier finding that policy tracking of the reference gait, not the reward, is the blocker.",
+  "two_attractors": {
+    "lunge": "~-0.10 m/s then falls at ~1.7 s (v12-v29 family: 0/5)",
+    "stable": "~-0.026 m/s, never falls (v30, v32, v33: 5/5)",
+    "gap": "No reward weighting tried produced an intermediate stable gait; the two behaviours appear to be separate attractors."
+  },
+  "status": "The stability half of the gate is met (5/5 across every v30-derived candidate). The speed half (>= 0.037 m/s) is not met by any candidate. Nothing promoted, nothing deployed.",
+  "next": "Short 4.1M-step fine-tunes cannot bridge the gap. Options: (a) far longer training on the stable branch to let the gait lengthen; (b) a contact/foot-placement reference that specifies a longer stride explicitly; (c) a curriculum that moves the command outward from a speed the stable gait already achieves."
+}
