@@ -1,0 +1,48 @@
+{
+  "question": "Does raising the speed reward raise the achieved reverse speed, now that v30 made a stable reverse gait possible?",
+  "gate": "10 s upright on 5 perturbed seeds AND |mean forward speed| >= 0.037 m/s (half the -0.074 command)",
+  "method": "validate_backward_sustained.py, native MuJoCo, unchanged flat-terrain XML, motor slew limit on, 3 s warm-up, independent +/-0.02 qvel perturbations, command -0.074 m/s",
+  "runs": [
+    {
+      "candidate": "backward_contact_step_v30",
+      "speed_pressure": "1x (80/80)",
+      "completed_10s": "5/5",
+      "mean_forward_speed_mps": -0.02761,
+      "durations_s": [
+        10.0,
+        10.0,
+        10.0,
+        10.0,
+        10.0
+      ]
+    },
+    {
+      "candidate": "backward_v32_speed2x",
+      "speed_pressure": "2x (160/160)",
+      "completed_10s": "5/5",
+      "mean_forward_speed_mps": -0.02898,
+      "durations_s": [
+        10.0,
+        10.0,
+        10.0,
+        10.0,
+        10.0
+      ]
+    },
+    {
+      "candidate": "backward_v32_speed4x",
+      "speed_pressure": "4x (320/320)",
+      "completed_10s": "5/5",
+      "mean_forward_speed_mps": -0.02512,
+      "durations_s": [
+        10.0,
+        10.0,
+        10.0,
+        10.0,
+        10.0
+      ]
+    }
+  ],
+  "conclusion": "Raising the two speed-pressure terms by 2x and 4x changed nothing: -0.0281 -> -0.0290 -> -0.0251 m/s, all 5/5 stable. The reward pressure is therefore NOT the binding constraint on speed; the cap is structural (stride/foot placement geometry at this command), and the same terms that keep the robot upright appear to grip the stride rather than merely being under-weighted. Stability remains 5/5 across the whole sweep, so the stable endpoint is robust.",
+  "v33_next": "Relax the contact/stability group itself (not the speed reward) to test the trade-off directly: backward_v33_relaxed (single 25 / swing 20 / shortfall 40) and backward_v33_released (10 / 8 / 20)."
+}
