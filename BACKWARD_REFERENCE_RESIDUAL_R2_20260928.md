@@ -111,7 +111,28 @@ matched one-factor causal experiment (optimizer settings and seed also change).
 The actor still observes the existing 101-dimensional sensor/history state;
 absolute heading is not added to its input. R3 must be evaluated independently
 before any claim of reduced drift. Its requested additional budget is
-8,192,000 steps. Results pending.
+8,192,000 steps.
+
+R3 completed 8,519,680 additional actual steps. Its final evaluation return
+was 1,684.89, but native results **regressed** despite the higher return:
+
+| Test | Survived | Mean initial-axis speed | Mean absolute lateral displacement |
+|---|---:|---:|---:|
+| R3, seeds 0–4, 10 s | 5/5 | -0.041508 m/s | 0.673690 m |
+| R3, seeds 0–4, 30 s | 5/5 | -0.014607 m/s | 0.232085 m |
+
+Ten-second wrapped heading changes were -116.812 to -160.050 degrees. The
+smaller thirty-second lateral endpoint displacement does not mean better
+tracking: a curved/looping trajectory can return closer to its starting line.
+R3 is rejected for promotion; retain R2 as the better experimental backward
+baseline. Neither is a deployment candidate.
+
+Increasing heading cost alone did not solve native drift. Absolute heading
+error is not directly observed by the 101-dimensional actor, and a higher
+JAX training return did not transfer to better native heading tracking. These
+are reasons to next compare controlled JAX/native rollouts and test explicit
+direction-feedback observations; they are hypotheses, not an established
+single root cause. Do not keep escalating the same penalty blindly.
 
 Decoder unit tests and lateral-mirror unit tests pass (7 tests). Joint-reference
 parity and JIT environment smoke tests also passed. The validator now rejects
@@ -120,3 +141,24 @@ hash/decoder parameters when its controller contract is present.
 
 Raw audit and control results are in `results/`; checkpoints remain on the
 server outside Git. No hardware was actuated during this experiment.
+
+## Replaying the archived actors
+
+Run from the resource-complete upstream playground checkout, with this code
+layer installed and after sourcing `env_walk.sh`:
+
+```bash
+CUDA_VISIBLE_DEVICES= JAX_PLATFORMS=cpu OMP_NUM_THREADS=1 \
+REFERENCE_DX_INTERPOLATION=1 REFERENCE_DX=-0.0925 \
+.venv/bin/python validate_backward_sustained.py \
+  --model /absolute/path/to/models/backward_reference_residual_r2/final.onnx \
+  --output-dir /data/shijinsheng/open_duck/outputs/r2_replay \
+  --duration-s 10 --speed -0.074 --seeds 5 \
+  --reference-residual-gain 0.12 --reference-ramp-s 1 \
+  --reset-phase-on-start
+```
+
+Keep `controller_contract.json` beside `final.onnx`. Use `--seed-start 10` for
+the held-out initialization perturbations. Resource assets, checkpoints and
+Python caches are not duplicated in GitHub; small experimental ONNX actors,
+contracts, training logs and native result JSONs are archived.

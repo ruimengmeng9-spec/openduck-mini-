@@ -1,0 +1,84 @@
+reference residual R3: 2026-09-28T10:38:25+08:00
+BACKWARD_ACTION_IMITATION=25
+BACKWARD_ACTION_IMITATION_ERROR=5
+BACKWARD_ACTION_MAX_DELAY=1
+BACKWARD_HEADING_ERROR=20
+BACKWARD_IMU_MAX_DELAY=1
+BACKWARD_NOISE_LEVEL=0
+BACKWARD_NORMALIZED_PROGRESS=80
+BACKWARD_PROGRESS_SHORTFALL=80
+BACKWARD_REAR_SUPPORT_SHORTFALL=30
+BACKWARD_SINGLE_SUPPORT=20
+BACKWARD_SWING_REAR=15
+BACKWARD_TERMINATION=10000
+BACKWARD_YAW_RANGE=0,0
+REFERENCE_DX=-0.0925
+REFERENCE_DX_INTERPOLATION=1
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1790563109.548314 3614969 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1790563111.490079 3614969 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+Velocity command overridden to [-0.074, -0.074]
+xml: /data/shijinsheng/open_duck/projects/Open_Duck_Playground/playground/open_duck_mini_v2/xmls/scene_flat_terrain.xml
+actuators: ['left_hip_yaw', 'left_hip_roll', 'left_hip_pitch', 'left_knee', 'left_ankle', 'neck_pitch', 'head_pitch', 'head_yaw', 'head_roll', 'right_hip_yaw', 'right_hip_roll', 'right_hip_pitch', 'right_knee', 'right_ankle']
+joints: ['floating_base', 'left_hip_yaw', 'left_hip_roll', 'left_hip_pitch', 'left_knee', 'left_ankle', 'neck_pitch', 'head_pitch', 'head_yaw', 'head_roll', 'right_hip_yaw', 'right_hip_roll', 'right_hip_pitch', 'right_knee', 'right_ankle']
+backlash joints: []
+actuator joints ids: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+actuator joints dict: {'left_hip_yaw': 1, 'left_hip_roll': 2, 'left_hip_pitch': 3, 'left_knee': 4, 'left_ankle': 5, 'neck_pitch': 6, 'head_pitch': 7, 'head_yaw': 8, 'head_roll': 9, 'right_hip_yaw': 10, 'right_hip_roll': 11, 'right_hip_pitch': 12, 'right_knee': 13, 'right_ankle': 14}
+floating qpos addr: 0 qvel addr: 0
+[Poly ref data] Processing ...
+[Poly ref data] Done processing
+xml: /data/shijinsheng/open_duck/projects/Open_Duck_Playground/playground/open_duck_mini_v2/xmls/scene_flat_terrain.xml
+actuators: ['left_hip_yaw', 'left_hip_roll', 'left_hip_pitch', 'left_knee', 'left_ankle', 'neck_pitch', 'head_pitch', 'head_yaw', 'head_roll', 'right_hip_yaw', 'right_hip_roll', 'right_hip_pitch', 'right_knee', 'right_ankle']
+joints: ['floating_base', 'left_hip_yaw', 'left_hip_roll', 'left_hip_pitch', 'left_knee', 'left_ankle', 'neck_pitch', 'head_pitch', 'head_yaw', 'head_roll', 'right_hip_yaw', 'right_hip_roll', 'right_hip_pitch', 'right_knee', 'right_ankle']
+backlash joints: []
+actuator joints ids: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+actuator joints dict: {'left_hip_yaw': 1, 'left_hip_roll': 2, 'left_hip_pitch': 3, 'left_knee': 4, 'left_ankle': 5, 'neck_pitch': 6, 'head_pitch': 7, 'head_yaw': 8, 'head_roll': 9, 'right_hip_yaw': 10, 'right_hip_roll': 11, 'right_hip_pitch': 12, 'right_knee': 13, 'right_ankle': 14}
+floating qpos addr: 0 qvel addr: 0
+[Poly ref data] Processing ...
+[Poly ref data] Done processing
+Skill: backward
+Observation size: 101
+PPO params: {'action_repeat': 1, 'batch_size': 256, 'clipping_epsilon': 0.2, 'discounting': 0.995, 'entropy_cost': 0.002, 'episode_length': 1000, 'learning_rate': 5e-05, 'max_grad_norm': 1.0, 'normalize_observations': True, 'num_envs': 1024, 'num_eval_envs': 64, 'num_evals': 5, 'num_minibatches': 32, 'num_resets_per_eval': 1, 'num_timesteps': 8192000, 'num_updates_per_batch': 4, 'reward_scaling': 1.0, 'seed': 85, 'unroll_length': 20}
+-----------
+STEP: 0 reward: 1279.3839111328125 reward_std: 538.319091796875
+-----------
+Saving checkpoint (step: 0): /data/shijinsheng/open_duck/training/backward_reference_residual_r3/2026_09_28_104051_0
+Saving checkpoint (step: 2129920): /data/shijinsheng/open_duck/training/backward_reference_residual_r3/2026_09_28_104210_2129920
+-----------
+STEP: 2129920 reward: 1611.0634765625 reward_std: 414.1165771484375
+-----------
+Saving checkpoint (step: 4259840): /data/shijinsheng/open_duck/training/backward_reference_residual_r3/2026_09_28_104356_4259840
+-----------
+STEP: 4259840 reward: 1578.80322265625 reward_std: 449.09844970703125
+-----------
+Saving checkpoint (step: 6389760): /data/shijinsheng/open_duck/training/backward_reference_residual_r3/2026_09_28_104419_6389760
+-----------
+STEP: 6389760 reward: 1443.1011962890625 reward_std: 552.09716796875
+-----------
+Saving checkpoint (step: 8519680): /data/shijinsheng/open_duck/training/backward_reference_residual_r3/2026_09_28_104441_8519680
+-----------
+STEP: 8519680 reward: 1684.8892822265625 reward_std: 467.1581115722656
+-----------
+Exporting final ONNX once: /data/shijinsheng/open_duck/training/backward_reference_residual_r3/final.onnx
+ === EXPORT ONNX === 
+W0000 00:00:1790563488.070144 3614969 gpu_device.cc:2459] TensorFlow was not built with CUDA kernel binaries compatible with compute capability 12.0a. CUDA kernels will be jit-compiled from PTX, which could take 30 minutes or longer.
+W0000 00:00:1790563488.079297 3614969 gpu_device.cc:2459] TensorFlow was not built with CUDA kernel binaries compatible with compute capability 12.0a. CUDA kernels will be jit-compiled from PTX, which could take 30 minutes or longer.
+(101,) (101,)
+(101,) (101,)
+(1, 14)
+Transferring Dense layer hidden_0, kernel shape (101, 512), bias shape (512,)
+Transferring Dense layer hidden_1, kernel shape (512, 256), bias shape (256,)
+Transferring Dense layer hidden_2, kernel shape (256, 128), bias shape (128,)
+Transferring Dense layer hidden_3, kernel shape (128, 28), bias shape (28,)
+Weights transferred successfully.
+(101,) (101,)
+Tensorflow prediction: [ 1. -1.  1.  1.  1.  1. -1.  1.  1. -1.  1.  1.  1.  1.]
+(101,) (101,)
+W0000 00:00:1790563490.011054 3614969 gpu_device.cc:2459] TensorFlow was not built with CUDA kernel binaries compatible with compute capability 12.0a. CUDA kernels will be jit-compiled from PTX, which could take 30 minutes or longer.
+W0000 00:00:1790563490.081663 3614969 gpu_device.cc:2459] TensorFlow was not built with CUDA kernel binaries compatible with compute capability 12.0a. CUDA kernels will be jit-compiled from PTX, which could take 30 minutes or longer.
+W0000 00:00:1790563490.098833 3614969 gpu_device.cc:2459] TensorFlow was not built with CUDA kernel binaries compatible with compute capability 12.0a. CUDA kernels will be jit-compiled from PTX, which could take 30 minutes or longer.
+(101,) (101,)
+W0000 00:00:1790563490.258196 3614969 gpu_device.cc:2459] TensorFlow was not built with CUDA kernel binaries compatible with compute capability 12.0a. CUDA kernels will be jit-compiled from PTX, which could take 30 minutes or longer.
+W0000 00:00:1790563490.324586 3614969 gpu_device.cc:2459] TensorFlow was not built with CUDA kernel binaries compatible with compute capability 12.0a. CUDA kernels will be jit-compiled from PTX, which could take 30 minutes or longer.
+W0000 00:00:1790563490.339561 3614969 gpu_device.cc:2459] TensorFlow was not built with CUDA kernel binaries compatible with compute capability 12.0a. CUDA kernels will be jit-compiled from PTX, which could take 30 minutes or longer.
