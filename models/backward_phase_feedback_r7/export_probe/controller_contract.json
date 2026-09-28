@@ -1,0 +1,128 @@
+{
+  "controller_type": "phase_leg_feedback_v1",
+  "simulation_only": true,
+  "baseline_sha256": "05c1219a1403831deead152a6cff89b30a1d20fea3ebef285ca5c07279cfbdc8",
+  "reference_dx": -0.0925,
+  "reference_interpolation": true,
+  "residual_gain": 0.12,
+  "ramp_s": 1.0,
+  "control_dt": 0.02,
+  "weights": [
+    -0.12590184508744828,
+    0.30283415166258365,
+    0.11430440390616216,
+    -0.0637525423258435,
+    0.16100294598887946,
+    -0.22133440782378108,
+    0.0959892560402399,
+    0.45050322307195434,
+    -0.25769290785865206,
+    0.3056396836682973,
+    0.11486884784142284,
+    -0.22311316475201742,
+    -0.0987284336356733,
+    -0.11083067875045267,
+    -0.04775886241069678,
+    0.14863655563477407,
+    -0.07751792312734414,
+    0.11092136581232213
+  ],
+  "score": 0.13315637742154585,
+  "rows": [
+    {
+      "seed": 0,
+      "duration_s": 30.0,
+      "fallen": false,
+      "speed_mps": -0.08077091710888014,
+      "lateral_m": 0.07586619861050527,
+      "yaw_change_deg": 2.4585699580086597,
+      "heading_rms_deg": 5.501622943799478,
+      "minimum_up_z": 0.9751852817749594,
+      "mean_local_velocity_mps": [
+        -0.08003218851237767,
+        -0.004667076267054415,
+        0.013885308049637127
+      ],
+      "cost": 0.0961397096360294
+    },
+    {
+      "seed": 1,
+      "duration_s": 30.0,
+      "fallen": false,
+      "speed_mps": -0.08195234680548887,
+      "lateral_m": 0.04808912613403012,
+      "yaw_change_deg": 3.4103664074047533,
+      "heading_rms_deg": 6.3620169378588605,
+      "minimum_up_z": 0.9717387553736672,
+      "mean_local_velocity_mps": [
+        -0.08113315803707037,
+        -0.005978124065706749,
+        0.014318647629735858
+      ],
+      "cost": 0.12378580910161102
+    },
+    {
+      "seed": 2,
+      "duration_s": 30.0,
+      "fallen": false,
+      "speed_mps": -0.07876759803087915,
+      "lateral_m": 0.04345473715501663,
+      "yaw_change_deg": 2.34022828191988,
+      "heading_rms_deg": 6.593518621584571,
+      "minimum_up_z": 0.9677329952280191,
+      "mean_local_velocity_mps": [
+        -0.0776151132753602,
+        -0.007186155488996383,
+        0.013731480550974132
+      ],
+      "cost": 0.08249259874969134
+    },
+    {
+      "seed": 15,
+      "duration_s": 30.0,
+      "fallen": false,
+      "speed_mps": -0.07909843868283171,
+      "lateral_m": 0.05624921462362476,
+      "yaw_change_deg": 2.0785526531847984,
+      "heading_rms_deg": 4.9498730895157195,
+      "minimum_up_z": 0.9741697694349452,
+      "mean_local_velocity_mps": [
+        -0.07796478286088948,
+        -0.004425312297845778,
+        0.013775697157617806
+      ],
+      "cost": 0.06400461997592258
+    },
+    {
+      "seed": 18,
+      "duration_s": 30.0,
+      "fallen": false,
+      "speed_mps": -0.08019339511772511,
+      "lateral_m": 0.11994713366220124,
+      "yaw_change_deg": -0.8225428342314353,
+      "heading_rms_deg": 6.480218186963936,
+      "minimum_up_z": 0.9738933141091191,
+      "mean_local_velocity_mps": [
+        -0.07948649454397494,
+        -0.003447646214097928,
+        0.013946163910551918
+      ],
+      "cost": 0.11368043599205836
+    }
+  ],
+  "feedback_weights": [
+    1.3566983963359944,
+    1.0276376352744396,
+    0.13618626430703495,
+    3.0,
+    2.8284561872528604,
+    -0.4637370842088479
+  ],
+  "onnx_sha256": "fdd5c98359ee4c77040cb55642d86e350d0c6e3c25fb3cb9be96a790276d491a",
+  "onnx_input": "phase_cos,phase_sin,sin_relative_heading_error,startup_ramp",
+  "onnx_output": "14 joint deltas in radians",
+  "legacy_motor_action_decoder_allowed": false,
+  "history_contract": "fresh_three_motor_actions",
+  "step_contract": "infer_target_then_physics_then_phase",
+  "onnx_parity_max_error_rad": 9.18743522926313e-09
+}

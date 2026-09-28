@@ -1,0 +1,100 @@
+{
+  "controller_type": "phase_leg_feedback_v1",
+  "simulation_only": true,
+  "baseline_sha256": "05c1219a1403831deead152a6cff89b30a1d20fea3ebef285ca5c07279cfbdc8",
+  "reference_dx": -0.0925,
+  "reference_interpolation": true,
+  "residual_gain": 0.12,
+  "ramp_s": 1.0,
+  "control_dt": 0.02,
+  "weights": [
+    -0.1798597786963547,
+    0.43262021666083383,
+    0.16329200558023166,
+    -0.09107506046549073,
+    0.2300042085555421,
+    -0.31619201117683016,
+    0.13712750862891415,
+    0.6435760329599348,
+    -0.3681327255123601,
+    0.436628119526139,
+    0.1640983540591755,
+    -0.31873309250288206,
+    -0.14104061947953328,
+    -0.15832954107207525,
+    -0.0682269463009954,
+    0.21233793662110584,
+    -0.11073989018192021,
+    0.15845909401760305
+  ],
+  "score": 0.11445772888942632,
+  "rows": [
+    {
+      "seed": 0,
+      "duration_s": 30.0,
+      "fallen": false,
+      "speed_mps": -0.07701284723897964,
+      "lateral_m": -0.09310241029536137,
+      "yaw_change_deg": 1.031245277667863,
+      "heading_rms_deg": 5.1804004222019815,
+      "minimum_up_z": 0.9645697515505838,
+      "mean_local_velocity_mps": [
+        -0.0763603880549364,
+        -0.006417303274090492,
+        0.014464686812837689
+      ],
+      "cost": 0.05728788695007812
+    },
+    {
+      "seed": 1,
+      "duration_s": 30.0,
+      "fallen": false,
+      "speed_mps": -0.07973291765591002,
+      "lateral_m": 0.03528676352491121,
+      "yaw_change_deg": 5.483806699180906,
+      "heading_rms_deg": 6.2294000128236275,
+      "minimum_up_z": 0.9734686550781292,
+      "mean_local_velocity_mps": [
+        -0.07882772077762658,
+        -0.0057624176295798715,
+        0.014443993753106604
+      ],
+      "cost": 0.1012845982674214
+    },
+    {
+      "seed": 2,
+      "duration_s": 30.0,
+      "fallen": false,
+      "speed_mps": -0.08063456815266883,
+      "lateral_m": -0.0898129928391339,
+      "yaw_change_deg": 2.115290041518696,
+      "heading_rms_deg": 5.2052941312629954,
+      "minimum_up_z": 0.9675433440389641,
+      "mean_local_velocity_mps": [
+        -0.07973184159403428,
+        -0.005716831814132478,
+        0.014965569475954737
+      ],
+      "cost": 0.0936445630101002
+    }
+  ],
+  "feedback_weights": [
+    0.9107055637201966,
+    0.1177049749973598,
+    -0.566345392695145,
+    1.8572177646012134,
+    0.1349931025145673,
+    -0.001894686789349176
+  ],
+  "up_gate": [
+    0.975,
+    0.94
+  ],
+  "onnx_sha256": "4ce98e0cde8e96906f28514fd55116a27ee01a8d007c438f08632be45d1cefcd",
+  "onnx_input": "phase_cos,phase_sin,sin_relative_heading_error,startup_ramp,up_vector_z",
+  "onnx_output": "14 joint deltas in radians",
+  "legacy_motor_action_decoder_allowed": false,
+  "history_contract": "fresh_three_motor_actions",
+  "step_contract": "infer_target_then_physics_then_phase",
+  "onnx_parity_max_error_rad": 9.585304446002585e-09
+}
