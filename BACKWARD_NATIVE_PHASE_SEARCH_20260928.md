@@ -45,7 +45,27 @@ R9 completed all eight generations (640 candidate rollouts, 1,693,171 actual con
 
 R10 hypothesis: absolute-pitch feedback interferes with **normal phase-dependent gait lean**. A successful R7 seed-20 training-side trajectory shows pitch −0.2066 to −0.0775 rad after startup. A seven-coefficient, three-harmonic phase template fits that oscillation with RMS error 0.01784 rad and p95 absolute error 0.03797 rad. R10 subtracts the ramped nominal pitch and its finite-difference rate before forming balance features, with a 0.04 rad error deadband. Only the two balance gains are optimized; phase and heading coefficients remain frozen. Previously failed seeds 21/31 are explicitly included in training, so future acceptance must use new seeds, not call those independent validation.
 
-R10 uses 60 s training rollouts for seeds 0/20/21/25/31. It is under evaluation; no solved-gait or hardware readiness claim is made.
+R10 uses 60 s training rollouts for seeds 0/20/21/25/31. Its early exported candidate survived 9/10 unseen tests (7/10 qualified); the final model survived 7/10 fresh seeds 80–89, with only 6/10 qualified. The normal-pitch template alone did not solve instability.
+
+## Support-contact balance and remaining failure
+
+R11 adds two **support-contact-gated ankle** feedback gains alongside the existing two hip-balance gains. An ankle receives this extra correction only when its foot geometries contact the ground; the ordinary opposite-hip ankle compensation is retained. Training conditions: 60 seconds, seeds 0/21/31/38/57, 160 CEM candidates. This is inspired by combined hip/ankle balance strategies, not a complete capture-point MPC implementation. [Position-controlled humanoid capture-point feedback paper](https://arxiv.org/abs/1710.10598).
+
+Final R11 ONNX, fresh seeds 100–129: **29/30 survived, 25/30 qualified**. Seed 117 fell at 16.78 s. Seeds 114/118/123/128 survived but exceeded at least one straight-backward threshold. This remains an experimental improvement, not a solved gait.
+
+R12 freezes an early R11 balance candidate and reoptimizes heading feedback. Its final ONNX survived 28/30 fresh seeds 100–129; only 21/30 qualified. Falls occurred in seeds 100 and 128. A lower training search score is insufficient to select it over R11.
+
+R13 tests an outer heading goal derived from simulated lateral position, with the early R11 inner controller unchanged. Matched seeds 60–64, 60 seconds: gain 0.3 rad/m gives 5/5 survival but 4/5 qualification; gain 0.6 gives 5/5 for both; gain 1.0 gives only 2/5 survival. Higher correction gain is not monotonically safer. Five seeds are insufficient evidence. This outer loop requires simulated XY or real odometry, so it is **not directly deployable on a robot with only the current IMU signals**.
+
+## Capture-point diagnostic and native-inference search
+
+A separate `mjData` computes approximate centre-of-mass position and velocity without changing the live simulator's sensor/contact buffers. Calls follow MuJoCo's documented kinematic order and explicitly compute subtree velocity. [MuJoCo API documentation](https://mujoco.readthedocs.io/en/stable/APIreference/APIfunctions.html). Capture offset is projected onto body-forward direction relative to the mean of both foot centres. It is an approximate LIPM diagnostic on the flat floor, not an exact support-polygon stability certificate or a real-robot state estimator.
+
+Recording this diagnostic reproduced **exactly all metrics** in 18 matched R11 ONNX runs (seeds 100–117, maximum difference 0). A healthy seed-100 trajectory fits a seven-coefficient phase template with RMS 5.29 mm and p95 absolute error 10.15 mm. Therefore an early −1 cm excursion is not reliable evidence of impending failure. In the final failure sequence of seed 117, the error reaches −3.68 cm at 16.08 s; body pitch first drops below −0.3 rad at 16.36 s. That motivates testing a limited extra feedback term, not claiming that capture offset is the proven root cause.
+
+R14 adds four hip/support-ankle capture-feedback gains. Features use a 12 mm error deadband, 20 mm position scale, 0.08 s derivative filter, rate clipping ±0.8 m/s and rate scale 0.2 m/s. Each hip/ankle term is bounded to 0.04 rad; extra feedback activates after 2 s with a 1 s ramp. Existing phase, heading and contact balance remain frozen. All joint and slew limits remain in force.
+
+An additional execution issue emerged: the float64 NumPy corrector can survive seed 117 while the numerically near-identical float32 ONNX corrector falls. Long nonlinear contact rollouts amplify small numerical differences. This does not invalidate short output-parity checks; it means they are not sufficient for closed-loop acceptance. **R15 evaluates every CEM candidate with the actual float32 ONNX graph**, retaining the previous graph and replacing only the four new capture-feedback weights. Its zero-added-feedback regression must reproduce the known R11 ONNX failure exactly before search starts. R14 and R15 results are separate; neither is promoted while gates remain incomplete.
 
 Reproduction requires the resource-full runtime checkout and reference-motion assets already used for R2. The lean publication clone is not a replacement for those assets. Pitch-template preprocessing and its phase-period contract must travel with the ONNX model.
 

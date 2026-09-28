@@ -6,7 +6,7 @@ ROOT=/data/shijinsheng/open_duck
 cd "$ROOT/projects/Open_Duck_Playground"
 export CUDA_VISIBLE_DEVICES='' JAX_PLATFORMS=cpu OMP_NUM_THREADS=1
 export REFERENCE_DX=-0.0925 REFERENCE_DX_INTERPOLATION=1
-STAGE="${1:?choose r5, r6, r7, r8, r9, or r10}"
+STAGE="${1:?choose r5 through r12}"
 ARGS=()
 case "$STAGE" in
   r5)
@@ -43,6 +43,14 @@ case "$STAGE" in
       --trajectory "$ROOT/outputs/phase_feedback_r7_final_heldout_60s/seed_20.npz" \
       --output "$OUT/template_base.json"
     ARGS=(--duration 60 --seeds 0,20,21,25,31 --balance-base "$OUT/template_base.json")
+    ;;
+  r11)
+    OUT="$ROOT/training/backward_contact_balance_r11"
+    ARGS=(--duration 60 --seeds 0,21,31,38,57 --balance-base "$ROOT/training/backward_phase_template_r10/snapshot_probe.json" --resume "$ROOT/training/backward_phase_template_r10/snapshot_probe.json" --ankle-balance)
+    ;;
+  r12)
+    OUT="$ROOT/training/backward_contact_heading_r12"
+    ARGS=(--duration 60 --seeds 0,21,31,38,57 --feedback-base "$ROOT/training/backward_contact_balance_r11/snapshot_probe.json" --resume "$ROOT/training/backward_contact_balance_r11/snapshot_probe.json" --initial-std .25)
     ;;
   *) echo "Unknown stage" >&2; exit 2 ;;
 esac

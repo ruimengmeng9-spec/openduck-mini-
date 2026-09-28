@@ -1,0 +1,103 @@
+{
+  "rows": [
+    {
+      "seed": 60,
+      "duration_s": 60.0,
+      "fallen": false,
+      "speed_mps": -0.07968018352596415,
+      "lateral_m": 0.04407687532500809,
+      "yaw_change_deg": -1.5170695551592515,
+      "heading_rms_deg": 5.081508519810707,
+      "minimum_up_z": 0.9629890567412663,
+      "mean_local_velocity_mps": [
+        -0.07773395813899624,
+        -0.005470543141441319,
+        0.01395479580065723
+      ],
+      "cost": 0.06630651982921695
+    },
+    {
+      "seed": 61,
+      "duration_s": 60.0,
+      "fallen": false,
+      "speed_mps": -0.08296426862497178,
+      "lateral_m": -0.027156279121944293,
+      "yaw_change_deg": -12.69731633048851,
+      "heading_rms_deg": 5.816450926461367,
+      "minimum_up_z": 0.9640186620377091,
+      "mean_local_velocity_mps": [
+        -0.08119959457027771,
+        -0.005278673659589024,
+        0.014261151788565497
+      ],
+      "cost": 0.22049000627393459
+    },
+    {
+      "seed": 62,
+      "duration_s": 60.0,
+      "fallen": false,
+      "speed_mps": -0.07949354648877568,
+      "lateral_m": 0.04994102504411803,
+      "yaw_change_deg": -9.801714264224994,
+      "heading_rms_deg": 6.500879384610741,
+      "minimum_up_z": 0.9673954669670859,
+      "mean_local_velocity_mps": [
+        -0.0777496358833344,
+        -0.005277303678652201,
+        0.014043222287457621
+      ],
+      "cost": 0.1416053385027804
+    },
+    {
+      "seed": 63,
+      "duration_s": 60.0,
+      "fallen": false,
+      "speed_mps": -0.07633148632664262,
+      "lateral_m": -0.0012672395521876889,
+      "yaw_change_deg": -10.496953626268914,
+      "heading_rms_deg": 4.723609395602159,
+      "minimum_up_z": 0.9686278042183079,
+      "mean_local_velocity_mps": [
+        -0.07455124327913942,
+        -0.0037657327972121825,
+        0.01335368451773653
+      ],
+      "cost": 0.10014122816736042
+    },
+    {
+      "seed": 64,
+      "duration_s": 60.0,
+      "fallen": false,
+      "speed_mps": -0.08069256891691998,
+      "lateral_m": 0.16521374501059194,
+      "yaw_change_deg": -9.988273960396214,
+      "heading_rms_deg": 5.973222920248345,
+      "minimum_up_z": 0.9719809225366423,
+      "mean_local_velocity_mps": [
+        -0.0790144901119924,
+        -0.0048653117559907845,
+        0.013992567870050595
+      ],
+      "cost": 0.16051076778723614
+    }
+  ],
+  "controller": "/data/shijinsheng/open_duck/training/backward_path_r13/k0.6.json",
+  "corrector_onnx": "/data/shijinsheng/open_duck/training/backward_contact_balance_r11/export_probe/corrector.onnx",
+  "environment_source_sha256": {
+    "playground/open_duck_mini_v2/mujoco_infer.py": "2d3c52c99780e811438f5c3d9034c8ce3677aa20c9de7b4284a02e171729a622",
+    "playground/open_duck_mini_v2/mujoco_infer_base.py": "4c8fd11e4659126d49985a9c048e1cb5a5cfde5f4d54cdfe433e4b165d3b0ab1",
+    "playground/open_duck_mini_v2/data/polynomial_coefficients.pkl": "5850c0610ed89e2860e7047f9ee27d8412462e1199752952c3c2a0efd2cb7a25",
+    "playground/common/poly_reference_motion_numpy.py": "585e783722ffb403a14288aafc1fcdf86c8a5d1b39949171a3b2d918028c4406",
+    "diagnostics/reference_residual_policy.py": "b790566e8489c450ff4f87fe0c24e95993d6299fed6e34a73ec65da25485d382",
+    "playground/open_duck_mini_v2/xmls/open_duck_mini_v2.xml": "968b18de4e3f55b31252155f52779fa490989f5da92bc9b308e0bb4e81d6bb5c",
+    "playground/open_duck_mini_v2/xmls/scene_flat_terrain_backlash.xml": "33af97247d6a876cf47c9e37185cb71bd09f6793bc0f62d90cbe2a91caa3ba63",
+    "playground/open_duck_mini_v2/xmls/joints_properties.xml": "abbcc92761943befe3a24b1c13e82c62c5b8c2914303818f3c870b1f51cd45ed",
+    "playground/open_duck_mini_v2/xmls/scene_flat_terrain.xml": "f087afa8bbe13f92e934d4a03571f2134abe7d5bb963fce22eec04822e9ae6d0",
+    "playground/open_duck_mini_v2/xmls/scene_flat_terrain_getup.xml": "33796298d20e8ae5cbe311d1d75e4c6977d9ebd8fa120c715da361496fd85ac7",
+    "playground/open_duck_mini_v2/xmls/sensors.xml": "c7ad6507a01eaa06e71733a484947d58972a91dca43c74a174d327b87a6d86f7",
+    "playground/open_duck_mini_v2/xmls/open_duck_mini_v2_backlash.xml": "11e922dc9524716e9f54b2fd8be54133fa65efbc61de96ddc846d991de1c9d38",
+    "playground/open_duck_mini_v2/xmls/open_duck_mini_v2_getup.xml": "b6c9b320540b1097edc1249031bc41a426b175db21dc1e92ce861dd818a9a555",
+    "playground/open_duck_mini_v2/xmls/scene_rough_terrain_backlash.xml": "879768817f5ae5d2c01b5494f855686bb10d1ec444a404efeced8f5766574ffc"
+  },
+  "motor_velocity_limit_rad_s": 5.24
+}

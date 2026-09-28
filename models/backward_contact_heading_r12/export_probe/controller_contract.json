@@ -1,0 +1,151 @@
+{
+  "controller_type": "phase_heading_balance_v1",
+  "simulation_only": true,
+  "baseline_sha256": "05c1219a1403831deead152a6cff89b30a1d20fea3ebef285ca5c07279cfbdc8",
+  "reference_dx": -0.0925,
+  "reference_interpolation": true,
+  "residual_gain": 0.12,
+  "ramp_s": 1.0,
+  "control_dt": 0.02,
+  "weights": [
+    -0.12590184508744828,
+    0.30283415166258365,
+    0.11430440390616216,
+    -0.0637525423258435,
+    0.16100294598887946,
+    -0.22133440782378108,
+    0.0959892560402399,
+    0.45050322307195434,
+    -0.25769290785865206,
+    0.3056396836682973,
+    0.11486884784142284,
+    -0.22311316475201742,
+    -0.0987284336356733,
+    -0.11083067875045267,
+    -0.04775886241069678,
+    0.14863655563477407,
+    -0.07751792312734414,
+    0.11092136581232213
+  ],
+  "score": 0.16602207767794525,
+  "rows": [
+    {
+      "seed": 0,
+      "duration_s": 60.0,
+      "fallen": false,
+      "speed_mps": -0.07769513078111205,
+      "lateral_m": 0.034562163123563416,
+      "yaw_change_deg": 1.742455051326256,
+      "heading_rms_deg": 5.89901804977474,
+      "minimum_up_z": 0.9607537296984393,
+      "mean_local_velocity_mps": [
+        -0.07597191072242053,
+        -0.004997295068507929,
+        0.013568738601129516
+      ],
+      "cost": 0.05877777993352292
+    },
+    {
+      "seed": 21,
+      "duration_s": 60.0,
+      "fallen": false,
+      "speed_mps": -0.0802602908324054,
+      "lateral_m": 0.15957823803216006,
+      "yaw_change_deg": -10.934978147892561,
+      "heading_rms_deg": 6.3720908251496,
+      "minimum_up_z": 0.9704829558606779,
+      "mean_local_velocity_mps": [
+        -0.0785640837600634,
+        -0.003725504396006097,
+        0.014036624027837393
+      ],
+      "cost": 0.17223647664239972
+    },
+    {
+      "seed": 31,
+      "duration_s": 60.0,
+      "fallen": false,
+      "speed_mps": -0.08094147351965714,
+      "lateral_m": 0.10796993498159892,
+      "yaw_change_deg": -11.067045725798856,
+      "heading_rms_deg": 5.67026628402911,
+      "minimum_up_z": 0.9673964652923138,
+      "mean_local_velocity_mps": [
+        -0.07902016745212281,
+        -0.00550942833320803,
+        0.0139653314661026
+      ],
+      "cost": 0.1670982092338862
+    },
+    {
+      "seed": 38,
+      "duration_s": 60.0,
+      "fallen": false,
+      "speed_mps": -0.07730028575962523,
+      "lateral_m": 0.019664216424618533,
+      "yaw_change_deg": -8.305660808147278,
+      "heading_rms_deg": 6.294071293939198,
+      "minimum_up_z": 0.9724081324060079,
+      "mean_local_velocity_mps": [
+        -0.07574339654740597,
+        -0.0050806791747124115,
+        0.013431782304672303
+      ],
+      "cost": 0.10173483449906341
+    },
+    {
+      "seed": 57,
+      "duration_s": 60.0,
+      "fallen": false,
+      "speed_mps": -0.07771855053111919,
+      "lateral_m": 0.127637199138045,
+      "yaw_change_deg": -5.051941435728454,
+      "heading_rms_deg": 5.400118267014121,
+      "minimum_up_z": 0.9643459163906467,
+      "mean_local_velocity_mps": [
+        -0.07589957287734468,
+        -0.005064613061279323,
+        0.01352551254773234
+      ],
+      "cost": 0.07190837311725434
+    }
+  ],
+  "feedback_weights": [
+    1.113155720005167,
+    0.18471332220590325,
+    -1.8009185037349809,
+    2.8807054435332913,
+    2.2816051842047376,
+    -0.3401192477298157
+  ],
+  "balance_weights": [
+    0.17933398448065263,
+    -0.0530309204640669,
+    0.0,
+    0.0
+  ],
+  "balance_deadband_rad": 0.04,
+  "pitch_template_weights": [
+    -0.13488062800991127,
+    0.015622457022796566,
+    -0.0011992943238547788,
+    0.007583176179568119,
+    0.009616967300899186,
+    -0.006992154991540779,
+    0.00037245492990148403
+  ],
+  "pitch_template_period_s": 0.54,
+  "pitch_template_source": "/data/shijinsheng/open_duck/outputs/phase_feedback_r7_final_heldout_60s/seed_20.npz",
+  "pitch_template_source_sha256": "3ea8f73efb16341a32694d24d33178752b467c0e05da271f20f8e5651c0155dc",
+  "pitch_template_fit_rms_rad": 0.017836294611524306,
+  "pitch_template_fit_p95_abs_rad": 0.03797045697422725,
+  "ankle_gain_rad": 0.06,
+  "ankle_support_gate": "native foot-body/floor geometry contact; no swing ankle balance correction",
+  "onnx_sha256": "22d5db10b8604558a72b606a0f58c26d446d5f54fdc21c2d9f5f51e1f1cb6c79",
+  "onnx_input": "phase_cos,phase_sin,sin_relative_heading_error,startup_ramp,deadband_pitch_scaled,clipped_pitch_rate_scaled,left_foot_contact,right_foot_contact",
+  "onnx_output": "14 joint deltas in radians",
+  "legacy_motor_action_decoder_allowed": false,
+  "history_contract": "fresh_three_motor_actions",
+  "step_contract": "infer_target_then_physics_then_phase",
+  "onnx_parity_max_error_rad": 1.1392544962962603e-08
+}
