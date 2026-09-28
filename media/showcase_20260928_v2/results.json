@@ -1,0 +1,169 @@
+{
+  "seed": 1600,
+  "continuous": true,
+  "resets_between_skills": 0,
+  "simulation_only": true,
+  "hardware_readiness": false,
+  "schedule": [
+    [
+      "Stand",
+      3.0,
+      0.0,
+      0.0
+    ],
+    [
+      "Forward",
+      5.0,
+      0.15,
+      0.0
+    ],
+    [
+      "Settle before turn",
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      "Turn right",
+      5.0,
+      0.0,
+      -0.15
+    ],
+    [
+      "Settle before backward",
+      2.0,
+      0.0,
+      0.0
+    ],
+    [
+      "Backward",
+      7.0,
+      -0.074,
+      0.0
+    ],
+    [
+      "Stop",
+      3.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "completed": true,
+  "phases": [
+    {
+      "phase": "Stand",
+      "duration_s": 2.999999999999891,
+      "fallen": false,
+      "minimum_up_z": 0.9948764970191958,
+      "displacement_xy_m": [
+        0.00905600535855072,
+        0.008877143877627097
+      ],
+      "axial_speed_mps": 0.003018668452850349,
+      "mean_local_forward_last2s_mps": -8.179284306004195e-05,
+      "yaw_change_deg": -1.18196958155996,
+      "last_1s_drift_m": 4.575470014331384e-05
+    },
+    {
+      "phase": "Forward",
+      "duration_s": 4.999999999999449,
+      "fallen": false,
+      "minimum_up_z": 0.9956174123030226,
+      "displacement_xy_m": [
+        0.4267921178784871,
+        0.019535710073424143
+      ],
+      "axial_speed_mps": 0.08525966564608957,
+      "mean_local_forward_last2s_mps": 0.09670517430543647,
+      "yaw_change_deg": 0.9714011399021317,
+      "last_1s_drift_m": 0.09687553189692065
+    },
+    {
+      "phase": "Settle before turn",
+      "duration_s": 1.000000000000334,
+      "fallen": false,
+      "minimum_up_z": 0.994882169675568,
+      "displacement_xy_m": [
+        0.003177674576986922,
+        0.010232001428054804
+      ],
+      "axial_speed_mps": 0.003140049444652732,
+      "mean_local_forward_last2s_mps": -0.0005890626506680466,
+      "yaw_change_deg": -1.4190034467852108,
+      "last_1s_drift_m": 0.010714078072374896
+    },
+    {
+      "phase": "Turn right",
+      "duration_s": 5.00000000000167,
+      "fallen": false,
+      "minimum_up_z": 0.995600693343871,
+      "displacement_xy_m": [
+        0.04383404386380396,
+        -0.07166174631141164
+      ],
+      "axial_speed_mps": 0.009170840269507268,
+      "mean_local_forward_last2s_mps": 0.014039907842507662,
+      "yaw_change_deg": -43.4376060446256,
+      "last_1s_drift_m": 0.019314812687336813
+    },
+    {
+      "phase": "Settle before backward",
+      "duration_s": 2.000000000000666,
+      "fallen": false,
+      "minimum_up_z": 0.9951291570606889,
+      "displacement_xy_m": [
+        0.005069438565811213,
+        0.016260057122471316
+      ],
+      "axial_speed_mps": -0.003965320189869585,
+      "mean_local_forward_last2s_mps": -0.005697848747887191,
+      "yaw_change_deg": 1.7665218258274746,
+      "last_1s_drift_m": 3.085579798548153e-05
+    },
+    {
+      "phase": "Backward",
+      "duration_s": 6.99999999999612,
+      "fallen": false,
+      "minimum_up_z": 0.9763027033809595,
+      "displacement_xy_m": [
+        -0.4187357344089463,
+        0.3761650914136707
+      ],
+      "axial_speed_mps": -0.08038931856281892,
+      "mean_local_forward_last2s_mps": -0.08776800708557378,
+      "yaw_change_deg": -0.3184559321051262,
+      "last_1s_drift_m": 0.09353492616483174
+    },
+    {
+      "phase": "Stop",
+      "duration_s": 2.9999999999983373,
+      "fallen": false,
+      "minimum_up_z": 0.9795696918129886,
+      "displacement_xy_m": [
+        -0.019972448714119656,
+        0.03030148293908347
+      ],
+      "axial_speed_mps": -0.011787567838431318,
+      "mean_local_forward_last2s_mps": 0.0009939163256143797,
+      "yaw_change_deg": -8.734489547695937,
+      "last_1s_drift_m": 9.522474953104203e-05
+    }
+  ],
+  "hashes": {
+    "/data/shijinsheng/open_duck/training/backward_sim_candidate_r22/corrector.onnx": "5ac2a33f81ad19a0823645feceea7d586b657152283a82b141530423655e514c",
+    "/data/shijinsheng/open_duck/training/backward_sim_candidate_r22/controller_contract.json": "1abc35a8228922d6a9ee59f18ed31da2a1508d50cde3b7214c502b7a03859464",
+    "/data/shijinsheng/open_duck/training/backward_reference_residual_r2/final.onnx": "05c1219a1403831deead152a6cff89b30a1d20fea3ebef285ca5c07279cfbdc8",
+    "/data/shijinsheng/open_duck/training/official_seed_turn_balance_v5_yaw_error/final.onnx": "6f60d1d0a0d5e9f780e18a0c202c816c8d0183c855f78fa0a2580dce776d383d",
+    "/data/shijinsheng/open_duck/training/negative_mirror_distill_v8_model/residual.onnx": "a5783314208fddb979bb80f5d9cf16b34b6af00f1658deb6980dcbb22a1f0f37",
+    "/data/shijinsheng/open_duck/projects/Open_Duck_Mini/BEST_WALK_ONNX_2.onnx": "3c606f9381a1710cc8fecdb7442787dcbfce3ee9bc02a6f1224774ab2b3a1067",
+    "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/record_motion_showcase.py": "9d1db997c79ba0f70a4338fda5cbc57a08060b16e8764650967c661fb481eba5",
+    "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/skill_target_execution.py": "970889df7068582853c3cd7b6ec7bb915502c106fc19123e52635978ef19660b"
+  },
+  "target_filter_tau_s": 0.01,
+  "stop_blend_s": 1.0,
+  "render_fps": 25,
+  "playback_speed": 1.0,
+  "execution_contract": "per_skill_v2",
+  "legacy_target_filter_tau_s": 0.0,
+  "backward_target_filter_tau_s": 0.01
+}

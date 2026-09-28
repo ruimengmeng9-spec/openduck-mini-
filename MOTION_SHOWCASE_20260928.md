@@ -1,5 +1,10 @@
 # Continuous forward / right turn / backward / stop recording
 
+**Historical recording:** this page describes the original shared-filter
+recording. The current recording script defaults to corrected per-skill
+execution; see `MOTION_EXECUTION_FIX_20260928.md`. Use
+`--legacy-shared-controls` only to reproduce the original behavior.
+
 This is one continuous fixed-flat-plane MuJoCo simulation, seed 1600. There are
 no resets between skills, no friction changes, and no hardware commands.
 

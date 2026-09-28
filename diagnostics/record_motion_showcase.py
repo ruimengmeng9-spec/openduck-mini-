@@ -17,6 +17,7 @@ from diagnostics.backward_skill_sequence import Sequence, controller_delta
 from diagnostics.backward_phase_search import CpuActor, heading, body_pitch, phase_pitch
 from diagnostics.reference_residual_policy import ReferenceResidualPolicy
 from diagnostics.negative_turn_residual import ResidualNegativePolicy
+from diagnostics.skill_target_execution import SkillTargetExecutor
 
 
 SCHEDULE = [('Stand', 3., 0., 0.), ('Forward', 5., .15, 0.),
@@ -25,7 +26,7 @@ SCHEDULE = [('Stand', 3., 0., 0.), ('Forward', 5., .15, 0.),
             ('Stop', 3., 0., 0.)]
 
 
-def rollout(root, output, seed):
+def rollout(root, output, seed, legacy_shared_controls=False):
     candidate = root / 'training/backward_sim_candidate_r22'
     controller = Sequence(root, candidate/'controller_contract.json', candidate/'corrector.onnx', stop_blend=1.)
     turn_base = root/'training/official_seed_turn_balance_v5_yaw_error/final.onnx'
@@ -39,7 +40,7 @@ def rollout(root, output, seed):
     s.imitation_phase = np.array([1., 0.], dtype=np.float32)
     mujoco.mj_forward(s.model, s.data)
     decoder = ReferenceResidualPolicy(engine.actor, s, .12, 1.)
-    filtered = s.prev_motor_targets.copy()
+    executor = SkillTargetExecutor(s, engine.dt, decoder.lower, decoder.upper, controller.tau)
     records, metrics = [], []
     back_start = back_heading = previous_pitch = previous_nominal = 0.
     fallen = False
@@ -57,6 +58,7 @@ def rollout(root, output, seed):
             previous_pitch = body_pitch(q0)
             previous_nominal = 0.
         for _ in range(round(duration/engine.dt)):
+            raw_action = None
             obs = np.asarray(s.get_obs(s.data, command), dtype=np.float32)
             u = float(np.clip((s.data.time-start_time)/1., 0., 1.))
             blending_stop = name == 'Stop' and u < 1.
@@ -82,19 +84,11 @@ def rollout(root, output, seed):
                     target = (1.-weight)*target+weight*stand_target
             else:
                 policy = turn if name == 'Turn right' else controller.stand
-                target = s.default_actuator+s.action_scale*policy.infer(obs)
-            if not np.isfinite(target).all():
-                raise ValueError('nonfinite target')
-            target = np.clip(target, decoder.lower, decoder.upper)
-            filtered += engine.dt/(controller.tau+engine.dt)*(target-filtered)
-            slew = np.clip(filtered, s.prev_motor_targets-s.max_motor_velocity*engine.dt,
-                           s.prev_motor_targets+s.max_motor_velocity*engine.dt)
-            s.data.ctrl[:] = slew
-            s.motor_targets = slew.copy()
-            s.prev_motor_targets = slew.copy()
-            s.last_last_last_action = s.last_last_action.copy()
-            s.last_last_action = s.last_action.copy()
-            s.last_action = ((filtered-s.default_actuator)/s.action_scale).astype(np.float32)
+                raw_action = policy.infer(obs)
+                target = s.default_actuator+s.action_scale*raw_action
+            # Keep the verified backward contract through its stop/settle phase.
+            # Forward/turn/ordinary stand retain the legacy policy contract.
+            executor.apply(target, raw_action, legacy_shared_controls or name in ('Backward','Stop'))
             for _ in range(s.decimation):
                 mujoco.mj_step(s.model, s.data)
             s.imitation_i = (s.imitation_i+1)%s.PRM.nb_steps_in_period
@@ -117,6 +111,7 @@ def rollout(root, output, seed):
         metrics.append(dict(phase=name, duration_s=elapsed, fallen=fallen, minimum_up_z=float(min_up),
                             displacement_xy_m=displacement.tolist(),
                             axial_speed_mps=float(np.dot(displacement,[math.cos(yaw0),math.sin(yaw0)])/elapsed),
+                            mean_local_forward_last2s_mps=float(np.mean([r[5][0] for r in records[-min(len(positions)-1,100):]])),
                             yaw_change_deg=math.degrees(yaw_change),
                             last_1s_drift_m=float(np.linalg.norm(positions[-1]-positions[max(0,len(positions)-51)]))))
         print(json.dumps(metrics[-1]), flush=True)
@@ -129,11 +124,15 @@ def rollout(root, output, seed):
     np.savez_compressed(output/'trajectory.npz', **trajectory)
     hashes = {str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in
               [candidate/'corrector.onnx', candidate/'controller_contract.json', engine.model_path,
-               turn_base, turn_residual, root/'projects/Open_Duck_Mini/BEST_WALK_ONNX_2.onnx', Path(__file__)]}
+               turn_base, turn_residual, root/'projects/Open_Duck_Mini/BEST_WALK_ONNX_2.onnx', Path(__file__),
+               Path(__file__).with_name('skill_target_execution.py')]}
     summary = dict(seed=seed, continuous=True, resets_between_skills=0, simulation_only=True,
                    hardware_readiness=False, schedule=SCHEDULE, completed=not fallen and len(metrics)==len(SCHEDULE),
                    phases=metrics, hashes=hashes, target_filter_tau_s=controller.tau, stop_blend_s=1.,
                    render_fps=25, playback_speed=1.)
+    summary['execution_contract'] = 'legacy_shared_filter' if legacy_shared_controls else 'per_skill_v2'
+    summary['legacy_target_filter_tau_s'] = controller.tau if legacy_shared_controls else 0.
+    summary['backward_target_filter_tau_s'] = controller.tau
     (output/'results.json').write_text(json.dumps(summary, indent=2), encoding='utf-8')
     return s.model, trajectory, summary
 
@@ -161,7 +160,7 @@ def render(model, trajectory, output):
                                         output_params=['-movflags','+faststart'], macro_block_size=16)
     writer.send(None)
     samples = []
-    sample_indices = [75, 200, 450, 700, 1000, len(xy)-26]
+    sample_indices = [74, 200, 450, 700, 1000, len(xy)-26]
     with mujoco.Renderer(model, height=height, width=width) as renderer:
         try:
             for i in range(0,len(xy),2):
@@ -195,7 +194,7 @@ def render(model, trajectory, output):
                 draw.text((660,8),'TOP VIEW: colored dots = recorded travel path',font=small,fill='white')
                 draw.text((660,34),'Continuous simulation | no resets | no hardware',font=small,fill='white')
                 writer.send(np.asarray(frame))
-                if any(abs(i-j)<=1 for j in sample_indices):
+                if i in sample_indices:
                     samples.append(frame.copy())
                 if i%200==0:
                     print(f'RENDER {i}/{len(xy)}',flush=True)
@@ -224,9 +223,12 @@ if __name__ == '__main__':
     parser.add_argument('--root',type=Path,default=Path('/data/shijinsheng/open_duck'))
     parser.add_argument('--output',type=Path,required=True)
     parser.add_argument('--seed',type=int,default=1600)
+    parser.add_argument('--no-render',action='store_true')
+    parser.add_argument('--legacy-shared-controls',action='store_true',help='Diagnostic reproduction of the old recording only')
     args = parser.parse_args()
     args.output.mkdir(parents=True,exist_ok=False)
-    model, trajectory, summary = rollout(args.root,args.output,args.seed)
-    render(model,trajectory,args.output)
+    model, trajectory, summary = rollout(args.root,args.output,args.seed,args.legacy_shared_controls)
+    if not args.no_render:
+        render(model,trajectory,args.output)
     if not summary['completed']:
         raise RuntimeError('Recorded sequence contains a fall; inspect results, not a successful showcase')

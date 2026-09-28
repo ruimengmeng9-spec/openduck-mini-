@@ -1,0 +1,3387 @@
+{
+  "simulation_only": true,
+  "paired": true,
+  "weights_changed": false,
+  "rows": [
+    {
+      "seed": 1600,
+      "continuous": true,
+      "resets_between_skills": 0,
+      "simulation_only": true,
+      "hardware_readiness": false,
+      "schedule": [
+        [
+          "Stand",
+          3.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Forward",
+          5.0,
+          0.15,
+          0.0
+        ],
+        [
+          "Settle before turn",
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Turn right",
+          5.0,
+          0.0,
+          -0.15
+        ],
+        [
+          "Settle before backward",
+          2.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Backward",
+          7.0,
+          -0.074,
+          0.0
+        ],
+        [
+          "Stop",
+          3.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "completed": true,
+      "phases": [
+        {
+          "phase": "Stand",
+          "duration_s": 2.999999999999891,
+          "fallen": false,
+          "minimum_up_z": 0.9952873168785084,
+          "displacement_xy_m": [
+            0.008340385565752008,
+            0.010783218085260794
+          ],
+          "axial_speed_mps": 0.002780128521917437,
+          "mean_local_forward_last2s_mps": 1.6492303009948984e-05,
+          "yaw_change_deg": -1.0165380504052024,
+          "last_1s_drift_m": 2.5303749141595296e-05
+        },
+        {
+          "phase": "Forward",
+          "duration_s": 4.999999999999449,
+          "fallen": false,
+          "minimum_up_z": 0.9954856066464576,
+          "displacement_xy_m": [
+            0.37204227529667727,
+            0.03859444806686856
+          ],
+          "axial_speed_mps": 0.07425980349719051,
+          "mean_local_forward_last2s_mps": 0.08237291376823591,
+          "yaw_change_deg": 5.110386095880501,
+          "last_1s_drift_m": 0.08220787180363107
+        },
+        {
+          "phase": "Settle before turn",
+          "duration_s": 1.000000000000334,
+          "fallen": false,
+          "minimum_up_z": 0.995132018874569,
+          "displacement_xy_m": [
+            0.0013468031155206561,
+            0.010471048537453467
+          ],
+          "axial_speed_mps": 0.0020908984723492256,
+          "mean_local_forward_last2s_mps": -0.0018059616271190431,
+          "yaw_change_deg": -2.3668495242071588,
+          "last_1s_drift_m": 0.01055730723743903
+        },
+        {
+          "phase": "Turn right",
+          "duration_s": 5.00000000000167,
+          "fallen": false,
+          "minimum_up_z": 0.9955959980477543,
+          "displacement_xy_m": [
+            0.03980279328044933,
+            -0.02627176956828161
+          ],
+          "axial_speed_mps": 0.007798590972827222,
+          "mean_local_forward_last2s_mps": 0.008987375771851325,
+          "yaw_change_deg": -24.48481729508082,
+          "last_1s_drift_m": 0.00915877445950433
+        },
+        {
+          "phase": "Settle before backward",
+          "duration_s": 2.000000000000666,
+          "fallen": false,
+          "minimum_up_z": 0.9953456236027796,
+          "displacement_xy_m": [
+            -0.0034499582853064203,
+            0.020052475215649047
+          ],
+          "axial_speed_mps": -0.00546920411531165,
+          "mean_local_forward_last2s_mps": -0.0070809752406892626,
+          "yaw_change_deg": 3.8515410765992177,
+          "last_1s_drift_m": 0.00016151945302763396
+        },
+        {
+          "phase": "Backward",
+          "duration_s": 6.99999999999612,
+          "fallen": false,
+          "minimum_up_z": 0.9764677261560042,
+          "displacement_xy_m": [
+            -0.529152370271491,
+            0.15256733454293805
+          ],
+          "axial_speed_mps": -0.07857707986351085,
+          "mean_local_forward_last2s_mps": -0.08392028944802724,
+          "yaw_change_deg": 3.2053615741852477,
+          "last_1s_drift_m": 0.08967252273732952
+        },
+        {
+          "phase": "Stop",
+          "duration_s": 2.9999999999983373,
+          "fallen": false,
+          "minimum_up_z": 0.9821420197127408,
+          "displacement_xy_m": [
+            -0.021249490771796775,
+            0.020545801081180093
+          ],
+          "axial_speed_mps": -0.008672212210386538,
+          "mean_local_forward_last2s_mps": 0.0007156781824550702,
+          "yaw_change_deg": -5.302239737946899,
+          "last_1s_drift_m": 9.325552815082307e-05
+        }
+      ],
+      "hashes": {
+        "/data/shijinsheng/open_duck/training/backward_sim_candidate_r22/corrector.onnx": "5ac2a33f81ad19a0823645feceea7d586b657152283a82b141530423655e514c",
+        "/data/shijinsheng/open_duck/training/backward_sim_candidate_r22/controller_contract.json": "1abc35a8228922d6a9ee59f18ed31da2a1508d50cde3b7214c502b7a03859464",
+        "/data/shijinsheng/open_duck/training/backward_reference_residual_r2/final.onnx": "05c1219a1403831deead152a6cff89b30a1d20fea3ebef285ca5c07279cfbdc8",
+        "/data/shijinsheng/open_duck/training/official_seed_turn_balance_v5_yaw_error/final.onnx": "6f60d1d0a0d5e9f780e18a0c202c816c8d0183c855f78fa0a2580dce776d383d",
+        "/data/shijinsheng/open_duck/training/negative_mirror_distill_v8_model/residual.onnx": "a5783314208fddb979bb80f5d9cf16b34b6af00f1658deb6980dcbb22a1f0f37",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Mini/BEST_WALK_ONNX_2.onnx": "3c606f9381a1710cc8fecdb7442787dcbfce3ee9bc02a6f1224774ab2b3a1067",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/record_motion_showcase.py": "9d1db997c79ba0f70a4338fda5cbc57a08060b16e8764650967c661fb481eba5",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/skill_target_execution.py": "970889df7068582853c3cd7b6ec7bb915502c106fc19123e52635978ef19660b"
+      },
+      "target_filter_tau_s": 0.01,
+      "stop_blend_s": 1.0,
+      "render_fps": 25,
+      "playback_speed": 1.0,
+      "execution_contract": "legacy_shared_filter",
+      "legacy_target_filter_tau_s": 0.01,
+      "backward_target_filter_tau_s": 0.01
+    },
+    {
+      "seed": 1600,
+      "continuous": true,
+      "resets_between_skills": 0,
+      "simulation_only": true,
+      "hardware_readiness": false,
+      "schedule": [
+        [
+          "Stand",
+          3.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Forward",
+          5.0,
+          0.15,
+          0.0
+        ],
+        [
+          "Settle before turn",
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Turn right",
+          5.0,
+          0.0,
+          -0.15
+        ],
+        [
+          "Settle before backward",
+          2.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Backward",
+          7.0,
+          -0.074,
+          0.0
+        ],
+        [
+          "Stop",
+          3.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "completed": true,
+      "phases": [
+        {
+          "phase": "Stand",
+          "duration_s": 2.999999999999891,
+          "fallen": false,
+          "minimum_up_z": 0.9948764970191958,
+          "displacement_xy_m": [
+            0.00905600535855072,
+            0.008877143877627097
+          ],
+          "axial_speed_mps": 0.003018668452850349,
+          "mean_local_forward_last2s_mps": -8.179284306004195e-05,
+          "yaw_change_deg": -1.18196958155996,
+          "last_1s_drift_m": 4.575470014331384e-05
+        },
+        {
+          "phase": "Forward",
+          "duration_s": 4.999999999999449,
+          "fallen": false,
+          "minimum_up_z": 0.9956174123030226,
+          "displacement_xy_m": [
+            0.4267921178784871,
+            0.019535710073424143
+          ],
+          "axial_speed_mps": 0.08525966564608957,
+          "mean_local_forward_last2s_mps": 0.09670517430543647,
+          "yaw_change_deg": 0.9714011399021317,
+          "last_1s_drift_m": 0.09687553189692065
+        },
+        {
+          "phase": "Settle before turn",
+          "duration_s": 1.000000000000334,
+          "fallen": false,
+          "minimum_up_z": 0.994882169675568,
+          "displacement_xy_m": [
+            0.003177674576986922,
+            0.010232001428054804
+          ],
+          "axial_speed_mps": 0.003140049444652732,
+          "mean_local_forward_last2s_mps": -0.0005890626506680466,
+          "yaw_change_deg": -1.4190034467852108,
+          "last_1s_drift_m": 0.010714078072374896
+        },
+        {
+          "phase": "Turn right",
+          "duration_s": 5.00000000000167,
+          "fallen": false,
+          "minimum_up_z": 0.995600693343871,
+          "displacement_xy_m": [
+            0.04383404386380396,
+            -0.07166174631141164
+          ],
+          "axial_speed_mps": 0.009170840269507268,
+          "mean_local_forward_last2s_mps": 0.014039907842507662,
+          "yaw_change_deg": -43.4376060446256,
+          "last_1s_drift_m": 0.019314812687336813
+        },
+        {
+          "phase": "Settle before backward",
+          "duration_s": 2.000000000000666,
+          "fallen": false,
+          "minimum_up_z": 0.9951291570606889,
+          "displacement_xy_m": [
+            0.005069438565811213,
+            0.016260057122471316
+          ],
+          "axial_speed_mps": -0.003965320189869585,
+          "mean_local_forward_last2s_mps": -0.005697848747887191,
+          "yaw_change_deg": 1.7665218258274746,
+          "last_1s_drift_m": 3.085579798548153e-05
+        },
+        {
+          "phase": "Backward",
+          "duration_s": 6.99999999999612,
+          "fallen": false,
+          "minimum_up_z": 0.9763027033809595,
+          "displacement_xy_m": [
+            -0.4187357344089463,
+            0.3761650914136707
+          ],
+          "axial_speed_mps": -0.08038931856281892,
+          "mean_local_forward_last2s_mps": -0.08776800708557378,
+          "yaw_change_deg": -0.3184559321051262,
+          "last_1s_drift_m": 0.09353492616483174
+        },
+        {
+          "phase": "Stop",
+          "duration_s": 2.9999999999983373,
+          "fallen": false,
+          "minimum_up_z": 0.9795696918129886,
+          "displacement_xy_m": [
+            -0.019972448714119656,
+            0.03030148293908347
+          ],
+          "axial_speed_mps": -0.011787567838431318,
+          "mean_local_forward_last2s_mps": 0.0009939163256143797,
+          "yaw_change_deg": -8.734489547695937,
+          "last_1s_drift_m": 9.522474953104203e-05
+        }
+      ],
+      "hashes": {
+        "/data/shijinsheng/open_duck/training/backward_sim_candidate_r22/corrector.onnx": "5ac2a33f81ad19a0823645feceea7d586b657152283a82b141530423655e514c",
+        "/data/shijinsheng/open_duck/training/backward_sim_candidate_r22/controller_contract.json": "1abc35a8228922d6a9ee59f18ed31da2a1508d50cde3b7214c502b7a03859464",
+        "/data/shijinsheng/open_duck/training/backward_reference_residual_r2/final.onnx": "05c1219a1403831deead152a6cff89b30a1d20fea3ebef285ca5c07279cfbdc8",
+        "/data/shijinsheng/open_duck/training/official_seed_turn_balance_v5_yaw_error/final.onnx": "6f60d1d0a0d5e9f780e18a0c202c816c8d0183c855f78fa0a2580dce776d383d",
+        "/data/shijinsheng/open_duck/training/negative_mirror_distill_v8_model/residual.onnx": "a5783314208fddb979bb80f5d9cf16b34b6af00f1658deb6980dcbb22a1f0f37",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Mini/BEST_WALK_ONNX_2.onnx": "3c606f9381a1710cc8fecdb7442787dcbfce3ee9bc02a6f1224774ab2b3a1067",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/record_motion_showcase.py": "9d1db997c79ba0f70a4338fda5cbc57a08060b16e8764650967c661fb481eba5",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/skill_target_execution.py": "970889df7068582853c3cd7b6ec7bb915502c106fc19123e52635978ef19660b"
+      },
+      "target_filter_tau_s": 0.01,
+      "stop_blend_s": 1.0,
+      "render_fps": 25,
+      "playback_speed": 1.0,
+      "execution_contract": "per_skill_v2",
+      "legacy_target_filter_tau_s": 0.0,
+      "backward_target_filter_tau_s": 0.01
+    },
+    {
+      "seed": 1601,
+      "continuous": true,
+      "resets_between_skills": 0,
+      "simulation_only": true,
+      "hardware_readiness": false,
+      "schedule": [
+        [
+          "Stand",
+          3.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Forward",
+          5.0,
+          0.15,
+          0.0
+        ],
+        [
+          "Settle before turn",
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Turn right",
+          5.0,
+          0.0,
+          -0.15
+        ],
+        [
+          "Settle before backward",
+          2.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Backward",
+          7.0,
+          -0.074,
+          0.0
+        ],
+        [
+          "Stop",
+          3.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "completed": true,
+      "phases": [
+        {
+          "phase": "Stand",
+          "duration_s": 2.999999999999891,
+          "fallen": false,
+          "minimum_up_z": 0.9953067963515161,
+          "displacement_xy_m": [
+            0.007998412654188191,
+            0.010585026177930822
+          ],
+          "axial_speed_mps": 0.0026661375513961603,
+          "mean_local_forward_last2s_mps": 5.437387502404728e-06,
+          "yaw_change_deg": -1.1066009832344814,
+          "last_1s_drift_m": 2.591428217614645e-05
+        },
+        {
+          "phase": "Forward",
+          "duration_s": 4.999999999999449,
+          "fallen": false,
+          "minimum_up_z": 0.9954989842801162,
+          "displacement_xy_m": [
+            0.3799792158298488,
+            0.026651023902533072
+          ],
+          "axial_speed_mps": 0.07587872919540799,
+          "mean_local_forward_last2s_mps": 0.08348172585708488,
+          "yaw_change_deg": 3.4578304494489,
+          "last_1s_drift_m": 0.08362550759784118
+        },
+        {
+          "phase": "Settle before turn",
+          "duration_s": 1.000000000000334,
+          "fallen": false,
+          "minimum_up_z": 0.9951065711411636,
+          "displacement_xy_m": [
+            0.0012932837688582333,
+            0.011264221039748064
+          ],
+          "axial_speed_mps": 0.0017543116535806177,
+          "mean_local_forward_last2s_mps": -0.0022953847268539686,
+          "yaw_change_deg": -2.2103772850044,
+          "last_1s_drift_m": 0.011338221136452362
+        },
+        {
+          "phase": "Turn right",
+          "duration_s": 5.00000000000167,
+          "fallen": false,
+          "minimum_up_z": 0.9956326016646363,
+          "displacement_xy_m": [
+            0.03908811201339957,
+            -0.02899801439231026
+          ],
+          "axial_speed_mps": 0.007803341431707529,
+          "mean_local_forward_last2s_mps": 0.008876109855713512,
+          "yaw_change_deg": -25.170102295732885,
+          "last_1s_drift_m": 0.00945048748405057
+        },
+        {
+          "phase": "Settle before backward",
+          "duration_s": 2.000000000000666,
+          "fallen": false,
+          "minimum_up_z": 0.9953301125367565,
+          "displacement_xy_m": [
+            -0.002678307895317422,
+            0.02048059380437191
+          ],
+          "axial_speed_mps": -0.005545870460687076,
+          "mean_local_forward_last2s_mps": -0.007115580098453112,
+          "yaw_change_deg": 3.8929577400531743,
+          "last_1s_drift_m": 0.00014800868156967747
+        },
+        {
+          "phase": "Backward",
+          "duration_s": 6.99999999999612,
+          "fallen": false,
+          "minimum_up_z": 0.9770459609718697,
+          "displacement_xy_m": [
+            -0.47533341146350605,
+            0.1479474997262222
+          ],
+          "axial_speed_mps": -0.0709576506173148,
+          "mean_local_forward_last2s_mps": -0.07459249348372489,
+          "yaw_change_deg": 11.680642316715499,
+          "last_1s_drift_m": 0.08023003091204785
+        },
+        {
+          "phase": "Stop",
+          "duration_s": 2.9999999999983373,
+          "fallen": false,
+          "minimum_up_z": 0.9822757662003334,
+          "displacement_xy_m": [
+            -0.025351730339423006,
+            0.0179231411558389
+          ],
+          "axial_speed_mps": -0.009317255135397131,
+          "mean_local_forward_last2s_mps": 0.0005652123810408153,
+          "yaw_change_deg": -2.84413214175273,
+          "last_1s_drift_m": 8.059795857737365e-05
+        }
+      ],
+      "hashes": {
+        "/data/shijinsheng/open_duck/training/backward_sim_candidate_r22/corrector.onnx": "5ac2a33f81ad19a0823645feceea7d586b657152283a82b141530423655e514c",
+        "/data/shijinsheng/open_duck/training/backward_sim_candidate_r22/controller_contract.json": "1abc35a8228922d6a9ee59f18ed31da2a1508d50cde3b7214c502b7a03859464",
+        "/data/shijinsheng/open_duck/training/backward_reference_residual_r2/final.onnx": "05c1219a1403831deead152a6cff89b30a1d20fea3ebef285ca5c07279cfbdc8",
+        "/data/shijinsheng/open_duck/training/official_seed_turn_balance_v5_yaw_error/final.onnx": "6f60d1d0a0d5e9f780e18a0c202c816c8d0183c855f78fa0a2580dce776d383d",
+        "/data/shijinsheng/open_duck/training/negative_mirror_distill_v8_model/residual.onnx": "a5783314208fddb979bb80f5d9cf16b34b6af00f1658deb6980dcbb22a1f0f37",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Mini/BEST_WALK_ONNX_2.onnx": "3c606f9381a1710cc8fecdb7442787dcbfce3ee9bc02a6f1224774ab2b3a1067",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/record_motion_showcase.py": "9d1db997c79ba0f70a4338fda5cbc57a08060b16e8764650967c661fb481eba5",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/skill_target_execution.py": "970889df7068582853c3cd7b6ec7bb915502c106fc19123e52635978ef19660b"
+      },
+      "target_filter_tau_s": 0.01,
+      "stop_blend_s": 1.0,
+      "render_fps": 25,
+      "playback_speed": 1.0,
+      "execution_contract": "legacy_shared_filter",
+      "legacy_target_filter_tau_s": 0.01,
+      "backward_target_filter_tau_s": 0.01
+    },
+    {
+      "seed": 1601,
+      "continuous": true,
+      "resets_between_skills": 0,
+      "simulation_only": true,
+      "hardware_readiness": false,
+      "schedule": [
+        [
+          "Stand",
+          3.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Forward",
+          5.0,
+          0.15,
+          0.0
+        ],
+        [
+          "Settle before turn",
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Turn right",
+          5.0,
+          0.0,
+          -0.15
+        ],
+        [
+          "Settle before backward",
+          2.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Backward",
+          7.0,
+          -0.074,
+          0.0
+        ],
+        [
+          "Stop",
+          3.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "completed": true,
+      "phases": [
+        {
+          "phase": "Stand",
+          "duration_s": 2.999999999999891,
+          "fallen": false,
+          "minimum_up_z": 0.9947246835093373,
+          "displacement_xy_m": [
+            0.008316766195783847,
+            0.009820628121096688
+          ],
+          "axial_speed_mps": 0.002772255398594716,
+          "mean_local_forward_last2s_mps": -9.428254178314165e-05,
+          "yaw_change_deg": -1.279922456035471,
+          "last_1s_drift_m": 4.712165076094761e-05
+        },
+        {
+          "phase": "Forward",
+          "duration_s": 4.999999999999449,
+          "fallen": false,
+          "minimum_up_z": 0.9956309861758718,
+          "displacement_xy_m": [
+            0.43360870446238947,
+            0.022783295733939952
+          ],
+          "axial_speed_mps": 0.08659832153677413,
+          "mean_local_forward_last2s_mps": 0.09706776494110388,
+          "yaw_change_deg": 0.8304414474332207,
+          "last_1s_drift_m": 0.09840593482473017
+        },
+        {
+          "phase": "Settle before turn",
+          "duration_s": 1.000000000000334,
+          "fallen": false,
+          "minimum_up_z": 0.9947151050206787,
+          "displacement_xy_m": [
+            0.0034511515142855442,
+            0.010404343712270642
+          ],
+          "axial_speed_mps": 0.0033694248744664925,
+          "mean_local_forward_last2s_mps": -0.000393186045264869,
+          "yaw_change_deg": -1.575979013559989,
+          "last_1s_drift_m": 0.010961788852993887
+        },
+        {
+          "phase": "Turn right",
+          "duration_s": 5.00000000000167,
+          "fallen": false,
+          "minimum_up_z": 0.9955932621970693,
+          "displacement_xy_m": [
+            0.04364688414216161,
+            -0.07191710411467792
+          ],
+          "axial_speed_mps": 0.009232284530257595,
+          "mean_local_forward_last2s_mps": 0.014086663363814476,
+          "yaw_change_deg": -43.720036132378276,
+          "last_1s_drift_m": 0.018904047064621524
+        },
+        {
+          "phase": "Settle before backward",
+          "duration_s": 2.000000000000666,
+          "fallen": false,
+          "minimum_up_z": 0.9951386065011004,
+          "displacement_xy_m": [
+            0.005219901054156317,
+            0.01623276199128442
+          ],
+          "axial_speed_mps": -0.00399198874033779,
+          "mean_local_forward_last2s_mps": -0.005688752477854267,
+          "yaw_change_deg": 1.8091388073459096,
+          "last_1s_drift_m": 2.751285223653133e-05
+        },
+        {
+          "phase": "Backward",
+          "duration_s": 6.99999999999612,
+          "fallen": false,
+          "minimum_up_z": 0.9758904331216409,
+          "displacement_xy_m": [
+            -0.4800891731056004,
+            0.3356922737594014
+          ],
+          "axial_speed_mps": -0.0826629365072273,
+          "mean_local_forward_last2s_mps": -0.08761573854539723,
+          "yaw_change_deg": 16.084792516435517,
+          "last_1s_drift_m": 0.08947785594967379
+        },
+        {
+          "phase": "Stop",
+          "duration_s": 2.9999999999983373,
+          "fallen": false,
+          "minimum_up_z": 0.9811614286568257,
+          "displacement_xy_m": [
+            -0.012632165695459842,
+            0.027288070734796666
+          ],
+          "axial_speed_mps": -0.007972459098200251,
+          "mean_local_forward_last2s_mps": 0.0004582852373998257,
+          "yaw_change_deg": -1.1570957755791142,
+          "last_1s_drift_m": 7.527242762914978e-05
+        }
+      ],
+      "hashes": {
+        "/data/shijinsheng/open_duck/training/backward_sim_candidate_r22/corrector.onnx": "5ac2a33f81ad19a0823645feceea7d586b657152283a82b141530423655e514c",
+        "/data/shijinsheng/open_duck/training/backward_sim_candidate_r22/controller_contract.json": "1abc35a8228922d6a9ee59f18ed31da2a1508d50cde3b7214c502b7a03859464",
+        "/data/shijinsheng/open_duck/training/backward_reference_residual_r2/final.onnx": "05c1219a1403831deead152a6cff89b30a1d20fea3ebef285ca5c07279cfbdc8",
+        "/data/shijinsheng/open_duck/training/official_seed_turn_balance_v5_yaw_error/final.onnx": "6f60d1d0a0d5e9f780e18a0c202c816c8d0183c855f78fa0a2580dce776d383d",
+        "/data/shijinsheng/open_duck/training/negative_mirror_distill_v8_model/residual.onnx": "a5783314208fddb979bb80f5d9cf16b34b6af00f1658deb6980dcbb22a1f0f37",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Mini/BEST_WALK_ONNX_2.onnx": "3c606f9381a1710cc8fecdb7442787dcbfce3ee9bc02a6f1224774ab2b3a1067",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/record_motion_showcase.py": "9d1db997c79ba0f70a4338fda5cbc57a08060b16e8764650967c661fb481eba5",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/skill_target_execution.py": "970889df7068582853c3cd7b6ec7bb915502c106fc19123e52635978ef19660b"
+      },
+      "target_filter_tau_s": 0.01,
+      "stop_blend_s": 1.0,
+      "render_fps": 25,
+      "playback_speed": 1.0,
+      "execution_contract": "per_skill_v2",
+      "legacy_target_filter_tau_s": 0.0,
+      "backward_target_filter_tau_s": 0.01
+    },
+    {
+      "seed": 1602,
+      "continuous": true,
+      "resets_between_skills": 0,
+      "simulation_only": true,
+      "hardware_readiness": false,
+      "schedule": [
+        [
+          "Stand",
+          3.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Forward",
+          5.0,
+          0.15,
+          0.0
+        ],
+        [
+          "Settle before turn",
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Turn right",
+          5.0,
+          0.0,
+          -0.15
+        ],
+        [
+          "Settle before backward",
+          2.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Backward",
+          7.0,
+          -0.074,
+          0.0
+        ],
+        [
+          "Stop",
+          3.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "completed": true,
+      "phases": [
+        {
+          "phase": "Stand",
+          "duration_s": 2.999999999999891,
+          "fallen": false,
+          "minimum_up_z": 0.9954007232819992,
+          "displacement_xy_m": [
+            0.008870656014533412,
+            0.010104750177583017
+          ],
+          "axial_speed_mps": 0.0029568853381779113,
+          "mean_local_forward_last2s_mps": -8.833293472851096e-05,
+          "yaw_change_deg": -0.9568636111479489,
+          "last_1s_drift_m": 8.603045329200644e-05
+        },
+        {
+          "phase": "Forward",
+          "duration_s": 4.999999999999449,
+          "fallen": false,
+          "minimum_up_z": 0.9955645840018689,
+          "displacement_xy_m": [
+            0.37194878150871846,
+            0.03439151996313734
+          ],
+          "axial_speed_mps": 0.07426451751140153,
+          "mean_local_forward_last2s_mps": 0.08176780771828639,
+          "yaw_change_deg": 4.721142701149937,
+          "last_1s_drift_m": 0.08406526836054584
+        },
+        {
+          "phase": "Settle before turn",
+          "duration_s": 1.000000000000334,
+          "fallen": false,
+          "minimum_up_z": 0.9949204990945792,
+          "displacement_xy_m": [
+            0.0012707221541937153,
+            0.010716150489914394
+          ],
+          "axial_speed_mps": 0.0019715153727094905,
+          "mean_local_forward_last2s_mps": -0.0020701174329145326,
+          "yaw_change_deg": -2.0429856486982914,
+          "last_1s_drift_m": 0.010791228665710464
+        },
+        {
+          "phase": "Turn right",
+          "duration_s": 5.00000000000167,
+          "fallen": false,
+          "minimum_up_z": 0.9955737870425285,
+          "displacement_xy_m": [
+            0.03936722051816399,
+            -0.026503305447787503
+          ],
+          "axial_speed_mps": 0.007710671568312373,
+          "mean_local_forward_last2s_mps": 0.008533922200086844,
+          "yaw_change_deg": -24.81913739715081,
+          "last_1s_drift_m": 0.0089752342376466
+        },
+        {
+          "phase": "Settle before backward",
+          "duration_s": 2.000000000000666,
+          "fallen": false,
+          "minimum_up_z": 0.9953345860439426,
+          "displacement_xy_m": [
+            -0.003430810463395828,
+            0.020276729768673573
+          ],
+          "axial_speed_mps": -0.0055551978575928505,
+          "mean_local_forward_last2s_mps": -0.007267159146785266,
+          "yaw_change_deg": 3.886134365570353,
+          "last_1s_drift_m": 0.00015185603327248277
+        },
+        {
+          "phase": "Backward",
+          "duration_s": 6.99999999999612,
+          "fallen": false,
+          "minimum_up_z": 0.9766643714014607,
+          "displacement_xy_m": [
+            -0.4840770414699948,
+            0.14973672420813033
+          ],
+          "axial_speed_mps": -0.07234152679997707,
+          "mean_local_forward_last2s_mps": -0.07643575988768143,
+          "yaw_change_deg": 9.842348434762686,
+          "last_1s_drift_m": 0.07271829535890893
+        },
+        {
+          "phase": "Stop",
+          "duration_s": 2.9999999999983373,
+          "fallen": false,
+          "minimum_up_z": 0.9816650582209523,
+          "displacement_xy_m": [
+            -0.024862228173284553,
+            0.015981435866933347
+          ],
+          "axial_speed_mps": -0.009044100610334966,
+          "mean_local_forward_last2s_mps": 0.0004732609606359321,
+          "yaw_change_deg": -6.254599436808953,
+          "last_1s_drift_m": 4.7317089437565455e-05
+        }
+      ],
+      "hashes": {
+        "/data/shijinsheng/open_duck/training/backward_sim_candidate_r22/corrector.onnx": "5ac2a33f81ad19a0823645feceea7d586b657152283a82b141530423655e514c",
+        "/data/shijinsheng/open_duck/training/backward_sim_candidate_r22/controller_contract.json": "1abc35a8228922d6a9ee59f18ed31da2a1508d50cde3b7214c502b7a03859464",
+        "/data/shijinsheng/open_duck/training/backward_reference_residual_r2/final.onnx": "05c1219a1403831deead152a6cff89b30a1d20fea3ebef285ca5c07279cfbdc8",
+        "/data/shijinsheng/open_duck/training/official_seed_turn_balance_v5_yaw_error/final.onnx": "6f60d1d0a0d5e9f780e18a0c202c816c8d0183c855f78fa0a2580dce776d383d",
+        "/data/shijinsheng/open_duck/training/negative_mirror_distill_v8_model/residual.onnx": "a5783314208fddb979bb80f5d9cf16b34b6af00f1658deb6980dcbb22a1f0f37",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Mini/BEST_WALK_ONNX_2.onnx": "3c606f9381a1710cc8fecdb7442787dcbfce3ee9bc02a6f1224774ab2b3a1067",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/record_motion_showcase.py": "9d1db997c79ba0f70a4338fda5cbc57a08060b16e8764650967c661fb481eba5",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/skill_target_execution.py": "970889df7068582853c3cd7b6ec7bb915502c106fc19123e52635978ef19660b"
+      },
+      "target_filter_tau_s": 0.01,
+      "stop_blend_s": 1.0,
+      "render_fps": 25,
+      "playback_speed": 1.0,
+      "execution_contract": "legacy_shared_filter",
+      "legacy_target_filter_tau_s": 0.01,
+      "backward_target_filter_tau_s": 0.01
+    },
+    {
+      "seed": 1602,
+      "continuous": true,
+      "resets_between_skills": 0,
+      "simulation_only": true,
+      "hardware_readiness": false,
+      "schedule": [
+        [
+          "Stand",
+          3.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Forward",
+          5.0,
+          0.15,
+          0.0
+        ],
+        [
+          "Settle before turn",
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Turn right",
+          5.0,
+          0.0,
+          -0.15
+        ],
+        [
+          "Settle before backward",
+          2.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Backward",
+          7.0,
+          -0.074,
+          0.0
+        ],
+        [
+          "Stop",
+          3.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "completed": true,
+      "phases": [
+        {
+          "phase": "Stand",
+          "duration_s": 2.999999999999891,
+          "fallen": false,
+          "minimum_up_z": 0.9953441696275215,
+          "displacement_xy_m": [
+            0.008747379092587779,
+            0.010723626853889754
+          ],
+          "axial_speed_mps": 0.002915793030862699,
+          "mean_local_forward_last2s_mps": 3.993575823853731e-06,
+          "yaw_change_deg": -0.6055489423734918,
+          "last_1s_drift_m": 5.1112553461770806e-05
+        },
+        {
+          "phase": "Forward",
+          "duration_s": 4.999999999999449,
+          "fallen": false,
+          "minimum_up_z": 0.9955989909065052,
+          "displacement_xy_m": [
+            0.4229258956138993,
+            0.025304077294414817
+          ],
+          "axial_speed_mps": 0.08452696921763408,
+          "mean_local_forward_last2s_mps": 0.09670469637430859,
+          "yaw_change_deg": 0.905538514187445,
+          "last_1s_drift_m": 0.09765641670031695
+        },
+        {
+          "phase": "Settle before turn",
+          "duration_s": 1.000000000000334,
+          "fallen": false,
+          "minimum_up_z": 0.9948087171609453,
+          "displacement_xy_m": [
+            0.0031538865483415335,
+            0.010436313703057677
+          ],
+          "axial_speed_mps": 0.0032084855802845336,
+          "mean_local_forward_last2s_mps": -0.0007113838952864272,
+          "yaw_change_deg": -1.4484572561457618,
+          "last_1s_drift_m": 0.010902460459384346
+        },
+        {
+          "phase": "Turn right",
+          "duration_s": 5.00000000000167,
+          "fallen": false,
+          "minimum_up_z": 0.995606200230846,
+          "displacement_xy_m": [
+            0.04522804467420982,
+            -0.06861639341686425
+          ],
+          "axial_speed_mps": 0.009318850228833539,
+          "mean_local_forward_last2s_mps": 0.013711957622151424,
+          "yaw_change_deg": -42.90930677801772,
+          "last_1s_drift_m": 0.017491899589473517
+        },
+        {
+          "phase": "Settle before backward",
+          "duration_s": 2.000000000000666,
+          "fallen": false,
+          "minimum_up_z": 0.995111166225767,
+          "displacement_xy_m": [
+            0.004404270715947511,
+            0.015976492891060644
+          ],
+          "axial_speed_mps": -0.003972353416267158,
+          "mean_local_forward_last2s_mps": -0.0056192289488986216,
+          "yaw_change_deg": 1.7279638705709182,
+          "last_1s_drift_m": 4.5865832962936346e-05
+        },
+        {
+          "phase": "Backward",
+          "duration_s": 6.99999999999612,
+          "fallen": false,
+          "minimum_up_z": 0.9713930829143337,
+          "displacement_xy_m": [
+            -0.49773590510528376,
+            0.35829821345261914
+          ],
+          "axial_speed_mps": -0.08703480632606038,
+          "mean_local_forward_last2s_mps": -0.09150849708352615,
+          "yaw_change_deg": 5.625978321070468,
+          "last_1s_drift_m": 0.09766108015631388
+        },
+        {
+          "phase": "Stop",
+          "duration_s": 2.9999999999983373,
+          "fallen": false,
+          "minimum_up_z": 0.9806045256810554,
+          "displacement_xy_m": [
+            -0.019963530073438082,
+            0.029581544444007235
+          ],
+          "axial_speed_mps": -0.011228578447553147,
+          "mean_local_forward_last2s_mps": 0.0009513450103990062,
+          "yaw_change_deg": -6.0286169835262555,
+          "last_1s_drift_m": 0.00011185656933446638
+        }
+      ],
+      "hashes": {
+        "/data/shijinsheng/open_duck/training/backward_sim_candidate_r22/corrector.onnx": "5ac2a33f81ad19a0823645feceea7d586b657152283a82b141530423655e514c",
+        "/data/shijinsheng/open_duck/training/backward_sim_candidate_r22/controller_contract.json": "1abc35a8228922d6a9ee59f18ed31da2a1508d50cde3b7214c502b7a03859464",
+        "/data/shijinsheng/open_duck/training/backward_reference_residual_r2/final.onnx": "05c1219a1403831deead152a6cff89b30a1d20fea3ebef285ca5c07279cfbdc8",
+        "/data/shijinsheng/open_duck/training/official_seed_turn_balance_v5_yaw_error/final.onnx": "6f60d1d0a0d5e9f780e18a0c202c816c8d0183c855f78fa0a2580dce776d383d",
+        "/data/shijinsheng/open_duck/training/negative_mirror_distill_v8_model/residual.onnx": "a5783314208fddb979bb80f5d9cf16b34b6af00f1658deb6980dcbb22a1f0f37",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Mini/BEST_WALK_ONNX_2.onnx": "3c606f9381a1710cc8fecdb7442787dcbfce3ee9bc02a6f1224774ab2b3a1067",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/record_motion_showcase.py": "9d1db997c79ba0f70a4338fda5cbc57a08060b16e8764650967c661fb481eba5",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/skill_target_execution.py": "970889df7068582853c3cd7b6ec7bb915502c106fc19123e52635978ef19660b"
+      },
+      "target_filter_tau_s": 0.01,
+      "stop_blend_s": 1.0,
+      "render_fps": 25,
+      "playback_speed": 1.0,
+      "execution_contract": "per_skill_v2",
+      "legacy_target_filter_tau_s": 0.0,
+      "backward_target_filter_tau_s": 0.01
+    },
+    {
+      "seed": 1603,
+      "continuous": true,
+      "resets_between_skills": 0,
+      "simulation_only": true,
+      "hardware_readiness": false,
+      "schedule": [
+        [
+          "Stand",
+          3.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Forward",
+          5.0,
+          0.15,
+          0.0
+        ],
+        [
+          "Settle before turn",
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Turn right",
+          5.0,
+          0.0,
+          -0.15
+        ],
+        [
+          "Settle before backward",
+          2.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Backward",
+          7.0,
+          -0.074,
+          0.0
+        ],
+        [
+          "Stop",
+          3.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "completed": true,
+      "phases": [
+        {
+          "phase": "Stand",
+          "duration_s": 2.999999999999891,
+          "fallen": false,
+          "minimum_up_z": 0.9953917069887318,
+          "displacement_xy_m": [
+            0.008301483710143293,
+            0.010488196750362421
+          ],
+          "axial_speed_mps": 0.0027671612367145314,
+          "mean_local_forward_last2s_mps": -1.640985639907074e-05,
+          "yaw_change_deg": -0.6798458737112877,
+          "last_1s_drift_m": 8.856924549379744e-05
+        },
+        {
+          "phase": "Forward",
+          "duration_s": 4.999999999999449,
+          "fallen": false,
+          "minimum_up_z": 0.9955585328602813,
+          "displacement_xy_m": [
+            0.36619914449372054,
+            0.03467005852141303
+          ],
+          "axial_speed_mps": 0.07315239927132437,
+          "mean_local_forward_last2s_mps": 0.08029923585951902,
+          "yaw_change_deg": 4.357416054042875,
+          "last_1s_drift_m": 0.0811001260518263
+        },
+        {
+          "phase": "Settle before turn",
+          "duration_s": 1.000000000000334,
+          "fallen": false,
+          "minimum_up_z": 0.995087459100876,
+          "displacement_xy_m": [
+            0.00040508517995296867,
+            0.011394889980877392
+          ],
+          "axial_speed_mps": 0.0011351380194492588,
+          "mean_local_forward_last2s_mps": -0.0028834675494020575,
+          "yaw_change_deg": -2.144031303300512,
+          "last_1s_drift_m": 0.011402088040324785
+        },
+        {
+          "phase": "Turn right",
+          "duration_s": 5.00000000000167,
+          "fallen": false,
+          "minimum_up_z": 0.9956678375108882,
+          "displacement_xy_m": [
+            0.039336625920092405,
+            -0.027028706817687067
+          ],
+          "axial_speed_mps": 0.007719838320476712,
+          "mean_local_forward_last2s_mps": 0.008449554862698907,
+          "yaw_change_deg": -24.53846956596507,
+          "last_1s_drift_m": 0.008875313532904437
+        },
+        {
+          "phase": "Settle before backward",
+          "duration_s": 2.000000000000666,
+          "fallen": false,
+          "minimum_up_z": 0.9953575751737938,
+          "displacement_xy_m": [
+            -0.0034841121351862903,
+            0.02040571431523668
+          ],
+          "axial_speed_mps": -0.005590894584868301,
+          "mean_local_forward_last2s_mps": -0.007133987955733195,
+          "yaw_change_deg": 4.010117298212776,
+          "last_1s_drift_m": 0.00017411219835770011
+        },
+        {
+          "phase": "Backward",
+          "duration_s": 6.99999999999612,
+          "fallen": false,
+          "minimum_up_z": 0.9755924752553521,
+          "displacement_xy_m": [
+            -0.5419864444146731,
+            0.14192561739550735
+          ],
+          "axial_speed_mps": -0.07980979078473416,
+          "mean_local_forward_last2s_mps": -0.0776949825389909,
+          "yaw_change_deg": 9.026944337954784,
+          "last_1s_drift_m": 0.07972727109253976
+        },
+        {
+          "phase": "Stop",
+          "duration_s": 2.9999999999983373,
+          "fallen": false,
+          "minimum_up_z": 0.9825638316497679,
+          "displacement_xy_m": [
+            -0.02851428948288995,
+            0.018784338721670207
+          ],
+          "axial_speed_mps": -0.010445119098631675,
+          "mean_local_forward_last2s_mps": 0.0007407930467285579,
+          "yaw_change_deg": -4.2157051683757185,
+          "last_1s_drift_m": 9.449924890103241e-05
+        }
+      ],
+      "hashes": {
+        "/data/shijinsheng/open_duck/training/backward_sim_candidate_r22/corrector.onnx": "5ac2a33f81ad19a0823645feceea7d586b657152283a82b141530423655e514c",
+        "/data/shijinsheng/open_duck/training/backward_sim_candidate_r22/controller_contract.json": "1abc35a8228922d6a9ee59f18ed31da2a1508d50cde3b7214c502b7a03859464",
+        "/data/shijinsheng/open_duck/training/backward_reference_residual_r2/final.onnx": "05c1219a1403831deead152a6cff89b30a1d20fea3ebef285ca5c07279cfbdc8",
+        "/data/shijinsheng/open_duck/training/official_seed_turn_balance_v5_yaw_error/final.onnx": "6f60d1d0a0d5e9f780e18a0c202c816c8d0183c855f78fa0a2580dce776d383d",
+        "/data/shijinsheng/open_duck/training/negative_mirror_distill_v8_model/residual.onnx": "a5783314208fddb979bb80f5d9cf16b34b6af00f1658deb6980dcbb22a1f0f37",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Mini/BEST_WALK_ONNX_2.onnx": "3c606f9381a1710cc8fecdb7442787dcbfce3ee9bc02a6f1224774ab2b3a1067",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/record_motion_showcase.py": "9d1db997c79ba0f70a4338fda5cbc57a08060b16e8764650967c661fb481eba5",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/skill_target_execution.py": "970889df7068582853c3cd7b6ec7bb915502c106fc19123e52635978ef19660b"
+      },
+      "target_filter_tau_s": 0.01,
+      "stop_blend_s": 1.0,
+      "render_fps": 25,
+      "playback_speed": 1.0,
+      "execution_contract": "legacy_shared_filter",
+      "legacy_target_filter_tau_s": 0.01,
+      "backward_target_filter_tau_s": 0.01
+    },
+    {
+      "seed": 1603,
+      "continuous": true,
+      "resets_between_skills": 0,
+      "simulation_only": true,
+      "hardware_readiness": false,
+      "schedule": [
+        [
+          "Stand",
+          3.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Forward",
+          5.0,
+          0.15,
+          0.0
+        ],
+        [
+          "Settle before turn",
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Turn right",
+          5.0,
+          0.0,
+          -0.15
+        ],
+        [
+          "Settle before backward",
+          2.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Backward",
+          7.0,
+          -0.074,
+          0.0
+        ],
+        [
+          "Stop",
+          3.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "completed": true,
+      "phases": [
+        {
+          "phase": "Stand",
+          "duration_s": 2.999999999999891,
+          "fallen": false,
+          "minimum_up_z": 0.9953324972273635,
+          "displacement_xy_m": [
+            0.00882810241926521,
+            0.010531816478872441
+          ],
+          "axial_speed_mps": 0.0029427008064218433,
+          "mean_local_forward_last2s_mps": 3.4448840088126044e-05,
+          "yaw_change_deg": -0.5364243386531447,
+          "last_1s_drift_m": 6.700404289888991e-05
+        },
+        {
+          "phase": "Forward",
+          "duration_s": 4.999999999999449,
+          "fallen": false,
+          "minimum_up_z": 0.9955923098603174,
+          "displacement_xy_m": [
+            0.42469994747489725,
+            0.02553721700849923
+          ],
+          "axial_speed_mps": 0.08488844977683913,
+          "mean_local_forward_last2s_mps": 0.09661455511680535,
+          "yaw_change_deg": 0.8987004536179317,
+          "last_1s_drift_m": 0.09737003063449401
+        },
+        {
+          "phase": "Settle before turn",
+          "duration_s": 1.000000000000334,
+          "fallen": false,
+          "minimum_up_z": 0.9947829566693722,
+          "displacement_xy_m": [
+            0.0033145269901143637,
+            0.010192028358147254
+          ],
+          "axial_speed_mps": 0.0033789035931557393,
+          "mean_local_forward_last2s_mps": -0.00039483257238766745,
+          "yaw_change_deg": -1.477277925670525,
+          "last_1s_drift_m": 0.01071744051634878
+        },
+        {
+          "phase": "Turn right",
+          "duration_s": 5.00000000000167,
+          "fallen": false,
+          "minimum_up_z": 0.9956067216444556,
+          "displacement_xy_m": [
+            0.045194187103853256,
+            -0.07014086347441828
+          ],
+          "axial_speed_mps": 0.009310103290710445,
+          "mean_local_forward_last2s_mps": 0.014345488003029266,
+          "yaw_change_deg": -43.27568401094798,
+          "last_1s_drift_m": 0.01943553152588355
+        },
+        {
+          "phase": "Settle before backward",
+          "duration_s": 2.000000000000666,
+          "fallen": false,
+          "minimum_up_z": 0.9951146493946855,
+          "displacement_xy_m": [
+            0.004541157608290269,
+            0.016342303093387682
+          ],
+          "axial_speed_mps": -0.00409358130230264,
+          "mean_local_forward_last2s_mps": -0.005837313857065134,
+          "yaw_change_deg": 1.8343235568012497,
+          "last_1s_drift_m": 3.708675573029415e-05
+        },
+        {
+          "phase": "Backward",
+          "duration_s": 6.99999999999612,
+          "fallen": false,
+          "minimum_up_z": 0.9761561437863259,
+          "displacement_xy_m": [
+            -0.4308311937940488,
+            0.37135246605757255
+          ],
+          "axial_speed_mps": -0.08121527080527867,
+          "mean_local_forward_last2s_mps": -0.0859649182156174,
+          "yaw_change_deg": 2.0154789828381343,
+          "last_1s_drift_m": 0.0905596412816206
+        },
+        {
+          "phase": "Stop",
+          "duration_s": 2.9999999999983373,
+          "fallen": false,
+          "minimum_up_z": 0.9819080238710467,
+          "displacement_xy_m": [
+            -0.015163814954708463,
+            0.03380742203763221
+          ],
+          "axial_speed_mps": -0.011166042475474527,
+          "mean_local_forward_last2s_mps": 0.0007591513074464909,
+          "yaw_change_deg": -3.019291725390364,
+          "last_1s_drift_m": 0.00010295223655101963
+        }
+      ],
+      "hashes": {
+        "/data/shijinsheng/open_duck/training/backward_sim_candidate_r22/corrector.onnx": "5ac2a33f81ad19a0823645feceea7d586b657152283a82b141530423655e514c",
+        "/data/shijinsheng/open_duck/training/backward_sim_candidate_r22/controller_contract.json": "1abc35a8228922d6a9ee59f18ed31da2a1508d50cde3b7214c502b7a03859464",
+        "/data/shijinsheng/open_duck/training/backward_reference_residual_r2/final.onnx": "05c1219a1403831deead152a6cff89b30a1d20fea3ebef285ca5c07279cfbdc8",
+        "/data/shijinsheng/open_duck/training/official_seed_turn_balance_v5_yaw_error/final.onnx": "6f60d1d0a0d5e9f780e18a0c202c816c8d0183c855f78fa0a2580dce776d383d",
+        "/data/shijinsheng/open_duck/training/negative_mirror_distill_v8_model/residual.onnx": "a5783314208fddb979bb80f5d9cf16b34b6af00f1658deb6980dcbb22a1f0f37",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Mini/BEST_WALK_ONNX_2.onnx": "3c606f9381a1710cc8fecdb7442787dcbfce3ee9bc02a6f1224774ab2b3a1067",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/record_motion_showcase.py": "9d1db997c79ba0f70a4338fda5cbc57a08060b16e8764650967c661fb481eba5",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/skill_target_execution.py": "970889df7068582853c3cd7b6ec7bb915502c106fc19123e52635978ef19660b"
+      },
+      "target_filter_tau_s": 0.01,
+      "stop_blend_s": 1.0,
+      "render_fps": 25,
+      "playback_speed": 1.0,
+      "execution_contract": "per_skill_v2",
+      "legacy_target_filter_tau_s": 0.0,
+      "backward_target_filter_tau_s": 0.01
+    },
+    {
+      "seed": 1604,
+      "continuous": true,
+      "resets_between_skills": 0,
+      "simulation_only": true,
+      "hardware_readiness": false,
+      "schedule": [
+        [
+          "Stand",
+          3.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Forward",
+          5.0,
+          0.15,
+          0.0
+        ],
+        [
+          "Settle before turn",
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Turn right",
+          5.0,
+          0.0,
+          -0.15
+        ],
+        [
+          "Settle before backward",
+          2.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Backward",
+          7.0,
+          -0.074,
+          0.0
+        ],
+        [
+          "Stop",
+          3.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "completed": true,
+      "phases": [
+        {
+          "phase": "Stand",
+          "duration_s": 2.999999999999891,
+          "fallen": false,
+          "minimum_up_z": 0.9953859871890808,
+          "displacement_xy_m": [
+            0.00890417517150472,
+            0.01063064638240205
+          ],
+          "axial_speed_mps": 0.0029680583905016813,
+          "mean_local_forward_last2s_mps": -2.048725032459734e-05,
+          "yaw_change_deg": -0.7264535208124331,
+          "last_1s_drift_m": 8.371280647829563e-05
+        },
+        {
+          "phase": "Forward",
+          "duration_s": 4.999999999999449,
+          "fallen": false,
+          "minimum_up_z": 0.9955527583187557,
+          "displacement_xy_m": [
+            0.3768468400211698,
+            0.04108833600564317
+          ],
+          "axial_speed_mps": 0.07525912094302682,
+          "mean_local_forward_last2s_mps": 0.08162508789052504,
+          "yaw_change_deg": 5.063013641719673,
+          "last_1s_drift_m": 0.08269650971261981
+        },
+        {
+          "phase": "Settle before turn",
+          "duration_s": 1.000000000000334,
+          "fallen": false,
+          "minimum_up_z": 0.9950533093514623,
+          "displacement_xy_m": [
+            0.001059068283853326,
+            0.009271262350443552
+          ],
+          "axial_speed_mps": 0.0017570828574791269,
+          "mean_local_forward_last2s_mps": -0.00225332285727802,
+          "yaw_change_deg": -2.616120590753317,
+          "last_1s_drift_m": 0.009331555668837652
+        },
+        {
+          "phase": "Turn right",
+          "duration_s": 5.00000000000167,
+          "fallen": false,
+          "minimum_up_z": 0.9955453595295102,
+          "displacement_xy_m": [
+            0.039448691664706104,
+            -0.025179997832570564
+          ],
+          "axial_speed_mps": 0.0077349868251906295,
+          "mean_local_forward_last2s_mps": 0.008871916340524078,
+          "yaw_change_deg": -23.98132891183058,
+          "last_1s_drift_m": 0.00913357290142432
+        },
+        {
+          "phase": "Settle before backward",
+          "duration_s": 2.000000000000666,
+          "fallen": false,
+          "minimum_up_z": 0.9953309975136622,
+          "displacement_xy_m": [
+            -0.003773908471144116,
+            0.02036348186566956
+          ],
+          "axial_speed_mps": -0.005603409816431166,
+          "mean_local_forward_last2s_mps": -0.007296877338730376,
+          "yaw_change_deg": 3.842361633668455,
+          "last_1s_drift_m": 0.00014653903628903046
+        },
+        {
+          "phase": "Backward",
+          "duration_s": 6.99999999999612,
+          "fallen": false,
+          "minimum_up_z": 0.9765935864141624,
+          "displacement_xy_m": [
+            -0.5163038764684401,
+            0.12870527116905858
+          ],
+          "axial_speed_mps": -0.07578868886374307,
+          "mean_local_forward_last2s_mps": -0.08370669690255202,
+          "yaw_change_deg": 5.007405432657197,
+          "last_1s_drift_m": 0.09088830899109464
+        },
+        {
+          "phase": "Stop",
+          "duration_s": 2.9999999999983373,
+          "fallen": false,
+          "minimum_up_z": 0.9808089348963687,
+          "displacement_xy_m": [
+            -0.028416477865185877,
+            0.02662350570447375
+          ],
+          "axial_speed_mps": -0.011272184770463345,
+          "mean_local_forward_last2s_mps": 0.0005715019945471633,
+          "yaw_change_deg": 0.19515704647640827,
+          "last_1s_drift_m": 4.336608577567226e-05
+        }
+      ],
+      "hashes": {
+        "/data/shijinsheng/open_duck/training/backward_sim_candidate_r22/corrector.onnx": "5ac2a33f81ad19a0823645feceea7d586b657152283a82b141530423655e514c",
+        "/data/shijinsheng/open_duck/training/backward_sim_candidate_r22/controller_contract.json": "1abc35a8228922d6a9ee59f18ed31da2a1508d50cde3b7214c502b7a03859464",
+        "/data/shijinsheng/open_duck/training/backward_reference_residual_r2/final.onnx": "05c1219a1403831deead152a6cff89b30a1d20fea3ebef285ca5c07279cfbdc8",
+        "/data/shijinsheng/open_duck/training/official_seed_turn_balance_v5_yaw_error/final.onnx": "6f60d1d0a0d5e9f780e18a0c202c816c8d0183c855f78fa0a2580dce776d383d",
+        "/data/shijinsheng/open_duck/training/negative_mirror_distill_v8_model/residual.onnx": "a5783314208fddb979bb80f5d9cf16b34b6af00f1658deb6980dcbb22a1f0f37",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Mini/BEST_WALK_ONNX_2.onnx": "3c606f9381a1710cc8fecdb7442787dcbfce3ee9bc02a6f1224774ab2b3a1067",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/record_motion_showcase.py": "9d1db997c79ba0f70a4338fda5cbc57a08060b16e8764650967c661fb481eba5",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/skill_target_execution.py": "970889df7068582853c3cd7b6ec7bb915502c106fc19123e52635978ef19660b"
+      },
+      "target_filter_tau_s": 0.01,
+      "stop_blend_s": 1.0,
+      "render_fps": 25,
+      "playback_speed": 1.0,
+      "execution_contract": "legacy_shared_filter",
+      "legacy_target_filter_tau_s": 0.01,
+      "backward_target_filter_tau_s": 0.01
+    },
+    {
+      "seed": 1604,
+      "continuous": true,
+      "resets_between_skills": 0,
+      "simulation_only": true,
+      "hardware_readiness": false,
+      "schedule": [
+        [
+          "Stand",
+          3.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Forward",
+          5.0,
+          0.15,
+          0.0
+        ],
+        [
+          "Settle before turn",
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Turn right",
+          5.0,
+          0.0,
+          -0.15
+        ],
+        [
+          "Settle before backward",
+          2.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Backward",
+          7.0,
+          -0.074,
+          0.0
+        ],
+        [
+          "Stop",
+          3.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "completed": true,
+      "phases": [
+        {
+          "phase": "Stand",
+          "duration_s": 2.999999999999891,
+          "fallen": false,
+          "minimum_up_z": 0.9953113397767603,
+          "displacement_xy_m": [
+            0.009187898184605943,
+            0.01007600773326062
+          ],
+          "axial_speed_mps": 0.003062632728202092,
+          "mean_local_forward_last2s_mps": -1.9831227474994753e-05,
+          "yaw_change_deg": -0.6790189151852902,
+          "last_1s_drift_m": 3.979425628718068e-05
+        },
+        {
+          "phase": "Forward",
+          "duration_s": 4.999999999999449,
+          "fallen": false,
+          "minimum_up_z": 0.9956090897655817,
+          "displacement_xy_m": [
+            0.42420718363442456,
+            0.018922784992413674
+          ],
+          "axial_speed_mps": 0.08479062867831606,
+          "mean_local_forward_last2s_mps": 0.09655557083009038,
+          "yaw_change_deg": -0.0433370819762598,
+          "last_1s_drift_m": 0.0971397407282301
+        },
+        {
+          "phase": "Settle before turn",
+          "duration_s": 1.000000000000334,
+          "fallen": false,
+          "minimum_up_z": 0.9948733222308455,
+          "displacement_xy_m": [
+            0.00350810106411803,
+            0.010114293019011303
+          ],
+          "axial_speed_mps": 0.003380309788233985,
+          "mean_local_forward_last2s_mps": -0.0004034497571669716,
+          "yaw_change_deg": -1.5350735553939154,
+          "last_1s_drift_m": 0.010705405006373502
+        },
+        {
+          "phase": "Turn right",
+          "duration_s": 5.00000000000167,
+          "fallen": false,
+          "minimum_up_z": 0.9956158477202223,
+          "displacement_xy_m": [
+            0.04373416466413521,
+            -0.06793816811389865
+          ],
+          "axial_speed_mps": 0.009275253379855417,
+          "mean_local_forward_last2s_mps": 0.014064491295413498,
+          "yaw_change_deg": -42.29091173047527,
+          "last_1s_drift_m": 0.019129501889113037
+        },
+        {
+          "phase": "Settle before backward",
+          "duration_s": 2.000000000000666,
+          "fallen": false,
+          "minimum_up_z": 0.9951228463099046,
+          "displacement_xy_m": [
+            0.004808688635944081,
+            0.016423492913452763
+          ],
+          "axial_speed_mps": -0.004047151577634995,
+          "mean_local_forward_last2s_mps": -0.005783382098268064,
+          "yaw_change_deg": 1.8828747271912916,
+          "last_1s_drift_m": 2.9217618468711728e-05
+        },
+        {
+          "phase": "Backward",
+          "duration_s": 6.99999999999612,
+          "fallen": false,
+          "minimum_up_z": 0.9749367835497068,
+          "displacement_xy_m": [
+            -0.48776126170310075,
+            0.335397660314243
+          ],
+          "axial_speed_mps": -0.08370953351938529,
+          "mean_local_forward_last2s_mps": -0.095217607995787,
+          "yaw_change_deg": 4.702343084149013,
+          "last_1s_drift_m": 0.09736576853484163
+        },
+        {
+          "phase": "Stop",
+          "duration_s": 2.9999999999983373,
+          "fallen": false,
+          "minimum_up_z": 0.980779895512501,
+          "displacement_xy_m": [
+            -0.014331897824443838,
+            0.031231525683296568
+          ],
+          "axial_speed_mps": -0.010170523189271172,
+          "mean_local_forward_last2s_mps": 0.0007230879777990706,
+          "yaw_change_deg": -1.7657322638236697,
+          "last_1s_drift_m": 8.259150321399042e-05
+        }
+      ],
+      "hashes": {
+        "/data/shijinsheng/open_duck/training/backward_sim_candidate_r22/corrector.onnx": "5ac2a33f81ad19a0823645feceea7d586b657152283a82b141530423655e514c",
+        "/data/shijinsheng/open_duck/training/backward_sim_candidate_r22/controller_contract.json": "1abc35a8228922d6a9ee59f18ed31da2a1508d50cde3b7214c502b7a03859464",
+        "/data/shijinsheng/open_duck/training/backward_reference_residual_r2/final.onnx": "05c1219a1403831deead152a6cff89b30a1d20fea3ebef285ca5c07279cfbdc8",
+        "/data/shijinsheng/open_duck/training/official_seed_turn_balance_v5_yaw_error/final.onnx": "6f60d1d0a0d5e9f780e18a0c202c816c8d0183c855f78fa0a2580dce776d383d",
+        "/data/shijinsheng/open_duck/training/negative_mirror_distill_v8_model/residual.onnx": "a5783314208fddb979bb80f5d9cf16b34b6af00f1658deb6980dcbb22a1f0f37",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Mini/BEST_WALK_ONNX_2.onnx": "3c606f9381a1710cc8fecdb7442787dcbfce3ee9bc02a6f1224774ab2b3a1067",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/record_motion_showcase.py": "9d1db997c79ba0f70a4338fda5cbc57a08060b16e8764650967c661fb481eba5",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/skill_target_execution.py": "970889df7068582853c3cd7b6ec7bb915502c106fc19123e52635978ef19660b"
+      },
+      "target_filter_tau_s": 0.01,
+      "stop_blend_s": 1.0,
+      "render_fps": 25,
+      "playback_speed": 1.0,
+      "execution_contract": "per_skill_v2",
+      "legacy_target_filter_tau_s": 0.0,
+      "backward_target_filter_tau_s": 0.01
+    },
+    {
+      "seed": 1605,
+      "continuous": true,
+      "resets_between_skills": 0,
+      "simulation_only": true,
+      "hardware_readiness": false,
+      "schedule": [
+        [
+          "Stand",
+          3.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Forward",
+          5.0,
+          0.15,
+          0.0
+        ],
+        [
+          "Settle before turn",
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Turn right",
+          5.0,
+          0.0,
+          -0.15
+        ],
+        [
+          "Settle before backward",
+          2.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Backward",
+          7.0,
+          -0.074,
+          0.0
+        ],
+        [
+          "Stop",
+          3.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "completed": true,
+      "phases": [
+        {
+          "phase": "Stand",
+          "duration_s": 2.999999999999891,
+          "fallen": false,
+          "minimum_up_z": 0.9953944113125318,
+          "displacement_xy_m": [
+            0.00847602165452875,
+            0.010986978423713397
+          ],
+          "axial_speed_mps": 0.0028253405515096855,
+          "mean_local_forward_last2s_mps": -3.160333049754392e-05,
+          "yaw_change_deg": -0.7222063224973043,
+          "last_1s_drift_m": 8.496953545803081e-05
+        },
+        {
+          "phase": "Forward",
+          "duration_s": 4.999999999999449,
+          "fallen": false,
+          "minimum_up_z": 0.9955602547077793,
+          "displacement_xy_m": [
+            0.37346093606566266,
+            0.035650854946681076
+          ],
+          "axial_speed_mps": 0.07459638107701162,
+          "mean_local_forward_last2s_mps": 0.08205857466521639,
+          "yaw_change_deg": 4.935048790063176,
+          "last_1s_drift_m": 0.08318649308702937
+        },
+        {
+          "phase": "Settle before turn",
+          "duration_s": 1.000000000000334,
+          "fallen": false,
+          "minimum_up_z": 0.9951437045734871,
+          "displacement_xy_m": [
+            0.0010628377459381277,
+            0.010673194780478089
+          ],
+          "axial_speed_mps": 0.0018440374215208746,
+          "mean_local_forward_last2s_mps": -0.002235244736230791,
+          "yaw_change_deg": -2.45555137584136,
+          "last_1s_drift_m": 0.010725982980417952
+        },
+        {
+          "phase": "Turn right",
+          "duration_s": 5.00000000000167,
+          "fallen": false,
+          "minimum_up_z": 0.995671324765006,
+          "displacement_xy_m": [
+            0.03895388237428182,
+            -0.027471614667469006
+          ],
+          "axial_speed_mps": 0.00761862514810433,
+          "mean_local_forward_last2s_mps": 0.008523407171118585,
+          "yaw_change_deg": -24.55982464274178,
+          "last_1s_drift_m": 0.008935000902052403
+        },
+        {
+          "phase": "Settle before backward",
+          "duration_s": 2.000000000000666,
+          "fallen": false,
+          "minimum_up_z": 0.9953503247698744,
+          "displacement_xy_m": [
+            -0.0035253890849782366,
+            0.020360268939258363
+          ],
+          "axial_speed_mps": -0.005570308695160829,
+          "mean_local_forward_last2s_mps": -0.00703419982151317,
+          "yaw_change_deg": 3.938342705470379,
+          "last_1s_drift_m": 0.00016861464292831403
+        },
+        {
+          "phase": "Backward",
+          "duration_s": 6.99999999999612,
+          "fallen": false,
+          "minimum_up_z": 0.9761633068723626,
+          "displacement_xy_m": [
+            -0.49580762611013945,
+            0.15455133737580976
+          ],
+          "axial_speed_mps": -0.07416387045742892,
+          "mean_local_forward_last2s_mps": -0.0745560388965666,
+          "yaw_change_deg": 4.496058550010994,
+          "last_1s_drift_m": 0.08202360571429468
+        },
+        {
+          "phase": "Stop",
+          "duration_s": 2.9999999999983373,
+          "fallen": false,
+          "minimum_up_z": 0.9828307572531895,
+          "displacement_xy_m": [
+            -0.023318412452523446,
+            0.02529060767543212
+          ],
+          "axial_speed_mps": -0.009621645447910407,
+          "mean_local_forward_last2s_mps": 0.0005414023593997827,
+          "yaw_change_deg": -2.9234508718411174,
+          "last_1s_drift_m": 4.874756751832389e-05
+        }
+      ],
+      "hashes": {
+        "/data/shijinsheng/open_duck/training/backward_sim_candidate_r22/corrector.onnx": "5ac2a33f81ad19a0823645feceea7d586b657152283a82b141530423655e514c",
+        "/data/shijinsheng/open_duck/training/backward_sim_candidate_r22/controller_contract.json": "1abc35a8228922d6a9ee59f18ed31da2a1508d50cde3b7214c502b7a03859464",
+        "/data/shijinsheng/open_duck/training/backward_reference_residual_r2/final.onnx": "05c1219a1403831deead152a6cff89b30a1d20fea3ebef285ca5c07279cfbdc8",
+        "/data/shijinsheng/open_duck/training/official_seed_turn_balance_v5_yaw_error/final.onnx": "6f60d1d0a0d5e9f780e18a0c202c816c8d0183c855f78fa0a2580dce776d383d",
+        "/data/shijinsheng/open_duck/training/negative_mirror_distill_v8_model/residual.onnx": "a5783314208fddb979bb80f5d9cf16b34b6af00f1658deb6980dcbb22a1f0f37",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Mini/BEST_WALK_ONNX_2.onnx": "3c606f9381a1710cc8fecdb7442787dcbfce3ee9bc02a6f1224774ab2b3a1067",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/record_motion_showcase.py": "9d1db997c79ba0f70a4338fda5cbc57a08060b16e8764650967c661fb481eba5",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/skill_target_execution.py": "970889df7068582853c3cd7b6ec7bb915502c106fc19123e52635978ef19660b"
+      },
+      "target_filter_tau_s": 0.01,
+      "stop_blend_s": 1.0,
+      "render_fps": 25,
+      "playback_speed": 1.0,
+      "execution_contract": "legacy_shared_filter",
+      "legacy_target_filter_tau_s": 0.01,
+      "backward_target_filter_tau_s": 0.01
+    },
+    {
+      "seed": 1605,
+      "continuous": true,
+      "resets_between_skills": 0,
+      "simulation_only": true,
+      "hardware_readiness": false,
+      "schedule": [
+        [
+          "Stand",
+          3.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Forward",
+          5.0,
+          0.15,
+          0.0
+        ],
+        [
+          "Settle before turn",
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Turn right",
+          5.0,
+          0.0,
+          -0.15
+        ],
+        [
+          "Settle before backward",
+          2.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Backward",
+          7.0,
+          -0.074,
+          0.0
+        ],
+        [
+          "Stop",
+          3.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "completed": true,
+      "phases": [
+        {
+          "phase": "Stand",
+          "duration_s": 2.999999999999891,
+          "fallen": false,
+          "minimum_up_z": 0.9953443933424438,
+          "displacement_xy_m": [
+            0.008596822378791013,
+            0.011098991625023638
+          ],
+          "axial_speed_mps": 0.0028656074595971083,
+          "mean_local_forward_last2s_mps": 1.2206208057903984e-05,
+          "yaw_change_deg": -0.6645062450803934,
+          "last_1s_drift_m": 5.530192788999568e-05
+        },
+        {
+          "phase": "Forward",
+          "duration_s": 4.999999999999449,
+          "fallen": false,
+          "minimum_up_z": 0.9955990887391581,
+          "displacement_xy_m": [
+            0.41745473362911956,
+            0.011893793739557712
+          ],
+          "axial_speed_mps": 0.08345774382541542,
+          "mean_local_forward_last2s_mps": 0.09476648687969114,
+          "yaw_change_deg": -1.4479125161825717,
+          "last_1s_drift_m": 0.09560892465293733
+        },
+        {
+          "phase": "Settle before turn",
+          "duration_s": 1.000000000000334,
+          "fallen": false,
+          "minimum_up_z": 0.994822866843463,
+          "displacement_xy_m": [
+            0.0034167267904172127,
+            0.0103118345480132
+          ],
+          "axial_speed_mps": 0.003034307454268815,
+          "mean_local_forward_last2s_mps": -0.0006570114549987286,
+          "yaw_change_deg": -1.274124451225947,
+          "last_1s_drift_m": 0.010863146584022204
+        },
+        {
+          "phase": "Turn right",
+          "duration_s": 5.00000000000167,
+          "fallen": false,
+          "minimum_up_z": 0.9956079383038771,
+          "displacement_xy_m": [
+            0.04334437289504556,
+            -0.06972504763107837
+          ],
+          "axial_speed_mps": 0.009477494866654394,
+          "mean_local_forward_last2s_mps": 0.014001277964563566,
+          "yaw_change_deg": -43.41916480793764,
+          "last_1s_drift_m": 0.01867419766553587
+        },
+        {
+          "phase": "Settle before backward",
+          "duration_s": 2.000000000000666,
+          "fallen": false,
+          "minimum_up_z": 0.9951276615050614,
+          "displacement_xy_m": [
+            0.00569182747465613,
+            0.01648313674849769
+          ],
+          "axial_speed_mps": -0.004060451481912562,
+          "mean_local_forward_last2s_mps": -0.005719272426124011,
+          "yaw_change_deg": 1.7884868702489538,
+          "last_1s_drift_m": 3.04361183272474e-05
+        },
+        {
+          "phase": "Backward",
+          "duration_s": 6.99999999999612,
+          "fallen": false,
+          "minimum_up_z": 0.9764091231754356,
+          "displacement_xy_m": [
+            -0.4743188863041243,
+            0.36675299014231344
+          ],
+          "axial_speed_mps": -0.08495781989031004,
+          "mean_local_forward_last2s_mps": -0.09629692000528298,
+          "yaw_change_deg": 7.873041947732545,
+          "last_1s_drift_m": 0.10012652241252094
+        },
+        {
+          "phase": "Stop",
+          "duration_s": 2.9999999999983373,
+          "fallen": false,
+          "minimum_up_z": 0.9756281762180006,
+          "displacement_xy_m": [
+            -0.017431977043866967,
+            0.030487465358334964
+          ],
+          "axial_speed_mps": -0.010768126498942359,
+          "mean_local_forward_last2s_mps": 0.0005713739180701583,
+          "yaw_change_deg": -5.976090928877809,
+          "last_1s_drift_m": 7.974555014047612e-05
+        }
+      ],
+      "hashes": {
+        "/data/shijinsheng/open_duck/training/backward_sim_candidate_r22/corrector.onnx": "5ac2a33f81ad19a0823645feceea7d586b657152283a82b141530423655e514c",
+        "/data/shijinsheng/open_duck/training/backward_sim_candidate_r22/controller_contract.json": "1abc35a8228922d6a9ee59f18ed31da2a1508d50cde3b7214c502b7a03859464",
+        "/data/shijinsheng/open_duck/training/backward_reference_residual_r2/final.onnx": "05c1219a1403831deead152a6cff89b30a1d20fea3ebef285ca5c07279cfbdc8",
+        "/data/shijinsheng/open_duck/training/official_seed_turn_balance_v5_yaw_error/final.onnx": "6f60d1d0a0d5e9f780e18a0c202c816c8d0183c855f78fa0a2580dce776d383d",
+        "/data/shijinsheng/open_duck/training/negative_mirror_distill_v8_model/residual.onnx": "a5783314208fddb979bb80f5d9cf16b34b6af00f1658deb6980dcbb22a1f0f37",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Mini/BEST_WALK_ONNX_2.onnx": "3c606f9381a1710cc8fecdb7442787dcbfce3ee9bc02a6f1224774ab2b3a1067",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/record_motion_showcase.py": "9d1db997c79ba0f70a4338fda5cbc57a08060b16e8764650967c661fb481eba5",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/skill_target_execution.py": "970889df7068582853c3cd7b6ec7bb915502c106fc19123e52635978ef19660b"
+      },
+      "target_filter_tau_s": 0.01,
+      "stop_blend_s": 1.0,
+      "render_fps": 25,
+      "playback_speed": 1.0,
+      "execution_contract": "per_skill_v2",
+      "legacy_target_filter_tau_s": 0.0,
+      "backward_target_filter_tau_s": 0.01
+    },
+    {
+      "seed": 1606,
+      "continuous": true,
+      "resets_between_skills": 0,
+      "simulation_only": true,
+      "hardware_readiness": false,
+      "schedule": [
+        [
+          "Stand",
+          3.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Forward",
+          5.0,
+          0.15,
+          0.0
+        ],
+        [
+          "Settle before turn",
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Turn right",
+          5.0,
+          0.0,
+          -0.15
+        ],
+        [
+          "Settle before backward",
+          2.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Backward",
+          7.0,
+          -0.074,
+          0.0
+        ],
+        [
+          "Stop",
+          3.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "completed": true,
+      "phases": [
+        {
+          "phase": "Stand",
+          "duration_s": 2.999999999999891,
+          "fallen": false,
+          "minimum_up_z": 0.99539379526205,
+          "displacement_xy_m": [
+            0.008352763684965186,
+            0.010583827355874272
+          ],
+          "axial_speed_mps": 0.0027842545616551632,
+          "mean_local_forward_last2s_mps": -2.6333166464480116e-05,
+          "yaw_change_deg": -0.7786499686859786,
+          "last_1s_drift_m": 8.866433418797789e-05
+        },
+        {
+          "phase": "Forward",
+          "duration_s": 4.999999999999449,
+          "fallen": false,
+          "minimum_up_z": 0.9955598761557838,
+          "displacement_xy_m": [
+            0.3672402544069156,
+            0.037345391504732546
+          ],
+          "axial_speed_mps": 0.07333976679756989,
+          "mean_local_forward_last2s_mps": 0.08014314486443118,
+          "yaw_change_deg": 5.249711882395355,
+          "last_1s_drift_m": 0.07919271961889655
+        },
+        {
+          "phase": "Settle before turn",
+          "duration_s": 1.000000000000334,
+          "fallen": false,
+          "minimum_up_z": 0.9948536348371555,
+          "displacement_xy_m": [
+            -0.00044681030053395077,
+            0.01194869088252843
+          ],
+          "axial_speed_mps": 0.0004860165193430111,
+          "mean_local_forward_last2s_mps": -0.0038659487237515285,
+          "yaw_change_deg": -1.8201189184435063,
+          "last_1s_drift_m": 0.01195704199419243
+        },
+        {
+          "phase": "Turn right",
+          "duration_s": 5.00000000000167,
+          "fallen": false,
+          "minimum_up_z": 0.9955392633718528,
+          "displacement_xy_m": [
+            0.039050014426526336,
+            -0.02530033263948555
+          ],
+          "axial_speed_mps": 0.007567610908947159,
+          "mean_local_forward_last2s_mps": 0.008265508005094008,
+          "yaw_change_deg": -23.764977697948925,
+          "last_1s_drift_m": 0.009013391132653734
+        },
+        {
+          "phase": "Settle before backward",
+          "duration_s": 2.000000000000666,
+          "fallen": false,
+          "minimum_up_z": 0.9953447197014882,
+          "displacement_xy_m": [
+            -0.004204267649204674,
+            0.020161135223966307
+          ],
+          "axial_speed_mps": -0.005592283507112342,
+          "mean_local_forward_last2s_mps": -0.007204069373140271,
+          "yaw_change_deg": 3.8997045157503845,
+          "last_1s_drift_m": 0.0001616305288744084
+        },
+        {
+          "phase": "Backward",
+          "duration_s": 6.99999999999612,
+          "fallen": false,
+          "minimum_up_z": 0.9768796503696638,
+          "displacement_xy_m": [
+            -0.4918248251237376,
+            0.11662658895500994
+          ],
+          "axial_speed_mps": -0.07204407267035975,
+          "mean_local_forward_last2s_mps": -0.07477666512084963,
+          "yaw_change_deg": 8.984534445560776,
+          "last_1s_drift_m": 0.08253328185200057
+        },
+        {
+          "phase": "Stop",
+          "duration_s": 2.9999999999983373,
+          "fallen": false,
+          "minimum_up_z": 0.9818937881007126,
+          "displacement_xy_m": [
+            -0.033118983836671986,
+            0.01987921131344525
+          ],
+          "axial_speed_mps": -0.011874501520863966,
+          "mean_local_forward_last2s_mps": 0.0005627077263241538,
+          "yaw_change_deg": -3.904789396997444,
+          "last_1s_drift_m": 7.921368242738315e-05
+        }
+      ],
+      "hashes": {
+        "/data/shijinsheng/open_duck/training/backward_sim_candidate_r22/corrector.onnx": "5ac2a33f81ad19a0823645feceea7d586b657152283a82b141530423655e514c",
+        "/data/shijinsheng/open_duck/training/backward_sim_candidate_r22/controller_contract.json": "1abc35a8228922d6a9ee59f18ed31da2a1508d50cde3b7214c502b7a03859464",
+        "/data/shijinsheng/open_duck/training/backward_reference_residual_r2/final.onnx": "05c1219a1403831deead152a6cff89b30a1d20fea3ebef285ca5c07279cfbdc8",
+        "/data/shijinsheng/open_duck/training/official_seed_turn_balance_v5_yaw_error/final.onnx": "6f60d1d0a0d5e9f780e18a0c202c816c8d0183c855f78fa0a2580dce776d383d",
+        "/data/shijinsheng/open_duck/training/negative_mirror_distill_v8_model/residual.onnx": "a5783314208fddb979bb80f5d9cf16b34b6af00f1658deb6980dcbb22a1f0f37",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Mini/BEST_WALK_ONNX_2.onnx": "3c606f9381a1710cc8fecdb7442787dcbfce3ee9bc02a6f1224774ab2b3a1067",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/record_motion_showcase.py": "9d1db997c79ba0f70a4338fda5cbc57a08060b16e8764650967c661fb481eba5",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/skill_target_execution.py": "970889df7068582853c3cd7b6ec7bb915502c106fc19123e52635978ef19660b"
+      },
+      "target_filter_tau_s": 0.01,
+      "stop_blend_s": 1.0,
+      "render_fps": 25,
+      "playback_speed": 1.0,
+      "execution_contract": "legacy_shared_filter",
+      "legacy_target_filter_tau_s": 0.01,
+      "backward_target_filter_tau_s": 0.01
+    },
+    {
+      "seed": 1606,
+      "continuous": true,
+      "resets_between_skills": 0,
+      "simulation_only": true,
+      "hardware_readiness": false,
+      "schedule": [
+        [
+          "Stand",
+          3.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Forward",
+          5.0,
+          0.15,
+          0.0
+        ],
+        [
+          "Settle before turn",
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Turn right",
+          5.0,
+          0.0,
+          -0.15
+        ],
+        [
+          "Settle before backward",
+          2.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Backward",
+          7.0,
+          -0.074,
+          0.0
+        ],
+        [
+          "Stop",
+          3.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "completed": true,
+      "phases": [
+        {
+          "phase": "Stand",
+          "duration_s": 2.999999999999891,
+          "fallen": false,
+          "minimum_up_z": 0.9953611543888523,
+          "displacement_xy_m": [
+            0.008531218622790751,
+            0.010801127101798005
+          ],
+          "axial_speed_mps": 0.0028437395409303535,
+          "mean_local_forward_last2s_mps": -2.340984833517412e-06,
+          "yaw_change_deg": -0.5664442552717405,
+          "last_1s_drift_m": 6.885893133586009e-05
+        },
+        {
+          "phase": "Forward",
+          "duration_s": 4.999999999999449,
+          "fallen": false,
+          "minimum_up_z": 0.9956104327329675,
+          "displacement_xy_m": [
+            0.42883174855980205,
+            0.030462103303432107
+          ],
+          "axial_speed_mps": 0.08570192775341152,
+          "mean_local_forward_last2s_mps": 0.09719230778234628,
+          "yaw_change_deg": 1.2274837745730482,
+          "last_1s_drift_m": 0.09842012683566757
+        },
+        {
+          "phase": "Settle before turn",
+          "duration_s": 1.000000000000334,
+          "fallen": false,
+          "minimum_up_z": 0.9948615058268329,
+          "displacement_xy_m": [
+            0.0038628649243174773,
+            0.010189751151971856
+          ],
+          "axial_speed_mps": 0.003980167606743125,
+          "mean_local_forward_last2s_mps": 0.00024032487596476428,
+          "yaw_change_deg": -1.5293777551847185,
+          "last_1s_drift_m": 0.010897373718590826
+        },
+        {
+          "phase": "Turn right",
+          "duration_s": 5.00000000000167,
+          "fallen": false,
+          "minimum_up_z": 0.995595905586621,
+          "displacement_xy_m": [
+            0.0447614035264739,
+            -0.06963317472344664
+          ],
+          "axial_speed_mps": 0.009162307726611812,
+          "mean_local_forward_last2s_mps": 0.014000803458607153,
+          "yaw_change_deg": -43.03665829799091,
+          "last_1s_drift_m": 0.018558360225311963
+        },
+        {
+          "phase": "Settle before backward",
+          "duration_s": 2.000000000000666,
+          "fallen": false,
+          "minimum_up_z": 0.9951241429402238,
+          "displacement_xy_m": [
+            0.0045671447171597435,
+            0.015885883880736723
+          ],
+          "axial_speed_mps": -0.0038628570374358226,
+          "mean_local_forward_last2s_mps": -0.00543503324540031,
+          "yaw_change_deg": 1.8767798835953187,
+          "last_1s_drift_m": 2.4363568228136846e-05
+        },
+        {
+          "phase": "Backward",
+          "duration_s": 6.99999999999612,
+          "fallen": false,
+          "minimum_up_z": 0.9756703072033219,
+          "displacement_xy_m": [
+            -0.43511421131870776,
+            0.3812733564016007
+          ],
+          "axial_speed_mps": -0.08263866170634733,
+          "mean_local_forward_last2s_mps": -0.08656153951010202,
+          "yaw_change_deg": 8.103945547233396,
+          "last_1s_drift_m": 0.0914520994182341
+        },
+        {
+          "phase": "Stop",
+          "duration_s": 2.9999999999983373,
+          "fallen": false,
+          "minimum_up_z": 0.9814011976873097,
+          "displacement_xy_m": [
+            -0.01336012370598711,
+            0.03436029561703413
+          ],
+          "axial_speed_mps": -0.010087425170777596,
+          "mean_local_forward_last2s_mps": 0.00043991581875783294,
+          "yaw_change_deg": 1.463294483334234,
+          "last_1s_drift_m": 5.5636277500448334e-05
+        }
+      ],
+      "hashes": {
+        "/data/shijinsheng/open_duck/training/backward_sim_candidate_r22/corrector.onnx": "5ac2a33f81ad19a0823645feceea7d586b657152283a82b141530423655e514c",
+        "/data/shijinsheng/open_duck/training/backward_sim_candidate_r22/controller_contract.json": "1abc35a8228922d6a9ee59f18ed31da2a1508d50cde3b7214c502b7a03859464",
+        "/data/shijinsheng/open_duck/training/backward_reference_residual_r2/final.onnx": "05c1219a1403831deead152a6cff89b30a1d20fea3ebef285ca5c07279cfbdc8",
+        "/data/shijinsheng/open_duck/training/official_seed_turn_balance_v5_yaw_error/final.onnx": "6f60d1d0a0d5e9f780e18a0c202c816c8d0183c855f78fa0a2580dce776d383d",
+        "/data/shijinsheng/open_duck/training/negative_mirror_distill_v8_model/residual.onnx": "a5783314208fddb979bb80f5d9cf16b34b6af00f1658deb6980dcbb22a1f0f37",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Mini/BEST_WALK_ONNX_2.onnx": "3c606f9381a1710cc8fecdb7442787dcbfce3ee9bc02a6f1224774ab2b3a1067",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/record_motion_showcase.py": "9d1db997c79ba0f70a4338fda5cbc57a08060b16e8764650967c661fb481eba5",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/skill_target_execution.py": "970889df7068582853c3cd7b6ec7bb915502c106fc19123e52635978ef19660b"
+      },
+      "target_filter_tau_s": 0.01,
+      "stop_blend_s": 1.0,
+      "render_fps": 25,
+      "playback_speed": 1.0,
+      "execution_contract": "per_skill_v2",
+      "legacy_target_filter_tau_s": 0.0,
+      "backward_target_filter_tau_s": 0.01
+    },
+    {
+      "seed": 1607,
+      "continuous": true,
+      "resets_between_skills": 0,
+      "simulation_only": true,
+      "hardware_readiness": false,
+      "schedule": [
+        [
+          "Stand",
+          3.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Forward",
+          5.0,
+          0.15,
+          0.0
+        ],
+        [
+          "Settle before turn",
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Turn right",
+          5.0,
+          0.0,
+          -0.15
+        ],
+        [
+          "Settle before backward",
+          2.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Backward",
+          7.0,
+          -0.074,
+          0.0
+        ],
+        [
+          "Stop",
+          3.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "completed": true,
+      "phases": [
+        {
+          "phase": "Stand",
+          "duration_s": 2.999999999999891,
+          "fallen": false,
+          "minimum_up_z": 0.995407270118208,
+          "displacement_xy_m": [
+            0.008421649026049189,
+            0.010839996171253051
+          ],
+          "axial_speed_mps": 0.002807216342016498,
+          "mean_local_forward_last2s_mps": -4.913561227843193e-05,
+          "yaw_change_deg": -0.7891266494829572,
+          "last_1s_drift_m": 9.26085007913028e-05
+        },
+        {
+          "phase": "Forward",
+          "duration_s": 4.999999999999449,
+          "fallen": false,
+          "minimum_up_z": 0.9955711861855184,
+          "displacement_xy_m": [
+            0.36114110781651815,
+            0.03698002642416875
+          ],
+          "axial_speed_mps": 0.07211951021530293,
+          "mean_local_forward_last2s_mps": 0.08160207171760574,
+          "yaw_change_deg": 4.195196304815245,
+          "last_1s_drift_m": 0.08392055658201458
+        },
+        {
+          "phase": "Settle before turn",
+          "duration_s": 1.000000000000334,
+          "fallen": false,
+          "minimum_up_z": 0.9950033155954883,
+          "displacement_xy_m": [
+            0.0012218425916075693,
+            0.01090606434555446
+          ],
+          "axial_speed_mps": 0.0018676366832905112,
+          "mean_local_forward_last2s_mps": -0.002318519142924928,
+          "yaw_change_deg": -2.3211156872816097,
+          "last_1s_drift_m": 0.010974294456958977
+        },
+        {
+          "phase": "Turn right",
+          "duration_s": 5.00000000000167,
+          "fallen": false,
+          "minimum_up_z": 0.9956299492918995,
+          "displacement_xy_m": [
+            0.03851349999214626,
+            -0.02520944279288611
+          ],
+          "axial_speed_mps": 0.00760585145845284,
+          "mean_local_forward_last2s_mps": 0.00832609852112838,
+          "yaw_change_deg": -23.519625535044508,
+          "last_1s_drift_m": 0.00835236617663595
+        },
+        {
+          "phase": "Settle before backward",
+          "duration_s": 2.000000000000666,
+          "fallen": false,
+          "minimum_up_z": 0.9953426175643578,
+          "displacement_xy_m": [
+            -0.003574303787263977,
+            0.019786226472264218
+          ],
+          "axial_speed_mps": -0.005427398404541458,
+          "mean_local_forward_last2s_mps": -0.007019468715940666,
+          "yaw_change_deg": 3.9802964941008083,
+          "last_1s_drift_m": 0.0001636756607864818
+        },
+        {
+          "phase": "Backward",
+          "duration_s": 6.99999999999612,
+          "fallen": false,
+          "minimum_up_z": 0.9776837169571883,
+          "displacement_xy_m": [
+            -0.5071926467549861,
+            0.16704402992296707
+          ],
+          "axial_speed_mps": -0.07628406754118915,
+          "mean_local_forward_last2s_mps": -0.07584669529081835,
+          "yaw_change_deg": 9.743254236054934,
+          "last_1s_drift_m": 0.07654087387545316
+        },
+        {
+          "phase": "Stop",
+          "duration_s": 2.9999999999983373,
+          "fallen": false,
+          "minimum_up_z": 0.9835584933513861,
+          "displacement_xy_m": [
+            -0.02384970351743637,
+            0.012330130185983529
+          ],
+          "axial_speed_mps": -0.008480672244945512,
+          "mean_local_forward_last2s_mps": 0.0007339799491037164,
+          "yaw_change_deg": -8.421371405820027,
+          "last_1s_drift_m": 0.00010800171066933832
+        }
+      ],
+      "hashes": {
+        "/data/shijinsheng/open_duck/training/backward_sim_candidate_r22/corrector.onnx": "5ac2a33f81ad19a0823645feceea7d586b657152283a82b141530423655e514c",
+        "/data/shijinsheng/open_duck/training/backward_sim_candidate_r22/controller_contract.json": "1abc35a8228922d6a9ee59f18ed31da2a1508d50cde3b7214c502b7a03859464",
+        "/data/shijinsheng/open_duck/training/backward_reference_residual_r2/final.onnx": "05c1219a1403831deead152a6cff89b30a1d20fea3ebef285ca5c07279cfbdc8",
+        "/data/shijinsheng/open_duck/training/official_seed_turn_balance_v5_yaw_error/final.onnx": "6f60d1d0a0d5e9f780e18a0c202c816c8d0183c855f78fa0a2580dce776d383d",
+        "/data/shijinsheng/open_duck/training/negative_mirror_distill_v8_model/residual.onnx": "a5783314208fddb979bb80f5d9cf16b34b6af00f1658deb6980dcbb22a1f0f37",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Mini/BEST_WALK_ONNX_2.onnx": "3c606f9381a1710cc8fecdb7442787dcbfce3ee9bc02a6f1224774ab2b3a1067",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/record_motion_showcase.py": "9d1db997c79ba0f70a4338fda5cbc57a08060b16e8764650967c661fb481eba5",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/skill_target_execution.py": "970889df7068582853c3cd7b6ec7bb915502c106fc19123e52635978ef19660b"
+      },
+      "target_filter_tau_s": 0.01,
+      "stop_blend_s": 1.0,
+      "render_fps": 25,
+      "playback_speed": 1.0,
+      "execution_contract": "legacy_shared_filter",
+      "legacy_target_filter_tau_s": 0.01,
+      "backward_target_filter_tau_s": 0.01
+    },
+    {
+      "seed": 1607,
+      "continuous": true,
+      "resets_between_skills": 0,
+      "simulation_only": true,
+      "hardware_readiness": false,
+      "schedule": [
+        [
+          "Stand",
+          3.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Forward",
+          5.0,
+          0.15,
+          0.0
+        ],
+        [
+          "Settle before turn",
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Turn right",
+          5.0,
+          0.0,
+          -0.15
+        ],
+        [
+          "Settle before backward",
+          2.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Backward",
+          7.0,
+          -0.074,
+          0.0
+        ],
+        [
+          "Stop",
+          3.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "completed": true,
+      "phases": [
+        {
+          "phase": "Stand",
+          "duration_s": 2.999999999999891,
+          "fallen": false,
+          "minimum_up_z": 0.9953582466736295,
+          "displacement_xy_m": [
+            0.008627825421301041,
+            0.010604063994396784
+          ],
+          "axial_speed_mps": 0.0028759418071004515,
+          "mean_local_forward_last2s_mps": -8.775984480529712e-06,
+          "yaw_change_deg": -0.5887525529254962,
+          "last_1s_drift_m": 6.333848363721128e-05
+        },
+        {
+          "phase": "Forward",
+          "duration_s": 4.999999999999449,
+          "fallen": false,
+          "minimum_up_z": 0.9956084247957666,
+          "displacement_xy_m": [
+            0.43726435374699024,
+            0.03260924706711774
+          ],
+          "axial_speed_mps": 0.08738123854530577,
+          "mean_local_forward_last2s_mps": 0.09644330764895952,
+          "yaw_change_deg": 1.8658418456203156,
+          "last_1s_drift_m": 0.09653537429609521
+        },
+        {
+          "phase": "Settle before turn",
+          "duration_s": 1.000000000000334,
+          "fallen": false,
+          "minimum_up_z": 0.9949548979511618,
+          "displacement_xy_m": [
+            0.003218708282415439,
+            0.009599272168298811
+          ],
+          "axial_speed_mps": 0.0034318531851095044,
+          "mean_local_forward_last2s_mps": -3.094042581167001e-05,
+          "yaw_change_deg": -1.7538071677832467,
+          "last_1s_drift_m": 0.010124530071483116
+        },
+        {
+          "phase": "Turn right",
+          "duration_s": 5.00000000000167,
+          "fallen": false,
+          "minimum_up_z": 0.9956582412586663,
+          "displacement_xy_m": [
+            0.04491957953328074,
+            -0.07079992802186764
+          ],
+          "axial_speed_mps": 0.009101418861833046,
+          "mean_local_forward_last2s_mps": 0.01396216057291203,
+          "yaw_change_deg": -43.743560362324196,
+          "last_1s_drift_m": 0.018576184158863425
+        },
+        {
+          "phase": "Settle before backward",
+          "duration_s": 2.000000000000666,
+          "fallen": false,
+          "minimum_up_z": 0.9951168498024185,
+          "displacement_xy_m": [
+            0.004507671142599701,
+            0.0164247136593782
+          ],
+          "axial_speed_mps": -0.0041122095484414116,
+          "mean_local_forward_last2s_mps": -0.0058278223322908605,
+          "yaw_change_deg": 2.002913044576664,
+          "last_1s_drift_m": 4.270369101938634e-05
+        },
+        {
+          "phase": "Backward",
+          "duration_s": 6.99999999999612,
+          "fallen": false,
+          "minimum_up_z": 0.9759210754869484,
+          "displacement_xy_m": [
+            -0.47848778017743926,
+            0.3216410109207204
+          ],
+          "axial_speed_mps": -0.08149908755648753,
+          "mean_local_forward_last2s_mps": -0.088961192145509,
+          "yaw_change_deg": 9.90160670495916,
+          "last_1s_drift_m": 0.09744145224829937
+        },
+        {
+          "phase": "Stop",
+          "duration_s": 2.9999999999983373,
+          "fallen": false,
+          "minimum_up_z": 0.9793339451022253,
+          "displacement_xy_m": [
+            -0.010849336017715613,
+            0.023135160562643198
+          ],
+          "axial_speed_mps": -0.007178880058558968,
+          "mean_local_forward_last2s_mps": 0.00035314527452001053,
+          "yaw_change_deg": -1.462239190516596,
+          "last_1s_drift_m": 5.03797985168325e-05
+        }
+      ],
+      "hashes": {
+        "/data/shijinsheng/open_duck/training/backward_sim_candidate_r22/corrector.onnx": "5ac2a33f81ad19a0823645feceea7d586b657152283a82b141530423655e514c",
+        "/data/shijinsheng/open_duck/training/backward_sim_candidate_r22/controller_contract.json": "1abc35a8228922d6a9ee59f18ed31da2a1508d50cde3b7214c502b7a03859464",
+        "/data/shijinsheng/open_duck/training/backward_reference_residual_r2/final.onnx": "05c1219a1403831deead152a6cff89b30a1d20fea3ebef285ca5c07279cfbdc8",
+        "/data/shijinsheng/open_duck/training/official_seed_turn_balance_v5_yaw_error/final.onnx": "6f60d1d0a0d5e9f780e18a0c202c816c8d0183c855f78fa0a2580dce776d383d",
+        "/data/shijinsheng/open_duck/training/negative_mirror_distill_v8_model/residual.onnx": "a5783314208fddb979bb80f5d9cf16b34b6af00f1658deb6980dcbb22a1f0f37",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Mini/BEST_WALK_ONNX_2.onnx": "3c606f9381a1710cc8fecdb7442787dcbfce3ee9bc02a6f1224774ab2b3a1067",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/record_motion_showcase.py": "9d1db997c79ba0f70a4338fda5cbc57a08060b16e8764650967c661fb481eba5",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/skill_target_execution.py": "970889df7068582853c3cd7b6ec7bb915502c106fc19123e52635978ef19660b"
+      },
+      "target_filter_tau_s": 0.01,
+      "stop_blend_s": 1.0,
+      "render_fps": 25,
+      "playback_speed": 1.0,
+      "execution_contract": "per_skill_v2",
+      "legacy_target_filter_tau_s": 0.0,
+      "backward_target_filter_tau_s": 0.01
+    },
+    {
+      "seed": 1608,
+      "continuous": true,
+      "resets_between_skills": 0,
+      "simulation_only": true,
+      "hardware_readiness": false,
+      "schedule": [
+        [
+          "Stand",
+          3.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Forward",
+          5.0,
+          0.15,
+          0.0
+        ],
+        [
+          "Settle before turn",
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Turn right",
+          5.0,
+          0.0,
+          -0.15
+        ],
+        [
+          "Settle before backward",
+          2.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Backward",
+          7.0,
+          -0.074,
+          0.0
+        ],
+        [
+          "Stop",
+          3.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "completed": true,
+      "phases": [
+        {
+          "phase": "Stand",
+          "duration_s": 2.999999999999891,
+          "fallen": false,
+          "minimum_up_z": 0.9953649622334796,
+          "displacement_xy_m": [
+            0.00802282445237755,
+            0.010728107247899599
+          ],
+          "axial_speed_mps": 0.0026742748174592803,
+          "mean_local_forward_last2s_mps": -3.100799285557437e-05,
+          "yaw_change_deg": -0.9931956039129819,
+          "last_1s_drift_m": 5.631557377813682e-05
+        },
+        {
+          "phase": "Forward",
+          "duration_s": 4.999999999999449,
+          "fallen": false,
+          "minimum_up_z": 0.9955332457085524,
+          "displacement_xy_m": [
+            0.38224562045604876,
+            0.03333520141182476
+          ],
+          "axial_speed_mps": 0.07632207418652218,
+          "mean_local_forward_last2s_mps": 0.08292808743903597,
+          "yaw_change_deg": 4.431277203349336,
+          "last_1s_drift_m": 0.0823329692903689
+        },
+        {
+          "phase": "Settle before turn",
+          "duration_s": 1.000000000000334,
+          "fallen": false,
+          "minimum_up_z": 0.9950415556575312,
+          "displacement_xy_m": [
+            0.001546205630466313,
+            0.010205278400421368
+          ],
+          "axial_speed_mps": 0.002155431664374721,
+          "mean_local_forward_last2s_mps": -0.0017997690431304336,
+          "yaw_change_deg": -2.534354222373875,
+          "last_1s_drift_m": 0.010321746900684624
+        },
+        {
+          "phase": "Turn right",
+          "duration_s": 5.00000000000167,
+          "fallen": false,
+          "minimum_up_z": 0.9956072330243955,
+          "displacement_xy_m": [
+            0.03900720604352459,
+            -0.028970167871404204
+          ],
+          "axial_speed_mps": 0.007709085167893638,
+          "mean_local_forward_last2s_mps": 0.008790588584352586,
+          "yaw_change_deg": -25.096685506042206,
+          "last_1s_drift_m": 0.009688097090035848
+        },
+        {
+          "phase": "Settle before backward",
+          "duration_s": 2.000000000000666,
+          "fallen": false,
+          "minimum_up_z": 0.9953403918598396,
+          "displacement_xy_m": [
+            -0.0030591142843326424,
+            0.020127097488443275
+          ],
+          "axial_speed_mps": -0.005519369135137094,
+          "mean_local_forward_last2s_mps": -0.007122244098768756,
+          "yaw_change_deg": 3.9345626886003604,
+          "last_1s_drift_m": 0.00015796511291734183
+        },
+        {
+          "phase": "Backward",
+          "duration_s": 6.99999999999612,
+          "fallen": false,
+          "minimum_up_z": 0.9767637062406883,
+          "displacement_xy_m": [
+            -0.515927418964872,
+            0.1293263980123756
+          ],
+          "axial_speed_mps": -0.07554175914497996,
+          "mean_local_forward_last2s_mps": -0.08236554941244799,
+          "yaw_change_deg": 3.561971909507873,
+          "last_1s_drift_m": 0.08687063268556139
+        },
+        {
+          "phase": "Stop",
+          "duration_s": 2.9999999999983373,
+          "fallen": false,
+          "minimum_up_z": 0.9811980742678519,
+          "displacement_xy_m": [
+            -0.024055088308702607,
+            0.01965158388608229
+          ],
+          "axial_speed_mps": -0.009562283517215919,
+          "mean_local_forward_last2s_mps": 0.0008252815511266173,
+          "yaw_change_deg": -8.74809821976586,
+          "last_1s_drift_m": 9.452672108425048e-05
+        }
+      ],
+      "hashes": {
+        "/data/shijinsheng/open_duck/training/backward_sim_candidate_r22/corrector.onnx": "5ac2a33f81ad19a0823645feceea7d586b657152283a82b141530423655e514c",
+        "/data/shijinsheng/open_duck/training/backward_sim_candidate_r22/controller_contract.json": "1abc35a8228922d6a9ee59f18ed31da2a1508d50cde3b7214c502b7a03859464",
+        "/data/shijinsheng/open_duck/training/backward_reference_residual_r2/final.onnx": "05c1219a1403831deead152a6cff89b30a1d20fea3ebef285ca5c07279cfbdc8",
+        "/data/shijinsheng/open_duck/training/official_seed_turn_balance_v5_yaw_error/final.onnx": "6f60d1d0a0d5e9f780e18a0c202c816c8d0183c855f78fa0a2580dce776d383d",
+        "/data/shijinsheng/open_duck/training/negative_mirror_distill_v8_model/residual.onnx": "a5783314208fddb979bb80f5d9cf16b34b6af00f1658deb6980dcbb22a1f0f37",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Mini/BEST_WALK_ONNX_2.onnx": "3c606f9381a1710cc8fecdb7442787dcbfce3ee9bc02a6f1224774ab2b3a1067",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/record_motion_showcase.py": "9d1db997c79ba0f70a4338fda5cbc57a08060b16e8764650967c661fb481eba5",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/skill_target_execution.py": "970889df7068582853c3cd7b6ec7bb915502c106fc19123e52635978ef19660b"
+      },
+      "target_filter_tau_s": 0.01,
+      "stop_blend_s": 1.0,
+      "render_fps": 25,
+      "playback_speed": 1.0,
+      "execution_contract": "legacy_shared_filter",
+      "legacy_target_filter_tau_s": 0.01,
+      "backward_target_filter_tau_s": 0.01
+    },
+    {
+      "seed": 1608,
+      "continuous": true,
+      "resets_between_skills": 0,
+      "simulation_only": true,
+      "hardware_readiness": false,
+      "schedule": [
+        [
+          "Stand",
+          3.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Forward",
+          5.0,
+          0.15,
+          0.0
+        ],
+        [
+          "Settle before turn",
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Turn right",
+          5.0,
+          0.0,
+          -0.15
+        ],
+        [
+          "Settle before backward",
+          2.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Backward",
+          7.0,
+          -0.074,
+          0.0
+        ],
+        [
+          "Stop",
+          3.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "completed": true,
+      "phases": [
+        {
+          "phase": "Stand",
+          "duration_s": 2.999999999999891,
+          "fallen": false,
+          "minimum_up_z": 0.9945185253393056,
+          "displacement_xy_m": [
+            0.008347825051700779,
+            0.009308850448585579
+          ],
+          "axial_speed_mps": 0.002782608350567027,
+          "mean_local_forward_last2s_mps": -9.564448529406407e-05,
+          "yaw_change_deg": -1.3539111600647318,
+          "last_1s_drift_m": 5.123251880568606e-05
+        },
+        {
+          "phase": "Forward",
+          "duration_s": 4.999999999999449,
+          "fallen": false,
+          "minimum_up_z": 0.9956229919915239,
+          "displacement_xy_m": [
+            0.42194225370465466,
+            0.015379954021162084
+          ],
+          "axial_speed_mps": 0.08429221160594878,
+          "mean_local_forward_last2s_mps": 0.09667488533438463,
+          "yaw_change_deg": 0.4366646973644015,
+          "last_1s_drift_m": 0.09720589036053429
+        },
+        {
+          "phase": "Settle before turn",
+          "duration_s": 1.000000000000334,
+          "fallen": false,
+          "minimum_up_z": 0.9948837776502889,
+          "displacement_xy_m": [
+            0.003344050045639868,
+            0.010386236721080942
+          ],
+          "axial_speed_mps": 0.003177355677783685,
+          "mean_local_forward_last2s_mps": -0.0005858148951136861,
+          "yaw_change_deg": -1.4611644738908025,
+          "last_1s_drift_m": 0.010911305326773429
+        },
+        {
+          "phase": "Turn right",
+          "duration_s": 5.00000000000167,
+          "fallen": false,
+          "minimum_up_z": 0.9956209192915337,
+          "displacement_xy_m": [
+            0.04369813265113587,
+            -0.07183359610220452
+          ],
+          "axial_speed_mps": 0.009328304755385578,
+          "mean_local_forward_last2s_mps": 0.014193278656965817,
+          "yaw_change_deg": -43.38966270532975,
+          "last_1s_drift_m": 0.018679850138805996
+        },
+        {
+          "phase": "Settle before backward",
+          "duration_s": 2.000000000000666,
+          "fallen": false,
+          "minimum_up_z": 0.9951437765338103,
+          "displacement_xy_m": [
+            0.004940469551129145,
+            0.016246965724215683
+          ],
+          "axial_speed_mps": -0.0040975063500452965,
+          "mean_local_forward_last2s_mps": -0.005782016423170031,
+          "yaw_change_deg": 1.8114208950090667,
+          "last_1s_drift_m": 2.3804526415181988e-05
+        },
+        {
+          "phase": "Backward",
+          "duration_s": 6.99999999999612,
+          "fallen": false,
+          "minimum_up_z": 0.9740740306212171,
+          "displacement_xy_m": [
+            -0.47148785665394727,
+            0.38596791248241924
+          ],
+          "axial_speed_mps": -0.08675905507400371,
+          "mean_local_forward_last2s_mps": -0.09266543089028825,
+          "yaw_change_deg": 9.004129360047235,
+          "last_1s_drift_m": 0.09648006860192761
+        },
+        {
+          "phase": "Stop",
+          "duration_s": 2.9999999999983373,
+          "fallen": false,
+          "minimum_up_z": 0.9768929045709408,
+          "displacement_xy_m": [
+            -0.01833094288051475,
+            0.033217418393688136
+          ],
+          "axial_speed_mps": -0.011351570493528857,
+          "mean_local_forward_last2s_mps": 0.0005505059806173427,
+          "yaw_change_deg": -4.056894233709604,
+          "last_1s_drift_m": 5.941214685486982e-05
+        }
+      ],
+      "hashes": {
+        "/data/shijinsheng/open_duck/training/backward_sim_candidate_r22/corrector.onnx": "5ac2a33f81ad19a0823645feceea7d586b657152283a82b141530423655e514c",
+        "/data/shijinsheng/open_duck/training/backward_sim_candidate_r22/controller_contract.json": "1abc35a8228922d6a9ee59f18ed31da2a1508d50cde3b7214c502b7a03859464",
+        "/data/shijinsheng/open_duck/training/backward_reference_residual_r2/final.onnx": "05c1219a1403831deead152a6cff89b30a1d20fea3ebef285ca5c07279cfbdc8",
+        "/data/shijinsheng/open_duck/training/official_seed_turn_balance_v5_yaw_error/final.onnx": "6f60d1d0a0d5e9f780e18a0c202c816c8d0183c855f78fa0a2580dce776d383d",
+        "/data/shijinsheng/open_duck/training/negative_mirror_distill_v8_model/residual.onnx": "a5783314208fddb979bb80f5d9cf16b34b6af00f1658deb6980dcbb22a1f0f37",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Mini/BEST_WALK_ONNX_2.onnx": "3c606f9381a1710cc8fecdb7442787dcbfce3ee9bc02a6f1224774ab2b3a1067",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/record_motion_showcase.py": "9d1db997c79ba0f70a4338fda5cbc57a08060b16e8764650967c661fb481eba5",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/skill_target_execution.py": "970889df7068582853c3cd7b6ec7bb915502c106fc19123e52635978ef19660b"
+      },
+      "target_filter_tau_s": 0.01,
+      "stop_blend_s": 1.0,
+      "render_fps": 25,
+      "playback_speed": 1.0,
+      "execution_contract": "per_skill_v2",
+      "legacy_target_filter_tau_s": 0.0,
+      "backward_target_filter_tau_s": 0.01
+    },
+    {
+      "seed": 1609,
+      "continuous": true,
+      "resets_between_skills": 0,
+      "simulation_only": true,
+      "hardware_readiness": false,
+      "schedule": [
+        [
+          "Stand",
+          3.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Forward",
+          5.0,
+          0.15,
+          0.0
+        ],
+        [
+          "Settle before turn",
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Turn right",
+          5.0,
+          0.0,
+          -0.15
+        ],
+        [
+          "Settle before backward",
+          2.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Backward",
+          7.0,
+          -0.074,
+          0.0
+        ],
+        [
+          "Stop",
+          3.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "completed": true,
+      "phases": [
+        {
+          "phase": "Stand",
+          "duration_s": 2.999999999999891,
+          "fallen": false,
+          "minimum_up_z": 0.9953518843681047,
+          "displacement_xy_m": [
+            0.008821543497910141,
+            0.010080931250362165
+          ],
+          "axial_speed_mps": 0.002940514499303487,
+          "mean_local_forward_last2s_mps": -8.214689473249775e-06,
+          "yaw_change_deg": -1.194447273090967,
+          "last_1s_drift_m": 6.05750275930413e-05
+        },
+        {
+          "phase": "Forward",
+          "duration_s": 4.999999999999449,
+          "fallen": false,
+          "minimum_up_z": 0.9955233993051198,
+          "displacement_xy_m": [
+            0.37475805057078754,
+            0.031867637196064544
+          ],
+          "axial_speed_mps": 0.07480246421478945,
+          "mean_local_forward_last2s_mps": 0.0818772273616363,
+          "yaw_change_deg": 3.9241596973793773,
+          "last_1s_drift_m": 0.08427909733104745
+        },
+        {
+          "phase": "Settle before turn",
+          "duration_s": 1.000000000000334,
+          "fallen": false,
+          "minimum_up_z": 0.9947703134023816,
+          "displacement_xy_m": [
+            0.0016356787585399823,
+            0.01006078774109103
+          ],
+          "axial_speed_mps": 0.002112962239413742,
+          "mean_local_forward_last2s_mps": -0.00200821371299161,
+          "yaw_change_deg": -2.2926464207239046,
+          "last_1s_drift_m": 0.010192884526591403
+        },
+        {
+          "phase": "Turn right",
+          "duration_s": 5.00000000000167,
+          "fallen": false,
+          "minimum_up_z": 0.995546576777427,
+          "displacement_xy_m": [
+            0.03866341975978238,
+            -0.027096644421016076
+          ],
+          "axial_speed_mps": 0.00769111942554811,
+          "mean_local_forward_last2s_mps": 0.008142239061541422,
+          "yaw_change_deg": -24.613967231241748,
+          "last_1s_drift_m": 0.008454326958640927
+        },
+        {
+          "phase": "Settle before backward",
+          "duration_s": 2.000000000000666,
+          "fallen": false,
+          "minimum_up_z": 0.995353549550405,
+          "displacement_xy_m": [
+            -0.003108718609228678,
+            0.020185234471488078
+          ],
+          "axial_speed_mps": -0.0055515038225931275,
+          "mean_local_forward_last2s_mps": -0.007014440520324341,
+          "yaw_change_deg": 3.990624027341606,
+          "last_1s_drift_m": 0.00017308575497345123
+        },
+        {
+          "phase": "Backward",
+          "duration_s": 6.99999999999612,
+          "fallen": false,
+          "minimum_up_z": 0.9767760454082395,
+          "displacement_xy_m": [
+            -0.5024128950666646,
+            0.1276185387545277
+          ],
+          "axial_speed_mps": -0.07365575687157286,
+          "mean_local_forward_last2s_mps": -0.07460419083975711,
+          "yaw_change_deg": 7.748422597268909,
+          "last_1s_drift_m": 0.07666992918198537
+        },
+        {
+          "phase": "Stop",
+          "duration_s": 2.9999999999983373,
+          "fallen": false,
+          "minimum_up_z": 0.9828958498920995,
+          "displacement_xy_m": [
+            -0.02333813019781883,
+            0.017959518533620544
+          ],
+          "axial_speed_mps": -0.008886173281614788,
+          "mean_local_forward_last2s_mps": 0.0007919275695159376,
+          "yaw_change_deg": -6.210675333096204,
+          "last_1s_drift_m": 0.00011492199513296966
+        }
+      ],
+      "hashes": {
+        "/data/shijinsheng/open_duck/training/backward_sim_candidate_r22/corrector.onnx": "5ac2a33f81ad19a0823645feceea7d586b657152283a82b141530423655e514c",
+        "/data/shijinsheng/open_duck/training/backward_sim_candidate_r22/controller_contract.json": "1abc35a8228922d6a9ee59f18ed31da2a1508d50cde3b7214c502b7a03859464",
+        "/data/shijinsheng/open_duck/training/backward_reference_residual_r2/final.onnx": "05c1219a1403831deead152a6cff89b30a1d20fea3ebef285ca5c07279cfbdc8",
+        "/data/shijinsheng/open_duck/training/official_seed_turn_balance_v5_yaw_error/final.onnx": "6f60d1d0a0d5e9f780e18a0c202c816c8d0183c855f78fa0a2580dce776d383d",
+        "/data/shijinsheng/open_duck/training/negative_mirror_distill_v8_model/residual.onnx": "a5783314208fddb979bb80f5d9cf16b34b6af00f1658deb6980dcbb22a1f0f37",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Mini/BEST_WALK_ONNX_2.onnx": "3c606f9381a1710cc8fecdb7442787dcbfce3ee9bc02a6f1224774ab2b3a1067",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/record_motion_showcase.py": "9d1db997c79ba0f70a4338fda5cbc57a08060b16e8764650967c661fb481eba5",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/skill_target_execution.py": "970889df7068582853c3cd7b6ec7bb915502c106fc19123e52635978ef19660b"
+      },
+      "target_filter_tau_s": 0.01,
+      "stop_blend_s": 1.0,
+      "render_fps": 25,
+      "playback_speed": 1.0,
+      "execution_contract": "legacy_shared_filter",
+      "legacy_target_filter_tau_s": 0.01,
+      "backward_target_filter_tau_s": 0.01
+    },
+    {
+      "seed": 1609,
+      "continuous": true,
+      "resets_between_skills": 0,
+      "simulation_only": true,
+      "hardware_readiness": false,
+      "schedule": [
+        [
+          "Stand",
+          3.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Forward",
+          5.0,
+          0.15,
+          0.0
+        ],
+        [
+          "Settle before turn",
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Turn right",
+          5.0,
+          0.0,
+          -0.15
+        ],
+        [
+          "Settle before backward",
+          2.0,
+          0.0,
+          0.0
+        ],
+        [
+          "Backward",
+          7.0,
+          -0.074,
+          0.0
+        ],
+        [
+          "Stop",
+          3.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "completed": true,
+      "phases": [
+        {
+          "phase": "Stand",
+          "duration_s": 2.999999999999891,
+          "fallen": false,
+          "minimum_up_z": 0.9953583303760571,
+          "displacement_xy_m": [
+            0.008666050177550639,
+            0.010464054333474733
+          ],
+          "axial_speed_mps": 0.0028886833925169846,
+          "mean_local_forward_last2s_mps": -5.204713518139064e-06,
+          "yaw_change_deg": -0.6541669532278283,
+          "last_1s_drift_m": 5.9026527857943906e-05
+        },
+        {
+          "phase": "Forward",
+          "duration_s": 4.999999999999449,
+          "fallen": false,
+          "minimum_up_z": 0.9956112339475973,
+          "displacement_xy_m": [
+            0.42451940148267003,
+            0.021597867476515313
+          ],
+          "axial_speed_mps": 0.08484902939470816,
+          "mean_local_forward_last2s_mps": 0.09656576594847759,
+          "yaw_change_deg": 0.8407491676768053,
+          "last_1s_drift_m": 0.09695863675011056
+        },
+        {
+          "phase": "Settle before turn",
+          "duration_s": 1.000000000000334,
+          "fallen": false,
+          "minimum_up_z": 0.9949031338297969,
+          "displacement_xy_m": [
+            0.0032783733950936256,
+            0.010444340623662667
+          ],
+          "axial_speed_mps": 0.0033123676753896232,
+          "mean_local_forward_last2s_mps": -0.000326155373053835,
+          "yaw_change_deg": -1.4852732645587434,
+          "last_1s_drift_m": 0.010946779580349097
+        },
+        {
+          "phase": "Turn right",
+          "duration_s": 5.00000000000167,
+          "fallen": false,
+          "minimum_up_z": 0.9956370348325454,
+          "displacement_xy_m": [
+            0.04494492308246628,
+            -0.07105605228461584
+          ],
+          "axial_speed_mps": 0.009308765485915405,
+          "mean_local_forward_last2s_mps": 0.014219932197086959,
+          "yaw_change_deg": -43.91338369756326,
+          "last_1s_drift_m": 0.018844094131970492
+        },
+        {
+          "phase": "Settle before backward",
+          "duration_s": 2.000000000000666,
+          "fallen": false,
+          "minimum_up_z": 0.9951486768832033,
+          "displacement_xy_m": [
+            0.005183376663083328,
+            0.016304426574654564
+          ],
+          "axial_speed_mps": -0.003959977777636963,
+          "mean_local_forward_last2s_mps": -0.005648680103114052,
+          "yaw_change_deg": 1.8155828269935668,
+          "last_1s_drift_m": 2.589595170855191e-05
+        },
+        {
+          "phase": "Backward",
+          "duration_s": 6.99999999999612,
+          "fallen": false,
+          "minimum_up_z": 0.9752690800940929,
+          "displacement_xy_m": [
+            -0.44204992160836154,
+            0.4165692399632695
+          ],
+          "axial_speed_mps": -0.08677169459566425,
+          "mean_local_forward_last2s_mps": -0.09337004678625153,
+          "yaw_change_deg": 4.120517585010338,
+          "last_1s_drift_m": 0.09679295801780372
+        },
+        {
+          "phase": "Stop",
+          "duration_s": 2.9999999999983373,
+          "fallen": false,
+          "minimum_up_z": 0.9741373631022244,
+          "displacement_xy_m": [
+            -0.013648120880865089,
+            0.03206152984325927
+          ],
+          "axial_speed_mps": -0.010287280967961459,
+          "mean_local_forward_last2s_mps": 0.0006234887529984158,
+          "yaw_change_deg": -5.777224897914471,
+          "last_1s_drift_m": 9.36424811740697e-05
+        }
+      ],
+      "hashes": {
+        "/data/shijinsheng/open_duck/training/backward_sim_candidate_r22/corrector.onnx": "5ac2a33f81ad19a0823645feceea7d586b657152283a82b141530423655e514c",
+        "/data/shijinsheng/open_duck/training/backward_sim_candidate_r22/controller_contract.json": "1abc35a8228922d6a9ee59f18ed31da2a1508d50cde3b7214c502b7a03859464",
+        "/data/shijinsheng/open_duck/training/backward_reference_residual_r2/final.onnx": "05c1219a1403831deead152a6cff89b30a1d20fea3ebef285ca5c07279cfbdc8",
+        "/data/shijinsheng/open_duck/training/official_seed_turn_balance_v5_yaw_error/final.onnx": "6f60d1d0a0d5e9f780e18a0c202c816c8d0183c855f78fa0a2580dce776d383d",
+        "/data/shijinsheng/open_duck/training/negative_mirror_distill_v8_model/residual.onnx": "a5783314208fddb979bb80f5d9cf16b34b6af00f1658deb6980dcbb22a1f0f37",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Mini/BEST_WALK_ONNX_2.onnx": "3c606f9381a1710cc8fecdb7442787dcbfce3ee9bc02a6f1224774ab2b3a1067",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/record_motion_showcase.py": "9d1db997c79ba0f70a4338fda5cbc57a08060b16e8764650967c661fb481eba5",
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/skill_target_execution.py": "970889df7068582853c3cd7b6ec7bb915502c106fc19123e52635978ef19660b"
+      },
+      "target_filter_tau_s": 0.01,
+      "stop_blend_s": 1.0,
+      "render_fps": 25,
+      "playback_speed": 1.0,
+      "execution_contract": "per_skill_v2",
+      "legacy_target_filter_tau_s": 0.0,
+      "backward_target_filter_tau_s": 0.01
+    }
+  ]
+}
