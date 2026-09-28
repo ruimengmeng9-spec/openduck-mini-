@@ -1,0 +1,55 @@
+{
+  "note": "convex-hull screen, not exact CAD validation; no audit collisions fed into training",
+  "hardware_readiness": false,
+  "geometry_source": "original visual meshes",
+  "initial_pose_counts": [
+    {
+      "label": "standing",
+      "self_contact_pairs": 3
+    },
+    {
+      "label": "prone",
+      "self_contact_pairs": 3
+    },
+    {
+      "label": "supine",
+      "self_contact_pairs": 3
+    },
+    {
+      "label": "left_side",
+      "self_contact_pairs": 3
+    },
+    {
+      "label": "right_side",
+      "self_contact_pairs": 3
+    }
+  ],
+  "frames_screened": 455,
+  "frames_with_self_penetration": 455,
+  "pairs": {
+    "head_assembly / head_pitch_to_yaw": {
+      "max_penetration_m": 0.043725409395828564,
+      "frames": 455
+    },
+    "head_assembly / trunk_assembly": {
+      "max_penetration_m": 0.03625688017506096,
+      "frames": 82
+    },
+    "left_roll_to_pitch_assembly / trunk_assembly": {
+      "max_penetration_m": 0.03367370007179559,
+      "frames": 455
+    },
+    "right_roll_to_pitch_assembly / trunk_assembly": {
+      "max_penetration_m": 0.03142820648462686,
+      "frames": 455
+    },
+    "neck_yaw_assembly / trunk_assembly": {
+      "max_penetration_m": 0.025911581501361844,
+      "frames": 49
+    },
+    "head_pitch_to_yaw / trunk_assembly": {
+      "max_penetration_m": 0.003940773501016223,
+      "frames": 18
+    }
+  }
+}

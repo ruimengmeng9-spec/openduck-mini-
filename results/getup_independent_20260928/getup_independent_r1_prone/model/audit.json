@@ -1,0 +1,39 @@
+{
+  "simulation_only": true,
+  "hardware_readiness": false,
+  "collision_contract": "original foot contacts + visual convex hull ground-only contacts",
+  "self_collision_validated": false,
+  "enabled_visual_geoms": 44,
+  "unchanged_parameter_arrays": {
+    "body_mass": true,
+    "body_inertia": true,
+    "body_ipos": true,
+    "body_iquat": true,
+    "jnt_range": true,
+    "dof_damping": true,
+    "dof_frictionloss": true,
+    "dof_armature": true,
+    "actuator_forcerange": true,
+    "actuator_ctrlrange": true,
+    "actuator_gainprm": true,
+    "actuator_biasprm": true,
+    "geom_friction": true
+  },
+  "solver_iterations": 1,
+  "friction": [
+    0.6,
+    0.005,
+    0.0001
+  ],
+  "motor_slew_rad_s": 5.24,
+  "sim_dt_s": 0.002,
+  "control_dt_s": 0.02,
+  "source_hashes": {
+    "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/playground/open_duck_mini_v2/xmls/open_duck_mini_v2.xml": "968b18de4e3f55b31252155f52779fa490989f5da92bc9b308e0bb4e81d6bb5c",
+    "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/playground/open_duck_mini_v2/xmls/scene_flat_terrain.xml": "f087afa8bbe13f92e934d4a03571f2134abe7d5bb963fce22eec04822e9ae6d0"
+  },
+  "generated_hashes": {
+    "/data/shijinsheng/open_duck/training/getup_independent_r1_prone/model/robot_ground_mesh.xml": "f660aece6ea94372b59c6c6cd0333ca57a2899634654b579246ffb784c030d70",
+    "/data/shijinsheng/open_duck/training/getup_independent_r1_prone/model/scene.xml": "d925cff01f41340d088f8bdafade3d1712477cdb035c3b5520c44a23c7128986"
+  }
+}
