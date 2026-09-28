@@ -3,8 +3,10 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import math
+import os
 from pathlib import Path
 
 import mujoco
@@ -28,6 +30,7 @@ def main() -> None:
     parser.add_argument("--duration-s", type=float, default=30.0)
     parser.add_argument("--speed", type=float, default=-0.074)
     parser.add_argument("--seeds", type=int, default=5)
+    parser.add_argument("--seed-start", type=int, default=0)
     parser.add_argument("--qvel-noise", type=float, default=0.02)
     parser.add_argument("--warmup-s", type=float, default=3.0)
     parser.add_argument("--reset-phase-on-start", action="store_true")
@@ -45,7 +48,37 @@ def main() -> None:
     parser.add_argument("--max-yaw-command", type=float, default=0.3)
     parser.add_argument("--yaw-command", type=float, default=0.0)
     parser.add_argument("--control-period-s", type=float, default=0.2)
+    parser.add_argument("--mirror-blend", type=float, default=0.0)
+    parser.add_argument("--mirror-flip-phase", action="store_true")
+    parser.add_argument("--mirror-alternate-period-s", type=float, default=0.0)
+    parser.add_argument("--mirror-original-fraction", type=float, default=0.45)
+    parser.add_argument("--mirror-transition-s", type=float, default=0.08)
+    parser.add_argument("--reference-residual-gain", type=float, default=0.0)
+    parser.add_argument("--reference-ramp-s", type=float, default=1.0)
+    parser.add_argument("--reference-zero-residual", action="store_true")
     args = parser.parse_args()
+    if args.seeds < 1 or args.duration_s <= 0:
+        parser.error("positive seed count and duration are required")
+    contract_path = args.model.parent / "controller_contract.json"
+    if contract_path.exists() and not args.reference_zero_residual:
+        contract = json.loads(contract_path.read_text(encoding="utf-8"))
+        if contract.get("controller_type") == "reference_residual_v1":
+            if not args.reference_residual_gain:
+                parser.error("this actor requires --reference-residual-gain; legacy decoding is invalid")
+            if hashlib.sha256(args.model.read_bytes()).hexdigest() != contract["onnx_sha256"]:
+                parser.error("model hash differs from the controller contract")
+            if not math.isclose(args.reference_residual_gain, contract["residual_gain_rad"]):
+                parser.error("residual gain differs from the trained controller contract")
+            if not math.isclose(args.reference_ramp_s, contract["reference_ramp_s"]):
+                parser.error("reference ramp differs from the trained controller contract")
+            if os.environ.get("REFERENCE_DX") != contract.get("reference_dx") or os.environ.get("REFERENCE_DX_INTERPOLATION", "0") != contract.get("reference_dx_interpolation", "0"):
+                parser.error("reference environment differs from the trained controller contract")
+    if not 0.0 <= args.mirror_blend <= 1.0:
+        parser.error("--mirror-blend must be in [0, 1]")
+    if args.mirror_blend and args.mirror_alternate_period_s:
+        parser.error("choose mirror blending or alternation, not both")
+    if args.reference_zero_residual and not args.reference_residual_gain:
+        parser.error("zero-residual control requires the reference decoder")
     if not 0.0 <= args.reverse_weight <= 1.0:
         parser.error("--reverse-weight must be in [0, 1]")
     if args.reverse_weight != 1.0 and not args.base_model:
@@ -55,12 +88,42 @@ def main() -> None:
     args.output_dir.mkdir(parents=True, exist_ok=True)
 
     rows = []
-    for seed in range(args.seeds):
+    for seed in range(args.seed_start, args.seed_start + args.seeds):
         rng = np.random.default_rng(seed)
         simulation = DuckSimulation(
             REPO, OFFICIAL, output_root=args.output_dir, warmup_s=args.warmup_s
         )
         simulation.sim.policy = OnnxInfer(str(args.model), awd=True)
+        if args.reference_residual_gain:
+            if args.base_model or args.mirror_blend or args.mirror_alternate_period_s:
+                parser.error("reference residual mode cannot combine with policy blending")
+            from diagnostics.reference_residual_policy import (
+                ReferenceResidualPolicy, ZeroResidualActor,
+            )
+            simulation.sim.policy = ReferenceResidualPolicy(
+                ZeroResidualActor() if args.reference_zero_residual else simulation.sim.policy,
+                simulation.sim,
+                args.reference_residual_gain, args.reference_ramp_s,
+            )
+        if args.mirror_blend or args.mirror_alternate_period_s:
+            from diagnostics.backward_lateral_mirror import (
+                AlternatingMirrorPolicy, LateralMirrorBlendPolicy,
+            )
+
+            if args.mirror_alternate_period_s:
+                simulation.sim.policy = AlternatingMirrorPolicy(
+                    simulation.sim.policy, simulation.sim.default_actuator,
+                    lambda: simulation.sim.data.time,
+                    args.mirror_alternate_period_s,
+                    args.mirror_original_fraction,
+                    args.mirror_transition_s,
+                    args.mirror_flip_phase,
+                )
+            else:
+                simulation.sim.policy = LateralMirrorBlendPolicy(
+                    simulation.sim.policy, simulation.sim.default_actuator,
+                    args.mirror_blend, args.mirror_flip_phase,
+                )
         if args.base_model:
             from diagnostics.backward_blend_policy import (
                 BlendedBackwardPolicy, PitchGuardBackwardPolicy,
@@ -164,6 +227,16 @@ def main() -> None:
             "reset_phase_on_start": args.reset_phase_on_start,
             "motor_slew_limit_enabled": not args.no_motor_slew_limit,
             "heading_kp": args.heading_kp,
+            "mirror_blend": args.mirror_blend,
+            "mirror_flip_phase": args.mirror_flip_phase,
+            "mirror_alternate_period_s": args.mirror_alternate_period_s,
+            "mirror_original_fraction": args.mirror_original_fraction,
+            "mirror_transition_s": args.mirror_transition_s,
+            "reference_residual_gain_rad": args.reference_residual_gain,
+            "reference_ramp_s": args.reference_ramp_s,
+            "reference_zero_residual": args.reference_zero_residual,
+            "reference_dx": os.environ.get("REFERENCE_DX"),
+            "reference_dx_interpolation": os.environ.get("REFERENCE_DX_INTERPOLATION", "0"),
             "executed_duration_s": round(elapsed, 6),
             "fallen": fallen,
             "forward_displacement_m": round(forward, 6),

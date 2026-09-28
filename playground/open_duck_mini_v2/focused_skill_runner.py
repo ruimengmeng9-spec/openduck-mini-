@@ -4,6 +4,9 @@ from __future__ import annotations
 
 import argparse
 import functools
+import hashlib
+import json
+import os
 from datetime import datetime
 from pathlib import Path
 
@@ -35,16 +38,35 @@ class FocusedSkillRunner(BaseRunner):
             hi = args.vx_max if args.vx_max is not None else self.env_config.lin_vel_x[1]
             self.env_config.lin_vel_x = [lo, hi]
             print(f"Velocity command overridden to [{lo}, {hi}]")
-        self.env = focused_skill.FocusedSkill(
-            skill=args.skill, task=args.task, config=self.env_config
-        )
+        if args.reference_residual_gain:
+            if args.skill != "backward":
+                raise ValueError("reference residual mode is only for backward")
+            from .reference_residual import ReferenceResidualBackward
+            self.env_config.reference_residual_gain = args.reference_residual_gain
+            self.env_config.reference_ramp_s = args.reference_ramp_s
+            self.env = ReferenceResidualBackward(
+                residual_gain=args.reference_residual_gain,
+                ramp_s=args.reference_ramp_s,
+                task=args.task, config=self.env_config,
+            )
+        else:
+            self.env = focused_skill.FocusedSkill(
+                skill=args.skill, task=args.task, config=self.env_config
+            )
         eval_config = focused_skill.focused_config(args.skill)
         eval_config.lin_vel_x = list(self.env_config.lin_vel_x)
-        self.eval_env = focused_skill.FocusedSkill(
-            skill=args.skill,
-            task=args.task,
-            config=eval_config,
-        )
+        if args.reference_residual_gain:
+            self.eval_env = ReferenceResidualBackward(
+                residual_gain=args.reference_residual_gain,
+                ramp_s=args.reference_ramp_s,
+                task=args.task, config=eval_config,
+            )
+        else:
+            self.eval_env = focused_skill.FocusedSkill(
+                skill=args.skill,
+                task=args.task,
+                config=eval_config,
+            )
         self.randomizer = (
             randomize.domain_randomize if args.domain_randomization else None
         )
@@ -122,6 +144,25 @@ class FocusedSkillRunner(BaseRunner):
                 self.obs_size,
                 output_path=str(output_path),
             )
+            if self.args.reference_residual_gain:
+                contract = {
+                    "controller_type": "reference_residual_v1",
+                    "simulation_only": True,
+                    "standalone_legacy_actor": False,
+                    "residual_gain_rad": self.args.reference_residual_gain,
+                    "reference_ramp_s": self.args.reference_ramp_s,
+                    "reference_dx": os.environ.get("REFERENCE_DX"),
+                    "reference_dx_interpolation": os.environ.get("REFERENCE_DX_INTERPOLATION", "0"),
+                    "motor_action_scale": self.env_config.action_scale,
+                    "reference_projection": "joint_limits_before_residual_then_joint_limits",
+                    "control_dt_s": self.env.dt,
+                    "motor_velocity_limit_rad_s": self.env_config.max_motor_velocity,
+                    "onnx_sha256": hashlib.sha256(output_path.read_bytes()).hexdigest(),
+                    "warning": "Requires the reference decoder and joint clamps; not approved for hardware.",
+                }
+                (self.output_dir / "controller_contract.json").write_text(
+                    json.dumps(contract, indent=2), encoding="utf-8"
+                )
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -151,6 +192,8 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument("--domain_randomization", action="store_true")
     parser.add_argument("--skip_onnx_export", action="store_true")
+    parser.add_argument("--reference-residual-gain", type=float, default=0.0)
+    parser.add_argument("--reference-ramp-s", type=float, default=1.0)
     return parser
 
 
