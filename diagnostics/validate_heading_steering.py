@@ -35,6 +35,7 @@ def main():
     p.add_argument("--initial-error", type=float, default=0.)
     p.add_argument("--constant-yaw", type=float, default=0., help="simulation actuation-authority probe")
     p.add_argument("--constant-roll", type=float, default=0.)
+    p.add_argument("--feedback-gain", type=float, default=0., help='simulation-only proportional heading authority probe; not a learned policy')
     a = p.parse_args()
     if not 0 < a.duration_s <= 60 or not 1 <= a.seeds <= 50:
         raise ValueError('gate duration/seeds out of bounds')
@@ -42,6 +43,8 @@ def main():
         raise ValueError('non-finite control argument')
     if abs(a.initial_error) > .5 or max(abs(a.constant_yaw),abs(a.constant_roll)) > 1:
         raise ValueError('heading offset or correction out of bounds')
+    if not 0 <= a.feedback_gain <= 8 or (a.model and a.feedback_gain):
+        raise ValueError('invalid or mixed feedback probe')
     root = Path("/data/shijinsheng/open_duck")
     if a.model:
         contract = json.loads((a.model.parent/"controller_contract.json").read_text())
@@ -77,6 +80,8 @@ def main():
         commands = [-.074,0.,0.,0.,0.,0.,0.]
         dt = sim.sim_dt*sim.decimation
         trajectory = []
+        qpos_trace = []
+        qvel_trace = []
         correction_magnitude = []
         min_up = 1.
         fallen = False
@@ -89,6 +94,10 @@ def main():
                                         sim.data.time-baseline.start_s, 1.)
             augmented = np.concatenate([obs, features]).astype(np.float32)
             correction = np.asarray(actor.infer(augmented), dtype=np.float32) if actor else np.array([a.constant_yaw,a.constant_roll])
+            if a.feedback_gain:
+                # Short-run sign hypothesis only; the long-run gate may reject it.
+                u = np.clip(-a.feedback_gain*features[0],-1.,1.)
+                correction = np.array([u,-u],dtype=np.float32)
             if correction.shape != (2,) or not np.isfinite(correction).all():
                 raise ValueError('invalid steering actor output')
             correction_magnitude.append(np.abs(correction))
@@ -114,8 +123,10 @@ def main():
             up = 1-2*(now[4]**2+now[5]**2)
             min_up = min(min_up, up)
             trajectory.append([float(sim.data.time), *now[:3], hn, up, *correction])
+            qpos_trace.append(sim.data.qpos.copy())
+            qvel_trace.append(sim.data.qvel.copy())
             completed += 1
-            fallen = bool(up < .5 or not np.isfinite(sim.data.qpos).all() or not np.isfinite(sim.data.qvel).all())
+            fallen = bool(up < .5 or now[2] < .08 or not np.isfinite(sim.data.qpos).all() or not np.isfinite(sim.data.qvel).all())
             if fallen:
                 break
         end = sim.get_floating_base_qpos(sim.data.qpos)
@@ -125,13 +136,15 @@ def main():
         row = dict(seed=seed, model=str(a.model) if a.model else "zero_or_constant_correction",
                    baseline_sha256=hashlib.sha256(a.baseline.read_bytes()).hexdigest(),
                    initial_target_offset_rad=a.initial_error, constant_yaw=a.constant_yaw,
-                   constant_roll=a.constant_roll, duration_s=completed*dt, fallen=fallen,
+                   constant_roll=a.constant_roll, feedback_gain=a.feedback_gain,
+                   duration_s=completed*dt, fallen=fallen,
                    speed_mps=float(speed), lateral_m=float(lateral), yaw_change_deg=math.degrees(total_yaw),
                    final_heading_error_deg=math.degrees(math.atan2(math.sin(previous_heading-target_heading),math.cos(previous_heading-target_heading))),
                    minimum_up_z=float(min_up), mean_abs_correction=np.mean(correction_magnitude,axis=0).tolist())
         rows.append(row)
         a.output.parent.mkdir(parents=True,exist_ok=True)
-        np.savez_compressed(a.output.parent/f"seed_{seed}_trajectory.npz", trajectory=np.asarray(trajectory))
+        np.savez_compressed(a.output.parent/f"seed_{seed}_trajectory.npz", trajectory=np.asarray(trajectory),
+                            qpos=np.asarray(qpos_trace), qvel=np.asarray(qvel_trace))
         print(json.dumps(row),flush=True)
     a.output.write_text(json.dumps({"rows":rows,"step_contract":"infer_then_physics",
                                   "history_contract":"fresh_three_motor_actions"},indent=2))

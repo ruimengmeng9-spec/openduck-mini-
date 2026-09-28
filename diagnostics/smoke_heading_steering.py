@@ -3,6 +3,7 @@ import jax
 import jax.numpy as jp
 import numpy as np
 import onnxruntime as ort
+import sys
 from playground.open_duck_mini_v2.heading_steering import FrozenOnnxActor, HeadingSteering, zero_steering_networks
 from playground.open_duck_mini_v2.focused_skill import focused_config
 
@@ -19,6 +20,8 @@ params = net.policy_network.init(jax.random.PRNGKey(1))
 assert np.all(np.asarray(params['params']['hidden_2']['kernel']) == 0)
 assert np.all(np.asarray(params['params']['hidden_2']['bias'][:2]) == 0)
 print('ZERO CORRECTION INITIALIZATION: PASSED',flush=True)
+if '--parity-only' in sys.argv:
+    raise SystemExit(0)
 cfg = focused_config('backward')
 cfg.lin_vel_x = [-.074,-.074]
 env = HeadingSteering(baseline_path=path,residual_gain=.12,ramp_s=1.,task='flat_terrain',config=cfg)
