@@ -31,6 +31,8 @@ class FocusedSkillRunner(BaseRunner):
     def __init__(self, args: argparse.Namespace) -> None:
         super().__init__(args)
         self.env_config = focused_skill.focused_config(args.skill)
+        if args.steering_baseline_model and not args.reference_residual_gain:
+            raise ValueError('heading steering requires the reference-residual decoder')
         # Allow retargeting the command curriculum from the command line so a
         # sweep does not require editing (and re-reviewing) the skill definition.
         if args.vx_min is not None or args.vx_max is not None:
@@ -44,10 +46,19 @@ class FocusedSkillRunner(BaseRunner):
             from .reference_residual import ReferenceResidualBackward
             self.env_config.reference_residual_gain = args.reference_residual_gain
             self.env_config.reference_ramp_s = args.reference_ramp_s
-            self.env = ReferenceResidualBackward(
+            env_class = ReferenceResidualBackward
+            extra = {}
+            if args.steering_baseline_model:
+                from .heading_steering import HeadingSteering
+                env_class = HeadingSteering
+                extra = dict(baseline_path=args.steering_baseline_model,
+                             yaw_gain=args.steering_yaw_gain, roll_gain=args.steering_roll_gain,
+                             initial_error=args.steering_initial_error)
+            self.env = env_class(
                 residual_gain=args.reference_residual_gain,
                 ramp_s=args.reference_ramp_s,
                 task=args.task, config=self.env_config,
+                **extra,
             )
         else:
             self.env = focused_skill.FocusedSkill(
@@ -56,10 +67,11 @@ class FocusedSkillRunner(BaseRunner):
         eval_config = focused_skill.focused_config(args.skill)
         eval_config.lin_vel_x = list(self.env_config.lin_vel_x)
         if args.reference_residual_gain:
-            self.eval_env = ReferenceResidualBackward(
+            self.eval_env = env_class(
                 residual_gain=args.reference_residual_gain,
                 ramp_s=args.reference_ramp_s,
                 task=args.task, config=eval_config,
+                **extra,
             )
         else:
             self.eval_env = focused_skill.FocusedSkill(
@@ -96,6 +108,9 @@ class FocusedSkillRunner(BaseRunner):
         self.ppo_params.num_eval_envs = self.args.num_eval_envs
         self.ppo_params.seed = self.args.seed
         self.ppo_params.learning_rate = self.args.learning_rate
+        if self.args.steering_baseline_model:
+            self.ppo_params.network_factory.policy_hidden_layer_sizes = (64, 64)
+            self.ppo_params.network_factory.value_hidden_layer_sizes = (128, 128)
         if self.args.skill == "backward":
             # A reverse lunge can remain upright for several seconds before
             # falling.  The default 0.97 discount makes that delayed failure
@@ -111,8 +126,12 @@ class FocusedSkillRunner(BaseRunner):
         self.ppo_training_params = dict(self.ppo_params)
 
         if "network_factory" in self.ppo_params:
+            factory = ppo_networks.make_ppo_networks
+            if self.args.steering_baseline_model:
+                from .heading_steering import zero_steering_networks
+                factory = zero_steering_networks
             network_factory = functools.partial(
-                ppo_networks.make_ppo_networks,
+                factory,
                 **self.ppo_params.network_factory,
             )
             del self.ppo_training_params["network_factory"]
@@ -160,6 +179,20 @@ class FocusedSkillRunner(BaseRunner):
                     "onnx_sha256": hashlib.sha256(output_path.read_bytes()).hexdigest(),
                     "warning": "Requires the reference decoder and joint clamps; not approved for hardware.",
                 }
+                if self.args.steering_baseline_model:
+                    contract.update(
+                        controller_type="heading_steering_v1",
+                        baseline_model=self.args.steering_baseline_model,
+                        baseline_sha256=self.env.baseline.sha256,
+                        steering_yaw_gain_rad=self.args.steering_yaw_gain,
+                        steering_roll_gain_rad=self.args.steering_roll_gain,
+                        observation_size=self.obs_size,
+                        action_size=2,
+                        history_contract="fresh_three_motor_actions",
+                        step_contract="infer_apply_target_then_physics_then_advance_phase",
+                        feature_contract="base101,sin_yaw_error,cos_yaw_error,base_projected_up3,ramp",
+                        initial_goal_error_rad=self.args.steering_initial_error,
+                    )
                 (self.output_dir / "controller_contract.json").write_text(
                     json.dumps(contract, indent=2), encoding="utf-8"
                 )
@@ -194,6 +227,10 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--skip_onnx_export", action="store_true")
     parser.add_argument("--reference-residual-gain", type=float, default=0.0)
     parser.add_argument("--reference-ramp-s", type=float, default=1.0)
+    parser.add_argument("--steering-baseline-model", default=None)
+    parser.add_argument("--steering-yaw-gain", type=float, default=.05)
+    parser.add_argument("--steering-roll-gain", type=float, default=.025)
+    parser.add_argument("--steering-initial-error", type=float, default=.15)
     return parser
 
 
