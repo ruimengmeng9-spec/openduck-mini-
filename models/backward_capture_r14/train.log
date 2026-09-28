@@ -1,0 +1,165 @@
+test_ankle_feedback_only_on_support_foot (diagnostics.test_backward_phase_search.PhaseCorrectionTest.test_ankle_feedback_only_on_support_foot) ... ok
+test_backward_path_goal_sign_and_bound (diagnostics.test_backward_phase_search.PhaseCorrectionTest.test_backward_path_goal_sign_and_bound) ... ok
+test_balance_deadband_and_compensation (diagnostics.test_backward_phase_search.PhaseCorrectionTest.test_balance_deadband_and_compensation) ... ok
+test_capture_startup_zero_and_contact_gate (diagnostics.test_backward_phase_search.PhaseCorrectionTest.test_capture_startup_zero_and_contact_gate) ... ok
+test_capture_units_deadband_and_rate_bound (diagnostics.test_backward_phase_search.PhaseCorrectionTest.test_capture_units_deadband_and_rate_bound) ... ok
+test_independent_legs_and_bounded_feedback (diagnostics.test_backward_phase_search.PhaseCorrectionTest.test_independent_legs_and_bounded_feedback) ... ok
+test_phase_pitch_template_and_configured_deadband (diagnostics.test_backward_phase_search.PhaseCorrectionTest.test_phase_pitch_template_and_configured_deadband) ... ok
+test_pitch_and_rate_feature_units (diagnostics.test_backward_phase_search.PhaseCorrectionTest.test_pitch_and_rate_feature_units) ... ok
+test_pitch_has_opposite_ankle_compensation (diagnostics.test_backward_phase_search.PhaseCorrectionTest.test_pitch_has_opposite_ankle_compensation) ... ok
+test_zero_identity_and_ramp (diagnostics.test_backward_phase_search.PhaseCorrectionTest.test_zero_identity_and_ramp) ... ok
+test_translation_and_heading_invariance (diagnostics.test_capture_point_observer.CaptureObserverTest.test_translation_and_heading_invariance) ... ok
+test_velocity_units_and_no_live_mutation (diagnostics.test_capture_point_observer.CaptureObserverTest.test_velocity_units_and_no_live_mutation) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.010s
+
+OK
+/data/shijinsheng/open_duck/projects/Open_Duck_Playground/playground/open_duck_mini_v2/xmls/scene_flat_terrain.xml
+[Poly ref data] Processing ...
+[Poly ref data] Done processing
+joint names: ['floating_base', 'left_hip_yaw', 'left_hip_roll', 'left_hip_pitch', 'left_knee', 'left_ankle', 'neck_pitch', 'head_pitch', 'head_yaw', 'head_roll', 'right_hip_yaw', 'right_hip_roll', 'right_hip_pitch', 'right_knee', 'right_ankle']
+actuator names: ['left_hip_yaw', 'left_hip_roll', 'left_hip_pitch', 'left_knee', 'left_ankle', 'neck_pitch', 'head_pitch', 'head_yaw', 'head_roll', 'right_hip_yaw', 'right_hip_roll', 'right_hip_pitch', 'right_knee', 'right_ankle']
+backlash joint names: []
+ZERO BASELINE: [{"seed": 0, "duration_s": 60.0, "fallen": false, "speed_mps": -0.08030510064910891, "lateral_m": 0.11296867831505536, "yaw_change_deg": -1.8392871048588737, "heading_rms_deg": 5.928376460942507, "minimum_up_z": 0.9693852396264729, "mean_local_velocity_mps": [-0.07843880959781811, -0.004833301165495724, 0.014057643738732084], "cost": 0.09020664771924786}, {"seed": 21, "duration_s": 60.0, "fallen": false, "speed_mps": -0.07833565902969508, "lateral_m": 0.1321055946470897, "yaw_change_deg": -4.538147199417708, "heading_rms_deg": 6.178414005809643, "minimum_up_z": 0.9673174168675076, "mean_local_velocity_mps": [-0.07661691512519689, -0.003773511282293922, 0.013705350112303135], "cost": 0.0853280566312367}, {"seed": 31, "duration_s": 60.0, "fallen": false, "speed_mps": -0.08083058684835036, "lateral_m": 0.22313500644800902, "yaw_change_deg": -2.272700076298484, "heading_rms_deg": 6.300336145794073, "minimum_up_z": 0.9681837535572188, "mean_local_velocity_mps": [-0.07906986872450339, -0.0036289430029141424, 0.013958542921193641], "cost": 0.1187634555007592}, {"seed": 38, "duration_s": 60.0, "fallen": false, "speed_mps": -0.08111845313903573, "lateral_m": 0.010535301608764622, "yaw_change_deg": -3.8977134992012257, "heading_rms_deg": 4.987978888085371, "minimum_up_z": 0.9673621934944745, "mean_local_velocity_mps": [-0.07929647573794085, -0.004421674528612297, 0.014184305267233998], "cost": 0.09067695019647938}, {"seed": 57, "duration_s": 60.0, "fallen": false, "speed_mps": -0.08105899565367995, "lateral_m": 0.02035802315525699, "yaw_change_deg": -6.228178716383552, "heading_rms_deg": 5.0198183099744, "minimum_up_z": 0.9635463696225539, "mean_local_velocity_mps": [-0.07931272854915612, -0.004947676572733949, 0.014242784300910296], "cost": 0.10472214487253645}, {"seed": 117, "duration_s": 60.0, "fallen": false, "speed_mps": -0.08165736964489399, "lateral_m": 0.11379040920344113, "yaw_change_deg": -0.46582878978444137, "heading_rms_deg": 5.855885765228746, "minimum_up_z": 0.9672658116246774, "mean_local_velocity_mps": [-0.07995207778887713, -0.004780457691686406, 0.014106529904897944], "cost": 0.10619357758279685}]
+BEST: 0 0.1349 [{"seed": 0, "duration_s": 60.0, "fallen": false, "speed_mps": -0.08030510064910891, "lateral_m": 0.11296867831505536, "yaw_change_deg": -1.8392871048588737, "heading_rms_deg": 5.928376460942507, "minimum_up_z": 0.9693852396264729, "mean_local_velocity_mps": [-0.07843880959781811, -0.004833301165495724, 0.014057643738732084], "cost": 0.09020664771924786}, {"seed": 21, "duration_s": 60.0, "fallen": false, "speed_mps": -0.07833565902969508, "lateral_m": 0.1321055946470897, "yaw_change_deg": -4.538147199417708, "heading_rms_deg": 6.178414005809643, "minimum_up_z": 0.9673174168675076, "mean_local_velocity_mps": [-0.07661691512519689, -0.003773511282293922, 0.013705350112303135], "cost": 0.0853280566312367}, {"seed": 31, "duration_s": 60.0, "fallen": false, "speed_mps": -0.08083058684835036, "lateral_m": 0.22313500644800902, "yaw_change_deg": -2.272700076298484, "heading_rms_deg": 6.300336145794073, "minimum_up_z": 0.9681837535572188, "mean_local_velocity_mps": [-0.07906986872450339, -0.0036289430029141424, 0.013958542921193641], "cost": 0.1187634555007592}, {"seed": 38, "duration_s": 60.0, "fallen": false, "speed_mps": -0.08111845313903573, "lateral_m": 0.010535301608764622, "yaw_change_deg": -3.8977134992012257, "heading_rms_deg": 4.987978888085371, "minimum_up_z": 0.9673621934944745, "mean_local_velocity_mps": [-0.07929647573794085, -0.004421674528612297, 0.014184305267233998], "cost": 0.09067695019647938}, {"seed": 57, "duration_s": 60.0, "fallen": false, "speed_mps": -0.08105899565367995, "lateral_m": 0.02035802315525699, "yaw_change_deg": -6.228178716383552, "heading_rms_deg": 5.0198183099744, "minimum_up_z": 0.9635463696225539, "mean_local_velocity_mps": [-0.07931272854915612, -0.004947676572733949, 0.014242784300910296], "cost": 0.10472214487253645}, {"seed": 117, "duration_s": 60.0, "fallen": false, "speed_mps": -0.08165736964489399, "lateral_m": 0.11379040920344113, "yaw_change_deg": -0.46582878978444137, "heading_rms_deg": 5.855885765228746, "minimum_up_z": 0.9672658116246774, "mean_local_velocity_mps": [-0.07995207778887713, -0.004780457691686406, 0.014106529904897944], "cost": 0.10619357758279685}]
+GENERATION COMPLETE: 0 best: 0.13494417540073717 elapsed: 113.2
+GENERATION COMPLETE: 1 best: 0.13494417540073717 elapsed: 186.2
+GENERATION COMPLETE: 2 best: 0.13494417540073717 elapsed: 256.4
+GENERATION COMPLETE: 3 best: 0.13494417540073717 elapsed: 338.7
+GENERATION COMPLETE: 4 best: 0.13494417540073717 elapsed: 413.8
+GENERATION COMPLETE: 5 best: 0.13494417540073717 elapsed: 484.8
+/data/shijinsheng/open_duck/projects/Open_Duck_Playground/playground/open_duck_mini_v2/xmls/scene_flat_terrain.xml
+[Poly ref data] Processing ...
+[Poly ref data] Done processing
+joint names: ['floating_base', 'left_hip_yaw', 'left_hip_roll', 'left_hip_pitch', 'left_knee', 'left_ankle', 'neck_pitch', 'head_pitch', 'head_yaw', 'head_roll', 'right_hip_yaw', 'right_hip_roll', 'right_hip_pitch', 'right_knee', 'right_ankle']
+actuator names: ['left_hip_yaw', 'left_hip_roll', 'left_hip_pitch', 'left_knee', 'left_ankle', 'neck_pitch', 'head_pitch', 'head_yaw', 'head_roll', 'right_hip_yaw', 'right_hip_roll', 'right_hip_pitch', 'right_knee', 'right_ankle']
+backlash joint names: []
+/data/shijinsheng/open_duck/projects/Open_Duck_Playground/playground/open_duck_mini_v2/xmls/scene_flat_terrain.xml
+[Poly ref data] Processing ...
+[Poly ref data] Done processing
+joint names: ['floating_base', 'left_hip_yaw', 'left_hip_roll', 'left_hip_pitch', 'left_knee', 'left_ankle', 'neck_pitch', 'head_pitch', 'head_yaw', 'head_roll', 'right_hip_yaw', 'right_hip_roll', 'right_hip_pitch', 'right_knee', 'right_ankle']
+actuator names: ['left_hip_yaw', 'left_hip_roll', 'left_hip_pitch', 'left_knee', 'left_ankle', 'neck_pitch', 'head_pitch', 'head_yaw', 'head_roll', 'right_hip_yaw', 'right_hip_roll', 'right_hip_pitch', 'right_knee', 'right_ankle']
+backlash joint names: []
+/data/shijinsheng/open_duck/projects/Open_Duck_Playground/playground/open_duck_mini_v2/xmls/scene_flat_terrain.xml
+[Poly ref data] Processing ...
+[Poly ref data] Done processing
+joint names: ['floating_base', 'left_hip_yaw', 'left_hip_roll', 'left_hip_pitch', 'left_knee', 'left_ankle', 'neck_pitch', 'head_pitch', 'head_yaw', 'head_roll', 'right_hip_yaw', 'right_hip_roll', 'right_hip_pitch', 'right_knee', 'right_ankle']
+actuator names: ['left_hip_yaw', 'left_hip_roll', 'left_hip_pitch', 'left_knee', 'left_ankle', 'neck_pitch', 'head_pitch', 'head_yaw', 'head_roll', 'right_hip_yaw', 'right_hip_roll', 'right_hip_pitch', 'right_knee', 'right_ankle']
+backlash joint names: []
+/data/shijinsheng/open_duck/projects/Open_Duck_Playground/playground/open_duck_mini_v2/xmls/scene_flat_terrain.xml
+[Poly ref data] Processing ...
+[Poly ref data] Done processing
+joint names: ['floating_base', 'left_hip_yaw', 'left_hip_roll', 'left_hip_pitch', 'left_knee', 'left_ankle', 'neck_pitch', 'head_pitch', 'head_yaw', 'head_roll', 'right_hip_yaw', 'right_hip_roll', 'right_hip_pitch', 'right_knee', 'right_ankle']
+actuator names: ['left_hip_yaw', 'left_hip_roll', 'left_hip_pitch', 'left_knee', 'left_ankle', 'neck_pitch', 'head_pitch', 'head_yaw', 'head_roll', 'right_hip_yaw', 'right_hip_roll', 'right_hip_pitch', 'right_knee', 'right_ankle']
+backlash joint names: []
+/data/shijinsheng/open_duck/projects/Open_Duck_Playground/playground/open_duck_mini_v2/xmls/scene_flat_terrain.xml
+[Poly ref data] Processing ...
+[Poly ref data] Done processing
+joint names: ['floating_base', 'left_hip_yaw', 'left_hip_roll', 'left_hip_pitch', 'left_knee', 'left_ankle', 'neck_pitch', 'head_pitch', 'head_yaw', 'head_roll', 'right_hip_yaw', 'right_hip_roll', 'right_hip_pitch', 'right_knee', 'right_ankle']
+actuator names: ['left_hip_yaw', 'left_hip_roll', 'left_hip_pitch', 'left_knee', 'left_ankle', 'neck_pitch', 'head_pitch', 'head_yaw', 'head_roll', 'right_hip_yaw', 'right_hip_roll', 'right_hip_pitch', 'right_knee', 'right_ankle']
+backlash joint names: []
+/data/shijinsheng/open_duck/projects/Open_Duck_Playground/playground/open_duck_mini_v2/xmls/scene_flat_terrain.xml
+[Poly ref data] Processing ...
+[Poly ref data] Done processing
+joint names: ['floating_base', 'left_hip_yaw', 'left_hip_roll', 'left_hip_pitch', 'left_knee', 'left_ankle', 'neck_pitch', 'head_pitch', 'head_yaw', 'head_roll', 'right_hip_yaw', 'right_hip_roll', 'right_hip_pitch', 'right_knee', 'right_ankle']
+actuator names: ['left_hip_yaw', 'left_hip_roll', 'left_hip_pitch', 'left_knee', 'left_ankle', 'neck_pitch', 'head_pitch', 'head_yaw', 'head_roll', 'right_hip_yaw', 'right_hip_roll', 'right_hip_pitch', 'right_knee', 'right_ankle']
+backlash joint names: []
+/data/shijinsheng/open_duck/projects/Open_Duck_Playground/playground/open_duck_mini_v2/xmls/scene_flat_terrain.xml
+[Poly ref data] Processing ...
+[Poly ref data] Done processing
+joint names: ['floating_base', 'left_hip_yaw', 'left_hip_roll', 'left_hip_pitch', 'left_knee', 'left_ankle', 'neck_pitch', 'head_pitch', 'head_yaw', 'head_roll', 'right_hip_yaw', 'right_hip_roll', 'right_hip_pitch', 'right_knee', 'right_ankle']
+actuator names: ['left_hip_yaw', 'left_hip_roll', 'left_hip_pitch', 'left_knee', 'left_ankle', 'neck_pitch', 'head_pitch', 'head_yaw', 'head_roll', 'right_hip_yaw', 'right_hip_roll', 'right_hip_pitch', 'right_knee', 'right_ankle']
+backlash joint names: []
+/data/shijinsheng/open_duck/projects/Open_Duck_Playground/playground/open_duck_mini_v2/xmls/scene_flat_terrain.xml
+[Poly ref data] Processing ...
+[Poly ref data] Done processing
+joint names: ['floating_base', 'left_hip_yaw', 'left_hip_roll', 'left_hip_pitch', 'left_knee', 'left_ankle', 'neck_pitch', 'head_pitch', 'head_yaw', 'head_roll', 'right_hip_yaw', 'right_hip_roll', 'right_hip_pitch', 'right_knee', 'right_ankle']
+actuator names: ['left_hip_yaw', 'left_hip_roll', 'left_hip_pitch', 'left_knee', 'left_ankle', 'neck_pitch', 'head_pitch', 'head_yaw', 'head_roll', 'right_hip_yaw', 'right_hip_roll', 'right_hip_pitch', 'right_knee', 'right_ankle']
+backlash joint names: []
+EXPORTED /data/shijinsheng/open_duck/training/backward_capture_r14/search/export_final/corrector.onnx MAX ERROR RAD: 1.3058754452788257e-08
+/data/shijinsheng/open_duck/projects/Open_Duck_Playground/playground/open_duck_mini_v2/xmls/scene_flat_terrain.xml
+[Poly ref data] Processing ...
+[Poly ref data] Done processing
+joint names: ['floating_base', 'left_hip_yaw', 'left_hip_roll', 'left_hip_pitch', 'left_knee', 'left_ankle', 'neck_pitch', 'head_pitch', 'head_yaw', 'head_roll', 'right_hip_yaw', 'right_hip_roll', 'right_hip_pitch', 'right_knee', 'right_ankle']
+actuator names: ['left_hip_yaw', 'left_hip_roll', 'left_hip_pitch', 'left_knee', 'left_ankle', 'neck_pitch', 'head_pitch', 'head_yaw', 'head_roll', 'right_hip_yaw', 'right_hip_roll', 'right_hip_pitch', 'right_knee', 'right_ankle']
+backlash joint names: []
+/data/shijinsheng/open_duck/projects/Open_Duck_Playground/playground/open_duck_mini_v2/xmls/scene_flat_terrain.xml
+[Poly ref data] Processing ...
+[Poly ref data] Done processing
+joint names: ['floating_base', 'left_hip_yaw', 'left_hip_roll', 'left_hip_pitch', 'left_knee', 'left_ankle', 'neck_pitch', 'head_pitch', 'head_yaw', 'head_roll', 'right_hip_yaw', 'right_hip_roll', 'right_hip_pitch', 'right_knee', 'right_ankle']
+actuator names: ['left_hip_yaw', 'left_hip_roll', 'left_hip_pitch', 'left_knee', 'left_ankle', 'neck_pitch', 'head_pitch', 'head_yaw', 'head_roll', 'right_hip_yaw', 'right_hip_roll', 'right_hip_pitch', 'right_knee', 'right_ankle']
+backlash joint names: []
+/data/shijinsheng/open_duck/projects/Open_Duck_Playground/playground/open_duck_mini_v2/xmls/scene_flat_terrain.xml
+[Poly ref data] Processing ...
+[Poly ref data] Done processing
+joint names: ['floating_base', 'left_hip_yaw', 'left_hip_roll', 'left_hip_pitch', 'left_knee', 'left_ankle', 'neck_pitch', 'head_pitch', 'head_yaw', 'head_roll', 'right_hip_yaw', 'right_hip_roll', 'right_hip_pitch', 'right_knee', 'right_ankle']
+actuator names: ['left_hip_yaw', 'left_hip_roll', 'left_hip_pitch', 'left_knee', 'left_ankle', 'neck_pitch', 'head_pitch', 'head_yaw', 'head_roll', 'right_hip_yaw', 'right_hip_roll', 'right_hip_pitch', 'right_knee', 'right_ankle']
+backlash joint names: []
+/data/shijinsheng/open_duck/projects/Open_Duck_Playground/playground/open_duck_mini_v2/xmls/scene_flat_terrain.xml
+[Poly ref data] Processing ...
+[Poly ref data] Done processing
+joint names: ['floating_base', 'left_hip_yaw', 'left_hip_roll', 'left_hip_pitch', 'left_knee', 'left_ankle', 'neck_pitch', 'head_pitch', 'head_yaw', 'head_roll', 'right_hip_yaw', 'right_hip_roll', 'right_hip_pitch', 'right_knee', 'right_ankle']
+actuator names: ['left_hip_yaw', 'left_hip_roll', 'left_hip_pitch', 'left_knee', 'left_ankle', 'neck_pitch', 'head_pitch', 'head_yaw', 'head_roll', 'right_hip_yaw', 'right_hip_roll', 'right_hip_pitch', 'right_knee', 'right_ankle']
+backlash joint names: []
+/data/shijinsheng/open_duck/projects/Open_Duck_Playground/playground/open_duck_mini_v2/xmls/scene_flat_terrain.xml
+[Poly ref data] Processing ...
+[Poly ref data] Done processing
+joint names: ['floating_base', 'left_hip_yaw', 'left_hip_roll', 'left_hip_pitch', 'left_knee', 'left_ankle', 'neck_pitch', 'head_pitch', 'head_yaw', 'head_roll', 'right_hip_yaw', 'right_hip_roll', 'right_hip_pitch', 'right_knee', 'right_ankle']
+actuator names: ['left_hip_yaw', 'left_hip_roll', 'left_hip_pitch', 'left_knee', 'left_ankle', 'neck_pitch', 'head_pitch', 'head_yaw', 'head_roll', 'right_hip_yaw', 'right_hip_roll', 'right_hip_pitch', 'right_knee', 'right_ankle']
+backlash joint names: []
+/data/shijinsheng/open_duck/projects/Open_Duck_Playground/playground/open_duck_mini_v2/xmls/scene_flat_terrain.xml
+[Poly ref data] Processing ...
+[Poly ref data] Done processing
+joint names: ['floating_base', 'left_hip_yaw', 'left_hip_roll', 'left_hip_pitch', 'left_knee', 'left_ankle', 'neck_pitch', 'head_pitch', 'head_yaw', 'head_roll', 'right_hip_yaw', 'right_hip_roll', 'right_hip_pitch', 'right_knee', 'right_ankle']
+actuator names: ['left_hip_yaw', 'left_hip_roll', 'left_hip_pitch', 'left_knee', 'left_ankle', 'neck_pitch', 'head_pitch', 'head_yaw', 'head_roll', 'right_hip_yaw', 'right_hip_roll', 'right_hip_pitch', 'right_knee', 'right_ankle']
+backlash joint names: []
+/data/shijinsheng/open_duck/projects/Open_Duck_Playground/playground/open_duck_mini_v2/xmls/scene_flat_terrain.xml
+[Poly ref data] Processing ...
+[Poly ref data] Done processing
+joint names: ['floating_base', 'left_hip_yaw', 'left_hip_roll', 'left_hip_pitch', 'left_knee', 'left_ankle', 'neck_pitch', 'head_pitch', 'head_yaw', 'head_roll', 'right_hip_yaw', 'right_hip_roll', 'right_hip_pitch', 'right_knee', 'right_ankle']
+actuator names: ['left_hip_yaw', 'left_hip_roll', 'left_hip_pitch', 'left_knee', 'left_ankle', 'neck_pitch', 'head_pitch', 'head_yaw', 'head_roll', 'right_hip_yaw', 'right_hip_roll', 'right_hip_pitch', 'right_knee', 'right_ankle']
+backlash joint names: []
+/data/shijinsheng/open_duck/projects/Open_Duck_Playground/playground/open_duck_mini_v2/xmls/scene_flat_terrain.xml
+[Poly ref data] Processing ...
+[Poly ref data] Done processing
+joint names: ['floating_base', 'left_hip_yaw', 'left_hip_roll', 'left_hip_pitch', 'left_knee', 'left_ankle', 'neck_pitch', 'head_pitch', 'head_yaw', 'head_roll', 'right_hip_yaw', 'right_hip_roll', 'right_hip_pitch', 'right_knee', 'right_ankle']
+actuator names: ['left_hip_yaw', 'left_hip_roll', 'left_hip_pitch', 'left_knee', 'left_ankle', 'neck_pitch', 'head_pitch', 'head_yaw', 'head_roll', 'right_hip_yaw', 'right_hip_roll', 'right_hip_pitch', 'right_knee', 'right_ankle']
+backlash joint names: []
+/data/shijinsheng/open_duck/projects/Open_Duck_Playground/playground/open_duck_mini_v2/xmls/scene_flat_terrain.xml
+[Poly ref data] Processing ...
+[Poly ref data] Done processing
+joint names: ['floating_base', 'left_hip_yaw', 'left_hip_roll', 'left_hip_pitch', 'left_knee', 'left_ankle', 'neck_pitch', 'head_pitch', 'head_yaw', 'head_roll', 'right_hip_yaw', 'right_hip_roll', 'right_hip_pitch', 'right_knee', 'right_ankle']
+actuator names: ['left_hip_yaw', 'left_hip_roll', 'left_hip_pitch', 'left_knee', 'left_ankle', 'neck_pitch', 'head_pitch', 'head_yaw', 'head_roll', 'right_hip_yaw', 'right_hip_roll', 'right_hip_pitch', 'right_knee', 'right_ankle']
+backlash joint names: []
+{"seed": 200, "duration_s": 60.0, "fallen": false, "speed_mps": -0.08004573833340392, "lateral_m": 0.02761038688418214, "yaw_change_deg": -9.104627770103045, "heading_rms_deg": 5.649099345637183, "minimum_up_z": 0.9667115262543906, "mean_local_velocity_mps": [-0.07831021333623703, -0.004528022554172833, 0.013979592296906129], "cost": 0.12663506615817413}
+{"seed": 201, "duration_s": 60.0, "fallen": false, "speed_mps": -0.08003500787878877, "lateral_m": 0.04071450814383102, "yaw_change_deg": -8.947940316771366, "heading_rms_deg": 5.653716145911398, "minimum_up_z": 0.9707337002650814, "mean_local_velocity_mps": [-0.07817839836778849, -0.005514092573553831, 0.013940561486984089], "cost": 0.1252090672349063}
+{"seed": 202, "duration_s": 60.0, "fallen": false, "speed_mps": -0.08003067463549288, "lateral_m": 0.08898655764131007, "yaw_change_deg": -10.624818805167589, "heading_rms_deg": 5.251515936075151, "minimum_up_z": 0.9734199355052059, "mean_local_velocity_mps": [-0.07817960725545972, -0.004511602682218006, 0.013822765320167935], "cost": 0.1423490094789812}
+{"seed": 203, "duration_s": 60.0, "fallen": false, "speed_mps": -0.08224666267192045, "lateral_m": 0.16840934605960084, "yaw_change_deg": -4.799611677121444, "heading_rms_deg": 6.804177074448616, "minimum_up_z": 0.9699257769972978, "mean_local_velocity_mps": [-0.08074814417571773, -0.0038299824869708855, 0.014415822758017045], "cost": 0.15035121137268176}
+{"seed": 204, "duration_s": 60.0, "fallen": false, "speed_mps": -0.07919662611119166, "lateral_m": 0.21943327402364293, "yaw_change_deg": -4.936667046366382, "heading_rms_deg": 6.975541149334659, "minimum_up_z": 0.9689692638944961, "mean_local_velocity_mps": [-0.07771850920150145, -0.004716601005001729, 0.01378214159327195], "cost": 0.121069590664245}
+{"seed": 205, "duration_s": 60.0, "fallen": false, "speed_mps": -0.07978398951434339, "lateral_m": 0.057223348110183356, "yaw_change_deg": -5.369980184517522, "heading_rms_deg": 5.709444609072827, "minimum_up_z": 0.9701883691658053, "mean_local_velocity_mps": [-0.07802059770588426, -0.005367363943790276, 0.013793438570470273], "cost": 0.09245955118101776}
+{"seed": 206, "duration_s": 60.0, "fallen": false, "speed_mps": -0.08292783124720311, "lateral_m": -0.007944273286031948, "yaw_change_deg": -3.9206288710334283, "heading_rms_deg": 4.6582183009467695, "minimum_up_z": 0.9650832086823984, "mean_local_velocity_mps": [-0.0811819612884978, -0.00455767135102242, 0.014373345069631721], "cost": 0.11592459220429252}
+{"seed": 207, "duration_s": 60.0, "fallen": false, "speed_mps": -0.08021027398884589, "lateral_m": 0.011740287650667354, "yaw_change_deg": -3.415276944879057, "heading_rms_deg": 5.915480294129817, "minimum_up_z": 0.9734886287575184, "mean_local_velocity_mps": [-0.07840599214864204, -0.005387311477786713, 0.013790031834476503], "cost": 0.0887559093010983}
+{"seed": 208, "duration_s": 60.0, "fallen": false, "speed_mps": -0.07898864018615075, "lateral_m": 0.168210094073563, "yaw_change_deg": -1.547916751511499, "heading_rms_deg": 6.011994299476382, "minimum_up_z": 0.9727793010555705, "mean_local_velocity_mps": [-0.07738675197564948, -0.004223014063890589, 0.013595593923077392], "cost": 0.08225751540029909}
+{"seed": 209, "duration_s": 60.0, "fallen": false, "speed_mps": -0.08116538010318138, "lateral_m": 0.18272768305345197, "yaw_change_deg": -9.031090087014045, "heading_rms_deg": 5.778062416683993, "minimum_up_z": 0.9695603798888945, "mean_local_velocity_mps": [-0.07942411654580965, -0.0031437776919553996, 0.013998369744372843], "cost": 0.15565034360160934}
+{"seed": 210, "duration_s": 60.0, "fallen": false, "speed_mps": -0.08237917028052943, "lateral_m": 0.05407318603171912, "yaw_change_deg": -9.97222655004765, "heading_rms_deg": 5.136490322645986, "minimum_up_z": 0.9638957407318304, "mean_local_velocity_mps": [-0.08047820987886233, -0.004261968054455712, 0.014419583495844024], "cost": 0.16451861650788155}
+{"seed": 211, "duration_s": 60.0, "fallen": false, "speed_mps": -0.08132454950101023, "lateral_m": -0.0042104429053040834, "yaw_change_deg": -13.474431610331125, "heading_rms_deg": 4.661212102181175, "minimum_up_z": 0.9673138284062484, "mean_local_velocity_mps": [-0.07944641839634087, -0.004481287708683663, 0.014163628850225013], "cost": 0.19113113998814876}
+{"seed": 212, "duration_s": 60.0, "fallen": false, "speed_mps": -0.08048290294723767, "lateral_m": 0.10543508827868725, "yaw_change_deg": -4.427905245111238, "heading_rms_deg": 5.8553405564389225, "minimum_up_z": 0.9663295030621543, "mean_local_velocity_mps": [-0.0787071834474702, -0.004566150893465713, 0.013821212383053503], "cost": 0.10064786072564977}
+{"seed": 213, "duration_s": 60.0, "fallen": false, "speed_mps": -0.07829528735912188, "lateral_m": 0.29822439996089195, "yaw_change_deg": -9.99184627396828, "heading_rms_deg": 6.373016034344991, "minimum_up_z": 0.9669413446139238, "mean_local_velocity_mps": [-0.07663418055528702, -0.003043260249634549, 0.013740100308183376], "cost": 0.16524266242301716}
+{"seed": 214, "duration_s": 60.0, "fallen": false, "speed_mps": -0.08110938309052448, "lateral_m": 0.2906985302312531, "yaw_change_deg": -3.0137356507839845, "heading_rms_deg": 7.3037231567385685, "minimum_up_z": 0.9689293423232812, "mean_local_velocity_mps": [-0.0796439477030258, -0.004127867263393932, 0.014100207843660178], "cost": 0.1557570894155301}
+{"seed": 215, "duration_s": 60.0, "fallen": false, "speed_mps": -0.07947905640897764, "lateral_m": 0.24465193546077205, "yaw_change_deg": -10.429996176093532, "heading_rms_deg": 7.118052500893743, "minimum_up_z": 0.9726259996586633, "mean_local_velocity_mps": [-0.07793474529734028, -0.004399120964609267, 0.013923032662280517], "cost": 0.18270950921251508}
+{"seed": 216, "duration_s": 60.0, "fallen": false, "speed_mps": -0.0800894709012521, "lateral_m": 0.1798066960936648, "yaw_change_deg": -4.703277809498481, "heading_rms_deg": 6.101225896390237, "minimum_up_z": 0.9642618836608197, "mean_local_velocity_mps": [-0.07825506391059625, -0.004532599639038133, 0.01393159897447864], "cost": 0.1094244608071292}
+{"seed": 217, "duration_s": 60.0, "fallen": false, "speed_mps": -0.08184916955669855, "lateral_m": 0.012627181006921584, "yaw_change_deg": -3.3692557109821544, "heading_rms_deg": 5.216350065300016, "minimum_up_z": 0.9698806851936335, "mean_local_velocity_mps": [-0.08001501351655055, -0.004610415222556188, 0.014179894251470121], "cost": 0.10213355514861697}
+{"seed": 218, "duration_s": 60.0, "fallen": false, "speed_mps": -0.08065747887779998, "lateral_m": -0.002031169199291711, "yaw_change_deg": -0.9469963000306522, "heading_rms_deg": 5.266126498939443, "minimum_up_z": 0.9709922544861656, "mean_local_velocity_mps": [-0.07859357417180526, -0.005403381718454771, 0.013830671801566606], "cost": 0.07904926004383289}
+{"seed": 219, "duration_s": 60.0, "fallen": false, "speed_mps": -0.08210765857395304, "lateral_m": 0.20629787410962613, "yaw_change_deg": -1.5469509234495007, "heading_rms_deg": 6.1405571703514035, "minimum_up_z": 0.9711618528609484, "mean_local_velocity_mps": [-0.08035863750443156, -0.004850398282303665, 0.014239906677996485], "cost": 0.13079555074589755}
+{"seed": 220, "duration_s": 60.0, "fallen": false, "speed_mps": -0.08294429210315754, "lateral_m": 0.11639909729454313, "yaw_change_deg": -12.86660096575302, "heading_rms_deg": 6.161875797954153, "minimum_up_z": 0.9672928851844527, "mean_local_velocity_mps": [-0.08137000585119702, -0.004329971577662495, 0.014299163961573389], "cost": 0.23300928549274877}
+{"seed": 221, "duration_s": 60.0, "fallen": false, "speed_mps": -0.08189990096718873, "lateral_m": 0.19748241100082442, "yaw_change_deg": -10.323583712921403, "heading_rms_deg": 5.441509196175975, "minimum_up_z": 0.9690556479903055, "mean_local_velocity_mps": [-0.08012592292765044, -0.00387165867043469, 0.014201570803553002], "cost": 0.1796322373908832}
+{"seed": 222, "duration_s": 60.0, "fallen": false, "speed_mps": -0.07954938794359974, "lateral_m": 0.0670436445672364, "yaw_change_deg": -8.372695221945825, "heading_rms_deg": 5.577718420845852, "minimum_up_z": 0.9667567296449711, "mean_local_velocity_mps": [-0.07785325894010343, -0.005235344663403374, 0.013613001551086426], "cost": 0.11362459284957953}
+{"seed": 223, "duration_s": 60.0, "fallen": false, "speed_mps": -0.07984530151110593, "lateral_m": 0.12592315757529496, "yaw_change_deg": -4.180540318636908, "heading_rms_deg": 5.853529842866785, "minimum_up_z": 0.9682049615779087, "mean_local_velocity_mps": [-0.0780848220434952, -0.004010456314290506, 0.014043138436283386], "cost": 0.09338780432140818}
+{"seed": 224, "duration_s": 60.0, "fallen": false, "speed_mps": -0.08060079582351065, "lateral_m": 0.16625508609994263, "yaw_change_deg": 6.681646776633943, "heading_rms_deg": 6.682616530386455, "minimum_up_z": 0.9642196634143961, "mean_local_velocity_mps": [-0.0790892857859379, -0.004778741579337586, 0.013972106656167006], "cost": 0.13678849212292915}
+{"seed": 225, "duration_s": 60.0, "fallen": false, "speed_mps": -0.07994589394454912, "lateral_m": 0.24026009485860958, "yaw_change_deg": -2.9912414805370107, "heading_rms_deg": 6.0186201708858516, "minimum_up_z": 0.9721636941637903, "mean_local_velocity_mps": [-0.07833817909640627, -0.0041534491527689, 0.01388974034679249], "cost": 0.10875629368415898}
+{"seed": 226, "duration_s": 60.0, "fallen": false, "speed_mps": -0.08041165594458857, "lateral_m": 0.16669427016743985, "yaw_change_deg": -2.1228792189887398, "heading_rms_deg": 5.745495792414072, "minimum_up_z": 0.964827796512062, "mean_local_velocity_mps": [-0.0787148546644675, -0.004366232818468647, 0.013950768082804646], "cost": 0.09574224034675341}
+{"seed": 227, "duration_s": 12.26, "fallen": true, "speed_mps": -0.09226634021576063, "lateral_m": 0.0891315204225711, "yaw_change_deg": -22.22493075589875, "heading_rms_deg": 7.937580879552356, "minimum_up_z": 0.40849707308824934, "mean_local_velocity_mps": [-0.09934052361943889, -0.004074747312724523, 0.015242103284148928], "cost": 5774.714971580419}
+{"seed": 228, "duration_s": 60.0, "fallen": false, "speed_mps": -0.08320595331030638, "lateral_m": 0.09458747707023395, "yaw_change_deg": -6.583173260832432, "heading_rms_deg": 5.141204037409326, "minimum_up_z": 0.9744154741342318, "mean_local_velocity_mps": [-0.08149827224704977, -0.004568399326846752, 0.014284908726848733], "cost": 0.1473784615392183}
+{"seed": 229, "duration_s": 60.0, "fallen": false, "speed_mps": -0.08143612113619898, "lateral_m": -0.06697516653762915, "yaw_change_deg": -5.167458172036202, "heading_rms_deg": 4.825971111593376, "minimum_up_z": 0.9688844335393245, "mean_local_velocity_mps": [-0.07969745100761166, -0.003901089948967777, 0.014130728828624647], "cost": 0.10215104719251707}
+{"file": "/data/shijinsheng/open_duck/outputs/capture_r14_final_heldout_60s/results.json", "simulation_only": true, "tested": 30, "survived": 29, "qualified": 27, "failed_seeds": [227], "unqualified_seeds": [213, 214, 227], "duration_s": [12.26, 60.0], "speed_mps": [-0.09226634021576063, -0.07829528735912188], "maximum_absolute_heading_deg": 22.22493075589875, "maximum_heading_rms_deg": 7.937580879552356, "maximum_absolute_lateral_m": 0.29822439996089195, "minimum_up_z": 0.40849707308824934, "thresholds": "speed [-.10,-.05] m/s; |yaw|<=15 deg; RMS<=10 deg; |lateral|<=.25 m; min up>=.94; no fall", "hardware_readiness": false}

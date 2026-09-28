@@ -1,0 +1,178 @@
+{
+  "controller_type": "phase_heading_balance_v1",
+  "simulation_only": true,
+  "baseline_sha256": "05c1219a1403831deead152a6cff89b30a1d20fea3ebef285ca5c07279cfbdc8",
+  "reference_dx": -0.0925,
+  "reference_interpolation": true,
+  "residual_gain": 0.12,
+  "ramp_s": 1.0,
+  "control_dt": 0.02,
+  "weights": [
+    -0.12590184508744828,
+    0.30283415166258365,
+    0.11430440390616216,
+    -0.0637525423258435,
+    0.16100294598887946,
+    -0.22133440782378108,
+    0.0959892560402399,
+    0.45050322307195434,
+    -0.25769290785865206,
+    0.3056396836682973,
+    0.11486884784142284,
+    -0.22311316475201742,
+    -0.0987284336356733,
+    -0.11083067875045267,
+    -0.04775886241069678,
+    0.14863655563477407,
+    -0.07751792312734414,
+    0.11092136581232213
+  ],
+  "score": 0.13768262499904332,
+  "rows": [
+    {
+      "seed": 0,
+      "duration_s": 60.0,
+      "fallen": false,
+      "speed_mps": -0.08143176216168772,
+      "lateral_m": -0.035626560444408095,
+      "yaw_change_deg": -3.7471200571398815,
+      "heading_rms_deg": 4.801220165438453,
+      "minimum_up_z": 0.9737712601995735,
+      "mean_local_velocity_mps": [
+        -0.07895003051535052,
+        -0.003279187751760232,
+        0.013770154648020562
+      ],
+      "cost": 0.09277668114230919
+    },
+    {
+      "seed": 21,
+      "duration_s": 60.0,
+      "fallen": false,
+      "speed_mps": -0.08283573586180866,
+      "lateral_m": -0.029968567385668887,
+      "yaw_change_deg": -3.4651578392907383,
+      "heading_rms_deg": 5.146681051965762,
+      "minimum_up_z": 0.9748099480687134,
+      "mean_local_velocity_mps": [
+        -0.08044324593792869,
+        -0.003394675875983489,
+        0.014209151133128092
+      ],
+      "cost": 0.1184136812943232
+    },
+    {
+      "seed": 31,
+      "duration_s": 60.0,
+      "fallen": false,
+      "speed_mps": -0.08193429826880433,
+      "lateral_m": -0.04846705105092542,
+      "yaw_change_deg": -0.16589648087238365,
+      "heading_rms_deg": 4.484233317566864,
+      "minimum_up_z": 0.974085139516508,
+      "mean_local_velocity_mps": [
+        -0.07942432492961198,
+        -0.003414967532110303,
+        0.01387717298263814
+      ],
+      "cost": 0.08881303097086506
+    },
+    {
+      "seed": 117,
+      "duration_s": 60.0,
+      "fallen": false,
+      "speed_mps": -0.08181517795880902,
+      "lateral_m": -0.061105986338681764,
+      "yaw_change_deg": -3.71350200374791,
+      "heading_rms_deg": 4.504762635397795,
+      "minimum_up_z": 0.9741615940128698,
+      "mean_local_velocity_mps": [
+        -0.07934971094829679,
+        -0.0026350268410210557,
+        0.013907747605910882
+      ],
+      "cost": 0.0961084453406675
+    },
+    {
+      "seed": 800,
+      "duration_s": 60.0,
+      "fallen": false,
+      "speed_mps": -0.0816979023349258,
+      "lateral_m": 0.07680614414502022,
+      "yaw_change_deg": -5.286003107007095,
+      "heading_rms_deg": 5.010105568336318,
+      "minimum_up_z": 0.9753331899962393,
+      "mean_local_velocity_mps": [
+        -0.07927998171118755,
+        -0.0030649858291766567,
+        0.013815685640618216
+      ],
+      "cost": 0.10964827966416285
+    },
+    {
+      "seed": 825,
+      "duration_s": 60.0,
+      "fallen": false,
+      "speed_mps": -0.08143937262575782,
+      "lateral_m": -0.00838461013307053,
+      "yaw_change_deg": -4.125126558124649,
+      "heading_rms_deg": 5.148356391990299,
+      "minimum_up_z": 0.9773151689385461,
+      "mean_local_velocity_mps": [
+        -0.07916335875230818,
+        -0.003091859725090089,
+        0.013707540547088882
+      ],
+      "cost": 0.09842466869217723
+    },
+    {
+      "seed": 847,
+      "duration_s": 60.0,
+      "fallen": false,
+      "speed_mps": -0.0815816152320525,
+      "lateral_m": -0.06447644607490674,
+      "yaw_change_deg": -6.19949575271631,
+      "heading_rms_deg": 4.789705899354027,
+      "minimum_up_z": 0.9752191095445185,
+      "mean_local_velocity_mps": [
+        -0.07905521924214937,
+        -0.0036020312947382593,
+        0.013805409506008384
+      ],
+      "cost": 0.11092485717071958
+    }
+  ],
+  "target_smoothing_tau_s": 0.01,
+  "filter_contract": "50Hz alpha=dt/(tau+dt); initialized from previous physical motor target; after joint clamp and before unchanged slew limit; history uses filtered preslew target",
+  "training_inference": "actual_float32_ONNX",
+  "native_template_sha256": "1957ab03417dbe9acb5d72fe27a30904acba7d1f7cf65bb2f9b4aa80387c7240",
+  "feedback_weights": [
+    1.1426070144210534,
+    0.24648313225987784,
+    -1.5090563515897846,
+    2.992902097880702,
+    1.9304261678437697,
+    -0.7333374945325212
+  ],
+  "balance_weights": [
+    0.12091269755736775,
+    0.13339602570083395,
+    -0.42500954241288,
+    0.4463579118127357
+  ],
+  "balance_deadband_rad": 0.04,
+  "pitch_template_weights": [
+    -0.13488062800991127,
+    0.015622457022796566,
+    -0.0011992943238547788,
+    0.007583176179568119,
+    0.009616967300899186,
+    -0.006992154991540779,
+    0.00037245492990148403
+  ],
+  "pitch_template_period_s": 0.54,
+  "pitch_template_source": "/data/shijinsheng/open_duck/outputs/phase_feedback_r7_final_heldout_60s/seed_20.npz",
+  "pitch_template_source_sha256": "3ea8f73efb16341a32694d24d33178752b467c0e05da271f20f8e5651c0155dc",
+  "pitch_template_fit_rms_rad": 0.017836294611524306,
+  "pitch_template_fit_p95_abs_rad": 0.03797045697422725
+}

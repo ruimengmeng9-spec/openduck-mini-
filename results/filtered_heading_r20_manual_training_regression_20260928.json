@@ -1,0 +1,139 @@
+{
+  "rows": [
+    {
+      "seed": 0,
+      "duration_s": 60.0,
+      "fallen": false,
+      "speed_mps": -0.08143176216168772,
+      "lateral_m": -0.035626560444408095,
+      "yaw_change_deg": -3.7471200571398815,
+      "heading_rms_deg": 4.801220165438453,
+      "minimum_up_z": 0.9737712601995735,
+      "mean_local_velocity_mps": [
+        -0.07895003051535052,
+        -0.003279187751760232,
+        0.013770154648020562
+      ],
+      "cost": 0.09277668114230919
+    },
+    {
+      "seed": 21,
+      "duration_s": 60.0,
+      "fallen": false,
+      "speed_mps": -0.08283573586180866,
+      "lateral_m": -0.029968567385668887,
+      "yaw_change_deg": -3.4651578392907383,
+      "heading_rms_deg": 5.146681051965762,
+      "minimum_up_z": 0.9748099480687134,
+      "mean_local_velocity_mps": [
+        -0.08044324593792869,
+        -0.003394675875983489,
+        0.014209151133128092
+      ],
+      "cost": 0.1184136812943232
+    },
+    {
+      "seed": 31,
+      "duration_s": 60.0,
+      "fallen": false,
+      "speed_mps": -0.08193429826880433,
+      "lateral_m": -0.04846705105092542,
+      "yaw_change_deg": -0.16589648087238365,
+      "heading_rms_deg": 4.484233317566864,
+      "minimum_up_z": 0.974085139516508,
+      "mean_local_velocity_mps": [
+        -0.07942432492961198,
+        -0.003414967532110303,
+        0.01387717298263814
+      ],
+      "cost": 0.08881303097086506
+    },
+    {
+      "seed": 117,
+      "duration_s": 60.0,
+      "fallen": false,
+      "speed_mps": -0.08181517795880902,
+      "lateral_m": -0.061105986338681764,
+      "yaw_change_deg": -3.71350200374791,
+      "heading_rms_deg": 4.504762635397795,
+      "minimum_up_z": 0.9741615940128698,
+      "mean_local_velocity_mps": [
+        -0.07934971094829679,
+        -0.0026350268410210557,
+        0.013907747605910882
+      ],
+      "cost": 0.0961084453406675
+    },
+    {
+      "seed": 800,
+      "duration_s": 60.0,
+      "fallen": false,
+      "speed_mps": -0.0816979023349258,
+      "lateral_m": 0.07680614414502022,
+      "yaw_change_deg": -5.286003107007095,
+      "heading_rms_deg": 5.010105568336318,
+      "minimum_up_z": 0.9753331899962393,
+      "mean_local_velocity_mps": [
+        -0.07927998171118755,
+        -0.0030649858291766567,
+        0.013815685640618216
+      ],
+      "cost": 0.10964827966416285
+    },
+    {
+      "seed": 825,
+      "duration_s": 60.0,
+      "fallen": false,
+      "speed_mps": -0.08143937262575782,
+      "lateral_m": -0.00838461013307053,
+      "yaw_change_deg": -4.125126558124649,
+      "heading_rms_deg": 5.148356391990299,
+      "minimum_up_z": 0.9773151689385461,
+      "mean_local_velocity_mps": [
+        -0.07916335875230818,
+        -0.003091859725090089,
+        0.013707540547088882
+      ],
+      "cost": 0.09842466869217723
+    },
+    {
+      "seed": 847,
+      "duration_s": 60.0,
+      "fallen": false,
+      "speed_mps": -0.0815816152320525,
+      "lateral_m": -0.06447644607490674,
+      "yaw_change_deg": -6.19949575271631,
+      "heading_rms_deg": 4.789705899354027,
+      "minimum_up_z": 0.9752191095445185,
+      "mean_local_velocity_mps": [
+        -0.07905521924214937,
+        -0.0036020312947382593,
+        0.013805409506008384
+      ],
+      "cost": 0.11092485717071958
+    }
+  ],
+  "controller": "/data/shijinsheng/open_duck/training/backward_filtered_heading_r20/export_final/controller_contract.json",
+  "corrector_onnx": "/data/shijinsheng/open_duck/training/backward_filtered_heading_r20/export_final/corrector.onnx",
+  "standing_warmup_s": 0.0,
+  "target_smoothing_tau_s": 0.01,
+  "environment_source_sha256": {
+    "playground/open_duck_mini_v2/mujoco_infer.py": "2d3c52c99780e811438f5c3d9034c8ce3677aa20c9de7b4284a02e171729a622",
+    "playground/open_duck_mini_v2/mujoco_infer_base.py": "4c8fd11e4659126d49985a9c048e1cb5a5cfde5f4d54cdfe433e4b165d3b0ab1",
+    "playground/open_duck_mini_v2/data/polynomial_coefficients.pkl": "5850c0610ed89e2860e7047f9ee27d8412462e1199752952c3c2a0efd2cb7a25",
+    "playground/common/poly_reference_motion_numpy.py": "585e783722ffb403a14288aafc1fcdf86c8a5d1b39949171a3b2d918028c4406",
+    "diagnostics/reference_residual_policy.py": "b790566e8489c450ff4f87fe0c24e95993d6299fed6e34a73ec65da25485d382",
+    "diagnostics/backward_phase_search.py": "d31271516df6b933b14d461212b659d986791f5602fb5174e71e33a9e5c31638",
+    "diagnostics/capture_point_observer.py": "0e73764ec892f5279b9bfe8ec24849695ddcee9eb07e444a55330a83915fa955",
+    "playground/open_duck_mini_v2/xmls/open_duck_mini_v2.xml": "968b18de4e3f55b31252155f52779fa490989f5da92bc9b308e0bb4e81d6bb5c",
+    "playground/open_duck_mini_v2/xmls/scene_flat_terrain_backlash.xml": "33af97247d6a876cf47c9e37185cb71bd09f6793bc0f62d90cbe2a91caa3ba63",
+    "playground/open_duck_mini_v2/xmls/joints_properties.xml": "abbcc92761943befe3a24b1c13e82c62c5b8c2914303818f3c870b1f51cd45ed",
+    "playground/open_duck_mini_v2/xmls/scene_flat_terrain.xml": "f087afa8bbe13f92e934d4a03571f2134abe7d5bb963fce22eec04822e9ae6d0",
+    "playground/open_duck_mini_v2/xmls/scene_flat_terrain_getup.xml": "33796298d20e8ae5cbe311d1d75e4c6977d9ebd8fa120c715da361496fd85ac7",
+    "playground/open_duck_mini_v2/xmls/sensors.xml": "c7ad6507a01eaa06e71733a484947d58972a91dca43c74a174d327b87a6d86f7",
+    "playground/open_duck_mini_v2/xmls/open_duck_mini_v2_backlash.xml": "11e922dc9524716e9f54b2fd8be54133fa65efbc61de96ddc846d991de1c9d38",
+    "playground/open_duck_mini_v2/xmls/open_duck_mini_v2_getup.xml": "b6c9b320540b1097edc1249031bc41a426b175db21dc1e92ce861dd818a9a555",
+    "playground/open_duck_mini_v2/xmls/scene_rough_terrain_backlash.xml": "879768817f5ae5d2c01b5494f855686bb10d1ec444a404efeced8f5766574ffc"
+  },
+  "motor_velocity_limit_rad_s": 5.24
+}

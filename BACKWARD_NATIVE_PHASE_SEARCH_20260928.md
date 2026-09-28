@@ -67,6 +67,50 @@ R14 adds four hip/support-ankle capture-feedback gains. Features use a 12 mm err
 
 An additional execution issue emerged: the float64 NumPy corrector can survive seed 117 while the numerically near-identical float32 ONNX corrector falls. Long nonlinear contact rollouts amplify small numerical differences. This does not invalidate short output-parity checks; it means they are not sufficient for closed-loop acceptance. **R15 evaluates every CEM candidate with the actual float32 ONNX graph**, retaining the previous graph and replacing only the four new capture-feedback weights. Its zero-added-feedback regression must reproduce the known R11 ONNX failure exactly before search starts. R14 and R15 results are separate; neither is promoted while gates remain incomplete.
 
+R14 completed 96 candidates / 576 rollouts / 1,663,647 control steps. The best surrogate candidate retained zero capture gains. Its exported graph survived 29/30 seeds 200–229; 27/30 qualified. R15 completed 96 candidates / 576 rollouts / 1,662,284 control steps. Its final graph survived 28/30 fresh seeds 300–329; 23/30 qualified. Capture feedback did not pass acceptance. R15's final exported graph **exactly reproduces all six training-side 60-second rollouts**, maximum metric difference 0, so the training/export execution mismatch is fixed even though general stability is not.
+
+Warm standing alone is insufficient: after 3 seconds of standing, R11 survived 9/10 60-second runs (seed 601 fell at 49.84 s); the early R15 candidate survived 8/10 (seeds 605/609 fell). Cold-start and warm-transition protocols remain distinct.
+
+## R18: executable-target smoothing, without stronger simulated motors
+
+Dynamic traces in failed R11 seed 117 and R15 seed 306 show **no joint-position clipping** in the final second, but repeated truncation by the unchanged 5.24 rad/s target-slew limit and some simulated actuator-force saturation at 3.23. These are simulation actuator values, not measured real-motor torque. Saturation may be part of the failure mechanism; a failed trajectory alone does not prove it is the unique cause.
+
+R18 tests target smoothing **after joint-range clipping and before the unchanged 50 Hz slew limiter**. Filter alpha = dt/(tau+dt); initialise from the previous physical motor target; feed the filtered pre-slew target back into the fresh three-action history. Neither torque/speed limits nor ground friction is increased. The graph and frozen R2/R11 parameters are unchanged; this is decoder design testing, not more PPO.
+
+Matched seeds 110–119, 60 seconds: tau 0.01 s gives **10/10 survival and qualification**. Tau 0.02 gives 10/10 survival but only 6/10 qualified due to lateral drift. Tau 0.04 gives 10/10 survival but 0/10 qualified: speed is only about −0.0045 m/s. A motionless upright robot is not a solved backward skill.
+
+Tau 0.01 s, **50 fresh cold-start seeds 800–849: 50/50 survived, 49/50 qualified**. Speed is −0.0807 to −0.0843 m/s, maximum lateral drift 0.1946 m, minimum up-Z 0.9710. Seed 847 ends at 15.875° heading error, exceeding the retained 15° threshold. The acceptance threshold is not relaxed. Another 20 fresh stand→backward tests (seeds 900–919) all qualified for 60 seconds.
+
+## R19–R21: skill transitions are a separate requirement
+
+The standalone continuous-state sequence is stand 3 s → backward 10 s → stop 3 s → restart 10 s → stop 3 s. Standing uses the original normalized-action policy, while backward uses R2 plus the matching joint-space corrector. Do not send a zero velocity command through the fixed-negative-reference decoder and call that stopping. Reference phase, motor targets, and action history remain continuous across switches. Each new trial starts with `mj_resetData`, home pose and seeded qvel; an early sequence prototype that omitted `mj_resetData` is superseded, not used as acceptance evidence.
+
+The extracted backward controller reproduces the original full 60-second seed-110 qpos/time trace **exactly (maximum difference 0)**. Corrected R19 sequence tests, seeds 1000–1019: all 20 first backward phases succeed, but an abrupt switch to standing causes six falls during stopping. Only 14/20 entire sequences qualify. Therefore long uninterrupted backward success is insufficient for deployment.
+
+R20 retains the 0.01 s filter and freezes the leg-phase/contact balance parameters. It trains six heading gains using the actual float32 ONNX graph, then tests fresh seeds. Previously failed direction seed 847 is now training data, not independent validation.
+
+R21 tests a one-second smoothstep crossfade from the ongoing backward target to the original standing-policy target. The backward phase/history/heading anchor continue during the crossfade; the official stand policy sees a zero command. A paired variant waits for double-foot support (maximum wait 0.6 s) before crossfading. These are simulation experiments, not emergency-stop or hardware safety guarantees. Joint and motor-slew bounds remain unchanged.
+
+Matched R21 direct-crossfade tests, seeds 1000–1019: **20/20 full sequences qualify**, versus 14/20 for abrupt switching. The maximum drift in the last second of the first stop is 0.124 mm; both backward phases meet speed/heading/stability criteria. Broader unseen-seed sequence tests remain required.
+
+The matched pre-failure window of seed 117 also shows lower slew truncation after tau 0.01: left hip pitch fraction drops from about 25% to 12%, left knee from 41% to 24%, and right hip pitch from 20% to 10%. Force saturation is **not eliminated** (left hip pitch saturation can increase); do not claim stronger motors or uniformly lower torque. The evidence supports improving executable target timing, not a uniquely proven friction/torque root cause.
+
+## Final fixed-plane candidate: R20 + R21 transition (R22)
+
+R20 completed six generations, 96 candidates, 672 ordinary-MuJoCo rollouts and **2,016,000 actual 50 Hz control steps** (not PPO steps). The leg-phase/contact balance and R2 actor are frozen; only six heading gains are trained with the actual float32 graph and fixed tau 0.01 target filter. Training seeds are 0/21/31/117/800/825/847.
+
+| Independent test | Result | Main ranges |
+|---|---|---|
+| R20 cold start, 60 s, seeds 1200–1249 | **50/50 survive and qualify** | Speed −0.0850 to −0.0807 m/s; maximum absolute heading 11.68°; max lateral 0.1834 m; min up-Z 0.9716 |
+| R22 cold start, 120 s, seeds 1500–1519 | **20/20 survive and qualify** | Speed −0.0839 to −0.0820 m/s; maximum absolute heading 9.10°; max lateral 0.1903 m; min up-Z 0.9706 |
+| R22 persistent full sequence, seeds 1600–1649 | **50/50 complete and qualify** | First backward maximum absolute heading 13.01°; restart 12.44°; first stop max last-1s drift 0.283 mm; final stop 0.199 mm |
+
+Acceptance thresholds are unchanged. The direct 1-second crossfade is sufficient in these tests; neither stronger actuators nor altered friction nor simulated XY path feedback is needed by this candidate. R21's older R18 controller also completes all 50 fresh sequences (1300–1349), but only 49 qualify because seed 1333 reaches 15.10° during its first backward phase. Use the trained R20 graph with the matching filter/crossfade, not just the older R18 graph.
+
+This resolves the **observed continuous-backward instability and abrupt-stop failure in the tested fixed-plane conditions**. It is not a claim of universal robustness, perturbation recovery, variable-terrain capability or hardware readiness. `models/backward_sim_candidate_r22/` packages the graph, decoder contract and validation manifest; production Agent parameters remain unchanged. Do not deploy the 8-input joint-delta corrector as a legacy 101-input normalized-action policy.
+
+R20's final exported graph exactly reproduces all seven training-side 60-second rollouts (maximum metric difference 0). Twelve controller/observer unit tests pass. The 20 long-run contact traces all contain sustained left-only and right-only support segments; contact-loss events may include chatter and are not physical step counts or proof of zero slip.
+
 Reproduction requires the resource-full runtime checkout and reference-motion assets already used for R2. The lean publication clone is not a replacement for those assets. Pitch-template preprocessing and its phase-period contract must travel with the ONNX model.
 
 Full checkpoints and trajectories remain under `/data/shijinsheng/open_duck/training/` and `/data/shijinsheng/open_duck/outputs/`. GitHub receives source, exact controller contracts, small ONNX models, search logs and result JSONs; no caches, virtual environments or large training checkpoints.

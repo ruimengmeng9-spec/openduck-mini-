@@ -1,0 +1,96 @@
+{
+  "status": "validated_fixed_plane_simulation_candidate",
+  "simulation_only": true,
+  "hardware_readiness": false,
+  "baseline_actor": "models/backward_reference_residual_r2/final.onnx",
+  "baseline_sha256": "05c1219a1403831deead152a6cff89b30a1d20fea3ebef285ca5c07279cfbdc8",
+  "corrector_sha256": "5ac2a33f81ad19a0823645feceea7d586b657152283a82b141530423655e514c",
+  "control_dt_s": 0.02,
+  "target_smoothing_tau_s": 0.01,
+  "stop_crossfade_s": 1.0,
+  "command_backward_mps": -0.074,
+  "reference_dx": -0.0925,
+  "reference_interpolation": true,
+  "model_output": "14 joint deltas in radians; not legacy normalized servo actions",
+  "requires_matching_reference_decoder": true,
+  "legacy_motor_action_decoder_allowed": false,
+  "scope": "fixed flat terrain and friction; exact home pose; initial qvel uniform +/-0.02; no added observation noise, delay, pushes or terrain variation; no hardware test",
+  "steady_gate": {
+    "file": "/data/shijinsheng/open_duck/outputs/filtered_heading_r20_final_heldout_60s/results.json",
+    "simulation_only": true,
+    "tested": 50,
+    "survived": 50,
+    "qualified": 50,
+    "failed_seeds": [],
+    "unqualified_seeds": [],
+    "duration_s": [
+      60.0,
+      60.0
+    ],
+    "speed_mps": [
+      -0.08500764866129336,
+      -0.08071923832460323
+    ],
+    "maximum_absolute_heading_deg": 11.682049732881497,
+    "maximum_heading_rms_deg": 5.767482771045125,
+    "maximum_absolute_lateral_m": 0.18336230007613313,
+    "minimum_up_z": 0.9715891917597689,
+    "thresholds": "speed [-.10,-.05] m/s; |yaw|<=15 deg; RMS<=10 deg; |lateral|<=.25 m; min up>=.94; no fall",
+    "hardware_readiness": false
+  },
+  "long_gate": {
+    "file": "/data/shijinsheng/open_duck/outputs/filtered_combined_r22_120s/results.json",
+    "simulation_only": true,
+    "tested": 20,
+    "survived": 20,
+    "qualified": 20,
+    "failed_seeds": [],
+    "unqualified_seeds": [],
+    "duration_s": [
+      120.0,
+      120.0
+    ],
+    "speed_mps": [
+      -0.0839446148186797,
+      -0.08204880663456282
+    ],
+    "maximum_absolute_heading_deg": 9.101883410699905,
+    "maximum_heading_rms_deg": 5.44275196766054,
+    "maximum_absolute_lateral_m": 0.19030704980539265,
+    "minimum_up_z": 0.9705571655989097,
+    "thresholds": "speed [-.10,-.05] m/s; |yaw|<=15 deg; RMS<=10 deg; |lateral|<=.25 m; min up>=.94; no fall",
+    "hardware_readiness": false
+  },
+  "sequence_gate": {
+    "tested": 50,
+    "qualified": 50,
+    "schedule": [
+      [
+        "stand",
+        3.0
+      ],
+      [
+        "backward",
+        10.0
+      ],
+      [
+        "stop",
+        3.0
+      ],
+      [
+        "restart",
+        10.0
+      ],
+      [
+        "stop_final",
+        3.0
+      ]
+    ],
+    "stop_blend_s": 1.0
+  },
+  "result_sha256": {
+    "/data/shijinsheng/open_duck/outputs/filtered_heading_r20_final_heldout_60s/results.json": "ce2a7ecf5469ae29bded0e820f9fe44debe8e54b6acf1c4e6b7a1230e0db8697",
+    "/data/shijinsheng/open_duck/outputs/filtered_combined_r22_120s/results.json": "dcfdc058e76cdcabda96b13718967d54bdf33164dc4c7ad5d65a9264bf70e9bf",
+    "/data/shijinsheng/open_duck/outputs/filtered_combined_r22_sequence/results.json": "96462c9b2f7b6c196721bc3b599f13d6216b106483217831110a129c768c52ec"
+  }
+}

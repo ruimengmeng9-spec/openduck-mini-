@@ -1,0 +1,188 @@
+{
+  "controller_type": "phase_heading_contact_capture_v1",
+  "simulation_only": true,
+  "baseline_sha256": "05c1219a1403831deead152a6cff89b30a1d20fea3ebef285ca5c07279cfbdc8",
+  "reference_dx": -0.0925,
+  "reference_interpolation": true,
+  "residual_gain": 0.12,
+  "ramp_s": 1.0,
+  "control_dt": 0.02,
+  "weights": [
+    -0.12590184508744828,
+    0.30283415166258365,
+    0.11430440390616216,
+    -0.0637525423258435,
+    0.16100294598887946,
+    -0.22133440782378108,
+    0.0959892560402399,
+    0.45050322307195434,
+    -0.25769290785865206,
+    0.3056396836682973,
+    0.11486884784142284,
+    -0.22311316475201742,
+    -0.0987284336356733,
+    -0.11083067875045267,
+    -0.04775886241069678,
+    0.14863655563477407,
+    -0.07751792312734414,
+    0.11092136581232213
+  ],
+  "score": 0.13494417540073717,
+  "rows": [
+    {
+      "seed": 0,
+      "duration_s": 60.0,
+      "fallen": false,
+      "speed_mps": -0.08030510064910891,
+      "lateral_m": 0.11296867831505536,
+      "yaw_change_deg": -1.8392871048588737,
+      "heading_rms_deg": 5.928376460942507,
+      "minimum_up_z": 0.9693852396264729,
+      "mean_local_velocity_mps": [
+        -0.07843880959781811,
+        -0.004833301165495724,
+        0.014057643738732084
+      ],
+      "cost": 0.09020664771924786
+    },
+    {
+      "seed": 21,
+      "duration_s": 60.0,
+      "fallen": false,
+      "speed_mps": -0.07833565902969508,
+      "lateral_m": 0.1321055946470897,
+      "yaw_change_deg": -4.538147199417708,
+      "heading_rms_deg": 6.178414005809643,
+      "minimum_up_z": 0.9673174168675076,
+      "mean_local_velocity_mps": [
+        -0.07661691512519689,
+        -0.003773511282293922,
+        0.013705350112303135
+      ],
+      "cost": 0.0853280566312367
+    },
+    {
+      "seed": 31,
+      "duration_s": 60.0,
+      "fallen": false,
+      "speed_mps": -0.08083058684835036,
+      "lateral_m": 0.22313500644800902,
+      "yaw_change_deg": -2.272700076298484,
+      "heading_rms_deg": 6.300336145794073,
+      "minimum_up_z": 0.9681837535572188,
+      "mean_local_velocity_mps": [
+        -0.07906986872450339,
+        -0.0036289430029141424,
+        0.013958542921193641
+      ],
+      "cost": 0.1187634555007592
+    },
+    {
+      "seed": 38,
+      "duration_s": 60.0,
+      "fallen": false,
+      "speed_mps": -0.08111845313903573,
+      "lateral_m": 0.010535301608764622,
+      "yaw_change_deg": -3.8977134992012257,
+      "heading_rms_deg": 4.987978888085371,
+      "minimum_up_z": 0.9673621934944745,
+      "mean_local_velocity_mps": [
+        -0.07929647573794085,
+        -0.004421674528612297,
+        0.014184305267233998
+      ],
+      "cost": 0.09067695019647938
+    },
+    {
+      "seed": 57,
+      "duration_s": 60.0,
+      "fallen": false,
+      "speed_mps": -0.08105899565367995,
+      "lateral_m": 0.02035802315525699,
+      "yaw_change_deg": -6.228178716383552,
+      "heading_rms_deg": 5.0198183099744,
+      "minimum_up_z": 0.9635463696225539,
+      "mean_local_velocity_mps": [
+        -0.07931272854915612,
+        -0.004947676572733949,
+        0.014242784300910296
+      ],
+      "cost": 0.10472214487253645
+    },
+    {
+      "seed": 117,
+      "duration_s": 60.0,
+      "fallen": false,
+      "speed_mps": -0.08165736964489399,
+      "lateral_m": 0.11379040920344113,
+      "yaw_change_deg": -0.46582878978444137,
+      "heading_rms_deg": 5.855885765228746,
+      "minimum_up_z": 0.9672658116246774,
+      "mean_local_velocity_mps": [
+        -0.07995207778887713,
+        -0.004780457691686406,
+        0.014106529904897944
+      ],
+      "cost": 0.10619357758279685
+    }
+  ],
+  "feedback_weights": [
+    1.1434019676218936,
+    0.23203279036077268,
+    -1.4618135230629627,
+    2.940869803949934,
+    1.9023470035140506,
+    -0.5087530627140284
+  ],
+  "balance_weights": [
+    0.12091269755736775,
+    0.13339602570083395,
+    -0.42500954241288,
+    0.4463579118127357
+  ],
+  "balance_deadband_rad": 0.04,
+  "capture_weights": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "capture_contract": "approximate_LIPM_COM;deadband_0.012m;scale_0.02m;rate_EMA_0.08s;rate_clip_0.8_scaled_0.2;gain_0.04rad;activation_2s_ramp_1s;simulation_state_required",
+  "pitch_template_weights": [
+    -0.13488062800991127,
+    0.015622457022796566,
+    -0.0011992943238547788,
+    0.007583176179568119,
+    0.009616967300899186,
+    -0.006992154991540779,
+    0.00037245492990148403
+  ],
+  "pitch_template_period_s": 0.54,
+  "pitch_template_source": "/data/shijinsheng/open_duck/outputs/phase_feedback_r7_final_heldout_60s/seed_20.npz",
+  "pitch_template_source_sha256": "3ea8f73efb16341a32694d24d33178752b467c0e05da271f20f8e5651c0155dc",
+  "pitch_template_fit_rms_rad": 0.017836294611524306,
+  "pitch_template_fit_p95_abs_rad": 0.03797045697422725,
+  "capture_template_weights": [
+    -0.024670393557979804,
+    0.0003124032834389556,
+    -0.006365041605549434,
+    -0.0002481507261802299,
+    -0.0003648457100792862,
+    -0.0014163017266992555,
+    -0.00010594101215244784
+  ],
+  "capture_template_period_s": 0.54,
+  "capture_template_source": "/data/shijinsheng/open_duck/outputs/contact_balance_r11_capture_trace_60s/seed_100.npz",
+  "capture_template_source_sha256": "7272a288d0d0dbdf13ec1c91130ee0e618238411b8d1591b1d4d3a9c95639b3b",
+  "capture_template_fit_rms_m": 0.005292479769845448,
+  "capture_template_fit_p95_abs_m": 0.010145261273978651,
+  "ankle_gain_rad": 0.06,
+  "ankle_support_gate": "native foot-body/floor geometry contact; no swing ankle balance correction",
+  "onnx_sha256": "8fec054bd2653917abd5cf8007b69c129dc04ed9bc6dbb5a4fe983558f109e23",
+  "onnx_input": "phase_cos,phase_sin,sin_relative_heading_error,startup_ramp,deadband_pitch_scaled,clipped_pitch_rate_scaled,left_foot_contact,right_foot_contact,capture_error_scaled,capture_filtered_rate_scaled,capture_activation_ramp",
+  "onnx_output": "14 joint deltas in radians",
+  "legacy_motor_action_decoder_allowed": false,
+  "history_contract": "fresh_three_motor_actions",
+  "step_contract": "infer_target_then_physics_then_phase",
+  "onnx_parity_max_error_rad": 1.3058754452788257e-08
+}

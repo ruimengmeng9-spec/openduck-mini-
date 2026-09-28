@@ -1,0 +1,34 @@
+{
+  "rows": [
+    {
+      "seed": 110,
+      "completed": true,
+      "qualified": true,
+      "phases": [
+        {
+          "phase": "backward",
+          "duration_s": 60.0,
+          "fallen": false,
+          "qualified": true,
+          "speed_mps": -0.08166019329409772,
+          "lateral_m": 0.006173117577169551,
+          "yaw_change_deg": -5.911721720175089,
+          "minimum_up_z": 0.9770794379668462,
+          "last_1s_horizontal_drift_m": 0.08722645146888354
+        }
+      ]
+    }
+  ],
+  "schedule": [
+    [
+      "backward",
+      60.0
+    ]
+  ],
+  "contract": "/data/shijinsheng/open_duck/training/backward_target_smoothing_r18/tau0.01.json",
+  "model": "/data/shijinsheng/open_duck/training/backward_contact_balance_r11/export_final/corrector.onnx",
+  "initialization": "mj_resetData then exact home pose and seeded qvel",
+  "source_sha256": "7a8c6d307885c514826e5573c0d4318a06b537e9017570ae90e7497cf0f38a5a",
+  "simulation_only": true,
+  "hardware_readiness": false
+}
