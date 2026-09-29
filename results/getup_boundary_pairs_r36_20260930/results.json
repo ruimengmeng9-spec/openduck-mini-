@@ -1,0 +1,5862 @@
+{
+  "experiment": "R36 partial-boundary joint pair search",
+  "created_at": "2026-09-30T05:57:59.346943",
+  "source_sha256": "2be5ebb45cdb8df0af7aba80ec6e921b4b88a45311b879c72e3d93c690e371d3",
+  "scene_sha256": "67b1cfe9870a49b16b1a87872619692a2beffb19cebe2f54787c57d830e4e8b9",
+  "script_sha256": "9b17d00139669b4d4c60f49638947e304e435cde0e21b8cbab77cafe42a2fc77",
+  "simulation_only": true,
+  "hardware_readiness": false,
+  "full_fall_recovery_claim": false,
+  "results": {
+    "prone": {
+      "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+      "initial": {
+        "up_z": 0.938777939280285,
+        "height_m": 0.15943683365694628,
+        "feet": [
+          true,
+          true
+        ],
+        "torso_contact": false,
+        "penetration_m": 0.0007236192916496853,
+        "linear_speed_mps": 0.0386845353989921,
+        "angular_speed_rad_s": 0.624684354844212,
+        "stable": false,
+        "finite": true,
+        "floor_penetration_m": 0.0007236192916496853,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.06027438552634545,
+        "joint_home_error_mean_rad": 0.018801061341073105,
+        "motor_target_home_error_max_rad": 0.0,
+        "foot_normal_forces_n": [
+          10.611791743841914,
+          11.211975047046224
+        ],
+        "foot_load_fraction": 1.0,
+        "foot_up_alignment_to_home": [
+          0.9694363117930905,
+          0.9710711343729597
+        ]
+      },
+      "trials": 86,
+      "strict_1s_discoveries": 0,
+      "best": {
+        "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+        "physically_valid": true,
+        "executed_controls": 200,
+        "best_progress": 8.3513764237028,
+        "best_progress_time_s": 0.0,
+        "best_up_z": 0.9628016706988218,
+        "best_foot_load_fraction": 1.0,
+        "longest_strict_standing_s": 0.0,
+        "final_up_z": 0.1976621979048679,
+        "final_height_m": 0.06030428149604422,
+        "final_foot_load_fraction": 0.4521260279251702,
+        "final_torso_contact": true,
+        "final_stable": false,
+        "peak_physics": {
+          "floor": 0.008193924559763692,
+          "self": 0.0,
+          "joint": 0.016284379207921917,
+          "force": 3.23,
+          "slew": 5.24
+        },
+        "first": "j2_-1_0.6",
+        "second": "j7_+1_0.6",
+        "joints": [
+          2,
+          7
+        ],
+        "offsets_rad": [
+          -0.6,
+          0.6
+        ],
+        "pulse_s": 0.5,
+        "strict_1s": false
+      },
+      "all_trials": [
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 27,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9543887857836564,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.16606850632190512,
+          "final_height_m": 0.06184926069619345,
+          "final_foot_load_fraction": 0.48931279576067915,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.01056268337384101,
+            "self": 0.0027813108222641027,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j2_-1_0.6",
+          "second": "j0_+1_0.6",
+          "joints": [
+            2,
+            0
+          ],
+          "offsets_rad": [
+            -0.6,
+            0.6
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 28,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9543887857836564,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.33017382509191695,
+          "final_height_m": 0.061463257727926206,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.012173786130062161,
+            "self": 0.0027813108222641027,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j2_-1_0.6",
+          "second": "j0_+1_0.6",
+          "joints": [
+            2,
+            0
+          ],
+          "offsets_rad": [
+            -0.6,
+            0.6
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 27,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9417759694188318,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.17535323320512902,
+          "final_height_m": 0.0620420343188049,
+          "final_foot_load_fraction": 0.09190616895541877,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.012101581982956433,
+            "self": 0.0,
+            "joint": 0.018670939109882934,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j2_-1_0.6",
+          "second": "j4_+1_0.6",
+          "joints": [
+            2,
+            4
+          ],
+          "offsets_rad": [
+            -0.6,
+            0.6
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9417759694188318,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.198247430201905,
+          "final_height_m": 0.05983539094043286,
+          "final_foot_load_fraction": 0.4520788611300445,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.00809535287605486,
+            "self": 0.0,
+            "joint": 0.019053185124368932,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j2_-1_0.6",
+          "second": "j4_+1_0.6",
+          "joints": [
+            2,
+            4
+          ],
+          "offsets_rad": [
+            -0.6,
+            0.6
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 28,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9613387215467968,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.16550121584622615,
+          "final_height_m": 0.060632047635229204,
+          "final_foot_load_fraction": 0.04811682645172724,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.011990756556826139,
+            "self": 0.0,
+            "joint": 0.014639912952046252,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j2_-1_0.6",
+          "second": "j7_+1_0.3",
+          "joints": [
+            2,
+            7
+          ],
+          "offsets_rad": [
+            -0.6,
+            0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9613387215467968,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.19771140237890245,
+          "final_height_m": 0.06035167829831174,
+          "final_foot_load_fraction": 0.4522128461415128,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.008609945902317478,
+            "self": 0.0,
+            "joint": 0.017891790698908228,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j2_-1_0.6",
+          "second": "j7_+1_0.3",
+          "joints": [
+            2,
+            7
+          ],
+          "offsets_rad": [
+            -0.6,
+            0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 28,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9628016706988218,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.16566152955942762,
+          "final_height_m": 0.06093759508118338,
+          "final_foot_load_fraction": 0.40862583526826163,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.010932094149326482,
+            "self": 0.0,
+            "joint": 0.014215096423505713,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j2_-1_0.6",
+          "second": "j7_+1_0.6",
+          "joints": [
+            2,
+            7
+          ],
+          "offsets_rad": [
+            -0.6,
+            0.6
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9628016706988218,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.1976621979048679,
+          "final_height_m": 0.06030428149604422,
+          "final_foot_load_fraction": 0.4521260279251702,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.008193924559763692,
+            "self": 0.0,
+            "joint": 0.016284379207921917,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j2_-1_0.6",
+          "second": "j7_+1_0.6",
+          "joints": [
+            2,
+            7
+          ],
+          "offsets_rad": [
+            -0.6,
+            0.6
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 28,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9616959863295339,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.16092597648505794,
+          "final_height_m": 0.06001370228848378,
+          "final_foot_load_fraction": 0.4722631025126119,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.01363214842565894,
+            "self": 0.0,
+            "joint": 0.01906079929599591,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j2_-1_0.6",
+          "second": "j8_+1_0.6",
+          "joints": [
+            2,
+            8
+          ],
+          "offsets_rad": [
+            -0.6,
+            0.6
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9616959863295339,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.19839030617095152,
+          "final_height_m": 0.05990628972359866,
+          "final_foot_load_fraction": 0.45232183122898373,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.006216020858848939,
+            "self": 0.0,
+            "joint": 0.01906079929599591,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j2_-1_0.6",
+          "second": "j8_+1_0.6",
+          "joints": [
+            2,
+            8
+          ],
+          "offsets_rad": [
+            -0.6,
+            0.6
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 26,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9607366251569576,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.1562892934813282,
+          "final_height_m": 0.06221306390713998,
+          "final_foot_load_fraction": 0.011233835426714656,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.013360900472170104,
+            "self": 0.001411737695682138,
+            "joint": 0.01709197821172337,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j2_-1_0.6",
+          "second": "j9_-1_0.6",
+          "joints": [
+            2,
+            9
+          ],
+          "offsets_rad": [
+            -0.6,
+            -0.6
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9607366251569576,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.19850472180664022,
+          "final_height_m": 0.0600320410309473,
+          "final_foot_load_fraction": 0.4523952914378595,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.00518851396131958,
+            "self": 0.001411737695682138,
+            "joint": 0.018146011779119675,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j2_-1_0.6",
+          "second": "j9_-1_0.6",
+          "joints": [
+            2,
+            9
+          ],
+          "offsets_rad": [
+            -0.6,
+            -0.6
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 29,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.17036145365167812,
+          "final_height_m": 0.059897067478129055,
+          "final_foot_load_fraction": 0.5556386678839479,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.01224962829350362,
+            "self": 0.0,
+            "joint": 0.010243354890768108,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j2_-1_0.6",
+          "second": "j11_-1_0.3",
+          "joints": [
+            2,
+            11
+          ],
+          "offsets_rad": [
+            -0.6,
+            -0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.19808753012066507,
+          "final_height_m": 0.05893159255136005,
+          "final_foot_load_fraction": 0.45246507260940005,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.0054735218543945485,
+            "self": 0.0,
+            "joint": 0.01683918284709418,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j2_-1_0.6",
+          "second": "j11_-1_0.3",
+          "joints": [
+            2,
+            11
+          ],
+          "offsets_rad": [
+            -0.6,
+            -0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 26,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.17989703269059695,
+          "final_height_m": 0.059208687569300825,
+          "final_foot_load_fraction": 0.5368662023827414,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.01050386244487245,
+            "self": 0.0,
+            "joint": 0.001109772949119625,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j2_-1_0.6",
+          "second": "j11_-1_0.6",
+          "joints": [
+            2,
+            11
+          ],
+          "offsets_rad": [
+            -0.6,
+            -0.6
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.197858331374875,
+          "final_height_m": 0.058816402550198696,
+          "final_foot_load_fraction": 0.4523364833588457,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.006727706758101325,
+            "self": 0.0,
+            "joint": 0.01712517941683811,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j2_-1_0.6",
+          "second": "j11_-1_0.6",
+          "joints": [
+            2,
+            11
+          ],
+          "offsets_rad": [
+            -0.6,
+            -0.6
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 29,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9463947807731917,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.1717190303445518,
+          "final_height_m": 0.05915250385188143,
+          "final_foot_load_fraction": 0.609007532649512,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.013011057383062585,
+            "self": 0.0,
+            "joint": 0.009728347500806978,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j2_-1_0.6",
+          "second": "j12_+1_0.3",
+          "joints": [
+            2,
+            12
+          ],
+          "offsets_rad": [
+            -0.6,
+            0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9469253358785301,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.1982202016384023,
+          "final_height_m": 0.05990057045564862,
+          "final_foot_load_fraction": 0.4521999106026516,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.009270633799002344,
+            "self": 0.0,
+            "joint": 0.01699198780259903,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j2_-1_0.6",
+          "second": "j12_+1_0.3",
+          "joints": [
+            2,
+            12
+          ],
+          "offsets_rad": [
+            -0.6,
+            0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 23,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.18127211346273886,
+          "final_height_m": 0.06525634792039718,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.010388629736209111,
+            "self": 0.0016239116983779668,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j0_+1_0.6",
+          "second": "j4_+1_0.6",
+          "joints": [
+            0,
+            4
+          ],
+          "offsets_rad": [
+            0.6,
+            0.6
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.19802842207592622,
+          "final_height_m": 0.060042141976144596,
+          "final_foot_load_fraction": 0.4521983052937073,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.008790190640356958,
+            "self": 0.0016239116983779668,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j0_+1_0.6",
+          "second": "j4_+1_0.6",
+          "joints": [
+            0,
+            4
+          ],
+          "offsets_rad": [
+            0.6,
+            0.6
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 30,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.1781166469046445,
+          "final_height_m": 0.058591772481585896,
+          "final_foot_load_fraction": 0.7082112819252612,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.013073188524402658,
+            "self": 0.001338320400603764,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j0_+1_0.6",
+          "second": "j7_+1_0.3",
+          "joints": [
+            0,
+            7
+          ],
+          "offsets_rad": [
+            0.6,
+            0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 30,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.196989248615056,
+          "final_height_m": 0.05972804899719031,
+          "final_foot_load_fraction": 0.08652073335620543,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.010847428871376123,
+            "self": 0.001338320400603764,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j0_+1_0.6",
+          "second": "j7_+1_0.3",
+          "joints": [
+            0,
+            7
+          ],
+          "offsets_rad": [
+            0.6,
+            0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 30,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.17042761311055638,
+          "final_height_m": 0.05888583848421901,
+          "final_foot_load_fraction": 0.519674212974697,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.013232284704279021,
+            "self": 0.0013391176264990073,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j0_+1_0.6",
+          "second": "j7_+1_0.6",
+          "joints": [
+            0,
+            7
+          ],
+          "offsets_rad": [
+            0.6,
+            0.6
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 29,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.26029236769865943,
+          "final_height_m": 0.06986519829519541,
+          "final_foot_load_fraction": 0.6659390396814556,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.011628989501973046,
+            "self": 0.0013391176264990073,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j0_+1_0.6",
+          "second": "j7_+1_0.6",
+          "joints": [
+            0,
+            7
+          ],
+          "offsets_rad": [
+            0.6,
+            0.6
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 29,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.16959373614009587,
+          "final_height_m": 0.05973183674979414,
+          "final_foot_load_fraction": 0.6602438407149769,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.010731849058152602,
+            "self": 0.0013914538214569794,
+            "joint": 0.019247479720821636,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j0_+1_0.6",
+          "second": "j8_+1_0.6",
+          "joints": [
+            0,
+            8
+          ],
+          "offsets_rad": [
+            0.6,
+            0.6
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.19809619963473363,
+          "final_height_m": 0.05871016509044544,
+          "final_foot_load_fraction": 0.4528470446101222,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.00950585658131909,
+            "self": 0.0013914538214569794,
+            "joint": 0.019247479720821636,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j0_+1_0.6",
+          "second": "j8_+1_0.6",
+          "joints": [
+            0,
+            8
+          ],
+          "offsets_rad": [
+            0.6,
+            0.6
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 28,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.16911132484153063,
+          "final_height_m": 0.059553551798156135,
+          "final_foot_load_fraction": 0.56368099052546,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.011854901686177224,
+            "self": 0.001472791145949906,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j0_+1_0.6",
+          "second": "j9_-1_0.6",
+          "joints": [
+            0,
+            9
+          ],
+          "offsets_rad": [
+            0.6,
+            -0.6
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 28,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.19109179293312895,
+          "final_height_m": 0.05544946741138739,
+          "final_foot_load_fraction": 0.3611754812251869,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.011475200716763233,
+            "self": 0.001472791145949906,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j0_+1_0.6",
+          "second": "j9_-1_0.6",
+          "joints": [
+            0,
+            9
+          ],
+          "offsets_rad": [
+            0.6,
+            -0.6
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 32,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.17064042205796262,
+          "final_height_m": 0.0601592174932012,
+          "final_foot_load_fraction": 0.12313833739201296,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.01059933248265229,
+            "self": 0.001197803526138108,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j0_+1_0.6",
+          "second": "j11_-1_0.3",
+          "joints": [
+            0,
+            11
+          ],
+          "offsets_rad": [
+            0.6,
+            -0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.19812229245056398,
+          "final_height_m": 0.05969253753141783,
+          "final_foot_load_fraction": 0.45232397533496554,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.00859650721269007,
+            "self": 0.001197803526138108,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j0_+1_0.6",
+          "second": "j11_-1_0.3",
+          "joints": [
+            0,
+            11
+          ],
+          "offsets_rad": [
+            0.6,
+            -0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 31,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.17658272929736246,
+          "final_height_m": 0.055167814906244145,
+          "final_foot_load_fraction": 0.6535407549140124,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.014875476021275976,
+            "self": 0.0012157441189167718,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j0_+1_0.6",
+          "second": "j11_-1_0.6",
+          "joints": [
+            0,
+            11
+          ],
+          "offsets_rad": [
+            0.6,
+            -0.6
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 27,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.22049668921340426,
+          "final_height_m": 0.08622135875857942,
+          "final_foot_load_fraction": 0.8450692809240383,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.010626348592222383,
+            "self": 0.0012157441189167718,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j0_+1_0.6",
+          "second": "j11_-1_0.6",
+          "joints": [
+            0,
+            11
+          ],
+          "offsets_rad": [
+            0.6,
+            -0.6
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 30,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.16977427488668903,
+          "final_height_m": 0.060098694982360826,
+          "final_foot_load_fraction": 0.04731913899128433,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.010614835031472316,
+            "self": 0.0013795113698874238,
+            "joint": 0.011792100846711007,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j0_+1_0.6",
+          "second": "j12_+1_0.3",
+          "joints": [
+            0,
+            12
+          ],
+          "offsets_rad": [
+            0.6,
+            0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 30,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.1880251482450036,
+          "final_height_m": 0.062268625696069294,
+          "final_foot_load_fraction": 0.05158300105101111,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.010628164523247153,
+            "self": 0.0013795113698874238,
+            "joint": 0.011792100846711007,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j0_+1_0.6",
+          "second": "j12_+1_0.3",
+          "joints": [
+            0,
+            12
+          ],
+          "offsets_rad": [
+            0.6,
+            0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 25,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.18833832741878698,
+          "final_height_m": 0.05709148828306684,
+          "final_foot_load_fraction": 0.3385507065760878,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.010885698303263278,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j4_+1_0.6",
+          "second": "j7_+1_0.3",
+          "joints": [
+            4,
+            7
+          ],
+          "offsets_rad": [
+            0.6,
+            0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 23,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.24269330839633482,
+          "final_height_m": 0.07031480699756183,
+          "final_foot_load_fraction": 0.0394463925958324,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.0105373444804256,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j4_+1_0.6",
+          "second": "j7_+1_0.3",
+          "joints": [
+            4,
+            7
+          ],
+          "offsets_rad": [
+            0.6,
+            0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 25,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.1714807029167567,
+          "final_height_m": 0.0585906303110493,
+          "final_foot_load_fraction": 0.15956421172558363,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.011230337773851271,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j4_+1_0.6",
+          "second": "j7_+1_0.6",
+          "joints": [
+            4,
+            7
+          ],
+          "offsets_rad": [
+            0.6,
+            0.6
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 23,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.2880085979590429,
+          "final_height_m": 0.0752254700329587,
+          "final_foot_load_fraction": 0.35496178686515595,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.011164514848399316,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j4_+1_0.6",
+          "second": "j7_+1_0.6",
+          "joints": [
+            4,
+            7
+          ],
+          "offsets_rad": [
+            0.6,
+            0.6
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.1980239995611445,
+          "final_height_m": 0.05975662968974253,
+          "final_foot_load_fraction": 0.45220084938782107,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.00989075803028475,
+            "self": 0.0,
+            "joint": 0.019802311365650027,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j4_+1_0.6",
+          "second": "j8_+1_0.6",
+          "joints": [
+            4,
+            8
+          ],
+          "offsets_rad": [
+            0.6,
+            0.6
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 24,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.17745882168264596,
+          "final_height_m": 0.06352130465917667,
+          "final_foot_load_fraction": 0.21193375514102877,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.011975167630043661,
+            "self": 0.0,
+            "joint": 0.019802311365650027,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j4_+1_0.6",
+          "second": "j8_+1_0.6",
+          "joints": [
+            4,
+            8
+          ],
+          "offsets_rad": [
+            0.6,
+            0.6
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 25,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.17857048567855124,
+          "final_height_m": 0.06297963696172997,
+          "final_foot_load_fraction": 0.02834366506037412,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.010545252698840312,
+            "self": 0.0014168558578351968,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j4_+1_0.6",
+          "second": "j9_-1_0.6",
+          "joints": [
+            4,
+            9
+          ],
+          "offsets_rad": [
+            0.6,
+            -0.6
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 23,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.2017817207689587,
+          "final_height_m": 0.06251302968606635,
+          "final_foot_load_fraction": 0.6979808506568298,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.01031061923300226,
+            "self": 0.0014168558578351968,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j4_+1_0.6",
+          "second": "j9_-1_0.6",
+          "joints": [
+            4,
+            9
+          ],
+          "offsets_rad": [
+            0.6,
+            -0.6
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 26,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.18078810121948652,
+          "final_height_m": 0.06042395016857615,
+          "final_foot_load_fraction": 0.6357220874284856,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.010735950701505997,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j4_+1_0.6",
+          "second": "j11_-1_0.3",
+          "joints": [
+            4,
+            11
+          ],
+          "offsets_rad": [
+            0.6,
+            -0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.19752320800069678,
+          "final_height_m": 0.060492286350948346,
+          "final_foot_load_fraction": 0.4521776807180181,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.009392455838668191,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j4_+1_0.6",
+          "second": "j11_-1_0.3",
+          "joints": [
+            4,
+            11
+          ],
+          "offsets_rad": [
+            0.6,
+            -0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 26,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.19533251499961768,
+          "final_height_m": 0.052624201985671186,
+          "final_foot_load_fraction": 0.16457029149984229,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.01335656571305258,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j4_+1_0.6",
+          "second": "j11_-1_0.6",
+          "joints": [
+            4,
+            11
+          ],
+          "offsets_rad": [
+            0.6,
+            -0.6
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.19789330951339734,
+          "final_height_m": 0.06032750645744363,
+          "final_foot_load_fraction": 0.45234175651706393,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.008452430206116336,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j4_+1_0.6",
+          "second": "j11_-1_0.6",
+          "joints": [
+            4,
+            11
+          ],
+          "offsets_rad": [
+            0.6,
+            -0.6
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 25,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.17905182998342328,
+          "final_height_m": 0.05798524710865506,
+          "final_foot_load_fraction": 0.5758525247437875,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.011944178512905562,
+            "self": 0.0,
+            "joint": 0.014548828871927766,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j4_+1_0.6",
+          "second": "j12_+1_0.3",
+          "joints": [
+            4,
+            12
+          ],
+          "offsets_rad": [
+            0.6,
+            0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.1976337170396429,
+          "final_height_m": 0.060447289698332504,
+          "final_foot_load_fraction": 0.4522121642545027,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.009882790661713218,
+            "self": 0.0,
+            "joint": 0.014548828871927766,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j4_+1_0.6",
+          "second": "j12_+1_0.3",
+          "joints": [
+            4,
+            12
+          ],
+          "offsets_rad": [
+            0.6,
+            0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 30,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.16137447586343798,
+          "final_height_m": 0.05930823103457888,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.012715863249680905,
+            "self": 0.0,
+            "joint": 0.017690540684433542,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j7_+1_0.3",
+          "second": "j8_+1_0.6",
+          "joints": [
+            7,
+            8
+          ],
+          "offsets_rad": [
+            0.3,
+            0.6
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 30,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.17013202515962922,
+          "final_height_m": 0.05954822435688239,
+          "final_foot_load_fraction": 0.4218799243366602,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.012959386483306658,
+            "self": 0.0,
+            "joint": 0.017690540684433542,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j7_+1_0.3",
+          "second": "j8_+1_0.6",
+          "joints": [
+            7,
+            8
+          ],
+          "offsets_rad": [
+            0.3,
+            0.6
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 30,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.1777695935557234,
+          "final_height_m": 0.05840601177070041,
+          "final_foot_load_fraction": 0.05293851299126196,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.012969776258998474,
+            "self": 0.0014003206047541066,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j7_+1_0.3",
+          "second": "j9_-1_0.6",
+          "joints": [
+            7,
+            9
+          ],
+          "offsets_rad": [
+            0.3,
+            -0.6
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.19801576954393998,
+          "final_height_m": 0.060310619950750044,
+          "final_foot_load_fraction": 0.45238221081582003,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.00921228692482828,
+            "self": 0.0014003206047541066,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j7_+1_0.3",
+          "second": "j9_-1_0.6",
+          "joints": [
+            7,
+            9
+          ],
+          "offsets_rad": [
+            0.3,
+            -0.6
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 31,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.17462700568264036,
+          "final_height_m": 0.058844043260660166,
+          "final_foot_load_fraction": 0.35997701354476624,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.01239865002529085,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j7_+1_0.3",
+          "second": "j11_-1_0.3",
+          "joints": [
+            7,
+            11
+          ],
+          "offsets_rad": [
+            0.3,
+            -0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 30,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.1435870790221822,
+          "final_height_m": 0.06651176950191176,
+          "final_foot_load_fraction": 0.21069212176098823,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.011916134808851678,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j7_+1_0.3",
+          "second": "j11_-1_0.3",
+          "joints": [
+            7,
+            11
+          ],
+          "offsets_rad": [
+            0.3,
+            -0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 30,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.17924450872288727,
+          "final_height_m": 0.05811085604194122,
+          "final_foot_load_fraction": 0.08925094415549782,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.01033809045120693,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j7_+1_0.3",
+          "second": "j11_-1_0.6",
+          "joints": [
+            7,
+            11
+          ],
+          "offsets_rad": [
+            0.3,
+            -0.6
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 28,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.11135450446023883,
+          "final_height_m": 0.08373446830135133,
+          "final_foot_load_fraction": 0.35998745009892824,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.010228329259380782,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j7_+1_0.3",
+          "second": "j11_-1_0.6",
+          "joints": [
+            7,
+            11
+          ],
+          "offsets_rad": [
+            0.3,
+            -0.6
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 30,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.16675039448004067,
+          "final_height_m": 0.059664933451941675,
+          "final_foot_load_fraction": 0.6736363003379954,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.011249255976743444,
+            "self": 0.0,
+            "joint": 0.010891791973417497,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j7_+1_0.3",
+          "second": "j12_+1_0.3",
+          "joints": [
+            7,
+            12
+          ],
+          "offsets_rad": [
+            0.3,
+            0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.19779925207965532,
+          "final_height_m": 0.06028398187069142,
+          "final_foot_load_fraction": 0.4521847329182474,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.008518219223846959,
+            "self": 0.0,
+            "joint": 0.010891791973417497,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j7_+1_0.3",
+          "second": "j12_+1_0.3",
+          "joints": [
+            7,
+            12
+          ],
+          "offsets_rad": [
+            0.3,
+            0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 30,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.16204682557688296,
+          "final_height_m": 0.059221519547322174,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.012546885189031572,
+            "self": 0.0,
+            "joint": 0.01761497907378362,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j7_+1_0.6",
+          "second": "j8_+1_0.6",
+          "joints": [
+            7,
+            8
+          ],
+          "offsets_rad": [
+            0.6,
+            0.6
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 30,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.22731580199541035,
+          "final_height_m": 0.06497345025219481,
+          "final_foot_load_fraction": 0.1604657583685044,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.013406273139416107,
+            "self": 0.0,
+            "joint": 0.01761497907378362,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j7_+1_0.6",
+          "second": "j8_+1_0.6",
+          "joints": [
+            7,
+            8
+          ],
+          "offsets_rad": [
+            0.6,
+            0.6
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 29,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.16948509648348223,
+          "final_height_m": 0.058104416903523456,
+          "final_foot_load_fraction": 0.5256702058326131,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.01285245846983192,
+            "self": 0.0012286008922647714,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j7_+1_0.6",
+          "second": "j9_-1_0.6",
+          "joints": [
+            7,
+            9
+          ],
+          "offsets_rad": [
+            0.6,
+            -0.6
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 28,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.2811042472485646,
+          "final_height_m": 0.07381549501176658,
+          "final_foot_load_fraction": 0.7242845730050675,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.011401039567978784,
+            "self": 0.0012286008922647714,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j7_+1_0.6",
+          "second": "j9_-1_0.6",
+          "joints": [
+            7,
+            9
+          ],
+          "offsets_rad": [
+            0.6,
+            -0.6
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 30,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.16995398018507024,
+          "final_height_m": 0.05963028810665444,
+          "final_foot_load_fraction": 0.23078234050780952,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.011175860706638653,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j7_+1_0.6",
+          "second": "j11_-1_0.3",
+          "joints": [
+            7,
+            11
+          ],
+          "offsets_rad": [
+            0.6,
+            -0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.19774393517100988,
+          "final_height_m": 0.06013142108098026,
+          "final_foot_load_fraction": 0.4521258853755324,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.008108242168368477,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j7_+1_0.6",
+          "second": "j11_-1_0.3",
+          "joints": [
+            7,
+            11
+          ],
+          "offsets_rad": [
+            0.6,
+            -0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 30,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.17326033741675653,
+          "final_height_m": 0.05572059259770881,
+          "final_foot_load_fraction": 0.5385267427222358,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.013557678714637622,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j7_+1_0.6",
+          "second": "j11_-1_0.6",
+          "joints": [
+            7,
+            11
+          ],
+          "offsets_rad": [
+            0.6,
+            -0.6
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.19789173639722926,
+          "final_height_m": 0.05948387541203605,
+          "final_foot_load_fraction": 0.45212449419682943,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.008261893163448166,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j7_+1_0.6",
+          "second": "j11_-1_0.6",
+          "joints": [
+            7,
+            11
+          ],
+          "offsets_rad": [
+            0.6,
+            -0.6
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 30,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.16335982903510396,
+          "final_height_m": 0.05958774198603355,
+          "final_foot_load_fraction": 0.06314566365024546,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.013036024590562561,
+            "self": 0.0,
+            "joint": 0.01110330564022477,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j7_+1_0.6",
+          "second": "j12_+1_0.3",
+          "joints": [
+            7,
+            12
+          ],
+          "offsets_rad": [
+            0.6,
+            0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.19817974325460536,
+          "final_height_m": 0.05982552113776163,
+          "final_foot_load_fraction": 0.45216579010730534,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.009082711217940694,
+            "self": 0.0,
+            "joint": 0.01110330564022477,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j7_+1_0.6",
+          "second": "j12_+1_0.3",
+          "joints": [
+            7,
+            12
+          ],
+          "offsets_rad": [
+            0.6,
+            0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 30,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.1805559241205025,
+          "final_height_m": 0.05824672111112514,
+          "final_foot_load_fraction": 0.6134135089954181,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.01278071684453421,
+            "self": 0.001320242255839165,
+            "joint": 0.019323448327000503,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j8_+1_0.6",
+          "second": "j9_-1_0.6",
+          "joints": [
+            8,
+            9
+          ],
+          "offsets_rad": [
+            0.6,
+            -0.6
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 30,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.18206758308665166,
+          "final_height_m": 0.05739560787408908,
+          "final_foot_load_fraction": 0.013657851245123684,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.012090997726939137,
+            "self": 0.001320242255839165,
+            "joint": 0.019323448327000503,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j8_+1_0.6",
+          "second": "j9_-1_0.6",
+          "joints": [
+            8,
+            9
+          ],
+          "offsets_rad": [
+            0.6,
+            -0.6
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 31,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.17608182080771764,
+          "final_height_m": 0.05942312782970027,
+          "final_foot_load_fraction": 0.11270954695975524,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.013061804825479417,
+            "self": 0.0,
+            "joint": 0.019297894448142228,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j8_+1_0.6",
+          "second": "j11_-1_0.3",
+          "joints": [
+            8,
+            11
+          ],
+          "offsets_rad": [
+            0.6,
+            -0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 30,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.18257982467929973,
+          "final_height_m": 0.07449922542590136,
+          "final_foot_load_fraction": 0.36079450813711567,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.01027295310911085,
+            "self": 0.0,
+            "joint": 0.019297894448142228,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j8_+1_0.6",
+          "second": "j11_-1_0.3",
+          "joints": [
+            8,
+            11
+          ],
+          "offsets_rad": [
+            0.6,
+            -0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 31,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.17715943269792367,
+          "final_height_m": 0.0565716829958682,
+          "final_foot_load_fraction": 0.0469961388544234,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.012081574490114839,
+            "self": 0.0,
+            "joint": 0.020874010988182312,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j8_+1_0.6",
+          "second": "j11_-1_0.6",
+          "joints": [
+            8,
+            11
+          ],
+          "offsets_rad": [
+            0.6,
+            -0.6
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.1980148931715507,
+          "final_height_m": 0.05975910878403475,
+          "final_foot_load_fraction": 0.45214733679048774,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.007948865275995982,
+            "self": 0.0,
+            "joint": 0.020874010988182312,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j8_+1_0.6",
+          "second": "j11_-1_0.6",
+          "joints": [
+            8,
+            11
+          ],
+          "offsets_rad": [
+            0.6,
+            -0.6
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 30,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.16841599910946736,
+          "final_height_m": 0.06015954532073097,
+          "final_foot_load_fraction": 0.10658053503170814,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.010003977848626326,
+            "self": 0.0,
+            "joint": 0.017982898378732792,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j8_+1_0.6",
+          "second": "j12_+1_0.3",
+          "joints": [
+            8,
+            12
+          ],
+          "offsets_rad": [
+            0.6,
+            0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.19862073749596612,
+          "final_height_m": 0.05928440769794174,
+          "final_foot_load_fraction": 0.4524664741252536,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.009104043441430815,
+            "self": 0.0,
+            "joint": 0.017982898378732792,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j8_+1_0.6",
+          "second": "j12_+1_0.3",
+          "joints": [
+            8,
+            12
+          ],
+          "offsets_rad": [
+            0.6,
+            0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 31,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.1724701722839096,
+          "final_height_m": 0.058894014209623056,
+          "final_foot_load_fraction": 0.7579546549234158,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.011304122060833855,
+            "self": 0.0009756195779481829,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j9_-1_0.6",
+          "second": "j11_-1_0.3",
+          "joints": [
+            9,
+            11
+          ],
+          "offsets_rad": [
+            -0.6,
+            -0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 31,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.17809262525526176,
+          "final_height_m": 0.06115200637588969,
+          "final_foot_load_fraction": 0.30634343208066495,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.011102237953393082,
+            "self": 0.0009756195779481829,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j9_-1_0.6",
+          "second": "j11_-1_0.3",
+          "joints": [
+            9,
+            11
+          ],
+          "offsets_rad": [
+            -0.6,
+            -0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 28,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.1849546301785833,
+          "final_height_m": 0.05655175134224936,
+          "final_foot_load_fraction": 0.1382440782649729,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.010274593134830298,
+            "self": 0.0009563500622734945,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j9_-1_0.6",
+          "second": "j11_-1_0.6",
+          "joints": [
+            9,
+            11
+          ],
+          "offsets_rad": [
+            -0.6,
+            -0.6
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 26,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.16528905345436562,
+          "final_height_m": 0.07453334085094337,
+          "final_foot_load_fraction": 0.8105241402283134,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.010918923017501775,
+            "self": 0.0009563500622734945,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j9_-1_0.6",
+          "second": "j11_-1_0.6",
+          "joints": [
+            9,
+            11
+          ],
+          "offsets_rad": [
+            -0.6,
+            -0.6
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 30,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.1667894877499779,
+          "final_height_m": 0.05895712409745439,
+          "final_foot_load_fraction": 0.04014822580095821,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.012517245460572445,
+            "self": 0.0013006014407808048,
+            "joint": 0.012511366731721152,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j9_-1_0.6",
+          "second": "j12_+1_0.3",
+          "joints": [
+            9,
+            12
+          ],
+          "offsets_rad": [
+            -0.6,
+            0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 30,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.17864445695805226,
+          "final_height_m": 0.05916798231989099,
+          "final_foot_load_fraction": 0.5140738819539424,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.013547216851012891,
+            "self": 0.0013006014407808048,
+            "joint": 0.012511366731721152,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j9_-1_0.6",
+          "second": "j12_+1_0.3",
+          "joints": [
+            9,
+            12
+          ],
+          "offsets_rad": [
+            -0.6,
+            0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 34,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.16415501130550159,
+          "final_height_m": 0.06046654146210384,
+          "final_foot_load_fraction": 0.3362494302227912,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.013071956964080297,
+            "self": 0.0,
+            "joint": 0.007724815720650646,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j11_-1_0.3",
+          "second": "j12_+1_0.3",
+          "joints": [
+            11,
+            12
+          ],
+          "offsets_rad": [
+            -0.3,
+            0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.19802918465911334,
+          "final_height_m": 0.0597580706479471,
+          "final_foot_load_fraction": 0.45220487036174756,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.009622859251230801,
+            "self": 0.0,
+            "joint": 0.007724815720650646,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j11_-1_0.3",
+          "second": "j12_+1_0.3",
+          "joints": [
+            11,
+            12
+          ],
+          "offsets_rad": [
+            -0.3,
+            0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 27,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.17487216654513904,
+          "final_height_m": 0.05361309089951674,
+          "final_foot_load_fraction": 0.11608196383600575,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.014345334708224713,
+            "self": 0.0,
+            "joint": 0.006605534733147067,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j11_-1_0.6",
+          "second": "j12_+1_0.3",
+          "joints": [
+            11,
+            12
+          ],
+          "offsets_rad": [
+            -0.6,
+            0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "fa4c317443dfa304844d8cf202777860b270883d21da4fa5508d1b13975a0e7f",
+          "physically_valid": false,
+          "executed_controls": 24,
+          "best_progress": 8.3513764237028,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9383724433416918,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.0,
+          "final_up_z": 0.16751719619015815,
+          "final_height_m": 0.08852985338832102,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.011110758119326984,
+            "self": 0.0,
+            "joint": 0.006605534733147067,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j11_-1_0.6",
+          "second": "j12_+1_0.3",
+          "joints": [
+            11,
+            12
+          ],
+          "offsets_rad": [
+            -0.6,
+            0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        }
+      ]
+    },
+    "supine": {
+      "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+      "initial": {
+        "up_z": 0.9874936856567589,
+        "height_m": 0.16743513434859614,
+        "feet": [
+          true,
+          true
+        ],
+        "torso_contact": false,
+        "penetration_m": 0.0007591886970511746,
+        "linear_speed_mps": 0.019660332178300013,
+        "angular_speed_rad_s": 0.0924955386231112,
+        "stable": true,
+        "finite": true,
+        "floor_penetration_m": 0.0007591886970511746,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.02855680446800246,
+        "joint_home_error_mean_rad": 0.010086554078061472,
+        "motor_target_home_error_max_rad": 0.0,
+        "foot_normal_forces_n": [
+          9.722575401128918,
+          10.507871637265145
+        ],
+        "foot_load_fraction": 1.0,
+        "foot_up_alignment_to_home": [
+          0.9872590888935898,
+          0.9845392550586032
+        ]
+      },
+      "trials": 82,
+      "strict_1s_discoveries": 1,
+      "best": {
+        "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+        "physically_valid": true,
+        "executed_controls": 200,
+        "best_progress": 8.9576109639971,
+        "best_progress_time_s": 0.8200000000000001,
+        "best_up_z": 0.9999985864009595,
+        "best_foot_load_fraction": 1.0,
+        "longest_strict_standing_s": 3.18,
+        "final_up_z": 0.9999985864009595,
+        "final_height_m": 0.16007606933903626,
+        "final_foot_load_fraction": 1.0,
+        "final_torso_contact": false,
+        "final_stable": true,
+        "peak_physics": {
+          "floor": 0.0007163495661063942,
+          "self": 0.0028463832257510507,
+          "joint": 0.0,
+          "force": 3.23,
+          "slew": 5.24
+        },
+        "first": "j6_+1_0.3",
+        "second": "j5_+1_0.3",
+        "joints": [
+          6,
+          5
+        ],
+        "offsets_rad": [
+          0.3,
+          0.3
+        ],
+        "pulse_s": 0.5,
+        "strict_1s": true
+      },
+      "all_trials": [
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.822486808277427,
+          "best_progress_time_s": 0.02,
+          "best_up_z": 0.9969965276388848,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.38,
+          "final_up_z": -0.0002244223791686612,
+          "final_height_m": 0.1543435863428456,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.005444685678597764,
+            "self": 0.0028463832257510507,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j6_+1_0.3",
+          "second": "j5_+1_0.3",
+          "joints": [
+            6,
+            5
+          ],
+          "offsets_rad": [
+            0.3,
+            0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.9576109639971,
+          "best_progress_time_s": 0.8200000000000001,
+          "best_up_z": 0.9999985864009595,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 3.18,
+          "final_up_z": 0.9999985864009595,
+          "final_height_m": 0.16007606933903626,
+          "final_foot_load_fraction": 1.0,
+          "final_torso_contact": false,
+          "final_stable": true,
+          "peak_physics": {
+            "floor": 0.0007163495661063942,
+            "self": 0.0028463832257510507,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j6_+1_0.3",
+          "second": "j5_+1_0.3",
+          "joints": [
+            6,
+            5
+          ],
+          "offsets_rad": [
+            0.3,
+            0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": true
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9907356290903762,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.24,
+          "final_up_z": -0.00021851114707866442,
+          "final_height_m": 0.15434352864206768,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.0057306363435799396,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j6_+1_0.3",
+          "second": "j7_-1_0.3",
+          "joints": [
+            6,
+            7
+          ],
+          "offsets_rad": [
+            0.3,
+            -0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9907356290903762,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.5,
+          "final_up_z": -0.15061926528319408,
+          "final_height_m": 0.14334626413267887,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.004704690399542084,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j6_+1_0.3",
+          "second": "j7_-1_0.3",
+          "joints": [
+            6,
+            7
+          ],
+          "offsets_rad": [
+            0.3,
+            -0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820926076325451,
+          "best_progress_time_s": 0.02,
+          "best_up_z": 0.9900577678992979,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.24,
+          "final_up_z": -0.00022654233794748113,
+          "final_height_m": 0.15434357387557868,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.004956760084031196,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j6_+1_0.3",
+          "second": "j7_+1_0.3",
+          "joints": [
+            6,
+            7
+          ],
+          "offsets_rad": [
+            0.3,
+            0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820926076325451,
+          "best_progress_time_s": 0.02,
+          "best_up_z": 0.9900577678992979,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.5,
+          "final_up_z": -0.00018251190237482965,
+          "final_height_m": 0.1543434307117322,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.005507643667491423,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j6_+1_0.3",
+          "second": "j7_+1_0.3",
+          "joints": [
+            6,
+            7
+          ],
+          "offsets_rad": [
+            0.3,
+            0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9902399139108666,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.26,
+          "final_up_z": -0.00018236887883604826,
+          "final_height_m": 0.15434343427955305,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.0051863805907816155,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j6_+1_0.3",
+          "second": "j8_-1_0.3",
+          "joints": [
+            6,
+            8
+          ],
+          "offsets_rad": [
+            0.3,
+            -0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9902399139108666,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.48,
+          "final_up_z": -0.2561529573149375,
+          "final_height_m": 0.16392807515728658,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.005655551044008278,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j6_+1_0.3",
+          "second": "j8_-1_0.3",
+          "joints": [
+            6,
+            8
+          ],
+          "offsets_rad": [
+            0.3,
+            -0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.990494270279264,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.24,
+          "final_up_z": -0.2659994011129272,
+          "final_height_m": 0.13032920564435788,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.005210230463106967,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j6_+1_0.3",
+          "second": "j8_+1_0.3",
+          "joints": [
+            6,
+            8
+          ],
+          "offsets_rad": [
+            0.3,
+            0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.990494270279264,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.5,
+          "final_up_z": -0.00023618127406818876,
+          "final_height_m": 0.15434352522506956,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.004842650294479112,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j6_+1_0.3",
+          "second": "j8_+1_0.3",
+          "joints": [
+            6,
+            8
+          ],
+          "offsets_rad": [
+            0.3,
+            0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9931818612290865,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.14,
+          "final_up_z": -0.0002336073615716444,
+          "final_height_m": 0.1543434968710059,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.0057377532014877206,
+            "self": 0.0,
+            "joint": 0.010864469226512297,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j6_+1_0.3",
+          "second": "j12_+1_0.3",
+          "joints": [
+            6,
+            12
+          ],
+          "offsets_rad": [
+            0.3,
+            0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9931818612290865,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.4,
+          "final_up_z": -0.15143561889668927,
+          "final_height_m": 0.14363756850819592,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.005561468757872036,
+            "self": 0.0,
+            "joint": 0.010864469226512297,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j6_+1_0.3",
+          "second": "j12_+1_0.3",
+          "joints": [
+            6,
+            12
+          ],
+          "offsets_rad": [
+            0.3,
+            0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9931818612290865,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.14,
+          "final_up_z": -0.0002336073615716444,
+          "final_height_m": 0.1543434968710059,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.0057377532014877206,
+            "self": 0.0,
+            "joint": 0.010864469226512297,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j6_+1_0.3",
+          "second": "j12_+1_0.6",
+          "joints": [
+            6,
+            12
+          ],
+          "offsets_rad": [
+            0.3,
+            0.6
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9931818612290865,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.4,
+          "final_up_z": -0.15143561889668927,
+          "final_height_m": 0.14363756850819592,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.005561468757872036,
+            "self": 0.0,
+            "joint": 0.010864469226512297,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j6_+1_0.3",
+          "second": "j12_+1_0.6",
+          "joints": [
+            6,
+            12
+          ],
+          "offsets_rad": [
+            0.3,
+            0.6
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.82353883990533,
+          "best_progress_time_s": 0.02,
+          "best_up_z": 0.9883332724835175,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.16,
+          "final_up_z": -0.00021519559970450326,
+          "final_height_m": 0.1543435005911573,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.005671384014264095,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j6_+1_0.3",
+          "second": "j10_-1_0.3",
+          "joints": [
+            6,
+            10
+          ],
+          "offsets_rad": [
+            0.3,
+            -0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.82353883990533,
+          "best_progress_time_s": 0.02,
+          "best_up_z": 0.9883332724835175,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.4,
+          "final_up_z": -0.15275753432237804,
+          "final_height_m": 0.14357994740966845,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.0050936541377754815,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j6_+1_0.3",
+          "second": "j10_-1_0.3",
+          "joints": [
+            6,
+            10
+          ],
+          "offsets_rad": [
+            0.3,
+            -0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9951227814495562,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.18,
+          "final_up_z": -0.25709280907168863,
+          "final_height_m": 0.16394382122393591,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.005126693941322601,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j5_+1_0.3",
+          "second": "j7_-1_0.3",
+          "joints": [
+            5,
+            7
+          ],
+          "offsets_rad": [
+            0.3,
+            -0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9951227814495562,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.4,
+          "final_up_z": -0.00023734907065834317,
+          "final_height_m": 0.15434350364202665,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.005068452109065643,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j5_+1_0.3",
+          "second": "j7_-1_0.3",
+          "joints": [
+            5,
+            7
+          ],
+          "offsets_rad": [
+            0.3,
+            -0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9946353392473452,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.18,
+          "final_up_z": -0.00020827991998696708,
+          "final_height_m": 0.1543434909412095,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.005143101698705722,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j5_+1_0.3",
+          "second": "j7_+1_0.3",
+          "joints": [
+            5,
+            7
+          ],
+          "offsets_rad": [
+            0.3,
+            0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9946353392473452,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.4,
+          "final_up_z": -0.1507421997131318,
+          "final_height_m": 0.14329691754509513,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.0057909954811868475,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j5_+1_0.3",
+          "second": "j7_+1_0.3",
+          "joints": [
+            5,
+            7
+          ],
+          "offsets_rad": [
+            0.3,
+            0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.994716298968717,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.18,
+          "final_up_z": -0.00022053122251605272,
+          "final_height_m": 0.15434356140599573,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.005070371932243554,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j5_+1_0.3",
+          "second": "j8_-1_0.3",
+          "joints": [
+            5,
+            8
+          ],
+          "offsets_rad": [
+            0.3,
+            -0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.994716298968717,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.4,
+          "final_up_z": -0.00022083298917299594,
+          "final_height_m": 0.15434358554380717,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.0054272626499409365,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j5_+1_0.3",
+          "second": "j8_-1_0.3",
+          "joints": [
+            5,
+            8
+          ],
+          "offsets_rad": [
+            0.3,
+            -0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9948751746162158,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.18,
+          "final_up_z": -0.25909579876694105,
+          "final_height_m": 0.1639768659755522,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.004541822394769877,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j5_+1_0.3",
+          "second": "j8_+1_0.3",
+          "joints": [
+            5,
+            8
+          ],
+          "offsets_rad": [
+            0.3,
+            0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9948751746162158,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.4,
+          "final_up_z": -0.15076880590155026,
+          "final_height_m": 0.14348231055798163,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.004759544282903896,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j5_+1_0.3",
+          "second": "j8_+1_0.3",
+          "joints": [
+            5,
+            8
+          ],
+          "offsets_rad": [
+            0.3,
+            0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.991204997047666,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.24,
+          "final_up_z": -0.00022660017472265307,
+          "final_height_m": 0.1543435543694474,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.005658299383927187,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j5_+1_0.3",
+          "second": "j6_-1_0.3",
+          "joints": [
+            5,
+            6
+          ],
+          "offsets_rad": [
+            0.3,
+            -0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.991204997047666,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.44,
+          "final_up_z": -0.15093132274050286,
+          "final_height_m": 0.143277122824,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.004891569800393219,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j5_+1_0.3",
+          "second": "j6_-1_0.3",
+          "joints": [
+            5,
+            6
+          ],
+          "offsets_rad": [
+            0.3,
+            -0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9964938768480881,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.24,
+          "final_up_z": -0.2576082883151903,
+          "final_height_m": 0.16395239055381622,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.004540665959365087,
+            "self": 0.0,
+            "joint": 0.011554724183961529,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j5_+1_0.3",
+          "second": "j12_+1_0.3",
+          "joints": [
+            5,
+            12
+          ],
+          "offsets_rad": [
+            0.3,
+            0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9964938768480881,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.38,
+          "final_up_z": -0.2563847185176567,
+          "final_height_m": 0.16393197567479817,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.004637948260980199,
+            "self": 0.0,
+            "joint": 0.011554724183961529,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j5_+1_0.3",
+          "second": "j12_+1_0.3",
+          "joints": [
+            5,
+            12
+          ],
+          "offsets_rad": [
+            0.3,
+            0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9964938768480881,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.24,
+          "final_up_z": -0.2576082883151903,
+          "final_height_m": 0.16395239055381622,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.004540665959365087,
+            "self": 0.0,
+            "joint": 0.011554724183961529,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j5_+1_0.3",
+          "second": "j12_+1_0.6",
+          "joints": [
+            5,
+            12
+          ],
+          "offsets_rad": [
+            0.3,
+            0.6
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9964938768480881,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.38,
+          "final_up_z": -0.2563847185176567,
+          "final_height_m": 0.16393197567479817,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.004637948260980199,
+            "self": 0.0,
+            "joint": 0.011554724183961529,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j5_+1_0.3",
+          "second": "j12_+1_0.6",
+          "joints": [
+            5,
+            12
+          ],
+          "offsets_rad": [
+            0.3,
+            0.6
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.821743058988499,
+          "best_progress_time_s": 0.02,
+          "best_up_z": 0.9913589631532653,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.22,
+          "final_up_z": -0.2591356321938742,
+          "final_height_m": 0.16397751550612902,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.004740339327891712,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j5_+1_0.3",
+          "second": "j10_-1_0.3",
+          "joints": [
+            5,
+            10
+          ],
+          "offsets_rad": [
+            0.3,
+            -0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.821743058988499,
+          "best_progress_time_s": 0.02,
+          "best_up_z": 0.9913589631532653,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.36,
+          "final_up_z": -0.15267049670055616,
+          "final_height_m": 0.1434264407530542,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.0055706774525175196,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j5_+1_0.3",
+          "second": "j10_-1_0.3",
+          "joints": [
+            5,
+            10
+          ],
+          "offsets_rad": [
+            0.3,
+            -0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9874798032417584,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.38,
+          "final_up_z": -0.2591538511461279,
+          "final_height_m": 0.1639778118125196,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.0054775040693303585,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j7_-1_0.3",
+          "second": "j8_-1_0.3",
+          "joints": [
+            7,
+            8
+          ],
+          "offsets_rad": [
+            -0.3,
+            -0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9874798032417584,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.38,
+          "final_up_z": -0.15252684156828394,
+          "final_height_m": 0.14344007074957768,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.005491066792820933,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j7_-1_0.3",
+          "second": "j8_-1_0.3",
+          "joints": [
+            7,
+            8
+          ],
+          "offsets_rad": [
+            -0.3,
+            -0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9874798032417584,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.38,
+          "final_up_z": -0.00022860173172191146,
+          "final_height_m": 0.15434355374002595,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.004761273223910279,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j7_-1_0.3",
+          "second": "j8_+1_0.3",
+          "joints": [
+            7,
+            8
+          ],
+          "offsets_rad": [
+            -0.3,
+            0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9874798032417584,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.38,
+          "final_up_z": -0.00018249666907905603,
+          "final_height_m": 0.15434342596937697,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.005791556091957705,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j7_-1_0.3",
+          "second": "j8_+1_0.3",
+          "joints": [
+            7,
+            8
+          ],
+          "offsets_rad": [
+            -0.3,
+            0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9874798032417584,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.36,
+          "final_up_z": -0.00022718065310000198,
+          "final_height_m": 0.15434349333562453,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.005214444912452348,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j7_-1_0.3",
+          "second": "j6_-1_0.3",
+          "joints": [
+            7,
+            6
+          ],
+          "offsets_rad": [
+            -0.3,
+            -0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9874798032417584,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.32,
+          "final_up_z": -0.26123284368280497,
+          "final_height_m": 0.16401136334821426,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.004877465780498283,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j7_-1_0.3",
+          "second": "j6_-1_0.3",
+          "joints": [
+            7,
+            6
+          ],
+          "offsets_rad": [
+            -0.3,
+            -0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9902145751008204,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.08,
+          "final_up_z": -0.00020139026704240953,
+          "final_height_m": 0.15434350289294801,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.004654906073792105,
+            "self": 0.0,
+            "joint": 0.010196690841227651,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j7_-1_0.3",
+          "second": "j12_+1_0.3",
+          "joints": [
+            7,
+            12
+          ],
+          "offsets_rad": [
+            -0.3,
+            0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9902145751008204,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.26,
+          "final_up_z": -0.00022375049486646553,
+          "final_height_m": 0.15434356895225118,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.00549719351751134,
+            "self": 0.0,
+            "joint": 0.010196690841227651,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j7_-1_0.3",
+          "second": "j12_+1_0.3",
+          "joints": [
+            7,
+            12
+          ],
+          "offsets_rad": [
+            -0.3,
+            0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9902145751008204,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.08,
+          "final_up_z": -0.00020139026704240953,
+          "final_height_m": 0.15434350289294801,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.004654906073792105,
+            "self": 0.0,
+            "joint": 0.010196690841227651,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j7_-1_0.3",
+          "second": "j12_+1_0.6",
+          "joints": [
+            7,
+            12
+          ],
+          "offsets_rad": [
+            -0.3,
+            0.6
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9902145751008204,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.26,
+          "final_up_z": -0.00022375049486646553,
+          "final_height_m": 0.15434356895225118,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.00549719351751134,
+            "self": 0.0,
+            "joint": 0.010196690841227651,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j7_-1_0.3",
+          "second": "j12_+1_0.6",
+          "joints": [
+            7,
+            12
+          ],
+          "offsets_rad": [
+            -0.3,
+            0.6
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9874798032417584,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.06,
+          "final_up_z": -0.00023734792002992703,
+          "final_height_m": 0.15434351185369571,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.005229935015674585,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j7_-1_0.3",
+          "second": "j10_-1_0.3",
+          "joints": [
+            7,
+            10
+          ],
+          "offsets_rad": [
+            -0.3,
+            -0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9874798032417584,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.28,
+          "final_up_z": -0.00022380270213024687,
+          "final_height_m": 0.15434355083553092,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.005465900848483803,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j7_-1_0.3",
+          "second": "j10_-1_0.3",
+          "joints": [
+            7,
+            10
+          ],
+          "offsets_rad": [
+            -0.3,
+            -0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9874798032417584,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.38,
+          "final_up_z": -0.00022045793052475503,
+          "final_height_m": 0.15434355668150984,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.0052484969548066,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j7_+1_0.3",
+          "second": "j8_-1_0.3",
+          "joints": [
+            7,
+            8
+          ],
+          "offsets_rad": [
+            0.3,
+            -0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9874798032417584,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.38,
+          "final_up_z": -0.00018238739521198572,
+          "final_height_m": 0.1543434347535196,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.004979140385678833,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j7_+1_0.3",
+          "second": "j8_-1_0.3",
+          "joints": [
+            7,
+            8
+          ],
+          "offsets_rad": [
+            0.3,
+            -0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9874798032417584,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.38,
+          "final_up_z": -0.00018269629518137995,
+          "final_height_m": 0.1543434290920428,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.004984193066121325,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j7_+1_0.3",
+          "second": "j8_+1_0.3",
+          "joints": [
+            7,
+            8
+          ],
+          "offsets_rad": [
+            0.3,
+            0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9874798032417584,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.38,
+          "final_up_z": -0.15030326477182804,
+          "final_height_m": 0.14309513694624323,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.005773498920097129,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j7_+1_0.3",
+          "second": "j8_+1_0.3",
+          "joints": [
+            7,
+            8
+          ],
+          "offsets_rad": [
+            0.3,
+            0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9874798032417584,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.36,
+          "final_up_z": -0.00020945775991191928,
+          "final_height_m": 0.15434347365733594,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.00580326166377311,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j7_+1_0.3",
+          "second": "j6_-1_0.3",
+          "joints": [
+            7,
+            6
+          ],
+          "offsets_rad": [
+            0.3,
+            -0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9874798032417584,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.32,
+          "final_up_z": -0.2603503362619547,
+          "final_height_m": 0.16399721101865117,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.0049007479423263875,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j7_+1_0.3",
+          "second": "j6_-1_0.3",
+          "joints": [
+            7,
+            6
+          ],
+          "offsets_rad": [
+            0.3,
+            -0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9897112099864206,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.12,
+          "final_up_z": -0.15154335029835964,
+          "final_height_m": 0.1435106129329434,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.0054578607540526625,
+            "self": 0.0,
+            "joint": 0.012507215550032758,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j7_+1_0.3",
+          "second": "j12_+1_0.3",
+          "joints": [
+            7,
+            12
+          ],
+          "offsets_rad": [
+            0.3,
+            0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9897112099864206,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.32,
+          "final_up_z": -0.00021452693948787745,
+          "final_height_m": 0.1543435071451715,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.004805371684687693,
+            "self": 0.0,
+            "joint": 0.012507215550032758,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j7_+1_0.3",
+          "second": "j12_+1_0.3",
+          "joints": [
+            7,
+            12
+          ],
+          "offsets_rad": [
+            0.3,
+            0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9897112099864206,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.12,
+          "final_up_z": -0.15154335029835964,
+          "final_height_m": 0.1435106129329434,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.0054578607540526625,
+            "self": 0.0,
+            "joint": 0.012507215550032758,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j7_+1_0.3",
+          "second": "j12_+1_0.6",
+          "joints": [
+            7,
+            12
+          ],
+          "offsets_rad": [
+            0.3,
+            0.6
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9897112099864206,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.32,
+          "final_up_z": -0.00021452693948787745,
+          "final_height_m": 0.1543435071451715,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.004805371684687693,
+            "self": 0.0,
+            "joint": 0.012507215550032758,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j7_+1_0.3",
+          "second": "j12_+1_0.6",
+          "joints": [
+            7,
+            12
+          ],
+          "offsets_rad": [
+            0.3,
+            0.6
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9874798032417584,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.08,
+          "final_up_z": -0.1520856355840841,
+          "final_height_m": 0.14353881747418876,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.004770212071946526,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j7_+1_0.3",
+          "second": "j10_-1_0.3",
+          "joints": [
+            7,
+            10
+          ],
+          "offsets_rad": [
+            0.3,
+            -0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9874798032417584,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.28,
+          "final_up_z": -0.15018420499781968,
+          "final_height_m": 0.14328811910938596,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.005047922505317357,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j7_+1_0.3",
+          "second": "j10_-1_0.3",
+          "joints": [
+            7,
+            10
+          ],
+          "offsets_rad": [
+            0.3,
+            -0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9874798032417584,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.36,
+          "final_up_z": -0.00023004477258641498,
+          "final_height_m": 0.15434353887745303,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.0052808197504128265,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j8_-1_0.3",
+          "second": "j6_-1_0.3",
+          "joints": [
+            8,
+            6
+          ],
+          "offsets_rad": [
+            -0.3,
+            -0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9874798032417584,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.32,
+          "final_up_z": -0.00020978214337214916,
+          "final_height_m": 0.15434346736291013,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.005229659606284503,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j8_-1_0.3",
+          "second": "j6_-1_0.3",
+          "joints": [
+            8,
+            6
+          ],
+          "offsets_rad": [
+            -0.3,
+            -0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9898968191832529,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.1,
+          "final_up_z": -0.00023026051613988944,
+          "final_height_m": 0.15434352193062872,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.004827155087940236,
+            "self": 0.0,
+            "joint": 0.012277480318172662,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j8_-1_0.3",
+          "second": "j12_+1_0.3",
+          "joints": [
+            8,
+            12
+          ],
+          "offsets_rad": [
+            -0.3,
+            0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9898968191832529,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.3,
+          "final_up_z": -0.00022301996130291712,
+          "final_height_m": 0.1543435561127147,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.005657004322845695,
+            "self": 0.0,
+            "joint": 0.012277480318172662,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j8_-1_0.3",
+          "second": "j12_+1_0.3",
+          "joints": [
+            8,
+            12
+          ],
+          "offsets_rad": [
+            -0.3,
+            0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9898968191832529,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.1,
+          "final_up_z": -0.00023026051613988944,
+          "final_height_m": 0.15434352193062872,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.004827155087940236,
+            "self": 0.0,
+            "joint": 0.012277480318172662,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j8_-1_0.3",
+          "second": "j12_+1_0.6",
+          "joints": [
+            8,
+            12
+          ],
+          "offsets_rad": [
+            -0.3,
+            0.6
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9898968191832529,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.3,
+          "final_up_z": -0.00022301996130291712,
+          "final_height_m": 0.1543435561127147,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.005657004322845695,
+            "self": 0.0,
+            "joint": 0.012277480318172662,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j8_-1_0.3",
+          "second": "j12_+1_0.6",
+          "joints": [
+            8,
+            12
+          ],
+          "offsets_rad": [
+            -0.3,
+            0.6
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9874798032417584,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.1,
+          "final_up_z": -0.00018461942273958126,
+          "final_height_m": 0.1543434650377753,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.005789933859719685,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j8_-1_0.3",
+          "second": "j10_-1_0.3",
+          "joints": [
+            8,
+            10
+          ],
+          "offsets_rad": [
+            -0.3,
+            -0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9874798032417584,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.3,
+          "final_up_z": -0.00018222125514933307,
+          "final_height_m": 0.15434342660303424,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.005903925570466239,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j8_-1_0.3",
+          "second": "j10_-1_0.3",
+          "joints": [
+            8,
+            10
+          ],
+          "offsets_rad": [
+            -0.3,
+            -0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9874798032417584,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.36,
+          "final_up_z": -0.00021452020771694694,
+          "final_height_m": 0.1543435194936946,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.004961489141041213,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j8_+1_0.3",
+          "second": "j6_-1_0.3",
+          "joints": [
+            8,
+            6
+          ],
+          "offsets_rad": [
+            0.3,
+            -0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9874798032417584,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.32,
+          "final_up_z": -0.26438425476992333,
+          "final_height_m": 0.16406080990892666,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.0061651705719045005,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j8_+1_0.3",
+          "second": "j6_-1_0.3",
+          "joints": [
+            8,
+            6
+          ],
+          "offsets_rad": [
+            0.3,
+            -0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.989858720728483,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.1,
+          "final_up_z": -0.1508362766385447,
+          "final_height_m": 0.14345462230764647,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.004509128969290281,
+            "self": 0.0,
+            "joint": 0.012441888224083097,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j8_+1_0.3",
+          "second": "j12_+1_0.3",
+          "joints": [
+            8,
+            12
+          ],
+          "offsets_rad": [
+            0.3,
+            0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.989858720728483,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.3,
+          "final_up_z": -0.2660825094973102,
+          "final_height_m": 0.13032174070603839,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.00440715734387306,
+            "self": 0.0,
+            "joint": 0.012441888224083097,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j8_+1_0.3",
+          "second": "j12_+1_0.3",
+          "joints": [
+            8,
+            12
+          ],
+          "offsets_rad": [
+            0.3,
+            0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.989858720728483,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.1,
+          "final_up_z": -0.1508362766385447,
+          "final_height_m": 0.14345462230764647,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.004509128969290281,
+            "self": 0.0,
+            "joint": 0.012441888224083097,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j8_+1_0.3",
+          "second": "j12_+1_0.6",
+          "joints": [
+            8,
+            12
+          ],
+          "offsets_rad": [
+            0.3,
+            0.6
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.989858720728483,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.3,
+          "final_up_z": -0.2660825094973102,
+          "final_height_m": 0.13032174070603839,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.00440715734387306,
+            "self": 0.0,
+            "joint": 0.012441888224083097,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j8_+1_0.3",
+          "second": "j12_+1_0.6",
+          "joints": [
+            8,
+            12
+          ],
+          "offsets_rad": [
+            0.3,
+            0.6
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9874798032417584,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.08,
+          "final_up_z": -0.25930525025966084,
+          "final_height_m": 0.1639802804661082,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.005489831735592955,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j8_+1_0.3",
+          "second": "j10_-1_0.3",
+          "joints": [
+            8,
+            10
+          ],
+          "offsets_rad": [
+            0.3,
+            -0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9874798032417584,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.28,
+          "final_up_z": -0.00018297644877192775,
+          "final_height_m": 0.15434343415043614,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.004781668345556532,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j8_+1_0.3",
+          "second": "j10_-1_0.3",
+          "joints": [
+            8,
+            10
+          ],
+          "offsets_rad": [
+            0.3,
+            -0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9874798032417584,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.12,
+          "final_up_z": -0.00023056834618385822,
+          "final_height_m": 0.15434352210818486,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.005819438774194359,
+            "self": 0.0,
+            "joint": 0.010395577562519076,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j6_-1_0.3",
+          "second": "j12_+1_0.3",
+          "joints": [
+            6,
+            12
+          ],
+          "offsets_rad": [
+            -0.3,
+            0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9874798032417584,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.22,
+          "final_up_z": -0.00023199927295684315,
+          "final_height_m": 0.15434351065314766,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.005676894739159943,
+            "self": 0.0,
+            "joint": 0.010395577562519076,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j6_-1_0.3",
+          "second": "j12_+1_0.3",
+          "joints": [
+            6,
+            12
+          ],
+          "offsets_rad": [
+            -0.3,
+            0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9874798032417584,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.12,
+          "final_up_z": -0.00023056834618385822,
+          "final_height_m": 0.15434352210818486,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.005819438774194359,
+            "self": 0.0,
+            "joint": 0.010395577562519076,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j6_-1_0.3",
+          "second": "j12_+1_0.6",
+          "joints": [
+            6,
+            12
+          ],
+          "offsets_rad": [
+            -0.3,
+            0.6
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9874798032417584,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.22,
+          "final_up_z": -0.00023199927295684315,
+          "final_height_m": 0.15434351065314766,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.005676894739159943,
+            "self": 0.0,
+            "joint": 0.010395577562519076,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j6_-1_0.3",
+          "second": "j12_+1_0.6",
+          "joints": [
+            6,
+            12
+          ],
+          "offsets_rad": [
+            -0.3,
+            0.6
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9874798032417584,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.08,
+          "final_up_z": -0.00022713124306883632,
+          "final_height_m": 0.15434349221854154,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.005291440439340357,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j6_-1_0.3",
+          "second": "j10_-1_0.3",
+          "joints": [
+            6,
+            10
+          ],
+          "offsets_rad": [
+            -0.3,
+            -0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9874798032417584,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.18,
+          "final_up_z": -0.26247419203008565,
+          "final_height_m": 0.1640310434666105,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.005224407036964172,
+            "self": 0.0,
+            "joint": 0.0,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j6_-1_0.3",
+          "second": "j10_-1_0.3",
+          "joints": [
+            6,
+            10
+          ],
+          "offsets_rad": [
+            -0.3,
+            -0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9897084863004947,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.06,
+          "final_up_z": -0.15194760868783053,
+          "final_height_m": 0.14351410000886952,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.005379434969987213,
+            "self": 0.0,
+            "joint": 0.012791114850246865,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j12_+1_0.3",
+          "second": "j10_-1_0.3",
+          "joints": [
+            12,
+            10
+          ],
+          "offsets_rad": [
+            0.3,
+            -0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9897084863004947,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.18,
+          "final_up_z": -0.15071275660955766,
+          "final_height_m": 0.14352521952918437,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.004710528865369795,
+            "self": 0.0,
+            "joint": 0.012791114850246865,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j12_+1_0.3",
+          "second": "j10_-1_0.3",
+          "joints": [
+            12,
+            10
+          ],
+          "offsets_rad": [
+            0.3,
+            -0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9897084863004947,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.06,
+          "final_up_z": -0.15194760868783053,
+          "final_height_m": 0.14351410000886952,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.005379434969987213,
+            "self": 0.0,
+            "joint": 0.012791114850246865,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j12_+1_0.6",
+          "second": "j10_-1_0.3",
+          "joints": [
+            12,
+            10
+          ],
+          "offsets_rad": [
+            0.6,
+            -0.3
+          ],
+          "pulse_s": 0.2,
+          "strict_1s": false
+        },
+        {
+          "initial_hash": "319feb1c321febe6b9fab3099c8a83b5ca665dabd8a17af03f0aab7029b50f97",
+          "physically_valid": true,
+          "executed_controls": 200,
+          "best_progress": 8.820752394835102,
+          "best_progress_time_s": 0.0,
+          "best_up_z": 0.9897084863004947,
+          "best_foot_load_fraction": 1.0,
+          "longest_strict_standing_s": 0.18,
+          "final_up_z": -0.15071275660955766,
+          "final_height_m": 0.14352521952918437,
+          "final_foot_load_fraction": 0.0,
+          "final_torso_contact": true,
+          "final_stable": false,
+          "peak_physics": {
+            "floor": 0.004710528865369795,
+            "self": 0.0,
+            "joint": 0.012791114850246865,
+            "force": 3.23,
+            "slew": 5.24
+          },
+          "first": "j12_+1_0.6",
+          "second": "j10_-1_0.3",
+          "joints": [
+            12,
+            10
+          ],
+          "offsets_rad": [
+            0.6,
+            -0.3
+          ],
+          "pulse_s": 0.5,
+          "strict_1s": false
+        }
+      ]
+    }
+  }
+}
