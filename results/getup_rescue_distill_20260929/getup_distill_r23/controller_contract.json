@@ -1,0 +1,412 @@
+{
+  "observation_size": 50,
+  "action_size": 14,
+  "observation_layout": [
+    "gyro:3",
+    "upvector:3",
+    "joint_delta_home:14",
+    "joint_velocity_x0.05:14",
+    "previous_motor_target_delta_home:14",
+    "foot_contact_flags:2"
+  ],
+  "lower_rad": [
+    -0.5235987755982979,
+    -0.4363323129985815,
+    -1.2217304763960306,
+    -1.5707963267948966,
+    -1.5707963267948957,
+    -0.3490658503988437,
+    -0.7853981633974483,
+    -2.792526803190927,
+    -0.523598775598218,
+    -0.523598775598297,
+    -0.4363323129985797,
+    -0.5235987755982988,
+    -1.5707963267948966,
+    -1.5707963267948957
+  ],
+  "upper_rad": [
+    0.5235987755982997,
+    0.43633231299858327,
+    0.5235987755982988,
+    1.5707963267948966,
+    1.5707963267948974,
+    1.1344640137963364,
+    0.7853981633974483,
+    2.792526803190927,
+    0.5235987755983796,
+    0.5235987755983006,
+    0.43633231299858505,
+    1.2217304763960306,
+    1.5707963267948966,
+    1.5707963267948974
+  ],
+  "home_rad": [
+    0.002,
+    0.053,
+    -0.63,
+    1.368,
+    -0.784,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -0.003,
+    -0.065,
+    0.635,
+    1.379,
+    -0.796
+  ],
+  "starts_rad": [
+    [
+      0.002,
+      0.053,
+      -1.1,
+      1.45,
+      -0.34999999999999987,
+      0.4,
+      0.0,
+      0.0,
+      0.0,
+      -0.003,
+      -0.065,
+      1.1,
+      1.45,
+      -0.34999999999999987
+    ],
+    [
+      0.002,
+      0.053,
+      -1.1,
+      1.55,
+      -0.44999999999999996,
+      0.4,
+      0.0,
+      0.0,
+      0.0,
+      -0.003,
+      -0.065,
+      1.1,
+      1.55,
+      -0.44999999999999996
+    ],
+    [
+      0.002,
+      0.053,
+      -0.5,
+      1.55,
+      -1.05,
+      -0.15,
+      0.0,
+      0.0,
+      0.0,
+      -0.003,
+      -0.065,
+      0.5,
+      1.55,
+      -1.05
+    ],
+    [
+      0.002,
+      0.053,
+      -0.5,
+      1.55,
+      -1.05,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      -0.003,
+      -0.065,
+      0.5,
+      1.55,
+      -1.05
+    ],
+    [
+      0.002,
+      0.053,
+      -0.9,
+      1.45,
+      -0.5499999999999999,
+      -0.15,
+      0.0,
+      0.0,
+      0.0,
+      -0.003,
+      -0.065,
+      0.9,
+      1.45,
+      -0.5499999999999999
+    ],
+    [
+      0.002,
+      0.053,
+      -0.9,
+      1.55,
+      -0.65,
+      -0.15,
+      0.0,
+      0.0,
+      0.0,
+      -0.003,
+      -0.065,
+      0.9,
+      1.55,
+      -0.65
+    ]
+  ],
+  "tilt_max_rad": 0.55,
+  "scene_path": "/data/shijinsheng/open_duck/training/getup_decomposed_r4/model/scene.xml",
+  "simulation_only": true,
+  "hardware_readiness": false,
+  "motor_target_period_s": 0.02,
+  "stage": "R23 near-standing teacher BC; NOT full fallen get-up",
+  "seed": 423,
+  "policy_action_repeat": 1,
+  "policy_period_s": 0.02,
+  "residual_scale_rad": 1.0,
+  "action_decoder": "home + 1.0*tanh(latent), original joint clamp and original slew",
+  "training_method": "behavior cloning of original-physics executable teacher trajectories",
+  "independent_training_seed_list": [
+    310000,
+    310001,
+    310002,
+    310003,
+    310004,
+    310005,
+    310007,
+    310008,
+    310009,
+    310010,
+    310013,
+    310014,
+    310015,
+    310017,
+    310018,
+    320000,
+    320003,
+    320005,
+    320006,
+    320007,
+    320010,
+    320013,
+    320015,
+    320017,
+    320019,
+    320020,
+    320021,
+    320023,
+    320027,
+    320028,
+    320029
+  ],
+  "offline_validation_seed_list": [
+    310006,
+    320011,
+    320012,
+    320014,
+    320025,
+    320026,
+    320030
+  ],
+  "default_controller_replaced": false,
+  "epochs": 200,
+  "teacher_provenance": [
+    {
+      "seed": 310010,
+      "source": "searched rescue",
+      "folder": "/data/shijinsheng/open_duck/training/getup_rescue_r22"
+    },
+    {
+      "seed": 310005,
+      "source": "searched rescue",
+      "folder": "/data/shijinsheng/open_duck/training/getup_rescue_r22"
+    },
+    {
+      "seed": 310002,
+      "source": "searched rescue",
+      "folder": "/data/shijinsheng/open_duck/training/getup_rescue_r22"
+    },
+    {
+      "seed": 310006,
+      "source": "searched rescue",
+      "folder": "/data/shijinsheng/open_duck/training/getup_rescue_r22"
+    },
+    {
+      "seed": 310000,
+      "source": "successful home",
+      "folder": "/data/shijinsheng/open_duck/training/getup_rescue_r22"
+    },
+    {
+      "seed": 310001,
+      "source": "successful home",
+      "folder": "/data/shijinsheng/open_duck/training/getup_rescue_r22"
+    },
+    {
+      "seed": 310003,
+      "source": "successful home",
+      "folder": "/data/shijinsheng/open_duck/training/getup_rescue_r22"
+    },
+    {
+      "seed": 310004,
+      "source": "successful home",
+      "folder": "/data/shijinsheng/open_duck/training/getup_rescue_r22"
+    },
+    {
+      "seed": 310007,
+      "source": "successful home",
+      "folder": "/data/shijinsheng/open_duck/training/getup_rescue_r22"
+    },
+    {
+      "seed": 310008,
+      "source": "successful home",
+      "folder": "/data/shijinsheng/open_duck/training/getup_rescue_r22"
+    },
+    {
+      "seed": 310009,
+      "source": "successful home",
+      "folder": "/data/shijinsheng/open_duck/training/getup_rescue_r22"
+    },
+    {
+      "seed": 310013,
+      "source": "successful home",
+      "folder": "/data/shijinsheng/open_duck/training/getup_rescue_r22"
+    },
+    {
+      "seed": 310014,
+      "source": "successful home",
+      "folder": "/data/shijinsheng/open_duck/training/getup_rescue_r22"
+    },
+    {
+      "seed": 310015,
+      "source": "successful home",
+      "folder": "/data/shijinsheng/open_duck/training/getup_rescue_r22"
+    },
+    {
+      "seed": 310017,
+      "source": "successful home",
+      "folder": "/data/shijinsheng/open_duck/training/getup_rescue_r22"
+    },
+    {
+      "seed": 310018,
+      "source": "successful home",
+      "folder": "/data/shijinsheng/open_duck/training/getup_rescue_r22"
+    },
+    {
+      "seed": 320003,
+      "source": "searched rescue",
+      "folder": "/data/shijinsheng/open_duck/training/getup_rescue_r22_expanded"
+    },
+    {
+      "seed": 320000,
+      "source": "successful home",
+      "folder": "/data/shijinsheng/open_duck/training/getup_rescue_r22_expanded"
+    },
+    {
+      "seed": 320005,
+      "source": "successful home",
+      "folder": "/data/shijinsheng/open_duck/training/getup_rescue_r22_expanded"
+    },
+    {
+      "seed": 320006,
+      "source": "successful home",
+      "folder": "/data/shijinsheng/open_duck/training/getup_rescue_r22_expanded"
+    },
+    {
+      "seed": 320007,
+      "source": "successful home",
+      "folder": "/data/shijinsheng/open_duck/training/getup_rescue_r22_expanded"
+    },
+    {
+      "seed": 320010,
+      "source": "successful home",
+      "folder": "/data/shijinsheng/open_duck/training/getup_rescue_r22_expanded"
+    },
+    {
+      "seed": 320011,
+      "source": "successful home",
+      "folder": "/data/shijinsheng/open_duck/training/getup_rescue_r22_expanded"
+    },
+    {
+      "seed": 320012,
+      "source": "successful home",
+      "folder": "/data/shijinsheng/open_duck/training/getup_rescue_r22_expanded"
+    },
+    {
+      "seed": 320013,
+      "source": "successful home",
+      "folder": "/data/shijinsheng/open_duck/training/getup_rescue_r22_expanded"
+    },
+    {
+      "seed": 320014,
+      "source": "successful home",
+      "folder": "/data/shijinsheng/open_duck/training/getup_rescue_r22_expanded"
+    },
+    {
+      "seed": 320015,
+      "source": "successful home",
+      "folder": "/data/shijinsheng/open_duck/training/getup_rescue_r22_expanded"
+    },
+    {
+      "seed": 320017,
+      "source": "successful home",
+      "folder": "/data/shijinsheng/open_duck/training/getup_rescue_r22_expanded"
+    },
+    {
+      "seed": 320019,
+      "source": "successful home",
+      "folder": "/data/shijinsheng/open_duck/training/getup_rescue_r22_expanded"
+    },
+    {
+      "seed": 320020,
+      "source": "successful home",
+      "folder": "/data/shijinsheng/open_duck/training/getup_rescue_r22_expanded"
+    },
+    {
+      "seed": 320021,
+      "source": "successful home",
+      "folder": "/data/shijinsheng/open_duck/training/getup_rescue_r22_expanded"
+    },
+    {
+      "seed": 320023,
+      "source": "successful home",
+      "folder": "/data/shijinsheng/open_duck/training/getup_rescue_r22_expanded"
+    },
+    {
+      "seed": 320025,
+      "source": "successful home",
+      "folder": "/data/shijinsheng/open_duck/training/getup_rescue_r22_expanded"
+    },
+    {
+      "seed": 320026,
+      "source": "successful home",
+      "folder": "/data/shijinsheng/open_duck/training/getup_rescue_r22_expanded"
+    },
+    {
+      "seed": 320027,
+      "source": "successful home",
+      "folder": "/data/shijinsheng/open_duck/training/getup_rescue_r22_expanded"
+    },
+    {
+      "seed": 320028,
+      "source": "successful home",
+      "folder": "/data/shijinsheng/open_duck/training/getup_rescue_r22_expanded"
+    },
+    {
+      "seed": 320029,
+      "source": "successful home",
+      "folder": "/data/shijinsheng/open_duck/training/getup_rescue_r22_expanded"
+    },
+    {
+      "seed": 320030,
+      "source": "successful home",
+      "folder": "/data/shijinsheng/open_duck/training/getup_rescue_r22_expanded"
+    }
+  ],
+  "learning_rate": 0.0003,
+  "optimizer": "Adam, global gradient clip 1",
+  "batch_size": 256,
+  "early_demonstration_weight": 4.0,
+  "early_window_s": 1.2,
+  "source_contract_sha256": "4f228c440277220eae973ff5259779dd21af03bbd38d34e098465f96cbd7c877"
+}
