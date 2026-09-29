@@ -1,0 +1,3229 @@
+{
+  "experiment": "R35 partial-tilt HOME recoverability diagnostic",
+  "created_at": "2026-09-30T04:16:51.463546",
+  "simulation_only": true,
+  "hardware_readiness": false,
+  "full_fallen_recovery_claim": false,
+  "unchanged_model_sha256": "67b1cfe9870a49b16b1a87872619692a2beffb19cebe2f54787c57d830e4e8b9",
+  "standing_actor_sha256": "3c606f9381a1710cc8fecdb7442787dcbfce3ee9bc02a6f1224774ab2b3a1067",
+  "source_sha256": "1a26ceb2bdbe1d167227c67e6bc945c259284d2b52cfd26308752c721b125f4c",
+  "duration_s": 3.0,
+  "rows": [
+    {
+      "pose": "prone",
+      "tilt_fraction": 0.05,
+      "settle_controls": 5,
+      "seed": 0,
+      "initial_hash": "4720249989f6281a2049583cb5d2615b0f2cb60ce2309f9653e63301cfa3da76",
+      "initial_physical_valid": true,
+      "initial": {
+        "up_z": 0.9961389614994595,
+        "height_m": 0.15868705473531763,
+        "feet": [
+          true,
+          true
+        ],
+        "torso_contact": false,
+        "penetration_m": 0.0007440214725648025,
+        "linear_speed_mps": 0.21029257089308903,
+        "angular_speed_rad_s": 0.2031977072471561,
+        "stable": false,
+        "finite": true,
+        "floor_penetration_m": 0.0007440214725648025,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.06363106305325972,
+        "joint_home_error_mean_rad": 0.017682199086828918,
+        "motor_target_home_error_max_rad": 0.0,
+        "foot_normal_forces_n": [
+          9.650439666904433,
+          11.458644883431287
+        ],
+        "foot_load_fraction": 1.0,
+        "foot_up_alignment_to_home": [
+          0.9998634201446768,
+          0.999582759195633
+        ]
+      },
+      "settle_peaks": {
+        "floor": 0.0022030952763563323,
+        "self": 0.0,
+        "joint": 0.0,
+        "force": 0.8275684497658204,
+        "slew": 0.0
+      },
+      "rollout": {
+        "controls": 150,
+        "physical_valid": true,
+        "strict_tail_s": 2.88,
+        "strict_1s_recovery": true,
+        "final": {
+          "up_z": 0.9999701920061026,
+          "height_m": 0.16067396206476625,
+          "feet": [
+            true,
+            true
+          ],
+          "torso_contact": false,
+          "penetration_m": 0.00015035945593937922,
+          "linear_speed_mps": 0.0002621209368573163,
+          "angular_speed_rad_s": 0.001899184423160126,
+          "stable": true,
+          "finite": true,
+          "floor_penetration_m": 0.00015035945593937922,
+          "self_penetration_m": 0.0,
+          "joint_home_error_max_rad": 0.03654721708648845,
+          "joint_home_error_mean_rad": 0.010512013909687317,
+          "motor_target_home_error_max_rad": 0.0,
+          "foot_normal_forces_n": [
+            10.516530121760105,
+            10.154593306161495
+          ],
+          "foot_load_fraction": 1.0,
+          "foot_up_alignment_to_home": [
+            0.9988828039640034,
+            0.9983223129956067
+          ]
+        },
+        "peaks": {
+          "floor": 0.0008993705846612066,
+          "self": 0.0,
+          "joint": 0.0,
+          "force": 1.0941804439541407,
+          "slew": 0.0
+        },
+        "samples": [
+          {
+            "t_s": 0.02,
+            "up_z": 0.996483015941498,
+            "height_m": 0.15702598104737625,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": false
+          },
+          {
+            "t_s": 0.52,
+            "up_z": 0.9998855015051848,
+            "height_m": 0.1616424087012689,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 1.02,
+            "up_z": 0.9999141936209703,
+            "height_m": 0.16134078802279234,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 1.52,
+            "up_z": 0.9999354184922292,
+            "height_m": 0.1611089729773122,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 2.02,
+            "up_z": 0.9999509026392387,
+            "height_m": 0.16092751371606015,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 2.52,
+            "up_z": 0.9999622118986499,
+            "height_m": 0.16078504750011152,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          }
+        ]
+      }
+    },
+    {
+      "pose": "prone",
+      "tilt_fraction": 0.05,
+      "settle_controls": 5,
+      "seed": 1,
+      "initial_hash": "5d784e04bc2dc43559d12561588342bfd3afa5ba6387eaa0cb3d8ca69034c57d",
+      "initial_physical_valid": true,
+      "initial": {
+        "up_z": 0.9958172804960391,
+        "height_m": 0.1583117996266724,
+        "feet": [
+          true,
+          true
+        ],
+        "torso_contact": false,
+        "penetration_m": 0.0006923637728031328,
+        "linear_speed_mps": 0.2079433438095898,
+        "angular_speed_rad_s": 0.0996768084733657,
+        "stable": false,
+        "finite": true,
+        "floor_penetration_m": 0.0006923637728031328,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.06507991741025809,
+        "joint_home_error_mean_rad": 0.019207150832570557,
+        "motor_target_home_error_max_rad": 0.0,
+        "foot_normal_forces_n": [
+          29.378730444163086,
+          6.595397957714426
+        ],
+        "foot_load_fraction": 1.0,
+        "foot_up_alignment_to_home": [
+          0.9996821546574202,
+          0.9997731206339806
+        ]
+      },
+      "settle_peaks": {
+        "floor": 0.0023419189186262984,
+        "self": 0.0,
+        "joint": 0.0,
+        "force": 0.8537417980753936,
+        "slew": 0.0
+      },
+      "rollout": {
+        "controls": 150,
+        "physical_valid": true,
+        "strict_tail_s": 2.86,
+        "strict_1s_recovery": true,
+        "final": {
+          "up_z": 0.9999623638923393,
+          "height_m": 0.16077839664786858,
+          "feet": [
+            true,
+            true
+          ],
+          "torso_contact": false,
+          "penetration_m": 0.0001506336423422244,
+          "linear_speed_mps": 0.0003049947717048755,
+          "angular_speed_rad_s": 0.0022501797127508047,
+          "stable": true,
+          "finite": true,
+          "floor_penetration_m": 0.0001506336423422244,
+          "self_penetration_m": 0.0,
+          "joint_home_error_max_rad": 0.036422713615052116,
+          "joint_home_error_mean_rad": 0.010276393670657746,
+          "motor_target_home_error_max_rad": 0.0,
+          "foot_normal_forces_n": [
+            10.5120756790608,
+            10.159122850141914
+          ],
+          "foot_load_fraction": 1.0,
+          "foot_up_alignment_to_home": [
+            0.9989067861466379,
+            0.9983463664459143
+          ]
+        },
+        "peaks": {
+          "floor": 0.0007925384585301528,
+          "self": 0.0,
+          "joint": 0.0,
+          "force": 1.0198314781528524,
+          "slew": 0.0
+        },
+        "samples": [
+          {
+            "t_s": 0.02,
+            "up_z": 0.996206361549504,
+            "height_m": 0.15699354928594444,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": false
+          },
+          {
+            "t_s": 0.52,
+            "up_z": 0.999848379570231,
+            "height_m": 0.16199566127524404,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 1.02,
+            "up_z": 0.9998888182278701,
+            "height_m": 0.161606834594163,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 1.52,
+            "up_z": 0.9999165232267683,
+            "height_m": 0.1613137219251029,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 2.02,
+            "up_z": 0.9999368725074168,
+            "height_m": 0.16108857026271392,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 2.52,
+            "up_z": 0.9999517898414211,
+            "height_m": 0.16091209525836392,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          }
+        ]
+      }
+    },
+    {
+      "pose": "prone",
+      "tilt_fraction": 0.1,
+      "settle_controls": 5,
+      "seed": 0,
+      "initial_hash": "f7d05d83fd193eeb42f40e966a5f216fd5909740e59de5e00ef8def12228f2e5",
+      "initial_physical_valid": true,
+      "initial": {
+        "up_z": 0.9844829268054682,
+        "height_m": 0.1600221518541036,
+        "feet": [
+          true,
+          true
+        ],
+        "torso_contact": false,
+        "penetration_m": 0.0007783596377779374,
+        "linear_speed_mps": 0.14963672038953238,
+        "angular_speed_rad_s": 0.290535944121773,
+        "stable": false,
+        "finite": true,
+        "floor_penetration_m": 0.0007783596377779374,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.06514235183377748,
+        "joint_home_error_mean_rad": 0.017731303096861516,
+        "motor_target_home_error_max_rad": 0.0,
+        "foot_normal_forces_n": [
+          9.513197183980886,
+          12.14643119492552
+        ],
+        "foot_load_fraction": 1.0,
+        "foot_up_alignment_to_home": [
+          0.9957920794841462,
+          0.9981969238965087
+        ]
+      },
+      "settle_peaks": {
+        "floor": 0.0022048000224175815,
+        "self": 0.0,
+        "joint": 0.0,
+        "force": 0.8479028766883943,
+        "slew": 0.0
+      },
+      "rollout": {
+        "controls": 150,
+        "physical_valid": true,
+        "strict_tail_s": 2.72,
+        "strict_1s_recovery": true,
+        "final": {
+          "up_z": 0.9999959416007943,
+          "height_m": 0.16039703468483332,
+          "feet": [
+            true,
+            true
+          ],
+          "torso_contact": false,
+          "penetration_m": 0.00014843056843879925,
+          "linear_speed_mps": 0.00016196754089272392,
+          "angular_speed_rad_s": 0.000496065514789587,
+          "stable": true,
+          "finite": true,
+          "floor_penetration_m": 0.00014843056843879925,
+          "self_penetration_m": 0.0,
+          "joint_home_error_max_rad": 0.038656094150162135,
+          "joint_home_error_mean_rad": 0.010899181392385897,
+          "motor_target_home_error_max_rad": 0.0,
+          "foot_normal_forces_n": [
+            10.522102622381404,
+            10.148990429514
+          ],
+          "foot_load_fraction": 1.0,
+          "foot_up_alignment_to_home": [
+            0.9988695698589196,
+            0.9983099305698904
+          ]
+        },
+        "peaks": {
+          "floor": 0.0007323587906589053,
+          "self": 0.0,
+          "joint": 0.0,
+          "force": 1.247421790291348,
+          "slew": 0.0
+        },
+        "samples": [
+          {
+            "t_s": 0.02,
+            "up_z": 0.9842459809710582,
+            "height_m": 0.15826996914852273,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": false
+          },
+          {
+            "t_s": 0.52,
+            "up_z": 0.9991263210177466,
+            "height_m": 0.16262155227573896,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 1.02,
+            "up_z": 0.9999960514804566,
+            "height_m": 0.1607348596975025,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 1.52,
+            "up_z": 0.9999959602881338,
+            "height_m": 0.16061557933034015,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 2.02,
+            "up_z": 0.9999959396003686,
+            "height_m": 0.16052497501760485,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 2.52,
+            "up_z": 0.9999959464002616,
+            "height_m": 0.16045516026523618,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          }
+        ]
+      }
+    },
+    {
+      "pose": "prone",
+      "tilt_fraction": 0.1,
+      "settle_controls": 5,
+      "seed": 1,
+      "initial_hash": "30980750adca6d5b74b67ae4ea1ff9d2654cadb0ef991d0a9fc59d64f222a9d7",
+      "initial_physical_valid": true,
+      "initial": {
+        "up_z": 0.9834865518476765,
+        "height_m": 0.15988212386434192,
+        "feet": [
+          true,
+          true
+        ],
+        "torso_contact": false,
+        "penetration_m": 0.000689273369202768,
+        "linear_speed_mps": 0.14126337188619636,
+        "angular_speed_rad_s": 0.21249973132397476,
+        "stable": false,
+        "finite": true,
+        "floor_penetration_m": 0.000689273369202768,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.06532678356353694,
+        "joint_home_error_mean_rad": 0.018800160377136905,
+        "motor_target_home_error_max_rad": 0.0,
+        "foot_normal_forces_n": [
+          10.806238617196296,
+          11.033173278485283
+        ],
+        "foot_load_fraction": 1.0,
+        "foot_up_alignment_to_home": [
+          0.9975326941222189,
+          0.9972047578999915
+        ]
+      },
+      "settle_peaks": {
+        "floor": 0.0023248048583842124,
+        "self": 0.0,
+        "joint": 0.0,
+        "force": 0.857327776883249,
+        "slew": 0.0
+      },
+      "rollout": {
+        "controls": 150,
+        "physical_valid": true,
+        "strict_tail_s": 2.72,
+        "strict_1s_recovery": true,
+        "final": {
+          "up_z": 0.9999975882305572,
+          "height_m": 0.16041101705495578,
+          "feet": [
+            true,
+            true
+          ],
+          "torso_contact": false,
+          "penetration_m": 0.0001481611315101508,
+          "linear_speed_mps": 0.0001875318834444924,
+          "angular_speed_rad_s": 0.000518341057163342,
+          "stable": true,
+          "finite": true,
+          "floor_penetration_m": 0.0001481611315101508,
+          "self_penetration_m": 0.0,
+          "joint_home_error_max_rad": 0.03880728525290378,
+          "joint_home_error_mean_rad": 0.010773834065464406,
+          "motor_target_home_error_max_rad": 0.0,
+          "foot_normal_forces_n": [
+            10.522091692386377,
+            10.149001062501442
+          ],
+          "foot_load_fraction": 1.0,
+          "foot_up_alignment_to_home": [
+            0.9988910981007768,
+            0.9983263071057542
+          ]
+        },
+        "peaks": {
+          "floor": 0.0006495161453026754,
+          "self": 0.0,
+          "joint": 0.0,
+          "force": 1.1378407200955287,
+          "slew": 0.0
+        },
+        "samples": [
+          {
+            "t_s": 0.02,
+            "up_z": 0.983239818601049,
+            "height_m": 0.15831684491532916,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": false
+          },
+          {
+            "t_s": 0.52,
+            "up_z": 0.9988697015100879,
+            "height_m": 0.16302211442039583,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 1.02,
+            "up_z": 0.9999991114866746,
+            "height_m": 0.1607850673235673,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 1.52,
+            "up_z": 0.9999986398445968,
+            "height_m": 0.1606477206566996,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 2.02,
+            "up_z": 0.9999982272758438,
+            "height_m": 0.16054555951286817,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 2.52,
+            "up_z": 0.9999978757571664,
+            "height_m": 0.16046883483451355,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          }
+        ]
+      }
+    },
+    {
+      "pose": "prone",
+      "tilt_fraction": 0.15,
+      "settle_controls": 5,
+      "seed": 0,
+      "initial_hash": "4fa299fa2b6bc40fd0d67c0d2d2ffba85786b9451e92381a121784534f413fdc",
+      "initial_physical_valid": true,
+      "initial": {
+        "up_z": 0.9650108092763173,
+        "height_m": 0.1602607004013696,
+        "feet": [
+          true,
+          true
+        ],
+        "torso_contact": false,
+        "penetration_m": 0.0007997456763532591,
+        "linear_speed_mps": 0.0871254481946511,
+        "angular_speed_rad_s": 0.5107485117335588,
+        "stable": false,
+        "finite": true,
+        "floor_penetration_m": 0.0007997456763532591,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.06509961015478871,
+        "joint_home_error_mean_rad": 0.017268421565863765,
+        "motor_target_home_error_max_rad": 0.0,
+        "foot_normal_forces_n": [
+          9.532431830961867,
+          12.294032217917511
+        ],
+        "foot_load_fraction": 1.0,
+        "foot_up_alignment_to_home": [
+          0.9833038358038328,
+          0.9887296054595419
+        ]
+      },
+      "settle_peaks": {
+        "floor": 0.0023106762941938266,
+        "self": 0.0,
+        "joint": 0.0,
+        "force": 0.8487448737817793,
+        "slew": 0.0
+      },
+      "rollout": {
+        "controls": 150,
+        "physical_valid": true,
+        "strict_tail_s": 2.14,
+        "strict_1s_recovery": true,
+        "final": {
+          "up_z": 0.9999979719196196,
+          "height_m": 0.16010997830586862,
+          "feet": [
+            true,
+            true
+          ],
+          "torso_contact": false,
+          "penetration_m": 0.00014665259585588692,
+          "linear_speed_mps": 0.00033771951844640787,
+          "angular_speed_rad_s": 0.0018688461215553148,
+          "stable": true,
+          "finite": true,
+          "floor_penetration_m": 0.00014665259585588692,
+          "self_penetration_m": 0.0,
+          "joint_home_error_max_rad": 0.04017427156787634,
+          "joint_home_error_mean_rad": 0.011479384927531784,
+          "motor_target_home_error_max_rad": 0.0,
+          "foot_normal_forces_n": [
+            10.529936938370726,
+            10.141122299574555
+          ],
+          "foot_load_fraction": 1.0,
+          "foot_up_alignment_to_home": [
+            0.9988485025225577,
+            0.9982854911013234
+          ]
+        },
+        "peaks": {
+          "floor": 0.0007518632990361693,
+          "self": 0.0,
+          "joint": 0.0,
+          "force": 1.2207473252839662,
+          "slew": 0.0
+        },
+        "samples": [
+          {
+            "t_s": 0.02,
+            "up_z": 0.9630877610131148,
+            "height_m": 0.15880252632771927,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": false
+          },
+          {
+            "t_s": 0.52,
+            "up_z": 0.9988438081793154,
+            "height_m": 0.16283873089255102,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": false
+          },
+          {
+            "t_s": 1.02,
+            "up_z": 0.9999978030941786,
+            "height_m": 0.160393849845008,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 1.52,
+            "up_z": 0.9999843745557091,
+            "height_m": 0.160119772135534,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 2.02,
+            "up_z": 0.9999913559706937,
+            "height_m": 0.16011916377133445,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 2.52,
+            "up_z": 0.9999955989198314,
+            "height_m": 0.16011578593205075,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          }
+        ]
+      }
+    },
+    {
+      "pose": "prone",
+      "tilt_fraction": 0.15,
+      "settle_controls": 5,
+      "seed": 1,
+      "initial_hash": "8a4d2ca39af50026d699afe145aeabadf8146ffd4912175d6c178b56b7896580",
+      "initial_physical_valid": true,
+      "initial": {
+        "up_z": 0.9630555834558174,
+        "height_m": 0.16015784745684547,
+        "feet": [
+          true,
+          true
+        ],
+        "torso_contact": false,
+        "penetration_m": 0.0006765449899742322,
+        "linear_speed_mps": 0.07597131152247019,
+        "angular_speed_rad_s": 0.4901679385942278,
+        "stable": false,
+        "finite": true,
+        "floor_penetration_m": 0.0006765449899742322,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.06478451792562967,
+        "joint_home_error_mean_rad": 0.018209929516049765,
+        "motor_target_home_error_max_rad": 0.0,
+        "foot_normal_forces_n": [
+          10.838815217021512,
+          11.208344968999873
+        ],
+        "foot_load_fraction": 1.0,
+        "foot_up_alignment_to_home": [
+          0.9867698966236519,
+          0.9858304063050063
+        ]
+      },
+      "settle_peaks": {
+        "floor": 0.0023269802698276526,
+        "self": 0.0,
+        "joint": 0.0,
+        "force": 0.8507001779612082,
+        "slew": 0.0
+      },
+      "rollout": {
+        "controls": 150,
+        "physical_valid": true,
+        "strict_tail_s": 2.08,
+        "strict_1s_recovery": true,
+        "final": {
+          "up_z": 0.9999969732804019,
+          "height_m": 0.1601252390707814,
+          "feet": [
+            true,
+            true
+          ],
+          "torso_contact": false,
+          "penetration_m": 0.00014649196945827787,
+          "linear_speed_mps": 0.00035398485056014657,
+          "angular_speed_rad_s": 0.00202636970034387,
+          "stable": true,
+          "finite": true,
+          "floor_penetration_m": 0.00014649196945827787,
+          "self_penetration_m": 0.0,
+          "joint_home_error_max_rad": 0.04037226572091601,
+          "joint_home_error_mean_rad": 0.011335381340329973,
+          "motor_target_home_error_max_rad": 0.0,
+          "foot_normal_forces_n": [
+            10.528806692981268,
+            10.142251809736996
+          ],
+          "foot_load_fraction": 1.0,
+          "foot_up_alignment_to_home": [
+            0.9988658790906292,
+            0.9983009210657844
+          ]
+        },
+        "peaks": {
+          "floor": 0.0006897301658917642,
+          "self": 0.0,
+          "joint": 0.0,
+          "force": 1.1194556772780118,
+          "slew": 0.0
+        },
+        "samples": [
+          {
+            "t_s": 0.02,
+            "up_z": 0.9609351501257394,
+            "height_m": 0.15880893030544418,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": false
+          },
+          {
+            "t_s": 0.52,
+            "up_z": 0.9994883323146542,
+            "height_m": 0.1622549997294111,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": false
+          },
+          {
+            "t_s": 1.02,
+            "up_z": 0.9999567315303838,
+            "height_m": 0.160978783056708,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 1.52,
+            "up_z": 0.9999794740675559,
+            "height_m": 0.1601402522770478,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 2.02,
+            "up_z": 0.9999883936979889,
+            "height_m": 0.1601339535322257,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 2.52,
+            "up_z": 0.9999938489443722,
+            "height_m": 0.16013100844161324,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          }
+        ]
+      }
+    },
+    {
+      "pose": "supine",
+      "tilt_fraction": 0.05,
+      "settle_controls": 5,
+      "seed": 0,
+      "initial_hash": "e26e6d9927c0926f683fecd8d3775729e2991eeab911b50726aa74781a3449ca",
+      "initial_physical_valid": true,
+      "initial": {
+        "up_z": 0.9979265355047792,
+        "height_m": 0.1633389856104239,
+        "feet": [
+          true,
+          true
+        ],
+        "torso_contact": false,
+        "penetration_m": 0.0007159913169620608,
+        "linear_speed_mps": 0.05249340896493166,
+        "angular_speed_rad_s": 0.3939154808593886,
+        "stable": true,
+        "finite": true,
+        "floor_penetration_m": 0.0007159913169620608,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.030572681431318527,
+        "joint_home_error_mean_rad": 0.010564538825330169,
+        "motor_target_home_error_max_rad": 0.0,
+        "foot_normal_forces_n": [
+          9.606288973222217,
+          10.505912106386543
+        ],
+        "foot_load_fraction": 1.0,
+        "foot_up_alignment_to_home": [
+          0.9988443644016265,
+          0.9968150762059464
+        ]
+      },
+      "settle_peaks": {
+        "floor": 0.0019289069617178757,
+        "self": 0.0,
+        "joint": 0.0,
+        "force": 0.4033354509340441,
+        "slew": 0.0
+      },
+      "rollout": {
+        "controls": 150,
+        "physical_valid": true,
+        "strict_tail_s": 3.0,
+        "strict_1s_recovery": true,
+        "final": {
+          "up_z": 0.999999860884867,
+          "height_m": 0.16025633557873192,
+          "feet": [
+            true,
+            true
+          ],
+          "torso_contact": false,
+          "penetration_m": 0.00014728248533792902,
+          "linear_speed_mps": 0.0002682370336714703,
+          "angular_speed_rad_s": 0.0013651871428428182,
+          "stable": true,
+          "finite": true,
+          "floor_penetration_m": 0.00014728248533792902,
+          "self_penetration_m": 0.0,
+          "joint_home_error_max_rad": 0.03949710537148521,
+          "joint_home_error_mean_rad": 0.011119563023795534,
+          "motor_target_home_error_max_rad": 0.0,
+          "foot_normal_forces_n": [
+            10.525239956814026,
+            10.145838822564082
+          ],
+          "foot_load_fraction": 1.0,
+          "foot_up_alignment_to_home": [
+            0.9988733030013238,
+            0.9983112597386744
+          ]
+        },
+        "peaks": {
+          "floor": 0.0006776355415034387,
+          "self": 0.0,
+          "joint": 0.0,
+          "force": 0.5459631117101189,
+          "slew": 0.0
+        },
+        "samples": [
+          {
+            "t_s": 0.02,
+            "up_z": 0.9983531438492519,
+            "height_m": 0.16311270740365338,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 0.52,
+            "up_z": 0.9999830153752999,
+            "height_m": 0.16054899118068622,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 1.02,
+            "up_z": 0.9999908859245096,
+            "height_m": 0.1604446620624623,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 1.52,
+            "up_z": 0.9999954722352209,
+            "height_m": 0.16037324116836943,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 2.02,
+            "up_z": 0.9999980224053474,
+            "height_m": 0.16032290546777625,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 2.52,
+            "up_z": 0.9999993238762249,
+            "height_m": 0.1602870219420507,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          }
+        ]
+      }
+    },
+    {
+      "pose": "supine",
+      "tilt_fraction": 0.05,
+      "settle_controls": 5,
+      "seed": 1,
+      "initial_hash": "49d1a1b6d8d75d167dd6a50ef107d1e3ad20e61b38a0a73546f5af312dd715f4",
+      "initial_physical_valid": true,
+      "initial": {
+        "up_z": 0.998074847465946,
+        "height_m": 0.16363224263664874,
+        "feet": [
+          true,
+          true
+        ],
+        "torso_contact": false,
+        "penetration_m": 0.0007389858867869539,
+        "linear_speed_mps": 0.06002340082824771,
+        "angular_speed_rad_s": 0.341040260169246,
+        "stable": true,
+        "finite": true,
+        "floor_penetration_m": 0.0007389858867869539,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.028563743015839416,
+        "joint_home_error_mean_rad": 0.009548881160162559,
+        "motor_target_home_error_max_rad": 0.0,
+        "foot_normal_forces_n": [
+          10.248840478565048,
+          10.555156405679801
+        ],
+        "foot_load_fraction": 1.0,
+        "foot_up_alignment_to_home": [
+          0.9983480032177929,
+          0.9980849561834333
+        ]
+      },
+      "settle_peaks": {
+        "floor": 0.0023692595205483382,
+        "self": 0.0,
+        "joint": 0.0,
+        "force": 0.38081347237139695,
+        "slew": 0.0
+      },
+      "rollout": {
+        "controls": 150,
+        "physical_valid": true,
+        "strict_tail_s": 3.0,
+        "strict_1s_recovery": true,
+        "final": {
+          "up_z": 0.9999996584748211,
+          "height_m": 0.1604165931432363,
+          "feet": [
+            true,
+            true
+          ],
+          "torso_contact": false,
+          "penetration_m": 0.0001476531630497319,
+          "linear_speed_mps": 0.0002543318776706789,
+          "angular_speed_rad_s": 0.0009188089576206617,
+          "stable": true,
+          "finite": true,
+          "floor_penetration_m": 0.0001476531630497319,
+          "self_penetration_m": 0.0,
+          "joint_home_error_max_rad": 0.03915266914593918,
+          "joint_home_error_mean_rad": 0.010662837404440993,
+          "motor_target_home_error_max_rad": 0.0,
+          "foot_normal_forces_n": [
+            10.520277938398735,
+            10.150886279812735
+          ],
+          "foot_load_fraction": 1.0,
+          "foot_up_alignment_to_home": [
+            0.9989130281061299,
+            0.9983496755676019
+          ]
+        },
+        "peaks": {
+          "floor": 0.0006976412148468891,
+          "self": 0.0,
+          "joint": 0.0,
+          "force": 0.5343371252738756,
+          "slew": 0.0
+        },
+        "samples": [
+          {
+            "t_s": 0.02,
+            "up_z": 0.9984915437750124,
+            "height_m": 0.16344149510956335,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 0.52,
+            "up_z": 0.9999966972264254,
+            "height_m": 0.16110330677352486,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 1.02,
+            "up_z": 0.9999984723390554,
+            "height_m": 0.1608588744950616,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 1.52,
+            "up_z": 0.9999995899276174,
+            "height_m": 0.16068967170096493,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 2.02,
+            "up_z": 0.9999999431486573,
+            "height_m": 0.16056898007617051,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 2.52,
+            "up_z": 0.9999998940806666,
+            "height_m": 0.16048005145404623,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          }
+        ]
+      }
+    },
+    {
+      "pose": "supine",
+      "tilt_fraction": 0.1,
+      "settle_controls": 5,
+      "seed": 0,
+      "initial_hash": "b64325ba164750d410331e86df70b74209ceaa5e640008594085c0e2dd10681f",
+      "initial_physical_valid": true,
+      "initial": {
+        "up_z": 0.9881230276445041,
+        "height_m": 0.16695073011915548,
+        "feet": [
+          true,
+          true
+        ],
+        "torso_contact": false,
+        "penetration_m": 0.0007680485852684972,
+        "linear_speed_mps": 0.013811014812933009,
+        "angular_speed_rad_s": 0.25513778793702124,
+        "stable": true,
+        "finite": true,
+        "floor_penetration_m": 0.0007680485852684972,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.030384902967667715,
+        "joint_home_error_mean_rad": 0.010111872605123482,
+        "motor_target_home_error_max_rad": 0.0,
+        "foot_normal_forces_n": [
+          9.257893644237782,
+          10.926526927352306
+        ],
+        "foot_load_fraction": 1.0,
+        "foot_up_alignment_to_home": [
+          0.9893723594738763,
+          0.9857791264436035
+        ]
+      },
+      "settle_peaks": {
+        "floor": 0.001916483881890519,
+        "self": 0.0,
+        "joint": 0.0,
+        "force": 0.39961595438736097,
+        "slew": 0.0
+      },
+      "rollout": {
+        "controls": 150,
+        "physical_valid": true,
+        "strict_tail_s": 0.0,
+        "strict_1s_recovery": false,
+        "final": {
+          "up_z": -0.25550127619236684,
+          "height_m": 0.1639170740588021,
+          "feet": [
+            false,
+            false
+          ],
+          "torso_contact": true,
+          "penetration_m": 3.559091331077971e-05,
+          "linear_speed_mps": 0.00014712023747171182,
+          "angular_speed_rad_s": 0.0026220287614800372,
+          "stable": false,
+          "finite": true,
+          "floor_penetration_m": 3.559091331077971e-05,
+          "self_penetration_m": 0.0,
+          "joint_home_error_max_rad": 0.029055302864004824,
+          "joint_home_error_mean_rad": 0.0084775276497305,
+          "motor_target_home_error_max_rad": 0.0,
+          "foot_normal_forces_n": [
+            0.0,
+            0.0
+          ],
+          "foot_load_fraction": 0.0,
+          "foot_up_alignment_to_home": [
+            -0.23679218199225135,
+            -0.2330291893486102
+          ]
+        },
+        "peaks": {
+          "floor": 0.0057859462682089795,
+          "self": 0.0,
+          "joint": 0.0,
+          "force": 1.501985801472349,
+          "slew": 0.0
+        },
+        "samples": [
+          {
+            "t_s": 0.02,
+            "up_z": 0.9882497694149183,
+            "height_m": 0.1669939387445368,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 0.52,
+            "up_z": 0.9878922527144095,
+            "height_m": 0.16689365505151008,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 1.02,
+            "up_z": 0.976904455604136,
+            "height_m": 0.16828688863409855,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 1.52,
+            "up_z": 0.40682944840650126,
+            "height_m": 0.14033798509762285,
+            "foot_load_fraction": 0.0,
+            "torso_contact": true,
+            "strict_standing": false
+          },
+          {
+            "t_s": 2.02,
+            "up_z": -0.2519727097896518,
+            "height_m": 0.16388975267532746,
+            "foot_load_fraction": 0.0,
+            "torso_contact": true,
+            "strict_standing": false
+          },
+          {
+            "t_s": 2.52,
+            "up_z": -0.254230123320636,
+            "height_m": 0.16389540924721757,
+            "foot_load_fraction": 0.0,
+            "torso_contact": true,
+            "strict_standing": false
+          }
+        ]
+      }
+    },
+    {
+      "pose": "supine",
+      "tilt_fraction": 0.1,
+      "settle_controls": 5,
+      "seed": 1,
+      "initial_hash": "b77714c1db9213baec20711e0a999d58b31cff78c4773241a53b775584c82d1a",
+      "initial_physical_valid": true,
+      "initial": {
+        "up_z": 0.9883707853734437,
+        "height_m": 0.16731543604492224,
+        "feet": [
+          true,
+          true
+        ],
+        "torso_contact": false,
+        "penetration_m": 0.0007610844513449618,
+        "linear_speed_mps": 0.021721783027996378,
+        "angular_speed_rad_s": 0.08510000853720509,
+        "stable": true,
+        "finite": true,
+        "floor_penetration_m": 0.0007610844513449618,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.029830872329230207,
+        "joint_home_error_mean_rad": 0.009809847424898748,
+        "motor_target_home_error_max_rad": 0.0,
+        "foot_normal_forces_n": [
+          10.007613642146037,
+          10.068251414172998
+        ],
+        "foot_load_fraction": 1.0,
+        "foot_up_alignment_to_home": [
+          0.988568808763491,
+          0.9881118170880463
+        ]
+      },
+      "settle_peaks": {
+        "floor": 0.002361884918023539,
+        "self": 0.0,
+        "joint": 0.0,
+        "force": 0.3973199263113045,
+        "slew": 0.0
+      },
+      "rollout": {
+        "controls": 150,
+        "physical_valid": true,
+        "strict_tail_s": 2.28,
+        "strict_1s_recovery": true,
+        "final": {
+          "up_z": 0.9999917486330966,
+          "height_m": 0.160067055982024,
+          "feet": [
+            true,
+            true
+          ],
+          "torso_contact": false,
+          "penetration_m": 0.00014602446369904772,
+          "linear_speed_mps": 0.00040682357801106236,
+          "angular_speed_rad_s": 0.002585730713913816,
+          "stable": true,
+          "finite": true,
+          "floor_penetration_m": 0.00014602446369904772,
+          "self_penetration_m": 0.0,
+          "joint_home_error_max_rad": 0.041288041032659484,
+          "joint_home_error_mean_rad": 0.011586150713783697,
+          "motor_target_home_error_max_rad": 0.0,
+          "foot_normal_forces_n": [
+            10.527548679922996,
+            10.143495385022668
+          ],
+          "foot_load_fraction": 1.0,
+          "foot_up_alignment_to_home": [
+            0.9988787315314172,
+            0.9983162203970263
+          ]
+        },
+        "peaks": {
+          "floor": 0.0007184563472109173,
+          "self": 0.0,
+          "joint": 0.0,
+          "force": 0.5958971807696223,
+          "slew": 0.0
+        },
+        "samples": [
+          {
+            "t_s": 0.02,
+            "up_z": 0.9885043609415618,
+            "height_m": 0.16740309250238833,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 0.52,
+            "up_z": 0.9937032078273952,
+            "height_m": 0.16557582542500682,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 1.02,
+            "up_z": 0.9999026133995825,
+            "height_m": 0.1599596183807955,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 1.52,
+            "up_z": 0.9999581039208961,
+            "height_m": 0.16003778494255216,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 2.02,
+            "up_z": 0.9999747862433787,
+            "height_m": 0.16004562134560224,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 2.52,
+            "up_z": 0.999985357020618,
+            "height_m": 0.1600583745321905,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          }
+        ]
+      }
+    },
+    {
+      "pose": "supine",
+      "tilt_fraction": 0.15,
+      "settle_controls": 5,
+      "seed": 0,
+      "initial_hash": "8fb972fb9ec43adfdb642a5c73e6caab4789351031e5f87aeda02577a93e739e",
+      "initial_physical_valid": true,
+      "initial": {
+        "up_z": 0.9706158621338277,
+        "height_m": 0.1689199915027948,
+        "feet": [
+          true,
+          true
+        ],
+        "torso_contact": false,
+        "penetration_m": 0.0008048113798395512,
+        "linear_speed_mps": 0.06795901583526373,
+        "angular_speed_rad_s": 0.3167548211734895,
+        "stable": true,
+        "finite": true,
+        "floor_penetration_m": 0.0008048113798395512,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.031706604062967214,
+        "joint_home_error_mean_rad": 0.010711258873568443,
+        "motor_target_home_error_max_rad": 0.0,
+        "foot_normal_forces_n": [
+          9.055059530015782,
+          11.022973332236823
+        ],
+        "foot_load_fraction": 1.0,
+        "foot_up_alignment_to_home": [
+          0.9720566631621358,
+          0.9662097587384113
+        ]
+      },
+      "settle_peaks": {
+        "floor": 0.002402352072197878,
+        "self": 0.0,
+        "joint": 0.0,
+        "force": 0.41592490506061,
+        "slew": 0.0
+      },
+      "rollout": {
+        "controls": 150,
+        "physical_valid": true,
+        "strict_tail_s": 0.0,
+        "strict_1s_recovery": false,
+        "final": {
+          "up_z": -0.00022415703489792906,
+          "height_m": 0.15434355270347463,
+          "feet": [
+            false,
+            false
+          ],
+          "torso_contact": true,
+          "penetration_m": 1.9524177745840546e-05,
+          "linear_speed_mps": 7.103324238875538e-05,
+          "angular_speed_rad_s": 0.0009107030882668204,
+          "stable": false,
+          "finite": true,
+          "floor_penetration_m": 1.9524177745840546e-05,
+          "self_penetration_m": 0.0,
+          "joint_home_error_max_rad": 0.04283458814118018,
+          "joint_home_error_mean_rad": 0.009551208929089948,
+          "motor_target_home_error_max_rad": 0.0,
+          "foot_normal_forces_n": [
+            0.0,
+            0.0
+          ],
+          "foot_load_fraction": 0.0,
+          "foot_up_alignment_to_home": [
+            0.025246008650291522,
+            0.02243533879536345
+          ]
+        },
+        "peaks": {
+          "floor": 0.005180989423658536,
+          "self": 0.0,
+          "joint": 0.0,
+          "force": 1.4359640834550664,
+          "slew": 0.0
+        },
+        "samples": [
+          {
+            "t_s": 0.02,
+            "up_z": 0.9693422520693638,
+            "height_m": 0.16905400861465797,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": false
+          },
+          {
+            "t_s": 0.52,
+            "up_z": 0.20423673621939484,
+            "height_m": 0.15221874601048982,
+            "foot_load_fraction": 0.0,
+            "torso_contact": true,
+            "strict_standing": false
+          },
+          {
+            "t_s": 1.02,
+            "up_z": -0.0002388521865192688,
+            "height_m": 0.15434353589869487,
+            "foot_load_fraction": 0.0,
+            "torso_contact": true,
+            "strict_standing": false
+          },
+          {
+            "t_s": 1.52,
+            "up_z": -0.00022485353905534958,
+            "height_m": 0.15434355373595585,
+            "foot_load_fraction": 0.0,
+            "torso_contact": true,
+            "strict_standing": false
+          },
+          {
+            "t_s": 2.02,
+            "up_z": -0.00023849234825762638,
+            "height_m": 0.15434352304381962,
+            "foot_load_fraction": 0.0,
+            "torso_contact": true,
+            "strict_standing": false
+          },
+          {
+            "t_s": 2.52,
+            "up_z": -0.0002218141722691103,
+            "height_m": 0.15434355161275423,
+            "foot_load_fraction": 0.0,
+            "torso_contact": true,
+            "strict_standing": false
+          }
+        ]
+      }
+    },
+    {
+      "pose": "supine",
+      "tilt_fraction": 0.15,
+      "settle_controls": 5,
+      "seed": 1,
+      "initial_hash": "aed27400d4d1ba01cbf5c37b86964ca0ae45dc78772368935ad4948816361513",
+      "initial_physical_valid": true,
+      "initial": {
+        "up_z": 0.9704942092691919,
+        "height_m": 0.16955939247444443,
+        "feet": [
+          true,
+          true
+        ],
+        "torso_contact": false,
+        "penetration_m": 0.0007423554164084772,
+        "linear_speed_mps": 0.06742665710360916,
+        "angular_speed_rad_s": 0.23454387161580917,
+        "stable": true,
+        "finite": true,
+        "floor_penetration_m": 0.0007423554164084772,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.03077742468678224,
+        "joint_home_error_mean_rad": 0.009378562689198925,
+        "motor_target_home_error_max_rad": 0.0,
+        "foot_normal_forces_n": [
+          9.985476488469612,
+          9.956397142161835
+        ],
+        "foot_load_fraction": 1.0,
+        "foot_up_alignment_to_home": [
+          0.9700193977716719,
+          0.9695493611708964
+        ]
+      },
+      "settle_peaks": {
+        "floor": 0.0023504411537959274,
+        "self": 0.0,
+        "joint": 0.0,
+        "force": 0.4097812906569196,
+        "slew": 0.0
+      },
+      "rollout": {
+        "controls": 150,
+        "physical_valid": true,
+        "strict_tail_s": 0.0,
+        "strict_1s_recovery": false,
+        "final": {
+          "up_z": -0.0002321961348603852,
+          "height_m": 0.1543436357521574,
+          "feet": [
+            false,
+            false
+          ],
+          "torso_contact": true,
+          "penetration_m": 1.9892599742809755e-05,
+          "linear_speed_mps": 4.5504597837467455e-05,
+          "angular_speed_rad_s": 0.0005704455939950641,
+          "stable": false,
+          "finite": true,
+          "floor_penetration_m": 1.9892599742809755e-05,
+          "self_penetration_m": 0.0,
+          "joint_home_error_max_rad": 0.04289061650398816,
+          "joint_home_error_mean_rad": 0.009730162217000108,
+          "motor_target_home_error_max_rad": 0.0,
+          "foot_normal_forces_n": [
+            0.0,
+            0.0
+          ],
+          "foot_load_fraction": 0.0,
+          "foot_up_alignment_to_home": [
+            0.02483660578879806,
+            0.022211576407270617
+          ]
+        },
+        "peaks": {
+          "floor": 0.005122311955044406,
+          "self": 0.0,
+          "joint": 0.0,
+          "force": 1.4609312346075138,
+          "slew": 0.0
+        },
+        "samples": [
+          {
+            "t_s": 0.02,
+            "up_z": 0.9691441139562667,
+            "height_m": 0.16973508792058858,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": false
+          },
+          {
+            "t_s": 0.52,
+            "up_z": 0.202559240929275,
+            "height_m": 0.15216573195616165,
+            "foot_load_fraction": 0.0,
+            "torso_contact": true,
+            "strict_standing": false
+          },
+          {
+            "t_s": 1.02,
+            "up_z": -0.0002963190051693663,
+            "height_m": 0.15434211589953453,
+            "foot_load_fraction": 0.0,
+            "torso_contact": true,
+            "strict_standing": false
+          },
+          {
+            "t_s": 1.52,
+            "up_z": -0.00021473119647780886,
+            "height_m": 0.15434354912708237,
+            "foot_load_fraction": 0.0,
+            "torso_contact": true,
+            "strict_standing": false
+          },
+          {
+            "t_s": 2.02,
+            "up_z": -0.00023470317085714718,
+            "height_m": 0.15434353227582273,
+            "foot_load_fraction": 0.0,
+            "torso_contact": true,
+            "strict_standing": false
+          },
+          {
+            "t_s": 2.52,
+            "up_z": -0.00022247146808464366,
+            "height_m": 0.1543435959217727,
+            "foot_load_fraction": 0.0,
+            "torso_contact": true,
+            "strict_standing": false
+          }
+        ]
+      }
+    },
+    {
+      "pose": "left_side",
+      "tilt_fraction": 0.05,
+      "settle_controls": 5,
+      "seed": 0,
+      "initial_hash": "c47f5284bceef5299a14c936d2d04090b39a1e600d06913ef12bb4a7cfbf1eb4",
+      "initial_physical_valid": true,
+      "initial": {
+        "up_z": 0.9992386176211457,
+        "height_m": 0.16227228371259378,
+        "feet": [
+          true,
+          true
+        ],
+        "torso_contact": false,
+        "penetration_m": 0.0012936932041302633,
+        "linear_speed_mps": 0.18840634711463428,
+        "angular_speed_rad_s": 0.9348638926414019,
+        "stable": false,
+        "finite": true,
+        "floor_penetration_m": 0.0012936932041302633,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.06256272970830334,
+        "joint_home_error_mean_rad": 0.008102315555302856,
+        "motor_target_home_error_max_rad": 0.0,
+        "foot_normal_forces_n": [
+          26.651177593015206,
+          30.022254775836238
+        ],
+        "foot_load_fraction": 1.0,
+        "foot_up_alignment_to_home": [
+          0.9979850472453572,
+          0.9995262940089137
+        ]
+      },
+      "settle_peaks": {
+        "floor": 0.001905568685127276,
+        "self": 0.0,
+        "joint": 0.0,
+        "force": 0.8216252845673253,
+        "slew": 0.0
+      },
+      "rollout": {
+        "controls": 150,
+        "physical_valid": true,
+        "strict_tail_s": 2.96,
+        "strict_1s_recovery": true,
+        "final": {
+          "up_z": 0.9999956968088001,
+          "height_m": 0.16054691034434243,
+          "feet": [
+            true,
+            true
+          ],
+          "torso_contact": false,
+          "penetration_m": 0.00014833596458516118,
+          "linear_speed_mps": 0.00020025205924813197,
+          "angular_speed_rad_s": 0.0006812822780530458,
+          "stable": true,
+          "finite": true,
+          "floor_penetration_m": 0.00014833596458516118,
+          "self_penetration_m": 0.0,
+          "joint_home_error_max_rad": 0.03911967134966576,
+          "joint_home_error_mean_rad": 0.010610635633175328,
+          "motor_target_home_error_max_rad": 0.0,
+          "foot_normal_forces_n": [
+            10.51165985667989,
+            10.159526442550249
+          ],
+          "foot_load_fraction": 1.0,
+          "foot_up_alignment_to_home": [
+            0.9989226194758957,
+            0.9983698772571705
+          ]
+        },
+        "peaks": {
+          "floor": 0.0017912463799813517,
+          "self": 0.0,
+          "joint": 0.0,
+          "force": 0.8963775192274035,
+          "slew": 0.0
+        },
+        "samples": [
+          {
+            "t_s": 0.02,
+            "up_z": 0.9995892602110352,
+            "height_m": 0.16099498781533225,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": false
+          },
+          {
+            "t_s": 0.52,
+            "up_z": 0.999995229988554,
+            "height_m": 0.1615019576271362,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 1.02,
+            "up_z": 0.9999957592283195,
+            "height_m": 0.1611733191507914,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 1.52,
+            "up_z": 0.999995630197162,
+            "height_m": 0.16093901529374358,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 2.02,
+            "up_z": 0.9999955973465414,
+            "height_m": 0.16076777164124492,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 2.52,
+            "up_z": 0.9999956350091641,
+            "height_m": 0.16064024485832423,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          }
+        ]
+      }
+    },
+    {
+      "pose": "left_side",
+      "tilt_fraction": 0.05,
+      "settle_controls": 5,
+      "seed": 1,
+      "initial_hash": "5387c9c6a32627b379b6cccb6832e1298741addd73a63ee2e2d3ab5ce1a7336d",
+      "initial_physical_valid": true,
+      "initial": {
+        "up_z": 0.9990922890003252,
+        "height_m": 0.16281053096130416,
+        "feet": [
+          true,
+          true
+        ],
+        "torso_contact": false,
+        "penetration_m": 0.0010586271543706217,
+        "linear_speed_mps": 0.18700532915743048,
+        "angular_speed_rad_s": 0.7764786510038792,
+        "stable": false,
+        "finite": true,
+        "floor_penetration_m": 0.0010586271543706217,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.08088515544733554,
+        "joint_home_error_mean_rad": 0.010485377295752147,
+        "motor_target_home_error_max_rad": 0.0,
+        "foot_normal_forces_n": [
+          8.558998200343387,
+          18.994697351959942
+        ],
+        "foot_load_fraction": 1.0,
+        "foot_up_alignment_to_home": [
+          0.995205060227709,
+          0.999411420129735
+        ]
+      },
+      "settle_peaks": {
+        "floor": 0.002299924244373402,
+        "self": 0.0,
+        "joint": 0.0,
+        "force": 1.074185693624635,
+        "slew": 0.0
+      },
+      "rollout": {
+        "controls": 150,
+        "physical_valid": true,
+        "strict_tail_s": 2.94,
+        "strict_1s_recovery": true,
+        "final": {
+          "up_z": 0.9999801330917758,
+          "height_m": 0.16076278024330032,
+          "feet": [
+            true,
+            true
+          ],
+          "torso_contact": false,
+          "penetration_m": 0.00014959390790695096,
+          "linear_speed_mps": 0.0002569728084026174,
+          "angular_speed_rad_s": 0.0015773518402927937,
+          "stable": true,
+          "finite": true,
+          "floor_penetration_m": 0.00014959390790695096,
+          "self_penetration_m": 0.0,
+          "joint_home_error_max_rad": 0.03830447862275399,
+          "joint_home_error_mean_rad": 0.010218152202574434,
+          "motor_target_home_error_max_rad": 0.0,
+          "foot_normal_forces_n": [
+            10.501305719978077,
+            10.169922318841895
+          ],
+          "foot_load_fraction": 1.0,
+          "foot_up_alignment_to_home": [
+            0.9989369433165173,
+            0.9983916194832381
+          ]
+        },
+        "peaks": {
+          "floor": 0.0011327552327916697,
+          "self": 0.0,
+          "joint": 0.0,
+          "force": 1.0919574697402616,
+          "slew": 0.0
+        },
+        "samples": [
+          {
+            "t_s": 0.02,
+            "up_z": 0.9995615998135401,
+            "height_m": 0.16206857697916238,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": false
+          },
+          {
+            "t_s": 0.52,
+            "up_z": 0.999932715528551,
+            "height_m": 0.16214877900505226,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 1.02,
+            "up_z": 0.9999498970246153,
+            "height_m": 0.16169241576377955,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 1.52,
+            "up_z": 0.9999618324252587,
+            "height_m": 0.1613488892435147,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 2.02,
+            "up_z": 0.9999696618921508,
+            "height_m": 0.16109543103909568,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 2.52,
+            "up_z": 0.9999756870028493,
+            "height_m": 0.16090465461221912,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          }
+        ]
+      }
+    },
+    {
+      "pose": "left_side",
+      "tilt_fraction": 0.1,
+      "settle_controls": 5,
+      "seed": 0,
+      "initial_hash": "4fb437e41deb3a5cd3cd470dd8a55a39a0f6ab3d9d0c0913ba88172da1727e2f",
+      "initial_physical_valid": true,
+      "initial": {
+        "up_z": 0.9923352610268963,
+        "height_m": 0.1683503576979543,
+        "feet": [
+          true,
+          false
+        ],
+        "torso_contact": false,
+        "penetration_m": 0.0009811051332967672,
+        "linear_speed_mps": 0.2029895993451453,
+        "angular_speed_rad_s": 1.077659982522189,
+        "stable": false,
+        "finite": true,
+        "floor_penetration_m": 0.0009811051332967672,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.07006008226764604,
+        "joint_home_error_mean_rad": 0.009317536165279444,
+        "motor_target_home_error_max_rad": 0.0,
+        "foot_normal_forces_n": [
+          17.50797854925225,
+          0.0
+        ],
+        "foot_load_fraction": 1.0,
+        "foot_up_alignment_to_home": [
+          0.9899909260217855,
+          0.9933832842520683
+        ]
+      },
+      "settle_peaks": {
+        "floor": 0.0019540315628546034,
+        "self": 0.0,
+        "joint": 0.0,
+        "force": 0.913128341165816,
+        "slew": 0.0
+      },
+      "rollout": {
+        "controls": 150,
+        "physical_valid": true,
+        "strict_tail_s": 2.88,
+        "strict_1s_recovery": true,
+        "final": {
+          "up_z": 0.9999803050963599,
+          "height_m": 0.16076944763742515,
+          "feet": [
+            true,
+            true
+          ],
+          "torso_contact": false,
+          "penetration_m": 0.00014945480800231982,
+          "linear_speed_mps": 0.0002893949650831821,
+          "angular_speed_rad_s": 0.001543483713628882,
+          "stable": true,
+          "finite": true,
+          "floor_penetration_m": 0.00014945480800231982,
+          "self_penetration_m": 0.0,
+          "joint_home_error_max_rad": 0.036605564380655986,
+          "joint_home_error_mean_rad": 0.010152790888423881,
+          "motor_target_home_error_max_rad": 0.0,
+          "foot_normal_forces_n": [
+            10.517286149712628,
+            10.153945652474292
+          ],
+          "foot_load_fraction": 1.0,
+          "foot_up_alignment_to_home": [
+            0.9989483434862052,
+            0.998374541785163
+          ]
+        },
+        "peaks": {
+          "floor": 0.0017464131040089079,
+          "self": 0.0,
+          "joint": 0.0,
+          "force": 1.1894176441491773,
+          "slew": 0.0
+        },
+        "samples": [
+          {
+            "t_s": 0.02,
+            "up_z": 0.9946084347563232,
+            "height_m": 0.16632334945893948,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": false
+          },
+          {
+            "t_s": 0.52,
+            "up_z": 0.9999318363704612,
+            "height_m": 0.16216449615441486,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 1.02,
+            "up_z": 0.9999494627459645,
+            "height_m": 0.16171055402290246,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 1.52,
+            "up_z": 0.9999620929033354,
+            "height_m": 0.16136182349402933,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 2.02,
+            "up_z": 0.9999698862624071,
+            "height_m": 0.16110560908437002,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 2.52,
+            "up_z": 0.9999758793511087,
+            "height_m": 0.16091280702762523,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          }
+        ]
+      }
+    },
+    {
+      "pose": "left_side",
+      "tilt_fraction": 0.1,
+      "settle_controls": 5,
+      "seed": 1,
+      "initial_hash": "43c730226f40da94c36256d4b2a008acb5e8663e9bad8d561d1a8c461c1a515d",
+      "initial_physical_valid": true,
+      "initial": {
+        "up_z": 0.9919475049556369,
+        "height_m": 0.16898294681236173,
+        "feet": [
+          true,
+          false
+        ],
+        "torso_contact": false,
+        "penetration_m": 0.000695904398650771,
+        "linear_speed_mps": 0.19518793421301892,
+        "angular_speed_rad_s": 0.8933799566076633,
+        "stable": false,
+        "finite": true,
+        "floor_penetration_m": 0.000695904398650771,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.07923953048408472,
+        "joint_home_error_mean_rad": 0.010246694350220282,
+        "motor_target_home_error_max_rad": 0.0,
+        "foot_normal_forces_n": [
+          19.45943491811501,
+          0.0
+        ],
+        "foot_load_fraction": 1.0,
+        "foot_up_alignment_to_home": [
+          0.987700825059507,
+          0.9931399286818682
+        ]
+      },
+      "settle_peaks": {
+        "floor": 0.0023694936301275945,
+        "self": 0.0,
+        "joint": 0.0,
+        "force": 1.047228578016636,
+        "slew": 0.0
+      },
+      "rollout": {
+        "controls": 150,
+        "physical_valid": true,
+        "strict_tail_s": 2.86,
+        "strict_1s_recovery": true,
+        "final": {
+          "up_z": 0.9999826066295697,
+          "height_m": 0.1607222079311449,
+          "feet": [
+            true,
+            true
+          ],
+          "torso_contact": false,
+          "penetration_m": 0.00014940335759232575,
+          "linear_speed_mps": 0.00027540189024784646,
+          "angular_speed_rad_s": 0.0014117205332799365,
+          "stable": true,
+          "finite": true,
+          "floor_penetration_m": 0.00014940335759232575,
+          "self_penetration_m": 0.0,
+          "joint_home_error_max_rad": 0.03691741302874907,
+          "joint_home_error_mean_rad": 0.010250538315704102,
+          "motor_target_home_error_max_rad": 0.0,
+          "foot_normal_forces_n": [
+            10.518083796730142,
+            10.153133301315057
+          ],
+          "foot_load_fraction": 1.0,
+          "foot_up_alignment_to_home": [
+            0.9989419977277348,
+            0.9983683717637875
+          ]
+        },
+        "peaks": {
+          "floor": 0.0016225861924081767,
+          "self": 0.0,
+          "joint": 0.0,
+          "force": 1.1189244640875415,
+          "slew": 0.0
+        },
+        "samples": [
+          {
+            "t_s": 0.02,
+            "up_z": 0.9940850087735654,
+            "height_m": 0.16740739537972132,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": false
+          },
+          {
+            "t_s": 0.52,
+            "up_z": 0.9999431109537817,
+            "height_m": 0.16200339151113435,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 1.02,
+            "up_z": 0.9999574302804641,
+            "height_m": 0.16158372901095666,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 1.52,
+            "up_z": 0.9999675574626364,
+            "height_m": 0.16126454660153897,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 2.02,
+            "up_z": 0.9999739521587436,
+            "height_m": 0.16103006493191807,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 2.52,
+            "up_z": 0.9999789190426255,
+            "height_m": 0.16085355660272552,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          }
+        ]
+      }
+    },
+    {
+      "pose": "left_side",
+      "tilt_fraction": 0.15,
+      "settle_controls": 5,
+      "seed": 0,
+      "initial_hash": "51ebca76285293a75951cfa7fdfd4f56c57d7ef4f3c9a709fe126a9abe5fa32a",
+      "initial_physical_valid": true,
+      "initial": {
+        "up_z": 0.9775831485687181,
+        "height_m": 0.1735458198201062,
+        "feet": [
+          true,
+          false
+        ],
+        "torso_contact": false,
+        "penetration_m": 0.0010872540207477249,
+        "linear_speed_mps": 0.13821808342794578,
+        "angular_speed_rad_s": 0.8287364202534635,
+        "stable": false,
+        "finite": true,
+        "floor_penetration_m": 0.0010872540207477249,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.07329034078592467,
+        "joint_home_error_mean_rad": 0.010147061785318531,
+        "motor_target_home_error_max_rad": 0.0,
+        "foot_normal_forces_n": [
+          20.785792443316254,
+          0.0
+        ],
+        "foot_load_fraction": 1.0,
+        "foot_up_alignment_to_home": [
+          0.9735725522651782,
+          0.9797426401339657
+        ]
+      },
+      "settle_peaks": {
+        "floor": 0.0020025819864202196,
+        "self": 0.0,
+        "joint": 0.0,
+        "force": 0.9553573492885477,
+        "slew": 0.0
+      },
+      "rollout": {
+        "controls": 150,
+        "physical_valid": true,
+        "strict_tail_s": 2.64,
+        "strict_1s_recovery": true,
+        "final": {
+          "up_z": 0.9999876639583282,
+          "height_m": 0.16070367562083754,
+          "feet": [
+            true,
+            true
+          ],
+          "torso_contact": false,
+          "penetration_m": 0.00014882234298440808,
+          "linear_speed_mps": 0.00028487925237438434,
+          "angular_speed_rad_s": 0.0010167715319974527,
+          "stable": true,
+          "finite": true,
+          "floor_penetration_m": 0.00014882234298440808,
+          "self_penetration_m": 0.0,
+          "joint_home_error_max_rad": 0.036989862309000365,
+          "joint_home_error_mean_rad": 0.010312283551891828,
+          "motor_target_home_error_max_rad": 0.0,
+          "foot_normal_forces_n": [
+            10.523906322387912,
+            10.147316715281272
+          ],
+          "foot_load_fraction": 1.0,
+          "foot_up_alignment_to_home": [
+            0.9989620170372084,
+            0.9983757701939971
+          ]
+        },
+        "peaks": {
+          "floor": 0.0017038143404839012,
+          "self": 0.0,
+          "joint": 0.0,
+          "force": 1.2686839033174735,
+          "slew": 0.0
+        },
+        "samples": [
+          {
+            "t_s": 0.02,
+            "up_z": 0.980626158750926,
+            "height_m": 0.17211907499886464,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": false
+          },
+          {
+            "t_s": 0.52,
+            "up_z": 0.9999085598116066,
+            "height_m": 0.16223622243187408,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 1.02,
+            "up_z": 0.9999723153708705,
+            "height_m": 0.16158773883223063,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 1.52,
+            "up_z": 0.9999792274207019,
+            "height_m": 0.16125434110287246,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 2.02,
+            "up_z": 0.999982723475138,
+            "height_m": 0.16101326318028922,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 2.52,
+            "up_z": 0.9999855115340446,
+            "height_m": 0.1608345818590121,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          }
+        ]
+      }
+    },
+    {
+      "pose": "left_side",
+      "tilt_fraction": 0.15,
+      "settle_controls": 5,
+      "seed": 1,
+      "initial_hash": "9f03672e56700bed42c4de105156ab9bbe9eea52f096ac6b3e8eedfa7e2acb98",
+      "initial_physical_valid": true,
+      "initial": {
+        "up_z": 0.9764445599024573,
+        "height_m": 0.17416892935707454,
+        "feet": [
+          true,
+          false
+        ],
+        "torso_contact": false,
+        "penetration_m": 0.0007860676716119896,
+        "linear_speed_mps": 0.12333997444128456,
+        "angular_speed_rad_s": 0.6351762122965571,
+        "stable": false,
+        "finite": true,
+        "floor_penetration_m": 0.0007860676716119896,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.07501610685904425,
+        "joint_home_error_mean_rad": 0.010364372852054226,
+        "motor_target_home_error_max_rad": 0.0,
+        "foot_normal_forces_n": [
+          20.466767649283334,
+          0.0
+        ],
+        "foot_load_fraction": 1.0,
+        "foot_up_alignment_to_home": [
+          0.9706305627111074,
+          0.9790140347082554
+        ]
+      },
+      "settle_peaks": {
+        "floor": 0.0024123721714773942,
+        "self": 0.0,
+        "joint": 0.0,
+        "force": 0.9892698397689941,
+        "slew": 0.0
+      },
+      "rollout": {
+        "controls": 150,
+        "physical_valid": true,
+        "strict_tail_s": 2.62,
+        "strict_1s_recovery": true,
+        "final": {
+          "up_z": 0.9999859082171132,
+          "height_m": 0.1606861487375979,
+          "feet": [
+            true,
+            true
+          ],
+          "torso_contact": false,
+          "penetration_m": 0.0001489766419951596,
+          "linear_speed_mps": 0.000278411038977966,
+          "angular_speed_rad_s": 0.0011698807913497749,
+          "stable": true,
+          "finite": true,
+          "floor_penetration_m": 0.0001489766419951596,
+          "self_penetration_m": 0.0,
+          "joint_home_error_max_rad": 0.03657617715949968,
+          "joint_home_error_mean_rad": 0.010427736293570352,
+          "motor_target_home_error_max_rad": 0.0,
+          "foot_normal_forces_n": [
+            10.527769950666562,
+            10.143441036325523
+          ],
+          "foot_load_fraction": 1.0,
+          "foot_up_alignment_to_home": [
+            0.9989527354908766,
+            0.9983613694071093
+          ]
+        },
+        "peaks": {
+          "floor": 0.002054845262815701,
+          "self": 0.0,
+          "joint": 0.0,
+          "force": 1.1321831390300865,
+          "slew": 0.0
+        },
+        "samples": [
+          {
+            "t_s": 0.02,
+            "up_z": 0.978977531387742,
+            "height_m": 0.17321913523532728,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": false
+          },
+          {
+            "t_s": 0.52,
+            "up_z": 0.9999531426769815,
+            "height_m": 0.16186670736799946,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 1.02,
+            "up_z": 0.9999656764222612,
+            "height_m": 0.1615176920414525,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 1.52,
+            "up_z": 0.9999743687710785,
+            "height_m": 0.16120576298692896,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 2.02,
+            "up_z": 0.9999792916235037,
+            "height_m": 0.1609795377392813,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 2.52,
+            "up_z": 0.9999830892877947,
+            "height_m": 0.16081084039324617,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          }
+        ]
+      }
+    },
+    {
+      "pose": "right_side",
+      "tilt_fraction": 0.05,
+      "settle_controls": 5,
+      "seed": 0,
+      "initial_hash": "2bd8d469f86e6e71d53d82dc91bce65ff5a6d664c746f210f6faaabf5d51dc2a",
+      "initial_physical_valid": true,
+      "initial": {
+        "up_z": 0.99948857237107,
+        "height_m": 0.16239000510131268,
+        "feet": [
+          true,
+          true
+        ],
+        "torso_contact": false,
+        "penetration_m": 0.0011890635522856085,
+        "linear_speed_mps": 0.142166010661743,
+        "angular_speed_rad_s": 0.9064396152431596,
+        "stable": false,
+        "finite": true,
+        "floor_penetration_m": 0.0011890635522856085,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.06798664676172028,
+        "joint_home_error_mean_rad": 0.00924494949676207,
+        "motor_target_home_error_max_rad": 0.0,
+        "foot_normal_forces_n": [
+          23.571876095677297,
+          11.298650318477247
+        ],
+        "foot_load_fraction": 1.0,
+        "foot_up_alignment_to_home": [
+          0.9996584249908232,
+          0.9970394209810212
+        ]
+      },
+      "settle_peaks": {
+        "floor": 0.0020343936069236743,
+        "self": 0.0,
+        "joint": 0.0,
+        "force": 0.9033837711722157,
+        "slew": 0.0
+      },
+      "rollout": {
+        "controls": 150,
+        "physical_valid": true,
+        "strict_tail_s": 2.96,
+        "strict_1s_recovery": true,
+        "final": {
+          "up_z": 0.9999949528475218,
+          "height_m": 0.16059306194892237,
+          "feet": [
+            true,
+            true
+          ],
+          "torso_contact": false,
+          "penetration_m": 0.0001481558418365142,
+          "linear_speed_mps": 0.0002776267869532671,
+          "angular_speed_rad_s": 0.0008016221534384729,
+          "stable": true,
+          "finite": true,
+          "floor_penetration_m": 0.0001481558418365142,
+          "self_penetration_m": 0.0,
+          "joint_home_error_max_rad": 0.0370656833717693,
+          "joint_home_error_mean_rad": 0.0104991231100393,
+          "motor_target_home_error_max_rad": 0.0,
+          "foot_normal_forces_n": [
+            10.530255436640209,
+            10.140947917484933
+          ],
+          "foot_load_fraction": 1.0,
+          "foot_up_alignment_to_home": [
+            0.9989507571619803,
+            0.998358753904498
+          ]
+        },
+        "peaks": {
+          "floor": 0.0012002028508268777,
+          "self": 0.0,
+          "joint": 0.0,
+          "force": 0.918975233577811,
+          "slew": 0.0
+        },
+        "samples": [
+          {
+            "t_s": 0.02,
+            "up_z": 0.9998090934676412,
+            "height_m": 0.1615035443103028,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": false
+          },
+          {
+            "t_s": 0.52,
+            "up_z": 0.9999907756863617,
+            "height_m": 0.16167126112582225,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 1.02,
+            "up_z": 0.9999927452129195,
+            "height_m": 0.16131162776465183,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 1.52,
+            "up_z": 0.9999941151139895,
+            "height_m": 0.16103762558588483,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 2.02,
+            "up_z": 0.9999944216143487,
+            "height_m": 0.16084225472098618,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 2.52,
+            "up_z": 0.9999947060388567,
+            "height_m": 0.1606983656819915,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          }
+        ]
+      }
+    },
+    {
+      "pose": "right_side",
+      "tilt_fraction": 0.05,
+      "settle_controls": 5,
+      "seed": 1,
+      "initial_hash": "6e1e3ede000ecd0e6831cee6d5601239f24ecb87dfbc0591ca8d0eca8f90165c",
+      "initial_physical_valid": true,
+      "initial": {
+        "up_z": 0.9993903303309306,
+        "height_m": 0.1622027972664638,
+        "feet": [
+          true,
+          true
+        ],
+        "torso_contact": false,
+        "penetration_m": 0.0015886116275926516,
+        "linear_speed_mps": 0.16086016638148812,
+        "angular_speed_rad_s": 0.8172858364069628,
+        "stable": false,
+        "finite": true,
+        "floor_penetration_m": 0.0015886116275926516,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.06901365653668678,
+        "joint_home_error_mean_rad": 0.009089325483731219,
+        "motor_target_home_error_max_rad": 0.0,
+        "foot_normal_forces_n": [
+          21.44048337065893,
+          11.819284341828604
+        ],
+        "foot_load_fraction": 1.0,
+        "foot_up_alignment_to_home": [
+          0.9997485923717473,
+          0.9972395730826618
+        ]
+      },
+      "settle_peaks": {
+        "floor": 0.0022846908244673527,
+        "self": 0.0,
+        "joint": 0.0,
+        "force": 0.9105714975129011,
+        "slew": 0.0
+      },
+      "rollout": {
+        "controls": 150,
+        "physical_valid": true,
+        "strict_tail_s": 2.94,
+        "strict_1s_recovery": true,
+        "final": {
+          "up_z": 0.9999929718882007,
+          "height_m": 0.1606203948668242,
+          "feet": [
+            true,
+            true
+          ],
+          "torso_contact": false,
+          "penetration_m": 0.0001482745212554844,
+          "linear_speed_mps": 0.0002583257766844666,
+          "angular_speed_rad_s": 0.0006211647735500078,
+          "stable": true,
+          "finite": true,
+          "floor_penetration_m": 0.0001482745212554844,
+          "self_penetration_m": 0.0,
+          "joint_home_error_max_rad": 0.03689075629261396,
+          "joint_home_error_mean_rad": 0.01064876133928595,
+          "motor_target_home_error_max_rad": 0.0,
+          "foot_normal_forces_n": [
+            10.529048162864191,
+            10.142156065502473
+          ],
+          "foot_load_fraction": 1.0,
+          "foot_up_alignment_to_home": [
+            0.9989499349752933,
+            0.9983589865906802
+          ]
+        },
+        "peaks": {
+          "floor": 0.001681011763688017,
+          "self": 0.0,
+          "joint": 0.0,
+          "force": 0.9600732252686512,
+          "slew": 0.0
+        },
+        "samples": [
+          {
+            "t_s": 0.02,
+            "up_z": 0.9996944891022443,
+            "height_m": 0.1611111733645462,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": false
+          },
+          {
+            "t_s": 0.52,
+            "up_z": 0.9999828410341549,
+            "height_m": 0.1617536910286194,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 1.02,
+            "up_z": 0.9999868804527872,
+            "height_m": 0.16137750919170432,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 1.52,
+            "up_z": 0.9999898141177971,
+            "height_m": 0.16109067183126724,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 2.02,
+            "up_z": 0.999991105454833,
+            "height_m": 0.1608846949813054,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 2.52,
+            "up_z": 0.9999921572265165,
+            "height_m": 0.16073228366047987,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          }
+        ]
+      }
+    },
+    {
+      "pose": "right_side",
+      "tilt_fraction": 0.1,
+      "settle_controls": 5,
+      "seed": 0,
+      "initial_hash": "3e56fee2d34111b5dfed63ff86dd1b342387195b106b32bc992730bd4cd25a1d",
+      "initial_physical_valid": true,
+      "initial": {
+        "up_z": 0.9933230411337802,
+        "height_m": 0.1686631691955463,
+        "feet": [
+          false,
+          true
+        ],
+        "torso_contact": false,
+        "penetration_m": 0.0006656881259382991,
+        "linear_speed_mps": 0.18389585588694152,
+        "angular_speed_rad_s": 1.0182101262587366,
+        "stable": false,
+        "finite": true,
+        "floor_penetration_m": 0.0006656881259382991,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.07050671594398095,
+        "joint_home_error_mean_rad": 0.010389146358178013,
+        "motor_target_home_error_max_rad": 0.0,
+        "foot_normal_forces_n": [
+          0.0,
+          19.298311702490594
+        ],
+        "foot_load_fraction": 1.0,
+        "foot_up_alignment_to_home": [
+          0.9941702067490428,
+          0.9906049161778938
+        ]
+      },
+      "settle_peaks": {
+        "floor": 0.0020456923642260373,
+        "self": 0.0,
+        "joint": 0.0,
+        "force": 0.9309206087166402,
+        "slew": 0.0
+      },
+      "rollout": {
+        "controls": 150,
+        "physical_valid": true,
+        "strict_tail_s": 2.88,
+        "strict_1s_recovery": true,
+        "final": {
+          "up_z": 0.9999868279061026,
+          "height_m": 0.16068212528518508,
+          "feet": [
+            true,
+            true
+          ],
+          "torso_contact": false,
+          "penetration_m": 0.00014882108174106047,
+          "linear_speed_mps": 0.00025318785700893445,
+          "angular_speed_rad_s": 0.0011647090560493144,
+          "stable": true,
+          "finite": true,
+          "floor_penetration_m": 0.00014882108174106047,
+          "self_penetration_m": 0.0,
+          "joint_home_error_max_rad": 0.0376335199704787,
+          "joint_home_error_mean_rad": 0.01027594062624469,
+          "motor_target_home_error_max_rad": 0.0,
+          "foot_normal_forces_n": [
+            10.521510422564031,
+            10.149703157740845
+          ],
+          "foot_load_fraction": 1.0,
+          "foot_up_alignment_to_home": [
+            0.9989534924220465,
+            0.9983741878796
+          ]
+        },
+        "peaks": {
+          "floor": 0.0016218053832860752,
+          "self": 0.0,
+          "joint": 0.0,
+          "force": 1.0281390094775311,
+          "slew": 0.0
+        },
+        "samples": [
+          {
+            "t_s": 0.02,
+            "up_z": 0.9955975479241984,
+            "height_m": 0.1669860592477817,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": false
+          },
+          {
+            "t_s": 0.52,
+            "up_z": 0.9999607276694612,
+            "height_m": 0.16193197440685222,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 1.02,
+            "up_z": 0.9999693608063424,
+            "height_m": 0.16152265286969472,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 1.52,
+            "up_z": 0.9999768850471679,
+            "height_m": 0.1612059192433004,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 2.02,
+            "up_z": 0.9999810602151592,
+            "height_m": 0.1609770826258718,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 2.52,
+            "up_z": 0.9999843458591618,
+            "height_m": 0.160807150792564,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          }
+        ]
+      }
+    },
+    {
+      "pose": "right_side",
+      "tilt_fraction": 0.1,
+      "settle_controls": 5,
+      "seed": 1,
+      "initial_hash": "23f7c6609190f00d2b96a90cfdaa7c63907ed42fb01cabe17c6df08802e877ba",
+      "initial_physical_valid": true,
+      "initial": {
+        "up_z": 0.9931679128961158,
+        "height_m": 0.16834174150431436,
+        "feet": [
+          false,
+          true
+        ],
+        "torso_contact": false,
+        "penetration_m": 0.0007461327702411608,
+        "linear_speed_mps": 0.21208948646608228,
+        "angular_speed_rad_s": 1.1263289345041576,
+        "stable": false,
+        "finite": true,
+        "floor_penetration_m": 0.0007461327702411608,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.07524899848703215,
+        "joint_home_error_mean_rad": 0.009942676570962974,
+        "motor_target_home_error_max_rad": 0.0,
+        "foot_normal_forces_n": [
+          0.0,
+          19.725435293094925
+        ],
+        "foot_load_fraction": 1.0,
+        "foot_up_alignment_to_home": [
+          0.9945658227011963,
+          0.9899464116340491
+        ]
+      },
+      "settle_peaks": {
+        "floor": 0.002290523330187524,
+        "self": 0.0,
+        "joint": 0.0,
+        "force": 0.986988337364938,
+        "slew": 0.0
+      },
+      "rollout": {
+        "controls": 150,
+        "physical_valid": true,
+        "strict_tail_s": 2.88,
+        "strict_1s_recovery": true,
+        "final": {
+          "up_z": 0.999990089185803,
+          "height_m": 0.16059966147887036,
+          "feet": [
+            true,
+            true
+          ],
+          "torso_contact": false,
+          "penetration_m": 0.00014899281760248455,
+          "linear_speed_mps": 0.00018411669370958292,
+          "angular_speed_rad_s": 0.0007114928876029396,
+          "stable": true,
+          "finite": true,
+          "floor_penetration_m": 0.00014899281760248455,
+          "self_penetration_m": 0.0,
+          "joint_home_error_max_rad": 0.038372125333283824,
+          "joint_home_error_mean_rad": 0.010603451065113841,
+          "motor_target_home_error_max_rad": 0.0,
+          "foot_normal_forces_n": [
+            10.512526188548623,
+            10.158659135321322
+          ],
+          "foot_load_fraction": 1.0,
+          "foot_up_alignment_to_home": [
+            0.9989180760631936,
+            0.9983618808269629
+          ]
+        },
+        "peaks": {
+          "floor": 0.0012298724581859197,
+          "self": 0.0,
+          "joint": 0.0,
+          "force": 1.1469271557945113,
+          "slew": 0.0
+        },
+        "samples": [
+          {
+            "t_s": 0.02,
+            "up_z": 0.9954327223792322,
+            "height_m": 0.1664225034530005,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": false
+          },
+          {
+            "t_s": 0.52,
+            "up_z": 0.9999747643176141,
+            "height_m": 0.16161276959400764,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 1.02,
+            "up_z": 0.9999807733583453,
+            "height_m": 0.16127063800047367,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 1.52,
+            "up_z": 0.9999839360774629,
+            "height_m": 0.16102381845598054,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 2.02,
+            "up_z": 0.9999864902401169,
+            "height_m": 0.160840871996742,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 2.52,
+            "up_z": 0.9999885374062304,
+            "height_m": 0.16070220848608607,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          }
+        ]
+      }
+    },
+    {
+      "pose": "right_side",
+      "tilt_fraction": 0.15,
+      "settle_controls": 5,
+      "seed": 0,
+      "initial_hash": "5a673487e230507644596d4dde991b2488b1d14394dc7c4ce156b23dd1de9f94",
+      "initial_physical_valid": true,
+      "initial": {
+        "up_z": 0.9790496567600084,
+        "height_m": 0.17421522988775243,
+        "feet": [
+          false,
+          true
+        ],
+        "torso_contact": false,
+        "penetration_m": 0.0006405297135875622,
+        "linear_speed_mps": 0.10988058732620891,
+        "angular_speed_rad_s": 0.7808167736832107,
+        "stable": false,
+        "finite": true,
+        "floor_penetration_m": 0.0006405297135875622,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.07025145036125524,
+        "joint_home_error_mean_rad": 0.010652894619437133,
+        "motor_target_home_error_max_rad": 0.0,
+        "foot_normal_forces_n": [
+          0.0,
+          20.408725823374965
+        ],
+        "foot_load_fraction": 1.0,
+        "foot_up_alignment_to_home": [
+          0.9811296843228946,
+          0.97546761594797
+        ]
+      },
+      "settle_peaks": {
+        "floor": 0.0020624268763547674,
+        "self": 0.0,
+        "joint": 0.0,
+        "force": 0.9252199130705456,
+        "slew": 0.0
+      },
+      "rollout": {
+        "controls": 150,
+        "physical_valid": true,
+        "strict_tail_s": 2.78,
+        "strict_1s_recovery": true,
+        "final": {
+          "up_z": 0.9999747349538747,
+          "height_m": 0.1608047337669959,
+          "feet": [
+            true,
+            true
+          ],
+          "torso_contact": false,
+          "penetration_m": 0.00014970541437580535,
+          "linear_speed_mps": 0.00026345694292370675,
+          "angular_speed_rad_s": 0.0017130779180848038,
+          "stable": true,
+          "finite": true,
+          "floor_penetration_m": 0.00014970541437580535,
+          "self_penetration_m": 0.0,
+          "joint_home_error_max_rad": 0.037497061531646114,
+          "joint_home_error_mean_rad": 0.009930253656248776,
+          "motor_target_home_error_max_rad": 0.0,
+          "foot_normal_forces_n": [
+            10.508103973581163,
+            10.163132508485077
+          ],
+          "foot_load_fraction": 1.0,
+          "foot_up_alignment_to_home": [
+            0.9989453616732963,
+            0.9983866780248525
+          ]
+        },
+        "peaks": {
+          "floor": 0.0017088947973205974,
+          "self": 0.0,
+          "joint": 0.0,
+          "force": 1.0885383811614169,
+          "slew": 0.0
+        },
+        "samples": [
+          {
+            "t_s": 0.02,
+            "up_z": 0.9821336623495315,
+            "height_m": 0.17312963785871155,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": false
+          },
+          {
+            "t_s": 0.52,
+            "up_z": 0.9998755422189178,
+            "height_m": 0.16232751192434378,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 1.02,
+            "up_z": 0.999931229897919,
+            "height_m": 0.16178553736520318,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 1.52,
+            "up_z": 0.9999487006011976,
+            "height_m": 0.16142367066494875,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 2.02,
+            "up_z": 0.9999599566627788,
+            "height_m": 0.16115670781951663,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 2.52,
+            "up_z": 0.9999685013168725,
+            "height_m": 0.16095505546080655,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          }
+        ]
+      }
+    },
+    {
+      "pose": "right_side",
+      "tilt_fraction": 0.15,
+      "settle_controls": 5,
+      "seed": 1,
+      "initial_hash": "c126d9bf7185422922ee4ecf2df7d302f2ac9c94e660e1fc3f97118b97c167ae",
+      "initial_physical_valid": true,
+      "initial": {
+        "up_z": 0.979111721243936,
+        "height_m": 0.17372977547528776,
+        "feet": [
+          false,
+          true
+        ],
+        "torso_contact": false,
+        "penetration_m": 0.0007244629455630909,
+        "linear_speed_mps": 0.14750709017116848,
+        "angular_speed_rad_s": 0.8591634132961741,
+        "stable": false,
+        "finite": true,
+        "floor_penetration_m": 0.0007244629455630909,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.07624571130244573,
+        "joint_home_error_mean_rad": 0.010312003095414081,
+        "motor_target_home_error_max_rad": 0.0,
+        "foot_normal_forces_n": [
+          0.0,
+          20.304669791235483
+        ],
+        "foot_load_fraction": 1.0,
+        "foot_up_alignment_to_home": [
+          0.9819974704453757,
+          0.9746529606572558
+        ]
+      },
+      "settle_peaks": {
+        "floor": 0.0022996743400449816,
+        "self": 0.0,
+        "joint": 0.0,
+        "force": 1.000549211492629,
+        "slew": 0.0
+      },
+      "rollout": {
+        "controls": 150,
+        "physical_valid": true,
+        "strict_tail_s": 2.78,
+        "strict_1s_recovery": true,
+        "final": {
+          "up_z": 0.9999871128536348,
+          "height_m": 0.16071440463303113,
+          "feet": [
+            true,
+            true
+          ],
+          "torso_contact": false,
+          "penetration_m": 0.00014898638305535332,
+          "linear_speed_mps": 0.00024303258538404564,
+          "angular_speed_rad_s": 0.0009940427163726937,
+          "stable": true,
+          "finite": true,
+          "floor_penetration_m": 0.00014898638305535332,
+          "self_penetration_m": 0.0,
+          "joint_home_error_max_rad": 0.037889650237778794,
+          "joint_home_error_mean_rad": 0.0100728374636718,
+          "motor_target_home_error_max_rad": 0.0,
+          "foot_normal_forces_n": [
+            10.512481356173433,
+            10.158746588128013
+          ],
+          "foot_load_fraction": 1.0,
+          "foot_up_alignment_to_home": [
+            0.9989496184914978,
+            0.9983849093881674
+          ]
+        },
+        "peaks": {
+          "floor": 0.0017435674979177276,
+          "self": 0.0,
+          "joint": 0.0,
+          "force": 1.200291119613155,
+          "slew": 0.0
+        },
+        "samples": [
+          {
+            "t_s": 0.02,
+            "up_z": 0.9822376449602871,
+            "height_m": 0.17231620957685362,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": false
+          },
+          {
+            "t_s": 0.52,
+            "up_z": 0.9997657226132438,
+            "height_m": 0.16257747423871016,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 1.02,
+            "up_z": 0.999973214087761,
+            "height_m": 0.16159744379008348,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 1.52,
+            "up_z": 0.9999789835799432,
+            "height_m": 0.16126625887136564,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 2.02,
+            "up_z": 0.9999822559387529,
+            "height_m": 0.16102576674741248,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          },
+          {
+            "t_s": 2.52,
+            "up_z": 0.9999849732922174,
+            "height_m": 0.16084655028937658,
+            "foot_load_fraction": 1.0,
+            "torso_contact": false,
+            "strict_standing": true
+          }
+        ]
+      }
+    }
+  ]
+}
