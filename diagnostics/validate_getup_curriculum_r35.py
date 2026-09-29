@@ -26,10 +26,12 @@ BOUNDARY = {'prone': .20, 'supine': .10,
 
 def test_case(sim, session, pose, fraction, seed, controls, record=False):
     if pose == 'standing':
+        sim.clear_audit()
         sim.prepare('standing', seed, True)
         initial = sim.measure()
         initial_valid = sim.physical_valid()
     elif fraction == 1.:
+        sim.clear_audit()
         sim.prepare(pose, seed, True)
         initial = sim.measure()
         initial_valid = sim.physical_valid()
