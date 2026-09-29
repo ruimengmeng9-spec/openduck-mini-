@@ -1,0 +1,26 @@
+{
+  "method": "whole-path mixed CEM / coordinate mutations",
+  "pose": "supine",
+  "simulation_only": true,
+  "hardware_readiness": false,
+  "root_edits_after_initialization": 0,
+  "completion_gate": "all four orientations >=18/20 independent perturbed starts; loaded standing for 30s after 1s handoff",
+  "seed": 527,
+  "generation_budget": 64,
+  "population": 32,
+  "workers": 4,
+  "scene_path": "/data/shijinsheng/open_duck/training/getup_decomposed_r4/model/scene.xml",
+  "substep_audits": true,
+  "limits": {
+    "floor_penetration_m": 0.01,
+    "self_penetration_m": 0.004,
+    "joint_overshoot_rad": 0.08,
+    "force_nm": 3.23,
+    "slew_rad_s": 5.24
+  },
+  "hashes": {
+    "/data/shijinsheng/open_duck/training/getup_decomposed_r4/model/scene.xml": "67b1cfe9870a49b16b1a87872619692a2beffb19cebe2f54787c57d830e4e8b9",
+    "/data/shijinsheng/open_duck/projects/Open_Duck_Mini/BEST_WALK_ONNX_2.onnx": "3c606f9381a1710cc8fecdb7442787dcbfce3ee9bc02a6f1224774ab2b3a1067",
+    "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/train_getup_fullpath_r27.py": "f7f1968212c8dd34e7fe8d216c2813ddf771e165fb59c40a4f3859336ccc9a08"
+  }
+}
