@@ -1,0 +1,159 @@
+{
+  "stage": "loaded low start / tilted near-standing recovery; NOT full fallen recovery",
+  "main_environment_steps": 327680,
+  "summaries": {
+    "r10": {
+      "completed_iterations": 64,
+      "environment_steps": 65536,
+      "wall_seconds": 101.51257634162903,
+      "simulation_only": true,
+      "hardware_readiness": false,
+      "stage": "loaded low posture / mild tilt -> home standing; not full fallen recovery",
+      "onnx_sha256": "633d82e6494db7502a25c26b43ab5b063bd28e213de4c5c3a140c710f923bf9b"
+    },
+    "r11": {
+      "completed_iterations": 256,
+      "environment_steps": 262144,
+      "wall_seconds": 366.31727719306946,
+      "simulation_only": true,
+      "hardware_readiness": false,
+      "stage": "loaded low posture / mild tilt -> home standing; not full fallen recovery",
+      "onnx_sha256": "01584ab8475f3480214d2650999400468e260eb8924c455ed1b0c9ea476114ac"
+    }
+  },
+  "training_episodes": {
+    "r10": {
+      "episodes": 690,
+      "successes": 0
+    },
+    "r11": {
+      "episodes": 2037,
+      "successes": 1002
+    }
+  },
+  "evaluations": {
+    "r10_tilt025_test_44000": {
+      "hold_low": {
+        "successes": 0,
+        "runs": 20,
+        "safe_runs": 20
+      },
+      "initial": {
+        "successes": 18,
+        "runs": 20,
+        "safe_runs": 20
+      },
+      "final": {
+        "successes": 18,
+        "runs": 20,
+        "safe_runs": 20
+      }
+    },
+    "r10_tilt055_test_44000": {
+      "hold_low": {
+        "successes": 0,
+        "runs": 20,
+        "safe_runs": 20
+      },
+      "initial": {
+        "successes": 13,
+        "runs": 20,
+        "safe_runs": 20
+      },
+      "final": {
+        "successes": 14,
+        "runs": 20,
+        "safe_runs": 20
+      }
+    },
+    "r11_final_tilt055_test_74000": {
+      "hold_low": {
+        "successes": 0,
+        "runs": 20,
+        "safe_runs": 20
+      },
+      "initial": {
+        "successes": 11,
+        "runs": 20,
+        "safe_runs": 20
+      },
+      "final": {
+        "successes": 11,
+        "runs": 20,
+        "safe_runs": 20
+      }
+    },
+    "r11_final_tilt025_test_74000": {
+      "hold_low": {
+        "successes": 0,
+        "runs": 20,
+        "safe_runs": 20
+      },
+      "initial": {
+        "successes": 17,
+        "runs": 20,
+        "safe_runs": 20
+      },
+      "final": {
+        "successes": 16,
+        "runs": 20,
+        "safe_runs": 20
+      }
+    },
+    "r11_selected_tilt055_test_95000": {
+      "hold_low": {
+        "successes": 0,
+        "runs": 20,
+        "safe_runs": 20
+      },
+      "initial": {
+        "successes": 13,
+        "runs": 20,
+        "safe_runs": 20
+      },
+      "final": {
+        "successes": 13,
+        "runs": 20,
+        "safe_runs": 20
+      }
+    },
+    "r11_selected_tilt025_test_95000": {
+      "hold_low": {
+        "successes": 0,
+        "runs": 20,
+        "safe_runs": 20
+      },
+      "initial": {
+        "successes": 17,
+        "runs": 20,
+        "safe_runs": 20
+      },
+      "final": {
+        "successes": 17,
+        "runs": 20,
+        "safe_runs": 20
+      }
+    }
+  },
+  "selection": {
+    "name": "checkpoint_0192",
+    "successes": 3,
+    "runs": 8,
+    "full_duration_runs": 3,
+    "safe_runs": 8,
+    "mean_return": 421.918787473222,
+    "params_sha256": "1141c84d84e7ddc91cf7030fb51808c11941b6d126136b6256f5216eb1c9b7a7",
+    "onnx_sha256": "bad0eb2519749caba22470267c8d48ffeee3bd6fbe639304fbdd4495851a6aab"
+  },
+  "simulation_only": true,
+  "hardware_readiness": false,
+  "promoted_to_motion_runtime": false,
+  "conclusion": "No clear improvement on independent tests; preserve original motion controllers.",
+  "caveats": [
+    "20 seeds per comparison; no population-level reliability guarantee",
+    "safe_runs means sampled finite/penetration/joint checks, NOT absence of falls",
+    "actor has 50 inputs and 14 independent normalized joint targets, not the walking 101-input graph",
+    "reset qualification does not imply full fallen recovery",
+    "R11 reuses R10 weights but resets optimizer and exploration standard deviation"
+  ]
+}
