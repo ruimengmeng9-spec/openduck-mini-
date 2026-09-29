@@ -1,0 +1,42 @@
+test_exact_teacher_sequence_no_averaging (diagnostics.test_getup_sequence_r24.TrajectoryPolicyTest.test_exact_teacher_sequence_no_averaging) ... ok
+test_home_anchor_and_unknown_fallback (diagnostics.test_getup_sequence_r24.TrajectoryPolicyTest.test_home_anchor_and_unknown_fallback) ... ok
+test_invalid_observation_and_radius (diagnostics.test_getup_sequence_r24.TrajectoryPolicyTest.test_invalid_observation_and_radius) ... ok
+test_selection_penalizes_lost_success_and_baseline_wins_ties (diagnostics.test_getup_sequence_r24.TrajectoryPolicyTest.test_selection_penalizes_lost_success_and_baseline_wins_ties) ... ok
+test_zero_radius_always_home (diagnostics.test_getup_sequence_r24.TrajectoryPolicyTest.test_zero_radius_always_home) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+
+OK
+SELECTION: {"0.0": {"runs": 40, "successes": 23, "full_duration_runs": 23, "rescue_selections": 0, "new_successes": 0, "new_failures": 0, "continuous_goal_after4s": 0}, "0.15": {"runs": 40, "successes": 23, "full_duration_runs": 23, "rescue_selections": 1, "new_successes": 0, "new_failures": 0, "continuous_goal_after4s": 0}, "0.3": {"runs": 40, "successes": 23, "full_duration_runs": 23, "rescue_selections": 1, "new_successes": 0, "new_failures": 0, "continuous_goal_after4s": 0}, "0.6": {"runs": 40, "successes": 23, "full_duration_runs": 23, "rescue_selections": 1, "new_successes": 0, "new_failures": 0, "continuous_goal_after4s": 0}, "1.2": {"runs": 40, "successes": 23, "full_duration_runs": 23, "rescue_selections": 2, "new_successes": 0, "new_failures": 0, "continuous_goal_after4s": 0}} CHOSEN 0.0
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/train_getup_sequence_r24.py", line 156, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/train_getup_sequence_r24.py", line 149, in main
+    output.write_text(json.dumps(report,indent=2),encoding='utf-8')
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/shijinsheng/open_duck/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/data/shijinsheng/open_duck/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/json/encoder.py", line 202, in encode
+    chunks = list(chunks)
+             ^^^^^^^^^^^^
+  File "/data/shijinsheng/open_duck/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/json/encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/data/shijinsheng/open_duck/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/data/shijinsheng/open_duck/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/data/shijinsheng/open_duck/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/json/encoder.py", line 326, in _iterencode_list
+    yield from chunks
+  File "/data/shijinsheng/open_duck/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/data/shijinsheng/open_duck/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/json/encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "/data/shijinsheng/open_duck/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type int64 is not JSON serializable

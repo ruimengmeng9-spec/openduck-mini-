@@ -1,0 +1,18 @@
+test_exact_teacher_sequence_no_averaging (diagnostics.test_getup_sequence_r24.TrajectoryPolicyTest.test_exact_teacher_sequence_no_averaging) ... ok
+test_home_anchor_and_unknown_fallback (diagnostics.test_getup_sequence_r24.TrajectoryPolicyTest.test_home_anchor_and_unknown_fallback) ... ok
+test_invalid_observation_and_radius (diagnostics.test_getup_sequence_r24.TrajectoryPolicyTest.test_invalid_observation_and_radius) ... ok
+test_selection_penalizes_lost_success_and_baseline_wins_ties (diagnostics.test_getup_sequence_r24.TrajectoryPolicyTest.test_selection_penalizes_lost_success_and_baseline_wins_ties) ... ok
+test_zero_radius_always_home (diagnostics.test_getup_sequence_r24.TrajectoryPolicyTest.test_zero_radius_always_home) ... ok
+test_clips_to_joint_ranges (diagnostics.test_getup_rescue_r22.RescueTargetTest.test_clips_to_joint_ranges) ... ok
+test_interpolation_returns_to_home (diagnostics.test_getup_rescue_r22.RescueTargetTest.test_interpolation_returns_to_home) ... ok
+test_reject_invalid_knots (diagnostics.test_getup_rescue_r22.RescueTargetTest.test_reject_invalid_knots) ... ok
+test_zero_knots_exact_home (diagnostics.test_getup_rescue_r22.RescueTargetTest.test_zero_knots_exact_home) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.003s
+
+OK
+ATLAS AUDIT: {"anchor_count": 138, "rescue_anchors": 13, "selected_radius": 0.6, "library_sha256": "f19203efdc40c2551ff7683c0840154dfc4e9e1aecd08991e4efaf4cb0f1ed80", "finite_and_bounded": true, "transfer_labels_verified": true, "simulation_only": true, "hardware_readiness": false}
+FROZEN ATLAS: broad_4s {"0.0": {"runs": 200, "successes": 113, "full_duration_runs": 113, "rescue_selections": 0, "new_successes": 0, "new_failures": 0, "continuous_goal_after4s": 0}, "0.6": {"runs": 200, "successes": 114, "full_duration_runs": 114, "rescue_selections": 3, "new_successes": 1, "new_failures": 0, "continuous_goal_after4s": 0}}
+FROZEN ATLAS: broad_30s {"0.0": {"runs": 50, "successes": 25, "full_duration_runs": 25, "rescue_selections": 0, "new_successes": 0, "new_failures": 0, "continuous_goal_after4s": 25}, "0.6": {"runs": 50, "successes": 26, "full_duration_runs": 26, "rescue_selections": 1, "new_successes": 1, "new_failures": 0, "continuous_goal_after4s": 25}}
+FROZEN ATLAS: mild_4s {"0.0": {"runs": 100, "successes": 85, "full_duration_runs": 85, "rescue_selections": 0, "new_successes": 0, "new_failures": 0, "continuous_goal_after4s": 0}, "0.6": {"runs": 100, "successes": 85, "full_duration_runs": 85, "rescue_selections": 1, "new_successes": 0, "new_failures": 0, "continuous_goal_after4s": 0}}
