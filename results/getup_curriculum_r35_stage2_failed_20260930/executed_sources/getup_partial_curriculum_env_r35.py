@@ -41,10 +41,6 @@ class CurriculumEpisode(FullFallEpisode):
         self.reset_seed = int(self.rng.integers(1000000))
         if self.stage == 3 or (self.stage == 2 and self.rng.random() < .20):
             self.fraction = 1.
-            # A previous episode may have ended with an audited violation.
-            # Clear its peaks BEFORE the 40 settling controls, so this reset
-            # audits only the new physical trajectory, not the old episode.
-            self.sim.clear_audit()
             self.sim.prepare(self.pose, self.reset_seed, True)
             self.initial = self.sim.measure()
             self.initial_valid = self.sim.physical_valid()
@@ -53,10 +49,7 @@ class CurriculumEpisode(FullFallEpisode):
             self.initial, _, self.initial_valid, _ = prepare_partial(
                 self.sim, self.pose, self.fraction, 5, self.reset_seed)
         if not self.initial_valid:
-            raise RuntimeError(
-                f'Curriculum reset failed physical audit: pose={self.pose}, '
-                f'fraction={self.fraction}, seed={self.reset_seed}, '
-                f'peaks={self.sim.peaks}, initial={self.initial}')
+            raise RuntimeError('Curriculum reset failed physical audit')
         if self.fraction == 1. and not (
                 self.initial['up_z'] < .5 and self.initial['torso_contact']):
             raise RuntimeError('A full-fallen reset lacks a fallen state')

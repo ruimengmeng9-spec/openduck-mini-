@@ -1,0 +1,197 @@
+{
+  "stage": "R35 stage 2 physical tilt-to-full fallen training",
+  "simulation_only": true,
+  "hardware_readiness": false,
+  "default_controller_replaced": false,
+  "observation_size": 50,
+  "action_size": 14,
+  "root_edits_after_initialization": 0,
+  "observation_layout": [
+    "gyro:3",
+    "framezaxis_upvector:3",
+    "joint_delta_home:14",
+    "joint_velocity_x0.05:14",
+    "previous_target_delta_home:14",
+    "foot_contact:2"
+  ],
+  "reset_probabilities": {
+    "prone": 0.25,
+    "supine": 0.25,
+    "left_side": 0.25,
+    "right_side": 0.25
+  },
+  "reset_perturbations": {
+    "partial_tilt_rad": 0.0,
+    "full_fall_tilt_rad": 0.05,
+    "joint_rad": 0.02,
+    "velocity": 0.01
+  },
+  "training_reset_seed_range": [
+    0,
+    999999
+  ],
+  "heldout_reset_seed_base": 1300000,
+  "physics_dt_s": 0.002,
+  "motor_dt_s": 0.02,
+  "decision_dt_s": 0.1,
+  "repeated_motor_controls": 5,
+  "substep_physical_audits": true,
+  "fall_orientation_is_not_a_termination": true,
+  "episode_controls": 300,
+  "training_label": "last continuous 1s strictly loaded; discovery only, NOT final completion",
+  "final_gate": "each four fallen orientations >=18/20 independent perturbed starts, then continuous 30s strict standing",
+  "action_decoder": "midpoint+tanh(latent)*half_range, physical clamp, original 5.24rad/s slew",
+  "lower_rad": [
+    -0.5235987755982979,
+    -0.4363323129985815,
+    -1.2217304763960306,
+    -1.5707963267948966,
+    -1.5707963267948957,
+    -0.3490658503988437,
+    -0.7853981633974483,
+    -2.792526803190927,
+    -0.523598775598218,
+    -0.523598775598297,
+    -0.4363323129985797,
+    -0.5235987755982988,
+    -1.5707963267948966,
+    -1.5707963267948957
+  ],
+  "upper_rad": [
+    0.5235987755982997,
+    0.43633231299858327,
+    0.5235987755982988,
+    1.5707963267948966,
+    1.5707963267948974,
+    1.1344640137963364,
+    0.7853981633974483,
+    2.792526803190927,
+    0.5235987755983796,
+    0.5235987755983006,
+    0.43633231299858505,
+    1.2217304763960306,
+    1.5707963267948966,
+    1.5707963267948974
+  ],
+  "home_rad": [
+    0.002,
+    0.053,
+    -0.63,
+    1.368,
+    -0.784,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -0.003,
+    -0.065,
+    0.635,
+    1.379,
+    -0.796
+  ],
+  "reward": "potential difference + qualified-standing bonus; no extra motion penalty during discovery",
+  "optimizer_reinitialized": true,
+  "critic_reinitialized": true,
+  "optimizer_learning_rate": 5e-06,
+  "initial_latent_std": "state-dependent .02 to .5",
+  "exploration": {
+    "kind": "AR1 latent Gaussian; prior noise included in PPO conditional density",
+    "rho": 0.9,
+    "innovation_scale": 0.4358898943540673,
+    "reset_noise_on_each_done": true,
+    "deterministic_deployment_noise_zero": true
+  },
+  "seed": 1352,
+  "num_envs": 16,
+  "horizon": 128,
+  "iterations": 128,
+  "curriculum_stage": 2,
+  "initialized_actor": "/data/shijinsheng/open_duck/training/getup_curriculum_r35_stage1_20260930/final.msgpack",
+  "official_method_reference": "https://github.com/pollen-robotics/microduck_rl/blob/main/src/mjlab_microduck/tasks/microduck_standup_env_cfg.py",
+  "copied_microduck_mechanical_parameters": false,
+  "hashes": {
+    "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/train_getup_temporal_ppo_r33.py": "fa77c15159ae964c6b8ef2919b0e3393c2c77c0cb3d7c5dc5515caa43fb86cff",
+    "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/getup_temporal_noise_r33.py": "a2561a4ad8243007435da6120c1838a2f51cdcd26c69653bd14e03d15a91ffc1",
+    "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/getup_fullfallen_env_r32.py": "1c6f13e8b02203e817572cd445a4da672e52db7e8efd498c21d1607f0ff375a0",
+    "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/getup_fullfallen_contract_r32.py": "9d93f44808b022c52fa2b5baaef5f103a0377b026b0b46946264a6b48bbdcec4",
+    "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/train_getup_fullpath_r27.py": "f7f1968212c8dd34e7fe8d216c2813ddf771e165fb59c40a4f3859336ccc9a08",
+    "/data/shijinsheng/open_duck/training/getup_decomposed_r4/model/scene.xml": "67b1cfe9870a49b16b1a87872619692a2beffb19cebe2f54787c57d830e4e8b9",
+    "/data/shijinsheng/open_duck/projects/Open_Duck_Mini/BEST_WALK_ONNX_2.onnx": "3c606f9381a1710cc8fecdb7442787dcbfce3ee9bc02a6f1224774ab2b3a1067",
+    "/data/shijinsheng/open_duck/training/getup_curriculum_r35_stage1_20260930/final.msgpack": "bb34302a13634d328d2ab5866df9bad1124fa77394b62e5c1d3b1a2727083dfb",
+    "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/getup_partial_curriculum_env_r35.py": "249bcf2a5c80b611986bca6bb3b570be8d4aeb988ed5c3185d0a4aac731d776f",
+    "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/probe_getup_partial_curriculum_r35.py": "1a26ceb2bdbe1d167227c67e6bc945c259284d2b52cfd26308752c721b125f4c",
+    "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/getup_curriculum_exploration_r35.py": "0a24395432e69864e589d919c9eebaca4aaefc5b35596c54660bc9c034661c41"
+  },
+  "curriculum_fractions_of_ninety_degrees": {
+    "0": {
+      "prone": [
+        0.05,
+        0.1,
+        0.15
+      ],
+      "supine": [
+        0.03,
+        0.05,
+        0.08
+      ],
+      "left_side": [
+        0.1,
+        0.15,
+        0.2
+      ],
+      "right_side": [
+        0.1,
+        0.15,
+        0.2
+      ]
+    },
+    "1": {
+      "prone": [
+        0.1,
+        0.15,
+        0.2
+      ],
+      "supine": [
+        0.05,
+        0.08,
+        0.1
+      ],
+      "left_side": [
+        0.15,
+        0.2,
+        0.25
+      ],
+      "right_side": [
+        0.15,
+        0.2,
+        0.25
+      ]
+    },
+    "2": {
+      "prone": [
+        0.15,
+        0.2,
+        0.35
+      ],
+      "supine": [
+        0.08,
+        0.1,
+        0.2
+      ],
+      "left_side": [
+        0.2,
+        0.25,
+        0.35
+      ],
+      "right_side": [
+        0.2,
+        0.25,
+        0.35
+      ]
+    }
+  },
+  "full_fall_probability_stage2": 0.2,
+  "stage3_only_full_falls": true,
+  "state_dependent_latent_std": "sigma=.02+.48*clip(.5-observation_up_z,0,1)",
+  "full_fall_success_only_if_actual_fallen_start": true
+}
