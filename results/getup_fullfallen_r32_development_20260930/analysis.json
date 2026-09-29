@@ -1,0 +1,116 @@
+{
+  "last_logged_iteration": 59,
+  "actual_motor_controls": 600885,
+  "episode_snapshot_may_lag_history": true,
+  "by_pose": {
+    "standing": {
+      "episodes": 490,
+      "physical_failures": 329,
+      "discovery_successes": 0,
+      "violation_counts": {
+        "self": 161,
+        "floor": 169
+      },
+      "max_final_up": 0.9989265061703975
+    },
+    "prone": {
+      "episodes": 453,
+      "physical_failures": 359,
+      "discovery_successes": 0,
+      "violation_counts": {
+        "self": 212,
+        "floor": 147
+      },
+      "max_final_up": 0.5239488369056101
+    },
+    "supine": {
+      "episodes": 516,
+      "physical_failures": 191,
+      "discovery_successes": 0,
+      "violation_counts": {
+        "floor": 53,
+        "self": 138
+      },
+      "max_final_up": 0.3479485959531994
+    },
+    "left_side": {
+      "episodes": 505,
+      "physical_failures": 212,
+      "discovery_successes": 0,
+      "violation_counts": {
+        "self": 164,
+        "floor": 48
+      },
+      "max_final_up": 0.34647314910021837
+    },
+    "right_side": {
+      "episodes": 457,
+      "physical_failures": 236,
+      "discovery_successes": 0,
+      "violation_counts": {
+        "self": 184,
+        "floor": 52
+      },
+      "max_final_up": 0.4255527921548857
+    }
+  },
+  "deterministic_development": [
+    {
+      "pose": "prone",
+      "entry": false,
+      "valid": true,
+      "final_up": 0.2105118312944238,
+      "final_height": 0.06394102120896202,
+      "final_load": 0.4622697324400978,
+      "final_joint_home_error": 0.04446780562361262
+    },
+    {
+      "pose": "supine",
+      "entry": false,
+      "valid": true,
+      "final_up": -0.00018143864594690877,
+      "final_height": 0.15434353985512975,
+      "final_load": 0.0,
+      "final_joint_home_error": 0.03756062954510338
+    },
+    {
+      "pose": "left_side",
+      "entry": false,
+      "valid": true,
+      "final_up": -0.2562139464289866,
+      "final_height": 0.13163943619623747,
+      "final_load": 0.0,
+      "final_joint_home_error": 0.026968259046632904
+    },
+    {
+      "pose": "right_side",
+      "entry": false,
+      "valid": true,
+      "final_up": -0.2655721609922873,
+      "final_height": 0.12902250217401715,
+      "final_load": 0.0,
+      "final_joint_home_error": 0.030101776651708316
+    }
+  ],
+  "full_task_completed": false,
+  "simulation_only": true,
+  "hardware_readiness": false,
+  "default_controller_replaced": false,
+  "diagnosis": "Early training violations are mostly floor/self penetration; deterministic development has not reached strict standing. Cause counts may overlap.",
+  "next_hypothesis": "After final evaluation, test longer temporally coherent exploration against independent per-decision noise without changing geometry or physical gates.",
+  "snapshot_hashes": {
+    "history_snapshot.json": "97ba78e2ab506d8c3d8d4d56a0f3572c1be9d091b9be9bc0bf4c21616ba77bbf",
+    "episodes_snapshot.json": "323385faa1b7d7b526e02984c9a6fac60a05a7b1e3937a1d7d1e32dd26032c05",
+    "controller_contract.json": "4f11d211d906aa2d87f0bcbd04b682537917d35b92d4f29260c5a6465d213f05",
+    "checkpoint_0032.onnx": "9622399a862bb4dcdc40755c520371b5044c2fa9a7813f56dac0b3daaeda3c62",
+    "checkpoint_0032.msgpack": "cc96612147ac4228f9ea597987260e5519d15193bb707ed343058824ec8c1946",
+    "checkpoint0032_development/left_side_seed_1102000.npz": "35e44e7810d9847e49aa96b4830c384c7d5e38f9e45da573227949a53cacd6ba",
+    "checkpoint0032_development/partial_results.json": "079561fc31c114d1a990b8147e99a68052ed8f671381bae8642ecea0b0b1f678",
+    "checkpoint0032_development/results.json": "4ada667809327e45d113547a363e96162c05d3b9b433edb9597baa531382dfff",
+    "checkpoint0032_development/executed_validator.py": "707a32ea0a43d8d375018e1b927f9bc612a4d34cd9e62ca9eb3777b5aa97104a",
+    "checkpoint0032_development/right_side_seed_1103000.npz": "6e33369dc9f98edf04ebd8496abc6d8372e85463c05e696af3d0e66fc88a1097",
+    "checkpoint0032_development/prone_seed_1100000.npz": "728d7d7596c02144ba809709bb62ba6cb938fdd4ed821fadb4309ca0c8040ae2",
+    "checkpoint0032_development/supine_seed_1101000.npz": "a2a06d718a52b90afff2cd986056aca5c898fe53d7317c7c4d7b002be7427ddb",
+    "checkpoint0032_development/tested_actor.onnx": "9622399a862bb4dcdc40755c520371b5044c2fa9a7813f56dac0b3daaeda3c62"
+  }
+}
