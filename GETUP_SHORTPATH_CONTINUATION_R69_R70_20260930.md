@@ -1,6 +1,24 @@
 # Short-wait get-up continuation R69–R70 (2026-09-30)
 
-## Latest continuation: R73 finished without improvement; R74 running
+## Latest continuation (2026-10-01): R74 finished; R75 prepared, not launched
+
+R74 ended after 21 generations, with twelve stale generations and 14/24
+short training successes. Independent full-fall seeds 777000–777039 qualified
+**14/40 versus 13/40** for the frozen baseline; there were four rescues and
+three regressions. All forty candidate physical audits were valid and the
+nominal case passed. This small paired difference is not a reliable skill
+or a stage gate pass. R74 must not be restarted or deployed.
+
+In the saved training replays, all ten remaining candidate failures are
+already side-on by the end of the home wait. R75 prepares a single-factor
+early-motion timing probe, returning to the pre-R74 baseline instead of
+combining interventions. Its source and tests are uploaded but remote test
+commands twice timed out in automatic approval; no launch is confirmed.
+Before proceeding, verify tests, actual processes and output existence.
+See `GETUP_EARLY_TIMING_PREPARATION_R75_20261001.md`. Do not describe R75
+as running or repeat R74. R67/R70/R73/R74 are all finished.
+
+## Previous continuation: R73 finished; R74 launch (historical)
 
 R73 ended after 16 generations with 13/24 short training successes. Its
 retained 32 pose-correction parameters are all zero. Paired 30-second strict
