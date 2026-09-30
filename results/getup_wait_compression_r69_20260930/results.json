@@ -1,0 +1,3101 @@
+{
+  "simulation_only": true,
+  "hardware_readiness": false,
+  "full_task_completed": false,
+  "training_only_probe": true,
+  "training_seeds": [
+    769000,
+    769001,
+    769002,
+    769003,
+    769004,
+    769005,
+    769006,
+    769007
+  ],
+  "source_sha256": "5199b9908d3fb8ca96512b3e11fe287a52c3d3c2f2d9fa591d06ad11ed882884",
+  "checkpoint_sha256": "90bda3ca1536cd77aca44a1b7eab8e4aa30a3926b28610e2d9ae34d34f501c3b",
+  "scene_sha256": "67b1cfe9870a49b16b1a87872619692a2beffb19cebe2f54787c57d830e4e8b9",
+  "reference_sha256": "9aeff6394ab4a04947edf080962f043f44c8fb43eedd8bb8ebaa08b059d24ad9",
+  "configurations": [
+    {
+      "wait_s": 31.0,
+      "prefix_seconds": 37.78,
+      "config_index": 0,
+      "nominal": {
+        "score": 60.57847200238198,
+        "valid": true,
+        "strict_tail_s": 1.68,
+        "supported_longest_s": 1.7,
+        "completed_steps": 2079,
+        "final": {
+          "up_z": 0.9999596809400843,
+          "height_m": 0.15965085985194036,
+          "feet": [
+            true,
+            true
+          ],
+          "torso_contact": false,
+          "penetration_m": 0.00014127427427945618,
+          "linear_speed_mps": 0.0003211167228213612,
+          "angular_speed_rad_s": 0.0019710489437939865,
+          "stable": true,
+          "finite": true,
+          "floor_penetration_m": 0.00014127427427945618,
+          "self_penetration_m": 0.0,
+          "joint_home_error_max_rad": 0.04099232860072717,
+          "joint_home_error_mean_rad": 0.013343984853457566,
+          "motor_target_home_error_max_rad": 0.0,
+          "foot_normal_forces_n": [
+            10.501622551921937,
+            10.169420264428364
+          ],
+          "foot_load_fraction": 1.0,
+          "foot_up_alignment_to_home": [
+            0.9982104808909915,
+            0.9977474822302093
+          ]
+        },
+        "final_support": {
+          "margin_m": 0.027428879227154583,
+          "contact_count": 6,
+          "com_xyz_m": [
+            -0.11171740578465397,
+            -0.17127970437335974,
+            0.2043143934074838
+          ],
+          "foot_contact_force_n": [
+            10.501622551921937,
+            10.169420264428364
+          ]
+        },
+        "peaks": {
+          "floor": 0.004077250571655313,
+          "self": 0.0020732312526206224,
+          "joint": 0.02997279588927293,
+          "force": 3.23,
+          "slew": 5.2400000000000055
+        },
+        "success": true
+      },
+      "training": [
+        {
+          "score": 60.57631099031961,
+          "valid": true,
+          "strict_tail_s": 1.68,
+          "supported_longest_s": 1.68,
+          "completed_steps": 2079,
+          "final": {
+            "up_z": 0.9999584940957865,
+            "height_m": 0.1596154056959573,
+            "feet": [
+              true,
+              true
+            ],
+            "torso_contact": false,
+            "penetration_m": 0.00013898222726819488,
+            "linear_speed_mps": 0.0003149309427175687,
+            "angular_speed_rad_s": 0.001963013002504521,
+            "stable": true,
+            "finite": true,
+            "floor_penetration_m": 0.00013898222726819488,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.041922452154395384,
+            "joint_home_error_mean_rad": 0.013390019270682282,
+            "motor_target_home_error_max_rad": 8.031849504819277e-05,
+            "foot_normal_forces_n": [
+              10.501701449955101,
+              10.169278971753883
+            ],
+            "foot_load_fraction": 1.0,
+            "foot_up_alignment_to_home": [
+              0.9981652724803488,
+              0.9977149600792385
+            ]
+          },
+          "final_support": {
+            "margin_m": 0.027437435220570863,
+            "contact_count": 6,
+            "com_xyz_m": [
+              -0.12596212306580915,
+              -0.1482056880073717,
+              0.2042918100580685
+            ],
+            "foot_contact_force_n": [
+              10.501701449955101,
+              10.169278971753883
+            ]
+          },
+          "peaks": {
+            "floor": 0.0038888414862617293,
+            "self": 0.0022120730910026778,
+            "joint": 0.02833554592659282,
+            "force": 3.23,
+            "slew": 5.2400000000000055
+          },
+          "success": true
+        },
+        {
+          "score": 3.584090992154319,
+          "valid": true,
+          "strict_tail_s": 0.0,
+          "supported_longest_s": 0.0,
+          "completed_steps": 2079,
+          "final": {
+            "up_z": -0.00022705427422392566,
+            "height_m": 0.1543435104566271,
+            "feet": [
+              false,
+              false
+            ],
+            "torso_contact": true,
+            "penetration_m": 1.963255445699974e-05,
+            "linear_speed_mps": 0.00013366200350021842,
+            "angular_speed_rad_s": 0.0018140236838723397,
+            "stable": false,
+            "finite": true,
+            "floor_penetration_m": 1.963255445699974e-05,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.046298136004901826,
+            "joint_home_error_mean_rad": 0.015175801226745536,
+            "motor_target_home_error_max_rad": 0.013523423854316263,
+            "foot_normal_forces_n": [
+              0.0,
+              0.0
+            ],
+            "foot_load_fraction": 0.0,
+            "foot_up_alignment_to_home": [
+              0.048939277465452416,
+              0.05210241755840914
+            ]
+          },
+          "final_support": {
+            "margin_m": -0.2,
+            "contact_count": 0,
+            "com_xyz_m": [
+              -0.12911916720553682,
+              0.136164875878888,
+              0.12625619887278838
+            ],
+            "foot_contact_force_n": [
+              0.0,
+              0.0
+            ]
+          },
+          "peaks": {
+            "floor": 0.006251136262723677,
+            "self": 0.0021046165042310806,
+            "joint": 0.02218034112276651,
+            "force": 3.23,
+            "slew": 5.2400000000000055
+          },
+          "success": false
+        },
+        {
+          "score": 5.292444176283907,
+          "valid": true,
+          "strict_tail_s": 0.0,
+          "supported_longest_s": 0.0,
+          "completed_steps": 2079,
+          "final": {
+            "up_z": -0.0002306992596297075,
+            "height_m": 0.15434347311031357,
+            "feet": [
+              false,
+              false
+            ],
+            "torso_contact": true,
+            "penetration_m": 1.9968679203327677e-05,
+            "linear_speed_mps": 4.3835560532776834e-05,
+            "angular_speed_rad_s": 0.0005525061519616806,
+            "stable": false,
+            "finite": true,
+            "floor_penetration_m": 1.9968679203327677e-05,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.11238081982465875,
+            "joint_home_error_mean_rad": 0.04099877464671956,
+            "motor_target_home_error_max_rad": 0.10348221680073011,
+            "foot_normal_forces_n": [
+              0.0,
+              0.0
+            ],
+            "foot_load_fraction": 0.0,
+            "foot_up_alignment_to_home": [
+              0.22809084070716829,
+              0.2295815627310046
+            ]
+          },
+          "final_support": {
+            "margin_m": -0.2,
+            "contact_count": 0,
+            "com_xyz_m": [
+              -0.13454487543698207,
+              0.16573151962729946,
+              0.12428690378859075
+            ],
+            "foot_contact_force_n": [
+              0.0,
+              0.0
+            ]
+          },
+          "peaks": {
+            "floor": 0.007281350680540092,
+            "self": 0.002029760551602763,
+            "joint": 0.022855144942758754,
+            "force": 3.23,
+            "slew": 5.2400000000000055
+          },
+          "success": false
+        },
+        {
+          "score": 60.55409556005927,
+          "valid": true,
+          "strict_tail_s": 1.6600000000000001,
+          "supported_longest_s": 1.6600000000000001,
+          "completed_steps": 2079,
+          "final": {
+            "up_z": 0.9999425823913657,
+            "height_m": 0.15966015664715624,
+            "feet": [
+              true,
+              true
+            ],
+            "torso_contact": false,
+            "penetration_m": 0.00013809326294059523,
+            "linear_speed_mps": 0.0003805987139032056,
+            "angular_speed_rad_s": 0.002424930861622507,
+            "stable": true,
+            "finite": true,
+            "floor_penetration_m": 0.00013809326294059523,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.04222938154781265,
+            "joint_home_error_mean_rad": 0.013320812862797288,
+            "motor_target_home_error_max_rad": 0.00021220752432893342,
+            "foot_normal_forces_n": [
+              10.501173559015495,
+              10.169799411283373
+            ],
+            "foot_load_fraction": 1.0,
+            "foot_up_alignment_to_home": [
+              0.9981547952144364,
+              0.9976972586641981
+            ]
+          },
+          "final_support": {
+            "margin_m": 0.027227002413112888,
+            "contact_count": 6,
+            "com_xyz_m": [
+              -0.16774650954812637,
+              -0.14458241281461262,
+              0.20430072406572128
+            ],
+            "foot_contact_force_n": [
+              10.501173559015495,
+              10.169799411283373
+            ]
+          },
+          "peaks": {
+            "floor": 0.004531870161924604,
+            "self": 0.002195518234100179,
+            "joint": 0.029215827802018146,
+            "force": 3.23,
+            "slew": 5.240000000000003
+          },
+          "success": true
+        },
+        {
+          "score": 60.8060586913771,
+          "valid": true,
+          "strict_tail_s": 1.58,
+          "supported_longest_s": 1.62,
+          "completed_steps": 2079,
+          "final": {
+            "up_z": 0.9999989646418453,
+            "height_m": 0.1596603840830823,
+            "feet": [
+              true,
+              true
+            ],
+            "torso_contact": false,
+            "penetration_m": 0.00014912078312270208,
+            "linear_speed_mps": 0.00014875895111099424,
+            "angular_speed_rad_s": 0.0013920397538178168,
+            "stable": true,
+            "finite": true,
+            "floor_penetration_m": 0.00014912078312270208,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.03848976844402574,
+            "joint_home_error_mean_rad": 0.013134828652243627,
+            "motor_target_home_error_max_rad": 0.00046667522962096086,
+            "foot_normal_forces_n": [
+              10.524409100997381,
+              10.146608503276113
+            ],
+            "foot_load_fraction": 1.0,
+            "foot_up_alignment_to_home": [
+              0.9984656633282061,
+              0.9979644026673128
+            ]
+          },
+          "final_support": {
+            "margin_m": 0.02862219536662967,
+            "contact_count": 5,
+            "com_xyz_m": [
+              0.02895485111142187,
+              -0.018541582671375657,
+              0.20441904468828426
+            ],
+            "foot_contact_force_n": [
+              10.524409100997381,
+              10.146608503276113
+            ]
+          },
+          "peaks": {
+            "floor": 0.004348628184470536,
+            "self": 0.002292169909742574,
+            "joint": 0.025307809376509338,
+            "force": 3.23,
+            "slew": 5.2400000000000055
+          },
+          "success": true
+        },
+        {
+          "score": 60.574826601961036,
+          "valid": true,
+          "strict_tail_s": 1.7,
+          "supported_longest_s": 1.7,
+          "completed_steps": 2079,
+          "final": {
+            "up_z": 0.9999622871145539,
+            "height_m": 0.15957612120574013,
+            "feet": [
+              true,
+              true
+            ],
+            "torso_contact": false,
+            "penetration_m": 0.0001381446805847628,
+            "linear_speed_mps": 0.00033366644346507666,
+            "angular_speed_rad_s": 0.0019017875420866799,
+            "stable": true,
+            "finite": true,
+            "floor_penetration_m": 0.0001381446805847628,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.04214190042138806,
+            "joint_home_error_mean_rad": 0.013481559225858305,
+            "motor_target_home_error_max_rad": 5.071202393835961e-05,
+            "foot_normal_forces_n": [
+              10.501766525314608,
+              10.16920547740586
+            ],
+            "foot_load_fraction": 1.0,
+            "foot_up_alignment_to_home": [
+              0.9981559861058383,
+              0.9977051983186015
+            ]
+          },
+          "final_support": {
+            "margin_m": 0.02745260413845301,
+            "contact_count": 6,
+            "com_xyz_m": [
+              -0.11148651822771799,
+              -0.11927490606116799,
+              0.20426818126300517
+            ],
+            "foot_contact_force_n": [
+              10.501766525314608,
+              10.16920547740586
+            ]
+          },
+          "peaks": {
+            "floor": 0.0033553772681509005,
+            "self": 0.00212091434625448,
+            "joint": 0.025100616337576986,
+            "force": 3.23,
+            "slew": 5.2400000000000055
+          },
+          "success": true
+        },
+        {
+          "score": 60.5628654274183,
+          "valid": true,
+          "strict_tail_s": 1.6600000000000001,
+          "supported_longest_s": 1.6400000000000001,
+          "completed_steps": 2079,
+          "final": {
+            "up_z": 0.9999457522274211,
+            "height_m": 0.15969532945652853,
+            "feet": [
+              true,
+              true
+            ],
+            "torso_contact": false,
+            "penetration_m": 0.0001405192612384384,
+            "linear_speed_mps": 0.0003569813787259923,
+            "angular_speed_rad_s": 0.0023742059190011147,
+            "stable": true,
+            "finite": true,
+            "floor_penetration_m": 0.0001405192612384384,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.04134402045724286,
+            "joint_home_error_mean_rad": 0.013231504136637975,
+            "motor_target_home_error_max_rad": 0.0001471911128669845,
+            "foot_normal_forces_n": [
+              10.501070486172507,
+              10.169972942110244
+            ],
+            "foot_load_fraction": 1.0,
+            "foot_up_alignment_to_home": [
+              0.9981952177550989,
+              0.9977322563012043
+            ]
+          },
+          "final_support": {
+            "margin_m": 0.027272797831921106,
+            "contact_count": 6,
+            "com_xyz_m": [
+              -0.13505968232519436,
+              -0.18496713431592315,
+              0.20432809223059406
+            ],
+            "foot_contact_force_n": [
+              10.501070486172507,
+              10.169972942110244
+            ]
+          },
+          "peaks": {
+            "floor": 0.004382371264741293,
+            "self": 0.002212562912726812,
+            "joint": 0.0279456081883106,
+            "force": 3.23,
+            "slew": 5.2400000000000055
+          },
+          "success": true
+        },
+        {
+          "score": 60.569735676387765,
+          "valid": true,
+          "strict_tail_s": 1.7,
+          "supported_longest_s": 1.68,
+          "completed_steps": 2079,
+          "final": {
+            "up_z": 0.9999657346729298,
+            "height_m": 0.15948383847263778,
+            "feet": [
+              true,
+              true
+            ],
+            "torso_contact": false,
+            "penetration_m": 0.00013434965344271722,
+            "linear_speed_mps": 0.0003587458585351778,
+            "angular_speed_rad_s": 0.0017848706145522184,
+            "stable": true,
+            "finite": true,
+            "floor_penetration_m": 0.00013434965344271722,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.04348030107903948,
+            "joint_home_error_mean_rad": 0.013738750858284767,
+            "motor_target_home_error_max_rad": 0.00010570065887693936,
+            "foot_normal_forces_n": [
+              10.502443770639811,
+              10.168496340809824
+            ],
+            "foot_load_fraction": 1.0,
+            "foot_up_alignment_to_home": [
+              0.9980921303187744,
+              0.9976527426705775
+            ]
+          },
+          "final_support": {
+            "margin_m": 0.02747667969295873,
+            "contact_count": 6,
+            "com_xyz_m": [
+              -0.09983210610099401,
+              -0.14798562698058054,
+              0.2042107432758659
+            ],
+            "foot_contact_force_n": [
+              10.502443770639811,
+              10.168496340809824
+            ]
+          },
+          "peaks": {
+            "floor": 0.0041090362023388834,
+            "self": 0.0019855884864524538,
+            "joint": 0.023931650735185883,
+            "force": 3.23,
+            "slew": 5.240000000000003
+          },
+          "success": true
+        }
+      ],
+      "training_successes": 6,
+      "trials": 8
+    },
+    {
+      "wait_s": 5.0,
+      "prefix_seconds": 11.78,
+      "config_index": 1,
+      "nominal": {
+        "score": 60.584806266083895,
+        "valid": true,
+        "strict_tail_s": 1.68,
+        "supported_longest_s": 1.68,
+        "completed_steps": 779,
+        "final": {
+          "up_z": 0.9999622120971056,
+          "height_m": 0.1596589822452597,
+          "feet": [
+            true,
+            true
+          ],
+          "torso_contact": false,
+          "penetration_m": 0.00014214749264826378,
+          "linear_speed_mps": 0.0002995663677690747,
+          "angular_speed_rad_s": 0.0018748198124901381,
+          "stable": true,
+          "finite": true,
+          "floor_penetration_m": 0.00014214749264826378,
+          "self_penetration_m": 0.0,
+          "joint_home_error_max_rad": 0.040775789540008385,
+          "joint_home_error_mean_rad": 0.013259707753280047,
+          "motor_target_home_error_max_rad": 0.0,
+          "foot_normal_forces_n": [
+            10.500869618303934,
+            10.17017721954953
+          ],
+          "foot_load_fraction": 1.0,
+          "foot_up_alignment_to_home": [
+            0.998216549499644,
+            0.9977598230945814
+          ]
+        },
+        "final_support": {
+          "margin_m": 0.027474228357637184,
+          "contact_count": 6,
+          "com_xyz_m": [
+            -0.08143804810740513,
+            -0.16021271294636327,
+            0.20432527530924738
+          ],
+          "foot_contact_force_n": [
+            10.500869618303934,
+            10.17017721954953
+          ]
+        },
+        "peaks": {
+          "floor": 0.004077250571655313,
+          "self": 0.001969469955598326,
+          "joint": 0.027713815517562468,
+          "force": 3.23,
+          "slew": 5.2400000000000055
+        },
+        "success": true
+      },
+      "training": [
+        {
+          "score": 60.52492566889737,
+          "valid": true,
+          "strict_tail_s": 1.6400000000000001,
+          "supported_longest_s": 1.62,
+          "completed_steps": 779,
+          "final": {
+            "up_z": 0.9999162205937584,
+            "height_m": 0.15973565287828276,
+            "feet": [
+              true,
+              true
+            ],
+            "torso_contact": false,
+            "penetration_m": 0.0001372220130761697,
+            "linear_speed_mps": 0.00046805731816473015,
+            "angular_speed_rad_s": 0.003078637190340056,
+            "stable": true,
+            "finite": true,
+            "floor_penetration_m": 0.0001372220130761697,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.04253342997252124,
+            "joint_home_error_mean_rad": 0.01314645660932565,
+            "motor_target_home_error_max_rad": 0.0003703876262501904,
+            "foot_normal_forces_n": [
+              10.500558092799245,
+              10.170411687856776
+            ],
+            "foot_load_fraction": 1.0,
+            "foot_up_alignment_to_home": [
+              0.998146194330151,
+              0.9976766472425023
+            ]
+          },
+          "final_support": {
+            "margin_m": 0.026939934087523,
+            "contact_count": 6,
+            "com_xyz_m": [
+              -0.13980012706324055,
+              -0.14405970234994178,
+              0.204324122625492
+            ],
+            "foot_contact_force_n": [
+              10.500558092799245,
+              10.170411687856776
+            ]
+          },
+          "peaks": {
+            "floor": 0.003921159839464684,
+            "self": 0.0022120730910026778,
+            "joint": 0.032503675185582614,
+            "force": 3.23,
+            "slew": 5.2400000000000055
+          },
+          "success": true
+        },
+        {
+          "score": 5.775221388185163,
+          "valid": true,
+          "strict_tail_s": 0.0,
+          "supported_longest_s": 0.0,
+          "completed_steps": 779,
+          "final": {
+            "up_z": -0.00018762142385259084,
+            "height_m": 0.15434350729457577,
+            "feet": [
+              false,
+              false
+            ],
+            "torso_contact": true,
+            "penetration_m": 1.7413461414832535e-05,
+            "linear_speed_mps": 3.7076047440661953e-06,
+            "angular_speed_rad_s": 4.7536368689861424e-05,
+            "stable": false,
+            "finite": true,
+            "floor_penetration_m": 1.7413461414832535e-05,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.09644213583411143,
+            "joint_home_error_mean_rad": 0.03636768733745752,
+            "motor_target_home_error_max_rad": 0.08719634680214194,
+            "foot_normal_forces_n": [
+              0.0,
+              0.0
+            ],
+            "foot_load_fraction": 0.0,
+            "foot_up_alignment_to_home": [
+              0.19763718696338187,
+              0.19760184147948473
+            ]
+          },
+          "final_support": {
+            "margin_m": -0.2,
+            "contact_count": 0,
+            "com_xyz_m": [
+              -0.1325484416131297,
+              0.13035485990952578,
+              0.12464638249113613
+            ],
+            "foot_contact_force_n": [
+              0.0,
+              0.0
+            ]
+          },
+          "peaks": {
+            "floor": 0.006816535636286109,
+            "self": 0.0021046165042310806,
+            "joint": 0.023212906785656462,
+            "force": 3.23,
+            "slew": 5.2400000000000055
+          },
+          "success": false
+        },
+        {
+          "score": 5.747169823726315,
+          "valid": true,
+          "strict_tail_s": 0.0,
+          "supported_longest_s": 0.0,
+          "completed_steps": 779,
+          "final": {
+            "up_z": -0.00018391588941946146,
+            "height_m": 0.15434340181010583,
+            "feet": [
+              false,
+              false
+            ],
+            "torso_contact": true,
+            "penetration_m": 1.726287555196826e-05,
+            "linear_speed_mps": 1.1972055138913192e-05,
+            "angular_speed_rad_s": 0.00016490637381687842,
+            "stable": false,
+            "finite": true,
+            "floor_penetration_m": 1.726287555196826e-05,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.09134622834228434,
+            "joint_home_error_mean_rad": 0.034802632885299396,
+            "motor_target_home_error_max_rad": 0.08169190626038447,
+            "foot_normal_forces_n": [
+              0.0,
+              0.0
+            ],
+            "foot_load_fraction": 0.0,
+            "foot_up_alignment_to_home": [
+              0.18718814411707024,
+              0.1870887923843528
+            ]
+          },
+          "final_support": {
+            "margin_m": -0.2,
+            "contact_count": 0,
+            "com_xyz_m": [
+              -0.13346076346995828,
+              0.15096505227236537,
+              0.12476808303952323
+            ],
+            "foot_contact_force_n": [
+              0.0,
+              0.0
+            ]
+          },
+          "peaks": {
+            "floor": 0.00772372783797339,
+            "self": 0.002029760551602763,
+            "joint": 0.022455329242113464,
+            "force": 3.23,
+            "slew": 5.2400000000000055
+          },
+          "success": false
+        },
+        {
+          "score": 17.95312131315362,
+          "valid": true,
+          "strict_tail_s": 0.0,
+          "supported_longest_s": 0.0,
+          "completed_steps": 779,
+          "final": {
+            "up_z": 0.5021918209758923,
+            "height_m": 0.1359611581202751,
+            "feet": [
+              true,
+              true
+            ],
+            "torso_contact": true,
+            "penetration_m": 5.2667023575111646e-05,
+            "linear_speed_mps": 7.785864343893446e-05,
+            "angular_speed_rad_s": 0.0011350508449015403,
+            "stable": false,
+            "finite": true,
+            "floor_penetration_m": 5.2667023575111646e-05,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.03754389039284582,
+            "joint_home_error_mean_rad": 0.009841170751084741,
+            "motor_target_home_error_max_rad": 0.021566442096488503,
+            "foot_normal_forces_n": [
+              1.3681446349808428,
+              1.1048777605194486
+            ],
+            "foot_load_fraction": 0.1194413584824696,
+            "foot_up_alignment_to_home": [
+              0.47592663772158167,
+              0.4698052824721987
+            ]
+          },
+          "final_support": {
+            "margin_m": -0.16234548891154252,
+            "contact_count": 2,
+            "com_xyz_m": [
+              -0.18792262993964026,
+              0.07066587302706875,
+              0.1351696617588973
+            ],
+            "foot_contact_force_n": [
+              1.3681446349808428,
+              0.9921526193141584
+            ]
+          },
+          "peaks": {
+            "floor": 0.0074801887972005925,
+            "self": 0.002195518234100179,
+            "joint": 0.03234297704424205,
+            "force": 3.23,
+            "slew": 5.2400000000000055
+          },
+          "success": false
+        },
+        {
+          "score": 60.50796917930853,
+          "valid": true,
+          "strict_tail_s": 1.62,
+          "supported_longest_s": 1.6400000000000001,
+          "completed_steps": 779,
+          "final": {
+            "up_z": 0.9998809316460554,
+            "height_m": 0.15992096889733218,
+            "feet": [
+              true,
+              true
+            ],
+            "torso_contact": false,
+            "penetration_m": 0.00014139797865994792,
+            "linear_speed_mps": 0.00048742861311275385,
+            "angular_speed_rad_s": 0.003610331585328375,
+            "stable": true,
+            "finite": true,
+            "floor_penetration_m": 0.00014139797865994792,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.0413788932472074,
+            "joint_home_error_mean_rad": 0.012707193041245344,
+            "motor_target_home_error_max_rad": 0.0007977341626306256,
+            "foot_normal_forces_n": [
+              10.496657096465208,
+              10.174395108567554
+            ],
+            "foot_load_fraction": 1.0,
+            "foot_up_alignment_to_home": [
+              0.9981936292854957,
+              0.9977253207394678
+            ]
+          },
+          "final_support": {
+            "margin_m": 0.026674181094941976,
+            "contact_count": 6,
+            "com_xyz_m": [
+              -0.1978793850354523,
+              -0.13984906163422547,
+              0.20441973748184986
+            ],
+            "foot_contact_force_n": [
+              10.496657096465208,
+              10.174395108567554
+            ]
+          },
+          "peaks": {
+            "floor": 0.005082587623660137,
+            "self": 0.002292169909742574,
+            "joint": 0.02402319987877266,
+            "force": 3.23,
+            "slew": 5.2400000000000055
+          },
+          "success": true
+        },
+        {
+          "score": 60.552477993291696,
+          "valid": true,
+          "strict_tail_s": 1.6400000000000001,
+          "supported_longest_s": 1.62,
+          "completed_steps": 779,
+          "final": {
+            "up_z": 0.9999328836318472,
+            "height_m": 0.15976958089796453,
+            "feet": [
+              true,
+              true
+            ],
+            "torso_contact": false,
+            "penetration_m": 0.00014180529210075683,
+            "linear_speed_mps": 0.00038986739985705064,
+            "angular_speed_rad_s": 0.0027224112387664555,
+            "stable": true,
+            "finite": true,
+            "floor_penetration_m": 0.00014180529210075683,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.04086408657834413,
+            "joint_home_error_mean_rad": 0.013010565649613958,
+            "motor_target_home_error_max_rad": 0.0002453649227578403,
+            "foot_normal_forces_n": [
+              10.500667082950535,
+              10.170381403166031
+            ],
+            "foot_load_fraction": 1.0,
+            "foot_up_alignment_to_home": [
+              0.9982210084369899,
+              0.9977454413775553
+            ]
+          },
+          "final_support": {
+            "margin_m": 0.02713734988365938,
+            "contact_count": 6,
+            "com_xyz_m": [
+              -0.12484414399543393,
+              -0.12054431166510086,
+              0.20436364362060067
+            ],
+            "foot_contact_force_n": [
+              10.500667082950535,
+              10.170381403166031
+            ]
+          },
+          "peaks": {
+            "floor": 0.003916082004995422,
+            "self": 0.00212091434625448,
+            "joint": 0.02989774257732125,
+            "force": 3.23,
+            "slew": 5.2400000000000055
+          },
+          "success": true
+        },
+        {
+          "score": 23.22733257455562,
+          "valid": true,
+          "strict_tail_s": 0.0,
+          "supported_longest_s": 0.0,
+          "completed_steps": 779,
+          "final": {
+            "up_z": 0.5325599221397235,
+            "height_m": 0.13330386112960152,
+            "feet": [
+              false,
+              false
+            ],
+            "torso_contact": true,
+            "penetration_m": 4.1368399113535584e-05,
+            "linear_speed_mps": 5.740553028060424e-05,
+            "angular_speed_rad_s": 0.0013609946776040654,
+            "stable": false,
+            "finite": true,
+            "floor_penetration_m": 4.1368399113535584e-05,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.06833503451057732,
+            "joint_home_error_mean_rad": 0.023926575186280424,
+            "motor_target_home_error_max_rad": 0.07560394480776989,
+            "foot_normal_forces_n": [
+              0.0,
+              0.0
+            ],
+            "foot_load_fraction": 0.0,
+            "foot_up_alignment_to_home": [
+              0.418348611879541,
+              0.4175405773645709
+            ]
+          },
+          "final_support": {
+            "margin_m": -0.2,
+            "contact_count": 0,
+            "com_xyz_m": [
+              -0.15883952577734287,
+              0.029238037486233024,
+              0.1354664619586444
+            ],
+            "foot_contact_force_n": [
+              0.0,
+              0.0
+            ]
+          },
+          "peaks": {
+            "floor": 0.008130655947819296,
+            "self": 0.002212562912726812,
+            "joint": 0.0339290470337813,
+            "force": 3.23,
+            "slew": 5.2400000000000055
+          },
+          "success": false
+        },
+        {
+          "score": 60.57193134577255,
+          "valid": true,
+          "strict_tail_s": 1.72,
+          "supported_longest_s": 1.72,
+          "completed_steps": 779,
+          "final": {
+            "up_z": 0.999959961823802,
+            "height_m": 0.1596038343789157,
+            "feet": [
+              true,
+              true
+            ],
+            "torso_contact": false,
+            "penetration_m": 0.00013893748867042314,
+            "linear_speed_mps": 0.0003404307645139781,
+            "angular_speed_rad_s": 0.0019558961975982975,
+            "stable": true,
+            "finite": true,
+            "floor_penetration_m": 0.00013893748867042314,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.04194815756399999,
+            "joint_home_error_mean_rad": 0.01347689995956454,
+            "motor_target_home_error_max_rad": 1.4474546428777657e-05,
+            "foot_normal_forces_n": [
+              10.50077645729504,
+              10.170202164529748
+            ],
+            "foot_load_fraction": 1.0,
+            "foot_up_alignment_to_home": [
+              0.9981618929048572,
+              0.9977150388887136
+            ]
+          },
+          "final_support": {
+            "margin_m": 0.02740902143555287,
+            "contact_count": 6,
+            "com_xyz_m": [
+              -0.09061057630092932,
+              -0.1470787056562519,
+              0.20428420138008252
+            ],
+            "foot_contact_force_n": [
+              10.50077645729504,
+              10.170202164529748
+            ]
+          },
+          "peaks": {
+            "floor": 0.0041090362023388834,
+            "self": 0.0019855884864524538,
+            "joint": 0.024168823604439615,
+            "force": 3.23,
+            "slew": 5.2400000000000055
+          },
+          "success": true
+        }
+      ],
+      "training_successes": 4,
+      "trials": 8
+    },
+    {
+      "wait_s": 2.0,
+      "prefix_seconds": 8.78,
+      "config_index": 2,
+      "nominal": {
+        "score": 60.5825242519269,
+        "valid": true,
+        "strict_tail_s": 1.68,
+        "supported_longest_s": 1.7,
+        "completed_steps": 629,
+        "final": {
+          "up_z": 0.9999593776587601,
+          "height_m": 0.1596927501272183,
+          "feet": [
+            true,
+            true
+          ],
+          "torso_contact": false,
+          "penetration_m": 0.00014326461652295307,
+          "linear_speed_mps": 0.0003138607832057872,
+          "angular_speed_rad_s": 0.0019929918176923352,
+          "stable": true,
+          "finite": true,
+          "floor_penetration_m": 0.00014326461652295307,
+          "self_penetration_m": 0.0,
+          "joint_home_error_max_rad": 0.040322874493097446,
+          "joint_home_error_mean_rad": 0.013185339300989014,
+          "motor_target_home_error_max_rad": 0.0,
+          "foot_normal_forces_n": [
+            10.50103711442427,
+            10.170010869726623
+          ],
+          "foot_load_fraction": 1.0,
+          "foot_up_alignment_to_home": [
+            0.9982392476568787,
+            0.9977739652641876
+          ]
+        },
+        "final_support": {
+          "margin_m": 0.02743190511061971,
+          "contact_count": 6,
+          "com_xyz_m": [
+            -0.09377802662722232,
+            -0.16279451794988037,
+            0.20434325502915096
+          ],
+          "foot_contact_force_n": [
+            10.50103711442427,
+            10.170010869726623
+          ]
+        },
+        "peaks": {
+          "floor": 0.004077250571655313,
+          "self": 0.0018995069118024083,
+          "joint": 0.0351483360236734,
+          "force": 3.23,
+          "slew": 5.2400000000000055
+        },
+        "success": true
+      },
+      "training": [
+        {
+          "score": 60.53361100026228,
+          "valid": true,
+          "strict_tail_s": 1.6600000000000001,
+          "supported_longest_s": 1.6600000000000001,
+          "completed_steps": 629,
+          "final": {
+            "up_z": 0.9999176634584857,
+            "height_m": 0.15978435818981374,
+            "feet": [
+              true,
+              true
+            ],
+            "torso_contact": false,
+            "penetration_m": 0.00013998776510107652,
+            "linear_speed_mps": 0.00044283189808748695,
+            "angular_speed_rad_s": 0.003095905091276203,
+            "stable": true,
+            "finite": true,
+            "floor_penetration_m": 0.00013998776510107652,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.0415810477785447,
+            "joint_home_error_mean_rad": 0.01298569335243026,
+            "motor_target_home_error_max_rad": 0.00032925825794016816,
+            "foot_normal_forces_n": [
+              10.499980924994382,
+              10.171011432257096
+            ],
+            "foot_load_fraction": 1.0,
+            "foot_up_alignment_to_home": [
+              0.998188885398014,
+              0.9977159719506934
+            ]
+          },
+          "final_support": {
+            "margin_m": 0.026975997473665154,
+            "contact_count": 6,
+            "com_xyz_m": [
+              -0.14406248176813363,
+              -0.1454333937535012,
+              0.20435815193845577
+            ],
+            "foot_contact_force_n": [
+              10.499980924994382,
+              10.171011432257096
+            ]
+          },
+          "peaks": {
+            "floor": 0.0038888414862617293,
+            "self": 0.0022120730910026778,
+            "joint": 0.027425794133096204,
+            "force": 3.23,
+            "slew": 5.2400000000000055
+          },
+          "success": true
+        },
+        {
+          "score": 3.584090992154319,
+          "valid": true,
+          "strict_tail_s": 0.0,
+          "supported_longest_s": 0.0,
+          "completed_steps": 629,
+          "final": {
+            "up_z": -0.15936211631890435,
+            "height_m": 0.1455814288559424,
+            "feet": [
+              false,
+              false
+            ],
+            "torso_contact": true,
+            "penetration_m": 5.385423028100855e-05,
+            "linear_speed_mps": 0.0002577378698349001,
+            "angular_speed_rad_s": 0.0027762007075586457,
+            "stable": false,
+            "finite": true,
+            "floor_penetration_m": 5.385423028100855e-05,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.12483711451676904,
+            "joint_home_error_mean_rad": 0.04159911646808572,
+            "motor_target_home_error_max_rad": 0.11695230830722547,
+            "foot_normal_forces_n": [
+              0.0,
+              0.0
+            ],
+            "foot_load_fraction": 0.0,
+            "foot_up_alignment_to_home": [
+              0.05817217953798568,
+              0.04183434796023875
+            ]
+          },
+          "final_support": {
+            "margin_m": -0.2,
+            "contact_count": 0,
+            "com_xyz_m": [
+              -0.19247174359057154,
+              0.16547424459084714,
+              0.11380083310106207
+            ],
+            "foot_contact_force_n": [
+              0.0,
+              0.0
+            ]
+          },
+          "peaks": {
+            "floor": 0.005890910679100253,
+            "self": 0.0021046165042310806,
+            "joint": 0.023263893592808782,
+            "force": 3.23,
+            "slew": 5.2400000000000055
+          },
+          "success": false
+        },
+        {
+          "score": 4.595845282961667,
+          "valid": true,
+          "strict_tail_s": 0.0,
+          "supported_longest_s": 0.0,
+          "completed_steps": 629,
+          "final": {
+            "up_z": -0.16708684782961225,
+            "height_m": 0.14638061426009505,
+            "feet": [
+              false,
+              false
+            ],
+            "torso_contact": true,
+            "penetration_m": 6.920393710194844e-05,
+            "linear_speed_mps": 8.636640016078068e-05,
+            "angular_speed_rad_s": 0.0018823866991622181,
+            "stable": false,
+            "finite": true,
+            "floor_penetration_m": 6.920393710194844e-05,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.18820853191667797,
+            "joint_home_error_mean_rad": 0.05903080460099164,
+            "motor_target_home_error_max_rad": 0.17999999999999994,
+            "foot_normal_forces_n": [
+              0.0,
+              0.0
+            ],
+            "foot_load_fraction": 0.0,
+            "foot_up_alignment_to_home": [
+              0.1656396182996611,
+              0.14799323692177413
+            ]
+          },
+          "final_support": {
+            "margin_m": -0.2,
+            "contact_count": 0,
+            "com_xyz_m": [
+              -0.21061544630273266,
+              0.17397523072442772,
+              0.11317692888963857
+            ],
+            "foot_contact_force_n": [
+              0.0,
+              0.0
+            ]
+          },
+          "peaks": {
+            "floor": 0.007710441066894934,
+            "self": 0.002029760551602763,
+            "joint": 0.023281153141902378,
+            "force": 3.23,
+            "slew": 5.2400000000000055
+          },
+          "success": false
+        },
+        {
+          "score": 60.57455690251156,
+          "valid": true,
+          "strict_tail_s": 1.68,
+          "supported_longest_s": 1.6600000000000001,
+          "completed_steps": 629,
+          "final": {
+            "up_z": 0.9999587170508419,
+            "height_m": 0.15960713045120037,
+            "feet": [
+              true,
+              true
+            ],
+            "torso_contact": false,
+            "penetration_m": 0.00013869844004544933,
+            "linear_speed_mps": 0.0003231940078943611,
+            "angular_speed_rad_s": 0.0019681267672617343,
+            "stable": true,
+            "finite": true,
+            "floor_penetration_m": 0.00013869844004544933,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.04204059093070392,
+            "joint_home_error_mean_rad": 0.013369151437268027,
+            "motor_target_home_error_max_rad": 5.3045383166416826e-05,
+            "foot_normal_forces_n": [
+              10.50137814072819,
+              10.169599737769593
+            ],
+            "foot_load_fraction": 1.0,
+            "foot_up_alignment_to_home": [
+              0.9981586220708943,
+              0.9977111878655588
+            ]
+          },
+          "final_support": {
+            "margin_m": 0.027428912748728863,
+            "contact_count": 6,
+            "com_xyz_m": [
+              -0.1223398832550368,
+              -0.1358380816591145,
+              0.204286756466511
+            ],
+            "foot_contact_force_n": [
+              10.50137814072819,
+              10.169599737769593
+            ]
+          },
+          "peaks": {
+            "floor": 0.004531870161924604,
+            "self": 0.002195518234100179,
+            "joint": 0.02735807282507219,
+            "force": 3.23,
+            "slew": 5.2400000000000055
+          },
+          "success": true
+        },
+        {
+          "score": 60.52345917473782,
+          "valid": true,
+          "strict_tail_s": 1.6600000000000001,
+          "supported_longest_s": 1.68,
+          "completed_steps": 629,
+          "final": {
+            "up_z": 0.9999159470443324,
+            "height_m": 0.15972639452636467,
+            "feet": [
+              true,
+              true
+            ],
+            "torso_contact": false,
+            "penetration_m": 0.00013681388245992496,
+            "linear_speed_mps": 0.0004711852725224752,
+            "angular_speed_rad_s": 0.003071371882596634,
+            "stable": true,
+            "finite": true,
+            "floor_penetration_m": 0.00013681388245992496,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.042734742704177583,
+            "joint_home_error_mean_rad": 0.013236519078013246,
+            "motor_target_home_error_max_rad": 0.00039812120562499054,
+            "foot_normal_forces_n": [
+              10.500034529592245,
+              10.170929571128358
+            ],
+            "foot_load_fraction": 1.0,
+            "foot_up_alignment_to_home": [
+              0.9981345907189866,
+              0.9976708909341488
+            ]
+          },
+          "final_support": {
+            "margin_m": 0.026934554288593603,
+            "contact_count": 6,
+            "com_xyz_m": [
+              -0.17613850860647165,
+              -0.13972658718004066,
+              0.2043165994679841
+            ],
+            "foot_contact_force_n": [
+              10.500034529592245,
+              10.170929571128358
+            ]
+          },
+          "peaks": {
+            "floor": 0.004195164090223561,
+            "self": 0.002292169909742574,
+            "joint": 0.029357564875072795,
+            "force": 3.23,
+            "slew": 5.2400000000000055
+          },
+          "success": true
+        },
+        {
+          "score": 60.54825220570514,
+          "valid": true,
+          "strict_tail_s": 1.68,
+          "supported_longest_s": 1.6600000000000001,
+          "completed_steps": 629,
+          "final": {
+            "up_z": 0.9999485368657208,
+            "height_m": 0.15954637470758967,
+            "feet": [
+              true,
+              true
+            ],
+            "torso_contact": false,
+            "penetration_m": 0.00013376927732368805,
+            "linear_speed_mps": 0.000420945093261843,
+            "angular_speed_rad_s": 0.0023620904923800055,
+            "stable": true,
+            "finite": true,
+            "floor_penetration_m": 0.00013376927732368805,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.04369519638892764,
+            "joint_home_error_mean_rad": 0.013550662255011958,
+            "motor_target_home_error_max_rad": 2.746574945433622e-05,
+            "foot_normal_forces_n": [
+              10.501556344281989,
+              10.16938107617291
+            ],
+            "foot_load_fraction": 1.0,
+            "foot_up_alignment_to_home": [
+              0.9980860501308305,
+              0.9976381543439845
+            ]
+          },
+          "final_support": {
+            "margin_m": 0.02726054429848459,
+            "contact_count": 6,
+            "com_xyz_m": [
+              -0.11634166798936356,
+              -0.12102836418251621,
+              0.20422974507799926
+            ],
+            "foot_contact_force_n": [
+              10.501556344281989,
+              10.16938107617291
+            ]
+          },
+          "peaks": {
+            "floor": 0.003985702515743761,
+            "self": 0.00212091434625448,
+            "joint": 0.028253996265674708,
+            "force": 3.23,
+            "slew": 5.2400000000000055
+          },
+          "success": true
+        },
+        {
+          "score": 60.55672661620595,
+          "valid": true,
+          "strict_tail_s": 1.68,
+          "supported_longest_s": 1.6600000000000001,
+          "completed_steps": 629,
+          "final": {
+            "up_z": 0.9999524808648063,
+            "height_m": 0.15956018607517802,
+            "feet": [
+              true,
+              true
+            ],
+            "torso_contact": false,
+            "penetration_m": 0.00013507969117117907,
+            "linear_speed_mps": 0.00038910179232205685,
+            "angular_speed_rad_s": 0.002198912369693586,
+            "stable": true,
+            "finite": true,
+            "floor_penetration_m": 0.00013507969117117907,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.043172712317696746,
+            "joint_home_error_mean_rad": 0.013576671811880757,
+            "motor_target_home_error_max_rad": 5.207097291126672e-05,
+            "foot_normal_forces_n": [
+              10.502496497002781,
+              10.168451504063682
+            ],
+            "foot_load_fraction": 1.0,
+            "foot_up_alignment_to_home": [
+              0.9981126067645604,
+              0.9976583402044984
+            ]
+          },
+          "final_support": {
+            "margin_m": 0.027318608548610183,
+            "contact_count": 6,
+            "com_xyz_m": [
+              -0.11335466267080647,
+              -0.18326768952527311,
+              0.20424357705192686
+            ],
+            "foot_contact_force_n": [
+              10.502496497002781,
+              10.168451504063682
+            ]
+          },
+          "peaks": {
+            "floor": 0.004382371264741293,
+            "self": 0.002212562912726812,
+            "joint": 0.030886087207379953,
+            "force": 3.23,
+            "slew": 5.2400000000000055
+          },
+          "success": true
+        },
+        {
+          "score": 60.55391099322162,
+          "valid": true,
+          "strict_tail_s": 1.74,
+          "supported_longest_s": 1.78,
+          "completed_steps": 629,
+          "final": {
+            "up_z": 0.9999564972760051,
+            "height_m": 0.15949632214686177,
+            "feet": [
+              true,
+              true
+            ],
+            "torso_contact": false,
+            "penetration_m": 0.00013286988706122382,
+            "linear_speed_mps": 0.00040679661868341967,
+            "angular_speed_rad_s": 0.0020915267790961056,
+            "stable": true,
+            "finite": true,
+            "floor_penetration_m": 0.00013286988706122382,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.04404483900491,
+            "joint_home_error_mean_rad": 0.013692260167284406,
+            "motor_target_home_error_max_rad": 2.17065191874255e-05,
+            "foot_normal_forces_n": [
+              10.501606490542196,
+              10.169321794609072
+            ],
+            "foot_load_fraction": 1.0,
+            "foot_up_alignment_to_home": [
+              0.9980659449654917,
+              0.9976276044374239
+            ]
+          },
+          "final_support": {
+            "margin_m": 0.027340526572094525,
+            "contact_count": 6,
+            "com_xyz_m": [
+              -0.10624122288743934,
+              -0.14879543544983337,
+              0.20420599288318023
+            ],
+            "foot_contact_force_n": [
+              10.501606490542196,
+              10.169321794609072
+            ]
+          },
+          "peaks": {
+            "floor": 0.0041090362023388834,
+            "self": 0.0019855884864524538,
+            "joint": 0.029846177523836004,
+            "force": 3.23,
+            "slew": 5.2400000000000055
+          },
+          "success": true
+        }
+      ],
+      "training_successes": 6,
+      "trials": 8
+    },
+    {
+      "wait_s": 1.0,
+      "prefix_seconds": 7.78,
+      "config_index": 3,
+      "nominal": {
+        "score": 17.815836886883076,
+        "valid": true,
+        "strict_tail_s": 0.0,
+        "supported_longest_s": 0.0,
+        "completed_steps": 579,
+        "final": {
+          "up_z": 0.4874784787837941,
+          "height_m": 0.13717116179906247,
+          "feet": [
+            true,
+            true
+          ],
+          "torso_contact": true,
+          "penetration_m": 5.7106166046268225e-05,
+          "linear_speed_mps": 5.333136015699632e-05,
+          "angular_speed_rad_s": 0.0010423276491258403,
+          "stable": false,
+          "finite": true,
+          "floor_penetration_m": 5.7106166046268225e-05,
+          "self_penetration_m": 0.0,
+          "joint_home_error_max_rad": 0.03884860032987137,
+          "joint_home_error_mean_rad": 0.005952157854280422,
+          "motor_target_home_error_max_rad": 0.0,
+          "foot_normal_forces_n": [
+            1.347468115066759,
+            0.9373431235123856
+          ],
+          "foot_load_fraction": 0.1101097908328059,
+          "foot_up_alignment_to_home": [
+            0.49312187440471955,
+            0.48762934269157393
+          ]
+        },
+        "final_support": {
+          "margin_m": -0.16314215730482207,
+          "contact_count": 2,
+          "com_xyz_m": [
+            -0.1633239464386469,
+            0.033793538466102814,
+            0.1350261286893568
+          ],
+          "foot_contact_force_n": [
+            1.347468115066759,
+            0.8627037298254571
+          ]
+        },
+        "peaks": {
+          "floor": 0.008530856322157047,
+          "self": 0.0019108537712680916,
+          "joint": 0.026821188119383943,
+          "force": 3.23,
+          "slew": 5.2400000000000055
+        },
+        "success": false
+      },
+      "training": [
+        {
+          "score": 22.44886753858556,
+          "valid": true,
+          "strict_tail_s": 0.0,
+          "supported_longest_s": 0.0,
+          "completed_steps": 579,
+          "final": {
+            "up_z": -0.1491005882221426,
+            "height_m": 0.14268186953879483,
+            "feet": [
+              false,
+              false
+            ],
+            "torso_contact": true,
+            "penetration_m": 6.149974972992009e-05,
+            "linear_speed_mps": 0.00016385524818864495,
+            "angular_speed_rad_s": 0.0010219296949770017,
+            "stable": false,
+            "finite": true,
+            "floor_penetration_m": 6.149974972992009e-05,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.028999518649806433,
+            "joint_home_error_mean_rad": 0.014155399754565411,
+            "motor_target_home_error_max_rad": 0.03554485349200376,
+            "foot_normal_forces_n": [
+              0.0,
+              0.0
+            ],
+            "foot_load_fraction": 0.0,
+            "foot_up_alignment_to_home": [
+              -0.18156613657291745,
+              -0.2148574153926974
+            ]
+          },
+          "final_support": {
+            "margin_m": -0.2,
+            "contact_count": 0,
+            "com_xyz_m": [
+              -0.26563478726722783,
+              0.12181528009862536,
+              0.11493366776058833
+            ],
+            "foot_contact_force_n": [
+              0.0,
+              0.0
+            ]
+          },
+          "peaks": {
+            "floor": 0.0070705622884713465,
+            "self": 0.0022120730910026778,
+            "joint": 0.02790007953434337,
+            "force": 3.23,
+            "slew": 5.2400000000000055
+          },
+          "success": false
+        },
+        {
+          "score": 5.205775467723354,
+          "valid": true,
+          "strict_tail_s": 0.0,
+          "supported_longest_s": 0.0,
+          "completed_steps": 579,
+          "final": {
+            "up_z": -0.00018150246768394718,
+            "height_m": 0.15434333982694656,
+            "feet": [
+              false,
+              false
+            ],
+            "torso_contact": true,
+            "penetration_m": 1.7213096168641057e-05,
+            "linear_speed_mps": 4.568682104725699e-05,
+            "angular_speed_rad_s": 0.0006335442990841352,
+            "stable": false,
+            "finite": true,
+            "floor_penetration_m": 1.7213096168641057e-05,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.19014884477071803,
+            "joint_home_error_mean_rad": 0.06189868857676311,
+            "motor_target_home_error_max_rad": 0.17966754465811619,
+            "foot_normal_forces_n": [
+              0.0,
+              0.0
+            ],
+            "foot_load_fraction": 0.0,
+            "foot_up_alignment_to_home": [
+              0.37379084019682796,
+              0.37608730340864494
+            ]
+          },
+          "final_support": {
+            "margin_m": -0.2,
+            "contact_count": 0,
+            "com_xyz_m": [
+              -0.14226765690400894,
+              0.11433818153485749,
+              0.12256393500235585
+            ],
+            "foot_contact_force_n": [
+              0.0,
+              0.0
+            ]
+          },
+          "peaks": {
+            "floor": 0.007775373730598762,
+            "self": 0.0021046165042310806,
+            "joint": 0.025519014684739272,
+            "force": 3.23,
+            "slew": 5.240000000000003
+          },
+          "success": false
+        },
+        {
+          "score": 5.290155487114716,
+          "valid": true,
+          "strict_tail_s": 0.0,
+          "supported_longest_s": 0.0,
+          "completed_steps": 579,
+          "final": {
+            "up_z": -0.0001827456934241911,
+            "height_m": 0.15434333548183246,
+            "feet": [
+              false,
+              false
+            ],
+            "torso_contact": true,
+            "penetration_m": 1.7279323671641825e-05,
+            "linear_speed_mps": 4.577373104876642e-05,
+            "angular_speed_rad_s": 0.0006379789991173255,
+            "stable": false,
+            "finite": true,
+            "floor_penetration_m": 1.7279323671641825e-05,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.18967631312472277,
+            "joint_home_error_mean_rad": 0.06196599910194921,
+            "motor_target_home_error_max_rad": 0.17874566166000472,
+            "foot_normal_forces_n": [
+              0.0,
+              0.0
+            ],
+            "foot_load_fraction": 0.0,
+            "foot_up_alignment_to_home": [
+              0.3725440724930205,
+              0.37487137820532734
+            ]
+          },
+          "final_support": {
+            "margin_m": -0.2,
+            "contact_count": 0,
+            "com_xyz_m": [
+              -0.126547650819894,
+              0.17754577739862615,
+              0.12257571785569574
+            ],
+            "foot_contact_force_n": [
+              0.0,
+              0.0
+            ]
+          },
+          "peaks": {
+            "floor": 0.006319110105015435,
+            "self": 0.002029760551602763,
+            "joint": 0.023748743552383766,
+            "force": 3.23,
+            "slew": 5.2400000000000055
+          },
+          "success": false
+        },
+        {
+          "score": 30.12287882354988,
+          "valid": true,
+          "strict_tail_s": 0.0,
+          "supported_longest_s": 0.12,
+          "completed_steps": 579,
+          "final": {
+            "up_z": -0.15275422778838427,
+            "height_m": 0.14388203635122174,
+            "feet": [
+              false,
+              false
+            ],
+            "torso_contact": true,
+            "penetration_m": 7.421714574817537e-05,
+            "linear_speed_mps": 0.0004047093417297575,
+            "angular_speed_rad_s": 0.004968278056716044,
+            "stable": false,
+            "finite": true,
+            "floor_penetration_m": 7.421714574817537e-05,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.01831913628716087,
+            "joint_home_error_mean_rad": 0.008673388407039215,
+            "motor_target_home_error_max_rad": 0.00729151055967181,
+            "foot_normal_forces_n": [
+              0.0,
+              0.0
+            ],
+            "foot_load_fraction": 0.0,
+            "foot_up_alignment_to_home": [
+              -0.1477457872470947,
+              -0.12760778060407602
+            ]
+          },
+          "final_support": {
+            "margin_m": -0.2,
+            "contact_count": 0,
+            "com_xyz_m": [
+              -0.13148003721719612,
+              0.14519842795501955,
+              0.11551440318332638
+            ],
+            "foot_contact_force_n": [
+              0.0,
+              0.0
+            ]
+          },
+          "peaks": {
+            "floor": 0.005096496081999424,
+            "self": 0.002195518234100179,
+            "joint": 0.024932919365694417,
+            "force": 3.23,
+            "slew": 5.2400000000000055
+          },
+          "success": false
+        },
+        {
+          "score": 21.75995142648389,
+          "valid": true,
+          "strict_tail_s": 0.0,
+          "supported_longest_s": 0.0,
+          "completed_steps": 579,
+          "final": {
+            "up_z": 0.4677764760965438,
+            "height_m": 0.13872095165406198,
+            "feet": [
+              true,
+              true
+            ],
+            "torso_contact": true,
+            "penetration_m": 5.371884600663922e-05,
+            "linear_speed_mps": 7.580880235115703e-05,
+            "angular_speed_rad_s": 0.0009502847816960097,
+            "stable": false,
+            "finite": true,
+            "floor_penetration_m": 5.371884600663922e-05,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.03944194425937871,
+            "joint_home_error_mean_rad": 0.013256464499532286,
+            "motor_target_home_error_max_rad": 0.024407080824663252,
+            "foot_normal_forces_n": [
+              0.5429789048251323,
+              1.4280113477798255
+            ],
+            "foot_load_fraction": 0.09552771644438045,
+            "foot_up_alignment_to_home": [
+              0.5183290685154128,
+              0.5124805910179598
+            ]
+          },
+          "final_support": {
+            "margin_m": -0.15341230401983122,
+            "contact_count": 3,
+            "com_xyz_m": [
+              -0.19787195893233575,
+              0.07292540178318276,
+              0.1348172473776397
+            ],
+            "foot_contact_force_n": [
+              0.5429789048251323,
+              1.4280113477798255
+            ]
+          },
+          "peaks": {
+            "floor": 0.008266490835295646,
+            "self": 0.002292169909742574,
+            "joint": 0.028039520520709904,
+            "force": 3.23,
+            "slew": 5.2400000000000055
+          },
+          "success": false
+        },
+        {
+          "score": 17.827985973433517,
+          "valid": true,
+          "strict_tail_s": 0.0,
+          "supported_longest_s": 0.0,
+          "completed_steps": 579,
+          "final": {
+            "up_z": -0.26602836216827735,
+            "height_m": 0.1303014677003408,
+            "feet": [
+              false,
+              false
+            ],
+            "torso_contact": true,
+            "penetration_m": 7.48064958433583e-05,
+            "linear_speed_mps": 6.454760417288544e-05,
+            "angular_speed_rad_s": 0.0005182237448642497,
+            "stable": false,
+            "finite": true,
+            "floor_penetration_m": 7.48064958433583e-05,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.024054460007235642,
+            "joint_home_error_mean_rad": 0.011627788344989355,
+            "motor_target_home_error_max_rad": 0.0171979540538878,
+            "foot_normal_forces_n": [
+              0.0,
+              0.0
+            ],
+            "foot_load_fraction": 0.0,
+            "foot_up_alignment_to_home": [
+              -0.24735397070566173,
+              -0.2356718088980826
+            ]
+          },
+          "final_support": {
+            "margin_m": -0.2,
+            "contact_count": 0,
+            "com_xyz_m": [
+              -0.3564828926564929,
+              0.08492137409506387,
+              0.11244835928738645
+            ],
+            "foot_contact_force_n": [
+              0.0,
+              0.0
+            ]
+          },
+          "peaks": {
+            "floor": 0.007540258820476212,
+            "self": 0.00212091434625448,
+            "joint": 0.028402479585117435,
+            "force": 3.23,
+            "slew": 5.2400000000000055
+          },
+          "success": false
+        },
+        {
+          "score": 32.39278699926219,
+          "valid": true,
+          "strict_tail_s": 0.0,
+          "supported_longest_s": 0.38,
+          "completed_steps": 579,
+          "final": {
+            "up_z": -0.00019748351880738424,
+            "height_m": 0.154343516491024,
+            "feet": [
+              false,
+              false
+            ],
+            "torso_contact": true,
+            "penetration_m": 1.7962149346880188e-05,
+            "linear_speed_mps": 1.1105382473510089e-05,
+            "angular_speed_rad_s": 0.00013575635644697473,
+            "stable": false,
+            "finite": true,
+            "floor_penetration_m": 1.7962149346880188e-05,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.041503751787227136,
+            "joint_home_error_mean_rad": 0.01119043507566531,
+            "motor_target_home_error_max_rad": 0.0032522577166260724,
+            "foot_normal_forces_n": [
+              0.0,
+              0.0
+            ],
+            "foot_load_fraction": 0.0,
+            "foot_up_alignment_to_home": [
+              0.03417084348585681,
+              0.033922520486045826
+            ]
+          },
+          "final_support": {
+            "margin_m": -0.2,
+            "contact_count": 0,
+            "com_xyz_m": [
+              -0.18145589609399862,
+              0.0635263358006188,
+              0.1267059715018663
+            ],
+            "foot_contact_force_n": [
+              0.0,
+              0.0
+            ]
+          },
+          "peaks": {
+            "floor": 0.005348912756086777,
+            "self": 0.002212562912726812,
+            "joint": 0.03315670723114206,
+            "force": 3.23,
+            "slew": 5.2400000000000055
+          },
+          "success": false
+        },
+        {
+          "score": 29.71968875132452,
+          "valid": true,
+          "strict_tail_s": 0.0,
+          "supported_longest_s": 0.06,
+          "completed_steps": 579,
+          "final": {
+            "up_z": -0.0001853064161863316,
+            "height_m": 0.1543434679762234,
+            "feet": [
+              false,
+              false
+            ],
+            "torso_contact": true,
+            "penetration_m": 1.7299200023850048e-05,
+            "linear_speed_mps": 1.686313337771427e-05,
+            "angular_speed_rad_s": 0.0002483859446378904,
+            "stable": false,
+            "finite": true,
+            "floor_penetration_m": 1.7299200023850048e-05,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.0423791398805718,
+            "joint_home_error_mean_rad": 0.01868325597013434,
+            "motor_target_home_error_max_rad": 0.031230418293888063,
+            "foot_normal_forces_n": [
+              0.0,
+              0.0
+            ],
+            "foot_load_fraction": 0.0,
+            "foot_up_alignment_to_home": [
+              0.08628455796966517,
+              0.08621047647548535
+            ]
+          },
+          "final_support": {
+            "margin_m": -0.2,
+            "contact_count": 0,
+            "com_xyz_m": [
+              -0.18535468926328427,
+              0.09953224679774603,
+              0.12596280026888243
+            ],
+            "foot_contact_force_n": [
+              0.0,
+              0.0
+            ]
+          },
+          "peaks": {
+            "floor": 0.005221627694311146,
+            "self": 0.0019855884864524538,
+            "joint": 0.025918413478490443,
+            "force": 3.23,
+            "slew": 5.240000000000003
+          },
+          "success": false
+        }
+      ],
+      "training_successes": 0,
+      "trials": 8
+    },
+    {
+      "wait_s": 0.5,
+      "prefix_seconds": 7.28,
+      "config_index": 4,
+      "nominal": {
+        "score": 60.57091750656235,
+        "valid": true,
+        "strict_tail_s": 1.7,
+        "supported_longest_s": 1.7,
+        "completed_steps": 554,
+        "final": {
+          "up_z": 0.9999578317096331,
+          "height_m": 0.1596227339562516,
+          "feet": [
+            true,
+            true
+          ],
+          "torso_contact": false,
+          "penetration_m": 0.00013961944498925693,
+          "linear_speed_mps": 0.0003439364859261337,
+          "angular_speed_rad_s": 0.002027268504510433,
+          "stable": true,
+          "finite": true,
+          "floor_penetration_m": 0.00013961944498925693,
+          "self_penetration_m": 0.0,
+          "joint_home_error_max_rad": 0.0415215323107644,
+          "joint_home_error_mean_rad": 0.013431013424689414,
+          "motor_target_home_error_max_rad": 0.0,
+          "foot_normal_forces_n": [
+            10.502033728262187,
+            10.168948753872629
+          ],
+          "foot_load_fraction": 1.0,
+          "foot_up_alignment_to_home": [
+            0.9981889543652434,
+            0.99772426301557
+          ]
+        },
+        "final_support": {
+          "margin_m": 0.027387658890270974,
+          "contact_count": 6,
+          "com_xyz_m": [
+            -0.10003879056812734,
+            -0.16572245604855257,
+            0.20429143646410877
+          ],
+          "foot_contact_force_n": [
+            10.502033728262187,
+            10.168948753872629
+          ]
+        },
+        "peaks": {
+          "floor": 0.004077250571655313,
+          "self": 0.0018054171664564952,
+          "joint": 0.02707378635628721,
+          "force": 3.23,
+          "slew": 5.2400000000000055
+        },
+        "success": true
+      },
+      "training": [
+        {
+          "score": 60.54630504775228,
+          "valid": true,
+          "strict_tail_s": 1.68,
+          "supported_longest_s": 1.7,
+          "completed_steps": 554,
+          "final": {
+            "up_z": 0.9999446457032848,
+            "height_m": 0.15957628469202456,
+            "feet": [
+              true,
+              true
+            ],
+            "torso_contact": false,
+            "penetration_m": 0.00013439973420222278,
+            "linear_speed_mps": 0.00042088582185163673,
+            "angular_speed_rad_s": 0.0024312918651298206,
+            "stable": true,
+            "finite": true,
+            "floor_penetration_m": 0.00013439973420222278,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.043385127984513785,
+            "joint_home_error_mean_rad": 0.01357218396061365,
+            "motor_target_home_error_max_rad": 0.00010734875613716,
+            "foot_normal_forces_n": [
+              10.502784699185124,
+              10.168158066667031
+            ],
+            "foot_load_fraction": 1.0,
+            "foot_up_alignment_to_home": [
+              0.9981053896916039,
+              0.9976459422255921
+            ]
+          },
+          "final_support": {
+            "margin_m": 0.027223733731126975,
+            "contact_count": 6,
+            "com_xyz_m": [
+              -0.12314258325589265,
+              -0.14346529816216574,
+              0.2042443415346884
+            ],
+            "foot_contact_force_n": [
+              10.502784699185124,
+              10.168158066667031
+            ]
+          },
+          "peaks": {
+            "floor": 0.003953962500387209,
+            "self": 0.0022120730910026778,
+            "joint": 0.02888316708044647,
+            "force": 3.23,
+            "slew": 5.2400000000000055
+          },
+          "success": true
+        },
+        {
+          "score": 5.301037204282792,
+          "valid": true,
+          "strict_tail_s": 0.0,
+          "supported_longest_s": 0.0,
+          "completed_steps": 554,
+          "final": {
+            "up_z": -0.00018455613906692703,
+            "height_m": 0.15434339258002522,
+            "feet": [
+              false,
+              false
+            ],
+            "torso_contact": true,
+            "penetration_m": 1.7300818363777393e-05,
+            "linear_speed_mps": 4.314518886359534e-05,
+            "angular_speed_rad_s": 0.000601969867379812,
+            "stable": false,
+            "finite": true,
+            "floor_penetration_m": 1.7300818363777393e-05,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.09194881691714207,
+            "joint_home_error_mean_rad": 0.035048903749261694,
+            "motor_target_home_error_max_rad": 0.08245306165554922,
+            "foot_normal_forces_n": [
+              0.0,
+              0.0
+            ],
+            "foot_load_fraction": 0.0,
+            "foot_up_alignment_to_home": [
+              0.18859491195741698,
+              0.18863921765669975
+            ]
+          },
+          "final_support": {
+            "margin_m": -0.2,
+            "contact_count": 0,
+            "com_xyz_m": [
+              -0.1343557161572917,
+              0.14916383070385858,
+              0.12474677840723616
+            ],
+            "foot_contact_force_n": [
+              0.0,
+              0.0
+            ]
+          },
+          "peaks": {
+            "floor": 0.004950092228485813,
+            "self": 0.0021046165042310806,
+            "joint": 0.02202506951082528,
+            "force": 3.23,
+            "slew": 5.2400000000000055
+          },
+          "success": false
+        },
+        {
+          "score": 5.144581726793818,
+          "valid": true,
+          "strict_tail_s": 0.0,
+          "supported_longest_s": 0.0,
+          "completed_steps": 554,
+          "final": {
+            "up_z": -0.1616038236385029,
+            "height_m": 0.1453631611754025,
+            "feet": [
+              false,
+              false
+            ],
+            "torso_contact": true,
+            "penetration_m": 5.058821790969448e-05,
+            "linear_speed_mps": 9.41023638151518e-05,
+            "angular_speed_rad_s": 0.0017202416390017,
+            "stable": false,
+            "finite": true,
+            "floor_penetration_m": 5.058821790969448e-05,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.1215304962014625,
+            "joint_home_error_mean_rad": 0.038913629276035755,
+            "motor_target_home_error_max_rad": 0.11504042786937352,
+            "foot_normal_forces_n": [
+              0.0,
+              0.0
+            ],
+            "foot_load_fraction": 0.0,
+            "foot_up_alignment_to_home": [
+              0.051224174308253094,
+              0.03174053332183016
+            ]
+          },
+          "final_support": {
+            "margin_m": -0.2,
+            "contact_count": 0,
+            "com_xyz_m": [
+              -0.2253092784251843,
+              0.17370961735683918,
+              0.11390951667409359
+            ],
+            "foot_contact_force_n": [
+              0.0,
+              0.0
+            ]
+          },
+          "peaks": {
+            "floor": 0.008102587372236236,
+            "self": 0.002029760551602763,
+            "joint": 0.025200669695343292,
+            "force": 3.23,
+            "slew": 5.2400000000000055
+          },
+          "success": false
+        },
+        {
+          "score": 23.743112759033206,
+          "valid": true,
+          "strict_tail_s": 0.0,
+          "supported_longest_s": 0.0,
+          "completed_steps": 554,
+          "final": {
+            "up_z": 0.5170974021089538,
+            "height_m": 0.13468240107828933,
+            "feet": [
+              true,
+              true
+            ],
+            "torso_contact": true,
+            "penetration_m": 4.8610906772069903e-05,
+            "linear_speed_mps": 0.00010478937948473623,
+            "angular_speed_rad_s": 0.0015790796472682936,
+            "stable": false,
+            "finite": true,
+            "floor_penetration_m": 4.8610906772069903e-05,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.042498865944246234,
+            "joint_home_error_mean_rad": 0.015631983481466983,
+            "motor_target_home_error_max_rad": 0.04110309750684271,
+            "foot_normal_forces_n": [
+              1.3973121062113392,
+              1.351792339028275
+            ],
+            "foot_load_fraction": 0.13287842647398626,
+            "foot_up_alignment_to_home": [
+              0.4548517710816037,
+              0.4496458761037343
+            ]
+          },
+          "final_support": {
+            "margin_m": -0.1520251704047289,
+            "contact_count": 3,
+            "com_xyz_m": [
+              -0.18210498502804032,
+              0.08412515318029468,
+              0.1352721261816154
+            ],
+            "foot_contact_force_n": [
+              1.3973121062113392,
+              1.351792339028275
+            ]
+          },
+          "peaks": {
+            "floor": 0.00763226322021314,
+            "self": 0.002195518234100179,
+            "joint": 0.034309000294209024,
+            "force": 3.23,
+            "slew": 5.240000000000003
+          },
+          "success": false
+        },
+        {
+          "score": 60.575795318235386,
+          "valid": true,
+          "strict_tail_s": 1.7,
+          "supported_longest_s": 1.7,
+          "completed_steps": 554,
+          "final": {
+            "up_z": 0.9999607000867509,
+            "height_m": 0.1596276273071242,
+            "feet": [
+              true,
+              true
+            ],
+            "torso_contact": false,
+            "penetration_m": 0.00014055544560935117,
+            "linear_speed_mps": 0.0003326886958321427,
+            "angular_speed_rad_s": 0.0019307872470544574,
+            "stable": true,
+            "finite": true,
+            "floor_penetration_m": 0.00014055544560935117,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.04114329829886765,
+            "joint_home_error_mean_rad": 0.013404014617650423,
+            "motor_target_home_error_max_rad": 2.0909505840549514e-05,
+            "foot_normal_forces_n": [
+              10.502196137573133,
+              10.168840856349032
+            ],
+            "foot_load_fraction": 1.0,
+            "foot_up_alignment_to_home": [
+              0.9982066396833013,
+              0.997738552625777
+            ]
+          },
+          "final_support": {
+            "margin_m": 0.027423123406462503,
+            "contact_count": 6,
+            "com_xyz_m": [
+              -0.11304228929479598,
+              -0.1272924593260248,
+              0.20429778825764924
+            ],
+            "foot_contact_force_n": [
+              10.502196137573133,
+              10.168840856349032
+            ]
+          },
+          "peaks": {
+            "floor": 0.004195164090223561,
+            "self": 0.002292169909742574,
+            "joint": 0.02635121434007226,
+            "force": 3.23,
+            "slew": 5.2400000000000055
+          },
+          "success": true
+        },
+        {
+          "score": 60.5529767872686,
+          "valid": true,
+          "strict_tail_s": 1.6600000000000001,
+          "supported_longest_s": 1.6600000000000001,
+          "completed_steps": 554,
+          "final": {
+            "up_z": 0.9999327490255759,
+            "height_m": 0.15978307518468038,
+            "feet": [
+              true,
+              true
+            ],
+            "torso_contact": false,
+            "penetration_m": 0.00014249783090450503,
+            "linear_speed_mps": 0.0003884624525841246,
+            "angular_speed_rad_s": 0.0026939293368372684,
+            "stable": true,
+            "finite": true,
+            "floor_penetration_m": 0.00014249783090450503,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.04062899042281773,
+            "joint_home_error_mean_rad": 0.012987419822133426,
+            "motor_target_home_error_max_rad": 0.00028073853027432705,
+            "foot_normal_forces_n": [
+              10.500591442674882,
+              10.170457072123657
+            ],
+            "foot_load_fraction": 1.0,
+            "foot_up_alignment_to_home": [
+              0.9982310672998249,
+              0.9977546423550093
+            ]
+          },
+          "final_support": {
+            "margin_m": 0.027131303138517162,
+            "contact_count": 6,
+            "com_xyz_m": [
+              -0.14874002600166364,
+              -0.11997248483051115,
+              0.20437213100912616
+            ],
+            "foot_contact_force_n": [
+              10.500591442674882,
+              10.170457072123657
+            ]
+          },
+          "peaks": {
+            "floor": 0.0033553772681509005,
+            "self": 0.00212091434625448,
+            "joint": 0.029512461807141954,
+            "force": 3.23,
+            "slew": 5.2400000000000055
+          },
+          "success": true
+        },
+        {
+          "score": 60.55317705677199,
+          "valid": true,
+          "strict_tail_s": 1.6600000000000001,
+          "supported_longest_s": 1.6400000000000001,
+          "completed_steps": 554,
+          "final": {
+            "up_z": 0.999944626394538,
+            "height_m": 0.15963378389403482,
+            "feet": [
+              true,
+              true
+            ],
+            "torso_contact": false,
+            "penetration_m": 0.0001372699147974459,
+            "linear_speed_mps": 0.0003927672267691728,
+            "angular_speed_rad_s": 0.0024210355276951564,
+            "stable": true,
+            "finite": true,
+            "floor_penetration_m": 0.0001372699147974459,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.04236062518264089,
+            "joint_home_error_mean_rad": 0.013382104488766937,
+            "motor_target_home_error_max_rad": 0.0001315990633157238,
+            "foot_normal_forces_n": [
+              10.502524140090092,
+              10.168442173204594
+            ],
+            "foot_load_fraction": 1.0,
+            "foot_up_alignment_to_home": [
+              0.9981547541740823,
+              0.9976863227595091
+            ]
+          },
+          "final_support": {
+            "margin_m": 0.027238319354864295,
+            "contact_count": 6,
+            "com_xyz_m": [
+              -0.12947584529858955,
+              -0.18762268694587017,
+              0.20428324744913237
+            ],
+            "foot_contact_force_n": [
+              10.502524140090092,
+              10.168442173204594
+            ]
+          },
+          "peaks": {
+            "floor": 0.004425198562664091,
+            "self": 0.002212562912726812,
+            "joint": 0.03350916751151822,
+            "force": 3.23,
+            "slew": 5.2400000000000055
+          },
+          "success": true
+        },
+        {
+          "score": 60.54936963470125,
+          "valid": true,
+          "strict_tail_s": 1.62,
+          "supported_longest_s": 1.6400000000000001,
+          "completed_steps": 554,
+          "final": {
+            "up_z": 0.99992146166031,
+            "height_m": 0.15987278131916682,
+            "feet": [
+              true,
+              true
+            ],
+            "torso_contact": false,
+            "penetration_m": 0.00014481241169994954,
+            "linear_speed_mps": 0.0003973202442238468,
+            "angular_speed_rad_s": 0.0029444188262025633,
+            "stable": true,
+            "finite": true,
+            "floor_penetration_m": 0.00014481241169994954,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.0401950855389381,
+            "joint_home_error_mean_rad": 0.012866126043110649,
+            "motor_target_home_error_max_rad": 0.00040558272067037215,
+            "foot_normal_forces_n": [
+              10.497460684443498,
+              10.173595517432664
+            ],
+            "foot_load_fraction": 1.0,
+            "foot_up_alignment_to_home": [
+              0.9982672755184785,
+              0.9977819910852873
+            ]
+          },
+          "final_support": {
+            "margin_m": 0.027039721884019492,
+            "contact_count": 6,
+            "com_xyz_m": [
+              -0.16847053817751653,
+              -0.1512055997644713,
+              0.2044219464564688
+            ],
+            "foot_contact_force_n": [
+              10.497460684443498,
+              10.173595517432664
+            ]
+          },
+          "peaks": {
+            "floor": 0.0041090362023388834,
+            "self": 0.0019855884864524538,
+            "joint": 0.02664846115034336,
+            "force": 3.23,
+            "slew": 5.2400000000000055
+          },
+          "success": true
+        }
+      ],
+      "training_successes": 5,
+      "trials": 8
+    },
+    {
+      "wait_s": 0.0,
+      "prefix_seconds": 6.78,
+      "config_index": 5,
+      "nominal": {
+        "score": 60.57715001428643,
+        "valid": true,
+        "strict_tail_s": 1.68,
+        "supported_longest_s": 1.6400000000000001,
+        "completed_steps": 529,
+        "final": {
+          "up_z": 0.9999615049247281,
+          "height_m": 0.15960436870309339,
+          "feet": [
+            true,
+            true
+          ],
+          "torso_contact": false,
+          "penetration_m": 0.00013919469696147858,
+          "linear_speed_mps": 0.0003198723594260881,
+          "angular_speed_rad_s": 0.0018925642838500836,
+          "stable": true,
+          "finite": true,
+          "floor_penetration_m": 0.00013919469696147858,
+          "self_penetration_m": 0.0,
+          "joint_home_error_max_rad": 0.04172688079681548,
+          "joint_home_error_mean_rad": 0.013454700665822645,
+          "motor_target_home_error_max_rad": 0.0,
+          "foot_normal_forces_n": [
+            10.502361842462921,
+            10.168619573980921
+          ],
+          "foot_load_fraction": 1.0,
+          "foot_up_alignment_to_home": [
+            0.9981774288732203,
+            0.9977192409014121
+          ]
+        },
+        "final_support": {
+          "margin_m": 0.02745121430877759,
+          "contact_count": 6,
+          "com_xyz_m": [
+            -0.11956502179264412,
+            -0.16887636021126706,
+            0.20428655309995664
+          ],
+          "foot_contact_force_n": [
+            10.502361842462921,
+            10.168619573980921
+          ]
+        },
+        "peaks": {
+          "floor": 0.004077250571655313,
+          "self": 0.0018810811716931455,
+          "joint": 0.025187336480576028,
+          "force": 3.23,
+          "slew": 5.2400000000000055
+        },
+        "success": true
+      },
+      "training": [
+        {
+          "score": 22.325380056424805,
+          "valid": true,
+          "strict_tail_s": 0.0,
+          "supported_longest_s": 0.0,
+          "completed_steps": 529,
+          "final": {
+            "up_z": -0.13725942657984905,
+            "height_m": 0.14095901411919798,
+            "feet": [
+              false,
+              false
+            ],
+            "torso_contact": true,
+            "penetration_m": 6.659246719677159e-05,
+            "linear_speed_mps": 0.0002711874725677534,
+            "angular_speed_rad_s": 0.003268194171927729,
+            "stable": false,
+            "finite": true,
+            "floor_penetration_m": 6.659246719677159e-05,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.1655667568029675,
+            "joint_home_error_mean_rad": 0.05356769499709289,
+            "motor_target_home_error_max_rad": 0.16886703537541825,
+            "foot_normal_forces_n": [
+              0.0,
+              0.0
+            ],
+            "foot_load_fraction": 0.0,
+            "foot_up_alignment_to_home": [
+              -0.38745935029674006,
+              -0.3984631636632655
+            ]
+          },
+          "final_support": {
+            "margin_m": -0.2,
+            "contact_count": 0,
+            "com_xyz_m": [
+              -0.2790059280972757,
+              0.11902976287623998,
+              0.11563702778759372
+            ],
+            "foot_contact_force_n": [
+              0.0,
+              0.0
+            ]
+          },
+          "peaks": {
+            "floor": 0.007493221472899974,
+            "self": 0.0022120730910026778,
+            "joint": 0.033138484430619175,
+            "force": 3.23,
+            "slew": 5.2400000000000055
+          },
+          "success": false
+        },
+        {
+          "score": 22.202650466301073,
+          "valid": true,
+          "strict_tail_s": 0.0,
+          "supported_longest_s": 0.0,
+          "completed_steps": 529,
+          "final": {
+            "up_z": 0.4734658923902895,
+            "height_m": 0.13828224066623895,
+            "feet": [
+              true,
+              true
+            ],
+            "torso_contact": true,
+            "penetration_m": 5.491939832737158e-05,
+            "linear_speed_mps": 0.00011342326320006949,
+            "angular_speed_rad_s": 0.001712440374848383,
+            "stable": false,
+            "finite": true,
+            "floor_penetration_m": 5.491939832737158e-05,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.03954418107755235,
+            "joint_home_error_mean_rad": 0.011359096613578085,
+            "motor_target_home_error_max_rad": 0.017605543979542615,
+            "foot_normal_forces_n": [
+              1.202579900892478,
+              0.8467393682804004
+            ],
+            "foot_load_fraction": 0.09840181874330302,
+            "foot_up_alignment_to_home": [
+              0.5134966749677319,
+              0.5088998977641982
+            ]
+          },
+          "final_support": {
+            "margin_m": -0.16277133122289994,
+            "contact_count": 2,
+            "com_xyz_m": [
+              -0.1822810241219379,
+              0.048614289761561034,
+              0.13491169376577616
+            ],
+            "foot_contact_force_n": [
+              1.202579900892478,
+              0.7962564113265231
+            ]
+          },
+          "peaks": {
+            "floor": 0.00762576875722773,
+            "self": 0.0021046165042310806,
+            "joint": 0.028026747784932526,
+            "force": 3.23,
+            "slew": 5.2400000000000055
+          },
+          "success": false
+        },
+        {
+          "score": 3.6397485561608574,
+          "valid": true,
+          "strict_tail_s": 0.0,
+          "supported_longest_s": 0.0,
+          "completed_steps": 529,
+          "final": {
+            "up_z": -0.1642562386142939,
+            "height_m": 0.1458955499483611,
+            "feet": [
+              false,
+              false
+            ],
+            "torso_contact": true,
+            "penetration_m": 5.797248476975547e-05,
+            "linear_speed_mps": 5.686659987656092e-05,
+            "angular_speed_rad_s": 0.001901523281577788,
+            "stable": false,
+            "finite": true,
+            "floor_penetration_m": 5.797248476975547e-05,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.15421107689199687,
+            "joint_home_error_mean_rad": 0.047817257417995376,
+            "motor_target_home_error_max_rad": 0.1458254124279057,
+            "foot_normal_forces_n": [
+              0.0,
+              0.0
+            ],
+            "foot_load_fraction": 0.0,
+            "foot_up_alignment_to_home": [
+              0.10189605004659817,
+              0.0863502263276643
+            ]
+          },
+          "final_support": {
+            "margin_m": -0.2,
+            "contact_count": 0,
+            "com_xyz_m": [
+              -0.21471217001537793,
+              0.16969473906735963,
+              0.11363287618348325
+            ],
+            "foot_contact_force_n": [
+              0.0,
+              0.0
+            ]
+          },
+          "peaks": {
+            "floor": 0.0067855936081443954,
+            "self": 0.002029760551602763,
+            "joint": 0.02408619250978683,
+            "force": 3.23,
+            "slew": 5.2400000000000055
+          },
+          "success": false
+        },
+        {
+          "score": 9.106961326236625,
+          "valid": true,
+          "strict_tail_s": 0.0,
+          "supported_longest_s": 0.0,
+          "completed_steps": 529,
+          "final": {
+            "up_z": -0.1405061548595012,
+            "height_m": 0.14124260297425711,
+            "feet": [
+              false,
+              false
+            ],
+            "torso_contact": true,
+            "penetration_m": 6.575458139740711e-05,
+            "linear_speed_mps": 0.00011615055353647636,
+            "angular_speed_rad_s": 0.0023293804974249288,
+            "stable": false,
+            "finite": true,
+            "floor_penetration_m": 6.575458139740711e-05,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.15069788182947752,
+            "joint_home_error_mean_rad": 0.04790977691811048,
+            "motor_target_home_error_max_rad": 0.15498666786203907,
+            "foot_normal_forces_n": [
+              0.0,
+              0.0
+            ],
+            "foot_load_fraction": 0.0,
+            "foot_up_alignment_to_home": [
+              -0.368822578066533,
+              -0.37982228309921706
+            ]
+          },
+          "final_support": {
+            "margin_m": -0.2,
+            "contact_count": 0,
+            "com_xyz_m": [
+              -0.28065456912527476,
+              0.06925907740334189,
+              0.11568470939707334
+            ],
+            "foot_contact_force_n": [
+              0.0,
+              0.0
+            ]
+          },
+          "peaks": {
+            "floor": 0.004531870161924604,
+            "self": 0.002195518234100179,
+            "joint": 0.027631701248867713,
+            "force": 3.23,
+            "slew": 5.2400000000000055
+          },
+          "success": false
+        },
+        {
+          "score": 60.49752074876698,
+          "valid": true,
+          "strict_tail_s": 1.62,
+          "supported_longest_s": 1.6,
+          "completed_steps": 529,
+          "final": {
+            "up_z": 0.9998670202206805,
+            "height_m": 0.1599410652581918,
+            "feet": [
+              true,
+              true
+            ],
+            "torso_contact": false,
+            "penetration_m": 0.0001432983353799426,
+            "linear_speed_mps": 0.00047185710730517327,
+            "angular_speed_rad_s": 0.0034315095530514064,
+            "stable": true,
+            "finite": true,
+            "floor_penetration_m": 0.0001432983353799426,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.04130150708239254,
+            "joint_home_error_mean_rad": 0.012849500371705042,
+            "motor_target_home_error_max_rad": 0.0013299550974048557,
+            "foot_normal_forces_n": [
+              10.492859563270784,
+              10.178175031980455
+            ],
+            "foot_load_fraction": 1.0,
+            "foot_up_alignment_to_home": [
+              0.9981781118023949,
+              0.9977455898929981
+            ]
+          },
+          "final_support": {
+            "margin_m": 0.02657341152621603,
+            "contact_count": 6,
+            "com_xyz_m": [
+              -0.25853057862595785,
+              -0.12272513723836308,
+              0.20441759869650925
+            ],
+            "foot_contact_force_n": [
+              10.492859563270784,
+              10.178175031980455
+            ]
+          },
+          "peaks": {
+            "floor": 0.004362019573564715,
+            "self": 0.002292169909742574,
+            "joint": 0.027613503240406678,
+            "force": 3.23,
+            "slew": 5.2400000000000055
+          },
+          "success": true
+        },
+        {
+          "score": 60.55328125259702,
+          "valid": true,
+          "strict_tail_s": 1.68,
+          "supported_longest_s": 1.6600000000000001,
+          "completed_steps": 529,
+          "final": {
+            "up_z": 0.9999488091329871,
+            "height_m": 0.1595811866296323,
+            "feet": [
+              true,
+              true
+            ],
+            "torso_contact": false,
+            "penetration_m": 0.00013542366483232805,
+            "linear_speed_mps": 0.00039859546154048076,
+            "angular_speed_rad_s": 0.002312912111667917,
+            "stable": true,
+            "finite": true,
+            "floor_penetration_m": 0.00013542366483232805,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.04306448608291216,
+            "joint_home_error_mean_rad": 0.013498672472549251,
+            "motor_target_home_error_max_rad": 8.025630313612808e-05,
+            "foot_normal_forces_n": [
+              10.502113317262543,
+              10.1688377879752
+            ],
+            "foot_load_fraction": 1.0,
+            "foot_up_alignment_to_home": [
+              0.9981180887726783,
+              0.9976619785818605
+            ]
+          },
+          "final_support": {
+            "margin_m": 0.027276207985503714,
+            "contact_count": 6,
+            "com_xyz_m": [
+              -0.12994531529150094,
+              -0.11374268900239955,
+              0.2042530467927509
+            ],
+            "foot_contact_force_n": [
+              10.502113317262543,
+              10.1688377879752
+            ]
+          },
+          "peaks": {
+            "floor": 0.0037547670963514208,
+            "self": 0.00212091434625448,
+            "joint": 0.02846998552606994,
+            "force": 3.23,
+            "slew": 5.2400000000000055
+          },
+          "success": true
+        },
+        {
+          "score": 60.55766004312105,
+          "valid": true,
+          "strict_tail_s": 1.68,
+          "supported_longest_s": 1.6600000000000001,
+          "completed_steps": 529,
+          "final": {
+            "up_z": 0.9999530395295635,
+            "height_m": 0.1595534156060403,
+            "feet": [
+              true,
+              true
+            ],
+            "torso_contact": false,
+            "penetration_m": 0.000135032759770606,
+            "linear_speed_mps": 0.00039102489312872334,
+            "angular_speed_rad_s": 0.002237966009454694,
+            "stable": true,
+            "finite": true,
+            "floor_penetration_m": 0.000135032759770606,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.043223878294017214,
+            "joint_home_error_mean_rad": 0.013494167354011677,
+            "motor_target_home_error_max_rad": 6.687542247134359e-06,
+            "foot_normal_forces_n": [
+              10.502279871975016,
+              10.168668374656825
+            ],
+            "foot_load_fraction": 1.0,
+            "foot_up_alignment_to_home": [
+              0.9981082957475289,
+              0.9976581751496677
+            ]
+          },
+          "final_support": {
+            "margin_m": 0.02733154037160925,
+            "contact_count": 6,
+            "com_xyz_m": [
+              -0.1236379779113922,
+              -0.18366831807918835,
+              0.2042406989273094
+            ],
+            "foot_contact_force_n": [
+              10.502279871975016,
+              10.168668374656825
+            ]
+          },
+          "peaks": {
+            "floor": 0.004382371264741293,
+            "self": 0.002212562912726812,
+            "joint": 0.03237248357173339,
+            "force": 3.23,
+            "slew": 5.2400000000000055
+          },
+          "success": true
+        },
+        {
+          "score": 60.545022412274946,
+          "valid": true,
+          "strict_tail_s": 1.6600000000000001,
+          "supported_longest_s": 1.6400000000000001,
+          "completed_steps": 529,
+          "final": {
+            "up_z": 0.9999334963954593,
+            "height_m": 0.1597051555659374,
+            "feet": [
+              true,
+              true
+            ],
+            "torso_contact": false,
+            "penetration_m": 0.00013864032193411282,
+            "linear_speed_mps": 0.0004093401064785283,
+            "angular_speed_rad_s": 0.002683721177449895,
+            "stable": true,
+            "finite": true,
+            "floor_penetration_m": 0.00013864032193411282,
+            "self_penetration_m": 0.0,
+            "joint_home_error_max_rad": 0.04206733083195621,
+            "joint_home_error_mean_rad": 0.013242884322204222,
+            "motor_target_home_error_max_rad": 0.00024760655011424326,
+            "foot_normal_forces_n": [
+              10.500611877446923,
+              10.170367571200062
+            ],
+            "foot_load_fraction": 1.0,
+            "foot_up_alignment_to_home": [
+              0.9981631133723695,
+              0.9977016699332186
+            ]
+          },
+          "final_support": {
+            "margin_m": 0.02712248140062841,
+            "contact_count": 6,
+            "com_xyz_m": [
+              -0.16186294024342704,
+              -0.15011516727159827,
+              0.20432108188842502
+            ],
+            "foot_contact_force_n": [
+              10.500611877446923,
+              10.170367571200062
+            ]
+          },
+          "peaks": {
+            "floor": 0.0041090362023388834,
+            "self": 0.0020485551495029487,
+            "joint": 0.02644495873520525,
+            "force": 3.23,
+            "slew": 5.2400000000000055
+          },
+          "success": true
+        }
+      ],
+      "training_successes": 4,
+      "trials": 8
+    }
+  ],
+  "selected_wait_s": 2.0
+}
