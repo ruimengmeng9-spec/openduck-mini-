@@ -50,6 +50,15 @@ of continuous strict standing at the end.
 - Canonical actual-fall replay: 34.68 seconds continuous strict standing,
   physically valid, final support margin about 0.0283 m.
 
+## R61: second hard-case round
+
+`search_getup_hardcase_round2_r61.py` feeds the seven R60 failures back into a
+second search while retaining five successful states. It again reached 12/12
+on that fixed training set, but a third, unseen forty-seed group remained
+30/40 before and after training. This confirms that further fixed open-loop
+hard-case rounds are overfitting rather than improving generalization. R61 is
+archived as a negative result and does not replace R59.
+
 ## Current conclusion
 
 R59 is the selected result of this group. It materially improves transition
