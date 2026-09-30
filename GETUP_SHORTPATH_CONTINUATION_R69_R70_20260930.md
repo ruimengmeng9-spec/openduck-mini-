@@ -1,6 +1,25 @@
 # Short-wait get-up continuation R69–R70 (2026-09-30)
 
-## Latest continuation: R67/R70 finished; R73 running
+## Latest continuation: R73 finished without improvement; R74 running
+
+R73 ended after 16 generations with 13/24 short training successes. Its
+retained 32 pose-correction parameters are all zero. Paired 30-second strict
+qualification on new full-fall seeds 776000–776039 was **10/40 versus 10/40**;
+nominal passed, no improvement or stage gate pass. Do not restart R73.
+
+R74 tests smooth wait-phase target corrections after a training-only audit
+found ten of eleven failures already tilted at the end of that wait. It
+changes only ten bounded joint offsets during the wait, not physics, timing,
+earlier/later commands or IMU gains. New independent seeds 777000–777039 are
+reserved for automatic long-hold qualification. See
+`GETUP_WAIT_POSE_R74_20260930.md` for the hypothesis and frozen contract.
+
+Next check the actual process, log, checkpoint and results in
+`/data/shijinsheng/open_duck/outputs/getup_wait_pose_r74_left_20260930`
+and its matching `.log`. It is an active experiment, not a qualified skill.
+R67, R70 and R73 are finished. No hardware connection or deployment.
+
+## Previous continuation: R67/R70 finished; R73 launch (historical)
 
 R67 completed 24 generations, retained 6/8 short training successes, but
 independent complete-fall 30-second standing qualification was **0/20**, versus
