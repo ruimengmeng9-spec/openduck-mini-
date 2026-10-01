@@ -405,3 +405,22 @@ validation seeds, hardware action, physics change or relaxed gates are
 authorized by this diagnostic. All original four-pose and thirty-second
 qualification requirements stay in force. Inspect results and design a
 different evidence-based training method rather than duplicate a live job.
+
+## Latest state after R91 completion 2026 10 01
+
+R91 finished all seventeen diagnostic arms. Identity remained 13/24; only
+three of sixteen nonzero settings retained nominal success, and none
+exceeded 13/24 development recovery. A head-pitch bias of minus 0.0005 rad
+rescued six cases but lost six, so equal count is not equal reliability.
+This supports a narrow command-tolerance problem, not a validated fix.
+All R67 through R91 jobs are finished; the final process check found no
+live get-up job. Do not resume old PIDs or duplicate any completed run.
+
+Next read complete R91 results and paired traces, locate when tiny command
+deviations alter body motion and contact/support transition, and distinguish
+that mechanism from sensor-selection ambiguity or student distribution
+shift. Design a genuinely new robust whole-path or closed-loop training
+hypothesis from this evidence; do not simply increase epochs or repeat
+head-gain search. Preserve full actual-fall starts, every physical limit,
+independent seed separation and all thirty-second/four-pose acceptance
+conditions. No hardware action or controller replacement is authorized.

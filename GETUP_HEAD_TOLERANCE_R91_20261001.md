@@ -53,3 +53,23 @@ After completion, inspect result counts together with early trajectory and
 IMU differences, physical rejection and command error. Distinguish a narrow
 recovery basin from student distribution shift or insufficient observation;
 do not merely repeat the failed fixed-gain or biased-distillation search.
+
+## Completed sensitivity result
+
+All seventeen prescribed settings finished. Identity reproduced nominal
+success and 13/24. Only three of sixteen nonzero settings preserved nominal
+success. No nonzero setting exceeded thirteen development recoveries;
+nonzero settings had twenty through twenty-four physically valid cases.
+For neck biases minus/plus 0.0005 radians, recovery fell to 6/24 and 8/24,
+respectively, with eleven and nine baseline-success regressions. A minus
+0.0005-radian head-pitch bias retained the aggregate 13/24 but rescued six
+cases and lost six others, while failing nominal. Equal aggregate count
+therefore does not imply equal reliability.
+
+These comparisons support sensitivity to very small commanded perturbations
+as one obstacle to transferring a fitted feedback law. They do not isolate
+the underlying contact transition or establish a universal hardware cause.
+No new common recovery policy passed, and no independent qualification or
+hardware trial was performed. R91 is complete; no get-up process remained
+at the final process check. Continue with saved failure analysis and a
+clearly distinct robustness hypothesis, not a duplicate sensitivity run.
