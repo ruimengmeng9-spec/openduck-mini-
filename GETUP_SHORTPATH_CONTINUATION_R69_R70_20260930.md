@@ -311,3 +311,15 @@ training is R81 early asymmetric IMU feedback, described in
 forty fresh test seeds are 781000--781039, not the previously inspected R80
 test cases. The combined residual cap, physics and strict gates are unchanged.
 Do not restart R80 or rely on older heartbeat wording about it being live.
+
+## Latest continuation: R82 (2026-10-01)
+
+R81 is complete: thirteen generations retained zero added gains, training
+13/24 and fresh paired long-hold qualification 8/40 for both branches. No
+paired recovery changed. R82 is a new bounded causal IMU reference-clock
+alignment probe, described in `GETUP_SENSOR_CLOCK_R82_20261001.md`.
+Inspect `outputs/getup_sensor_clock_r82_left_20261001`, its actual process
+and result before acting. Only a training-count improvement promotes it
+to fresh paired 782000--782039 continuous 30-second qualification; otherwise
+those seeds remain unused. Do not restart R81 or older completed jobs.
+All prior hardware prohibitions and physical/standing gates remain in force.

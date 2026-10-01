@@ -66,3 +66,23 @@ failures before a new hypothesis; do not repeat the same negative search.
 No four-pose qualification gate has passed. Preserve the existing staged
 18/20 fresh complete recoveries per pose, 30 s continuous strict standing
 and valid audit, then expand unseen/noise/delay testing. Do not deploy.
+
+## Completed result (supersedes running wording above)
+
+R81 finished thirteen generations. Every generation retained zero added
+gains, training remained 13/24, and all twenty-four candidates per generation
+passed the nominal gate. Forty fresh full-fall qualification trials yielded
+8/40 for both candidate and paired baseline, with no rescues or regressions.
+The zero candidate delegates to the baseline, so this is a negative search
+result, not a new validated controller. R80's 13/40 uses different seeds;
+the difference between cohorts is not evidence that R81 worsened the policy.
+
+Thirty-nine of forty independent trials passed the physical audit; seed
+781004 stopped at control 45 with self penetration 0.029894956 m. Its failed
+trace and the unchanged rejection threshold are retained. No hardware test
+or four-pose gate passed. On the training traces, early IMU discrepancies
+are nonzero while the original residual cap is not generally active; this
+does not establish a unique cause or prove that the added gains can work.
+
+Next experiment: `GETUP_SENSOR_CLOCK_R82_20261001.md`. Check its actual
+process and saved result rather than restarting this completed R81 run.
