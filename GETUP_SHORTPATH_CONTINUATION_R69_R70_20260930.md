@@ -287,3 +287,16 @@ a staged simulation gate, not universal perfection. Larger unseen test sets,
 sensing and execution-delay robustness, hardware-model agreement and explicit
 real-robot safety validation remain additional gates. Never enable or deploy
 the skill on the real robot from a scheduled continuation.
+
+## Latest continuation: R80 (2026-10-01)
+
+R76--R79 are complete. R76's timing change and R78's wait selector did not
+improve their respective paired baseline. The current live experiment is
+R80 early leg-pose correction, not another R67/R70 run. Read
+`GETUP_EARLY_POSE_R79_R80_20261001.md`, then inspect
+`outputs/getup_early_pose_r80_left_20261001` and its actual process/log before
+launching anything. Its first generation reproduced the frozen 13/24 short
+baseline, preserved nominal success and saved a checkpoint. This is not
+independent qualification. Forty fresh 780000--780039 full-fall tests with
+thirty continuous strict-standing seconds run automatically after fitting.
+No hardware deployment is authorized by this continuation.
