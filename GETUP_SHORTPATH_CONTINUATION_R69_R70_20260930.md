@@ -323,3 +323,17 @@ and result before acting. Only a training-count improvement promotes it
 to fresh paired 782000--782039 continuous 30-second qualification; otherwise
 those seeds remain unused. Do not restart R81 or older completed jobs.
 All prior hardware prohibitions and physical/standing gates remain in force.
+
+## Latest continuation: R84 (2026-10-01)
+
+R82 completed without improvement: identity 13/24, adaptive clocks 1--5/24.
+R83's offline causal selector also failed its training-only leave-one-out
+screen (best 9/24); the oracle 20/24 is not a policy. Neither used fresh
+qualification seeds. Current experiment R84 tests physical initial settling
+before the unchanged complete get-up stream; read
+`GETUP_INITIAL_SETTLING_R84_20261001.md` and inspect
+`outputs/getup_initial_settling_r84_left_20261001` before launching anything.
+Only training-count improvement promotes it to fresh paired 784000--784039
+continuous 30-second qualification. No intermediate state reset, hardware
+connection, physics changes or relaxed acceptance are allowed. R67--R83
+are complete; never resume their old PIDs.

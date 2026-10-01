@@ -72,3 +72,26 @@ clock changes, wrong phase estimates and a genuinely inadequate path.
 Do not rerun unchanged negative grids or describe training success as
 30-second independent recovery. Preserve the staged per-pose 18/20 gate,
 then larger unseen and noise/delay tests; never automatically deploy.
+
+## Completed result
+
+The identity clock reproduced 13/24. Eight adaptive settings all preserved
+nominal success but obtained only 1, 2, 5, 2, 4, 1, 3, 3 training recoveries
+in grid order. Their physical-audit rejects were 2, 1, 2, 2, 1, 1, 1, 1.
+The saved cursor data confirm that the intervention changed reference
+progress, so this is not simply a zero-effect search. Some settings rescue
+individual baseline failures but lose many previous successes. No candidate
+was promoted; qualification seeds 782000--782039 were not simulated.
+
+Across settings an oracle could select successes for 20/24, but an oracle
+uses future trial outcomes and is not a deployable policy. R83 tested causal
+selection using the shared four-dimensional pre-intervention IMU errors at
+control 25. Training-only leave-one-out fitting excludes each target case
+from both neighbor labels and feature normalization. Neighbor counts 1, 3,
+5, 7 yield 8, 6, 7, 9 successes, respectively, below baseline 13. The
+selector is therefore rejected rather than promoted or called validated.
+No fresh physical trials occurred in R83. Raw inputs and prediction rows
+are retained in `outputs/getup_clock_selector_audit_r83_20261001`.
+
+Next experiment: `GETUP_INITIAL_SETTLING_R84_20261001.md`. R82 and R83 are
+complete and must not be restarted.
