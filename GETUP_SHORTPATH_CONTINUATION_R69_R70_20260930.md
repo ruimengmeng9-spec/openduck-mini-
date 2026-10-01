@@ -351,3 +351,19 @@ log and checkpoint. Twenty-four generations maximum, seed 186, six CPU
 workers. Only increased training count triggers fresh paired 786000--786039
 continuous thirty-second qualification. R67--R85 are finished. Keep every
 hardware prohibition, no-intermediate-reset requirement and physical gate.
+
+## Latest continuation: R87 (2026-10-01)
+
+R86 is complete: thirteen generations retained zero early head offsets,
+training stayed 13/24 and independent seeds were unused. Saved candidates
+rescue different failures but do not form a common improved policy. R87
+tests causal early head/neck feedback from current IMU reference errors;
+read `GETUP_HEAD_FEEDBACK_R87_20261001.md` and inspect
+`outputs/getup_head_feedback_r87_left_20261001`, current process, log,
+checkpoint and final result. Search seed 187, six CPU workers, population
+24, at most 24 generations; twelve stale generations stop. Only training
+count improvement triggers fresh paired 787000--787039 complete falls,
+valid physical audit and thirty continuous strict-standing seconds.
+R67--R86 are finished; do not resume old PIDs or duplicate live R87 work.
+All hardware prohibitions, unchanged physics and no-midpath-reset rules
+remain in force. Training or oracle counts are not independent qualification.

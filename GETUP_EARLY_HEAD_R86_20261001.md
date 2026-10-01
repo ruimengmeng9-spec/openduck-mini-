@@ -69,3 +69,22 @@ gate per pose, then expand unseen and noise/delay tests; never deploy.
 Output: `/data/shijinsheng/open_duck/outputs/getup_early_head_r86_left_20261001`.
 Source: `diagnostics/train_getup_early_head_r86.py`.
 Launcher: `scripts/launch_getup_early_head_r86_20261001.sh`.
+
+## Completed result (supersedes running wording)
+
+R86 completed thirteen generations, retained exactly zero head offsets,
+and remained at 13/24. Twelve stale generations ended the search. Training
+review reproduced the retained baseline. No increased training count was
+found, so independent seeds 786000--786039 were not simulated.
+
+There are 312 saved candidate summaries, of which 98 pass the nominal gate.
+Eligible nonidentity candidates reach at most 10/24, below the common
+baseline. Their successes collectively include all eleven baseline failures,
+but that is an oracle union over different actions and future outcomes,
+not a causal controller or 24/24 common-policy success. There is no ground
+to claim improvement, qualification or hardware readiness. Rejected nominal
+reference traces and paired retained-policy training failures are preserved.
+
+Next: `GETUP_HEAD_FEEDBACK_R87_20261001.md`, testing current-IMU-dependent
+head response instead of universal head offsets. Check actual R87 state
+before a new launch. R86 is complete and must not be restarted.
