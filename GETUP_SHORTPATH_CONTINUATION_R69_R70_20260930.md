@@ -487,3 +487,36 @@ development starts; selected candidate must retain nominal and improve
 log, history, checkpoints and results before continuing. No physics-limit
 or gate changes, midpath state resets, hardware connection or controller
 replacement is authorized. Wait if live and healthy; do not duplicate.
+
+## Latest continuation R95 final and R96 running 2026 10 01
+
+R95 completed seventeen generations with no feasible improvement. Selected
+preload was exactly zero; both final reviews recovered 13/24 with nominal
+success and valid physical audits in all twenty-four development cases.
+No fresh 795000 qualification or micro-bias screen ran. R67 through R95
+are complete; never resume their old PIDs.
+
+Read `GETUP_INITIAL_ENCODER_COMPENSATION_R96_20261001.md`. R96 passed
+forty-seven code/regression tests and is running with six CPU workers.
+Identity reproduced nominal success and 13/24. It tests shared
+initial-encoder compensation gains over seventy-three settings, fading
+within 0.4 to 1.2 seconds under the unchanged combined residual cap. The
+largest observed settled joint deviation in the development cohort was
+about 0.00710 rad; this is a hypothesis input, not proof of a root cause.
+Actual full-fall starts, all physical limits and strict acceptance are
+unchanged. No seed, root pose, outcome or future state is a policy input.
+
+Check actual server processes, log, grid progress and results before any
+continuation. Increasing the SSH timeout recovered access; the existing
+bundle download completed. R96 main 2144366 and six workers were observed
+with the expected command, but verify current identity rather than acting
+on these stored IDs. Output is `outputs/getup_initial_encoder_r96_left_20261001`.
+Do not infer a training crash from a connection timeout or launch a duplicate.
+Only nominal-preserving count improvement can enter the comparative
+five-arm bias development screen; candidate mean/worst counts and each
+baseline nominal success must be retained. This is not the all-biased
+nominal gate previously used in R94/R95 and is not robustness qualification.
+Only a promoted candidate uses fresh paired seeds 796000 through 796039
+with thirty uninterrupted strict-standing seconds. If not promoted, those
+seeds remain unused. No hardware action or walking controller replacement
+is authorized, and all four-pose and larger-cohort acceptance gates remain.

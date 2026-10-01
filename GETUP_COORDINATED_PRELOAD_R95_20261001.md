@@ -81,12 +81,14 @@ not proof of improvement or independent qualification. Main process 2106295
 and wrapper 2106293 were observed; verify current identity before any process
 operation rather than relying on these launch IDs.
 
-The next successful process check found the same main and six workers
-running, with no stopped T state. Five generations had completed, each
-retaining best 13/24 and a nominal-successful search best. Generation five
-had seven nominal-feasible candidates and four stagnant generations. This
-is continuing negative development evidence, not a final result. The
-previous permission-review timeout did not stop the training process.
+R95 subsequently finished seventeen generations and stopped at sixteen
+stagnant generations, without improving the feasible 13/24 count. The
+selected ten offsets were all exactly zero. Both final baseline and
+selected-candidate reviews recovered 13/24, retained nominal success and
+had valid audits in all twenty-four development cases. No micro-command
+bias screen or independent qualification ran; seeds 795000 through 795039
+remain unused. This is a rejected shared-preload method, not recovery
+qualification. Do not resume its old process IDs.
 
 Source is `diagnostics/train_getup_preload_r95.py`; launcher is
 `scripts/launch_getup_preload_r95_20261001.sh`. Output is
