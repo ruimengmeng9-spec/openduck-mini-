@@ -1,6 +1,38 @@
 # Short-wait get-up continuation R69–R70 (2026-09-30)
 
-## Latest continuation 2026 10 01 R76 finished and R77 started
+## Latest continuation 2026 10 01 R77 and R78 finished without improvement
+
+R77 completed all eighteen waits. Fifteen preserve the mandatory nominal
+gate; 0.1, 0.6 and 1.0 seconds do not. The best fixed wait remains 2 seconds,
+13/24 short training successes. The retrospective union of successes across
+eligible waits is 16/24, not a policy or independent qualification.
+
+R78 fitted a sensor-only nearest-neighbour wait selector from those training
+outcomes. Inputs are upvector, gyro, encoder offsets and joint velocities
+after the original 308 early controls, before any wait command. All eligible
+saved traces have bit-exact matching pre-decision positions, velocities and
+observations. Feature normalization is fitted separately inside each
+leave-one-case-out fold. A nominal sensor anchor and conservative baseline
+fallback are included. Twelve neighbour-count and margin settings were
+compared on training cases only; the best cross-check is **13/24**, equal to
+the frozen baseline. Five selector unit tests passed, in addition to the
+twenty-two control-contract tests. These are not independent rollout tests.
+
+No new physical policy validation or long-running training was launched
+from that negative result. R76, R77 and R78 are finished; do not restart
+their obsolete PIDs. First read the final evidence in
+`/data/shijinsheng/open_duck/outputs/getup_wait_library_r77_20261001` and
+`/data/shijinsheng/open_duck/outputs/getup_wait_selector_r78_20261001`.
+The selector is a recorded training artifact, not a validated replacement.
+Further work should examine the eight training cases that no eligible wait
+rescues and whether their contact/tilt divergence requires a genuinely
+different feedback action or recovery path. This is a proposed direction,
+not an established cause; diagnose the saved failures before another search.
+Preserve original physics, complete-fall starts and thirty-second strict
+qualification. No real-robot connection, deployment or walking-file change.
+See `GETUP_WAIT_LIBRARY_R77_20261001.md`.
+
+## Previous continuation 2026 10 01 R76 finished and R77 started
 
 R76 has completed thirteen generations. The retained four timing factors
 are all ones, with 13/24 short training successes. Full-fall seeds

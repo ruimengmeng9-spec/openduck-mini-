@@ -61,3 +61,36 @@ with a valid physical audit and thirty continuous strict-standing seconds,
 followed by a larger independent set and noise and delay testing. Right-side,
 prone and supine recovery remain separate unqualified stages. Neither R76
 nor this diagnostic establishes hardware readiness.
+
+## Completed wait library and selector fitting
+
+R77 finished all eighteen settings. Fifteen passed the mandatory nominal
+gate; 0.1, 0.6 and 1.0 seconds failed that gate and were not evaluated on
+the twenty-four cases. The best fixed wait is still 2 seconds with 13/24
+short training successes. The union of eligible wait successes covers
+16/24 cases. This union uses eventual outcomes and is not executable routing.
+
+R78 therefore tested whether pre-wait sensor observations could predict
+which eligible wait to use. The inputs are body upvector, gyro scaled by
+0.15, actuator encoder offsets from home, and actuator velocities scaled by
+0.05, sampled immediately after the original 308 early controls. Offline
+observation reconstruction reads saved states only; it is not a new physical
+rollout and supplies no get-up success evidence. All eligible training paths
+have bit-exact equal pre-decision positions, velocities and observations.
+
+The nearest-neighbour model includes a nominal anchor and falls back to the
+2-second baseline unless estimated success is strictly better by a selected
+margin. Neighbour counts 1, 3, 5 and 7 and margins 0, 0.1 and 0.2 were
+compared with leave-one-case-out checks. Normalization is fitted inside each
+fold. The best cross-check remains 13/24, equal to the baseline. Those same
+training cases select the settings, so this is not independent validation.
+Five new selector tests passed. The model and full fitting evidence are in
+`/data/shijinsheng/open_duck/outputs/getup_wait_selector_r78_20261001`.
+
+No controller improvement is established and no prospective long-hold test
+was justified by this fitting criterion. Both experiments are complete.
+Before further training, examine the eight cases no eligible wait rescues
+and test a new mechanism supported by their saved trajectories. Simply
+repeating a fixed-wait or similar nearest-neighbour search is not supported
+by these results. Hardware readiness and all four-pose stage gates remain
+unpassed.
