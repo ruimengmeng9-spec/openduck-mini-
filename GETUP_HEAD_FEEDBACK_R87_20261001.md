@@ -64,3 +64,11 @@ tests; never automatically deploy.
 Output: `/data/shijinsheng/open_duck/outputs/getup_head_feedback_r87_left_20261001`.
 Source: `diagnostics/train_getup_head_feedback_r87.py`.
 Launcher: `scripts/launch_getup_head_feedback_r87_20261001.sh`.
+
+## First observed generation
+
+Generation one reproduced 13/24 and nominal success. All twenty-four
+candidate feedback laws passed the nominal gate, unlike the 98/312
+eligibility in R86's fixed offsets. The retained head gain is zero so far;
+eligibility alone is not a recovery improvement. Training and independent
+qualification remain unfinished at this observation.
