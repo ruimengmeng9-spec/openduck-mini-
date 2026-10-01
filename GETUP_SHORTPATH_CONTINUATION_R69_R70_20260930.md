@@ -337,3 +337,17 @@ Only training-count improvement promotes it to fresh paired 784000--784039
 continuous 30-second qualification. No intermediate state reset, hardware
 connection, physics changes or relaxed acceptance are allowed. R67--R83
 are complete; never resume their old PIDs.
+
+## Latest continuation: R86 (2026-10-01)
+
+R84 is complete: extra initial dwell failed nominal reference physical audit
+at all nonzero settings; training cases for those settings and fresh test
+seeds were not simulated. R85 observed actual transient trunk-to-knee/ankle
+substep contact, explaining those rejected references but not all valid
+failed get-up cases. R86 trains early head/neck target coordination with
+all leg references and physics frozen. Read `GETUP_EARLY_HEAD_R86_20261001.md`
+and inspect `outputs/getup_early_head_r86_left_20261001`, its actual process,
+log and checkpoint. Twenty-four generations maximum, seed 186, six CPU
+workers. Only increased training count triggers fresh paired 786000--786039
+continuous thirty-second qualification. R67--R85 are finished. Keep every
+hardware prohibition, no-intermediate-reset requirement and physical gate.

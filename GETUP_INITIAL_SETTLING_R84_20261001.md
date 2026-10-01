@@ -62,3 +62,31 @@ Launcher: `scripts/launch_getup_initial_settling_r84_20261001.sh`.
 No per-pose 18/20 independent gate or full four-pose gate has passed. After
 passing, expand unseen seed and noise/delay testing. Do not claim universal
 perfection or hardware readiness and do not deploy automatically.
+
+## Completed result and R85 substep contact audit
+
+Zero dwell reproduced 13/24. All six nonzero dwell settings failed the
+nominal reference physical audit before training-case evaluation; their
+reported zero successes do **not** mean 24 simulated failures. No fresh
+784000--784039 qualification seeds were used. Peak self penetrations were
+approximately 0.02967--0.03001 m, exceeding the unchanged 0.004 m threshold.
+
+R85 attached a read-only observer around each original mj_step call in an
+isolated process. It delegates exactly once, records actual substep contact
+objects and forces, never changes integration, commands or state, and
+restores the original callable afterwards. Observed zero-dwell nominal
+score, physical validity, strict tail and completed steps exactly match
+R84. Its canonical identity trial and two existing failed training cases
+had no self contact beyond the observer's 0.003 m diagnostic threshold.
+
+For extra dwells of 0.2, 0.5 and 1.0 s, the observed rejected contacts are
+between `trunk_assembly` and `knee_and_ankle_assembly_3`, with deepest values
+-0.02990309, -0.02997342 and -0.02967190 m. This explains rejection of those
+dwell references, not every valid-but-unsuccessful recovery. Contact-rate
+snapshots after each 20 ms control missed these transient objects; no
+collision modification is justified. Original substep records, initial
+hashes, source snapshots and failed paths are preserved in
+`outputs/getup_substep_contact_audit_r85_20261001`.
+
+Next is early head/neck coordination R86. Read
+`GETUP_EARLY_HEAD_R86_20261001.md`; R84/R85 are complete.
