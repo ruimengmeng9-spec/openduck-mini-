@@ -72,3 +72,21 @@ candidate feedback laws passed the nominal gate, unlike the 98/312
 eligibility in R86's fixed offsets. The retained head gain is zero so far;
 eligibility alone is not a recovery improvement. Training and independent
 qualification remain unfinished at this observation.
+
+## Completed result
+
+R87 ended after thirteen generations and twelve stale generations. The
+retained gains are exactly zero, with 13/24 development recoveries and
+nominal success. All 312 candidates passed the nominal gate, but no
+nonidentity candidate exceeded 13/24. Selected and baseline development
+replays agree, with all twenty-five physical audits valid. Because recovery
+count did not improve, the reserved 787000 through 787039 independent seeds
+were not used. No new thirty-second qualification or hardware readiness is
+established.
+
+Different candidates collectively rescued all eleven baseline failures.
+Their union is an outcome-aware oracle, not a runnable 24/24 policy. R88
+therefore screened an observable selector; its best development result was
+only 9/24. R89 instead tests nonlinear head-feedback distillation from the
+successful case-specific teachers. Inspect the latest continuation note
+before starting another experiment. R87 is finished and must not be resumed.

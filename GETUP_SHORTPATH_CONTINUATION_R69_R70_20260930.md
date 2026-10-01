@@ -367,3 +367,21 @@ valid physical audit and thirty continuous strict-standing seconds.
 R67--R86 are finished; do not resume old PIDs or duplicate live R87 work.
 All hardware prohibitions, unchanged physics and no-midpath-reset rules
 remain in force. Training or oracle counts are not independent qualification.
+
+## Latest continuation R89 2026 10 01
+
+R87 is finished after thirteen generations, retaining zero gains and 13/24
+development success. Reserved 787000 through 787039 independent seeds were
+unused. R88's observable candidate selector also failed its development
+screen, best 9/24. Do not restart either job or any earlier completed run.
+
+Current R89 trains nonlinear head feedback from successful R87 teachers.
+Read `GETUP_HEAD_DISTILLATION_R88_R89_20261001.md` and inspect
+`outputs/getup_head_distillation_r89_left_20261001`, its actual processes,
+log, saved networks and results. Seed 189, six CPU workers, 300 supervised
+epochs and nine closed-loop settings. Teachers reproduced 25/25 short
+development successes; this is NOT common-policy or thirty-second success.
+Only improved closed-loop training count above 13/24 with nominal preserved
+triggers fresh paired 789000 through 789039 complete-fall qualification.
+All physical audit, thirty-second standing, hardware prohibition and
+no-midpath-reset requirements remain unchanged. Avoid duplicate launch.
