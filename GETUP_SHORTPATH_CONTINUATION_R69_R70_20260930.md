@@ -424,3 +424,25 @@ hypothesis from this evidence; do not simply increase epochs or repeat
 head-gain search. Preserve full actual-fall starts, every physical limit,
 independent seed separation and all thirty-second/four-pose acceptance
 conditions. No hardware action or controller replacement is authorized.
+
+## Latest continuation R93 2026 10 01
+
+R92 exactly replayed nine R91 trajectories while recording actual physical
+substep contacts. Early head-ground force and topology differences appeared
+around 0.62 through 0.77 s, before gyro and leg-feedback divergence. This
+does not prove gyro feedback caused the initial change. R67 through R92 are
+complete; do not resume their old process IDs.
+
+Current R93 independently attenuates early pitch-rate and roll-rate feedback
+over a twenty-five-setting deterministic grid. Read
+`GETUP_MICRO_CONTACT_R92_GYRO_R93_20261001.md` and inspect
+`outputs/getup_gyro_attenuation_r93_left_20261001`, actual processes, log,
+grid progress, checkpoint and results. Six CPU workers; existing twenty-four
+development starts. Identity must reproduce 13/24. Only actual count
+improvement preserving nominal enters a five-arm micro-command-bias screen;
+only no-worse mean and worst-case results promote to fresh paired 793000
+through 793039 full-fall, thirty-second strict-standing qualification.
+Do not call training scores, contact temporal ordering or launch a recovery
+success. No hardware action, physics change, larger actuation budget or
+midpath state reset is allowed. Inspect and wait for a healthy live job;
+do not duplicate it or blindly restart older heartbeat-listed experiments.
