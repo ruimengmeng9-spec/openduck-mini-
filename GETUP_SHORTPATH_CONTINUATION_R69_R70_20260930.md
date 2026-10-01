@@ -385,3 +385,23 @@ Only improved closed-loop training count above 13/24 with nominal preserved
 triggers fresh paired 789000 through 789039 complete-fall qualification.
 All physical audit, thirty-second standing, hardware prohibition and
 no-midpath-reset requirements remain unchanged. Avoid duplicate launch.
+
+## Latest continuation R91 2026 10 01
+
+R89 is finished: case-specific teachers reproduced 25/25 short-gate success,
+but the common student achieved at most 9/24. R90 preserved the complete
+nominal trajectory exactly by output centering, yet achieved at most 7/24.
+Neither passed development promotion, so their independent seeds remained
+unused. R67 through R90 are complete. Never resume their old process IDs.
+
+Current R91 is a seventeen-arm head-command tolerance diagnostic, not a
+promotion search. Read `GETUP_HEAD_TOLERANCE_R91_20261001.md` and inspect
+`outputs/getup_head_tolerance_r91_left_20261001`, its actual processes, log,
+progress and results. It uses the same nominal and twenty-four development
+falls, six CPU workers, and separate neck/head raw biases of plus/minus
+0.0005, 0.001, 0.002 and 0.005 radians under the original envelope and cap.
+Identity must reproduce 13/24. Retain both rescues and regressions. No fresh
+validation seeds, hardware action, physics change or relaxed gates are
+authorized by this diagnostic. All original four-pose and thirty-second
+qualification requirements stay in force. Inspect results and design a
+different evidence-based training method rather than duplicate a live job.

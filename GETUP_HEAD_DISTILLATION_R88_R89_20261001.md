@@ -81,6 +81,28 @@ Output: `/data/shijinsheng/open_duck/outputs/getup_head_distillation_r89_left_20
 Source: `diagnostics/train_getup_head_distillation_r89.py`.
 Launcher: `scripts/launch_getup_head_distillation_r89_20261001.sh`.
 
-The latest observed stage reproduced all teachers and completed supervised
-fitting. Closed-loop development screening is in progress. No student
-improvement or independent qualification is claimed at this stage.
+## Completed student result
+
+R89 is complete. Teacher data contain 3625 samples, with maximum raw
+head-feedback target 0.018685 radians and no internal-bound clipping.
+Training MSE fell to about 0.00000112, but the best closed-loop student
+achieved only 9/24, at epoch 150 and strength 0.25. Five of the nine settings
+preserved nominal success; four lost it despite valid physical audit and
+complete execution. The reserved 789000 through 789039 independent seeds
+were unused. This is a negative distillation result, not model readiness.
+
+R90 tested nominal-output centering with the same frozen networks, inputs,
+normalization, strength grid and activation envelope. It physically recorded
+the nominal pre-control sensor sequence, then subtracted the network output
+for the current reference control time. Every nominal candidate was exactly
+identical to the baseline in qpos, qvel and command residual, checked at all
+control samples; no reference state was injected into a trial. Nonetheless,
+the best centered model reached only 7/24. Removing nominal bias alone did
+not improve perturbed cases. Its fresh 790000 through 790039 seeds were not
+used. Both R89 and R90 are finished.
+
+The next diagnostic R91 measures whether tiny head-command inaccuracies can
+change the physical recovery outcome. This is a hypothesis about the motion
+path's tolerance, not a proven explanation of every failure. Inspect
+`GETUP_HEAD_TOLERANCE_R91_20261001.md` and actual process state before starting
+another experiment.
