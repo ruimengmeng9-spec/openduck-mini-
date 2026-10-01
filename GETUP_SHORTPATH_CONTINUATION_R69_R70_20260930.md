@@ -300,3 +300,14 @@ baseline, preserved nominal success and saved a checkpoint. This is not
 independent qualification. Forty fresh 780000--780039 full-fall tests with
 thirty continuous strict-standing seconds run automatically after fitting.
 No hardware deployment is authorized by this continuation.
+
+## Latest continuation: R81 (2026-10-01)
+
+R80 is complete: thirteen generations retained zero correction, with paired
+13/40 independent long-hold successes and no rescues or regressions. Current
+training is R81 early asymmetric IMU feedback, described in
+`GETUP_EARLY_FEEDBACK_R81_20261001.md`. Inspect
+`outputs/getup_early_feedback_r81_left_20261001` and live processes. Its
+forty fresh test seeds are 781000--781039, not the previously inspected R80
+test cases. The combined residual cap, physics and strict gates are unchanged.
+Do not restart R80 or rely on older heartbeat wording about it being live.

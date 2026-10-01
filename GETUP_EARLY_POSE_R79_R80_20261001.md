@@ -69,3 +69,21 @@ method. A negative result is to be archived, not concealed or fixed by
 loosening gates. The left-side stage remains unqualified; right-side, prone
 and supine recovery, expanded unseen sets and sensor/execution delays remain
 unpassed. No hardware readiness is established.
+
+## Completed R80 and next experiment
+
+R80 has now completed thirteen generations and stopped after twelve stale
+generations. The selected early-pose delta is exactly zero: all recorded
+best objective values are 192.957689. Short training remains 13/24.
+The fresh forty-case long-hold qualification is 13/40 for both baseline and
+candidate, with no paired rescues or regressions. Nominal remains successful.
+Thirty-six of forty physical audits are valid; seeds 780002, 780011, 780018
+and 780034 are rejected, not counted as recovery successes. They stop at
+controls 45, 45, 304 and 44 respectively. Peak self-penetration is about
+0.030 m in the first, second and fourth, and 0.049 m in the third. The audit
+was not relaxed. R80 is a completed negative result, not an active process.
+
+The next controlled hypothesis is case-dependent early asymmetric IMU
+feedback instead of a universal early pose offset. Read
+`GETUP_EARLY_FEEDBACK_R81_20261001.md` and the actual R81 output. Neither this
+diagnosis nor starting R81 establishes a qualified get-up skill.
