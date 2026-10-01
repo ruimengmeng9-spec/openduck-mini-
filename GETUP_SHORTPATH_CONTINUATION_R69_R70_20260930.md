@@ -1,6 +1,32 @@
 # Short-wait get-up continuation R69–R70 (2026-09-30)
 
-## Latest continuation (2026-10-01): R74 finished; R75 prepared, not launched
+## Latest continuation 2026 10 01 R75 finished and R76 running
+
+R75's 15-setting early timing grid is complete. Identity preserves nominal
+success and 13/24 short training successes. Global 1.2 timing preserves
+nominal but reduces training successes to 4/24; the other thirteen variants
+fail the mandatory nominal gate. The selected factors remain all ones.
+This is a training-only negative ablation, not independent qualification.
+
+Read-only server inspection subsequently found an existing R76 CEM run at
+`/data/shijinsheng/open_duck/outputs/getup_prefix_timing_cem_r76_20261001`.
+Do not duplicate or stop this run. PID 1886896 was its parent Python process
+at inspection, with six workers and a `flock` execution guard. Verify the
+command as well as PID. The observed log had four completed generations,
+13/24 training successes and mandatory nominal success; no final independent
+result existed at inspection. Eighteen control-contract unit tests passed.
+
+R76 uses the frozen pre-R74 checkpoint, seed 176, up to 32 generations,
+population 24, six CPU workers and twelve-stale stopping. Its automatic paired
+qualification reserves complete-fall seeds 778000 through 778039, excluded
+from fitting, and requires 30 continuous strict-standing seconds in a
+35-second final hold with the original physical audit. Check its actual
+process, log, checkpoint and final results first on continuation. Running
+training and short training success are not a stage gate or hardware readiness.
+R67, R70, R73, R74 and R75 are finished. No real-robot connection or deployment.
+See `GETUP_EARLY_TIMING_R75_R76_20261001.md`.
+
+## Previous continuation R74 finished and R75 prepared
 
 R74 ended after 21 generations, with twelve stale generations and 14/24
 short training successes. Independent full-fall seeds 777000–777039 qualified
