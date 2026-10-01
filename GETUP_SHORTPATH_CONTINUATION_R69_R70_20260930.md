@@ -1,6 +1,41 @@
 # Short-wait get-up continuation R69–R70 (2026-09-30)
 
-## Latest continuation 2026 10 01 R75 finished and R76 running
+## Latest continuation 2026 10 01 R76 finished and R77 started
+
+R76 has completed thirteen generations. The retained four timing factors
+are all ones, with 13/24 short training successes. Full-fall seeds
+778000 through 778039 qualified **13/40 versus 13/40** for the baseline;
+every paired candidate result equals its baseline result. This is a negative
+timing experiment, not a qualified skill. Thirty-eight candidate physical
+audits are valid; seeds 778001 and 778021 fail the audit at control step 45
+with about 0.030 m peak self-penetration. Those two early failures do not
+explain the remaining twenty-five unsuccessful independent cases.
+
+The earlier pause was user requested, not a training crash. The verified
+process family resumed without a new training run, and the log advanced
+from generation seven to eight before normal completion. Preserve the
+resume record, final checkpoint, all paired replays and failures. Do not
+resume the obsolete R76 PIDs or restart R67 through R76.
+
+R77 now tests eighteen home-wait durations from zero to five seconds on the
+same twenty-four actual-fall training cases, using the frozen pre-R74
+checkpoint. Only the count of identical phase-1 home commands changes;
+early motion, later commands, feedback, physical parameters, motor limits
+and standing criteria remain fixed. Twenty-two unit tests passed. The
+main Python PID was 1923572 at launch, with six CPU workers. Recheck its
+command and output rather than relying on this historical PID.
+
+Check `/data/shijinsheng/open_duck/outputs/getup_wait_library_r77_20261001`
+and its matching `.log` first. This is a training-only diagnostic, not PPO
+training or independent qualification. A rejected nominal gate is not
+twenty-four simulated failures. A retrospective per-case best-wait count
+is an oracle ceiling, not an executable policy. No held-out seed is used
+to select waits. Any next controller needs fresh full-fall verification
+with thirty continuous strict-standing seconds before claiming improvement.
+No real-robot connection or deployment. See
+`GETUP_WAIT_LIBRARY_R77_20261001.md`.
+
+## Previous continuation 2026 10 01 R75 finished and R76 running
 
 R75's 15-setting early timing grid is complete. Identity preserves nominal
 success and 13/24 short training successes. Global 1.2 timing preserves
