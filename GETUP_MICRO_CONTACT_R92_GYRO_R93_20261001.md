@@ -80,21 +80,32 @@ The fresh cohort cannot subsequently be used for tuning and still be called
 unseen. All four pose gates, larger independent sets and sensor/execution
 delay testing remain unpassed.
 
-## Launch observation and continuation
+## Completed attenuation result
 
-Thirty-one code-contract and regression tests passed before launch. Wrapper
-2093308 and main 2093310 were observed, but future operations must verify
-current command identity. The first three settings reproduced baseline
-13/24 and then achieved 9/24 and 7/24 when only roll-rate feedback was
-reduced. These early results do not establish improvement; the remaining
-grid and any conditional robustness/qualification stages must be inspected.
+Thirty-one code-contract and regression tests passed before launch. R93
+completed all twenty-five settings. All retained nominal short-gate success;
+identity reproduced 13/24 development recoveries and all twenty-four valid
+physical audits. No nonidentity setting improved the count. The strongest
+nonidentity setting removed early pitch-rate feedback, retained roll-rate
+feedback, and recovered 11/24, with twenty-three valid physical audits.
+The other settings recovered between 3/24 and 10/24; valid physical counts
+ranged from twenty-two to twenty-four. Thus removing or reducing this
+feedback does not establish a fix for the observed contact sensitivity.
 
-R67 through R92 are complete. Current output is
+The selected checkpoint retains identity factors. The conditional bias
+screen and independent qualification were not run; seeds 793000 through
+793039 remain unused. All process checks after completion found no R93
+worker still running. The negative result does not prove that gyro feedback
+is irrelevant in every trajectory, only that this prescribed intervention
+did not improve the shared policy on the development cohort.
+
+R67 through R93 are complete. Completed R93 output is
 `/data/shijinsheng/open_duck/outputs/getup_gyro_attenuation_r93_left_20261001`.
 Source: `diagnostics/train_getup_gyro_attenuation_r93.py`.
 Launcher: `scripts/launch_getup_gyro_attenuation_r93_20261001.sh`.
 R92 contact evidence is in
 `/data/shijinsheng/open_duck/outputs/getup_micro_contact_r92_20261001`.
-Check actual processes, saved progress, checkpoint and final results before
-another launch. Do not duplicate a live job or repeat a negative search
-without a distinct evidence-based hypothesis.
+Next read `GETUP_HEAD_RELATIVE_PHASE_R94_20261001.md`. R94 tests relative
+head-to-leg timing before the contact change, not attenuation or another
+shared whole-body clock. Do not resume an old R93 PID or repeat a completed
+negative grid.

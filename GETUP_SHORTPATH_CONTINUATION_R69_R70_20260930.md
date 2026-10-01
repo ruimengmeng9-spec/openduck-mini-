@@ -446,3 +446,44 @@ Do not call training scores, contact temporal ordering or launch a recovery
 success. No hardware action, physics change, larger actuation budget or
 midpath state reset is allowed. Inspect and wait for a healthy live job;
 do not duplicate it or blindly restart older heartbeat-listed experiments.
+
+## Latest continuation R94 2026 10 01
+
+R93 is complete: all twenty-five nominal settings passed the short gate,
+but no nonidentity setting exceeded baseline 13/24. Best nonidentity was
+11/24; no bias screen or fresh 793000 cohort was run. R67 through R93 are
+finished and must not be resumed using stale process IDs.
+
+R94 tests independent head/neck lead and lag relative to unchanged leg
+commands from 0 to 1.2 seconds. Read
+`GETUP_HEAD_RELATIVE_PHASE_R94_20261001.md`, then inspect
+`outputs/getup_head_phase_r94_left_20261001`, current processes, log,
+grid progress, checkpoint and results. Twenty-five prescribed settings,
+six CPU workers, and the same twenty-four development starts. Only count
+improvement preserving nominal enters a development micro-bias robustness
+screen; only no-worse mean and worst recovery plus all nominal successes
+promote to fresh paired seeds 794000 through 794039 with thirty-second
+strict continuous standing. All physical limits and four-pose acceptance
+conditions remain unchanged. No hardware action is authorized. Do not
+duplicate the running experiment or restart older heartbeat-listed jobs.
+
+## Latest continuation R95 2026 10 01
+
+R94 is now complete and rejected. Identity remained 13/24; nine eligible
+nonidentity settings recovered only 2 to 8 of twenty-four development
+cases. Fifteen other settings failed nominal and were not evaluated on
+the development cohort. No micro-bias screen or fresh 794000 qualification
+cohort ran. R67 through R94 are finished; do not resume their old PIDs.
+
+Read `GETUP_COORDINATED_PRELOAD_R95_20261001.md` and inspect
+`outputs/getup_preload_r95_left_20261001`. R95 jointly trains ten leg and
+head/neck offsets over 0 to 0.9 seconds, while allowing nominal standing
+failures only for intermediate search scoring, never selected acceptance.
+Six CPU workers, seed 195, population 24, thirty-two-generation budget.
+Each physically valid nominal reference is evaluated on all twenty-four
+development starts; selected candidate must retain nominal and improve
+13/24 before micro-command robustness screening and any paired fresh
+795000 through 795039 thirty-second qualification. Check live identity,
+log, history, checkpoints and results before continuing. No physics-limit
+or gate changes, midpath state resets, hardware connection or controller
+replacement is authorized. Wait if live and healthy; do not duplicate.
