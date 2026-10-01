@@ -520,3 +520,30 @@ Only a promoted candidate uses fresh paired seeds 796000 through 796039
 with thirty uninterrupted strict-standing seconds. If not promoted, those
 seeds remain unused. No hardware action or walking controller replacement
 is authorized, and all four-pose and larger-cohort acceptance gates remain.
+
+## Latest continuation R96 final and R97 launched 2026 10 01
+
+R96 completed all seventy-three settings. Identity remained 13/24; best
+nonidentity was 12/24 with physical validity in 22/24, five rescues and six
+regressions. All nominal cases passed. Selected gains stayed zero; no bias
+screen or fresh 796000 cohort ran. R67 through R96 are finished; do not
+resume their old PIDs.
+
+Read `GETUP_VERTICAL_IMU_FEEDBACK_R97_20261001.md`. R97 passed fifty-one
+code/regression tests and its launcher started. Check actual main/workers,
+log, contract, search history, checkpoint and results before continuing.
+Main 2153786 and six workers were observed; generation one completed with
+best 13/24 and nominal success. Verify current identities, not those saved IDs.
+Output is `outputs/getup_vertical_imu_r97_left_20261001`. It trains three
+causal early up-vector Z feedback gains under unchanged combined residual
+cap and physical limits; this hypothesis is not a proven cause. Six CPU
+workers, seed 197, population eighteen, twenty-four-generation budget and
+twelve-stagnant-generation stop.
+
+Only nominal-preserving development improvement above 13/24 enters the
+comparative five-arm bias screen, with no-worse mean/worst counts and each
+baseline nominal success retained. Only promotion uses fresh paired 797000
+through 797039 full falls and thirty uninterrupted strict-standing seconds.
+Otherwise these seeds remain unused. All four-posture and later robustness
+gates are unchanged. No midpath live-trial state reset, hardware action or
+walking-controller change is authorized. Wait if healthy; do not duplicate.

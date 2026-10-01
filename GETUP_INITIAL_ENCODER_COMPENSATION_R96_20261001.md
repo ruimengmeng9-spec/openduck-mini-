@@ -66,10 +66,14 @@ Forty-seven code-contract and regression tests passed before launch. After
 increasing the connection timeout, a live server check found no earlier
 get-up job and a clean publication working tree. R96 then launched with
 one main process and six CPU workers. Identity reproduced nominal success
-and 13/24; the first five nonidentity settings recovered 6, 7, 10, 11 and
-9 of twenty-four starts. This is initial negative development evidence,
-not a final result. Verify actual process identity and saved progress before
-any continuation; do not duplicate a healthy running job.
+and 13/24. All seventy-three settings subsequently completed. Every nominal
+case passed, but the best nonidentity setting recovered only 12/24, with
+valid physical audits in 22/24 cases. It used zero leg gain, minus-one
+head/neck gain and a 1.2-second fade. It rescued five baseline failures
+but lost six baseline successes. Selected gains remained zero; no bias
+screen or fresh 796000 qualification ran. This method is rejected under
+these tested conditions, not proof that all encoder-aware controllers fail.
+R96 is finished and must not be restarted using its old process IDs.
 
 Source is `diagnostics/probe_getup_initial_encoder_r96.py`; tests are
 `diagnostics/test_getup_initial_encoder_r96.py`; launcher is
