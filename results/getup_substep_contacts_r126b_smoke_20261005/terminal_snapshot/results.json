@@ -1,0 +1,188 @@
+{
+  "rows": [
+    {
+      "label": "r122_history",
+      "case_seed": 773004,
+      "initial_hash": "54398d203587ec7211e2b3db9f4f6fde0484c64f35e8aaedf69ae77da294b40e",
+      "full_control_trace_bitwise_equal": {
+        "observations": true,
+        "normalized_residual": true,
+        "time": true,
+        "qpos": true,
+        "qvel": true,
+        "applied": true,
+        "strict": true
+      },
+      "controls": 44,
+      "physics_steps": 440,
+      "saved_valid": false,
+      "saved_success": false,
+      "original_peaks_identical": true,
+      "peaks": {
+        "floor": 0.004598372480926793,
+        "self": 0.029955941621507526,
+        "joint": 0.0,
+        "force": 3.23,
+        "slew": 5.24
+      },
+      "trace_sha256": "810a4aca4cad915bba2be8d732cfd44ce1d93c137aba91de8ad0bf9f79c1cb1d",
+      "model_sha256": "30d0db9964bc991ae1c25e13dae18e670a1608c82a59f3367fd705977511e037",
+      "deepest_substep": {
+        "substep_index": 439,
+        "control_index": 43,
+        "substep_in_control": 9,
+        "post_step_time": 1.6800000000000013,
+        "self_penetration_m": 0.029955941621507526,
+        "geom_ids": [
+          77,
+          786
+        ],
+        "geom_names": [
+          "getup_collision_2_28",
+          "getup_collision_37_2"
+        ],
+        "body_names": [
+          "trunk_assembly",
+          "knee_and_ankle_assembly_3"
+        ]
+      },
+      "threshold_crossings": 1,
+      "first_crossing": {
+        "substep_index": 439,
+        "control_index": 43,
+        "substep_in_control": 9,
+        "post_step_time": 1.6800000000000013,
+        "self_penetration_m": 0.029955941621507526,
+        "geom_ids": [
+          77,
+          786
+        ],
+        "geom_names": [
+          "getup_collision_2_28",
+          "getup_collision_37_2"
+        ],
+        "body_names": [
+          "trunk_assembly",
+          "knee_and_ankle_assembly_3"
+        ]
+      },
+      "no_new_strategy": true,
+      "no_mid_episode_root_edits": true,
+      "physics_control_acceptance_unchanged": true
+    },
+    {
+      "label": "teacher",
+      "case_seed": 773007,
+      "initial_hash": "237a6b625c979e821be85b4da59eb4576683d4fb1770806a18d81ee7693c7fe1",
+      "full_control_trace_bitwise_equal": {
+        "observations": true,
+        "normalized_residual": true,
+        "time": true,
+        "qpos": true,
+        "qvel": true,
+        "applied": true,
+        "strict": true
+      },
+      "controls": 2279,
+      "physics_steps": 22790,
+      "saved_valid": true,
+      "saved_success": true,
+      "original_peaks_identical": true,
+      "peaks": {
+        "floor": 0.004249458644918984,
+        "self": 0.0021215854378265108,
+        "joint": 0.029185170055128107,
+        "force": 3.23,
+        "slew": 5.2400000000000055
+      },
+      "trace_sha256": "f5baca3be9e228dfe72fc88240335485efd480c259d4dee5c7090e3d65d4a70e",
+      "model_sha256": "8fc66fda837ba7a2ef46fda66fad1eabcc986b9fd6e63424902290b9736fb3c9",
+      "deepest_substep": {
+        "substep_index": 444,
+        "control_index": 44,
+        "substep_in_control": 4,
+        "post_step_time": 1.6900000000000013,
+        "self_penetration_m": 0.0021215854378265108,
+        "geom_ids": [
+          76,
+          786
+        ],
+        "geom_names": [
+          "getup_collision_2_27",
+          "getup_collision_37_2"
+        ],
+        "body_names": [
+          "trunk_assembly",
+          "knee_and_ankle_assembly_3"
+        ]
+      },
+      "threshold_crossings": 0,
+      "first_crossing": null,
+      "no_new_strategy": true,
+      "no_mid_episode_root_edits": true,
+      "physics_control_acceptance_unchanged": true
+    },
+    {
+      "label": "r122_snapshot",
+      "case_seed": null,
+      "initial_hash": "8f3b34d411ddea4fd0586011cab25d92eef43eec91e80324e9a9816d0f8a85fe",
+      "full_control_trace_bitwise_equal": {
+        "observations": true,
+        "normalized_residual": true,
+        "time": true,
+        "qpos": true,
+        "qvel": true,
+        "applied": true,
+        "strict": true
+      },
+      "controls": 2279,
+      "physics_steps": 22790,
+      "saved_valid": true,
+      "saved_success": true,
+      "original_peaks_identical": true,
+      "peaks": {
+        "floor": 0.004077250318250802,
+        "self": 0.002055521209926657,
+        "joint": 0.025327550007201105,
+        "force": 3.23,
+        "slew": 5.240000000000003
+      },
+      "trace_sha256": "69e1079d194a8e9a7253c10e887aefe35f632026322cd05bce21def0988d4eaf",
+      "model_sha256": "8fc66fda837ba7a2ef46fda66fad1eabcc986b9fd6e63424902290b9736fb3c9",
+      "deepest_substep": {
+        "substep_index": 4481,
+        "control_index": 448,
+        "substep_in_control": 1,
+        "post_step_time": 9.76399999999993,
+        "self_penetration_m": 0.002055521209926657,
+        "geom_ids": [
+          81,
+          611
+        ],
+        "geom_names": [
+          "getup_collision_3_2",
+          "getup_collision_30_2"
+        ],
+        "body_names": [
+          "trunk_assembly",
+          "head_assembly"
+        ]
+      },
+      "threshold_crossings": 0,
+      "first_crossing": null,
+      "no_new_strategy": true,
+      "no_mid_episode_root_edits": true,
+      "physics_control_acceptance_unchanged": true
+    }
+  ],
+  "smoke": true,
+  "reused_original_closed_replays": [],
+  "all_full_trace_bitwise_equal": true,
+  "no_new_model_training": true,
+  "no_success_relabeling": true,
+  "not_causal_proof": true,
+  "independent_qualification_run": false,
+  "simulation_only": true,
+  "hardware_readiness": false,
+  "full_task_completed": false
+}
