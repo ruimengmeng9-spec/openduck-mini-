@@ -1,0 +1,55 @@
+R101_CASE anchored_1.0 None True True
+R101_CASE anchored_1.0 769000 False True
+R101_CASE anchored_1.0 769001 False True
+R101_CASE anchored_1.0 769002 False True
+R101_CASE anchored_1.0 769003 True True
+R101_CASE anchored_1.0 769004 True True
+R101_CASE anchored_1.0 769005 True True
+R101_CASE anchored_1.0 769006 True True
+R101_CASE anchored_1.0 769007 False True
+R101_CASE anchored_1.0 773000 True True
+R101_CASE anchored_1.0 773001 False False
+R101_CASE anchored_1.0 773002 False True
+R101_CASE anchored_1.0 773003 True True
+R101_CASE anchored_1.0 773004 False True
+R101_CASE anchored_1.0 773005 True True
+R101_CASE anchored_1.0 773006 True True
+R101_CASE anchored_1.0 773007 False True
+R101_CASE anchored_1.0 773008 False True
+R101_CASE anchored_1.0 773009 False True
+R101_CASE anchored_1.0 773010 False False
+R101_CASE anchored_1.0 773011 False True
+R101_CASE anchored_1.0 773012 True True
+R101_CASE anchored_1.0 773013 False True
+R101_CASE anchored_1.0 773014 False True
+R101_CASE anchored_1.0 773015 False True
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/probe_getup_anchor_r101.py", line 95, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/probe_getup_anchor_r101.py", line 86, in main
+    np.testing.assert_array_equal(d['normalized_residual'],np.zeros((len(observations),10)))
+  File "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/.venv/lib/python3.11/site-packages/numpy/testing/_private/utils.py", line 1121, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+  File "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/.venv/lib/python3.11/site-packages/numpy/testing/_private/utils.py", line 983, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 16829 / 22790 (73.8%)
+First 5 mismatches are at indices:
+ [0, 1]: 1.1641532182693481e-10 (ACTUAL), 0.0 (DESIRED)
+ [0, 2]: 1.7462298274040222e-10 (ACTUAL), 0.0 (DESIRED)
+ [0, 4]: -3.4924596548080444e-10 (ACTUAL), 0.0 (DESIRED)
+ [0, 5]: 2.3283064365386963e-10 (ACTUAL), 0.0 (DESIRED)
+ [0, 6]: 5.820766091346741e-11 (ACTUAL), 0.0 (DESIRED)
+Max absolute difference among violations: 2.79396772e-09
+Max relative difference among violations: inf
+ ACTUAL: array([[ 0.000000e+00,  1.164153e-10,  1.746230e-10, ...,  2.910383e-10,
+        -4.074536e-10,  2.328306e-10],
+       [ 0.000000e+00,  0.000000e+00,  0.000000e+00, ...,  1.164153e-10,...
+ DESIRED: array([[0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.],...
