@@ -1,0 +1,183 @@
+{
+  "case_seed": 769006,
+  "label": "regressed",
+  "initial_hash": "849c147b3d582a6d104066abb41011d3b45c40b1152d94bbbef0c47877bc5d18",
+  "candidate_success": false,
+  "baseline_success": true,
+  "candidate_valid": true,
+  "first_executed_target_difference_control": 1,
+  "first_sensor_difference_control": 2,
+  "first_sensor_difference_over_001_control": 26,
+  "diagnostic_thresholds_not_acceptance": true,
+  "scalar_actual_execution_exact": true,
+  "maximum_gain_change": 0.06269351701481378,
+  "six_gain_updates_rank_one": true,
+  "windows": [
+    {
+      "control_start": 0,
+      "control_end_exclusive": 50,
+      "activation_mean": -0.0122914232588729,
+      "activation_min": -0.2526278595826271,
+      "activation_max": 0.12558827860330343,
+      "contribution_mean_gyro_up_position_velocity": [
+        -0.008153862924741746,
+        0.008044875403234486,
+        -0.012264936622414391,
+        -0.00016681515830994662
+      ],
+      "contribution_mean_absolute_gyro_up_position_velocity": [
+        0.03578003598383604,
+        0.033581587871948135,
+        0.012304874341380376,
+        0.009715604942882716
+      ],
+      "gain_change_mean": [
+        -0.0012291423258872902,
+        0.0012291423258872902,
+        -0.0012291423258872902,
+        -0.0006145711629436451,
+        0.0006145711629436451,
+        -0.0006145711629436451
+      ],
+      "same_state_feedback_change_max_rad": [
+        0.0005242788216332294,
+        0.0004257942616939641,
+        0.0004566446693172357
+      ],
+      "observed_extra_near_cap_controls": 0
+    },
+    {
+      "control_start": 50,
+      "control_end_exclusive": 150,
+      "activation_mean": -0.004129771329677523,
+      "activation_min": -0.5714965046167017,
+      "activation_max": 0.3381587261777057,
+      "contribution_mean_gyro_up_position_velocity": [
+        -0.00021646568879324452,
+        0.026467259010108317,
+        -0.03198391882655738,
+        0.000274189355409327
+      ],
+      "contribution_mean_absolute_gyro_up_position_velocity": [
+        0.06466804327559478,
+        0.12802539283943132,
+        0.054995354771037876,
+        0.039206523501007014
+      ],
+      "gain_change_mean": [
+        -0.0004129771329677528,
+        0.0004129771329677528,
+        -0.0004129771329677528,
+        -0.0002064885664838764,
+        0.0002064885664838764,
+        -0.0002064885664838764
+      ],
+      "same_state_feedback_change_max_rad": [
+        0.0030443340853777887,
+        0.011331787707892265,
+        0.01887118382136457
+      ],
+      "observed_extra_near_cap_controls": 0
+    },
+    {
+      "control_start": 150,
+      "control_end_exclusive": 300,
+      "activation_mean": 0.13189202847839576,
+      "activation_min": -0.2558943069102482,
+      "activation_max": 0.4074647705128636,
+      "contribution_mean_gyro_up_position_velocity": [
+        0.00762509151496907,
+        0.13890722404285138,
+        -0.01278141914308779,
+        0.0003763309755087278
+      ],
+      "contribution_mean_absolute_gyro_up_position_velocity": [
+        0.05440980026675691,
+        0.13890722404285138,
+        0.046576978030837726,
+        0.03595747374735614
+      ],
+      "gain_change_mean": [
+        0.013189202847839584,
+        -0.013189202847839584,
+        0.013189202847839584,
+        0.006594601423919792,
+        -0.006594601423919792,
+        0.006594601423919792
+      ],
+      "same_state_feedback_change_max_rad": [
+        0.0020757843563934493,
+        0.003364285918247388,
+        0.002542925055858511
+      ],
+      "observed_extra_near_cap_controls": 0
+    },
+    {
+      "control_start": 300,
+      "control_end_exclusive": 529,
+      "activation_mean": 0.06838547170779245,
+      "activation_min": -0.236422741702544,
+      "activation_max": 0.6269351701481377,
+      "contribution_mean_gyro_up_position_velocity": [
+        -0.048371595231017604,
+        0.18199436210503994,
+        -0.06076615927501634,
+        0.0009610644162771763
+      ],
+      "contribution_mean_absolute_gyro_up_position_velocity": [
+        0.09186876812293189,
+        0.18199436210503994,
+        0.1156007888029074,
+        0.038660295346942146
+      ],
+      "gain_change_mean": [
+        0.006838547170779245,
+        -0.006838547170779245,
+        0.006838547170779245,
+        0.0034192735853896226,
+        -0.0034192735853896226,
+        0.0034192735853896226
+      ],
+      "same_state_feedback_change_max_rad": [
+        0.005094135541477404,
+        0.007378345998272617,
+        0.025107277478550648
+      ],
+      "observed_extra_near_cap_controls": 0
+    }
+  ],
+  "original_peaks": {
+    "floor": 0.007611758750859154,
+    "self": 0.0021807297264524817,
+    "joint": 0.021949920521155075,
+    "force": 3.23,
+    "slew": 5.2400000000000055
+  },
+  "controls": 2279,
+  "alternatives": [
+    {
+      "program": 0,
+      "success": true,
+      "valid": true,
+      "first_target_difference_vs_candidate_control": 1
+    },
+    {
+      "program": 1,
+      "success": false,
+      "valid": true,
+      "first_target_difference_vs_candidate_control": 0
+    },
+    {
+      "program": 2,
+      "success": false,
+      "valid": true,
+      "first_target_difference_vs_candidate_control": 0
+    },
+    {
+      "program": 3,
+      "success": false,
+      "valid": true,
+      "first_target_difference_vs_candidate_control": 0
+    }
+  ]
+}
