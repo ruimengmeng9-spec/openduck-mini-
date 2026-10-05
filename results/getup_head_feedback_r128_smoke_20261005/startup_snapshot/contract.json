@@ -1,0 +1,45 @@
+{
+  "seed": 228,
+  "smoke": true,
+  "workers": 2,
+  "head_joints": [
+    "neck_pitch",
+    "head_pitch",
+    "head_yaw",
+    "head_roll"
+  ],
+  "predeclared_gains": [
+    0.0,
+    1.0,
+    4.0
+  ],
+  "cases": [
+    null,
+    769000,
+    773004,
+    3180019,
+    3180038
+  ],
+  "hypothesis": "Current ten-leg residual cannot directly correct observed head-trunk collision; test four bounded causal head joint corrections against frozen R122 snapshot",
+  "frozen_leg_policy": true,
+  "head_feedback_cap_rad": 0.18,
+  "head_home_feedback_unchanged": true,
+  "input_actual_joint_sensors_only": true,
+  "no_world_root_truth": true,
+  "no_context_lookup": true,
+  "no_new_parameter_training": true,
+  "physics_rewards_acceptance_unchanged": true,
+  "no_mid_episode_root_reset": true,
+  "independent_qualification_run": false,
+  "reserved_qualification_never_loaded": true,
+  "hashes": {
+    "/data/shijinsheng/open_duck/training/getup_decomposed_r4/model/scene.xml": "67b1cfe9870a49b16b1a87872619692a2beffb19cebe2f54787c57d830e4e8b9",
+    "/data/shijinsheng/open_duck/projects/Open_Duck_Mini/BEST_WALK_ONNX_2.onnx": "3c606f9381a1710cc8fecdb7442787dcbfce3ee9bc02a6f1224774ab2b3a1067",
+    "/data/shijinsheng/open_duck/outputs/getup_path_audit_r99_20261005/frozen_path.npz": "b53b001a08eb12b7b1ae916b830824316ce0fb570b249f43ddf97c0907f92d37",
+    "/data/shijinsheng/open_duck/outputs/getup_history_program_r122_left_20261005/training/snapshot.npz": "8fc66fda837ba7a2ef46fda66fad1eabcc986b9fd6e63424902290b9736fb3c9",
+    "/data/shijinsheng/open_duck/outputs/getup_history_program_r122_left_20261005/snapshot/case_None/trajectory.npz": "69e1079d194a8e9a7253c10e887aefe35f632026322cd05bce21def0988d4eaf",
+    "/data/shijinsheng/open_duck/outputs/getup_head_feedback_r128_smoke_20261005/executed_sources/probe_getup_head_feedback_r128.py": "beb06e2f9f0c6fd2ffb01780819157a92c3d8f5f8d7169bd9d3f1bb9ac6cf20a",
+    "/data/shijinsheng/open_duck/outputs/getup_head_feedback_r128_smoke_20261005/executed_sources/test_getup_head_feedback_r128.py": "82033890645d7ff483bf28f5934f5bcce157f08a215706f3dab200dd974ce289",
+    "/data/shijinsheng/open_duck/outputs/getup_head_feedback_r128_smoke_20261005/executed_sources/launch_getup_head_feedback_r128.py": "4638ff38b60f0836670b75600a0a5a999fda7c8fb8aaf31ba36e2a90736938d0"
+  }
+}
