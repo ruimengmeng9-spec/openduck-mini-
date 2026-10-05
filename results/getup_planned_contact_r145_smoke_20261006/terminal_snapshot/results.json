@@ -1,0 +1,98 @@
+{
+  "smoke": true,
+  "rows": [
+    {
+      "label": "delayed",
+      "program": 2,
+      "case_seed": 773010,
+      "initial_hash": "d72d3da33d35431ee923cedef30b5cb1389d5e5577fc529ccbd1aace1181b0a9",
+      "original_valid": false,
+      "original_success": false,
+      "terminal_control": 43,
+      "original_pair": [
+        77,
+        786
+      ],
+      "sampled_warning_controls": [
+        42,
+        43
+      ],
+      "warning_at_or_before_terminal": true
+    },
+    {
+      "label": "original",
+      "program": 2,
+      "case_seed": 773010,
+      "initial_hash": "d72d3da33d35431ee923cedef30b5cb1389d5e5577fc529ccbd1aace1181b0a9",
+      "original_valid": true,
+      "original_success": false,
+      "terminal_control": null,
+      "original_pair": null,
+      "sampled_warning_controls": [
+        42,
+        43,
+        44,
+        298,
+        299,
+        300,
+        301,
+        302,
+        303,
+        304,
+        305
+      ],
+      "warning_at_or_before_terminal": false
+    },
+    {
+      "label": "standard",
+      "program": 0,
+      "case_seed": null,
+      "initial_hash": "8f3b34d411ddea4fd0586011cab25d92eef43eec91e80324e9a9816d0f8a85fe",
+      "original_valid": true,
+      "original_success": true,
+      "terminal_control": null,
+      "original_pair": null,
+      "sampled_warning_controls": [
+        42,
+        43,
+        44,
+        298,
+        299,
+        300,
+        301,
+        302,
+        303,
+        304,
+        305
+      ],
+      "warning_at_or_before_terminal": false
+    }
+  ],
+  "fractions": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "regression_checks_passed": true,
+  "invalid_with_sampled_warning": 1,
+  "valid_with_sampled_warning": 2,
+  "original_4mm_comparison_not_a_new_threshold": true,
+  "windows_not_whole_path_coverage": true,
+  "inference_input_only_actual_joint_sensor_and_preintegration_planned_target": true,
+  "no_future_true_state_inputs": true,
+  "no_dynamic_integration": true,
+  "no_contact_force_inference": true,
+  "no_training_no_policy_change_no_acceptance_relabel": true,
+  "qualification_never_loaded": true,
+  "full_task_completed": false,
+  "hardware_readiness": false,
+  "hashes": {
+    "/data/shijinsheng/open_duck/outputs/getup_control_contact_r144_20261006/delayed_p2_773010/result.json": "9f51a4b9ae1946d34cd70813d03fb84b497e2eedd00921da4e9c197c9288d237",
+    "/data/shijinsheng/open_duck/outputs/getup_control_contact_r144_20261006/original_p2_773010/result.json": "033858251f75fd9b4794e43eee42137e16e4dc569c95833701112570339ddcf9",
+    "/data/shijinsheng/open_duck/outputs/getup_control_contact_r144_20261006/standard_p0_None/result.json": "97c0c17ce05880255ac9242a13845b665a8db30094a39390e345fd23a1f100e8",
+    "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/audit_getup_planned_contact_r145.py": "e9b8995df6f7847ec08d78d27f6af3ea12bb46cefe6e49b5339cec4e1466df48",
+    "/data/shijinsheng/open_duck/training/getup_decomposed_r4/model/scene.xml": "67b1cfe9870a49b16b1a87872619692a2beffb19cebe2f54787c57d830e4e8b9"
+  }
+}

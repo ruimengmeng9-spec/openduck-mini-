@@ -1,0 +1,19 @@
+    def step_target(self, target):
+        target = np.clip(np.asarray(target), self.lower, self.upper)
+        applied = np.clip(target, self.prev-SLEW*DT, self.prev+SLEW*DT)
+        self.peaks['slew'] = max(self.peaks['slew'], float(np.abs(applied-self.prev).max()/DT))
+        self.history[2] = self.history[1].copy()
+        self.history[1] = self.history[0].copy()
+        self.history[0] = ((target-self.home)/.25).astype(np.float32)
+        self.prev = applied.copy()
+        self.data.ctrl[:] = applied
+        for _ in range(10):
+            mujoco.mj_step(self.model, self.data)
+            self.finite &= bool(np.isfinite(self.data.qpos).all() and np.isfinite(self.data.qvel).all())
+            self.peaks['force'] = max(self.peaks['force'], float(np.abs(self.data.actuator_force).max()))
+            q = self.data.qpos[self.qadr]
+            self.peaks['joint'] = max(self.peaks['joint'], float(np.maximum(self.lower-q, q-self.upper).max()))
+            for c in self.data.contact:
+                k = 'floor' if self.floor in c.geom else 'self'
+                self.peaks[k] = max(self.peaks[k], float(-c.dist))
+        return applied
