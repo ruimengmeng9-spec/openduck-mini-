@@ -1,0 +1,111 @@
+{
+  "simulation_only": true,
+  "hardware_readiness": false,
+  "full_task_completed": false,
+  "diagnostic_only": true,
+  "hypothesis": "Initial tilt, encoder and velocity perturbations may have distinct or interacting effects",
+  "factors": [
+    "pre-settling root tilt",
+    "pre-settling joint positions",
+    "pre-settling velocities"
+  ],
+  "masks": [
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      1,
+      1
+    ],
+    [
+      1,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      1,
+      0
+    ],
+    [
+      1,
+      1,
+      1
+    ]
+  ],
+  "all_random_draws_preserved": true,
+  "settling_controls": 40,
+  "complete_path_controls": 2279,
+  "physics_hz": 500,
+  "control_hz": 50,
+  "no_midpath_state_reset": true,
+  "physics_rewards_acceptance_unchanged": true,
+  "no_ablation_counts_as_qualification": true,
+  "independent_seeds_unused": true,
+  "development_seeds": [
+    769000,
+    769001,
+    769002,
+    769003,
+    769004,
+    769005,
+    769006,
+    769007,
+    773000,
+    773001,
+    773002,
+    773003,
+    773004,
+    773005,
+    773006,
+    773007,
+    773008,
+    773009,
+    773010,
+    773011,
+    773012,
+    773013,
+    773014,
+    773015
+  ],
+  "seed": 208,
+  "workers": 6,
+  "smoke": false,
+  "hashes": {
+    "/data/shijinsheng/open_duck/training/getup_decomposed_r4/model/scene.xml": "67b1cfe9870a49b16b1a87872619692a2beffb19cebe2f54787c57d830e4e8b9",
+    "/data/shijinsheng/open_duck/projects/Open_Duck_Mini/BEST_WALK_ONNX_2.onnx": "3c606f9381a1710cc8fecdb7442787dcbfce3ee9bc02a6f1224774ab2b3a1067",
+    "/data/shijinsheng/open_duck/outputs/getup_path_audit_r99_20261005/frozen_path.npz": "b53b001a08eb12b7b1ae916b830824316ce0fb570b249f43ddf97c0907f92d37",
+    "/data/shijinsheng/open_duck/outputs/getup_state_mixture_r107_left_20261005/results.json": "4454027bd52a097fb880de8d0e524d7e989cf5837a638105d4bbf14283c5a4e0",
+    "/data/shijinsheng/open_duck/outputs/getup_state_mixture_r107_left_20261005/frozen_profiles.npz": "d8bd317a9a2921f42d6ad12d736503736622fa32f58a35e4ac984c1b18e9488c",
+    "/data/shijinsheng/open_duck/outputs/getup_initial_factors_r108_left_20261005/executed_sources/getup_fullfallen_contract_r32.py": "9d93f44808b022c52fa2b5baaef5f103a0377b026b0b46946264a6b48bbdcec4",
+    "/data/shijinsheng/open_duck/outputs/getup_initial_factors_r108_left_20261005/executed_sources/search_getup_reference_feedback_r64.py": "7b79b52b8a804b9e89715a39de0d34c8c0d518f46ba07225047d794235921583",
+    "/data/shijinsheng/open_duck/outputs/getup_initial_factors_r108_left_20261005/executed_sources/validate_getup_fullpath_r27.py": "9d1aa3a88770a60f9e60838a3443eeb366654557445cd4e2bcbf6228366178f2",
+    "/data/shijinsheng/open_duck/outputs/getup_initial_factors_r108_left_20261005/executed_sources/train_getup_joint_anchor_r102.py": "847ddcbf48a621365bb9165cee1126b1f5e8e968d486d91d0f20ba99cbe428f7",
+    "/data/shijinsheng/open_duck/outputs/getup_initial_factors_r108_left_20261005/executed_sources/search_getup_sustained_bridge_r42.py": "d09121ca5563e1d1eec95f3d7df3c3c15c1d10ef73d701d232334bc27fff7201",
+    "/data/shijinsheng/open_duck/outputs/getup_initial_factors_r108_left_20261005/executed_sources/probe_getup_anchor_r101.py": "f3072e34ff30a60567197a4d7cc437c64c54a20577351c04386f1a4b86aa0427",
+    "/data/shijinsheng/open_duck/outputs/getup_initial_factors_r108_left_20261005/executed_sources/getup_fullfallen_env_r32.py": "1c6f13e8b02203e817572cd445a4da672e52db7e8efd498c21d1607f0ff375a0",
+    "/data/shijinsheng/open_duck/outputs/getup_initial_factors_r108_left_20261005/executed_sources/getup_independent_native.py": "fdefcb68a073db2d7dac2055081b0a41e77a9728a5cfe26682e72f4e8cbae983",
+    "/data/shijinsheng/open_duck/outputs/getup_initial_factors_r108_left_20261005/executed_sources/test_getup_initial_factors_r108.py": "1d42fbad381fbca58d37386227c5fb3703eee29f3913ac91f92121c8ce71f523",
+    "/data/shijinsheng/open_duck/outputs/getup_initial_factors_r108_left_20261005/executed_sources/probe_getup_initial_factors_r108.py": "d6ed85d97360cf6ea486e864cc6a8dce5d1d96cf4143aec20f9ca4c02fcb7b9b",
+    "/data/shijinsheng/open_duck/outputs/getup_initial_factors_r108_left_20261005/executed_sources/getup_reference_env_r100.py": "e3db9b82a8aea23b534fe1034f4cefe82e6a17b4757a31cf8f514e9791e7905b",
+    "/data/shijinsheng/open_duck/outputs/getup_initial_factors_r108_left_20261005/executed_sources/train_getup_fullpath_r27.py": "f7f1968212c8dd34e7fe8d216c2813ddf771e165fb59c40a4f3859336ccc9a08"
+  }
+}
