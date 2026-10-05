@@ -1,0 +1,25 @@
+{
+  "seed": 198,
+  "iterations": 64,
+  "envs": 16,
+  "workers": 4,
+  "horizon": 128,
+  "rates": {
+    "a_legacy_lr": 0.0001,
+    "b_corrected_lr": 5e-06
+  },
+  "prefix_probability": 0.5,
+  "warm_start_checkpoint": "/data/shijinsheng/open_duck/training/getup_prefix_stage3_smoke_20261002/final.msgpack",
+  "warm_start_sha256": "c54b905b2d4418b6d5fe5797847a91ad51eb956dc45ce20924f6a567a6fa10aa",
+  "prefix_library_sha256": "0cbde5fbb5d9d2b85a5cb2409cc522c4a2805ecccd2ec4a5357ef2aa569bc7a4",
+  "warm_start_not_exact_resume": true,
+  "development_seed_base": 3105000,
+  "qualification_seed_base": 3115000,
+  "seed_stride_per_pose": 1000,
+  "physics_and_acceptance_unchanged": true,
+  "simulation_only": true,
+  "hardware_readiness": false,
+  "validation_after_each_run": true,
+  "full_task_completed": false,
+  "hypothesis": "Correcting 20x mixed LR may preserve skill and improve actual full-fall discovery; not assumed sufficient"
+}
