@@ -1,0 +1,133 @@
+{
+  "smoke": true,
+  "report": {
+    "rows": [
+      {
+        "pose": "left_side",
+        "case_seed": null,
+        "initial_hash": "8f3b34d411ddea4fd0586011cab25d92eef43eec91e80324e9a9816d0f8a85fe",
+        "actual_fallen_start": true,
+        "valid": true,
+        "training_success": true,
+        "controls": 629,
+        "strict_tail_s": 1.7,
+        "entry_time_s": 11.08,
+        "return_sum": 15.87266103326883,
+        "final": {
+          "up_z": 0.9999553219695541,
+          "height_m": 0.15953100308874987,
+          "feet": [
+            true,
+            true
+          ],
+          "torso_contact": false,
+          "penetration_m": 0.00013437075299553222,
+          "linear_speed_mps": 0.00039513940796727376,
+          "angular_speed_rad_s": 0.002128919599959316,
+          "stable": true,
+          "finite": true,
+          "floor_penetration_m": 0.00013437075299553222,
+          "self_penetration_m": 0.0,
+          "joint_home_error_max_rad": 0.04340578509804144,
+          "joint_home_error_mean_rad": 0.01363149823890843,
+          "motor_target_home_error_max_rad": 4.1717496939153165e-06,
+          "foot_normal_forces_n": [
+            10.502053702640758,
+            10.168887041665162
+          ],
+          "foot_load_fraction": 1.0,
+          "foot_up_alignment_to_home": [
+            0.9981012854437511,
+            0.997649311523532
+          ]
+        },
+        "peaks": {
+          "floor": 0.004077250318250802,
+          "self": 0.002055521209926657,
+          "joint": 0.025327550007201105,
+          "force": 3.23,
+          "slew": 5.240000000000003
+        },
+        "prefix_start": false,
+        "root_edits_after_initialization": 0,
+        "parameters": [
+          0.5,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reference_states_injected": false,
+        "policy_uses_case_identity": false,
+        "qualification": false,
+        "success": true,
+        "nominal_residual_exact_zero": true
+      },
+      {
+        "pose": "left_side",
+        "case_seed": 769000,
+        "initial_hash": "1eb4b6b07d14ab55cb128342f25e774570a7d3217c7adbf9cfc10ad4954e9c36",
+        "actual_fallen_start": true,
+        "valid": true,
+        "training_success": false,
+        "controls": 629,
+        "strict_tail_s": 0.0,
+        "entry_time_s": null,
+        "return_sum": -0.6983953096251795,
+        "final": {
+          "up_z": -0.00021725558383245414,
+          "height_m": 0.15434348393686828,
+          "feet": [
+            false,
+            false
+          ],
+          "torso_contact": true,
+          "penetration_m": 1.9143816956432302e-05,
+          "linear_speed_mps": 7.204284728869145e-05,
+          "angular_speed_rad_s": 0.0008272859780976828,
+          "stable": false,
+          "finite": true,
+          "floor_penetration_m": 1.9143816956432302e-05,
+          "self_penetration_m": 0.0,
+          "joint_home_error_max_rad": 0.10352045759262207,
+          "joint_home_error_mean_rad": 0.038146214170154034,
+          "motor_target_home_error_max_rad": 0.09397791025930635,
+          "foot_normal_forces_n": [
+            0.0,
+            0.0
+          ],
+          "foot_load_fraction": 0.0,
+          "foot_up_alignment_to_home": [
+            0.21118587334075106,
+            0.21101979514266903
+          ]
+        },
+        "peaks": {
+          "floor": 0.0042732105394665335,
+          "self": 0.0019132562694953435,
+          "joint": 0.02277173073580141,
+          "force": 3.23,
+          "slew": 5.2400000000000055
+        },
+        "prefix_start": false,
+        "root_edits_after_initialization": 0,
+        "parameters": [
+          0.5,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reference_states_injected": false,
+        "policy_uses_case_identity": false,
+        "qualification": false,
+        "success": false
+      }
+    ],
+    "successes": 0,
+    "nominal_success": true,
+    "physical_failures": 0,
+    "return_sum": 15.17426572364365
+  },
+  "full_task_completed": false
+}
