@@ -1,0 +1,180 @@
+{
+  "smoke": false,
+  "workers": 6,
+  "initialization_seed": 230,
+  "offline_selection": "Greedy short-success coverage among all-physical-valid R130 global proposals; not runtime case selection",
+  "selected_source_groups": [
+    {
+      "directory": "/data/shijinsheng/open_duck/outputs/getup_local_hip_r130_left_20261005/training/generation_0001/candidate_00",
+      "gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "successes": 15,
+      "physical_failures": 0,
+      "return_sum": 246.05038664998696,
+      "rescued": [],
+      "regressed": [],
+      "invalid": [],
+      "short_tail_only": true
+    },
+    {
+      "directory": "/data/shijinsheng/open_duck/outputs/getup_local_hip_r130_left_20261005/training/generation_0008/candidate_07",
+      "gains": [
+        0.04355182104342108,
+        -0.012688980031975383,
+        -0.03641056335300152,
+        -0.021834127468025842,
+        -0.009694385345111668,
+        -0.010803642962099055
+      ],
+      "successes": 9,
+      "physical_failures": 0,
+      "return_sum": 144.99068388029656,
+      "rescued": [
+        769002,
+        773004,
+        773005,
+        773007,
+        773011
+      ],
+      "regressed": [
+        769001,
+        769003,
+        769006,
+        769007,
+        773002,
+        773006,
+        773008,
+        773009,
+        773010,
+        773012,
+        773013
+      ],
+      "invalid": [],
+      "short_tail_only": true
+    },
+    {
+      "directory": "/data/shijinsheng/open_duck/outputs/getup_local_hip_r130_left_20261005/training/generation_0006/candidate_07",
+      "gains": [
+        0.04271860933253291,
+        0.029850237059537224,
+        0.029525362512634695,
+        0.03394029129964289,
+        -0.061994118689716084,
+        0.007364616330481291
+      ],
+      "successes": 7,
+      "physical_failures": 0,
+      "return_sum": 112.54000263916507,
+      "rescued": [
+        769000,
+        769004,
+        773001,
+        773004
+      ],
+      "regressed": [
+        769001,
+        769003,
+        769005,
+        769006,
+        769007,
+        773002,
+        773003,
+        773008,
+        773009,
+        773010,
+        773012,
+        773014
+      ],
+      "invalid": [],
+      "short_tail_only": true
+    },
+    {
+      "directory": "/data/shijinsheng/open_duck/outputs/getup_local_hip_r130_left_20261005/training/generation_0004/candidate_05",
+      "gains": [
+        0.10230158953231813,
+        -0.07243328881779204,
+        0.06853361488691721,
+        -0.00888950910629709,
+        -0.06974742280373762,
+        -0.013336090751198407
+      ],
+      "successes": 8,
+      "physical_failures": 0,
+      "return_sum": 130.33083024098426,
+      "rescued": [
+        773001,
+        773007,
+        773015
+      ],
+      "regressed": [
+        769001,
+        769003,
+        769006,
+        769007,
+        773000,
+        773002,
+        773003,
+        773008,
+        773009,
+        773012
+      ],
+      "invalid": [],
+      "short_tail_only": true
+    }
+  ],
+  "short_union": [
+    769000,
+    769001,
+    769002,
+    769003,
+    769004,
+    769005,
+    769006,
+    769007,
+    773000,
+    773001,
+    773002,
+    773003,
+    773004,
+    773005,
+    773006,
+    773007,
+    773008,
+    773009,
+    773010,
+    773011,
+    773012,
+    773013,
+    773014,
+    773015
+  ],
+  "short_union_not_unified_success": true,
+  "hypothesis": "Different legal local feedback programs rescue different starts; obtain complete success sets before learning a fixed sensor-only choice rule",
+  "full_controls": 2279,
+  "control_hz": 50,
+  "physics_hz": 500,
+  "entry_deadline_s": 12,
+  "strict_tail_s": 30,
+  "no_controller_training": true,
+  "no_root_truth_or_case_in_control": true,
+  "physics_rewards_acceptance_unchanged": true,
+  "no_mid_episode_root_reset": true,
+  "no_unseen_qualification": true,
+  "hashes": {
+    "/data/shijinsheng/open_duck/outputs/getup_local_hip_audit_r131_20261006/results.json": "f2a24c81dec9ab663e217459bbd5fd7918b2c2ed52a55dd51a96dcda76c19f8c",
+    "/data/shijinsheng/open_duck/training/getup_decomposed_r4/model/scene.xml": "67b1cfe9870a49b16b1a87872619692a2beffb19cebe2f54787c57d830e4e8b9",
+    "/data/shijinsheng/open_duck/projects/Open_Duck_Mini/BEST_WALK_ONNX_2.onnx": "3c606f9381a1710cc8fecdb7442787dcbfce3ee9bc02a6f1224774ab2b3a1067",
+    "/data/shijinsheng/open_duck/outputs/getup_path_audit_r99_20261005/frozen_path.npz": "b53b001a08eb12b7b1ae916b830824316ce0fb570b249f43ddf97c0907f92d37",
+    "/data/shijinsheng/open_duck/outputs/getup_complementary_feedback_r133_left_20261006/executed_sources/probe_getup_complementary_feedback_r133.py": "43c400e5aaf134f79665f3077eafb121352bd94821b734a356465428ace1e0c8",
+    "/data/shijinsheng/open_duck/outputs/getup_complementary_feedback_r133_left_20261006/executed_sources/train_getup_local_hip_r130.py": "a9e3fea623015c91ced6f87f7ec252c6a37563014928cef2afb837eb131ba226",
+    "/data/shijinsheng/open_duck/outputs/getup_complementary_feedback_r133_left_20261006/executed_sources/audit_getup_local_hip_r131.py": "8e627d6d8fa035af3264bdcb6b8baac5da4f59f201c6b8efa7727415a979ab83",
+    "/data/shijinsheng/open_duck/outputs/getup_complementary_feedback_r133_left_20261006/executed_sources/test_getup_complementary_feedback_r133.py": "c7bf6a2efff38934eca4d00086d39baeeacf5ee5ca47950a6c984feac10a694b",
+    "/data/shijinsheng/open_duck/outputs/getup_complementary_feedback_r133_left_20261006/executed_sources/launch_getup_complementary_feedback_r133.py": "c118d9421c75e495b7ec028f23025e26b6fc11908f8e5dc3bb099c0bf84d4bfc"
+  }
+}
