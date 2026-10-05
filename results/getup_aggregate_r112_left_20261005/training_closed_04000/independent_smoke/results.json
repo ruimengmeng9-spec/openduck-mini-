@@ -1,0 +1,133 @@
+{
+  "smoke": true,
+  "standard": {
+    "rows": [
+      {
+        "pose": "left_side",
+        "case_seed": null,
+        "initial_hash": "8f3b34d411ddea4fd0586011cab25d92eef43eec91e80324e9a9816d0f8a85fe",
+        "actual_fallen_start": true,
+        "valid": true,
+        "training_success": true,
+        "controls": 2279,
+        "strict_tail_s": 34.7,
+        "entry_time_s": 11.08,
+        "return_sum": 63.45107828545434,
+        "final": {
+          "up_z": 0.9999951107964712,
+          "height_m": 0.15993887030369217,
+          "feet": [
+            true,
+            true
+          ],
+          "torso_contact": false,
+          "penetration_m": 0.00014949764604372216,
+          "linear_speed_mps": 7.584890199798265e-08,
+          "angular_speed_rad_s": 2.01351697047707e-07,
+          "stable": true,
+          "finite": true,
+          "floor_penetration_m": 0.00014949764604372216,
+          "self_penetration_m": 0.0,
+          "joint_home_error_max_rad": 0.038565576769616916,
+          "joint_home_error_mean_rad": 0.01206019605567348,
+          "motor_target_home_error_max_rad": 8.216681570027973e-06,
+          "foot_normal_forces_n": [
+            10.525319053330687,
+            10.145731259905716
+          ],
+          "foot_load_fraction": 1.0,
+          "foot_up_alignment_to_home": [
+            0.9986202845424386,
+            0.9980973379803055
+          ]
+        },
+        "peaks": {
+          "floor": 0.004077250318250802,
+          "self": 0.002055521209926657,
+          "joint": 0.025327550007201105,
+          "force": 3.23,
+          "slew": 5.240000000000003
+        },
+        "prefix_start": false,
+        "root_edits_after_initialization": 0,
+        "model": "/data/shijinsheng/open_duck/outputs/getup_aggregate_r112_smoke_20261005/training/update_00020.npz",
+        "initial_context_causal": true,
+        "success": true,
+        "reference_states_injected": false,
+        "nominal_scalar_exact_zero": true,
+        "original_full_path_bitwise_parity": true,
+        "full_path_trial": true,
+        "independent_qualification_trial": false
+      }
+    ],
+    "successes": 0,
+    "nominal_success": true,
+    "physical_failures": 0,
+    "return_sum": 63.45107828545434
+  },
+  "interface": {
+    "rows": [
+      {
+        "pose": "left_side",
+        "case_seed": 769000,
+        "initial_hash": "1eb4b6b07d14ab55cb128342f25e774570a7d3217c7adbf9cfc10ad4954e9c36",
+        "actual_fallen_start": true,
+        "valid": false,
+        "training_success": false,
+        "controls": 304,
+        "strict_tail_s": 0.0,
+        "entry_time_s": null,
+        "return_sum": -4.739830967487749,
+        "final": {
+          "up_z": 0.25858789673417776,
+          "height_m": 0.1502872589866139,
+          "feet": [
+            false,
+            false
+          ],
+          "torso_contact": true,
+          "penetration_m": 0.04812029319907848,
+          "linear_speed_mps": 0.05662771171002125,
+          "angular_speed_rad_s": 0.626054205546361,
+          "stable": false,
+          "finite": true,
+          "floor_penetration_m": 3.2406730919348065e-05,
+          "self_penetration_m": 0.04812029319907848,
+          "joint_home_error_max_rad": 0.8545956485399816,
+          "joint_home_error_mean_rad": 0.1941528193029572,
+          "motor_target_home_error_max_rad": 0.979162383183561,
+          "foot_normal_forces_n": [
+            0.0,
+            0.0
+          ],
+          "foot_load_fraction": 0.0,
+          "foot_up_alignment_to_home": [
+            0.07130830279911972,
+            0.15192446465343887
+          ]
+        },
+        "peaks": {
+          "floor": 0.004468709188619915,
+          "self": 0.04864413675606191,
+          "joint": 0.008505628657641762,
+          "force": 3.23,
+          "slew": 5.2400000000000055
+        },
+        "prefix_start": false,
+        "root_edits_after_initialization": 0,
+        "model": "/data/shijinsheng/open_duck/outputs/getup_aggregate_r112_smoke_20261005/training/update_00020.npz",
+        "initial_context_causal": true,
+        "success": false,
+        "reference_states_injected": false,
+        "full_path_trial": true,
+        "independent_qualification_trial": false
+      }
+    ],
+    "successes": 0,
+    "nominal_success": null,
+    "physical_failures": 1,
+    "return_sum": -4.739830967487749
+  },
+  "independent_qualification_run": false,
+  "full_task_completed": false
+}
