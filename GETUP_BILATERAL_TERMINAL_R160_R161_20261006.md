@@ -1,0 +1,27 @@
+# Bilateral feedback terminal and exact audit R160 R161
+
+R160 has completed all six bounded generations and both full development groups and naturally exited. Best coefficients remain twelve zeros. Candidate and frozen R157 baseline each succeed on 18/24 original development starting states, retain the standard trajectory and have zero physical invalidity. R161 confirms all 25 paired complete trajectories are identical in every saved field, initial hash and original physical peak, with baseline original fields exactly reproducing R157. No improvement, expanded development or independent qualification occurred.
+
+## Complete closed training
+
+Fixed seed260, six generations, twelve proposals per generation and six CPU workers produced 61 distinct actual programs, including 60 nonzero programs. All 1525 actual 629-step short training trajectories, 50 complete terminal trajectories and six formal complete startup consistency trajectories are saved: 1581 formal dynamic trajectories in total. Every closed checkpoint retains parameters, CEM mean/std, complete history/candidate reports and RNG. The independent six complete smoke trajectories remain in the earlier immutable terminal snapshot, not counted again as new performance.
+
+R160 freezes the R157 causal initial native50 selector and R122 snapshot program/knots/original current feedback. Twelve coefficients drive direct common/differential error-change feedback on the six actual left/right hip position/velocity sensors; no world-axis symmetry or angular-momentum conservation is claimed. First target and standard scalar new feedback remain exactly original. Home has no new feedback. Combined corrections, joint/torque/slew, original collisions, 500Hz physics, reward and acceptance remain unchanged; no extra settling, root injection or mid-episode reset occurs. No root truth, case/seed/label/directory, future sensors or context lookup enters inference.
+
+Twelve regression tests and independent complete smoke passed before formal launch. Standard enters at 11.08 seconds and retains a 34.70-second strict tail. The known-development fixed smoke function succeeds on 769002 but fails on 773004, both physically valid. Formal startup reproduces its independent smoke completely. These local results do not establish unified development improvement.
+
+## R161 read only feedback evidence
+
+All 61 programs' saved bilateral actions match their coefficients and twelve saved activations exactly. Initial activations/actions, nominal scalar actions and home new actions are zero. Highest nonzero, highest all-valid nonzero and the pre-fixed smoke program also have every recovery-frame actual scalar activation, bilateral residual and frozen original right feedback independently recomputed exactly. Source hashes before and after the read-only audit match; there is no dynamic integration or acceptance relabeling.
+
+Of 60 nonzero programs, only eight are physically valid across every short-training starting state. Highest nonzero short result is 12/24 with two physical invalidities (generation2/candidate05): rescues 769002 and regresses 769005, 773003, 773007, 773008, 773011, 773012, 773013. Highest all-valid nonzero is 11/24 (generation1/candidate09): rescues 769004,773005 and regresses 769003,769005,769006,769007,773000,773002,773008,773012,773013. These are one-second-tail training labels, not continuous 30-second full acceptance. Bilateral response has not solved the overall problem; it does not imply all causal state feedback is useless or that any particular channel is the unique cause.
+
+The pre-fixed twelve-coefficient independent smoke function does not occur among the 61 actual CEM programs. R162 therefore may evaluate this exact already-frozen function once on complete standard plus 24 development starting states, after fresh regression and independent complete parity smoke. This is a full-path falsification of local smoke extrapolation, not extra fitting, scaling, threshold choice or a restarted R160 budget. No candidate promotion is justified before that result.
+
+## Acceptance and append only preservation
+
+The original complete path remains 2279 controls/45.58 seconds at50Hz, physics500Hz, strict entry deadline12 seconds, continuous strict standing30 seconds and original per-substep physical validity. R160's 18/24 baseline is R157, not R13417, R122 snapshot15, zero12 or R10213. Required original development remains standard retained, >=22/24, better than baseline and entirely physically valid; a separately frozen expanded316 development must reach >=36/40 and exceed fixed zero/R102, all valid, before unseen qualification.
+
+3160000–3160039 and3180000–3180039 are development. Reserved3200000–3200039 have not been read or executed. Qualification requires paired initial hashes with zero, two disjoint20-case groups each>=18/20 under unchanged timing/standing/physics. Larger unseen and sensor/execution delay tests, then right/prone/supine each20unseen with18/20 and30-second valid strict standing remain outstanding. Hardware is not connected or validated; the recurring simulation task remains ACTIVE.
+
+New R160 terminal_snapshot and R161 terminal_snapshot append to baseline253742640f04815bbeeaa33ef6453f47726691d6, preserving all executed sources, frozen models, physics hashes, closed learning state, RNG and failures. Earlier g1/startup/independent smoke and failed-interface records are immutable and not overwritten. The R160 startup snapshot is historical, superseded for status by this complete terminal result; it remains unchanged.
