@@ -1,0 +1,14 @@
+..........F.
+======================================================================
+FAIL: test_weights_nonnegative_normalized_and_convex (__main__.MixtureTests.test_weights_nonnegative_normalized_and_convex)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/test_getup_expert_mixture_r168.py", line 32, in test_weights_nonnegative_normalized_and_convex
+    self.assertTrue(np.all(m>=v.min(0)-1e-14) and np.all(m<=v.max(0)+1e-14));self.assertLessEqual(abs(m).max(),.18)
+                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: np.float64(0.18000000000000002) not less than or equal to 0.18
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.006s
+
+FAILED (failures=1)
