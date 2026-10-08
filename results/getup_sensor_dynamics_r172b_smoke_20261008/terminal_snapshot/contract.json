@@ -1,0 +1,32 @@
+{
+  "seed": 272,
+  "smoke": true,
+  "method": "sensor-space nonlinear-feature one-step transition regression, not a policy",
+  "ridge": 1.0,
+  "feature_dimension": 342,
+  "output_dimension": 34,
+  "held_cases": [
+    769000,
+    769001,
+    773000,
+    773001
+  ],
+  "held_program": 3,
+  "case_split_chosen_before_training": true,
+  "hyperparameter_search": false,
+  "no_case_or_label_or_root_truth_in_predictor": true,
+  "inputs": "current and previous causal native50 sensor deviations; current already planned joint/slew-limited14 target deviation; fixed phase",
+  "targets": "next observed native34 deviation increment, offline supervision only",
+  "planned_action_interface_not_yet_runtime_verified": true,
+  "source_directory": "/data/shijinsheng/open_duck/outputs/getup_complementary_feedback_r133_left_20261006",
+  "nominal": {
+    "directory": "/data/shijinsheng/open_duck/outputs/getup_complementary_feedback_r133_left_20261006/program_00/case_None",
+    "initial_hash": "8f3b34d411ddea4fd0586011cab25d92eef43eec91e80324e9a9816d0f8a85fe",
+    "trajectory_sha256": "0ba0d4a73793c912f8d616c131ad20b826f0f9678e0b8e209e7bd52b5747fcd2",
+    "result_sha256": "5ec01038e575377267260cdf680c55904abc87a4ce75fca144d18acfc6ca4b71"
+  },
+  "original_source_contract_hash": "e59fc5066d511694bbbe6570db238d046e0d80fe47e595c4138fb76770c3a10e",
+  "executed_source_hash": "0f8a6444c5ef28e72cee42c529ea4bd69e6ffb6b479ba2f527d5b17d3819a337",
+  "physics_and_original_acceptance_unchanged": true,
+  "no_dynamic_replay": true
+}

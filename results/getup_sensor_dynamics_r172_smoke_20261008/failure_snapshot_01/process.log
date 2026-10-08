@@ -1,0 +1,30 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/train_getup_sensor_dynamics_r172.py", line 169, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/train_getup_sensor_dynamics_r172.py", line 125, in main
+    dataset[program,case]=samples(obs,applied,nominal,nominal_applied)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/train_getup_sensor_dynamics_r172.py", line 91, in samples
+    np.testing.assert_allclose((obs[1:,34:48]-nominal[1:,34:48]).astype(float),action,rtol=0,atol=1.5e-7)
+  File "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/.venv/lib/python3.11/site-packages/numpy/testing/_private/utils.py", line 1768, in assert_allclose
+    assert_array_compare(compare, actual, desired, err_msg=str(err_msg),
+  File "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/.venv/lib/python3.11/site-packages/numpy/testing/_private/utils.py", line 983, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Not equal to tolerance rtol=0, atol=1.5e-07
+
+Mismatched elements: 2 / 31892 (0.00627%)
+Mismatch at indices:
+ [142, 3]: -0.01926875114440918 (ACTUAL), -0.019268935549492272 (DESIRED)
+ [147, 3]: -0.02969217300415039 (ACTUAL), -0.02969235342059151 (DESIRED)
+Max absolute difference among violations: 1.84405083e-07
+Max relative difference among violations: 9.57007109e-06
+ ACTUAL: array([[ 0.000000e+00, -8.720852e-05,  4.797049e-04, ..., -4.797049e-04,
+        -1.920141e-03, -6.433785e-04],
+       [ 0.000000e+00, -6.747083e-05,  5.663158e-04, ..., -4.286051e-04,...
+ DESIRED: array([[ 0.000000e+00, -8.720855e-05,  4.797049e-04, ..., -4.797049e-04,
+        -1.920140e-03, -6.433785e-04],
+       [ 0.000000e+00, -6.747079e-05,  5.663155e-04, ..., -4.286050e-04,...
