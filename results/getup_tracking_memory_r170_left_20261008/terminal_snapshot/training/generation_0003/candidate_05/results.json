@@ -1,0 +1,2719 @@
+{
+  "rows": [
+    {
+      "pose": "left_side",
+      "case_seed": null,
+      "initial_hash": "8f3b34d411ddea4fd0586011cab25d92eef43eec91e80324e9a9816d0f8a85fe",
+      "actual_fallen_start": true,
+      "valid": true,
+      "training_success": true,
+      "controls": 2279,
+      "strict_tail_s": 34.7,
+      "entry_time_s": 11.08,
+      "return_sum": 63.45107828545434,
+      "final": {
+        "up_z": 0.9999951107964712,
+        "height_m": 0.15993887030369217,
+        "feet": [
+          true,
+          true
+        ],
+        "torso_contact": false,
+        "penetration_m": 0.00014949764604372216,
+        "linear_speed_mps": 7.584890199798265e-08,
+        "angular_speed_rad_s": 2.01351697047707e-07,
+        "stable": true,
+        "finite": true,
+        "floor_penetration_m": 0.00014949764604372216,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.038565576769616916,
+        "joint_home_error_mean_rad": 0.01206019605567348,
+        "motor_target_home_error_max_rad": 8.216681570027973e-06,
+        "foot_normal_forces_n": [
+          10.525319053330687,
+          10.145731259905716
+        ],
+        "foot_load_fraction": 1.0,
+        "foot_up_alignment_to_home": [
+          0.9986202845424386,
+          0.9980973379803055
+        ]
+      },
+      "peaks": {
+        "floor": 0.004077250318250802,
+        "self": 0.002055521209926657,
+        "joint": 0.025327550007201105,
+        "force": 3.23,
+        "slew": 5.240000000000003
+      },
+      "prefix_start": false,
+      "root_edits_after_initialization": 0,
+      "parameters": [
+        0.00046323505993563116,
+        0.0004068636978145896
+      ],
+      "full_path": true,
+      "base_choice": 0,
+      "base_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_sensor_logits": [
+        0.6664102649601508,
+        0.14180609285766288,
+        -0.39443816299586537,
+        -0.41377819708765845
+      ],
+      "success": true,
+      "maximum_combined_14_joint_correction_rad": 0.019899134161033505,
+      "maximum_tracking_memory": 0.0,
+      "maximum_tracking_extra_rad": 0.0,
+      "antiwindup_rejected_channel_steps": 0,
+      "groups": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "actuator_names": [
+        "left_hip_yaw",
+        "left_hip_roll",
+        "left_hip_pitch",
+        "left_knee",
+        "left_ankle",
+        "neck_pitch",
+        "head_pitch",
+        "head_yaw",
+        "head_roll",
+        "right_hip_yaw",
+        "right_hip_roll",
+        "right_hip_pitch",
+        "right_knee",
+        "right_ankle"
+      ],
+      "no_case_metadata_or_root_truth_in_controller": true,
+      "root_edits_during_recovery": 0,
+      "complete_R157_parity": {
+        "observations": true,
+        "normalized_residual": true,
+        "time": true,
+        "qpos": true,
+        "qvel": true,
+        "applied": true,
+        "strict": true,
+        "local_hip_extra_rad": true,
+        "preparation_sensors": true
+      }
+    },
+    {
+      "pose": "left_side",
+      "case_seed": 769000,
+      "initial_hash": "1eb4b6b07d14ab55cb128342f25e774570a7d3217c7adbf9cfc10ad4954e9c36",
+      "actual_fallen_start": true,
+      "valid": true,
+      "training_success": false,
+      "controls": 2279,
+      "strict_tail_s": 0.0,
+      "entry_time_s": null,
+      "return_sum": -2.8594529557232216,
+      "final": {
+        "up_z": -0.1645148920484591,
+        "height_m": 0.14533047956813958,
+        "feet": [
+          false,
+          false
+        ],
+        "torso_contact": true,
+        "penetration_m": 5.155487060174921e-05,
+        "linear_speed_mps": 3.922376152569472e-08,
+        "angular_speed_rad_s": 5.03091538116637e-07,
+        "stable": false,
+        "finite": true,
+        "floor_penetration_m": 5.155487060174921e-05,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.14487169631124508,
+        "joint_home_error_mean_rad": 0.04408369947166914,
+        "motor_target_home_error_max_rad": 0.1387039912807777,
+        "foot_normal_forces_n": [
+          0.0,
+          0.0
+        ],
+        "foot_load_fraction": 0.0,
+        "foot_up_alignment_to_home": [
+          0.08811754067774971,
+          0.06475972147183492
+        ]
+      },
+      "peaks": {
+        "floor": 0.005726003426451888,
+        "self": 0.001862189705913994,
+        "joint": 0.021688705082178905,
+        "force": 3.23,
+        "slew": 5.2400000000000055
+      },
+      "prefix_start": false,
+      "root_edits_after_initialization": 0,
+      "parameters": [
+        0.00046323505993563116,
+        0.0004068636978145896
+      ],
+      "full_path": true,
+      "base_choice": 2,
+      "base_gains": [
+        0.04271860933253291,
+        0.029850237059537224,
+        0.029525362512634695,
+        0.03394029129964289,
+        -0.061994118689716084,
+        0.007364616330481291
+      ],
+      "initial_sensor_logits": [
+        -0.13852081794477422,
+        -0.43516329337360915,
+        0.9648033361610497,
+        -0.39111921132445227
+      ],
+      "success": false,
+      "maximum_combined_14_joint_correction_rad": 0.14661502776227375,
+      "maximum_tracking_memory": 0.5157854542118316,
+      "maximum_tracking_extra_rad": 3.777378733782379e-05,
+      "antiwindup_rejected_channel_steps": 291,
+      "groups": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "actuator_names": [
+        "left_hip_yaw",
+        "left_hip_roll",
+        "left_hip_pitch",
+        "left_knee",
+        "left_ankle",
+        "neck_pitch",
+        "head_pitch",
+        "head_yaw",
+        "head_roll",
+        "right_hip_yaw",
+        "right_hip_roll",
+        "right_hip_pitch",
+        "right_knee",
+        "right_ankle"
+      ],
+      "no_case_metadata_or_root_truth_in_controller": true,
+      "root_edits_during_recovery": 0
+    },
+    {
+      "pose": "left_side",
+      "case_seed": 769001,
+      "initial_hash": "2678bdbe048d4a40628f00c08b0bcf0f6bce2e2102d76aa308709e030666a257",
+      "actual_fallen_start": true,
+      "valid": true,
+      "training_success": false,
+      "controls": 2279,
+      "strict_tail_s": 0.0,
+      "entry_time_s": null,
+      "return_sum": -3.511989022313745,
+      "final": {
+        "up_z": -0.0001823867080447128,
+        "height_m": 0.15434340986010403,
+        "feet": [
+          false,
+          false
+        ],
+        "torso_contact": true,
+        "penetration_m": 1.7171329166740593e-05,
+        "linear_speed_mps": 2.578878774835124e-05,
+        "angular_speed_rad_s": 0.0003686342090721196,
+        "stable": false,
+        "finite": true,
+        "floor_penetration_m": 1.7171329166740593e-05,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.07596530385928246,
+        "joint_home_error_mean_rad": 0.03055823071062882,
+        "motor_target_home_error_max_rad": 0.06843066599182346,
+        "foot_normal_forces_n": [
+          0.0,
+          0.0
+        ],
+        "foot_load_fraction": 0.0,
+        "foot_up_alignment_to_home": [
+          0.16128687499932204,
+          0.16109780754407627
+        ]
+      },
+      "peaks": {
+        "floor": 0.0059753013511248225,
+        "self": 0.00195880717441983,
+        "joint": 0.02217546217050831,
+        "force": 3.23,
+        "slew": 5.2400000000000055
+      },
+      "prefix_start": false,
+      "root_edits_after_initialization": 0,
+      "parameters": [
+        0.00046323505993563116,
+        0.0004068636978145896
+      ],
+      "full_path": true,
+      "base_choice": 0,
+      "base_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_sensor_logits": [
+        1.6682030200464348,
+        0.03785512412751969,
+        -0.7636631368067244,
+        -0.9423949614186401
+      ],
+      "success": false,
+      "maximum_combined_14_joint_correction_rad": 0.13353240279448197,
+      "maximum_tracking_memory": 0.537785006760065,
+      "maximum_tracking_extra_rad": 3.9384934737808654e-05,
+      "antiwindup_rejected_channel_steps": 284,
+      "groups": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "actuator_names": [
+        "left_hip_yaw",
+        "left_hip_roll",
+        "left_hip_pitch",
+        "left_knee",
+        "left_ankle",
+        "neck_pitch",
+        "head_pitch",
+        "head_yaw",
+        "head_roll",
+        "right_hip_yaw",
+        "right_hip_roll",
+        "right_hip_pitch",
+        "right_knee",
+        "right_ankle"
+      ],
+      "no_case_metadata_or_root_truth_in_controller": true,
+      "root_edits_during_recovery": 0
+    },
+    {
+      "pose": "left_side",
+      "case_seed": 769002,
+      "initial_hash": "e47dd620548561b8edd959c98163ec24fcee65304d1200047d4b5762a612ef60",
+      "actual_fallen_start": true,
+      "valid": true,
+      "training_success": false,
+      "controls": 2279,
+      "strict_tail_s": 0.0,
+      "entry_time_s": null,
+      "return_sum": -2.7960585606361046,
+      "final": {
+        "up_z": -0.16207394344722165,
+        "height_m": 0.14483964257807658,
+        "feet": [
+          false,
+          false
+        ],
+        "torso_contact": true,
+        "penetration_m": 4.4697976416960966e-05,
+        "linear_speed_mps": 7.860965956332799e-08,
+        "angular_speed_rad_s": 9.96420859042599e-07,
+        "stable": false,
+        "finite": true,
+        "floor_penetration_m": 4.4697976416960966e-05,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.11135434772413766,
+        "joint_home_error_mean_rad": 0.03439807196863048,
+        "motor_target_home_error_max_rad": 0.10542475454347366,
+        "foot_normal_forces_n": [
+          0.0,
+          0.0
+        ],
+        "foot_load_fraction": 0.0,
+        "foot_up_alignment_to_home": [
+          0.03345120782384966,
+          0.009086535250759436
+        ]
+      },
+      "peaks": {
+        "floor": 0.00557496220409995,
+        "self": 0.0020297588064886827,
+        "joint": 0.023002065880681544,
+        "force": 3.23,
+        "slew": 5.2400000000000055
+      },
+      "prefix_start": false,
+      "root_edits_after_initialization": 0,
+      "parameters": [
+        0.00046323505993563116,
+        0.0004068636978145896
+      ],
+      "full_path": true,
+      "base_choice": 0,
+      "base_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_sensor_logits": [
+        0.41966308494811694,
+        0.37474810485447224,
+        -0.33043787256021373,
+        -0.46397331873129993
+      ],
+      "success": false,
+      "maximum_combined_14_joint_correction_rad": 0.13803835680989418,
+      "maximum_tracking_memory": 0.5193717700994119,
+      "maximum_tracking_extra_rad": 3.803643284001596e-05,
+      "antiwindup_rejected_channel_steps": 298,
+      "groups": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "actuator_names": [
+        "left_hip_yaw",
+        "left_hip_roll",
+        "left_hip_pitch",
+        "left_knee",
+        "left_ankle",
+        "neck_pitch",
+        "head_pitch",
+        "head_yaw",
+        "head_roll",
+        "right_hip_yaw",
+        "right_hip_roll",
+        "right_hip_pitch",
+        "right_knee",
+        "right_ankle"
+      ],
+      "no_case_metadata_or_root_truth_in_controller": true,
+      "root_edits_during_recovery": 0
+    },
+    {
+      "pose": "left_side",
+      "case_seed": 769003,
+      "initial_hash": "2afc58eb86fcd19e84d22984e2214efd6d36f7beffe8b19bb1dc00849afe65a4",
+      "actual_fallen_start": true,
+      "valid": true,
+      "training_success": false,
+      "controls": 2279,
+      "strict_tail_s": 0.0,
+      "entry_time_s": null,
+      "return_sum": -2.7821672615407578,
+      "final": {
+        "up_z": -0.16311108575400268,
+        "height_m": 0.14504907221312388,
+        "feet": [
+          false,
+          false
+        ],
+        "torso_contact": true,
+        "penetration_m": 4.7600354830430736e-05,
+        "linear_speed_mps": 8.370395229273591e-08,
+        "angular_speed_rad_s": 1.0488932387746886e-06,
+        "stable": false,
+        "finite": true,
+        "floor_penetration_m": 4.7600354830430736e-05,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.1255364330618105,
+        "joint_home_error_mean_rad": 0.03849432875728494,
+        "motor_target_home_error_max_rad": 0.11950442448475807,
+        "foot_normal_forces_n": [
+          0.0,
+          0.0
+        ],
+        "foot_load_fraction": 0.0,
+        "foot_up_alignment_to_home": [
+          0.05656592803227858,
+          0.032600506948229344
+        ]
+      },
+      "peaks": {
+        "floor": 0.006464295086303079,
+        "self": 0.002006416671528655,
+        "joint": 0.022258166939537416,
+        "force": 3.23,
+        "slew": 5.2400000000000055
+      },
+      "prefix_start": false,
+      "root_edits_after_initialization": 0,
+      "parameters": [
+        0.00046323505993563116,
+        0.0004068636978145896
+      ],
+      "full_path": true,
+      "base_choice": 0,
+      "base_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_sensor_logits": [
+        0.7951212059546791,
+        0.11711109213248422,
+        -0.605314116314855,
+        -0.3069181798805244
+      ],
+      "success": false,
+      "maximum_combined_14_joint_correction_rad": 0.17638020411573646,
+      "maximum_tracking_memory": 0.48402554125769914,
+      "maximum_tracking_extra_rad": 3.544783542125637e-05,
+      "antiwindup_rejected_channel_steps": 266,
+      "groups": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "actuator_names": [
+        "left_hip_yaw",
+        "left_hip_roll",
+        "left_hip_pitch",
+        "left_knee",
+        "left_ankle",
+        "neck_pitch",
+        "head_pitch",
+        "head_yaw",
+        "head_roll",
+        "right_hip_yaw",
+        "right_hip_roll",
+        "right_hip_pitch",
+        "right_knee",
+        "right_ankle"
+      ],
+      "no_case_metadata_or_root_truth_in_controller": true,
+      "root_edits_during_recovery": 0
+    },
+    {
+      "pose": "left_side",
+      "case_seed": 769004,
+      "initial_hash": "a37c291da4c77fad76a1a0cb87ad7588b1ca07b1eeb2378246a2e13308ebd79e",
+      "actual_fallen_start": true,
+      "valid": false,
+      "training_success": false,
+      "controls": 304,
+      "strict_tail_s": 0.0,
+      "entry_time_s": null,
+      "return_sum": -4.749616023656012,
+      "final": {
+        "up_z": 0.25586264558718197,
+        "height_m": 0.15039787015300646,
+        "feet": [
+          false,
+          false
+        ],
+        "torso_contact": true,
+        "penetration_m": 0.0001966003103270719,
+        "linear_speed_mps": 0.04437154220980454,
+        "angular_speed_rad_s": 0.474197973615341,
+        "stable": false,
+        "finite": true,
+        "floor_penetration_m": 7.789987382475494e-05,
+        "self_penetration_m": 0.0001966003103270719,
+        "joint_home_error_max_rad": 0.8800864110771764,
+        "joint_home_error_mean_rad": 0.20460213036812067,
+        "motor_target_home_error_max_rad": 0.9805180864934173,
+        "foot_normal_forces_n": [
+          0.0,
+          0.0
+        ],
+        "foot_load_fraction": 0.0,
+        "foot_up_alignment_to_home": [
+          0.10980550370647338,
+          0.19448047916579725
+        ]
+      },
+      "peaks": {
+        "floor": 0.005064079412421586,
+        "self": 0.04868157478552171,
+        "joint": 0.007754242781055243,
+        "force": 3.23,
+        "slew": 5.240000000000003
+      },
+      "prefix_start": false,
+      "root_edits_after_initialization": 0,
+      "parameters": [
+        0.00046323505993563116,
+        0.0004068636978145896
+      ],
+      "full_path": true,
+      "base_choice": 0,
+      "base_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_sensor_logits": [
+        0.2889878467503567,
+        -0.36864025598546013,
+        0.2662606181191959,
+        -0.18660821493881882
+      ],
+      "success": false,
+      "maximum_combined_14_joint_correction_rad": 0.10612279048504969,
+      "maximum_tracking_memory": 0.18977255081008315,
+      "maximum_tracking_extra_rad": 1.5823673769994347e-05,
+      "antiwindup_rejected_channel_steps": 135,
+      "groups": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "actuator_names": [
+        "left_hip_yaw",
+        "left_hip_roll",
+        "left_hip_pitch",
+        "left_knee",
+        "left_ankle",
+        "neck_pitch",
+        "head_pitch",
+        "head_yaw",
+        "head_roll",
+        "right_hip_yaw",
+        "right_hip_roll",
+        "right_hip_pitch",
+        "right_knee",
+        "right_ankle"
+      ],
+      "no_case_metadata_or_root_truth_in_controller": true,
+      "root_edits_during_recovery": 0
+    },
+    {
+      "pose": "left_side",
+      "case_seed": 769005,
+      "initial_hash": "172feeeaef32e321b88dc754bb33c8f0f1473995ba44a2a5a2aa7c18f59695bf",
+      "actual_fallen_start": true,
+      "valid": true,
+      "training_success": false,
+      "controls": 2279,
+      "strict_tail_s": 0.0,
+      "entry_time_s": null,
+      "return_sum": -2.895238128051039,
+      "final": {
+        "up_z": -0.16250469852157629,
+        "height_m": 0.14492725415424462,
+        "feet": [
+          false,
+          false
+        ],
+        "torso_contact": true,
+        "penetration_m": 4.59079436240864e-05,
+        "linear_speed_mps": 1.5187202720494395e-07,
+        "angular_speed_rad_s": 1.9133679328147905e-06,
+        "stable": false,
+        "finite": true,
+        "floor_penetration_m": 4.59079436240864e-05,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.11725446868135858,
+        "joint_home_error_mean_rad": 0.03610283371796687,
+        "motor_target_home_error_max_rad": 0.11128237565129817,
+        "foot_normal_forces_n": [
+          0.0,
+          0.0
+        ],
+        "foot_load_fraction": 0.0,
+        "foot_up_alignment_to_home": [
+          0.043065152199705706,
+          0.018864535616356103
+        ]
+      },
+      "peaks": {
+        "floor": 0.0044811980022073025,
+        "self": 0.002352030867104068,
+        "joint": 0.022808404247096126,
+        "force": 3.23,
+        "slew": 5.2400000000000055
+      },
+      "prefix_start": false,
+      "root_edits_after_initialization": 0,
+      "parameters": [
+        0.00046323505993563116,
+        0.0004068636978145896
+      ],
+      "full_path": true,
+      "base_choice": 1,
+      "base_gains": [
+        0.04355182104342108,
+        -0.012688980031975383,
+        -0.03641056335300152,
+        -0.021834127468025842,
+        -0.009694385345111668,
+        -0.010803642962099055
+      ],
+      "initial_sensor_logits": [
+        0.6390353723881944,
+        0.7854579305299288,
+        -0.8107332326938772,
+        -0.6137600643090173
+      ],
+      "success": false,
+      "maximum_combined_14_joint_correction_rad": 0.13423857698201824,
+      "maximum_tracking_memory": 0.5214458880414906,
+      "maximum_tracking_extra_rad": 3.818833182641722e-05,
+      "antiwindup_rejected_channel_steps": 306,
+      "groups": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "actuator_names": [
+        "left_hip_yaw",
+        "left_hip_roll",
+        "left_hip_pitch",
+        "left_knee",
+        "left_ankle",
+        "neck_pitch",
+        "head_pitch",
+        "head_yaw",
+        "head_roll",
+        "right_hip_yaw",
+        "right_hip_roll",
+        "right_hip_pitch",
+        "right_knee",
+        "right_ankle"
+      ],
+      "no_case_metadata_or_root_truth_in_controller": true,
+      "root_edits_during_recovery": 0
+    },
+    {
+      "pose": "left_side",
+      "case_seed": 769006,
+      "initial_hash": "849c147b3d582a6d104066abb41011d3b45c40b1152d94bbbef0c47877bc5d18",
+      "actual_fallen_start": true,
+      "valid": true,
+      "training_success": false,
+      "controls": 2279,
+      "strict_tail_s": 0.0,
+      "entry_time_s": null,
+      "return_sum": -2.8758105997355425,
+      "final": {
+        "up_z": -0.16316521281051838,
+        "height_m": 0.1450596518381761,
+        "feet": [
+          false,
+          false
+        ],
+        "torso_contact": true,
+        "penetration_m": 4.7747906766239245e-05,
+        "linear_speed_mps": 3.779442000206483e-08,
+        "angular_speed_rad_s": 4.800608504696671e-07,
+        "stable": false,
+        "finite": true,
+        "floor_penetration_m": 4.7747906766239245e-05,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.1262650829508667,
+        "joint_home_error_mean_rad": 0.038704226224564375,
+        "motor_target_home_error_max_rad": 0.12022760492719109,
+        "foot_normal_forces_n": [
+          0.0,
+          0.0
+        ],
+        "foot_load_fraction": 0.0,
+        "foot_up_alignment_to_home": [
+          0.0577530792888285,
+          0.033807417334357576
+        ]
+      },
+      "peaks": {
+        "floor": 0.004382849837460293,
+        "self": 0.0022125878517947114,
+        "joint": 0.023230607351974186,
+        "force": 3.23,
+        "slew": 5.2400000000000055
+      },
+      "prefix_start": false,
+      "root_edits_after_initialization": 0,
+      "parameters": [
+        0.00046323505993563116,
+        0.0004068636978145896
+      ],
+      "full_path": true,
+      "base_choice": 0,
+      "base_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_sensor_logits": [
+        0.9326193186644125,
+        -0.1493756325327616,
+        -0.3726384305959721,
+        -0.41060525963312644
+      ],
+      "success": false,
+      "maximum_combined_14_joint_correction_rad": 0.1347652020926442,
+      "maximum_tracking_memory": 0.49919932029374436,
+      "maximum_tracking_extra_rad": 3.655909414951076e-05,
+      "antiwindup_rejected_channel_steps": 263,
+      "groups": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "actuator_names": [
+        "left_hip_yaw",
+        "left_hip_roll",
+        "left_hip_pitch",
+        "left_knee",
+        "left_ankle",
+        "neck_pitch",
+        "head_pitch",
+        "head_yaw",
+        "head_roll",
+        "right_hip_yaw",
+        "right_hip_roll",
+        "right_hip_pitch",
+        "right_knee",
+        "right_ankle"
+      ],
+      "no_case_metadata_or_root_truth_in_controller": true,
+      "root_edits_during_recovery": 0
+    },
+    {
+      "pose": "left_side",
+      "case_seed": 769007,
+      "initial_hash": "3b50dd4c8ea90c4aa8e86bd6e98106768d3c6e375dde3aad44aa70b0ba59ed7d",
+      "actual_fallen_start": true,
+      "valid": true,
+      "training_success": false,
+      "controls": 2279,
+      "strict_tail_s": 0.0,
+      "entry_time_s": null,
+      "return_sum": -6.070868544352271,
+      "final": {
+        "up_z": 0.5414718421984189,
+        "height_m": 0.13247716086517422,
+        "feet": [
+          false,
+          false
+        ],
+        "torso_contact": true,
+        "penetration_m": 4.159010525268611e-05,
+        "linear_speed_mps": 1.48962413371109e-10,
+        "angular_speed_rad_s": 9.951944535319705e-09,
+        "stable": false,
+        "finite": true,
+        "floor_penetration_m": 4.159010525268611e-05,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.1093951454745461,
+        "joint_home_error_mean_rad": 0.03616428601452414,
+        "motor_target_home_error_max_rad": 0.11788590386474884,
+        "foot_normal_forces_n": [
+          0.0,
+          0.0
+        ],
+        "foot_load_fraction": 0.0,
+        "foot_up_alignment_to_home": [
+          0.3467631049932222,
+          0.34710435821288654
+        ]
+      },
+      "peaks": {
+        "floor": 0.004880511801839054,
+        "self": 0.0019856018738096913,
+        "joint": 0.02728919575209976,
+        "force": 3.23,
+        "slew": 5.2400000000000055
+      },
+      "prefix_start": false,
+      "root_edits_after_initialization": 0,
+      "parameters": [
+        0.00046323505993563116,
+        0.0004068636978145896
+      ],
+      "full_path": true,
+      "base_choice": 0,
+      "base_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_sensor_logits": [
+        0.6186298617302568,
+        -0.12470805003884784,
+        -0.3455034313621814,
+        -0.14841838392917261
+      ],
+      "success": false,
+      "maximum_combined_14_joint_correction_rad": 0.12641549146136266,
+      "maximum_tracking_memory": 0.3956587423491468,
+      "maximum_tracking_extra_rad": 2.8976251966972164e-05,
+      "antiwindup_rejected_channel_steps": 248,
+      "groups": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "actuator_names": [
+        "left_hip_yaw",
+        "left_hip_roll",
+        "left_hip_pitch",
+        "left_knee",
+        "left_ankle",
+        "neck_pitch",
+        "head_pitch",
+        "head_yaw",
+        "head_roll",
+        "right_hip_yaw",
+        "right_hip_roll",
+        "right_hip_pitch",
+        "right_knee",
+        "right_ankle"
+      ],
+      "no_case_metadata_or_root_truth_in_controller": true,
+      "root_edits_during_recovery": 0
+    },
+    {
+      "pose": "left_side",
+      "case_seed": 773000,
+      "initial_hash": "498162f810fcfb4035b24953f5f106c653427b77fce00afc89b0216b395e9478",
+      "actual_fallen_start": true,
+      "valid": true,
+      "training_success": false,
+      "controls": 2279,
+      "strict_tail_s": 0.0,
+      "entry_time_s": null,
+      "return_sum": -2.869400198478341,
+      "final": {
+        "up_z": -0.16575433049675098,
+        "height_m": 0.1455761069073167,
+        "feet": [
+          false,
+          false
+        ],
+        "torso_contact": true,
+        "penetration_m": 5.507141509773425e-05,
+        "linear_speed_mps": 6.137783572388335e-08,
+        "angular_speed_rad_s": 7.846527856795652e-07,
+        "stable": false,
+        "finite": true,
+        "floor_penetration_m": 5.507141509773425e-05,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.16205497403013092,
+        "joint_home_error_mean_rad": 0.049053486462491094,
+        "motor_target_home_error_max_rad": 0.15577134353708177,
+        "foot_normal_forces_n": [
+          0.0,
+          0.0
+        ],
+        "foot_load_fraction": 0.0,
+        "foot_up_alignment_to_home": [
+          0.11615804386211595,
+          0.09338985666548585
+        ]
+      },
+      "peaks": {
+        "floor": 0.004111019735934723,
+        "self": 0.0019271772510863104,
+        "joint": 0.021768491683401503,
+        "force": 3.23,
+        "slew": 5.2400000000000055
+      },
+      "prefix_start": false,
+      "root_edits_after_initialization": 0,
+      "parameters": [
+        0.00046323505993563116,
+        0.0004068636978145896
+      ],
+      "full_path": true,
+      "base_choice": 0,
+      "base_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_sensor_logits": [
+        0.5495907814479004,
+        0.40647038556071735,
+        -0.4673563638166384,
+        -0.4887048045738581
+      ],
+      "success": false,
+      "maximum_combined_14_joint_correction_rad": 0.17999999657401672,
+      "maximum_tracking_memory": 0.48920680989975196,
+      "maximum_tracking_extra_rad": 3.5827288027815954e-05,
+      "antiwindup_rejected_channel_steps": 462,
+      "groups": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "actuator_names": [
+        "left_hip_yaw",
+        "left_hip_roll",
+        "left_hip_pitch",
+        "left_knee",
+        "left_ankle",
+        "neck_pitch",
+        "head_pitch",
+        "head_yaw",
+        "head_roll",
+        "right_hip_yaw",
+        "right_hip_roll",
+        "right_hip_pitch",
+        "right_knee",
+        "right_ankle"
+      ],
+      "no_case_metadata_or_root_truth_in_controller": true,
+      "root_edits_during_recovery": 0
+    },
+    {
+      "pose": "left_side",
+      "case_seed": 773001,
+      "initial_hash": "29c2dee1c5b98ec39d30609ce433b810bebacded380a1c01353d79e729f4f45b",
+      "actual_fallen_start": true,
+      "valid": true,
+      "training_success": false,
+      "controls": 2279,
+      "strict_tail_s": 0.0,
+      "entry_time_s": null,
+      "return_sum": -3.5225178901730385,
+      "final": {
+        "up_z": -0.00018026856878522457,
+        "height_m": 0.15434335686548165,
+        "feet": [
+          false,
+          false
+        ],
+        "torso_contact": true,
+        "penetration_m": 1.7115875957877252e-05,
+        "linear_speed_mps": 2.351829984773793e-05,
+        "angular_speed_rad_s": 0.0003138039980798642,
+        "stable": false,
+        "finite": true,
+        "floor_penetration_m": 1.7115875957877252e-05,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.09709772005704687,
+        "joint_home_error_mean_rad": 0.03653506351334427,
+        "motor_target_home_error_max_rad": 0.08941812306881647,
+        "foot_normal_forces_n": [
+          0.0,
+          0.0
+        ],
+        "foot_load_fraction": 0.0,
+        "foot_up_alignment_to_home": [
+          0.20253038846764604,
+          0.20231483167423622
+        ]
+      },
+      "peaks": {
+        "floor": 0.004039699620738593,
+        "self": 0.0021300505921726144,
+        "joint": 0.023292693349344917,
+        "force": 3.23,
+        "slew": 5.2400000000000055
+      },
+      "prefix_start": false,
+      "root_edits_after_initialization": 0,
+      "parameters": [
+        0.00046323505993563116,
+        0.0004068636978145896
+      ],
+      "full_path": true,
+      "base_choice": 0,
+      "base_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_sensor_logits": [
+        0.6499904501965459,
+        -0.7604546460176638,
+        0.044228614431139845,
+        0.0662355762787672
+      ],
+      "success": false,
+      "maximum_combined_14_joint_correction_rad": 0.17999622210638078,
+      "maximum_tracking_memory": 0.5105818456783321,
+      "maximum_tracking_extra_rad": 3.739269866065231e-05,
+      "antiwindup_rejected_channel_steps": 251,
+      "groups": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "actuator_names": [
+        "left_hip_yaw",
+        "left_hip_roll",
+        "left_hip_pitch",
+        "left_knee",
+        "left_ankle",
+        "neck_pitch",
+        "head_pitch",
+        "head_yaw",
+        "head_roll",
+        "right_hip_yaw",
+        "right_hip_roll",
+        "right_hip_pitch",
+        "right_knee",
+        "right_ankle"
+      ],
+      "no_case_metadata_or_root_truth_in_controller": true,
+      "root_edits_during_recovery": 0
+    },
+    {
+      "pose": "left_side",
+      "case_seed": 773002,
+      "initial_hash": "7bb7cefc83a3e33774c5abad931f214ca91725fd782bc542723e1fa0fdaa9e5f",
+      "actual_fallen_start": true,
+      "valid": true,
+      "training_success": false,
+      "controls": 2279,
+      "strict_tail_s": 0.0,
+      "entry_time_s": null,
+      "return_sum": -2.8623438640637966,
+      "final": {
+        "up_z": -0.16636273453307376,
+        "height_m": 0.14569670166972762,
+        "feet": [
+          false,
+          false
+        ],
+        "torso_contact": true,
+        "penetration_m": 5.6811820045309797e-05,
+        "linear_speed_mps": 3.504214591257552e-08,
+        "angular_speed_rad_s": 4.472915856648744e-07,
+        "stable": false,
+        "finite": true,
+        "floor_penetration_m": 5.6811820045309797e-05,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.17057633250162763,
+        "joint_home_error_mean_rad": 0.05152185045701689,
+        "motor_target_home_error_max_rad": 0.16423650433162806,
+        "foot_normal_forces_n": [
+          0.0,
+          0.0
+        ],
+        "foot_load_fraction": 0.0,
+        "foot_up_alignment_to_home": [
+          0.13005810237625312,
+          0.10760294652576904
+        ]
+      },
+      "peaks": {
+        "floor": 0.004047433043178256,
+        "self": 0.002019553342136024,
+        "joint": 0.024190715620383885,
+        "force": 3.23,
+        "slew": 5.2400000000000055
+      },
+      "prefix_start": false,
+      "root_edits_after_initialization": 0,
+      "parameters": [
+        0.00046323505993563116,
+        0.0004068636978145896
+      ],
+      "full_path": true,
+      "base_choice": 0,
+      "base_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_sensor_logits": [
+        0.7683042033580795,
+        -0.3060843184940648,
+        -0.38025598571804425,
+        -0.08196390480117055
+      ],
+      "success": false,
+      "maximum_combined_14_joint_correction_rad": 0.1799999805815251,
+      "maximum_tracking_memory": 0.5013136620306544,
+      "maximum_tracking_extra_rad": 3.671393894465013e-05,
+      "antiwindup_rejected_channel_steps": 299,
+      "groups": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "actuator_names": [
+        "left_hip_yaw",
+        "left_hip_roll",
+        "left_hip_pitch",
+        "left_knee",
+        "left_ankle",
+        "neck_pitch",
+        "head_pitch",
+        "head_yaw",
+        "head_roll",
+        "right_hip_yaw",
+        "right_hip_roll",
+        "right_hip_pitch",
+        "right_knee",
+        "right_ankle"
+      ],
+      "no_case_metadata_or_root_truth_in_controller": true,
+      "root_edits_during_recovery": 0
+    },
+    {
+      "pose": "left_side",
+      "case_seed": 773003,
+      "initial_hash": "62ee2ac1e48797451516f04b60d4dd259dd73718202cc6b4e6de3c94caf3b967",
+      "actual_fallen_start": true,
+      "valid": true,
+      "training_success": true,
+      "controls": 2279,
+      "strict_tail_s": 34.72,
+      "entry_time_s": 11.06,
+      "return_sum": 63.473368621194346,
+      "final": {
+        "up_z": 0.9999954385580438,
+        "height_m": 0.1599333031223733,
+        "feet": [
+          true,
+          true
+        ],
+        "torso_contact": false,
+        "penetration_m": 0.00014946018745430698,
+        "linear_speed_mps": 5.8526382494648084e-08,
+        "angular_speed_rad_s": 1.5721745295473668e-07,
+        "stable": true,
+        "finite": true,
+        "floor_penetration_m": 0.00014946018745430698,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.03861526053216369,
+        "joint_home_error_mean_rad": 0.012070731713491203,
+        "motor_target_home_error_max_rad": 3.246634234410628e-05,
+        "foot_normal_forces_n": [
+          10.525415380776401,
+          10.145634876914247
+        ],
+        "foot_load_fraction": 1.0,
+        "foot_up_alignment_to_home": [
+          0.9986204661340906,
+          0.9980974582384858
+        ]
+      },
+      "peaks": {
+        "floor": 0.004290040666111466,
+        "self": 0.0020047194056219096,
+        "joint": 0.022742922558400824,
+        "force": 3.23,
+        "slew": 5.2400000000000055
+      },
+      "prefix_start": false,
+      "root_edits_after_initialization": 0,
+      "parameters": [
+        0.00046323505993563116,
+        0.0004068636978145896
+      ],
+      "full_path": true,
+      "base_choice": 0,
+      "base_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_sensor_logits": [
+        0.9653772352062003,
+        0.30826485233914686,
+        -0.7489766341846654,
+        -0.5246654511971756
+      ],
+      "success": true,
+      "maximum_combined_14_joint_correction_rad": 0.15179613819614246,
+      "maximum_tracking_memory": 0.22302166080242714,
+      "maximum_tracking_extra_rad": 1.801015567698936e-05,
+      "antiwindup_rejected_channel_steps": 237,
+      "groups": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "actuator_names": [
+        "left_hip_yaw",
+        "left_hip_roll",
+        "left_hip_pitch",
+        "left_knee",
+        "left_ankle",
+        "neck_pitch",
+        "head_pitch",
+        "head_yaw",
+        "head_roll",
+        "right_hip_yaw",
+        "right_hip_roll",
+        "right_hip_pitch",
+        "right_knee",
+        "right_ankle"
+      ],
+      "no_case_metadata_or_root_truth_in_controller": true,
+      "root_edits_during_recovery": 0
+    },
+    {
+      "pose": "left_side",
+      "case_seed": 773004,
+      "initial_hash": "54398d203587ec7211e2b3db9f4f6fde0484c64f35e8aaedf69ae77da294b40e",
+      "actual_fallen_start": true,
+      "valid": true,
+      "training_success": false,
+      "controls": 2279,
+      "strict_tail_s": 0.0,
+      "entry_time_s": null,
+      "return_sum": -3.4332971981006652,
+      "final": {
+        "up_z": -0.14576759832436326,
+        "height_m": 0.14141567925075263,
+        "feet": [
+          false,
+          false
+        ],
+        "torso_contact": true,
+        "penetration_m": 6.55179720714591e-05,
+        "linear_speed_mps": 9.687353824446263e-08,
+        "angular_speed_rad_s": 1.2235184424998924e-06,
+        "stable": false,
+        "finite": true,
+        "floor_penetration_m": 6.55179720714591e-05,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.10262133362785941,
+        "joint_home_error_mean_rad": 0.03270423333134625,
+        "motor_target_home_error_max_rad": 0.10598814780469157,
+        "foot_normal_forces_n": [
+          0.0,
+          0.0
+        ],
+        "foot_load_fraction": 0.0,
+        "foot_up_alignment_to_home": [
+          -0.2988938962804801,
+          -0.3230535089670753
+        ]
+      },
+      "peaks": {
+        "floor": 0.008460089012459003,
+        "self": 0.0019748663723571924,
+        "joint": 0.034813328890749395,
+        "force": 3.23,
+        "slew": 5.2400000000000055
+      },
+      "prefix_start": false,
+      "root_edits_after_initialization": 0,
+      "parameters": [
+        0.00046323505993563116,
+        0.0004068636978145896
+      ],
+      "full_path": true,
+      "base_choice": 0,
+      "base_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_sensor_logits": [
+        0.6133128291488577,
+        0.5394585543083581,
+        -0.6462351034724847,
+        -0.5065362826410255
+      ],
+      "success": false,
+      "maximum_combined_14_joint_correction_rad": 0.153777321964371,
+      "maximum_tracking_memory": 0.3540971866704906,
+      "maximum_tracking_extra_rad": 2.5932472156392e-05,
+      "antiwindup_rejected_channel_steps": 281,
+      "groups": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "actuator_names": [
+        "left_hip_yaw",
+        "left_hip_roll",
+        "left_hip_pitch",
+        "left_knee",
+        "left_ankle",
+        "neck_pitch",
+        "head_pitch",
+        "head_yaw",
+        "head_roll",
+        "right_hip_yaw",
+        "right_hip_roll",
+        "right_hip_pitch",
+        "right_knee",
+        "right_ankle"
+      ],
+      "no_case_metadata_or_root_truth_in_controller": true,
+      "root_edits_during_recovery": 0
+    },
+    {
+      "pose": "left_side",
+      "case_seed": 773005,
+      "initial_hash": "868212fbc562e44d9d1457ff71fdc780d7e3e476493f099e12a2cc3f2766bfeb",
+      "actual_fallen_start": true,
+      "valid": true,
+      "training_success": true,
+      "controls": 2279,
+      "strict_tail_s": 34.68,
+      "entry_time_s": 11.1,
+      "return_sum": 63.449105590692476,
+      "final": {
+        "up_z": 0.9999950828327165,
+        "height_m": 0.15993935328162417,
+        "feet": [
+          true,
+          true
+        ],
+        "torso_contact": false,
+        "penetration_m": 0.0001495007546482522,
+        "linear_speed_mps": 7.208706499539743e-08,
+        "angular_speed_rad_s": 1.923757548468312e-07,
+        "stable": true,
+        "finite": true,
+        "floor_penetration_m": 0.0001495007546482522,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.03856141410172409,
+        "joint_home_error_mean_rad": 0.01205927215446465,
+        "motor_target_home_error_max_rad": 1.16283594422395e-05,
+        "foot_normal_forces_n": [
+          10.525310808219666,
+          10.14573950470087
+        ],
+        "foot_load_fraction": 1.0,
+        "foot_up_alignment_to_home": [
+          0.9986202793246999,
+          0.9980973365963589
+        ]
+      },
+      "peaks": {
+        "floor": 0.003650960878984609,
+        "self": 0.002182148237199369,
+        "joint": 0.023618855250261417,
+        "force": 3.23,
+        "slew": 5.2400000000000055
+      },
+      "prefix_start": false,
+      "root_edits_after_initialization": 0,
+      "parameters": [
+        0.00046323505993563116,
+        0.0004068636978145896
+      ],
+      "full_path": true,
+      "base_choice": 0,
+      "base_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_sensor_logits": [
+        0.7357456342305637,
+        0.06335746341506347,
+        -0.32688840757969684,
+        -0.47221469204888544
+      ],
+      "success": true,
+      "maximum_combined_14_joint_correction_rad": 0.09825036184389457,
+      "maximum_tracking_memory": 0.1671862929148022,
+      "maximum_tracking_extra_rad": 1.3940379407513469e-05,
+      "antiwindup_rejected_channel_steps": 210,
+      "groups": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "actuator_names": [
+        "left_hip_yaw",
+        "left_hip_roll",
+        "left_hip_pitch",
+        "left_knee",
+        "left_ankle",
+        "neck_pitch",
+        "head_pitch",
+        "head_yaw",
+        "head_roll",
+        "right_hip_yaw",
+        "right_hip_roll",
+        "right_hip_pitch",
+        "right_knee",
+        "right_ankle"
+      ],
+      "no_case_metadata_or_root_truth_in_controller": true,
+      "root_edits_during_recovery": 0
+    },
+    {
+      "pose": "left_side",
+      "case_seed": 773006,
+      "initial_hash": "da592b0c597f5f88206028383513b62762d1f4f17fd4c729386e64dfabce3e0c",
+      "actual_fallen_start": true,
+      "valid": true,
+      "training_success": true,
+      "controls": 2279,
+      "strict_tail_s": 34.660000000000004,
+      "entry_time_s": 11.120000000000001,
+      "return_sum": 63.43238455454909,
+      "final": {
+        "up_z": 0.9999941865491966,
+        "height_m": 0.15995379701758222,
+        "feet": [
+          true,
+          true
+        ],
+        "torso_contact": false,
+        "penetration_m": 0.00014959660730270042,
+        "linear_speed_mps": 7.589920609638155e-08,
+        "angular_speed_rad_s": 2.0990991144651138e-07,
+        "stable": true,
+        "finite": true,
+        "floor_penetration_m": 0.00014959660730270042,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.03843392265405621,
+        "joint_home_error_mean_rad": 0.012031837078718384,
+        "motor_target_home_error_max_rad": 0.00011605200897091272,
+        "foot_normal_forces_n": [
+          10.5250617995496,
+          10.145988420085635
+        ],
+        "foot_load_fraction": 1.0,
+        "foot_up_alignment_to_home": [
+          0.998619910003682,
+          0.9980971120074814
+        ]
+      },
+      "peaks": {
+        "floor": 0.004509758439240015,
+        "self": 0.0019212227615309396,
+        "joint": 0.03411363588861438,
+        "force": 3.23,
+        "slew": 5.2400000000000055
+      },
+      "prefix_start": false,
+      "root_edits_after_initialization": 0,
+      "parameters": [
+        0.00046323505993563116,
+        0.0004068636978145896
+      ],
+      "full_path": true,
+      "base_choice": 0,
+      "base_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_sensor_logits": [
+        0.6006455268532903,
+        -0.06115812798450858,
+        -0.28365221193587437,
+        -0.2558351940628306
+      ],
+      "success": true,
+      "maximum_combined_14_joint_correction_rad": 0.17426774372210896,
+      "maximum_tracking_memory": 0.20545510583379525,
+      "maximum_tracking_extra_rad": 1.713132143597423e-05,
+      "antiwindup_rejected_channel_steps": 247,
+      "groups": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "actuator_names": [
+        "left_hip_yaw",
+        "left_hip_roll",
+        "left_hip_pitch",
+        "left_knee",
+        "left_ankle",
+        "neck_pitch",
+        "head_pitch",
+        "head_yaw",
+        "head_roll",
+        "right_hip_yaw",
+        "right_hip_roll",
+        "right_hip_pitch",
+        "right_knee",
+        "right_ankle"
+      ],
+      "no_case_metadata_or_root_truth_in_controller": true,
+      "root_edits_during_recovery": 0
+    },
+    {
+      "pose": "left_side",
+      "case_seed": 773007,
+      "initial_hash": "237a6b625c979e821be85b4da59eb4576683d4fb1770806a18d81ee7693c7fe1",
+      "actual_fallen_start": true,
+      "valid": true,
+      "training_success": false,
+      "controls": 2279,
+      "strict_tail_s": 0.0,
+      "entry_time_s": null,
+      "return_sum": -3.5135439885381743,
+      "final": {
+        "up_z": -0.00018336779654248847,
+        "height_m": 0.15434337406502122,
+        "feet": [
+          false,
+          false
+        ],
+        "torso_contact": true,
+        "penetration_m": 1.725842362023354e-05,
+        "linear_speed_mps": 2.4874403308419213e-05,
+        "angular_speed_rad_s": 0.0003388448718780187,
+        "stable": false,
+        "finite": true,
+        "floor_penetration_m": 1.725842362023354e-05,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.14896791211024163,
+        "joint_home_error_mean_rad": 0.051172173700016255,
+        "motor_target_home_error_max_rad": 0.14097758989757425,
+        "foot_normal_forces_n": [
+          0.0,
+          0.0
+        ],
+        "foot_load_fraction": 0.0,
+        "foot_up_alignment_to_home": [
+          0.30208121697138035,
+          0.30180379216325465
+        ]
+      },
+      "peaks": {
+        "floor": 0.006061037147723991,
+        "self": 0.002025985926681653,
+        "joint": 0.02290317690975141,
+        "force": 3.23,
+        "slew": 5.240000000000003
+      },
+      "prefix_start": false,
+      "root_edits_after_initialization": 0,
+      "parameters": [
+        0.00046323505993563116,
+        0.0004068636978145896
+      ],
+      "full_path": true,
+      "base_choice": 1,
+      "base_gains": [
+        0.04355182104342108,
+        -0.012688980031975383,
+        -0.03641056335300152,
+        -0.021834127468025842,
+        -0.009694385345111668,
+        -0.010803642962099055
+      ],
+      "initial_sensor_logits": [
+        0.46686430059865275,
+        0.475051780863005,
+        -0.5268554451173031,
+        -0.41506063846808455
+      ],
+      "success": false,
+      "maximum_combined_14_joint_correction_rad": 0.16494833606956827,
+      "maximum_tracking_memory": 0.4945836484052849,
+      "maximum_tracking_extra_rad": 3.622106328348796e-05,
+      "antiwindup_rejected_channel_steps": 272,
+      "groups": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "actuator_names": [
+        "left_hip_yaw",
+        "left_hip_roll",
+        "left_hip_pitch",
+        "left_knee",
+        "left_ankle",
+        "neck_pitch",
+        "head_pitch",
+        "head_yaw",
+        "head_roll",
+        "right_hip_yaw",
+        "right_hip_roll",
+        "right_hip_pitch",
+        "right_knee",
+        "right_ankle"
+      ],
+      "no_case_metadata_or_root_truth_in_controller": true,
+      "root_edits_during_recovery": 0
+    },
+    {
+      "pose": "left_side",
+      "case_seed": 773008,
+      "initial_hash": "9ddc5be19ba78d71589e6803b3e32d85527c386ab2587010abe1419195da1a67",
+      "actual_fallen_start": true,
+      "valid": true,
+      "training_success": true,
+      "controls": 2279,
+      "strict_tail_s": 34.74,
+      "entry_time_s": 11.040000000000001,
+      "return_sum": 63.52092091887239,
+      "final": {
+        "up_z": 0.9999948481052909,
+        "height_m": 0.15994323306051147,
+        "feet": [
+          true,
+          true
+        ],
+        "torso_contact": false,
+        "penetration_m": 0.00014952669793488922,
+        "linear_speed_mps": 7.945203500061967e-08,
+        "angular_speed_rad_s": 2.1202828801912792e-07,
+        "stable": true,
+        "finite": true,
+        "floor_penetration_m": 0.00014952669793488922,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.03852696133049682,
+        "joint_home_error_mean_rad": 0.012051917446393712,
+        "motor_target_home_error_max_rad": 3.9843064207012446e-05,
+        "foot_normal_forces_n": [
+          10.525243688763107,
+          10.145806507067325
+        ],
+        "foot_load_fraction": 1.0,
+        "foot_up_alignment_to_home": [
+          0.9986201651958385,
+          0.9980972634545597
+        ]
+      },
+      "peaks": {
+        "floor": 0.003974096297358291,
+        "self": 0.002113750683686397,
+        "joint": 0.031217399928771372,
+        "force": 3.23,
+        "slew": 5.2400000000000055
+      },
+      "prefix_start": false,
+      "root_edits_after_initialization": 0,
+      "parameters": [
+        0.00046323505993563116,
+        0.0004068636978145896
+      ],
+      "full_path": true,
+      "base_choice": 0,
+      "base_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_sensor_logits": [
+        0.639611279735168,
+        0.1901081940446746,
+        -0.3930465590632935,
+        -0.4366729155230387
+      ],
+      "success": true,
+      "maximum_combined_14_joint_correction_rad": 0.14806482015930345,
+      "maximum_tracking_memory": 0.18497333629920978,
+      "maximum_tracking_extra_rad": 1.542350417712342e-05,
+      "antiwindup_rejected_channel_steps": 245,
+      "groups": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "actuator_names": [
+        "left_hip_yaw",
+        "left_hip_roll",
+        "left_hip_pitch",
+        "left_knee",
+        "left_ankle",
+        "neck_pitch",
+        "head_pitch",
+        "head_yaw",
+        "head_roll",
+        "right_hip_yaw",
+        "right_hip_roll",
+        "right_hip_pitch",
+        "right_knee",
+        "right_ankle"
+      ],
+      "no_case_metadata_or_root_truth_in_controller": true,
+      "root_edits_during_recovery": 0
+    },
+    {
+      "pose": "left_side",
+      "case_seed": 773009,
+      "initial_hash": "6672ca39eb03869aeea42c5d86edb4bb7937b281a0ed9cbc2a3e9dc671131adb",
+      "actual_fallen_start": true,
+      "valid": false,
+      "training_success": false,
+      "controls": 45,
+      "strict_tail_s": 0.0,
+      "entry_time_s": null,
+      "return_sum": -5.0750521325348465,
+      "final": {
+        "up_z": -0.2789780301225397,
+        "height_m": 0.13701726484228494,
+        "feet": [
+          false,
+          false
+        ],
+        "torso_contact": true,
+        "penetration_m": 0.001724680841394705,
+        "linear_speed_mps": 0.22495238629429787,
+        "angular_speed_rad_s": 2.7496933807853488,
+        "stable": false,
+        "finite": true,
+        "floor_penetration_m": 0.001461737694076733,
+        "self_penetration_m": 0.001724680841394705,
+        "joint_home_error_max_rad": 0.9428000611950125,
+        "joint_home_error_mean_rad": 0.3090521425035818,
+        "motor_target_home_error_max_rad": 0.980120543248557,
+        "foot_normal_forces_n": [
+          0.0,
+          0.0
+        ],
+        "foot_load_fraction": 0.0,
+        "foot_up_alignment_to_home": [
+          0.05117444971295857,
+          -0.3752597064421218
+        ]
+      },
+      "peaks": {
+        "floor": 0.0037624121671126845,
+        "self": 0.0300233857317157,
+        "joint": 0.0007089266745419209,
+        "force": 3.23,
+        "slew": 5.24
+      },
+      "prefix_start": false,
+      "root_edits_after_initialization": 0,
+      "parameters": [
+        0.00046323505993563116,
+        0.0004068636978145896
+      ],
+      "full_path": true,
+      "base_choice": 0,
+      "base_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_sensor_logits": [
+        1.0558037967399914,
+        -0.5961475163343493,
+        -0.06806655566638398,
+        -0.3915897320697173
+      ],
+      "success": false,
+      "maximum_combined_14_joint_correction_rad": 0.03079291710005644,
+      "maximum_tracking_memory": 0.030779278203592098,
+      "maximum_tracking_extra_rad": 2.2541347701581117e-06,
+      "antiwindup_rejected_channel_steps": 20,
+      "groups": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "actuator_names": [
+        "left_hip_yaw",
+        "left_hip_roll",
+        "left_hip_pitch",
+        "left_knee",
+        "left_ankle",
+        "neck_pitch",
+        "head_pitch",
+        "head_yaw",
+        "head_roll",
+        "right_hip_yaw",
+        "right_hip_roll",
+        "right_hip_pitch",
+        "right_knee",
+        "right_ankle"
+      ],
+      "no_case_metadata_or_root_truth_in_controller": true,
+      "root_edits_during_recovery": 0
+    },
+    {
+      "pose": "left_side",
+      "case_seed": 773010,
+      "initial_hash": "d72d3da33d35431ee923cedef30b5cb1389d5e5577fc529ccbd1aace1181b0a9",
+      "actual_fallen_start": true,
+      "valid": true,
+      "training_success": true,
+      "controls": 2279,
+      "strict_tail_s": 34.660000000000004,
+      "entry_time_s": 11.120000000000001,
+      "return_sum": 63.45947721691859,
+      "final": {
+        "up_z": 0.9999943793513997,
+        "height_m": 0.15995081307196246,
+        "feet": [
+          true,
+          true
+        ],
+        "torso_contact": false,
+        "penetration_m": 0.00014957662242300312,
+        "linear_speed_mps": 6.727664913208704e-08,
+        "angular_speed_rad_s": 1.8705435271651915e-07,
+        "stable": true,
+        "finite": true,
+        "floor_penetration_m": 0.00014957662242300312,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.03846045015651045,
+        "joint_home_error_mean_rad": 0.012037493142724424,
+        "motor_target_home_error_max_rad": 9.432898991934557e-05,
+        "foot_normal_forces_n": [
+          10.525113366386957,
+          10.14593684230757
+        ],
+        "foot_load_fraction": 1.0,
+        "foot_up_alignment_to_home": [
+          0.9986199996272769,
+          0.9980971698507768
+        ]
+      },
+      "peaks": {
+        "floor": 0.003927356481341348,
+        "self": 0.002143922667303614,
+        "joint": 0.028044959954843685,
+        "force": 3.23,
+        "slew": 5.2400000000000055
+      },
+      "prefix_start": false,
+      "root_edits_after_initialization": 0,
+      "parameters": [
+        0.00046323505993563116,
+        0.0004068636978145896
+      ],
+      "full_path": true,
+      "base_choice": 0,
+      "base_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_sensor_logits": [
+        0.5998400397005149,
+        0.18891044685711172,
+        -0.1882012349994039,
+        -0.6005492539121896
+      ],
+      "success": true,
+      "maximum_combined_14_joint_correction_rad": 0.09929037182863343,
+      "maximum_tracking_memory": 0.2125196088876974,
+      "maximum_tracking_extra_rad": 1.7720376019659115e-05,
+      "antiwindup_rejected_channel_steps": 241,
+      "groups": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "actuator_names": [
+        "left_hip_yaw",
+        "left_hip_roll",
+        "left_hip_pitch",
+        "left_knee",
+        "left_ankle",
+        "neck_pitch",
+        "head_pitch",
+        "head_yaw",
+        "head_roll",
+        "right_hip_yaw",
+        "right_hip_roll",
+        "right_hip_pitch",
+        "right_knee",
+        "right_ankle"
+      ],
+      "no_case_metadata_or_root_truth_in_controller": true,
+      "root_edits_during_recovery": 0
+    },
+    {
+      "pose": "left_side",
+      "case_seed": 773011,
+      "initial_hash": "8170a89e335337b2078b25492c64386e68e2f65effc3a5cb9dff4b47f4efefed",
+      "actual_fallen_start": true,
+      "valid": true,
+      "training_success": false,
+      "controls": 2279,
+      "strict_tail_s": 0.0,
+      "entry_time_s": null,
+      "return_sum": -2.882389312574185,
+      "final": {
+        "up_z": -0.16090021916216463,
+        "height_m": 0.1446013177935302,
+        "feet": [
+          false,
+          false
+        ],
+        "torso_contact": true,
+        "penetration_m": 4.35213794738494e-05,
+        "linear_speed_mps": 6.905847275835454e-08,
+        "angular_speed_rad_s": 8.684796718220196e-07,
+        "stable": false,
+        "finite": true,
+        "floor_penetration_m": 4.35213794738494e-05,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.09541445048065844,
+        "joint_home_error_mean_rad": 0.029797741767842122,
+        "motor_target_home_error_max_rad": 0.08960302324437275,
+        "foot_normal_forces_n": [
+          0.0,
+          0.0
+        ],
+        "foot_load_fraction": 0.0,
+        "foot_up_alignment_to_home": [
+          0.007525273979331158,
+          -0.017236783114648782
+        ]
+      },
+      "peaks": {
+        "floor": 0.004287694726095494,
+        "self": 0.002119748170316674,
+        "joint": 0.02255284367298338,
+        "force": 3.23,
+        "slew": 5.2400000000000055
+      },
+      "prefix_start": false,
+      "root_edits_after_initialization": 0,
+      "parameters": [
+        0.00046323505993563116,
+        0.0004068636978145896
+      ],
+      "full_path": true,
+      "base_choice": 1,
+      "base_gains": [
+        0.04355182104342108,
+        -0.012688980031975383,
+        -0.03641056335300152,
+        -0.021834127468025842,
+        -0.009694385345111668,
+        -0.010803642962099055
+      ],
+      "initial_sensor_logits": [
+        0.2523428910930201,
+        0.8980804168751481,
+        -0.5974542932495959,
+        -0.5529690112836483
+      ],
+      "success": false,
+      "maximum_combined_14_joint_correction_rad": 0.13928596353940503,
+      "maximum_tracking_memory": 0.5130097959748149,
+      "maximum_tracking_extra_rad": 3.757051072337499e-05,
+      "antiwindup_rejected_channel_steps": 329,
+      "groups": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "actuator_names": [
+        "left_hip_yaw",
+        "left_hip_roll",
+        "left_hip_pitch",
+        "left_knee",
+        "left_ankle",
+        "neck_pitch",
+        "head_pitch",
+        "head_yaw",
+        "head_roll",
+        "right_hip_yaw",
+        "right_hip_roll",
+        "right_hip_pitch",
+        "right_knee",
+        "right_ankle"
+      ],
+      "no_case_metadata_or_root_truth_in_controller": true,
+      "root_edits_during_recovery": 0
+    },
+    {
+      "pose": "left_side",
+      "case_seed": 773012,
+      "initial_hash": "9dbc6e12a6a4513e1a5f0c023518a3f3a16b3901ef6e1f253ddc93a3b202e47c",
+      "actual_fallen_start": true,
+      "valid": true,
+      "training_success": true,
+      "controls": 2279,
+      "strict_tail_s": 34.7,
+      "entry_time_s": 11.08,
+      "return_sum": 63.49386259374127,
+      "final": {
+        "up_z": 0.9999955485947866,
+        "height_m": 0.15993132225149156,
+        "feet": [
+          true,
+          true
+        ],
+        "torso_contact": false,
+        "penetration_m": 0.00014944741505282678,
+        "linear_speed_mps": 7.405307534345778e-08,
+        "angular_speed_rad_s": 1.9431873123725905e-07,
+        "stable": true,
+        "finite": true,
+        "floor_penetration_m": 0.00014944741505282678,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.03863235890931671,
+        "joint_home_error_mean_rad": 0.01207451855324446,
+        "motor_target_home_error_max_rad": 4.647849424554984e-05,
+        "foot_normal_forces_n": [
+          10.525449238313763,
+          10.145601032652774
+        ],
+        "foot_load_fraction": 1.0,
+        "foot_up_alignment_to_home": [
+          0.9986204895023086,
+          0.9980974656006195
+        ]
+      },
+      "peaks": {
+        "floor": 0.004816214035704099,
+        "self": 0.0021506574437806384,
+        "joint": 0.022934561147143206,
+        "force": 3.23,
+        "slew": 5.2400000000000055
+      },
+      "prefix_start": false,
+      "root_edits_after_initialization": 0,
+      "parameters": [
+        0.00046323505993563116,
+        0.0004068636978145896
+      ],
+      "full_path": true,
+      "base_choice": 0,
+      "base_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_sensor_logits": [
+        0.9870207137486832,
+        -0.12910683146249147,
+        -0.4256860248794236,
+        -0.4322278619713076
+      ],
+      "success": true,
+      "maximum_combined_14_joint_correction_rad": 0.13955727882164282,
+      "maximum_tracking_memory": 0.13867597274269905,
+      "maximum_tracking_extra_rad": 1.1563123042211373e-05,
+      "antiwindup_rejected_channel_steps": 238,
+      "groups": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "actuator_names": [
+        "left_hip_yaw",
+        "left_hip_roll",
+        "left_hip_pitch",
+        "left_knee",
+        "left_ankle",
+        "neck_pitch",
+        "head_pitch",
+        "head_yaw",
+        "head_roll",
+        "right_hip_yaw",
+        "right_hip_roll",
+        "right_hip_pitch",
+        "right_knee",
+        "right_ankle"
+      ],
+      "no_case_metadata_or_root_truth_in_controller": true,
+      "root_edits_during_recovery": 0
+    },
+    {
+      "pose": "left_side",
+      "case_seed": 773013,
+      "initial_hash": "90abd00e7b057203f7856bd4d0ad0ea93a95973c69bc34aea49e5d4b614ded3d",
+      "actual_fallen_start": true,
+      "valid": true,
+      "training_success": false,
+      "controls": 2279,
+      "strict_tail_s": 0.0,
+      "entry_time_s": null,
+      "return_sum": -3.5243368698876925,
+      "final": {
+        "up_z": -0.0002206347957701693,
+        "height_m": 0.1543434799956386,
+        "feet": [
+          false,
+          false
+        ],
+        "torso_contact": true,
+        "penetration_m": 1.9374276950853697e-05,
+        "linear_speed_mps": 8.154716407668506e-05,
+        "angular_speed_rad_s": 0.001161864043367026,
+        "stable": false,
+        "finite": true,
+        "floor_penetration_m": 1.9374276950853697e-05,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.0876672820460247,
+        "joint_home_error_mean_rad": 0.03386893179291551,
+        "motor_target_home_error_max_rad": 0.08005611343185803,
+        "foot_normal_forces_n": [
+          0.0,
+          0.0
+        ],
+        "foot_load_fraction": 0.0,
+        "foot_up_alignment_to_home": [
+          0.1841272496130364,
+          0.18392285358061905
+        ]
+      },
+      "peaks": {
+        "floor": 0.004752734410958404,
+        "self": 0.0020519725637070016,
+        "joint": 0.02330804879795112,
+        "force": 3.23,
+        "slew": 5.2400000000000055
+      },
+      "prefix_start": false,
+      "root_edits_after_initialization": 0,
+      "parameters": [
+        0.00046323505993563116,
+        0.0004068636978145896
+      ],
+      "full_path": true,
+      "base_choice": 0,
+      "base_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_sensor_logits": [
+        0.8735104740360822,
+        0.042646624193519736,
+        -0.42021787462289295,
+        -0.4959392268337239
+      ],
+      "success": false,
+      "maximum_combined_14_joint_correction_rad": 0.13411289130549808,
+      "maximum_tracking_memory": 0.5053271762779676,
+      "maximum_tracking_extra_rad": 3.700787051694456e-05,
+      "antiwindup_rejected_channel_steps": 307,
+      "groups": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "actuator_names": [
+        "left_hip_yaw",
+        "left_hip_roll",
+        "left_hip_pitch",
+        "left_knee",
+        "left_ankle",
+        "neck_pitch",
+        "head_pitch",
+        "head_yaw",
+        "head_roll",
+        "right_hip_yaw",
+        "right_hip_roll",
+        "right_hip_pitch",
+        "right_knee",
+        "right_ankle"
+      ],
+      "no_case_metadata_or_root_truth_in_controller": true,
+      "root_edits_during_recovery": 0
+    },
+    {
+      "pose": "left_side",
+      "case_seed": 773014,
+      "initial_hash": "9797f73785eb756c77f406d5d1d4fd0f33073be97cf040236f3f1debebbe8f4b",
+      "actual_fallen_start": true,
+      "valid": true,
+      "training_success": false,
+      "controls": 2279,
+      "strict_tail_s": 0.0,
+      "entry_time_s": null,
+      "return_sum": -3.4092511414574935,
+      "final": {
+        "up_z": -0.000182815204548048,
+        "height_m": 0.15434338205469733,
+        "feet": [
+          false,
+          false
+        ],
+        "torso_contact": true,
+        "penetration_m": 1.7237915661098835e-05,
+        "linear_speed_mps": 2.146715654818095e-05,
+        "angular_speed_rad_s": 0.0002771102704701015,
+        "stable": false,
+        "finite": true,
+        "floor_penetration_m": 1.7237915661098835e-05,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.09928952950291636,
+        "joint_home_error_mean_rad": 0.03715455457932211,
+        "motor_target_home_error_max_rad": 0.0915946354052104,
+        "foot_normal_forces_n": [
+          0.0,
+          0.0
+        ],
+        "foot_load_fraction": 0.0,
+        "foot_up_alignment_to_home": [
+          0.20678603694554223,
+          0.20656773003010692
+        ]
+      },
+      "peaks": {
+        "floor": 0.0065383945150066704,
+        "self": 0.0021237493968742508,
+        "joint": 0.022820002952296692,
+        "force": 3.23,
+        "slew": 5.2400000000000055
+      },
+      "prefix_start": false,
+      "root_edits_after_initialization": 0,
+      "parameters": [
+        0.00046323505993563116,
+        0.0004068636978145896
+      ],
+      "full_path": true,
+      "base_choice": 0,
+      "base_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_sensor_logits": [
+        0.7520937995588336,
+        -0.28981958794607193,
+        -0.23926783271403704,
+        -0.22300638355179014
+      ],
+      "success": false,
+      "maximum_combined_14_joint_correction_rad": 0.13848551802015985,
+      "maximum_tracking_memory": 0.5122813809672143,
+      "maximum_tracking_extra_rad": 3.751716491345928e-05,
+      "antiwindup_rejected_channel_steps": 262,
+      "groups": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "actuator_names": [
+        "left_hip_yaw",
+        "left_hip_roll",
+        "left_hip_pitch",
+        "left_knee",
+        "left_ankle",
+        "neck_pitch",
+        "head_pitch",
+        "head_yaw",
+        "head_roll",
+        "right_hip_yaw",
+        "right_hip_roll",
+        "right_hip_pitch",
+        "right_knee",
+        "right_ankle"
+      ],
+      "no_case_metadata_or_root_truth_in_controller": true,
+      "root_edits_during_recovery": 0
+    },
+    {
+      "pose": "left_side",
+      "case_seed": 773015,
+      "initial_hash": "466edda3a1f261872c75bb162b0ebb6601c0cc1e081a5a267eee3bf34cd5c0ae",
+      "actual_fallen_start": true,
+      "valid": true,
+      "training_success": true,
+      "controls": 2279,
+      "strict_tail_s": 34.68,
+      "entry_time_s": 11.1,
+      "return_sum": 63.46581668635334,
+      "final": {
+        "up_z": 0.9999956145968427,
+        "height_m": 0.1599302087542095,
+        "feet": [
+          true,
+          true
+        ],
+        "torso_contact": false,
+        "penetration_m": 0.00014943953630105512,
+        "linear_speed_mps": 5.64352391298785e-08,
+        "angular_speed_rad_s": 1.5113950309827063e-07,
+        "stable": true,
+        "finite": true,
+        "floor_penetration_m": 0.00014943953630105512,
+        "self_penetration_m": 0.0,
+        "joint_home_error_max_rad": 0.03864270151560456,
+        "joint_home_error_mean_rad": 0.012076598552251403,
+        "motor_target_home_error_max_rad": 5.493946271117878e-05,
+        "foot_normal_forces_n": [
+          10.525468808186849,
+          10.145581445536639
+        ],
+        "foot_load_fraction": 1.0,
+        "foot_up_alignment_to_home": [
+          0.9986205547553657,
+          0.9980975145013492
+        ]
+      },
+      "peaks": {
+        "floor": 0.004287189520532817,
+        "self": 0.0019228696408178352,
+        "joint": 0.026070563385061085,
+        "force": 3.23,
+        "slew": 5.2400000000000055
+      },
+      "prefix_start": false,
+      "root_edits_after_initialization": 0,
+      "parameters": [
+        0.00046323505993563116,
+        0.0004068636978145896
+      ],
+      "full_path": true,
+      "base_choice": 0,
+      "base_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "initial_sensor_logits": [
+        0.27936637343888904,
+        -0.41347996990176034,
+        -0.0969720487771582,
+        0.23108563900388723
+      ],
+      "success": true,
+      "maximum_combined_14_joint_correction_rad": 0.09592170600617744,
+      "maximum_tracking_memory": 0.18539947161942594,
+      "maximum_tracking_extra_rad": 1.545903632457012e-05,
+      "antiwindup_rejected_channel_steps": 202,
+      "groups": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "actuator_names": [
+        "left_hip_yaw",
+        "left_hip_roll",
+        "left_hip_pitch",
+        "left_knee",
+        "left_ankle",
+        "neck_pitch",
+        "head_pitch",
+        "head_yaw",
+        "head_roll",
+        "right_hip_yaw",
+        "right_hip_roll",
+        "right_hip_pitch",
+        "right_knee",
+        "right_ankle"
+      ],
+      "no_case_metadata_or_root_truth_in_controller": true,
+      "root_edits_during_recovery": 0
+    }
+  ],
+  "successes": 7,
+  "nominal_success": true,
+  "physical_failures": 2,
+  "return_sum": 448.1126807759589
+}
