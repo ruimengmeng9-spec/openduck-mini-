@@ -1,0 +1,38 @@
+# R184 双脚接触投影与原限位决定只读审计
+
+2026年10月10日，R184独立只读冒烟与正式审计已完成并自然退出。62条既有R183b轨迹的初始锚点、腿边界交集、接触适用、三次数值迭代及最终joint/slew计划全部逐位重算一致。没有新动态回放、策略训练或验收重标。R183b仍17/24，对冻结R157基线18/24，标准保留、物理无效0；当前统一最好仍18/24，任务ACTIVE、硬件未连接或部署。
+
+## 范围与实际命令
+
+现有项目/data/shijinsheng/open_duck/projects/Open_Duck_Playground及.venv，OMP/OPENBLAS/MKL各1、CUDA_VISIBLE_DEVICES空、JAX_PLATFORMS=cpu。安全启动器diagnostics.launch_getup_contact_projection_audit_r184 --launch先9项回归，再独立子命令diagnostics.audit_getup_contact_projection_terminal_r184 --smoke；等待独立自然退出、重跑9项回归且无其他getup诊断才运行同审计模块无参数正式。初始测试.510秒、正式前重跑.513秒均通过，无新失败或修正版。实际launcher已输出natural_exit=true。
+
+输出为/data/shijinsheng/open_duck/outputs/getup_contact_projection_terminal_audit_r184_smoke_20261010及getup_contact_projection_terminal_audit_r184_20261010，各同名.log。独立审计6条既有轨迹：正式zero标准、projection标准、baseline769000、candidate救回773005与退化769006/773009；后面三条实际访问非零投影，补足原动态smoke未访问非零的核验范围，但不是新回放或资格。
+
+正式审计R183b旧独立6和正式56全部62条，每条2279控制帧，共141298条控制记录；这些不是62独立倒地起点或本轮新尝试。独立6行、25终态配对及全部6对应重算信号数组与正式逐位一致。正式保存25candidate及3其他冒烟代表，共28信号数组；独立保存6份。目录约13MB与3MB，在预定.25GB审计存储预算内，保留至少10GB空间。
+
+## 独立决定重算
+
+仅解码白名单native55、prepare传感器、旧双精度pre-slew目标和比较字段。当前历史目标在每步与递推的真实前步slew后target-home的float32编码逐位一致；控制0前target使用原40home准备步的home，不重建物理初态或额外积分。冻结初始native50选择器的gains/choice/logits、原右髋实际反馈全部逐位重算。
+
+私有canonical-root/head-home运动学MjData只调用mj_kinematics，用积分前计划关节，不读实际root或实际qpos/qvel。实现独立的相对位姿、SO3误差、中央差分6×10 Jacobian、pinv与固定三迭代/五回溯。参考targets读取原冻结路径；从旧double原pre-slew目标及递推前target独立计算原joint/slew后base，再求原reference±.18/joint/slew腿交集、可行性与native双接触适用。保存的active、J、trace、error、extra只用作比较，不决定是否投影、迭代或下一目标。
+
+控制0锚点、head原值、home锚点清零与新增零、标准全程新增精确零均匹配。所有62轨迹的residual/J/四行trace/active/anchor/extra、同状态base、adjusted double目标和最后joint/slew计划全部逐位；最后计划与applied逐位，逐轨迹原14路总参考修正峰值也精确。模型指定数组与所有被跟踪源码、冻结文件、输入轨迹/结果压缩字节SHA256前后不变。
+
+9项回归包括独立limits与原planner、anchor/residual/J、迭代全输出、529条名义计划零、canonical root/head独立、禁用动态函数、62条预算和非零冒烟覆盖、标量白名单、腿边界/head不变。允许的运动学与四元数接口见[MuJoCo官方API](https://mujoco.readthedocs.io/en/3.3.3/APIreference/APIfunctions.html)，不据此推断接触安全或控制性能。
+
+## 保存标签与实质限制
+
+25candidate/baseline初始hash配对，baseline每个原保存字段及原peaks逐位复现R157。单独完整字段比较才解码记录的qpos/qvel作为equality证据，不进入标量或决定重算。candidate与baseline不同字段如实记录，不强制二者相同。成败/有效/原500Hz峰值全部沿用原结果，无环境构造、forward、动力学积分、接触查询、力推断或重标。
+
+原IMU修正前的双精度request没有单独保存，R184以旧保存的original_double_pre_slew_target_rad作为明确输入边界。原右髋反馈从actual float32重算精确，不等于独立还原原double IMU修正或整个原策略目标。保存计划在同一访问状态上的独立重算也不是下一状态预测、动态反事实、即时传递增益或唯一失败根因。
+
+原R183异常前部分帧未落盘不可恢复；两版旧main启动时遗漏executed_sources缺口不回填。R184固定使用已上传并后读一致的R183b源码b63812459d125ba830d0c6a2a85ab83267cc0731eb0877d6ed7de5cd58a81348，但不称旧main已拥有启动副本。新R184在启动执行源目录显式保存自己及全部导入diagnostics源码。审计源SHA256 f9ddeb8a3454e124622aa9570efb15ae71718f1a73515a17dde65a6be7555da6，两端当前源码与新执行副本一致。
+
+审计未发现投影决定或原限位重算不一致，不证明双脚计划约束能恢复或足以覆盖失败。R183b救回773005、退化769006/773009维持原标签。原五失败769002/769004/773001/773004/773015没有双接触适用和新动作，不能把该规则当全过程纠错；这是一致性和适用范围证据，不是要求搜索接触阈值或等待窗口。
+
+## 追加保存和下一轮
+
+新唯一archive_getup_contact_projection_audit_r184.py仅追加两份新terminal_snapshot、全部62核验/25配对/28正式和6独立信号/源hash/9回归与原日志/新源码，不再归档旧R183或覆盖旧docs/source/failure。初始独立main和干净发布库均b766111b0da01164a8973999c11d755619acbaf9；新commit、成功上传和独立远端核对以实际后续收据为准，不能本地提交即称发布。/data约19GB，保护live_server2664890，不清理未确认数据。
+
+下一轮先检查实际R185或更高任务、最新main/clean和资源，无任务才提出真正不同有限方法。不要重复R184、补同smoke或扩原contact projection迭代、阈值、幅值、轴、window；也不追加旧PG、固定递归readout、脚位置/姿态幅值、gains/直接残差/mix/velocity/memory、IMU门控/静态精确插值/旧BC/几何验收窗口。新假设须区别旧结构，声明因果输入/数据用途/预算，先回归与独立完整smoke自然退出，再正式有限训练。当前18/24不能跳扩大316或未见320；320仍未读执行，所有原验收保持，全部仿真门槛通过后才结束续跑，不自动部署硬件。
+
