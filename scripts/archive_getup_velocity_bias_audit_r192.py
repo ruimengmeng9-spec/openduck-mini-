@@ -1,0 +1,73 @@
+"""Unique closed independent bias audit evidence; no old dynamic duplication."""
+import argparse
+import os
+from pathlib import Path
+import shutil
+import subprocess
+import numpy as np
+from diagnostics import audit_getup_velocity_bias_terminal_r192 as audit
+
+def inventory(root):return {str(p.relative_to(root)):audit.digest(p) for p in root.rglob('*') if p.is_file()}
+
+def main():
+    parser=argparse.ArgumentParser();parser.add_argument('--base',required=True);args=parser.parse_args()
+    repo=audit.ROOT/'github/openduck-mini-'
+    assert subprocess.check_output(['git','rev-parse','HEAD'],cwd=repo,text=True).strip()==args.base
+    assert not subprocess.check_output(['git','status','--porcelain'],cwd=repo,text=True).strip()
+    processes=subprocess.check_output(['ps','-u',str(os.getuid()),'-o','args='],text=True).splitlines()
+    assert not any(' -m diagnostics.' in p and any(s in p for s in ('train_getup_','probe_getup_','audit_getup_','launch_getup_')) for p in processes)
+    assert not any('git' in p and 'push' in p and 'server-publish' in p for p in processes)
+    launchroot=audit.ROOT/'outputs/getup_velocity_bias_audit_launcher_r192_20261010'
+    launcher=audit.read(launchroot/'result.json')
+    assert launcher['natural_exit'] and launcher['exit_code']==0 and launcher['new_dynamic_trajectories']==0
+    formal=audit.read(audit.OUTPUT/'results.json');smoke=audit.read(audit.SMOKE/'results.json')
+    for result,n in ((formal,62),(smoke,6)):
+        assert result['terminal_result_saved'] and result['all_scalar_and_limits_bitwise'] and result['source_evidence_unchanged']
+        assert result['existing_trajectories_audited']==n and len(result['rows'])==n and len(result['terminal_pairs'])==25
+        assert result['new_dynamic_trajectories']==0 and not result['original_IMU_double_request_reconstructed']
+        assert not result['full_task_completed'] and not result['hardware_readiness'] and not result['qualification']
+    assert formal['terminal_pairs']==smoke['terminal_pairs']
+    for prior in smoke['rows']:
+        assert prior==next(r for r in formal['rows'] if r['identity']==prior['identity'])
+        ident=prior['identity']
+        with np.load(audit.OUTPUT/'signals'/ident/'signals.npz',allow_pickle=False) as a,np.load(audit.SMOKE/'signals'/ident/'signals.npz',allow_pickle=False) as b:
+            assert a.files==b.files
+            for key in a.files:np.testing.assert_array_equal(a[key],b[key])
+    for source,n in ((audit.SMOKE,6),(audit.OUTPUT,62)):
+        tracked=audit.read(source/'source_hashes.json')
+        assert tracked['unchanged'] and tracked['before']==tracked['after'] and tracked['compiled_model_unchanged']
+        for p,sha in tracked['before'].items():assert audit.digest(p)==sha
+        manifest=audit.read(source/'executed_sources_manifest.json')
+        assert str(Path(audit.__file__).resolve()) in manifest
+        for p,info in manifest.items():assert audit.digest(p)==info['sha256']==audit.digest(source/'executed_sources'/info['copy'])
+        target=repo/'results'/source.name/'terminal_snapshot';assert not target.exists()
+        before=inventory(source);shutil.copytree(source,target);assert before==inventory(source)==inventory(target)
+        shutil.copy2(source.with_suffix('.log'),target/'process.log')
+        audit.write(target/'snapshot_metadata.json',dict(terminal_result_saved=True,read_only=True,existing_trajectories_audited=n,
+         new_dynamic_trajectories=0,original_double_IMU_request_reconstructed=False,historical_gaps_recovered=False,
+         full_task_completed=False,hardware_readiness=False,qualification_executed=False))
+        audit.write(target/'artifact_manifest.json',inventory(target))
+        subprocess.run(['git','add','-f',str(target.relative_to(repo))],cwd=repo,check=True)
+    target=repo/'results'/launchroot.name/'terminal_snapshot';assert not target.exists()
+    before=inventory(launchroot);shutil.copytree(launchroot,target);assert before==inventory(launchroot)==inventory(target)
+    for manifest in (launchroot/'executed_sources_manifest.json',launchroot/'initial/test_source_manifest.json',launchroot/'formal/test_source_manifest.json'):
+        folder=manifest.parent/'executed_sources';sources=audit.read(manifest)
+        for p,info in sources.items():assert audit.digest(p)==info['sha256']==audit.digest(folder/info['copy'])
+    shutil.copy2(audit.ROOT/'tmp/getup_velocity_bias_audit_r192_launcher_20261010.log',target/'process.log')
+    audit.write(target/'artifact_manifest.json',inventory(target))
+    subprocess.run(['git','add','-f',str(target.relative_to(repo))],cwd=repo,check=True)
+    live=sum(p.stat().st_size for root in (launchroot,audit.SMOKE,audit.OUTPUT) for p in root.rglob('*') if p.is_file())
+    assert live*2<.25*1024**3 and shutil.disk_usage(audit.ROOT).free>10*1024**3
+    names=('audit_getup_velocity_bias_terminal_r192.py','test_getup_velocity_bias_audit_r192.py','launch_getup_velocity_bias_audit_r192.py',Path(__file__).name)
+    for name in names:
+        dest=repo/'scripts'/name;assert not dest.exists();shutil.copy2(Path(__file__).with_name(name),dest);subprocess.run(['git','add',str(dest.relative_to(repo))],cwd=repo,check=True)
+    doc='GETUP_VELOCITY_BIAS_AUDIT_R192_20261010.md';assert not (repo/doc).exists();shutil.copy2(audit.ROOT/'tmp'/doc,repo/doc)
+    subprocess.run(['git','add',doc],cwd=repo,check=True)
+    wrapper='publish_getup_velocity_bias_audit_r192_20261010.py';assert not (repo/'scripts'/wrapper).exists()
+    shutil.copy2(audit.ROOT/'tmp'/wrapper,repo/'scripts'/wrapper)
+    subprocess.run(['git','add','scripts/'+wrapper],cwd=repo,check=True)
+    subprocess.run(['git','-c','gc.auto=0','commit','--quiet','-m','Preserve R192 independent closed velocity bias and original target audit'],cwd=repo,check=True)
+    assert not subprocess.check_output(['git','status','--porcelain'],cwd=repo,text=True).strip()
+    print(subprocess.check_output(['git','rev-parse','HEAD'],cwd=repo,text=True).strip(),flush=True)
+
+if __name__=='__main__':main()
