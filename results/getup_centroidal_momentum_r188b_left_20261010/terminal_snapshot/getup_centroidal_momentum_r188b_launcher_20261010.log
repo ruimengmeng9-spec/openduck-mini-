@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/launch_getup_centroidal_momentum_r188b.py", line 48, in <module>
+    else:assert not sys.argv[1:];main()
+                                 ^^^^^^
+  File "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/launch_getup_centroidal_momentum_r188b.py", line 35, in main
+    assert report['terminal_result_saved'] and report['smoke'] and report['parity']['nominal_success'] and not report['parity']['physical_failures'] and report['momentum']['nominal_success'] and not report['phase']['physical_failures']
+                                                                                                                                                                                                       ~~~~~~^^^^^^^^^
+KeyError: 'phase'

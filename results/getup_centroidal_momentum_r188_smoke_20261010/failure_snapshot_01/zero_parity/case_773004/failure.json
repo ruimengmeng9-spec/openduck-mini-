@@ -1,0 +1,8 @@
+{
+  "execution_error": true,
+  "controls_completed": 0,
+  "prepare_frames_saved": 80,
+  "terminal_result_saved": false,
+  "traceback": "Traceback (most recent call last):\n  File \"/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/probe_getup_centroidal_momentum_r188.py\", line 118, in evaluate\n    env.reset(case);sim=env.sim;fingerprint=prior.physics_hash(sim);full_fingerprint=model_digest(sim.model)\n    ^^^^^^^^^^^^^^^\n  File \"/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/probe_getup_sensor_history_r121.py\", line 49, in reset\n    result, frames, times = record_preparation(self.sim,\n                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/probe_getup_centroidal_momentum_r188.py\", line 114, in recorder\n    def recorder(s,p,observe=prepare_module.native_observation):return record_preparation_partial(s,p,observe,captured)\n                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/probe_getup_centroidal_momentum_r188.py\", line 86, in record_preparation_partial\n    if len(frames)!=40:raise ValueError('Original 40 home controls required')\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: Original 40 home controls required\n",
+  "source_sha256": "f1fc48e61c757fe1ad4228d12d217432eb4f1b6eb290bfa7dba625541272ca63"
+}
