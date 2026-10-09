@@ -1,0 +1,55 @@
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/data/shijinsheng/open_duck/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/concurrent/futures/process.py", line 261, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/shijinsheng/open_duck/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/concurrent/futures/process.py", line 210, in _process_chunk
+    return [fn(*args) for args in chunk]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/shijinsheng/open_duck/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/concurrent/futures/process.py", line 210, in <listcomp>
+    return [fn(*args) for args in chunk]
+            ^^^^^^^^^
+  File "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/probe_getup_contact_projection_r183.py", line 148, in evaluate
+    step=env.step(action,auto_reset=False)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/getup_reference_env_r100.py", line 79, in step
+    sim.step_target(target);self.controls+=1
+    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/probe_getup_contact_projection_r183.py", line 131, in controlled
+    projected,error,jac,trace,active=project(base,NOMINAL_PLANNED[k],observed[48:50],anchor,lo,hi,geometry,enabled)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/probe_getup_contact_projection_r183.py", line 76, in project
+    if not all(np.isfinite(v).all() for v in (q,n,c,a,lo,hi)) or np.any(lo>hi):raise ValueError('Nonfinite or invalid projection bounds')
+                                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Nonfinite or invalid projection bounds
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/probe_getup_contact_projection_r183.py", line 210, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/probe_getup_contact_projection_r183.py", line 194, in main
+    parity=group(pool,False,[None,769000,773004],output/'zero_parity',True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/probe_getup_contact_projection_r183.py", line 168, in group
+    report=local.aggregate(list(pool.map(evaluate,[(enabled,case,str(path/f'case_{case}'),parity) for case in cases])))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/shijinsheng/open_duck/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/concurrent/futures/process.py", line 620, in _chain_from_iterable_of_lists
+    for element in iterable:
+  File "/data/shijinsheng/open_duck/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/shijinsheng/open_duck/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/data/shijinsheng/open_duck/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/data/shijinsheng/open_duck/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+ValueError: Nonfinite or invalid projection bounds

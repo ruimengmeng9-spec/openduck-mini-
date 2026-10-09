@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/launch_getup_contact_projection_r183.py", line 55, in <module>
+    else:assert not sys.argv[1:];main()
+                                 ^^^^^^
+  File "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/launch_getup_contact_projection_r183.py", line 38, in main
+    subprocess.run([sys.executable,'-u','-m','diagnostics.probe_getup_contact_projection_r183','--smoke'],env=ENV,stdout=stream,stderr=subprocess.STDOUT,check=True)
+  File "/data/shijinsheng/open_duck/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/data/shijinsheng/open_duck/projects/Open_Duck_Playground/.venv/bin/python', '-u', '-m', 'diagnostics.probe_getup_contact_projection_r183', '--smoke']' returned non-zero exit status 1.
