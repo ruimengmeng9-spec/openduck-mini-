@@ -1,0 +1,320 @@
+{
+  "smoke": false,
+  "read_only": true,
+  "terminal_result_saved": true,
+  "pairs": 75,
+  "pair_summary": {
+    "all": {
+      "pairs": 72,
+      "nonzero_applied_pairs": 72,
+      "metrics": {
+        "gyro_rad_s": {
+          "new_model": 0.001060786814395492,
+          "old_R172b_model": 0.0007359948634191056,
+          "action_blind_model": 4.518809421028144e-05
+        },
+        "upvector": {
+          "new_model": 2.960676619809694e-05,
+          "old_R172b_model": 2.2376947743383326e-05,
+          "action_blind_model": 2.3572628863081091e-07
+        },
+        "joint_position_rad": {
+          "new_model": 1.0939232558644181e-05,
+          "old_R172b_model": 1.0955198420882095e-05,
+          "action_blind_model": 2.371765227842349e-06
+        },
+        "joint_velocity_rad_s": {
+          "new_model": 0.000852867692090542,
+          "old_R172b_model": 0.0007988813353102547,
+          "action_blind_model": 0.00020874733350684043
+        }
+      }
+    },
+    "both_held": {
+      "pairs": 4,
+      "nonzero_applied_pairs": 4,
+      "metrics": {
+        "gyro_rad_s": {
+          "new_model": 0.0006380677573285334,
+          "old_R172b_model": 0.00047551845219454724,
+          "action_blind_model": 2.9069322340559e-05
+        },
+        "upvector": {
+          "new_model": 1.394925206967292e-05,
+          "old_R172b_model": 1.1033641992207252e-05,
+          "action_blind_model": 1.6976981798848625e-07
+        },
+        "joint_position_rad": {
+          "new_model": 3.966899457556349e-06,
+          "old_R172b_model": 3.981362739328661e-06,
+          "action_blind_model": 1.933003233878373e-06
+        },
+        "joint_velocity_rad_s": {
+          "new_model": 0.0003996803423506421,
+          "old_R172b_model": 0.0003098045138188211,
+          "action_blind_model": 0.00016613344197950213
+        }
+      }
+    }
+  },
+  "held_one_step_summary": {
+    "case_held": {
+      "trajectories": 20,
+      "metrics": {
+        "early_control_0_49": {
+          "gyro_rad_s": {
+            "action_model_rmse": 0.16465325010101103,
+            "action_blind_model_rmse": 0.16316452257061703,
+            "nominal_deviation_persistence_rmse": 0.19302627813331913,
+            "max_abs_error_across_held_trajectories": 0.8137510857466972
+          },
+          "upvector": {
+            "action_model_rmse": 0.0016583874833652375,
+            "action_blind_model_rmse": 0.001665784247262121,
+            "nominal_deviation_persistence_rmse": 0.0026761442196542797,
+            "max_abs_error_across_held_trajectories": 0.01577375774526413
+          },
+          "joint_position_rad": {
+            "action_model_rmse": 0.0014046743549904906,
+            "action_blind_model_rmse": 0.0014284607070398612,
+            "nominal_deviation_persistence_rmse": 0.0024327105747087947,
+            "max_abs_error_across_held_trajectories": 0.020117222872296166
+          },
+          "joint_velocity_rad_s": {
+            "action_model_rmse": 0.10774985567184203,
+            "action_blind_model_rmse": 0.10909935232089837,
+            "nominal_deviation_persistence_rmse": 0.14081480319306347,
+            "max_abs_error_across_held_trajectories": 1.4162095675614412
+          }
+        },
+        "recovery_control_50_528": {
+          "gyro_rad_s": {
+            "action_model_rmse": 0.2099047683620709,
+            "action_blind_model_rmse": 0.2104158883675952,
+            "nominal_deviation_persistence_rmse": 0.24751389310119953,
+            "max_abs_error_across_held_trajectories": 3.654125014893784
+          },
+          "upvector": {
+            "action_model_rmse": 0.0035200955161425,
+            "action_blind_model_rmse": 0.003492813279070142,
+            "nominal_deviation_persistence_rmse": 0.006968166647373718,
+            "max_abs_error_across_held_trajectories": 0.06557597067534152
+          },
+          "joint_position_rad": {
+            "action_model_rmse": 0.0017631656094101854,
+            "action_blind_model_rmse": 0.0017813710109263337,
+            "nominal_deviation_persistence_rmse": 0.004533101698315582,
+            "max_abs_error_across_held_trajectories": 0.049495422757334526
+          },
+          "joint_velocity_rad_s": {
+            "action_model_rmse": 0.12709411731159076,
+            "action_blind_model_rmse": 0.12889504268632382,
+            "nominal_deviation_persistence_rmse": 0.17189077358078853,
+            "max_abs_error_across_held_trajectories": 3.1285295772966624
+          }
+        },
+        "home_control_529_2277": {
+          "gyro_rad_s": {
+            "action_model_rmse": 0.014810881000564874,
+            "action_blind_model_rmse": 0.015434421896667824,
+            "nominal_deviation_persistence_rmse": 0.018714032292483824,
+            "max_abs_error_across_held_trajectories": 1.1534450500508169
+          },
+          "upvector": {
+            "action_model_rmse": 0.0005556525742660283,
+            "action_blind_model_rmse": 0.0005600645256782073,
+            "nominal_deviation_persistence_rmse": 0.0012335526767906133,
+            "max_abs_error_across_held_trajectories": 0.052978340467222385
+          },
+          "joint_position_rad": {
+            "action_model_rmse": 0.00014909802017834924,
+            "action_blind_model_rmse": 0.00015218906829083772,
+            "nominal_deviation_persistence_rmse": 0.0004931721060321093,
+            "max_abs_error_across_held_trajectories": 0.03615528982232024
+          },
+          "joint_velocity_rad_s": {
+            "action_model_rmse": 0.00984178622676245,
+            "action_blind_model_rmse": 0.010100892202327157,
+            "nominal_deviation_persistence_rmse": 0.013582948424467164,
+            "max_abs_error_across_held_trajectories": 1.2204397627731014
+          }
+        }
+      }
+    },
+    "axis_held": {
+      "trajectories": 34,
+      "metrics": {
+        "early_control_0_49": {
+          "gyro_rad_s": {
+            "action_model_rmse": 0.15655575265828595,
+            "action_blind_model_rmse": 0.15759645625886434,
+            "nominal_deviation_persistence_rmse": 0.19029087694735183,
+            "max_abs_error_across_held_trajectories": 1.7003571820860617
+          },
+          "upvector": {
+            "action_model_rmse": 0.0015141074768648,
+            "action_blind_model_rmse": 0.0015560409783460006,
+            "nominal_deviation_persistence_rmse": 0.0024127255919086966,
+            "max_abs_error_across_held_trajectories": 0.01824992660698061
+          },
+          "joint_position_rad": {
+            "action_model_rmse": 0.0013139323160941707,
+            "action_blind_model_rmse": 0.0013333044091863992,
+            "nominal_deviation_persistence_rmse": 0.0022954478299374794,
+            "max_abs_error_across_held_trajectories": 0.01921415035577902
+          },
+          "joint_velocity_rad_s": {
+            "action_model_rmse": 0.10274842440906447,
+            "action_blind_model_rmse": 0.10386991513504046,
+            "nominal_deviation_persistence_rmse": 0.13706003808010278,
+            "max_abs_error_across_held_trajectories": 2.054509064439501
+          }
+        },
+        "recovery_control_50_528": {
+          "gyro_rad_s": {
+            "action_model_rmse": 0.20855995720416706,
+            "action_blind_model_rmse": 0.2095503646609455,
+            "nominal_deviation_persistence_rmse": 0.24867364184122961,
+            "max_abs_error_across_held_trajectories": 4.34398594951606
+          },
+          "upvector": {
+            "action_model_rmse": 0.00339363435865785,
+            "action_blind_model_rmse": 0.0034675528235081454,
+            "nominal_deviation_persistence_rmse": 0.007956046864733918,
+            "max_abs_error_across_held_trajectories": 0.06418576752013185
+          },
+          "joint_position_rad": {
+            "action_model_rmse": 0.0017794670070031156,
+            "action_blind_model_rmse": 0.0018041950191476168,
+            "nominal_deviation_persistence_rmse": 0.004816783774641886,
+            "max_abs_error_across_held_trajectories": 0.061475786625939985
+          },
+          "joint_velocity_rad_s": {
+            "action_model_rmse": 0.12790128676685078,
+            "action_blind_model_rmse": 0.13020344842785453,
+            "nominal_deviation_persistence_rmse": 0.1770622662623769,
+            "max_abs_error_across_held_trajectories": 3.5410840519935345
+          }
+        },
+        "home_control_529_2277": {
+          "gyro_rad_s": {
+            "action_model_rmse": 0.02214024187013674,
+            "action_blind_model_rmse": 0.023056661278853748,
+            "nominal_deviation_persistence_rmse": 0.029801716585845642,
+            "max_abs_error_across_held_trajectories": 3.0050209713444036
+          },
+          "upvector": {
+            "action_model_rmse": 0.0008331765727169557,
+            "action_blind_model_rmse": 0.0008387327899173667,
+            "nominal_deviation_persistence_rmse": 0.001899627839222189,
+            "max_abs_error_across_held_trajectories": 0.09876144898078598
+          },
+          "joint_position_rad": {
+            "action_model_rmse": 0.00020281436290785275,
+            "action_blind_model_rmse": 0.00020421829411134055,
+            "nominal_deviation_persistence_rmse": 0.0007218886586082435,
+            "max_abs_error_across_held_trajectories": 0.03660787391076875
+          },
+          "joint_velocity_rad_s": {
+            "action_model_rmse": 0.012883220537514282,
+            "action_blind_model_rmse": 0.013163701790250348,
+            "nominal_deviation_persistence_rmse": 0.018541907760190286,
+            "max_abs_error_across_held_trajectories": 1.7704666087362895
+          }
+        }
+      }
+    },
+    "both_held": {
+      "trajectories": 8,
+      "metrics": {
+        "early_control_0_49": {
+          "gyro_rad_s": {
+            "action_model_rmse": 0.16425111078530033,
+            "action_blind_model_rmse": 0.1630696354972776,
+            "nominal_deviation_persistence_rmse": 0.19200029236878102,
+            "max_abs_error_across_held_trajectories": 0.9683229202789841
+          },
+          "upvector": {
+            "action_model_rmse": 0.0016017099500140926,
+            "action_blind_model_rmse": 0.0015914808107678517,
+            "nominal_deviation_persistence_rmse": 0.0027001824031967717,
+            "max_abs_error_across_held_trajectories": 0.016660658613515296
+          },
+          "joint_position_rad": {
+            "action_model_rmse": 0.001361132814373073,
+            "action_blind_model_rmse": 0.001389654283151709,
+            "nominal_deviation_persistence_rmse": 0.0023717732402758745,
+            "max_abs_error_across_held_trajectories": 0.01861451419000695
+          },
+          "joint_velocity_rad_s": {
+            "action_model_rmse": 0.09973608463967756,
+            "action_blind_model_rmse": 0.10109475288382491,
+            "nominal_deviation_persistence_rmse": 0.1303454200255299,
+            "max_abs_error_across_held_trajectories": 1.2123071472560378
+          }
+        },
+        "recovery_control_50_528": {
+          "gyro_rad_s": {
+            "action_model_rmse": 0.19820093403767208,
+            "action_blind_model_rmse": 0.1984146672788682,
+            "nominal_deviation_persistence_rmse": 0.23579418878453576,
+            "max_abs_error_across_held_trajectories": 2.057326843768795
+          },
+          "upvector": {
+            "action_model_rmse": 0.0031792445346524615,
+            "action_blind_model_rmse": 0.0031542991652950573,
+            "nominal_deviation_persistence_rmse": 0.0069428072408464075,
+            "max_abs_error_across_held_trajectories": 0.04266888052021134
+          },
+          "joint_position_rad": {
+            "action_model_rmse": 0.001618113128579382,
+            "action_blind_model_rmse": 0.0016380302397143137,
+            "nominal_deviation_persistence_rmse": 0.004145059361816112,
+            "max_abs_error_across_held_trajectories": 0.03537027070604336
+          },
+          "joint_velocity_rad_s": {
+            "action_model_rmse": 0.12111953283621996,
+            "action_blind_model_rmse": 0.1227775062462329,
+            "nominal_deviation_persistence_rmse": 0.1673487320484549,
+            "max_abs_error_across_held_trajectories": 2.620853367456093
+          }
+        },
+        "home_control_529_2277": {
+          "gyro_rad_s": {
+            "action_model_rmse": 0.021372269848882845,
+            "action_blind_model_rmse": 0.022194676475696434,
+            "nominal_deviation_persistence_rmse": 0.026950267988404178,
+            "max_abs_error_across_held_trajectories": 1.6312945896996496
+          },
+          "upvector": {
+            "action_model_rmse": 0.0005878005554984089,
+            "action_blind_model_rmse": 0.0005995999294166015,
+            "nominal_deviation_persistence_rmse": 0.0015547643360119077,
+            "max_abs_error_across_held_trajectories": 0.03499129444453991
+          },
+          "joint_position_rad": {
+            "action_model_rmse": 0.00020889123570647127,
+            "action_blind_model_rmse": 0.00021049948562842946,
+            "nominal_deviation_persistence_rmse": 0.0007020317846026631,
+            "max_abs_error_across_held_trajectories": 0.03473552559744941
+          },
+          "joint_velocity_rad_s": {
+            "action_model_rmse": 0.013440099058682743,
+            "action_blind_model_rmse": 0.013601118820900433,
+            "nominal_deviation_persistence_rmse": 0.01920664360393825,
+            "max_abs_error_across_held_trajectories": 1.5342023376640679
+          }
+        }
+      }
+    }
+  },
+  "source_hashes_unchanged": true,
+  "new_dynamic_trajectories": 0,
+  "scalar_fields_whitelist_no_root_reads": true,
+  "smoke_rows_exact": true,
+  "new_controller": false,
+  "current_best_unified_successes": 18,
+  "full_task_completed": false,
+  "hardware_readiness": false,
+  "qualification_run": false
+}
