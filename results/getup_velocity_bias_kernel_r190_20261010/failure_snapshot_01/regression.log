@@ -1,0 +1,32 @@
+test_actual_affine_servo_positive_torque_increment (__main__.BiasTests.test_actual_affine_servo_positive_torque_increment) ... ok
+test_all_529_actual_nominal_scalar_zero (__main__.BiasTests.test_all_529_actual_nominal_scalar_zero) ... ok
+test_causal_initial_control_zero (__main__.BiasTests.test_causal_initial_control_zero) ... ok
+test_causal_signature (__main__.BiasTests.test_causal_signature) ... ok
+test_full_compiled_model_immutable (__main__.BiasTests.test_full_compiled_model_immutable) ... ok
+test_global_rotation_and_translation_invariance (__main__.BiasTests.test_global_rotation_and_translation_invariance) ... ok
+test_gyro_actual_weld_not_same_body (__main__.BiasTests.test_gyro_actual_weld_not_same_body) ... ok
+test_gyro_site_coordinates (__main__.BiasTests.test_gyro_site_coordinates) ... ok
+test_head_inertia_without_new_head_commands (__main__.BiasTests.test_head_inertia_without_new_head_commands) ... FAIL
+test_home_and_disabled_zero (__main__.BiasTests.test_home_and_disabled_zero) ... ok
+test_independent_spatial_body_recursion (__main__.BiasTests.test_independent_spatial_body_recursion) ... ok
+test_invalid_inputs (__main__.BiasTests.test_invalid_inputs) ... ok
+test_native_units (__main__.BiasTests.test_native_units) ... ok
+test_original_merge_zero_object_and_limits (__main__.BiasTests.test_original_merge_zero_object_and_limits) ... ok
+test_private_no_forward_contact_or_integration (__main__.BiasTests.test_private_no_forward_contact_or_integration) ... ok
+test_quadratic_velocity_scaling (__main__.BiasTests.test_quadratic_velocity_scaling) ... ok
+test_static_zero_and_gravity_subtraction (__main__.BiasTests.test_static_zero_and_gravity_subtraction) ... ok
+test_upvector_unused (__main__.BiasTests.test_upvector_unused) ... ok
+test_velocity_reversal_even (__main__.BiasTests.test_velocity_reversal_even) ... ok
+
+======================================================================
+FAIL: test_head_inertia_without_new_head_commands (__main__.BiasTests.test_head_inertia_without_new_head_commands)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/test_velocity_bias_kernel_r190.py", line 137, in test_head_inertia_without_new_head_commands
+    self.assertGreater(np.max(np.abs(a[self.g.legs]-b[self.g.legs])),1e-8)
+AssertionError: np.float64(0.0) not greater than 1e-08
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.926s
+
+FAILED (failures=1)
