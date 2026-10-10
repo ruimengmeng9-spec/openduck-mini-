@@ -1,0 +1,156 @@
+{
+  "status": "design_frozen_before_preflight_or_dynamic",
+  "round": "R199",
+  "date": "2026-10-11",
+  "simulation_only": true,
+  "base_publication_commit": "471d4a844d562ffbcb98a99129bb1bd6bdcc68fc",
+  "method": "fresh bounded recovery total-target soft actor-critic with learned state-dependent latent mean/log-standard-deviation and learned entropy temperature",
+  "structural_difference": [
+    "Not R198 whole-policy finite-difference or extra parameter directions: no proposals/antithetic parameter search.",
+    "Not extension of R197 deterministic TD3: reparameterized stochastic actor, trainable log-standard-deviation, entropy in Bellman and policy objectives, learned temperature; no target actor, target smoothing clip, or delayed actor schedule.",
+    "Not R196 on-policy PPO/MC likelihood ratios, R181 action-score PG, fixed recurrent-readout/CEM, R195 online sensor-dynamics RLS/MPC, geometry/phase/momentum/bias or old gain/node searches."
+  ],
+  "hypothesis": "The learned stochastic density and entropy-regularized soft policy improvement may behave differently from the failed deterministic and parameter-probe rules. This is a new finite test, not a claim of physical robustness, safety, Markov sufficiency, convergence, or improvement.",
+  "primary_algorithm_reference": "https://arxiv.org/html/1812.05905v2",
+  "causal_inputs": {
+    "current": "actual native50, tanh elementwise",
+    "initial": "same episode causal initial actual native50, tanh elementwise",
+    "clock": "fixed min(control/528,1)",
+    "total": 101,
+    "excluded": [
+      "case",
+      "seed",
+      "path",
+      "label",
+      "root truth",
+      "qpos/qvel",
+      "teacher",
+      "future actual",
+      "context lookup",
+      "private physics"
+    ],
+    "frame_z_axis_is_not_body_gravity": true
+  },
+  "policy": {
+    "seed": 299,
+    "architecture": [
+      101,
+      32,
+      16,
+      20
+    ],
+    "hidden": "tanh",
+    "outputs": "10 unconstrained latent locations + 10 state-dependent log-std offsets",
+    "initial": "fresh hidden; actor last weight/bias zero; logstd offset log(1e-4)",
+    "logstd_bounds": [
+      -12,
+      -4
+    ],
+    "sample": "a=tanh(mu+exp(logstd)*iid_normal10)",
+    "evaluation": "tanh(mu), NOT expected value of squashed density",
+    "density": "Normalized requested-action log-density with stable exact tanh Jacobian, NOT density of joint/slew-limited executed actions",
+    "legs": "control1..528 replace ten old leg corrections by reference+0.18*a; no old leg residual and no second tanh(a)",
+    "unchanged": "first control0, four head targets, home529+ original; original same-state old selector/IMU/right calculation as bypass and original first/head/home only"
+  },
+  "learning": {
+    "data": "Only new R199 full 25-case training groups; old trajectories and new baseline/smoke/check/final never replay/supervision",
+    "offline_only": true,
+    "gamma": ".99**.2",
+    "soft_target": "r+gamma*(bootstrap*(min(targetQ1,targetQ2)-alpha*logpi(next requested action))+original_home_tail)",
+    "actor_loss": "mean(alpha*logpi(requested action)-min(Q1,Q2)) via reparameterization; alpha stop-gradient",
+    "temperature_loss": "-exp(log_alpha)*mean(stop_gradient(logpi+target_entropy))",
+    "target_entropy": -75,
+    "initial_alpha": 0.0001,
+    "critic_architecture": [
+      111,
+      32,
+      16,
+      1
+    ],
+    "twin_independent_fresh": true,
+    "target_actor": false,
+    "target_smoothing": false,
+    "critic_learning_rate": 0.0001,
+    "actor_learning_rate": 0.000001,
+    "alpha_learning_rate": 0.0001,
+    "three_independent_Adam_states": true,
+    "gradient_global_norm_cap": 1,
+    "target_critic_tau": 0.005,
+    "rounds": 2,
+    "each_round_updates": {
+      "double_q": 64,
+      "actor": 64,
+      "temperature": 64
+    },
+    "batch": 512,
+    "with_replacement": true,
+    "update_order": "sample index plus independent next-policy/actor noises; Q; actor; alpha from updated actor same actor noise; target critics; count",
+    "terminal": "Original invalid/episode terminal cannot bootstrap across reset. At control528, original recorded full home reward tail is discounted backup; home has no entropy or actor updates.",
+    "rewards_and_terminal_rewards_unchanged": true,
+    "entropy_is_offline_objective_not_changed_environment_reward": true,
+    "no_old_weights_optimizer_replay_or_RNG": true
+  },
+  "total_attempt_cap": 162,
+  "independent_smoke_cap": 6,
+  "formal_cap": 156,
+  "attempts": {
+    "independent": 6,
+    "formal_startup_matching_same6": 6,
+    "baseline": 25,
+    "training": 50,
+    "deterministic_checks": 50,
+    "final": 25
+  },
+  "smoke": {
+    "spec": [
+      "baseline Std/769000/773004: full original R157 all old fields/peaks/initHash parity",
+      "initial deterministic Std: original physical valid full2279 and successful",
+      "initial stochastic 769002/773004: full2279 and original physical valid, success not required"
+    ],
+    "must_observe_natural_exit0_before_formal": true,
+    "no_repeated_smoke_or_budget_bypass": true
+  },
+  "regression_requirements": [
+    "causal native layout and actual saved native fixture",
+    "original scalar/selector frozen load and worker initialization",
+    "original40x50 constructor/reset fixtures, no extra preparation",
+    "inactive original target object, first/head/home original, replacement-not-addition",
+    "static full compiled model hash and exact original joint/slew planning on all2278 existing fixture transitions",
+    "independent tanh-density formula, logstd bounds, soft target and home terminal boundary",
+    "reparameterized mean/logstd finite-difference gradients, entropy-temperature sign/stop-gradient",
+    "JAX/NumPy tolerance explicitly not cross-implementation bitwise",
+    "fixed64/64/64 updates, all states/checkpoint/RNG and source startup capture"
+  ],
+  "selection": "Each complete deterministic checkpoint must preserve Std, be all original physical-valid, keep every R157 success, and exceed18/24. Rank successes/min original return/sum original return/earlier checkpoint. No eligible -> original R157 fallback with full final25; do not call fallback18 new SAC improvement or success union.",
+  "original_acceptance": [
+    "Std+original24>=22 and>18/allphysicalvalid",
+    "only then frozen316>=36/40 and better fixedzero/R102/allvalid",
+    "unseen320 still unread/unexecuted, later two nonoverlapping20 each>=18",
+    "entry<=12s continuous strict30s every500Hz valid",
+    "later larger independent perturbations, sensor/execution delay, right/prone/supine unchanged"
+  ],
+  "storage": {
+    "start_min_gib": 12,
+    "reserve_gib": 10,
+    "total_live_plus_archive_plus_git_cap_gib": 2,
+    "live_gate": "3*all preflight+launcher+smoke+formal file bytes <2GiB including test checkpoints/worker fixture; actual archive+Git later counted",
+    "cleanup": false,
+    "do_not_delete_others_or_unconfirmed_data": true
+  },
+  "evidence": "All original full step rewards, returns including failures, arrays, true preparation and exceptions, requested latent/density/noise, learner replay/indices/two noises/losses/norms/last gradients, online/target critics, three Adam states/count/log_alpha/RNG and complete imported Python source mappings preserved.",
+  "preserved_limitations": [
+    "Existing unsaved original before-request/full IMU double remains gap; new planning reconstruction boundary is saved postIMU/right exactdouble.",
+    "Python source manifests are not native-binary snapshots.",
+    "qpos/qvel retained only original trajectory or isolated parity, never new policy/critic inputs.",
+    "Control endpoints/304 records not first500Hz crossing; small actions/cap/final geometry cannot relabel peaks; visited-state forks not immediate counterfactual or unique cause."
+  ],
+  "protected": [
+    "live_server2664890 no signals/restarts",
+    "walker/physics/reward/collisionmeshflags/joint/torque/slew/acceptance unchanged",
+    "no hardware connection/enable/deploy",
+    "old R198/R197/R196/R195 and prior budgets/evidence closed immutable"
+  ],
+  "full_task_completed": false,
+  "hardware_readiness": false,
+  "qualification_passed": false
+}
