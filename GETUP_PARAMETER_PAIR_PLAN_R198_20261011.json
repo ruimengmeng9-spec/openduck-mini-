@@ -1,0 +1,127 @@
+{
+  "version": "R198 finite whole-policy antithetic parameter update",
+  "status": "design_frozen_local_implementation_not_yet_tested",
+  "date": "2026-10-11",
+  "base_commit": "827cd1a3e03396398d522ed129c3ceabf3fcbb78",
+  "simulation_only": true,
+  "hardware_connection_enable_deployment": false,
+  "hypothesis": "Whole-episode fixed parameter perturbations provide temporally coherent exploration of a fresh nonlinear causal policy; this is unproven and has no safety or improvement guarantee.",
+  "structural_difference": {
+    "R197": "No Q networks, targets, replay, TD backups or actor-through-Q gradients; not extra TD3 updates.",
+    "R196": "No critic, latent likelihood, probability ratio, MC policy gradient or PPO epochs.",
+    "R181": "No recurrent hidden state or per-control action innovations/score; whole network parameters receive one finite-difference update.",
+    "R175": "Both hidden and output weights and biases are fresh and perturbed/updated, not a frozen recurrent feature readout or CEM.",
+    "R193": "Nonlinear current/initial sensor feedback instead of fixed harmonic coefficients; no extra modes/directions for old harmonics.",
+    "old_data": "No prior learned network/optimizer/trajectory/teacher/batches used for learning. Immutable R157 utilities only preserve original interface and verify baseline."
+  },
+  "causal_inputs": [
+    "tanh(current actualnative50)",
+    "tanh(causal initial actualnative50)",
+    "fixed min(control/528,1)"
+  ],
+  "prohibited_online_inputs": [
+    "case",
+    "seed",
+    "path",
+    "label",
+    "root",
+    "qpos",
+    "qvel",
+    "teacher",
+    "future actual observation",
+    "lookup",
+    "private physics"
+  ],
+  "framezaxis_is_not_bodygravity": true,
+  "policy": {
+    "seed": 298,
+    "architecture": [
+      101,
+      16,
+      10
+    ],
+    "hidden_and_output": "tanh",
+    "parameters": 1802,
+    "initial_output": "last weight and bias zero, hidden fresh random",
+    "recovery": "controls1..528 ten legs reference+.18*a replace old feedback, not sum and no second tanh",
+    "control0": "original target",
+    "head": "four original targets",
+    "home": "control529+ original feedback",
+    "original_limits_physics_reward_acceptance_unchanged": true,
+    "old_feedback": "same-state bypass only, first/head/home retained"
+  },
+  "learning": {
+    "rounds": 1,
+    "direction_seed": 29801,
+    "directions": 2,
+    "direction_distribution": "iid standard Gaussian each coefficient, saved full shape(2,1802), no extra draw",
+    "parameter_sigma": 0.00001,
+    "proposals": "initial plus/minus sigma*direction for two directions, fixed complete policy throughout each episode",
+    "training_attempts": 100,
+    "training_case_set": "each of four policies evaluated on standard+original24, complete path or original invalid early termination retained",
+    "scores": "mean of original full undiscounted return_sum across all25 including failures and invalids; no reward changes or success union",
+    "gradient": "mean_i(((Jplus_i-Jminus_i)/(2*sigma))*direction_i)",
+    "update": "theta_new=theta_initial+1e-4*gradient/max(1,L2norm(gradient))",
+    "updates": 1,
+    "critic": false,
+    "action_noise": false,
+    "replay": false,
+    "optimizer": false,
+    "no_cross_reset_bootstrap": true,
+    "offline_use": "Only new four policy complete original rewards inform parameter update; saved observations reconstruct causal decisions, never future online input"
+  },
+  "dynamic_budget": {
+    "total_cap": 187,
+    "independent_smoke": 6,
+    "formal_cap": 181,
+    "formal_startup": 6,
+    "baseline": 25,
+    "training": 100,
+    "updated_deterministic_check": 25,
+    "final_common_check": 25,
+    "maximum_controls_per_path": 2279,
+    "maximum_seconds_per_path": 45.58,
+    "not_independent_start_count": true,
+    "no_extra_directions_scales_rounds_windows": true
+  },
+  "smoke": {
+    "baseline": [
+      null,
+      769000,
+      773004
+    ],
+    "initial_deterministic_standard": [
+      null
+    ],
+    "first_positive_parameter_probe": [
+      769002,
+      773004
+    ],
+    "requirements": "all six full physical-valid, baseline all old fields/peaks/initHash exactR157, initial standard succeeds, interface/planned/applied exact, independent process naturalexit0 before formal, formal matching six all old/new arrays/results/RNG exact"
+  },
+  "selection": "Across four complete probe policies and updated policy only Std/allvalid/retain all R157 successes/>18 eligible; rank successes/min originalreturn/sum originalreturn, frozen tie order; otherwise R157 fallback, never call fallback18/24 new-policy score.",
+  "evidence": [
+    "all failures labels original500Hzpeaks initHash",
+    "original two40prepare batches and partial on exception",
+    "all requested policy outputs, exact postIMU/right boundary, adjusted/base/planned/applied/previous",
+    "full source startup Python copies+mapping for tests/main/workers/launcher, not native binary snapshot",
+    "initial+four proposal+updated weights, full directions/RNG/scores/gradient/norm/change",
+    "complete frozen/model/XML/assets hashes before/after"
+  ],
+  "verification_boundaries": "Before-request/full old IMU double unsaved in old evidence: exact postIMU/right boundary explicit; no claim full old feedback independently reconstructed. qpos/qvel original records and isolated equality only. Small requests/cap/control endpoints not safety; no physical relabel or causal-unique-root inference.",
+  "storage": {
+    "total_live_archive_git_gib": 2,
+    "start_min_free_gib": 12,
+    "reserve_gib": 10,
+    "include_preflight": true,
+    "cleanup": false,
+    "workers_max": 6,
+    "environment": "OMP/OPENBLAS/MKL1 CUDAempty JAXcpu",
+    "free_bytes_current_readonly_snapshot": 17826902016
+  },
+  "gates": "Fresh offline complete regression actual scalar/causal input/boundaries/init/source capture, then independent6 naturalexit0, then fresh regression before formal. No bypass of regression/physical-invalid smoke.",
+  "unchanged_acceptance": "Std+original24>=22 and >18 allvalid => frozen316>=36/40 => unseen320 two20 each>=18 => larger perturbation/delays/right/prone/supine original gates. 320 unread/unexecuted.",
+  "full_task_completed": false,
+  "qualification": false,
+  "hardware_readiness": false
+}

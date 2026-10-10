@@ -1,0 +1,246 @@
+{
+  "date": "2026-10-11",
+  "experiment": "R198",
+  "method": "finite whole-policy antithetic parameter update",
+  "simulation_only": true,
+  "status": "training_and_independent_readonly_verification_complete_before_archive_publication",
+  "training_natural_exit": true,
+  "launcher_smoke_exit_code": 0,
+  "launcher_formal_exit_code": 0,
+  "launcher_source_hashes_unchanged": true,
+  "regression": {
+    "independent_preflight": {
+      "tests": 24,
+      "seconds": 0.603,
+      "natural_exit_code": 0,
+      "new_dynamic": 0
+    },
+    "launcher_initial": {
+      "tests": 24,
+      "seconds": 0.696
+    },
+    "launcher_formal_before": {
+      "tests": 24,
+      "seconds": 0.651
+    }
+  },
+  "attempts": {
+    "independent": 6,
+    "formal": 181,
+    "total": 187,
+    "independent_start_count_claim": false,
+    "full_length_paths": 185,
+    "invalid_early_paths": 2,
+    "full_controls": 2279,
+    "full_duration_s": 45.58,
+    "total_saved_controls": 422222
+  },
+  "result": {
+    "baseline": {
+      "successes": 18,
+      "denominator": 24,
+      "standard": true,
+      "invalid": 0
+    },
+    "proposals": [
+      {
+        "name": "proposal_0000",
+        "successes": 4,
+        "standard": false,
+        "invalid": 0,
+        "score": 7.505891988744855
+      },
+      {
+        "name": "proposal_0001",
+        "successes": 6,
+        "standard": false,
+        "invalid": 0,
+        "score": 12.732264261586614
+      },
+      {
+        "name": "proposal_0002",
+        "successes": 5,
+        "standard": false,
+        "invalid": 1,
+        "score": 10.023097285705148
+      },
+      {
+        "name": "proposal_0003",
+        "successes": 12,
+        "standard": false,
+        "invalid": 0,
+        "score": 28.71954582934512
+      }
+    ],
+    "updated_check": {
+      "successes": 7,
+      "standard": true,
+      "invalid": 1
+    },
+    "all_new_global_policies_ineligible": true,
+    "selected_model": null,
+    "selected_R157_fallback": true,
+    "final": {
+      "successes": 18,
+      "standard": true,
+      "invalid": 0,
+      "credit": "R157 fallback, NOT a new R198 policy score"
+    },
+    "best": "R15718/24",
+    "improvement": false
+  },
+  "method_contract": {
+    "fresh_seed": 298,
+    "direction_seed": 29801,
+    "architecture": [
+      101,
+      16,
+      10
+    ],
+    "parameter_count": 1802,
+    "blocks": [
+      "actor_w0",
+      "actor_b0",
+      "actor_w1",
+      "actor_b1"
+    ],
+    "initial_last_layer_zero": true,
+    "fresh_hidden_random": true,
+    "all_blocks_perturbed_and_updated": true,
+    "directions": 2,
+    "sigma": 0.00001,
+    "whole_policy_fixed_each_episode": true,
+    "plus_minus_global_proposals": 4,
+    "original_complete_undiscounted_return_mean_per_25": true,
+    "failed_invalid_returns_used": true,
+    "updates": 1,
+    "update": "theta_initial + 1e-4 * gradient / max(1, L2norm(gradient))",
+    "gradient": "mean_i(((Jplus_i-Jminus_i)/(2e-5)) * direction_i)",
+    "no_action_noise": true,
+    "no_Q_critic_target_replay_optimizer": true,
+    "no_old_data_training": true,
+    "online_inputs": "tanh(current native50), tanh(causal initial native50), fixed min(k/528,1)",
+    "online_exclusions": [
+      "case",
+      "seed",
+      "path",
+      "label",
+      "root truth",
+      "qpos/qvel",
+      "teacher",
+      "future observations",
+      "lookup",
+      "private physics"
+    ],
+    "framezaxis_is_not_bodygravity": true,
+    "recovery_controls": "1..528 reference+.18*actor replaces old ten-leg feedback; no residual sum or second tanh",
+    "control0_head_home_original": true
+  },
+  "parameter_changes": {
+    "actor_w0": 0.00009469741674027563,
+    "actor_b0": 0.00001171420368881848,
+    "actor_w1": 0.000029386941135013034,
+    "actor_b1": 0.000005619998699464149
+  },
+  "invalid": [
+    {
+      "group": "proposal_0002",
+      "case": 773013,
+      "controls": 304,
+      "initial_hash": "90abd00e7b057203f7856bd4d0ad0ea93a95973c69bc34aea49e5d4b614ded3d",
+      "peaks": {
+        "floor": 0.004809486669154216,
+        "self": 0.04856574991534304,
+        "joint": 0.002267679787732013,
+        "force": 3.23,
+        "slew": 5.2400000000000055
+      },
+      "maximum_combined_14_joint_correction_rad": 0.0020367409407078263
+    },
+    {
+      "group": "check_0001",
+      "case": 773011,
+      "controls": 303,
+      "initial_hash": "8170a89e335337b2078b25492c64386e68e2f65effc3a5cb9dff4b47f4efefed",
+      "peaks": {
+        "floor": 0.0038101265201069025,
+        "self": 0.048741409165252034,
+        "joint": 0.010008472925085277,
+        "force": 3.23,
+        "slew": 5.240000000000003
+      },
+      "maximum_combined_14_joint_correction_rad": 0.0026105240153329046
+    }
+  ],
+  "verification": {
+    "original_failure_retained": {
+      "phase": "readonly_terminal_verification",
+      "version": "r198",
+      "observed_exit_code": 1,
+      "new_dynamic": 0,
+      "archive_started": false,
+      "proof_saved": false,
+      "cause": "Verifier incorrectly expected 55-column prepare sensor arrays; training source and trajectory unmodified",
+      "traceback_line": 177,
+      "original_verifier": "archive_getup_parameter_pair_terminal_r198.py"
+    },
+    "original_source_sha256": "621f515034a56eecb911f8b6f64b7c90d6b72b57fba89acefe28c03772351d0b",
+    "corrected_source_sha256": "4eba696fcfcb80ee24791657ef1aa5a7708d3a2a4140a3c0b68598b3771883b4",
+    "correction": "Only prepare array expected shape corrected from (40,55) to actual (40,50); archival includes original verifier and failure receipt",
+    "new_dynamic": 0,
+    "independent_math_same_numpy": true,
+    "not_cross_implementation_safety_proof": true,
+    "post_IMU_right_saved_exact_double_input_boundary": true,
+    "before_request_and_full_IMU_double_not_saved_not_reconstructed": true,
+    "root_fields_only_isolated_old_field_equality": true,
+    "original_labels_peaks_not_reclassified": true,
+    "native_binary_snapshot": false,
+    "old_source_gaps_not_retrofilled": true,
+    "observed_natural_exit_code": 0,
+    "real_local_session": 88684,
+    "closed_paths": 187,
+    "controls": 422222,
+    "baseline_paths_all_old_fields_bitwise": 56,
+    "policy_requests_post_double_boundary_joint_slew_planned_applied_exact": true,
+    "complete_parameter_update_and_common_selection_exact": true,
+    "formal_startup_six_all_arrays_results_rng_exact": true,
+    "final_25_all_arrays_baseline_exact": true,
+    "source_full_XML_assets_frozen_model_before_after_unchanged": true,
+    "preflight_all_three_test_startup_manifests_explicit_four_sources_verified": true,
+    "live_bytes": 484580375,
+    "gradient_norm": 20394589.350925233
+  },
+  "frozen": {
+    "compiled_MJB_sha256": "53a24e16553a85c7e1ba354a692eca45094ba31d5d561f2d54f7a75e1d5914b3",
+    "physics_sha256": "4b9f4a9167e1614c22f7e6f28dd8508f7ccabb61d909a6c47dd46e40b861c6ae",
+    "kernel_sha256": "9187a0bd9a1e6316333912983777bb4cd1d0994cc3856cb0b67c7fc332d1bd53",
+    "main_sha256": "f9853606db60a6a6ffc11846a00a684cf4c35258aaa3798ab1894062737b2162",
+    "test_sha256": "c2009d7c495605d033c8294543046276455743e130484b79ae70c03df0f1faeb",
+    "launcher_sha256": "0ccbe89596aac52e30b62c49380eee203f23ac70a0030efd1d567d64c8d74313",
+    "plan_sha256": "351dbfb7253013fec39012ae3941dcf0ea22c7f7a0c8db27cef3d3e0d4ba8850"
+  },
+  "constraints": {
+    "R198_budget_closed": true,
+    "no_rerun_or_extension": true,
+    "protected_live_server": true,
+    "no_hardware_connection_enable_deployment": true,
+    "walker_physics_reward_acceptance_unchanged": true,
+    "unseen_320_unread_unexecuted": true,
+    "original_gates": "Std/original24>=22 and >18/allvalid -> frozen316>=36/40 -> unseen320 two disjoint20 each>=18/20 -> larger disturbance and sensor/execution delay -> right/prone/supine unseen20 each>=18/20; <=12s entry, continuous strict30s, every500Hz valid",
+    "storage_budget_bytes": 2147483648,
+    "reserve_bytes": 10737418240,
+    "start_bytes": 12884901888,
+    "no_other_data_cleanup": true
+  },
+  "full_task_completed": false,
+  "hardware_readiness": false,
+  "qualification": false,
+  "archive_and_publication": {
+    "status": "Not yet performed at terminal document preparation; later actual receipt is authoritative",
+    "base_commit": "827cd1a3e03396398d522ed129c3ceabf3fcbb78",
+    "no_force_push": true,
+    "no_private_key_export": true,
+    "unique_success_receipt": "/data/shijinsheng/open_duck/tmp/getup_publication_r198_parameter_pair_terminal_20261011_result.json"
+  },
+  "next": "After actual independent proof and append-only archive/publication complete and no higher actual task, choose a genuinely different finite method; no R198 direction/scale/round/window extension."
+}
