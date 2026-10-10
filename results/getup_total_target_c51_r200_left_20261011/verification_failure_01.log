@@ -1,0 +1,14 @@
+R200_VERIFY_BEGIN
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/verify_getup_total_target_c51_terminal_r200.py", line 316, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/verify_getup_total_target_c51_terminal_r200.py", line 313, in main
+    proof=verify()
+          ^^^^^^^^
+  File "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/verify_getup_total_target_c51_terminal_r200.py", line 176, in verify
+    preflight=read(ROOT/'tmp/getup_total_target_c51_r200_preflight_exit_20261011.json');assert preflight['observed_exit_code']==0 and preflight['new_dynamic']==0 and preflight['source_hashes_unchanged']
+                                                                                               ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'observed_exit_code'

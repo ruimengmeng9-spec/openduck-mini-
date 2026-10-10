@@ -1,0 +1,129 @@
+{
+  "round": "R200",
+  "date": "2026-10-11",
+  "status": "frozen_design_before_execution",
+  "simulation_only": true,
+  "hypothesis": "A fresh single categorical return network learns state-dependent discrete total-target selection, rather than continuous actor gradients. This is an unverified finite method, not safety/learning efficacy.",
+  "primary_source": "https://arxiv.org/abs/1707.06887",
+  "implementation_variant": "C51 categorical projection and expected-return greedy discrete control; no paper task performance transferred to this robot.",
+  "structural_difference": [
+    "single categorical distribution network over fixed21 action codes; no actor/continuous policy derivative/twin scalar Q/entropy/temperature/target actor/Polyak",
+    "fresh seed300 initial6 blocks and one new Adam, no old weights/replay/optimizer/RNG",
+    "codes selected each control using current causal input, not whole-policy parameter proposals or old gain/direct/window searches"
+  ],
+  "online_inputs": [
+    "current actual native50 tanh",
+    "causal initial actual native50 tanh",
+    "fixed min(control/528,1)"
+  ],
+  "inputs101": true,
+  "framezaxis_not_body_gravity": true,
+  "online_forbidden": [
+    "actual root/qpos/qvel",
+    "case/seed/path/labels/teacher",
+    "future measurements",
+    "context lookup",
+    "private simulator/physics prediction"
+  ],
+  "network": {
+    "shape": [
+      101,
+      32,
+      16,
+      1071
+    ],
+    "hidden": "tanh",
+    "output": "21x51 logits, softmax each action",
+    "initial": "fresh random hidden, exactzero last weight/bias, uniform return masses and firstindex greedy tie zero"
+  },
+  "action_book": {
+    "count": 21,
+    "code0": "ten normalized zero",
+    "remaining": "in fixed Mapping.legs order, each single leg +1e-4 then -1e-4 normalized; one nonzero leg at a time",
+    "amplitude_fixed_no_search": true,
+    "restriction": "cannot choose simultaneous multileg nonzero correction; no completeness/efficacy claim"
+  },
+  "request": "control1..528 reference + .18*code replaces old ten-leg feedback. No old residual sum and no second tanh. First0/fourhead/home529+ unchanged.",
+  "boundary": "Original postIMU/right exactdouble tenleg replacement then original joint and 5.24rad/s*.02 slew; every planned==applied and recursiveprev assert exact. Old before-request/fullIMUdouble gaps retained.",
+  "exploration": {
+    "epsilon": 0.1,
+    "per_sample_active_control": "one uniform gate then one integer21 ALWAYS even no exploration; no Gaussian",
+    "deterministic": "firstindex argmax expected categorical return; no RNG consumption",
+    "zero_tie_is_not_R157": "zero relative reference, not zero oldfeedback"
+  },
+  "learner": {
+    "atoms": 51,
+    "support": [
+      -128,
+      128
+    ],
+    "projection": "greedy target distribution shifted r+gamma*(home_tail+bootstrap*atoms), fixed support linear neighboring-atom mass projection including exactatom mass, crossentropy",
+    "gamma": ".99**.2",
+    "support_clipping": "estimator approximation only, all raw target atoms/mass clipping saved; original rewards/results/peaks not clipped/relabelled",
+    "learning_rate": 0.0001,
+    "batch": 512,
+    "with_replacement": true,
+    "updates_per_round": 64,
+    "rounds": 2,
+    "global_norm": 1,
+    "optimizer": "fresh Adam",
+    "target": "single frozen withinround, exactly one hard copy at round end",
+    "no_actor": true
+  },
+  "offline_data": "Only new R200 training25 eachround, complete original reward/failure/invalid retained. Write recovery replay after next real observation arrives. Invalid terminal no crossresetbootstrap; recovery528 complete original discountedhome tail with no newhomepolicy. Smoke/baseline/detchecks/final/allolddata evaluation/interface fixtures ONLY, not learning.",
+  "evidence": [
+    "all path original arrays/rewards/labels/fullpeaks/prepare constructor40/reset40/initHash",
+    "all control code/greedy/expected21/selected51/gate/integer/request and full RNG",
+    "all new replay/batchindices/projectedmass/rawtargetatoms/selectednextdistribution/greedy/lossnorm/lastgradient/change",
+    "initial and two fullonline/target/Adamcount msgpackbytes/RNG checkpoints",
+    "explicit four source and all importedPython startup manifests, fullXMLassets/frozen/modelphysics hashes"
+  ],
+  "total_attempt_cap": 162,
+  "independent_smoke_cap": 6,
+  "formal_cap": 156,
+  "dynamic_accounting": "6 independent + formal6 same startup +25R157baseline + two25train +two25detcheck +25final; NOT162 independent initial states. Original max2279controls/45.58s, invalid can originalearlyexit. No extra dynamic/epochs/noise/code/magnitude/network/round/window.",
+  "smoke": {
+    "original_baseline": [
+      null,
+      769000,
+      773004
+    ],
+    "initial_deterministic": [
+      null
+    ],
+    "initial_sample": [
+      769002,
+      773004
+    ],
+    "gate": "baseline alloriginalfields/initHash/peaks exactR157; initialStdsuccess allsixvalid/full2279; perturb recovery not required, no6/6claim; independent realnaturalexit0 before regression/formal"
+  },
+  "selection": "Std/allvalid/retainsALL18baseline successes and strictly>18; rank success/minoriginalreturn/sumoriginalreturn/earliercheckpoint. Noeligible -> R157 fallback25, notnewpolicy improvement; no successful union/oracle.",
+  "storage": {
+    "total_live_archive_git_gib": 2,
+    "start_free_gib": 12,
+    "reserve_free_gib": 10,
+    "preflight_included": true,
+    "live_guard": "3x fouroutput filebytes conservative; actual finalarchive+Git separately checked",
+    "no_cleanup_other_or_unconfirmed_data": true
+  },
+  "frozen_model_sha256": "53a24e16553a85c7e1ba354a692eca45094ba31d5d561f2d54f7a75e1d5914b3",
+  "physics_sha256": "4b9f4a9167e1614c22f7e6f28dd8508f7ccabb61d909a6c47dd46e40b861c6ae",
+  "baseline_commit": "31e772a1b963d1282fa03d65ab3ec461ca4b9ea7",
+  "fixed_acceptance": "Std+24>=22 and>18/allvalid ->316>=36/40 betterfixedzero/R102 allvalid ->UNREAD320 two20each>=18 ->largerindependentperturbations/sensor executiondelay/right prone supine alloriginalgates; <=12sentry/continuousstrict30s/every500Hzvalid unchanged.",
+  "unseen_320_not_loaded_or_executed": true,
+  "full_task_completed": false,
+  "hardware_readiness": false,
+  "qualification_passed": false,
+  "protected_live_server_no_pid_operations": true,
+  "all_executed_old_sources_plans_failures_history_immutable": true,
+  "limitations": [
+    "categorical return not probability of safety",
+    "fixedsupport can distort outofsupport return estimates, retained rawvalues quantify it",
+    "narrow actionbook and finite smallbudget may not improve; cannot expand if fails",
+    "same NumPy/JAX/optax arithmetic validation not crossimplementation bitwise/safety",
+    "controlendpoints not first500Hzcrossing, smallaction/cap does not negate peaks",
+    "nativebinary snapshots and old source gaps not invented"
+  ],
+  "preflight": "25 new offline regressions incl independentprojection/exactatom/gradient/stopgradient/RNG/fullcheckpoint, actualnative/scalar frozenworker/fullplanning/init/fullmodel. No dynamic until naturalexit0.",
+  "next_after_training": "New independent all-deciding read-only verification and unique terminal archival/publication; never repeat closed old procedures."
+}

@@ -1,0 +1,1975 @@
+{
+  "schema": "R200 finite categorical total-target C51 simulation terminal v1",
+  "training_terminal": true,
+  "independent_readonly_verification_completed": true,
+  "publication_condition_at_preparation": "Not archived or published yet. Requires unique archive natural exit0, clean normal FF upload exit0, independent remote/local exact HEAD and GitHub full terminal JSON match. This preparation-time condition is historical and must not be overwritten.",
+  "meta": {
+    "terminal_result_saved": true,
+    "actual_dynamic_attempts": 156,
+    "selected_checkpoint": null,
+    "selected_R157_fallback": true,
+    "original_development_gate": false,
+    "expanded_development_run": false,
+    "independent_qualification_run": false,
+    "qualification_passed": false,
+    "full_task_completed": false,
+    "hardware_readiness": false
+  },
+  "reports": {
+    "baseline": {
+      "successes": 18,
+      "standard": true,
+      "physical_failures": 0
+    },
+    "candidate": {
+      "successes": 18,
+      "standard": true,
+      "physical_failures": 0
+    }
+  },
+  "history": [
+    {
+      "iteration": 1,
+      "training": {
+        "successes": 7,
+        "standard": true,
+        "physical_failures": 0,
+        "controls": 56975
+      },
+      "check": {
+        "successes": 5,
+        "standard": false,
+        "physical_failures": 1,
+        "controls": 54742
+      },
+      "eligible": false,
+      "changes": {
+        "value_w0": 0.19504040878936418,
+        "value_b0": 0.033554369465322524,
+        "value_w1": 0.11647312415746597,
+        "value_b1": 0.02477171028358868,
+        "value_w2": 0.36227303103141506,
+        "value_b2": 0.13933715080044085
+      },
+      "categorical_updates": 64,
+      "hard_target_copies": 1
+    },
+    {
+      "iteration": 2,
+      "training": {
+        "successes": 7,
+        "standard": false,
+        "physical_failures": 2,
+        "controls": 52767
+      },
+      "check": {
+        "successes": 8,
+        "standard": true,
+        "physical_failures": 2,
+        "controls": 52767
+      },
+      "eligible": false,
+      "changes": {
+        "value_b0": 0.03561375079280773,
+        "value_b1": 0.025471647180462516,
+        "value_b2": 0.10728712270821303,
+        "value_w0": 0.22202399435328815,
+        "value_w1": 0.13386994313415046,
+        "value_w2": 0.3472527037235837
+      },
+      "categorical_updates": 64,
+      "hard_target_copies": 1
+    }
+  ],
+  "saved_paths": 162,
+  "controls": 358549,
+  "control_counts": {
+    "full_2279": 157,
+    "original_invalid_46": 3,
+    "original_invalid_304": 2,
+    "not_independent_initial_states": true
+  },
+  "invalid": [
+    {
+      "iteration": 1,
+      "group": "check",
+      "original_result": {
+        "pose": "left_side",
+        "case_seed": 773011,
+        "initial_hash": "8170a89e335337b2078b25492c64386e68e2f65effc3a5cb9dff4b47f4efefed",
+        "actual_fallen_start": true,
+        "valid": false,
+        "training_success": false,
+        "controls": 46,
+        "strict_tail_s": 0,
+        "entry_time_s": null,
+        "return_sum": -5.079724450738539,
+        "final": {
+          "up_z": -0.291575441668577,
+          "height_m": 0.1409140957456362,
+          "feet": [
+            false,
+            false
+          ],
+          "torso_contact": false,
+          "penetration_m": 0.0010010065502421312,
+          "linear_speed_mps": 0.2553331601884101,
+          "angular_speed_rad_s": 2.6315364229300244,
+          "stable": false,
+          "finite": true,
+          "floor_penetration_m": 0.00011789641973531176,
+          "self_penetration_m": 0.0010010065502421312,
+          "joint_home_error_max_rad": 1.0109756899927473,
+          "joint_home_error_mean_rad": 0.3253119091708766,
+          "motor_target_home_error_max_rad": 0.9816240251753017,
+          "foot_normal_forces_n": [
+            0,
+            0
+          ],
+          "foot_load_fraction": 0,
+          "foot_up_alignment_to_home": [
+            0.0744524205848067,
+            -0.4182731639270324
+          ]
+        },
+        "peaks": {
+          "floor": 0.00400378315370627,
+          "self": 0.030000211825916428,
+          "joint": 0.0012025238220101375,
+          "force": 3.23,
+          "slew": 5.24
+        },
+        "prefix_start": false,
+        "root_edits_after_initialization": 0,
+        "policy_mode": "deterministic",
+        "policy_model_sha256": "241f0d33c87e2ec7682d48626c65cd7f1f3f89137eb23adf2465c6c4ebcdd452",
+        "sampling_seed": 3005020,
+        "success": false,
+        "recovery_leg_feedback_replaced": true,
+        "old_feedback_added_to_policy": false,
+        "standard_R157_parity_required": false,
+        "base_choice": 1,
+        "base_gains": [
+          0.04355182104342108,
+          -0.012688980031975383,
+          -0.03641056335300152,
+          -0.021834127468025842,
+          -0.009694385345111668,
+          -0.010803642962099055
+        ],
+        "initial_sensor_logits": [
+          0.2523428910930201,
+          0.8980804168751481,
+          -0.5974542932495959,
+          -0.5529690112836483
+        ],
+        "maximum_combined_14_joint_correction_rad": 0.0026105240153329046,
+        "physics_sha256": "4b9f4a9167e1614c22f7e6f28dd8508f7ccabb61d909a6c47dd46e40b861c6ae",
+        "physics_unchanged": true,
+        "compiled_model_sha256": "53a24e16553a85c7e1ba354a692eca45094ba31d5d561f2d54f7a75e1d5914b3",
+        "compiled_model_unchanged": true,
+        "no_root_or_case_input_to_value_policy": true,
+        "root_edits_during_recovery": 0,
+        "fixed_codebook_is_normalized_request_not_executed_action": true,
+        "greedy_is_expected_categorical_return": true,
+        "estimated_return_is_not_safety_probability": true
+      }
+    },
+    {
+      "iteration": 2,
+      "group": "training",
+      "original_result": {
+        "pose": "left_side",
+        "case_seed": null,
+        "initial_hash": "8f3b34d411ddea4fd0586011cab25d92eef43eec91e80324e9a9816d0f8a85fe",
+        "actual_fallen_start": true,
+        "valid": false,
+        "training_success": false,
+        "controls": 304,
+        "strict_tail_s": 0,
+        "entry_time_s": null,
+        "return_sum": -4.757204495407024,
+        "final": {
+          "up_z": 0.25024660171925195,
+          "height_m": 0.1505417509959147,
+          "feet": [
+            false,
+            false
+          ],
+          "torso_contact": true,
+          "penetration_m": 0.00021060063358700255,
+          "linear_speed_mps": 0.05525364466032969,
+          "angular_speed_rad_s": 0.5459527599975476,
+          "stable": false,
+          "finite": true,
+          "floor_penetration_m": 0.00006175258943695583,
+          "self_penetration_m": 0.00021060063358700255,
+          "joint_home_error_max_rad": 0.8827335172384064,
+          "joint_home_error_mean_rad": 0.19623027653552017,
+          "motor_target_home_error_max_rad": 0.9804434223023277,
+          "foot_normal_forces_n": [
+            0,
+            0
+          ],
+          "foot_load_fraction": 0,
+          "foot_up_alignment_to_home": [
+            0.008274673262382685,
+            0.09849090960570552
+          ]
+        },
+        "peaks": {
+          "floor": 0.0038969224533173235,
+          "self": 0.048576864713813166,
+          "joint": 0.006056035929100756,
+          "force": 3.23,
+          "slew": 5.2400000000000055
+        },
+        "prefix_start": false,
+        "root_edits_after_initialization": 0,
+        "policy_mode": "sample",
+        "policy_model_sha256": "241f0d33c87e2ec7682d48626c65cd7f1f3f89137eb23adf2465c6c4ebcdd452",
+        "sampling_seed": 3003200,
+        "success": false,
+        "recovery_leg_feedback_replaced": true,
+        "old_feedback_added_to_policy": false,
+        "standard_R157_parity_required": false,
+        "base_choice": 0,
+        "base_gains": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "initial_sensor_logits": [
+          0.6664102649601508,
+          0.14180609285766288,
+          -0.39443816299586537,
+          -0.41377819708765845
+        ],
+        "maximum_combined_14_joint_correction_rad": 0.000018000000000073513,
+        "physics_sha256": "4b9f4a9167e1614c22f7e6f28dd8508f7ccabb61d909a6c47dd46e40b861c6ae",
+        "physics_unchanged": true,
+        "compiled_model_sha256": "53a24e16553a85c7e1ba354a692eca45094ba31d5d561f2d54f7a75e1d5914b3",
+        "compiled_model_unchanged": true,
+        "no_root_or_case_input_to_value_policy": true,
+        "root_edits_during_recovery": 0,
+        "fixed_codebook_is_normalized_request_not_executed_action": true,
+        "greedy_is_expected_categorical_return": true,
+        "estimated_return_is_not_safety_probability": true
+      }
+    },
+    {
+      "iteration": 2,
+      "group": "training",
+      "original_result": {
+        "pose": "left_side",
+        "case_seed": 773011,
+        "initial_hash": "8170a89e335337b2078b25492c64386e68e2f65effc3a5cb9dff4b47f4efefed",
+        "actual_fallen_start": true,
+        "valid": false,
+        "training_success": false,
+        "controls": 46,
+        "strict_tail_s": 0,
+        "entry_time_s": null,
+        "return_sum": -5.0797244578028975,
+        "final": {
+          "up_z": -0.2915754946934825,
+          "height_m": 0.1409140580593319,
+          "feet": [
+            false,
+            false
+          ],
+          "torso_contact": false,
+          "penetration_m": 0.0010010087459560823,
+          "linear_speed_mps": 0.25533381541320394,
+          "angular_speed_rad_s": 2.6315455984392826,
+          "stable": false,
+          "finite": true,
+          "floor_penetration_m": 0.00011789698227916007,
+          "self_penetration_m": 0.0010010087459560823,
+          "joint_home_error_max_rad": 1.0109756747953478,
+          "joint_home_error_mean_rad": 0.32531185929009937,
+          "motor_target_home_error_max_rad": 0.9816240251753017,
+          "foot_normal_forces_n": [
+            0,
+            0
+          ],
+          "foot_load_fraction": 0,
+          "foot_up_alignment_to_home": [
+            0.07445258288858193,
+            -0.4182722484437888
+          ]
+        },
+        "peaks": {
+          "floor": 0.004003865287915755,
+          "self": 0.03000021345050903,
+          "joint": 0.0012025238220101375,
+          "force": 3.23,
+          "slew": 5.24
+        },
+        "prefix_start": false,
+        "root_edits_after_initialization": 0,
+        "policy_mode": "sample",
+        "policy_model_sha256": "241f0d33c87e2ec7682d48626c65cd7f1f3f89137eb23adf2465c6c4ebcdd452",
+        "sampling_seed": 3003220,
+        "success": false,
+        "recovery_leg_feedback_replaced": true,
+        "old_feedback_added_to_policy": false,
+        "standard_R157_parity_required": false,
+        "base_choice": 1,
+        "base_gains": [
+          0.04355182104342108,
+          -0.012688980031975383,
+          -0.03641056335300152,
+          -0.021834127468025842,
+          -0.009694385345111668,
+          -0.010803642962099055
+        ],
+        "initial_sensor_logits": [
+          0.2523428910930201,
+          0.8980804168751481,
+          -0.5974542932495959,
+          -0.5529690112836483
+        ],
+        "maximum_combined_14_joint_correction_rad": 0.0026105240153329046,
+        "physics_sha256": "4b9f4a9167e1614c22f7e6f28dd8508f7ccabb61d909a6c47dd46e40b861c6ae",
+        "physics_unchanged": true,
+        "compiled_model_sha256": "53a24e16553a85c7e1ba354a692eca45094ba31d5d561f2d54f7a75e1d5914b3",
+        "compiled_model_unchanged": true,
+        "no_root_or_case_input_to_value_policy": true,
+        "root_edits_during_recovery": 0,
+        "fixed_codebook_is_normalized_request_not_executed_action": true,
+        "greedy_is_expected_categorical_return": true,
+        "estimated_return_is_not_safety_probability": true
+      }
+    },
+    {
+      "iteration": 2,
+      "group": "check",
+      "original_result": {
+        "pose": "left_side",
+        "case_seed": 773001,
+        "initial_hash": "29c2dee1c5b98ec39d30609ce433b810bebacded380a1c01353d79e729f4f45b",
+        "actual_fallen_start": true,
+        "valid": false,
+        "training_success": false,
+        "controls": 304,
+        "strict_tail_s": 0,
+        "entry_time_s": null,
+        "return_sum": -4.7553876761280565,
+        "final": {
+          "up_z": 0.24398650977118005,
+          "height_m": 0.1506629537272331,
+          "feet": [
+            false,
+            false
+          ],
+          "torso_contact": true,
+          "penetration_m": 0.00021157280957798393,
+          "linear_speed_mps": 0.02982337856177985,
+          "angular_speed_rad_s": 0.2241175311726341,
+          "stable": false,
+          "finite": true,
+          "floor_penetration_m": 0.00019978217605694237,
+          "self_penetration_m": 0.00021157280957798393,
+          "joint_home_error_max_rad": 0.9099409020830029,
+          "joint_home_error_mean_rad": 0.20081900958997223,
+          "motor_target_home_error_max_rad": 0.9802879433179054,
+          "foot_normal_forces_n": [
+            0,
+            0
+          ],
+          "foot_load_fraction": 0,
+          "foot_up_alignment_to_home": [
+            0.008375091343484567,
+            0.09208104615693322
+          ]
+        },
+        "peaks": {
+          "floor": 0.004587840184343466,
+          "self": 0.04870357178605136,
+          "joint": 0.0011241832834305576,
+          "force": 3.23,
+          "slew": 5.2400000000000055
+        },
+        "prefix_start": false,
+        "root_edits_after_initialization": 0,
+        "policy_mode": "deterministic",
+        "policy_model_sha256": "527f2c6424a15716bbe9ba228972172187849c8187459cb2254ec88083d6ffd6",
+        "sampling_seed": 3005010,
+        "success": false,
+        "recovery_leg_feedback_replaced": true,
+        "old_feedback_added_to_policy": false,
+        "standard_R157_parity_required": false,
+        "base_choice": 0,
+        "base_gains": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "initial_sensor_logits": [
+          0.6499904501965459,
+          -0.7604546460176638,
+          0.044228614431139845,
+          0.0662355762787672
+        ],
+        "maximum_combined_14_joint_correction_rad": 0.0022354407183655667,
+        "physics_sha256": "4b9f4a9167e1614c22f7e6f28dd8508f7ccabb61d909a6c47dd46e40b861c6ae",
+        "physics_unchanged": true,
+        "compiled_model_sha256": "53a24e16553a85c7e1ba354a692eca45094ba31d5d561f2d54f7a75e1d5914b3",
+        "compiled_model_unchanged": true,
+        "no_root_or_case_input_to_value_policy": true,
+        "root_edits_during_recovery": 0,
+        "fixed_codebook_is_normalized_request_not_executed_action": true,
+        "greedy_is_expected_categorical_return": true,
+        "estimated_return_is_not_safety_probability": true
+      }
+    },
+    {
+      "iteration": 2,
+      "group": "check",
+      "original_result": {
+        "pose": "left_side",
+        "case_seed": 773011,
+        "initial_hash": "8170a89e335337b2078b25492c64386e68e2f65effc3a5cb9dff4b47f4efefed",
+        "actual_fallen_start": true,
+        "valid": false,
+        "training_success": false,
+        "controls": 46,
+        "strict_tail_s": 0,
+        "entry_time_s": null,
+        "return_sum": -5.079722733189145,
+        "final": {
+          "up_z": -0.2915754789883261,
+          "height_m": 0.14091416509755147,
+          "feet": [
+            false,
+            false
+          ],
+          "torso_contact": false,
+          "penetration_m": 0.0010010089801980036,
+          "linear_speed_mps": 0.2553309545820837,
+          "angular_speed_rad_s": 2.6315098741800225,
+          "stable": false,
+          "finite": true,
+          "floor_penetration_m": 0.00011786802914207084,
+          "self_penetration_m": 0.0010010089801980036,
+          "joint_home_error_max_rad": 1.0109754406247116,
+          "joint_home_error_mean_rad": 0.32530983949685005,
+          "motor_target_home_error_max_rad": 0.9816240251753017,
+          "foot_normal_forces_n": [
+            0,
+            0
+          ],
+          "foot_load_fraction": 0,
+          "foot_up_alignment_to_home": [
+            0.07445665108323953,
+            -0.41827277789226425
+          ]
+        },
+        "peaks": {
+          "floor": 0.00400339916136159,
+          "self": 0.030000243711933737,
+          "joint": 0.0012025129384942712,
+          "force": 3.23,
+          "slew": 5.24
+        },
+        "prefix_start": false,
+        "root_edits_after_initialization": 0,
+        "policy_mode": "deterministic",
+        "policy_model_sha256": "527f2c6424a15716bbe9ba228972172187849c8187459cb2254ec88083d6ffd6",
+        "sampling_seed": 3005020,
+        "success": false,
+        "recovery_leg_feedback_replaced": true,
+        "old_feedback_added_to_policy": false,
+        "standard_R157_parity_required": false,
+        "base_choice": 1,
+        "base_gains": [
+          0.04355182104342108,
+          -0.012688980031975383,
+          -0.03641056335300152,
+          -0.021834127468025842,
+          -0.009694385345111668,
+          -0.010803642962099055
+        ],
+        "initial_sensor_logits": [
+          0.2523428910930201,
+          0.8980804168751481,
+          -0.5974542932495959,
+          -0.5529690112836483
+        ],
+        "maximum_combined_14_joint_correction_rad": 0.0026105240153329046,
+        "physics_sha256": "4b9f4a9167e1614c22f7e6f28dd8508f7ccabb61d909a6c47dd46e40b861c6ae",
+        "physics_unchanged": true,
+        "compiled_model_sha256": "53a24e16553a85c7e1ba354a692eca45094ba31d5d561f2d54f7a75e1d5914b3",
+        "compiled_model_unchanged": true,
+        "no_root_or_case_input_to_value_policy": true,
+        "root_edits_during_recovery": 0,
+        "fixed_codebook_is_normalized_request_not_executed_action": true,
+        "greedy_is_expected_categorical_return": true,
+        "estimated_return_is_not_safety_probability": true
+      }
+    }
+  ],
+  "independent_proof": {
+    "verifier_source_sha256": "6fa01ce1236cb3c2bacb34dac4c4c17c22a6fcf057250d60e2060fed88c65848",
+    "terminal_result_saved": true,
+    "natural_exit": true,
+    "new_dynamic": 0,
+    "closed_paths": 162,
+    "controls": 358549,
+    "baseline_paths_all_old_fields_bitwise": 56,
+    "policy_code_greedy_expected_returns_probabilities_two_draw_rng_request_independently_exact": true,
+    "post_double_boundary_replacement_independently_exact": true,
+    "planning_controls_after_first_independently_exact": true,
+    "first_control_original_R157_applied_parity": true,
+    "all_planned_equals_applied": true,
+    "learner": [
+      {
+        "iteration": 1,
+        "new_replay_transitions": 13200,
+        "pooled_replay_transitions": 13200,
+        "categorical_updates": 64,
+        "hard_target_copies": 1,
+        "target_frozen_for_all_64_updates_exact": true,
+        "replay_and_original_home_terminal_backup_exact": true,
+        "all_indices_projected_masses_unbounded_atoms_greedy_probabilities_exact": true,
+        "alternate_adjacent_bin_projection_max_error": 4.3298697960381105e-15,
+        "statistics": [
+          [
+            3.9318256327243253,
+            0.00003829656862745098,
+            0.00003829656862745098,
+            -128.26550562918413,
+            129.92496264853202,
+            1
+          ],
+          [
+            3.931825379979094,
+            0,
+            0.00011488970588235294,
+            -127.85012835441623,
+            128.33783891177117,
+            2
+          ],
+          [
+            3.9318242284855187,
+            0.00003829656862745098,
+            0,
+            -128.26550562918413,
+            127.95387542101952,
+            3
+          ],
+          [
+            3.9318231297050534,
+            0,
+            0.00007659313725490196,
+            -127.98125488868381,
+            129.84794363075457,
+            4
+          ],
+          [
+            3.931821676558375,
+            0,
+            0,
+            -127.90735102513976,
+            127.95458793984025,
+            5
+          ],
+          [
+            3.9318229048648963,
+            0.00003829656862745098,
+            0.00007659313725490196,
+            -128.00329434327426,
+            130.0276604758228,
+            6
+          ],
+          [
+            3.931822304983432,
+            0,
+            0.00015318627450980392,
+            -127.84621709475283,
+            129.9795548454848,
+            7
+          ],
+          [
+            3.9318216320156703,
+            0.00003829656862745098,
+            0.00003829656862745098,
+            -129.06007368386636,
+            129.83788487648226,
+            8
+          ],
+          [
+            3.931816500934189,
+            0.00003829656862745098,
+            0.00011488970588235294,
+            -130.06426537195492,
+            130.0276604758228,
+            9
+          ],
+          [
+            3.931820166902825,
+            0.00007659313725490196,
+            0,
+            -128.25632661662516,
+            127.90823666711668,
+            10
+          ],
+          [
+            3.9318135601033117,
+            0,
+            0.00003829656862745098,
+            -127.8603398951737,
+            129.84794363075457,
+            11
+          ],
+          [
+            3.9318189100222125,
+            0.00003829656862745098,
+            0.00007659313725490196,
+            -129.06007368386636,
+            129.83788487648226,
+            12
+          ],
+          [
+            3.931811954748725,
+            0.00003829656862745098,
+            0.00007659313725490196,
+            -129.97258550125176,
+            128.45680370111748,
+            13
+          ],
+          [
+            3.931817409819724,
+            0.00003829656862745098,
+            0.00007659313725490196,
+            -128.25632661662516,
+            130.0276604758228,
+            14
+          ],
+          [
+            3.9318111957260595,
+            0,
+            0,
+            -127.90571062250667,
+            127.9568532118198,
+            15
+          ],
+          [
+            3.931808142910392,
+            0,
+            0.00003829656862745098,
+            -127.90571062250667,
+            128.27347136694286,
+            16
+          ],
+          [
+            3.9318154838435646,
+            0,
+            0.00003829656862745098,
+            -127.83718930923838,
+            128.00032670329955,
+            17
+          ],
+          [
+            3.9318054758107115,
+            0,
+            0.00007659313725490196,
+            -127.84247945626069,
+            128.48924034175528,
+            18
+          ],
+          [
+            3.931804039591717,
+            0.00003829656862745098,
+            0.00003829656862745098,
+            -128.00329434327426,
+            128.48924034175528,
+            19
+          ],
+          [
+            3.9318055132162297,
+            0.00007659313725490196,
+            0.00003829656862745098,
+            -128.26550562918413,
+            128.2649163052491,
+            20
+          ],
+          [
+            3.9317883814038783,
+            0,
+            0.0002680759803921569,
+            -127.83467989182247,
+            130.00947088604897,
+            21
+          ],
+          [
+            3.9317990634370545,
+            0,
+            0.00007659313725490196,
+            -127.88818013041083,
+            129.92496264853202,
+            22
+          ],
+          [
+            3.9317976556957004,
+            0,
+            0.00003829656862745098,
+            -127.86038837351163,
+            128.00884107635798,
+            23
+          ],
+          [
+            3.931800803434899,
+            0,
+            0.00003829656862745098,
+            -127.86494424872575,
+            128.277286220437,
+            24
+          ],
+          [
+            3.9318110995410875,
+            0.00003829656862745098,
+            0.00011488970588235294,
+            -129.97258550125176,
+            128.28219177301335,
+            25
+          ],
+          [
+            3.9317957437742734,
+            0,
+            0,
+            -127.81107684215597,
+            127.97245360221402,
+            26
+          ],
+          [
+            3.931810393857425,
+            0.00003829656862745098,
+            0,
+            -130.04007080429503,
+            127.97549544902667,
+            27
+          ],
+          [
+            3.9318099954524324,
+            0,
+            0.00015318627450980392,
+            -127.82284396970431,
+            129.9795548454848,
+            28
+          ],
+          [
+            3.931802675878378,
+            0.00003829656862745098,
+            0.00003829656862745098,
+            -130.06426537195492,
+            128.42614740022475,
+            29
+          ],
+          [
+            3.9317929362992783,
+            0,
+            0.00007659313725490196,
+            -127.94502534537945,
+            128.28219177301335,
+            30
+          ],
+          [
+            3.9317715634059756,
+            0.00003829656862745098,
+            0,
+            -130.06426537195492,
+            127.95387542101952,
+            31
+          ],
+          [
+            3.931790193459853,
+            0,
+            0.00007659313725490196,
+            -127.90344719092673,
+            130.00947088604897,
+            32
+          ],
+          [
+            3.9317841661453015,
+            0.00007659313725490196,
+            0.00003829656862745098,
+            -128.26550562918413,
+            128.48924034175528,
+            33
+          ],
+          [
+            3.9318067470072844,
+            0,
+            0.00007659313725490196,
+            -127.84247945626069,
+            128.15855264730885,
+            34
+          ],
+          [
+            3.9317721010739826,
+            0,
+            0,
+            -127.8372097619931,
+            127.97267173620111,
+            35
+          ],
+          [
+            3.9317595198739945,
+            0.00003829656862745098,
+            0,
+            -128.6052687321856,
+            127.96438334924676,
+            36
+          ],
+          [
+            3.9317828001929493,
+            0.00003829656862745098,
+            0.00011488970588235294,
+            -129.80519733922708,
+            128.48924034175528,
+            37
+          ],
+          [
+            3.9317810715082704,
+            0,
+            0.00003829656862745098,
+            -127.8120009303772,
+            130.0308485637968,
+            38
+          ],
+          [
+            3.931805442724626,
+            0.00003829656862745098,
+            0.00011488970588235294,
+            -128.0920920478005,
+            129.92496264853202,
+            39
+          ],
+          [
+            3.931804191077993,
+            0,
+            0,
+            -127.84247945626069,
+            127.96438334924676,
+            40
+          ],
+          [
+            3.9317140360278495,
+            0.00003829656862745098,
+            0.00003829656862745098,
+            -130.06950209648053,
+            128.45680370111748,
+            41
+          ],
+          [
+            3.93177172364919,
+            0,
+            0.00007659313725490196,
+            -127.98125488868381,
+            128.34795816580385,
+            42
+          ],
+          [
+            3.931776596185998,
+            0.00003829656862745098,
+            0.00011488970588235294,
+            -129.06007368386636,
+            128.277286220437,
+            43
+          ],
+          [
+            3.9317003956736456,
+            0,
+            0.00007659313725490196,
+            -127.87551874908186,
+            130.0276604758228,
+            44
+          ],
+          [
+            3.931767147777129,
+            0,
+            0.00003829656862745098,
+            -127.98760911485938,
+            128.19356729350812,
+            45
+          ],
+          [
+            3.93176774143319,
+            0,
+            0.00011488970588235294,
+            -127.86969476321887,
+            129.92496264853202,
+            46
+          ],
+          [
+            3.9318030864498485,
+            0,
+            0.00007659313725490196,
+            -127.92467696873747,
+            130.0276604758228,
+            47
+          ],
+          [
+            3.9317901716033505,
+            0.00007659313725490196,
+            0,
+            -129.59880840020486,
+            127.96881353358847,
+            48
+          ],
+          [
+            3.931802261253962,
+            0.00003829656862745098,
+            0.00003829656862745098,
+            -129.80519733922708,
+            130.00947088604897,
+            49
+          ],
+          [
+            3.9318018448028327,
+            0.00003829656862745098,
+            0.00003829656862745098,
+            -128.6052687321856,
+            128.0626132884247,
+            50
+          ],
+          [
+            3.9317601426865254,
+            0.00003829656862745098,
+            0.00003829656862745098,
+            -129.59880840020486,
+            128.00032670329955,
+            51
+          ],
+          [
+            3.931712831406994,
+            0,
+            0.00007659313725490196,
+            -127.85012835441623,
+            129.94586885875538,
+            52
+          ],
+          [
+            3.931737451181173,
+            0.00003829656862745098,
+            0,
+            -129.97258550125176,
+            127.97523491604912,
+            53
+          ],
+          [
+            3.9317558107975237,
+            0.00007659313725490196,
+            0.00003829656862745098,
+            -130.04007080429503,
+            128.34795816580385,
+            54
+          ],
+          [
+            3.9317976546449667,
+            0.00003829656862745098,
+            0.00003829656862745098,
+            -128.25632661662516,
+            128.19356729350812,
+            55
+          ],
+          [
+            3.931757675861348,
+            0.00003829656862745098,
+            0.00011488970588235294,
+            -130.04007080429503,
+            130.0276604758228,
+            56
+          ],
+          [
+            3.9317988921657365,
+            0,
+            0.00003829656862745098,
+            -127.86494424872575,
+            128.34795816580385,
+            57
+          ],
+          [
+            3.9317989349475946,
+            0,
+            0.00007659313725490196,
+            -127.86494424872575,
+            128.38590827926427,
+            58
+          ],
+          [
+            3.9317490709423835,
+            0.00003829656862745098,
+            0.00003829656862745098,
+            -129.06007368386636,
+            128.27086865333388,
+            59
+          ],
+          [
+            3.931798730999925,
+            0.00007659313725490196,
+            0,
+            -130.06426537195492,
+            127.96577622224609,
+            60
+          ],
+          [
+            3.9317977212988073,
+            0,
+            0.00007659313725490196,
+            -127.8523365388886,
+            128.48924034175528,
+            61
+          ],
+          [
+            3.931748664423532,
+            0,
+            0.00003829656862745098,
+            -127.85172236914003,
+            129.84794363075457,
+            62
+          ],
+          [
+            3.93174092934664,
+            0.00003829656862745098,
+            0.00007659313725490196,
+            -128.00329434327426,
+            129.84794363075457,
+            63
+          ],
+          [
+            3.931743094012515,
+            0.00003829656862745098,
+            0.00003829656862745098,
+            -128.0920920478005,
+            128.48924034175528,
+            64
+          ]
+        ],
+        "gradient_norms": [
+          0.003128756510774887,
+          0.0014205794772065266,
+          0.0026328706379242436,
+          0.0025907593318507034,
+          0.0025312062524596277,
+          0.0014246214610716462,
+          0.0013788482839770147,
+          0.00138582908563394,
+          0.002523964355994007,
+          0.0013740854450214148,
+          0.0037784241784654415,
+          0.0013935915629068969,
+          0.003133685889960768,
+          0.001337529175292738,
+          0.0025927036882863433,
+          0.0032077792462965556,
+          0.0013320882858159275,
+          0.003795111935227385,
+          0.0031734113561291428,
+          0.0025542474884423343,
+          0.006711551129996752,
+          0.0031786740040107443,
+          0.0032252228887249884,
+          0.002563034230938727,
+          0.0012665824667170032,
+          0.00256345317462583,
+          0.0012654002716717219,
+          0.0011994469966295422,
+          0.0025601593487262018,
+          0.0025141534188612845,
+          0.004524343243907108,
+          0.0025835713728947825,
+          0.0032287177851956597,
+          0.0012123814472459109,
+          0.004736422943297258,
+          0.004783772802057252,
+          0.002573423441143736,
+          0.0025305327428151417,
+          0.0011987966982433056,
+          0.0011578200366112042,
+          0.005548687925585478,
+          0.003260572347766866,
+          0.002654511018577628,
+          0.005712176196786423,
+          0.0032959174925564065,
+          0.002512450121310579,
+          0.0011765556645984131,
+          0.003420449850863884,
+          0.001169166519331049,
+          0.0011234344235638994,
+          0.0025237538736739146,
+          0.00394973384600282,
+          0.004161385435453416,
+          0.002503219653226702,
+          0.0027636472580365953,
+          0.002671494786523752,
+          0.0011018622522399556,
+          0.0010909176209024317,
+          0.002556283669393329,
+          0.0010917339083636375,
+          0.0010623115191402202,
+          0.0025152489388017545,
+          0.0033540845192190074,
+          0.0025614372188292253
+        ],
+        "last_gradients_exact": true,
+        "online_target_Adam_count_serialization_bytes_exact": true,
+        "rng_exact": true,
+        "changes": {
+          "value_b0": 0.033554369465322524,
+          "value_b1": 0.02477171028358868,
+          "value_b2": 0.13933715080044085,
+          "value_w0": 0.19504040878936418,
+          "value_w1": 0.11647312415746597,
+          "value_w2": 0.36227303103141506
+        },
+        "old_data_used": false
+      },
+      {
+        "iteration": 2,
+        "new_replay_transitions": 12492,
+        "pooled_replay_transitions": 25692,
+        "categorical_updates": 64,
+        "hard_target_copies": 1,
+        "target_frozen_for_all_64_updates_exact": true,
+        "replay_and_original_home_terminal_backup_exact": true,
+        "all_indices_projected_masses_unbounded_atoms_greedy_probabilities_exact": true,
+        "alternate_adjacent_bin_projection_max_error": 3.9968028886505635e-15,
+        "statistics": [
+          [
+            3.9317189861145234,
+            0.00011317326832936403,
+            0.00011288664186743548,
+            -129.80519733922708,
+            129.83020191028734,
+            65
+          ],
+          [
+            3.9317844769367225,
+            0.000037847095187636465,
+            0.000037768101496029126,
+            -128.1257988124694,
+            128.12252101903525,
+            66
+          ],
+          [
+            3.9317843659012417,
+            0,
+            0.00003770427540234536,
+            -127.89366752800342,
+            128.277286220437,
+            67
+          ],
+          [
+            3.9317314571125666,
+            0.00007551700589659451,
+            0.0001507395798069951,
+            -130.0537009492018,
+            130.0827252913256,
+            68
+          ],
+          [
+            3.9317813512302138,
+            0,
+            0.00007523329431054274,
+            -127.88818013041083,
+            129.84794363075457,
+            69
+          ],
+          [
+            3.9317147414100475,
+            0.00003753099545645877,
+            0.00011334466066062685,
+            -128.0918816972751,
+            128.27412143113344,
+            70
+          ],
+          [
+            3.931770396615816,
+            0.000037714874308246764,
+            0.0002262798976416788,
+            -130.07131824150974,
+            130.00947088604897,
+            71
+          ],
+          [
+            3.9317249690078135,
+            0.00007563799071122425,
+            0.00003785986208422195,
+            -129.06007368386636,
+            128.0843348791342,
+            72
+          ],
+          [
+            3.9317199050080065,
+            0.00003779022340858164,
+            0.0000751205320745552,
+            -129.59880840020486,
+            129.73523472847805,
+            73
+          ],
+          [
+            3.9317779371663413,
+            0.00007553601022824652,
+            0,
+            -130.07131824150974,
+            127.97983446365537,
+            74
+          ],
+          [
+            3.931765939814567,
+            0.00003774215664093007,
+            0.000075490140773431,
+            -128.96763595618506,
+            128.42614740022475,
+            75
+          ],
+          [
+            3.93177574669438,
+            0,
+            0.00007520792117360274,
+            -127.89277998664458,
+            129.83795664300536,
+            76
+          ],
+          [
+            3.931706031509428,
+            0.00003768471973015384,
+            0.00011321895705262156,
+            -129.9878347051863,
+            128.33163264558914,
+            77
+          ],
+          [
+            3.9315738171367514,
+            0.00003755915558378091,
+            0.000037688107312033224,
+            -128.06645799988524,
+            128.26882386219984,
+            78
+          ],
+          [
+            3.9317740458580284,
+            0.00007543455600415321,
+            0.000037704846606706814,
+            -130.05493695451125,
+            128.27503008392173,
+            79
+          ],
+          [
+            3.9317119557193028,
+            0,
+            0.00007513059218353265,
+            -127.858725680318,
+            129.9298641662967,
+            80
+          ],
+          [
+            3.931702849704621,
+            0.00003765098473885722,
+            0,
+            -128.18364413569836,
+            127.95537744187953,
+            81
+          ],
+          [
+            3.93169946115167,
+            0.00003777183709469432,
+            0.00007552551391919429,
+            -128.1095804146638,
+            128.27347136694286,
+            82
+          ],
+          [
+            3.9317703889840208,
+            0.00003779189703666403,
+            0.00007563313291771541,
+            -128.66903994772287,
+            128.3655138300859,
+            83
+          ],
+          [
+            3.9316092107198504,
+            0.00007518646997453945,
+            0.0001512496956064672,
+            -128.07040444592224,
+            128.42998394153196,
+            84
+          ],
+          [
+            3.931769089016656,
+            0,
+            0.000037812189770878146,
+            -127.88608196593712,
+            128.33163264558914,
+            85
+          ],
+          [
+            3.931751835671135,
+            0.00011317536967228334,
+            0.00018893447243202634,
+            -130.05493695451125,
+            128.34795816580385,
+            86
+          ],
+          [
+            3.9317674639052993,
+            0,
+            0.000037812189770878146,
+            -127.97761808581765,
+            128.33163264558914,
+            87
+          ],
+          [
+            3.9317617764162844,
+            0,
+            0.00011287870232469767,
+            -127.86646256276588,
+            129.9298641662967,
+            88
+          ],
+          [
+            3.931684623742201,
+            0.00007545575944564807,
+            0.00007526540120174455,
+            -128.02079457826895,
+            129.97797201025435,
+            89
+          ],
+          [
+            3.9317661888317272,
+            0.00015089689593320135,
+            0.00003785664249388231,
+            -129.06007368386636,
+            128.03569309113135,
+            90
+          ],
+          [
+            3.9317661759263376,
+            0.000037665365048106834,
+            0.00003779092153959758,
+            -128.08955584580426,
+            128.15855264730885,
+            91
+          ],
+          [
+            3.9317644129977514,
+            0,
+            0.0001505162210472833,
+            -127.96615043426064,
+            129.97797201025435,
+            92
+          ],
+          [
+            3.9316717895183175,
+            0.00007538459534897512,
+            0.00007553860337139616,
+            -128.088784901443,
+            128.33783891177117,
+            93
+          ],
+          [
+            3.931764081908786,
+            0,
+            0.00003783113098016189,
+            -127.95263486626376,
+            128.42998394153196,
+            94
+          ],
+          [
+            3.9315810541479577,
+            0.00015063305083934988,
+            0.00015097216887176613,
+            -128.66903994772287,
+            128.28219177301335,
+            95
+          ],
+          [
+            3.9317623051568047,
+            0,
+            0.00003753791468832074,
+            -127.92930032283846,
+            130.0827252913256,
+            96
+          ],
+          [
+            3.931762729927474,
+            0.000037781693079136966,
+            0.00007564849200628424,
+            -128.02895690507253,
+            128.13660122179175,
+            97
+          ],
+          [
+            3.9316739334573496,
+            0.00007522441352213862,
+            0.000074824616380038,
+            -128.06729816738203,
+            129.8608694045152,
+            98
+          ],
+          [
+            3.931672302178997,
+            0.00011315709116146489,
+            0.00007545928543457367,
+            -130.01858078049514,
+            129.92496264853202,
+            99
+          ],
+          [
+            3.931735870699367,
+            0,
+            0.00003760882329542324,
+            -127.86168148427505,
+            128.3088393850098,
+            100
+          ],
+          [
+            3.931573930957916,
+            0,
+            0,
+            -127.92467696873747,
+            127.96705713329504,
+            101
+          ],
+          [
+            3.9316441254168755,
+            0.00011327824421238433,
+            0.00007553977511475963,
+            -129.3106404148958,
+            128.42998394153196,
+            102
+          ],
+          [
+            3.9317592734772604,
+            0.0000378019589391881,
+            0.00011293331964045032,
+            -128.09519834792675,
+            129.84794363075457,
+            103
+          ],
+          [
+            3.9316363986293137,
+            0.00011281725273697005,
+            0.00003781319253043256,
+            -130.04007080429503,
+            128.13660122179175,
+            104
+          ],
+          [
+            3.931732604535837,
+            0.000037855059917587225,
+            0,
+            -128.26550562918413,
+            127.95020202575323,
+            105
+          ],
+          [
+            3.931759300319024,
+            0.00011326844965174718,
+            0.0001507397471732197,
+            -129.8367812043357,
+            130.051321079261,
+            106
+          ],
+          [
+            3.931532258127435,
+            0.000037673334934112146,
+            0.00007568867916275243,
+            -128.00329434327426,
+            128.48924034175528,
+            107
+          ],
+          [
+            3.9316571248423906,
+            0.00007551389009143923,
+            0.00011300135962870005,
+            -128.25632661662516,
+            129.83795664300536,
+            108
+          ],
+          [
+            3.93153516232237,
+            0,
+            0.00015038188764878861,
+            -127.87007860462369,
+            129.94586885875538,
+            109
+          ],
+          [
+            3.9315339800912037,
+            0.000037649138649363676,
+            0.0000754010680491487,
+            -128.0349923019927,
+            128.27086865333388,
+            110
+          ],
+          [
+            3.9316398718795806,
+            0,
+            0.00015017090763220787,
+            -127.83107496138568,
+            129.9795548454848,
+            111
+          ],
+          [
+            3.931717622746951,
+            0,
+            0.0001505436032565418,
+            -127.83444774308342,
+            129.94586885875538,
+            112
+          ],
+          [
+            3.9317190332016354,
+            0.00007540884881821439,
+            0.00007562978353797118,
+            -129.91907040852587,
+            128.19356729350812,
+            113
+          ],
+          [
+            3.9315878177433596,
+            0.000037858051942778884,
+            0.00011310597314575152,
+            -128.25632661662516,
+            128.4396688337179,
+            114
+          ],
+          [
+            3.9317603615857752,
+            0,
+            0.00003783529947585168,
+            -127.88324912308514,
+            128.08402450071574,
+            115
+          ],
+          [
+            3.931507870772611,
+            0.00007557605812013582,
+            0.00007570952332718679,
+            -128.25196360514488,
+            128.21792701721495,
+            116
+          ],
+          [
+            3.9316747284852624,
+            0,
+            0.00007534729089793773,
+            -127.9527554297423,
+            129.9795548454848,
+            117
+          ],
+          [
+            3.9317121740439966,
+            0.00007544575796302938,
+            0.00015103096736531274,
+            -130.0537009492018,
+            128.21792701721495,
+            118
+          ],
+          [
+            3.9316351255692408,
+            0.0000755761115706726,
+            0.00003741713122048226,
+            -129.59880840020486,
+            129.83020191028734,
+            119
+          ],
+          [
+            3.931760935633504,
+            0,
+            0.00007557652393718985,
+            -127.83104339926406,
+            128.25694016936063,
+            120
+          ],
+          [
+            3.9317627415665077,
+            0.00003768143558349811,
+            0.00011309121546355702,
+            -128.0777468365239,
+            128.42614740022475,
+            121
+          ],
+          [
+            3.9317145594826117,
+            0.00003774082746208055,
+            0.000037730272718829696,
+            -128.50728160150268,
+            128.27347136694286,
+            122
+          ],
+          [
+            3.931759386444037,
+            0.00011335798454195512,
+            0.00015096294499825172,
+            -130.06426537195492,
+            128.42998394153196,
+            123
+          ],
+          [
+            3.931761102272964,
+            0,
+            0.00011330295116522747,
+            -127.9527554297423,
+            128.38831967166,
+            124
+          ],
+          [
+            3.9316960335390467,
+            0.00011324335660485528,
+            0.00007547155211855798,
+            -129.8367812043357,
+            128.2649163052491,
+            125
+          ],
+          [
+            3.93176334429604,
+            0.00003777183709469432,
+            0,
+            -128.1095804146638,
+            127.85496486939006,
+            126
+          ],
+          [
+            3.9316914648324097,
+            0.0000752795749067878,
+            0.00011334828240721835,
+            -128.0918816972751,
+            128.25694016936063,
+            127
+          ],
+          [
+            3.9314947924992594,
+            0,
+            0,
+            -127.9527554297423,
+            127.97834604576619,
+            128
+          ]
+        ],
+        "gradient_norms": [
+          0.00371410695139688,
+          0.0010347829747432689,
+          0.0010034630109039206,
+          0.005814387023452249,
+          0.0009871100867245568,
+          0.004415017981505292,
+          0.0053333925131199885,
+          0.0026321906469578596,
+          0.0025163916407669107,
+          0.0009288320597141825,
+          0.002868751089640617,
+          0.0009332850025206104,
+          0.0036634256620432055,
+          0.007560881393364105,
+          0.0009280339019538119,
+          0.002651824679055281,
+          0.002712820794604371,
+          0.0027502519839388323,
+          0.0008770388539220189,
+          0.007254285825766997,
+          0.000863977310519022,
+          0.002944827595714511,
+          0.0008853938793446704,
+          0.002946239232192908,
+          0.0027652044999711975,
+          0.0008833009792673648,
+          0.0008380802582218531,
+          0.0008428451139840292,
+          0.0036336429022182917,
+          0.0008650422650199616,
+          0.00450890824138089,
+          0.00074518313032015,
+          0.0008117233523775878,
+          0.0027831664654389726,
+          0.002762414457487941,
+          0.002999650554737194,
+          0.004487421866618162,
+          0.0041332874382873,
+          0.0007335828344497962,
+          0.004052254975264183,
+          0.003918351692235705,
+          0.0007581086875648844,
+          0.006260864153461504,
+          0.002688078300583438,
+          0.004472850536188742,
+          0.004566097324866336,
+          0.0037771264479110897,
+          0.0031355980564875033,
+          0.0031294428950827363,
+          0.0055006850055997515,
+          0.0008095269432060554,
+          0.0045611692057453525,
+          0.004368878076695246,
+          0.003069805787300542,
+          0.0028072335835799683,
+          0.0007933873194465903,
+          0.0008982105954512693,
+          0.004131713506558712,
+          0.0008431720150342234,
+          0.0008581060395994748,
+          0.0031105589788257716,
+          0.0008841865896445302,
+          0.0031304937350563073,
+          0.005787492569067271
+        ],
+        "last_gradients_exact": true,
+        "online_target_Adam_count_serialization_bytes_exact": true,
+        "rng_exact": true,
+        "changes": {
+          "value_b0": 0.03561375079280773,
+          "value_b1": 0.025471647180462516,
+          "value_b2": 0.10728712270821303,
+          "value_w0": 0.22202399435328815,
+          "value_w1": 0.13386994313415046,
+          "value_w2": 0.3472527037235837
+        },
+        "old_data_used": false
+      }
+    ],
+    "original_before_request_IMU_double_reconstructed": false,
+    "whole_old_feedback_independently_recomputed": false,
+    "cross_implementation_bitwise_or_safety_claim": false,
+    "test_startup_mapping_manifest_verified": true,
+    "explicit_four_test_source_copies_verified": true,
+    "live_bytes": 615782373,
+    "full_task_completed": false,
+    "hardware_readiness": false,
+    "qualification": false
+  },
+  "verification_exit_receipt": {
+    "local_session": 66961,
+    "observed_local_exit_code": 0,
+    "server_receipt": {
+      "observed_exit_code": 0,
+      "elapsed_s": 229.3080993052572,
+      "new_dynamic": 0,
+      "verifier_source_sha256": "6fa01ce1236cb3c2bacb34dac4c4c17c22a6fcf057250d60e2060fed88c65848",
+      "proof_exists": true,
+      "log_path": "/data/shijinsheng/open_duck/tmp/getup_total_target_c51_r200b_verification_20261011.log"
+    },
+    "proof_sha256": "66048efd3232f1ab3d278ed804d7c56a595c1f54cc0a73090bca5407c33ce44f",
+    "proof_full_chars": 2081584,
+    "proof_leaf_fields": 17195,
+    "full_text_read_and_json_traversal": true
+  },
+  "source_sha256": {
+    "total_target_c51_kernel_r200.py": "891a4ae407d3c7138301a3aee7c59da7f9ea449ca69fffcf8497182b6a9469fd",
+    "train_getup_total_target_c51_r200.py": "cf74f0a710d68be3cb55c40ea90dd27e08531fd52dcc3061241aadb298731913",
+    "test_getup_total_target_c51_r200.py": "9a82a8a4faafe232807b0aa842288fc0b90ccfe7a64db0e201051a76e0f68d9a",
+    "launch_getup_total_target_c51_r200.py": "77b0408f40a1783e2a4338ee8954031ae3ee94f878e082600ebc7262557507ee",
+    "verify_getup_total_target_c51_terminal_r200.py": "4e283ce020654433fa4e1ae053080721f36f1c4054e6cecd0ef8e64bdc53e73e",
+    "verify_getup_total_target_c51_terminal_r200b.py": "6fa01ce1236cb3c2bacb34dac4c4c17c22a6fcf057250d60e2060fed88c65848",
+    "archive_getup_total_target_c51_terminal_r200.py": "325d6e357b4a46fc8b368b91320ce0f9d26bbb2d8f1b37fc1e2d7c6b33a5a359",
+    "archive_getup_total_target_c51_terminal_r200b.py": "2c885bf4e67209a3c669e11345f8caa6bc71bf18076cf5feaa66688c5d585787",
+    "publish_getup_total_target_c51_terminal_r200_20261011.py": "4b9bb790dc7eb98589f4a056eb5767077d99ee7e3f951ad846388e47042e8cb5",
+    "GETUP_TOTAL_TARGET_C51_PLAN_R200_20261011.json": "a75165d353a234bf6e6f07b2554825389b811b4d52a7cb750b7dbe030b8002f7"
+  },
+  "interpretation": "Both checkpoints ineligible: check1=5/24 Stdfalse invalid1, check2=8/24 Stdtrue invalid2. Final18/24 is R157 fallback, not new C51 improvement. Unified bestR15718/24. Six block changes and128 categorical updates do not prove learning effectiveness, convergence or safety.",
+  "failure_limitations": "All original failed and invalid paths/labels/peaks/initHash/full arrays/rewards retained. 46 or304 controls is not first500Hz crossing; final smaller self-penetration does not negate peak. Small actions/cap/control endpoints or shallow geometry cannot relabel; visited divergence is not immediate counterfactual or unique root cause.",
+  "verification_implementation_failure": {
+    "original_verifier_sha256": "4e283ce020654433fa4e1ae053080721f36f1c4054e6cecd0ef8e64bdc53e73e",
+    "original_local_session": 51731,
+    "original_actual_exit_code": 1,
+    "original_failure": "KeyError observed_exit_code: R200 preflight receipt uses natural_exit/exit_code/new_dynamic_attempts, not R199 fields. Aborted before trajectory reconstruction, proof absent, newdynamic0.",
+    "correction": "New verifier_r200b changes only actual receipt-field reads and additionally verifies all original preflight source hash entries; no executed training code, physics, criteria, saved paths or learning changes.",
+    "corrected_verifier_sha256": "6fa01ce1236cb3c2bacb34dac4c4c17c22a6fcf057250d60e2060fed88c65848",
+    "all_original_source_failure_log_receipts_preserved": true,
+    "archive_a_prepared_not_executed": true,
+    "archive_b_selected_for_actual_execution": true
+  },
+  "readonly_inspection_gaps": "Original preflight manifestinspection count2 failure preserved; new exactcopydir readonly inspection succeeded. Later local status JSON.parse failed on tool-truncated log output prefix, not training or verification failure; full2,081,584-character proof downloaded separately and traversed. Never substitute snippets for full proof. Old partial/source/before-request/nativebinary gaps not filled.",
+  "method": {
+    "round": "R200",
+    "date": "2026-10-11",
+    "status": "frozen_design_before_execution",
+    "simulation_only": true,
+    "hypothesis": "A fresh single categorical return network learns state-dependent discrete total-target selection, rather than continuous actor gradients. This is an unverified finite method, not safety/learning efficacy.",
+    "primary_source": "https://arxiv.org/abs/1707.06887",
+    "implementation_variant": "C51 categorical projection and expected-return greedy discrete control; no paper task performance transferred to this robot.",
+    "structural_difference": [
+      "single categorical distribution network over fixed21 action codes; no actor/continuous policy derivative/twin scalar Q/entropy/temperature/target actor/Polyak",
+      "fresh seed300 initial6 blocks and one new Adam, no old weights/replay/optimizer/RNG",
+      "codes selected each control using current causal input, not whole-policy parameter proposals or old gain/direct/window searches"
+    ],
+    "online_inputs": [
+      "current actual native50 tanh",
+      "causal initial actual native50 tanh",
+      "fixed min(control/528,1)"
+    ],
+    "inputs101": true,
+    "framezaxis_not_body_gravity": true,
+    "online_forbidden": [
+      "actual root/qpos/qvel",
+      "case/seed/path/labels/teacher",
+      "future measurements",
+      "context lookup",
+      "private simulator/physics prediction"
+    ],
+    "network": {
+      "shape": [
+        101,
+        32,
+        16,
+        1071
+      ],
+      "hidden": "tanh",
+      "output": "21x51 logits, softmax each action",
+      "initial": "fresh random hidden, exactzero last weight/bias, uniform return masses and firstindex greedy tie zero"
+    },
+    "action_book": {
+      "count": 21,
+      "code0": "ten normalized zero",
+      "remaining": "in fixed Mapping.legs order, each single leg +1e-4 then -1e-4 normalized; one nonzero leg at a time",
+      "amplitude_fixed_no_search": true,
+      "restriction": "cannot choose simultaneous multileg nonzero correction; no completeness/efficacy claim"
+    },
+    "request": "control1..528 reference + .18*code replaces old ten-leg feedback. No old residual sum and no second tanh. First0/fourhead/home529+ unchanged.",
+    "boundary": "Original postIMU/right exactdouble tenleg replacement then original joint and 5.24rad/s*.02 slew; every planned==applied and recursiveprev assert exact. Old before-request/fullIMUdouble gaps retained.",
+    "exploration": {
+      "epsilon": 0.1,
+      "per_sample_active_control": "one uniform gate then one integer21 ALWAYS even no exploration; no Gaussian",
+      "deterministic": "firstindex argmax expected categorical return; no RNG consumption",
+      "zero_tie_is_not_R157": "zero relative reference, not zero oldfeedback"
+    },
+    "learner": {
+      "atoms": 51,
+      "support": [
+        -128,
+        128
+      ],
+      "projection": "greedy target distribution shifted r+gamma*(home_tail+bootstrap*atoms), fixed support linear neighboring-atom mass projection including exactatom mass, crossentropy",
+      "gamma": ".99**.2",
+      "support_clipping": "estimator approximation only, all raw target atoms/mass clipping saved; original rewards/results/peaks not clipped/relabelled",
+      "learning_rate": 0.0001,
+      "batch": 512,
+      "with_replacement": true,
+      "updates_per_round": 64,
+      "rounds": 2,
+      "global_norm": 1,
+      "optimizer": "fresh Adam",
+      "target": "single frozen withinround, exactly one hard copy at round end",
+      "no_actor": true
+    },
+    "offline_data": "Only new R200 training25 eachround, complete original reward/failure/invalid retained. Write recovery replay after next real observation arrives. Invalid terminal no crossresetbootstrap; recovery528 complete original discountedhome tail with no newhomepolicy. Smoke/baseline/detchecks/final/allolddata evaluation/interface fixtures ONLY, not learning.",
+    "evidence": [
+      "all path original arrays/rewards/labels/fullpeaks/prepare constructor40/reset40/initHash",
+      "all control code/greedy/expected21/selected51/gate/integer/request and full RNG",
+      "all new replay/batchindices/projectedmass/rawtargetatoms/selectednextdistribution/greedy/lossnorm/lastgradient/change",
+      "initial and two fullonline/target/Adamcount msgpackbytes/RNG checkpoints",
+      "explicit four source and all importedPython startup manifests, fullXMLassets/frozen/modelphysics hashes"
+    ],
+    "total_attempt_cap": 162,
+    "independent_smoke_cap": 6,
+    "formal_cap": 156,
+    "dynamic_accounting": "6 independent + formal6 same startup +25R157baseline + two25train +two25detcheck +25final; NOT162 independent initial states. Original max2279controls/45.58s, invalid can originalearlyexit. No extra dynamic/epochs/noise/code/magnitude/network/round/window.",
+    "smoke": {
+      "original_baseline": [
+        null,
+        769000,
+        773004
+      ],
+      "initial_deterministic": [
+        null
+      ],
+      "initial_sample": [
+        769002,
+        773004
+      ],
+      "gate": "baseline alloriginalfields/initHash/peaks exactR157; initialStdsuccess allsixvalid/full2279; perturb recovery not required, no6/6claim; independent realnaturalexit0 before regression/formal"
+    },
+    "selection": "Std/allvalid/retainsALL18baseline successes and strictly>18; rank success/minoriginalreturn/sumoriginalreturn/earliercheckpoint. Noeligible -> R157 fallback25, notnewpolicy improvement; no successful union/oracle.",
+    "storage": {
+      "total_live_archive_git_gib": 2,
+      "start_free_gib": 12,
+      "reserve_free_gib": 10,
+      "preflight_included": true,
+      "live_guard": "3x fouroutput filebytes conservative; actual finalarchive+Git separately checked",
+      "no_cleanup_other_or_unconfirmed_data": true
+    },
+    "frozen_model_sha256": "53a24e16553a85c7e1ba354a692eca45094ba31d5d561f2d54f7a75e1d5914b3",
+    "physics_sha256": "4b9f4a9167e1614c22f7e6f28dd8508f7ccabb61d909a6c47dd46e40b861c6ae",
+    "baseline_commit": "31e772a1b963d1282fa03d65ab3ec461ca4b9ea7",
+    "fixed_acceptance": "Std+24>=22 and>18/allvalid ->316>=36/40 betterfixedzero/R102 allvalid ->UNREAD320 two20each>=18 ->largerindependentperturbations/sensor executiondelay/right prone supine alloriginalgates; <=12sentry/continuousstrict30s/every500Hzvalid unchanged.",
+    "unseen_320_not_loaded_or_executed": true,
+    "full_task_completed": false,
+    "hardware_readiness": false,
+    "qualification_passed": false,
+    "protected_live_server_no_pid_operations": true,
+    "all_executed_old_sources_plans_failures_history_immutable": true,
+    "limitations": [
+      "categorical return not probability of safety",
+      "fixedsupport can distort outofsupport return estimates, retained rawvalues quantify it",
+      "narrow actionbook and finite smallbudget may not improve; cannot expand if fails",
+      "same NumPy/JAX/optax arithmetic validation not crossimplementation bitwise/safety",
+      "controlendpoints not first500Hzcrossing, smallaction/cap does not negate peaks",
+      "nativebinary snapshots and old source gaps not invented"
+    ],
+    "preflight": "25 new offline regressions incl independentprojection/exactatom/gradient/stopgradient/RNG/fullcheckpoint, actualnative/scalar frozenworker/fullplanning/init/fullmodel. No dynamic until naturalexit0.",
+    "next_after_training": "New independent all-deciding read-only verification and unique terminal archival/publication; never repeat closed old procedures."
+  },
+  "offline_learning": {
+    "new_replay_transitions": [
+      13200,
+      12492
+    ],
+    "cumulative_transitions": 25692,
+    "invalid_early_terminal_preserved": true,
+    "categorical_updates": 128,
+    "target_hard_copies": 2,
+    "target_frozen_within_round": true,
+    "only_new_training_used": true,
+    "original_full_reward_unchanged": true,
+    "complete_original_home_discount_backup": true,
+    "no_actor_entropy_temperature_twin_scalar_Q": true,
+    "clipping_is_estimator_approximation_not_original_reward_or_result_relabel": true,
+    "raw_target_extremes": [
+      {
+        "iteration": 1,
+        "min": -130.06950209648053,
+        "max": 130.0308485637968,
+        "maximum_batch_mean_low_mass": 0.00007659313725490196,
+        "maximum_batch_mean_high_mass": 0.0002680759803921569,
+        "alternate_adjacent_atom_projection_max_error": 4.3298697960381105e-15
+      },
+      {
+        "iteration": 2,
+        "min": -130.07131824150974,
+        "max": 130.0827252913256,
+        "maximum_batch_mean_low_mass": 0.00015089689593320135,
+        "maximum_batch_mean_high_mass": 0.0002262798976416788,
+        "alternate_adjacent_atom_projection_max_error": 3.9968028886505635e-15
+      }
+    ],
+    "all_original_batch_arrays_gradients_online_target_Adam_count_msgpack_RNG_exact": true
+  },
+  "budget": {
+    "total_attempt_cap": 162,
+    "independent6_formal156": true,
+    "no_further_dynamic_or_codes_magnitude_network_updates_rounds_windows": true,
+    "total_live_archive_git_gib": 2,
+    "reserve_free_gib": 10,
+    "start_free_gib": 12,
+    "preflight_included": true,
+    "verified_live_bytes": 615782373,
+    "actual_archive_and_git_accounting_pending": true,
+    "no_cleanup_other_or_unconfirmed_data": true
+  },
+  "limits": "PostIMU/right saved exactdouble boundary independent reconstruction after that boundary, not all before-request or full old IMU feedback. qpos/qvel isolated original-field equality only. Same JAX/optax computation verification not cross-implementation bitwise or safety. Python startup manifests not nativebinary snapshot. All old source/partial failures and gaps remain unchanged.",
+  "acceptance": "Std+original24>=22 and>18 allvalid ->frozen316>=36/40 and betterfixedzero/R102 allvalid ->UNREAD3200000..3200039 pairedinitHash two20each>=18 ->larger independent perturbation/sensor+executiondelay/right/prone/supine20each18 allvalid. Entry<=12s continuousstrict30s every500Hzvalid unchanged. No316 expansion/no320 read or execute. Allsim passed+evidence+listhardwareunpassed needed to finish.",
+  "protected": "live_server2664890; walker/physics/reward/criteria unchanged; no hardware connection/enable/deploy; no old process operations, force push or key export.",
+  "full_task_completed": false,
+  "hardware_readiness": false,
+  "qualification": false
+}
+
