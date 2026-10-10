@@ -1,0 +1,47 @@
+# R194 共同教师轨迹独立审计终态
+
+2026年10月10日，R194独立只读smoke和正式全量审计均已闭合并自然退出。R193全部187条既有轨迹的因果信号、原目标边界后的merge与joint/slew规划均精确一致，共同选择仍为零。没有新增动态、训练、搜索或成绩提升；统一最好仍R15718/24，标准保留、物理无效0、开发门禁未过。
+
+## 审计范围和自然退出
+
+初始12项新回归0.854秒、独立smoke自然exit0后第二轮12项0.868秒，全通过。独立6条读取11440控制记录，包含标准、非零救回、退化和原无效早退；正式读取R193全部187条、418014控制记录。独立6是这187条的子集，不是新动态或193个独立起点。原183条走满2279控制步45.58秒，4条45/304/304/304早退全保留。
+
+launcher收据natural_exit=true、smoke_exit_code0、formal_exit_code0、new_dynamic_trajectories0、source_hashes_unchanged=true。无审计失败或修正版，不重跑R193动态/旧离线验证，也未追加共同波形预算。
+
+## 因果重算和原规划边界
+
+新增决定只从实际native34当前、因果initial及固定同相位nominal重算delta。固定gyro/up/q/nativev尺度1/.05/.05/.05，a=tanh(RMS(delta))，十腿raw=a*C*四global sin(pi*n*k/528)，四头新增0；up仍原framezaxis，不冒称bodygravity。seed293仅独立重生成原两normal std1e-5rad方向正负和零，系数限1e-4rad。离线按实际程序组提供独立重生成系数，保存系数只compare，不从保存delta/a/wave/raw决定；在线函数不接受case/seed/path/label/teacher/未来/lookup/root输入。
+
+冻结R157选择器由真实native50 preparation最后一帧重算，冻结原右髋函数由actual native和固定nominal重算，gains/choice/logits及右髋信号精确。原post IMU/right exactdouble目标是明确输入边界；此前request/IMU double未单独保存，不能冒称重建全部原IMU。该边界后独立reference±.18、十腿merge/head原样、原joint、5.24rad/s×.02slew、base/adjusted/planned/applied及递推prev逐位；保存规划不用于决定。实际previous的float32历史编码逐步核对，14路合计修正峰值精确。
+
+control0保留原目标对象，标准actual新增raw/delta精确0，零系数raw0但扰动下delta/activation仍可非零；home529后所有新增信号0，原反馈规则不改。仅静态MjModel映射/home/关节范围与完整模型序列化核验；无MjData、canonical geometry、forward/RNE/inverse/积分/contact/distance/passive/actualforce或环境构造，不改原物理成败。qpos/qvel只在隔离全字段equality中读取，不进入scalar/planning。
+
+## 共同选择和全字段配对
+
+独立重算原五报告、保留成功/救回/退化、std/allvalid/无原成功退化且严格提高才eligible、成功/min原return/sum原return排序、全部5个closed_program历史、proposals与terminal RNG和selected_teacher/basis精确。程序0/1/2/3/4仍18/11/8/8/11成功、invalid0/1/2/1/0，所有非零ineligible，选零而非成功并集或onlinecaseoracle。
+
+25最终candidate/baseline全部数组和完整result相同，配对初始hash一致。87条零或标准路径原全部R157字段、共有原result和peaks精确；仅明确八类R157专属报告注解不要求新增同名。正式对应独立6全部九类信号和post-slew差全数组、六行摘要、25配对和完整共同选择精确一致。正式另保存全部4原无效信号，共9代表文件，不冒称保存187份新signal文件；187条决定均完整重算。
+
+## 原无效证据保留
+
+program1/773009保存45controls，self峰值0.030023331742615438m，raw4.240739854744184e-6rad，post4.240739854749487e-6rad，合计0.03079548802773502rad。program2/769002保存304，self0.0486417177943165m，raw3.122813561817772e-5rad，post3.122813561817761e-5rad，合计0.10355875100205791rad。
+
+program2/773012保存304，self0.04874911310676949m，raw2.4373618437766017e-5rad，post2.437361843776742e-5rad，合计0.10183239971154973rad。program3/769002保存304，self0.04863884847461809m，raw2.9576244082290267e-5rad，post2.957624408228554e-5rad，合计0.14780422342023036rad。所有原其他peaks/标签/initHash完整保留。
+
+独立smoke program1/769002救回11.12/34.66、raw3.5998240786185244e-5/post3.4919790558640695e-5；769001完整有效失败、raw3.2281982862839766e-5/post3.2281982862841785e-5，773009原无效，后三均访问非零。控制端点和记录数不是首次500Hz crossing。未发现决定不一致不是安全、恢复反事实或唯一根因，小raw/未达cap不能改判原500Hz峰值；不同visitedsensor分叉也不是同状态即时反事实。旧来源与partial缺口不回填。
+
+## 来源和资源
+
+源码、原R193全部输出/14启动manifest副本、frozen、全XMLinclude/fileassets、stand/reference、原两archive/首核验失败/doc/plan/verification共7912个文件hash前后相同。compiled MJB53a24e16553a85c7e1ba354a692eca45094ba31d5d561f2d54f7a75e1d5914b3及旧physics4b9f4a9167e1614c22f7e6f28dd8508f7ccabb61d909a6c47dd46e40b861c6ae不变。新main、两test、实际launcher explicitmain与全部importedPython源startupcopy一致；正式manifest491源，不是nativebinarysnapshot。
+
+audit main SHA256 c62d61ad373036e9f39e982dbb3610322b3dd3368cf345da6435b3c75fcb0aa6；test b3646df896561b98b82f10c359afe02694b553958bc7e10af2f48c19dd01743c；launcher43bc6b412e03162c9aeec67d4153141b8174d0a4a22dcc802a0d10f4a38565bc。本机和服务器及执行副本核对一致，所有执行后fixed证据不可覆盖。
+
+ROOT=/data/shijinsheng/open_duck，项目ROOT/projects/Open_Duck_Playground，SSH5090x8。实际launcher diagnostics.launch_getup_shared_horizon_teacher_audit_r194 --launch后台同无参数；子audit_getup_shared_horizon_teacher_terminal_r194 --smoke自然exit后同无参数正式，OMP/OPENBLAS/MKL1、CUDA空/JAXcpu。输出getup_shared_horizon_teacher_terminal_audit_r194_smoke_20261010、getup_shared_horizon_teacher_terminal_audit_r194_20261010及log，启动器getup_shared_horizon_teacher_audit_launcher_r194_20261010及tmp/getup_shared_horizon_teacher_audit_r194_launcher_20261010.log。
+
+独立18141516bytes、正式19027094、launcher32288344，live合计69456954bytes，3×live小于0.25GiB合计预算，保留10GiB；终态前free16278994944bytes仅当时快照。只新两审计terminal_snapshot和launcher及核验/全源/新plan/终态doc/归档/publisher，不复制旧dynamic、不清理他人或未确认数据。新归档须自然退出后以正确-m入口archive_getup_shared_horizon_teacher_audit_r194 --base13c583ec2fddca0dafc9ea280da1f5e8cf0b4de1，只新clean提交。准备此文时归档/发布未执行；后续真实成功收据不覆写该历史条件。发布须正常FF真实exit0、独立原readonlyhelperexit0、GitHub明确commit读本文一致。
+
+## 后续验收
+
+先实时查R195+实际source/output、完整任务/mainclean/资源，健康等待不重启/信号/按旧PID操作。审计已完整结束后才能新编号真正不同有限全过程因果反馈或共同完整教师；先说明区别/因果输入/offline用途/动态与storage预算，actualscalar/名义zero/边界/init/原bitwise回归、独立完整smoke自然exit后有限formal。不得重复R194或扩大R193harmonics及旧gain/node/direct/mix/BC/staticMSE/PG/递归读出/几何/phase/momentum/bias预算。
+
+原24至少22且优于18/allvalid，316至少36/40且优于固定zero/R102/allvalid，之后未见320两组20各18/20、12秒进入/连续strict30/逐500Hzvalid；再更大扰动/传感与执行延迟/右侧prone supine各20未见门槛不变。320仍未读执行。ACTIVE30分钟，健康/相同网络无变化静默，全仿真门槛未过不完成；保护live_server2664890，不改walker/physics/reward/验收，不连接/使能/部署硬件。terminaltrue/fulltaskfalse/hardwarefalse/qualificationfalse。
