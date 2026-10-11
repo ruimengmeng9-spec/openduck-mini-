@@ -1,0 +1,133 @@
+{
+  "stage": "design_frozen_before_numeric_validation",
+  "method": "fresh on-policy exact-mean-KL natural-gradient trust-region actor/value (finite TRPO variant)",
+  "seed": 301,
+  "structural_difference": "One full-batch actor gradient, KL Hessian-vector Fisher solve with conjugate gradient, and bounded backtracking on exact analytic latent Gaussian mean KL. No clipped PPO ratio/actor Adam, action-score paired companion estimator, Q/TD/replay/target/entropy/temperature/distributional action codebook or whole-policy perturbation proposal. No old model/optimizer/RNG/data learning reuse.",
+  "policy": {
+    "inputs": "tanh(current actual native50), tanh(causal initial native50), min(control/528,1)",
+    "input_dim": 101,
+    "actor": [
+      101,
+      32,
+      16,
+      10
+    ],
+    "value": [
+      101,
+      32,
+      16,
+      1
+    ],
+    "fresh_random_hidden": true,
+    "actor_last_zero": true,
+    "latent_sigma": 0.0001,
+    "action": "reference + .18*tanh(mean+sigma*iidnormal10) REPLACES ten old leg corrections at controls1..528; old control0/head/home529+ preserved",
+    "excluded_inputs": [
+      "case",
+      "seed",
+      "path",
+      "labels",
+      "qpos",
+      "qvel",
+      "actual root",
+      "teacher",
+      "future",
+      "lookup",
+      "private physics"
+    ],
+    "deterministic": "tanh(mean), not squashed Gaussian expectation"
+  },
+  "learning": {
+    "new_training_only": 50,
+    "rounds": 2,
+    "actor_updates_per_round": 1,
+    "actor_adam": false,
+    "full_batch_active_controls": "1..528 only; actual invalid early terminal retained",
+    "gamma": 0.9979919516614258,
+    "returns": "Original complete episode MC returns; original home tail included, no cross-reset bootstrap, no changed rewards or labels",
+    "advantage": "complete_return - pre-update current value; center/scale over active samples only; stop-gradient",
+    "max_mean_kl": 0.001,
+    "fisher_damping": 0.01,
+    "cg_iterations_cap": 10,
+    "cg_residual_squared_stop": 1e-20,
+    "backtracks_cap": 10,
+    "backtrack_factor": 0.5,
+    "minimum_improvement_fraction": 0.1,
+    "no_ratio_clipping": true,
+    "acceptance": "finite exact analytic mean KL<=.001 and actual surrogate gain >= .1*positive predicted gain; first passing backtrack only; otherwise actor unchanged",
+    "value_updates_per_round": 64,
+    "value_batch": 512,
+    "value_replacement": true,
+    "value_lr": 0.0001,
+    "value_global_norm_clip": 1,
+    "all_trace_evidence": true,
+    "no_old_data_learning": true
+  },
+  "dynamic_budget": {
+    "total_cap": 162,
+    "independent_smoke": 6,
+    "formal": 156,
+    "formal_breakdown": {
+      "startup": 6,
+      "baseline": 25,
+      "training": 50,
+      "deterministic_check": 50,
+      "final": 25
+    },
+    "max_controls": 2279,
+    "max_duration_s": 45.58,
+    "invalid_original_early_exit": true,
+    "no_unused_budget_bypass": true
+  },
+  "storage": {
+    "live_archive_git_cap_bytes": 2147483648,
+    "start_free_bytes": 12884901888,
+    "reserve_free_bytes": 10737418240,
+    "include_preflight_launcher_smoke_formal_and_numeric_validation": true,
+    "conservative_multiplier": 3,
+    "no_cleanup": true,
+    "last_free_snapshot_bytes": 13397487616,
+    "snapshot_not_future_guard": true
+  },
+  "gates": {
+    "numeric_only_this_stage": true,
+    "dynamic_started": false,
+    "full_interface_regression_pending": true,
+    "independent_full_smoke_natural_exit_pending": true,
+    "formal_only_after_regressions_and_full_smoke_real_exit0": true,
+    "eligible": "standard/allvalid/preserve every baseline success/strictly >18; common checkpoint selection success,min original return,sum original return,earlier checkpoint; else R157 fallback",
+    "development": "standard+24>=22 and>18/allvalid",
+    "expanded": "316>=36/40 and better fixedzero/R102/allvalid",
+    "qualification": "UNREAD320 two nonoverlap20 each>=18/20 then all larger perturbation/delay/right/prone/supine gates",
+    "entry_s": 12,
+    "continuous_strict_s": 30,
+    "every_500hz_valid": true
+  },
+  "source_limits": {
+    "post_IMU_right_exact_double_boundary": true,
+    "before_request_full_IMU_double_gap_not_reconstructed": true,
+    "qpos_qvel_only_isolated_old_equality": true,
+    "python_manifest_not_native_binary_snapshot": true,
+    "same_jax_optax_not_cross_implementation_bitwise": true,
+    "mean_KL_on_sampled_states_not_physical_safety": true,
+    "small_action_not_safety": true,
+    "original_all_failures_preserved": true
+  },
+  "protected": {
+    "live_server": 2664890,
+    "head": "9f3e32e022cd48ad4dfe4f4302e26cc3e359d9db",
+    "head_unchanged": true,
+    "old_completed_budgets_closed": true,
+    "no_old_verify_archive_push": true,
+    "simulation_only": true,
+    "no_hardware": true,
+    "walker_physics_reward_criteria_unchanged": true,
+    "unseen320_never_loaded": true,
+    "full_task_completed": false,
+    "hardware_readiness": false
+  },
+  "theory": {
+    "primary": "https://arxiv.org/abs/1502.05477",
+    "use": "Fisher/CG/mean-KL/backtracking structure only. Finite sampled variant is not the theoretical maximum-state-KL guarantee and not monotonic improvement or robot safety proof."
+  }
+}

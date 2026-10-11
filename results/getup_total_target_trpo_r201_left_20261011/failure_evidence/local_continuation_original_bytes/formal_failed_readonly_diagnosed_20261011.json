@@ -1,0 +1,290 @@
+{
+  "stage": "R201 formal failure after first complete update and second training batch; not full-budget successful training closure",
+  "formal_natural_exit_code_from_launcher": 1,
+  "smoke_natural_exit_code_from_launcher": 0,
+  "launcher_failure_preserved": true,
+  "launcher_current_process_absent": true,
+  "standalone_launcher_exit_receipt_available": false,
+  "closed_attempts": 112,
+  "independent_smoke_attempts": 6,
+  "formal_saved_attempts": 106,
+  "controls": 251297,
+  "full_2279_paths": 110,
+  "invalid_paths": [
+    {
+      "path": "/data/shijinsheng/open_duck/outputs/getup_total_target_trpo_r201_left_20261011/training_0001/case_773009",
+      "case": 773009,
+      "controls": 304,
+      "success": false,
+      "valid": false,
+      "peaks": {
+        "floor": 0.0036178724730654404,
+        "self": 0.04869377099677625,
+        "joint": 0.007096885530795405,
+        "force": 3.23,
+        "slew": 5.2400000000000055
+      },
+      "combined": 0.0007826965817880893
+    },
+    {
+      "path": "/data/shijinsheng/open_duck/outputs/getup_total_target_trpo_r201_left_20261011/training_0002/case_769003",
+      "case": 769003,
+      "controls": 303,
+      "success": false,
+      "valid": false,
+      "peaks": {
+        "floor": 0.00474815727019091,
+        "self": 0.04876311911326481,
+        "joint": 0.0009499481168626644,
+        "force": 3.23,
+        "slew": 5.2400000000000055
+      },
+      "combined": 0.003245499511737693
+    }
+  ],
+  "completed_actor_updates": 1,
+  "completed_value_updates": 64,
+  "first_round_training": {
+    "successes": 4,
+    "standard": true,
+    "invalid": 1
+  },
+  "first_round_check": {
+    "successes": 7,
+    "standard": true,
+    "invalid": 0,
+    "eligible": false
+  },
+  "second_round_training": {
+    "successes": 5,
+    "standard": false,
+    "invalid": 1
+  },
+  "second_actor_update_completed": false,
+  "second_value_updates_completed": false,
+  "second_checkpoint_saved": false,
+  "second_check_run": false,
+  "final_candidate_or_R157_fallback_run": false,
+  "no_new_R201_final_score": true,
+  "best_historical": "R15718/24",
+  "full_task_completed": false,
+  "hardware_readiness": false,
+  "qualification": false,
+  "unused_dynamic_cap_not_authorization_to_resume": true,
+  "no_dynamic_rerun_or_production_source_edit": true,
+  "numerical_diagnosis": {
+    "new_dynamic_attempts": 0,
+    "actor_update_called": false,
+    "value_update_called": false,
+    "numeric_validator_rerun": false,
+    "environment_or_mujoco_used": false,
+    "phase": "post-failure saved-data arithmetic inspection, not original runtime trace",
+    "complete_samples": 54999,
+    "active_samples": 12974,
+    "batch_finite": true,
+    "checkpoint_actor_updates": 1,
+    "checkpoint_value_updates": 64,
+    "theta_copy_exact": true,
+    "baseline_surrogate": -1.2212966708378477e-16,
+    "baseline_surrogate_finite": true,
+    "unchanged_nested_jit_mean_kl": 1.0312695313368056e-33,
+    "unchanged_materialized_mean_kl": 0,
+    "materialized_mean_max_difference": 0,
+    "independent_nested_jit_mean_kl": 1.0312695313368056e-33,
+    "independent_mean_max_difference": 0,
+    "original_baseline_guard_would_raise": true,
+    "production_source_modified": false,
+    "original_second_round_CG_trace_not_recovered": true,
+    "input_hashes_before": {
+      "/data/shijinsheng/open_duck/outputs/getup_total_target_trpo_r201_left_20261011/checkpoint_0001.npz": "a78a8efda3ac34511c1478779a618f7b7200cf035e3f71121e1fe10dd2f46038",
+      "/data/shijinsheng/open_duck/outputs/getup_total_target_trpo_r201_left_20261011/checkpoint_0001.learner.msgpack": "5f65df9ef87f362040175b99c4fb0ba2ffccf753bcb45bbcfa496ae23c850e6a",
+      "/data/shijinsheng/open_duck/outputs/getup_total_target_trpo_r201_left_20261011/training_0002/complete_original_MC_batch.npz": "c9c56dd916a83b0731e62b18d7f43b77415ec8f101101d92bbb8f90f90ce09f7",
+      "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/total_target_trpo_kernel_r201.py": "38c8f6961b5a53f349d5637ce7789f7c69862594c6e8cfb049ee6ae8f6b0849c"
+    },
+    "input_hashes_after": {
+      "/data/shijinsheng/open_duck/outputs/getup_total_target_trpo_r201_left_20261011/checkpoint_0001.npz": "a78a8efda3ac34511c1478779a618f7b7200cf035e3f71121e1fe10dd2f46038",
+      "/data/shijinsheng/open_duck/outputs/getup_total_target_trpo_r201_left_20261011/checkpoint_0001.learner.msgpack": "5f65df9ef87f362040175b99c4fb0ba2ffccf753bcb45bbcfa496ae23c850e6a",
+      "/data/shijinsheng/open_duck/outputs/getup_total_target_trpo_r201_left_20261011/training_0002/complete_original_MC_batch.npz": "c9c56dd916a83b0731e62b18d7f43b77415ec8f101101d92bbb8f90f90ce09f7",
+      "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/total_target_trpo_kernel_r201.py": "38c8f6961b5a53f349d5637ce7789f7c69862594c6e8cfb049ee6ae8f6b0849c"
+    }
+  },
+  "diagnosis_scope": "Post-failure saved-data inspection reproduces exact-zero guard. Original failed baseline numeric value and CG vectors were not persisted; no invented original trace. Not full learner reconstruction or all-decision proof.",
+  "integrity_scope": {
+    "new_dynamic_attempts": 0,
+    "all_decision_verification": false,
+    "environment_model_or_integration_used": false,
+    "closed_paths": 112,
+    "controls": 251297,
+    "invalid": [
+      {
+        "path": "/data/shijinsheng/open_duck/outputs/getup_total_target_trpo_r201_left_20261011/training_0001/case_773009",
+        "case": 773009,
+        "controls": 304,
+        "success": false,
+        "valid": false,
+        "peaks": {
+          "floor": 0.0036178724730654404,
+          "self": 0.04869377099677625,
+          "joint": 0.007096885530795405,
+          "force": 3.23,
+          "slew": 5.2400000000000055
+        },
+        "combined": 0.0007826965817880893
+      },
+      {
+        "path": "/data/shijinsheng/open_duck/outputs/getup_total_target_trpo_r201_left_20261011/training_0002/case_769003",
+        "case": 769003,
+        "controls": 303,
+        "success": false,
+        "valid": false,
+        "peaks": {
+          "floor": 0.00474815727019091,
+          "self": 0.04876311911326481,
+          "joint": 0.0009499481168626644,
+          "force": 3.23,
+          "slew": 5.2400000000000055
+        },
+        "combined": 0.003245499511737693
+      }
+    ],
+    "baseline_old_fields_exact": 31,
+    "startup_all_arrays_results_rng_exact": 6,
+    "source_manifests": [
+      {
+        "folder": "/data/shijinsheng/open_duck/outputs/getup_total_target_trpo_r201_left_20261011/executed_sources",
+        "count": 1158
+      },
+      {
+        "folder": "/data/shijinsheng/open_duck/outputs/getup_total_target_trpo_r201_left_20261011/worker_executed_sources_2204714",
+        "count": 497
+      },
+      {
+        "folder": "/data/shijinsheng/open_duck/outputs/getup_total_target_trpo_r201_left_20261011/worker_executed_sources_2204713",
+        "count": 497
+      },
+      {
+        "folder": "/data/shijinsheng/open_duck/outputs/getup_total_target_trpo_r201_left_20261011/worker_executed_sources_2205695",
+        "count": 497
+      },
+      {
+        "folder": "/data/shijinsheng/open_duck/outputs/getup_total_target_trpo_r201_left_20261011/worker_executed_sources_2205697",
+        "count": 497
+      },
+      {
+        "folder": "/data/shijinsheng/open_duck/outputs/getup_total_target_trpo_r201_left_20261011/worker_executed_sources_2205696",
+        "count": 497
+      },
+      {
+        "folder": "/data/shijinsheng/open_duck/outputs/getup_total_target_trpo_r201_left_20261011/worker_executed_sources_2204710",
+        "count": 497
+      },
+      {
+        "folder": "/data/shijinsheng/open_duck/outputs/getup_total_target_trpo_r201_smoke_20261011/executed_sources",
+        "count": 1158
+      },
+      {
+        "folder": "/data/shijinsheng/open_duck/outputs/getup_total_target_trpo_r201_smoke_20261011/worker_executed_sources_2200592",
+        "count": 497
+      },
+      {
+        "folder": "/data/shijinsheng/open_duck/outputs/getup_total_target_trpo_r201_smoke_20261011/worker_executed_sources_2200593",
+        "count": 497
+      },
+      {
+        "folder": "/data/shijinsheng/open_duck/outputs/getup_total_target_trpo_r201_smoke_20261011/worker_executed_sources_2200589",
+        "count": 497
+      },
+      {
+        "folder": "/data/shijinsheng/open_duck/outputs/getup_total_target_trpo_launcher_r201_20261011/executed_sources",
+        "count": 1158
+      },
+      {
+        "folder": "/data/shijinsheng/open_duck/outputs/getup_total_target_trpo_r201_preflight_20261011/executed_sources",
+        "count": 1158
+      },
+      {
+        "folder": "/data/shijinsheng/open_duck/outputs/getup_total_target_trpo_r201_preflight_20261011/worker_fixture/worker_executed_sources_2198896",
+        "count": 1159
+      },
+      {
+        "folder": "/data/shijinsheng/open_duck/outputs/getup_total_target_trpo_launcher_r201_20261011/initial/executed_sources",
+        "count": 1158
+      },
+      {
+        "folder": "/data/shijinsheng/open_duck/outputs/getup_total_target_trpo_launcher_r201_20261011/initial/worker_fixture/worker_executed_sources_2200308",
+        "count": 1159
+      },
+      {
+        "folder": "/data/shijinsheng/open_duck/outputs/getup_total_target_trpo_launcher_r201_20261011/formal/executed_sources",
+        "count": 1158
+      },
+      {
+        "folder": "/data/shijinsheng/open_duck/outputs/getup_total_target_trpo_launcher_r201_20261011/formal/worker_fixture/worker_executed_sources_2204351",
+        "count": 1159
+      }
+    ],
+    "saved_planned_equals_applied": true,
+    "first_control_R157_exact": true,
+    "constructor_reset_40x50": true,
+    "inventory_count": 15308,
+    "inventory_sha256": "8b9bc6d771a87f866c1ff29df9302dacf7f5f3e744548833ba66d4f9e3c57548",
+    "all_evidence_bytes_unchanged": true,
+    "original_missing_before_request_IMU_double_not_rebuilt": true,
+    "original_second_round_CG_trace_not_recovered": true
+  },
+  "live_snapshot": {
+    "download_sources": {
+      "formal_failure_20261011.json": "4363b4608be2288ccbe77f05f9a66c3a0c0229c8aa4e572c2d8cbba6749f09c7",
+      "launcher_failure_20261011.json": "532ba04c767adcdee240f6638525c8708f3594058b7580e766243a1551e388c1",
+      "formal_failure_20261011.log": "fc6c2755896fba093282daaa253b370ac5f40765ddb3f23d6b249811913a7d38",
+      "launcher_failure_20261011.log": "4df962df0a8ffa69da1f92de6330b60bdffb3b4730a2d7c6b725b591711b5cf7",
+      "training_closed_history_failure_20261011.json": "36c0301b23810360b8ada741f00c8a1dfbb747e46a3b0481589817cfd5d626ed",
+      "formal_input_hashes_after_failure_20261011.json": "8aa4327371d618154f46ae2769f49a38978ee6039e1dd1f9bfcdcc3f9a5f7aaf",
+      "actor_update_0001_failure_stage_20261011.json": "44977cbdc61a4f4fc33d86dab9e69f2fbbca3912d9ef1c66c6310c8f5c346b55",
+      "value_update_0001_failure_stage_20261011.json": "ff198510a6cbe943a026f9b13e5b9b4a3697a54a00ae32fb6f1d5c46f8a890bd",
+      "training_0002_results_failure_stage_20261011.json": "80839ca44da803a153413ec634ba4410c38baad95052a2dded157a887bf3408e",
+      "training_0001_results_failure_stage_20261011.json": "0d78ed4c7582cbad8acc2b38ea3bfdd87e3ab4039e7c23282d432f76e885862a"
+    },
+    "head": "9f3e32e022cd48ad4dfe4f4302e26cc3e359d9db",
+    "status": "",
+    "free": 12784996352,
+    "active": [
+      {
+        "pid": 2664890,
+        "command": ".venv/bin/python -u -m open_duck_agent.live_server --host 127.0.0.1 --port 18766"
+      }
+    ],
+    "live_bytes_including_numeric_source": 573728364,
+    "rng_checkpoint1_equals_round2_before": true,
+    "terminal_result_exists": false,
+    "checkpoint2_exists": false
+  },
+  "storage": {
+    "start_gib_required": 12,
+    "reserve_gib_required": 10,
+    "start_guard_now_passes": false,
+    "reserve_guard_now_passes": true,
+    "live_bytes_including_numeric_source": 573728364,
+    "other_sources_logs_receipts_not_yet_exactly_included_in_this_live_measure": true,
+    "no_cleanup": true
+  },
+  "next": "New independent readonly all-decision failure audit of the actual 112 saved paths and completed first learner update, preserving original trace gaps; then append-only failure terminal archive/publication after real exit/proof. No numeric validator/old verification/dynamics rerun. No new dynamic method before actual ≥12GiB and all fixed gates. R201 partial failure may not be replayed or expanded.",
+  "readonly_query_history": {
+    "first_large_output_truncated": true,
+    "second_large_output_truncated_with_local_json_parse_error": true,
+    "subsequent_compact_query_succeeded": true,
+    "not_training_or_verifier_failure": true
+  },
+  "original_files_downloaded_byte_hashes": {
+    "formal_failure_20261011.json": "4363b4608be2288ccbe77f05f9a66c3a0c0229c8aa4e572c2d8cbba6749f09c7",
+    "launcher_failure_20261011.json": "532ba04c767adcdee240f6638525c8708f3594058b7580e766243a1551e388c1",
+    "formal_failure_20261011.log": "fc6c2755896fba093282daaa253b370ac5f40765ddb3f23d6b249811913a7d38",
+    "launcher_failure_20261011.log": "4df962df0a8ffa69da1f92de6330b60bdffb3b4730a2d7c6b725b591711b5cf7",
+    "training_closed_history_failure_20261011.json": "36c0301b23810360b8ada741f00c8a1dfbb747e46a3b0481589817cfd5d626ed",
+    "formal_input_hashes_after_failure_20261011.json": "8aa4327371d618154f46ae2769f49a38978ee6039e1dd1f9bfcdcc3f9a5f7aaf",
+    "actor_update_0001_failure_stage_20261011.json": "44977cbdc61a4f4fc33d86dab9e69f2fbbca3912d9ef1c66c6310c8f5c346b55",
+    "value_update_0001_failure_stage_20261011.json": "ff198510a6cbe943a026f9b13e5b9b4a3697a54a00ae32fb6f1d5c46f8a890bd",
+    "training_0002_results_failure_stage_20261011.json": "80839ca44da803a153413ec634ba4410c38baad95052a2dded157a887bf3408e",
+    "training_0001_results_failure_stage_20261011.json": "0d78ed4c7582cbad8acc2b38ea3bfdd87e3ab4039e7c23282d432f76e885862a"
+  }
+}

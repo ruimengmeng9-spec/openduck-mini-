@@ -1,0 +1,6 @@
+{
+  "traceback": "Traceback (most recent call last):\n  File \"/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/train_getup_total_target_trpo_r201.py\", line 311, in main\n    actor=learner.actor_update(arrays['features'][active],arrays['latents'][active],arrays['normalized_advantage'][active])\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/total_target_trpo_kernel_r201.py\", line 191, in actor_update\n    chosen, line = choose_backtrack(theta,fullstep,g,evaluate)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/total_target_trpo_kernel_r201.py\", line 112, in choose_backtrack\n    raise ArithmeticError('Exact unchanged policy baseline required')\nArithmeticError: Exact unchanged policy baseline required\n",
+  "terminal_result_saved": false,
+  "full_task_completed": false,
+  "hardware_readiness": false
+}

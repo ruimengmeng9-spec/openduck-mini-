@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/verify_getup_total_target_trpo_failure_r201.py", line 287, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/verify_getup_total_target_trpo_failure_r201.py", line 280, in main
+    result=verify();sources(manifest,copydir)
+           ^^^^^^^^
+  File "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/verify_getup_total_target_trpo_failure_r201.py", line 183, in verify
+    for p,sha in preflight['source_hashes'].items():assert digest(p)==sha
+                                                           ^^^^^^^^^
+  File "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/verify_getup_total_target_trpo_failure_r201.py", line 30, in digest
+    def digest(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+                                        ^^^^^^^^^^^^^^^^^^^^
+  File "/data/shijinsheng/open_duck/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/pathlib.py", line 1050, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/data/shijinsheng/open_duck/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'total_target_trpo_kernel_r201.py'

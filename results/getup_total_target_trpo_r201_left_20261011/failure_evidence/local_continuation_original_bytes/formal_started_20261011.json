@@ -1,0 +1,77 @@
+{
+  "stage": "formal_started_by_existing_launcher_after_natural_exit_smoke",
+  "latest_readonly": {
+    "active": [
+      {
+        "pid": 2200188,
+        "command": "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/.venv/bin/python -u -m diagnostics.launch_getup_total_target_trpo_r201"
+      },
+      {
+        "pid": 2204644,
+        "command": "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/.venv/bin/python -u -m diagnostics.train_getup_total_target_trpo_r201"
+      },
+      {
+        "pid": 2664890,
+        "command": ".venv/bin/python -u -m open_duck_agent.live_server --host 127.0.0.1 --port 18766"
+      }
+    ],
+    "records": {
+      "launcher": {
+        "exists": true,
+        "failure": null,
+        "terminal_result_exists": false
+      },
+      "smoke": {
+        "exists": true,
+        "failure": null,
+        "terminal_result_exists": true
+      },
+      "formal": {
+        "exists": true,
+        "failure": null,
+        "terminal_result_exists": false
+      }
+    },
+    "logs": {
+      "/data/shijinsheng/open_duck/outputs/getup_total_target_trpo_launcher_r201_20261011/formal/regression.log": "................\n----------------------------------------------------------------------\nRan 16 tests in 2.193s\n\nOK\n",
+      "/data/shijinsheng/open_duck/tmp/getup_total_target_trpo_r201_launcher_20261011.log": ""
+    },
+    "free": 13056090112,
+    "head": "9f3e32e022cd48ad4dfe4f4302e26cc3e359d9db",
+    "status": ""
+  },
+  "earlier_stage_history": "continuation_launch_20261011.json",
+  "smoke_subprocess_exit_code_confirmed_by_immutable_launcher_flow": 0,
+  "smoke_individual_local_session_receipt_exists": false,
+  "natural_exit_evidence_boundary": "Existing immutable launcher49baf399... uses subprocess.run(smoke), asserts returncode0, reads gate, runs check=True formal interface regressions then idle check before unique formal subprocess. Actual formal child without --smoke exists, smoke child absent, full formal16 regression log is OK. No standalone local smoke exit receipt fabricated.",
+  "formal_interface_regressions": 16,
+  "formal_regression_seconds": 2.193,
+  "training_closed": false,
+  "learner_updates_completed_not_claimed": true,
+  "formal_result_saved": false,
+  "launcher_terminal_saved": false,
+  "source_hashes": {
+    "total_target_trpo_kernel_r201.py": "38c8f6961b5a53f349d5637ce7789f7c69862594c6e8cfb049ee6ae8f6b0849c",
+    "train_getup_total_target_trpo_r201.py": "fcec5e8c3f50226a773534781e1960186a1ea4add05d614f604dd16f50eccf46",
+    "test_getup_total_target_trpo_r201.py": "5e6ef616965b2fa77cf68d40cae27d76863caa33ace4bfd0f003c0cefc380d29",
+    "launch_getup_total_target_trpo_r201.py": "49baf399a57ddc629f6b29ea5fac8c3c0e58f1870bbdf5b231716613e3a40a0b",
+    "GETUP_TOTAL_TARGET_TRPO_PLAN_R201_20261011.json": "4469483fe79dd0f3f83913626b93726aa34dc22587bb1f51d2fdb659e2b9b127",
+    "evidence_preparation_interface_20261011.json": "4302c22ac679d64bdc5b259484814d0020ef42c72c8acd97d7c33ba98add4bfe"
+  },
+  "independent_smoke_full_results_file": "smoke_results_saved_20261011.json",
+  "independent_smoke_attempts": 6,
+  "independent_smoke_controls": 13674,
+  "independent_smoke_all_valid": true,
+  "not_six_successes": true,
+  "no_duplicate_launch": true,
+  "no_pid_signal_or_restart": true,
+  "no_old_flow_repeated": true,
+  "best_unchanged": "R15718/24",
+  "qualification_expanded": false,
+  "unseen320_not_loaded": true,
+  "hardware_not_connected": true,
+  "next": "Wait existing fixed formal156 and launcher natural exit/source unchanged; then new independent complete readonly verifier, archive and publisher, none implemented or executed yet.",
+  "auto_setting_preserved": "fresh actual ACTIVE30min; never restore later human pause",
+  "full_task_completed": false,
+  "hardware_readiness": false
+}

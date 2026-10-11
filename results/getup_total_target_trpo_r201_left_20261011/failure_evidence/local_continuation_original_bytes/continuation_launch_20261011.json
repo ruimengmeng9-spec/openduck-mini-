@@ -1,0 +1,283 @@
+{
+  "stage": "independent_smoke_results_saved_natural_exit_not_yet_observed",
+  "launch_request": {
+    "chunk_id": "2eb4b9",
+    "wall_time_seconds": 3.3176025,
+    "exit_code": 0,
+    "original_token_count": 49,
+    "output": "{\"exit_code\": 0, \"stdout\": \"{\\\"pid\\\": 2200188, \\\"new_controller_not_yet_verified\\\": true}\\n\", \"stderr\": \"\", \"launch_request_exit_not_launcher_natural_exit\": true, \"new_dynamic_budget_cap\": 162}\n"
+  },
+  "preflight_exit": {
+    "natural_exit": true,
+    "exit_code": 0,
+    "elapsed_seconds": 4.388758270069957,
+    "new_dynamic_attempts": 0,
+    "source_hashes": {
+      "total_target_trpo_kernel_r201.py": "38c8f6961b5a53f349d5637ce7789f7c69862594c6e8cfb049ee6ae8f6b0849c",
+      "train_getup_total_target_trpo_r201.py": "fcec5e8c3f50226a773534781e1960186a1ea4add05d614f604dd16f50eccf46",
+      "test_getup_total_target_trpo_r201.py": "5e6ef616965b2fa77cf68d40cae27d76863caa33ace4bfd0f003c0cefc380d29",
+      "launch_getup_total_target_trpo_r201.py": "49baf399a57ddc629f6b29ea5fac8c3c0e58f1870bbdf5b231716613e3a40a0b",
+      "GETUP_TOTAL_TARGET_TRPO_PLAN_R201_20261011.json": "4469483fe79dd0f3f83913626b93726aa34dc22587bb1f51d2fdb659e2b9b127",
+      "evidence_preparation_interface_20261011.json": "4302c22ac679d64bdc5b259484814d0020ef42c72c8acd97d7c33ba98add4bfe"
+    },
+    "source_hashes_unchanged": true,
+    "numeric_validator_not_rerun": true,
+    "cpu_affinity": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "simulation_only": true,
+    "full_task_completed": false,
+    "hardware_readiness": false
+  },
+  "interface_regressions": 16,
+  "initial_launcher_regressions": 16,
+  "initial_launcher_regression_seconds": 2.117,
+  "preflight_regression_seconds": 2.228,
+  "preflight_manifest_count": 1158,
+  "preflight_worker_fixture_count": 1159,
+  "independent_copy_hashes_exact": true,
+  "latest_readonly": {
+    "active": [
+      {
+        "pid": 2200188,
+        "command": "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/.venv/bin/python -u -m diagnostics.launch_getup_total_target_trpo_r201"
+      },
+      {
+        "pid": 2200554,
+        "command": "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/.venv/bin/python -u -m diagnostics.train_getup_total_target_trpo_r201 --smoke"
+      },
+      {
+        "pid": 2664890,
+        "command": ".venv/bin/python -u -m open_duck_agent.live_server --host 127.0.0.1 --port 18766"
+      }
+    ],
+    "records": {
+      "getup_total_target_trpo_launcher_r201_20261011": {
+        "exists": true,
+        "case_results": []
+      },
+      "getup_total_target_trpo_r201_smoke_20261011": {
+        "exists": true,
+        "case_results": [
+          {
+            "path": "/data/shijinsheng/open_duck/outputs/getup_total_target_trpo_r201_smoke_20261011/initial_sample/case_769002/result.json",
+            "case": 769002,
+            "mode": "sample",
+            "controls": 2279,
+            "success": true,
+            "valid": true,
+            "entry": 11.14,
+            "strict_tail": 34.64,
+            "all_R157_parity": true,
+            "compiled_model": "53a24e16553a85c7e1ba354a692eca45094ba31d5d561f2d54f7a75e1d5914b3",
+            "physics": "4b9f4a9167e1614c22f7e6f28dd8508f7ccabb61d909a6c47dd46e40b861c6ae"
+          },
+          {
+            "path": "/data/shijinsheng/open_duck/outputs/getup_total_target_trpo_r201_smoke_20261011/initial_sample/case_773004/result.json",
+            "case": 773004,
+            "mode": "sample",
+            "controls": 2279,
+            "success": false,
+            "valid": true,
+            "entry": null,
+            "strict_tail": 0,
+            "all_R157_parity": true,
+            "compiled_model": "53a24e16553a85c7e1ba354a692eca45094ba31d5d561f2d54f7a75e1d5914b3",
+            "physics": "4b9f4a9167e1614c22f7e6f28dd8508f7ccabb61d909a6c47dd46e40b861c6ae"
+          },
+          {
+            "path": "/data/shijinsheng/open_duck/outputs/getup_total_target_trpo_r201_smoke_20261011/initial_standard/case_None/result.json",
+            "case": null,
+            "mode": "deterministic",
+            "controls": 2279,
+            "success": true,
+            "valid": true,
+            "entry": 11.1,
+            "strict_tail": 34.68,
+            "all_R157_parity": true,
+            "compiled_model": "53a24e16553a85c7e1ba354a692eca45094ba31d5d561f2d54f7a75e1d5914b3",
+            "physics": "4b9f4a9167e1614c22f7e6f28dd8508f7ccabb61d909a6c47dd46e40b861c6ae"
+          },
+          {
+            "path": "/data/shijinsheng/open_duck/outputs/getup_total_target_trpo_r201_smoke_20261011/zero_parity/case_769000/result.json",
+            "case": 769000,
+            "mode": "baseline",
+            "controls": 2279,
+            "success": true,
+            "valid": true,
+            "entry": 11.1,
+            "strict_tail": 34.68,
+            "all_R157_parity": true,
+            "compiled_model": "53a24e16553a85c7e1ba354a692eca45094ba31d5d561f2d54f7a75e1d5914b3",
+            "physics": "4b9f4a9167e1614c22f7e6f28dd8508f7ccabb61d909a6c47dd46e40b861c6ae"
+          },
+          {
+            "path": "/data/shijinsheng/open_duck/outputs/getup_total_target_trpo_r201_smoke_20261011/zero_parity/case_773004/result.json",
+            "case": 773004,
+            "mode": "baseline",
+            "controls": 2279,
+            "success": false,
+            "valid": true,
+            "entry": null,
+            "strict_tail": 0,
+            "all_R157_parity": true,
+            "compiled_model": "53a24e16553a85c7e1ba354a692eca45094ba31d5d561f2d54f7a75e1d5914b3",
+            "physics": "4b9f4a9167e1614c22f7e6f28dd8508f7ccabb61d909a6c47dd46e40b861c6ae"
+          },
+          {
+            "path": "/data/shijinsheng/open_duck/outputs/getup_total_target_trpo_r201_smoke_20261011/zero_parity/case_None/result.json",
+            "case": null,
+            "mode": "baseline",
+            "controls": 2279,
+            "success": true,
+            "valid": true,
+            "entry": 11.08,
+            "strict_tail": 34.7,
+            "all_R157_parity": true,
+            "compiled_model": "53a24e16553a85c7e1ba354a692eca45094ba31d5d561f2d54f7a75e1d5914b3",
+            "physics": "4b9f4a9167e1614c22f7e6f28dd8508f7ccabb61d909a6c47dd46e40b861c6ae"
+          }
+        ],
+        "results.json": {
+          "smoke_gate_passed": true,
+          "actual_dynamic_attempts": 6,
+          "terminal_result_saved": true,
+          "reports": {
+            "zero_parity": {
+              "successes": 1,
+              "nominal_success": true,
+              "physical_failures": 0
+            },
+            "initial_standard": {
+              "successes": 0,
+              "nominal_success": true,
+              "physical_failures": 0
+            },
+            "initial_sample": {
+              "successes": 1,
+              "nominal_success": null,
+              "physical_failures": 0
+            }
+          }
+        },
+        "results.json_metadata": {
+          "chars": 20376,
+          "sha256": "953399bb2d658575f5dec4488f143e3c3a9e40e40ba5ecb554c4a40965baf904"
+        }
+      },
+      "getup_total_target_trpo_r201_left_20261011": {
+        "exists": false,
+        "case_results": []
+      }
+    },
+    "manifests": [
+      {
+        "path": "/data/shijinsheng/open_duck/outputs/getup_total_target_trpo_launcher_r201_20261011/initial/source_manifest.json",
+        "count": 1158,
+        "all_exact": true
+      },
+      {
+        "path": "/data/shijinsheng/open_duck/outputs/getup_total_target_trpo_launcher_r201_20261011/initial/worker_fixture/worker_source_manifest_2200308.json",
+        "count": 1159,
+        "all_exact": true
+      },
+      {
+        "path": "/data/shijinsheng/open_duck/outputs/getup_total_target_trpo_r201_smoke_20261011/worker_source_manifest_2200589.json",
+        "count": 497,
+        "all_exact": true
+      },
+      {
+        "path": "/data/shijinsheng/open_duck/outputs/getup_total_target_trpo_r201_smoke_20261011/worker_source_manifest_2200592.json",
+        "count": 497,
+        "all_exact": true
+      },
+      {
+        "path": "/data/shijinsheng/open_duck/outputs/getup_total_target_trpo_r201_smoke_20261011/worker_source_manifest_2200593.json",
+        "count": 497,
+        "all_exact": true
+      }
+    ],
+    "logs": {
+      "/data/shijinsheng/open_duck/tmp/getup_total_target_trpo_r201_launcher_20261011.log": "",
+      "/data/shijinsheng/open_duck/outputs/getup_total_target_trpo_launcher_r201_20261011/initial/regression.log": "................\n----------------------------------------------------------------------\nRan 16 tests in 2.117s\n\nOK\n"
+    },
+    "free": 13174718464,
+    "live_bytes": 200323411,
+    "head": "9f3e32e022cd48ad4dfe4f4302e26cc3e359d9db",
+    "status": ""
+  },
+  "latest_readonly_note": "all_R157_parity compact flags apply only to zero_parity rows; empty new-policy parity maps do not assert new policies equal R157.",
+  "smoke_full_result_local": "smoke_results_saved_20261011.json",
+  "smoke_full_chars": 20376,
+  "smoke_json_leaves": 437,
+  "smoke_saved_paths": 6,
+  "smoke_saved_controls": 13674,
+  "smoke_all_original_valid": true,
+  "not_six_independent_starts": true,
+  "not_six_successes": true,
+  "smoke_initial_sample_769002": {
+    "success": true,
+    "entry": 11.14,
+    "strict_tail": 34.64
+  },
+  "smoke_initial_sample_773004": {
+    "success": false,
+    "valid": true
+  },
+  "smoke_initial_standard": {
+    "success": true,
+    "entry": 11.1,
+    "strict_tail": 34.68
+  },
+  "first_all_six_applied_exact_R157": true,
+  "all_six_planned_exact_applied": true,
+  "all_six_constructor_reset_shapes": [
+    40,
+    50
+  ],
+  "baseline_three_all_old_fields_peaks_exact_R157": true,
+  "new_policy_all_fields_R157_parity_claimed": false,
+  "full_independent_all_decision_verification_done": false,
+  "training_updates_completed": false,
+  "formal_started": false,
+  "formal_directory_observed": false,
+  "smoke_natural_exit_observed": false,
+  "launcher_terminal_saved": false,
+  "source_hashes": {
+    "total_target_trpo_kernel_r201.py": "38c8f6961b5a53f349d5637ce7789f7c69862594c6e8cfb049ee6ae8f6b0849c",
+    "train_getup_total_target_trpo_r201.py": "fcec5e8c3f50226a773534781e1960186a1ea4add05d614f604dd16f50eccf46",
+    "test_getup_total_target_trpo_r201.py": "5e6ef616965b2fa77cf68d40cae27d76863caa33ace4bfd0f003c0cefc380d29",
+    "launch_getup_total_target_trpo_r201.py": "49baf399a57ddc629f6b29ea5fac8c3c0e58f1870bbdf5b231716613e3a40a0b",
+    "GETUP_TOTAL_TARGET_TRPO_PLAN_R201_20261011.json": "4469483fe79dd0f3f83913626b93726aa34dc22587bb1f51d2fdb659e2b9b127",
+    "evidence_preparation_interface_20261011.json": "4302c22ac679d64bdc5b259484814d0020ef42c72c8acd97d7c33ba98add4bfe"
+  },
+  "source_and_plan_immutable": true,
+  "dynamic_total_cap": 162,
+  "no_repeat_launch": true,
+  "no_numeric_validator_rerun": true,
+  "no_old_closed_flow_repeated": true,
+  "no_signal_pid_operations": true,
+  "protected_live_server": 2664890,
+  "full_task_completed": false,
+  "hardware_readiness": false,
+  "best": "R15718/24",
+  "budget": {
+    "total_storage_bytes": 2147483648,
+    "start_free_bytes": 12884901888,
+    "reserve_bytes": 10737418240,
+    "latest_free_snapshot": 13174718464,
+    "latest_live_snapshot": 200323411
+  },
+  "upload_safety_checks": {
+    "first_plan_preparation_copy_rejected_before_execution": true,
+    "reason": "Preparation target absence was not yet checked; then both exact remote targets were readonly confirmed absent and authorized copies succeeded.",
+    "first_receipt_log_download_rejected_before_execution": true,
+    "reason2": "Both exact local paths were then readonly confirmed absent and original copies succeeded.",
+    "no_evidence_overwritten": true
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "stage": "R201_numeric_validation_complete_dynamic_not_started",
+  "trigger": "2026-10-11T00:09:40.750Z",
+  "actual_local_session": 72046,
+  "observed_local_natural_exit_code": 0,
+  "wrapper_natural_exit": true,
+  "wrapper_elapsed_s": 9.038972694426775,
+  "numeric_tests": 22,
+  "numeric_test_failure": 0,
+  "numeric_test_error": 0,
+  "numeric_elapsed_s": 7.140143151395023,
+  "new_dynamic_attempts": 0,
+  "source_hashes": {
+    "evidence_preparation_numeric_20261011.json": "a6f00dfec7f799dba523e497448946a44fc462c9f406d89b2399f0d951d178ca",
+    "GETUP_TOTAL_TARGET_TRPO_PLAN_R201_20261011.json": "4469483fe79dd0f3f83913626b93726aa34dc22587bb1f51d2fdb659e2b9b127",
+    "test_total_target_trpo_numeric_r201.py": "bbb4801f28b973ad286b131059c7bb425ac475aca864cb526e4a20228f92164e",
+    "total_target_trpo_kernel_r201.py": "38c8f6961b5a53f349d5637ce7789f7c69862594c6e8cfb049ee6ae8f6b0849c",
+    "validate_total_target_trpo_numeric_r201.py": "8190036dcf11a6daf0958a7afb5f2a071482b181302b74957e0c31f3633852b3"
+  },
+  "numeric_result_raw_file": "numeric_result_20261011.json",
+  "numeric_result_raw_sha256": "7d1b39a34e0560d373bd97209483a0d7c020e35005f4dc5862031d1f2c4c5c1f",
+  "result_original_bytes_preserved": true,
+  "large_rng_integer_values_not_reencoded_as_js_numbers": true,
+  "regression_log_raw_file": "numeric_regression_20261011.log",
+  "regression_log_raw_sha256": "aa18f23f18a0df3a0a1c80562420d8b529e4a4cf1b4b221452d445ee32eeda04",
+  "read_only_after_exit": {
+    "head": "9f3e32e022cd48ad4dfe4f4302e26cc3e359d9db",
+    "status": "",
+    "active": [],
+    "protected_live_exists": true,
+    "new_dynamic": 0,
+    "python_manifest_count": 902,
+    "all_original_and_copy_hashes_equal": true,
+    "explicit": {
+      "evidence_preparation_numeric_20261011.json": "a6f00dfec7f799dba523e497448946a44fc462c9f406d89b2399f0d951d178ca",
+      "GETUP_TOTAL_TARGET_TRPO_PLAN_R201_20261011.json": "4469483fe79dd0f3f83913626b93726aa34dc22587bb1f51d2fdb659e2b9b127",
+      "test_total_target_trpo_numeric_r201.py": "bbb4801f28b973ad286b131059c7bb425ac475aca864cb526e4a20228f92164e",
+      "total_target_trpo_kernel_r201.py": "38c8f6961b5a53f349d5637ce7789f7c69862594c6e8cfb049ee6ae8f6b0849c",
+      "validate_total_target_trpo_numeric_r201.py": "8190036dcf11a6daf0958a7afb5f2a071482b181302b74957e0c31f3633852b3"
+    },
+    "numeric_result_sha": "7d1b39a34e0560d373bd97209483a0d7c020e35005f4dc5862031d1f2c4c5c1f",
+    "numeric_log_sha": "aa18f23f18a0df3a0a1c80562420d8b529e4a4cf1b4b221452d445ee32eeda04",
+    "actual_output_and_source_bytes": 18628787,
+    "free_bytes": 13376692224,
+    "dynamic_source_not_implemented": true
+  },
+  "scope": "Synthetic arrays only. No MuJoCo imported, no old trajectories loaded, no complete actual native fixture, no env/physics integration/contact/force/physical relabel, no production learner run.",
+  "verified_numeric": {
+    "independent_numpy_backprop_gradient_max_error": 9.640643838793039e-11,
+    "independent_numpy_fisher_product_max_error": 2.7939677238464355e-9,
+    "directional_finite_difference_error": 0.0000013711182873521466,
+    "synthetic_actor_cg_iterations": 9,
+    "synthetic_actor_first_trial_accepted": 0,
+    "synthetic_value_updates": 64
+  },
+  "not_claimed": [
+    "cross-implementation bitwise",
+    "physical safety",
+    "monotonic robot improvement",
+    "new getup score",
+    "full interface regression",
+    "independent full smoke",
+    "formal training",
+    "full simulation acceptance"
+  ],
+  "next": "Implement new R201 dynamic interface/test/launcher around immutable numeric kernel. Full causal actualnative/reference/joint/slew/prev/head/home/constructor-reset/frozen-source/full-asset-MJB regression, then unique complete independent6 smoke real natural exit0, before formal156. No repeated numeric validation, closed training/verify/archive/push or old budget extension.",
+  "best": "R157 18/24 unchanged; R200 final is fallback",
+  "full_task_completed": false,
+  "hardware_readiness": false
+}
