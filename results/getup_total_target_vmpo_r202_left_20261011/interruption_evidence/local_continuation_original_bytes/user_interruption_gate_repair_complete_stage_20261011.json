@@ -1,0 +1,108 @@
+{
+  "date": "2026-10-11",
+  "stage": "R202_user_authorized_interruption_gate_repair_complete_not_restarted",
+  "user_authorization": "允许停止并修正门禁（推荐）",
+  "stop_scope": "Only identity-checked original R202 launcher, formal and their dedicated descendants; live_server not signalled",
+  "preliminary_stop_check": {
+    "assertion": "formal already exists",
+    "exit_code": 1,
+    "signals_executed": false,
+    "training_failure": false
+  },
+  "original_source_immutable": true,
+  "original_formal_started_before_stop": true,
+  "original_launcher_tests": {
+    "initial_run": 16,
+    "initial_skipped": 2,
+    "initial_seconds": 1.906,
+    "formal_run": 16,
+    "formal_skipped": 2,
+    "formal_seconds": 1.651,
+    "cause": "OPEN_DUCK_R201_TEST_CAPTURE instead of OPEN_DUCK_R202_TEST_CAPTURE"
+  },
+  "correction": {
+    "new_file": "launch_getup_total_target_vmpo_r202b.py",
+    "sha256": "0b8976eab512a31227f5ab546c38a8df4ec53bbe11f50d0d67e8885b5c788ee1",
+    "mode": "--gate-only",
+    "tests": 16,
+    "skipped": 0,
+    "regression_seconds": 2.261,
+    "natural_exit_code": 0,
+    "wrapper_elapsed_seconds": 8.395744448527694,
+    "new_dynamic_attempts": 0,
+    "smoke_replayed": false,
+    "formal_restarted": false
+  },
+  "saved_evidence": {
+    "independent_smoke": 6,
+    "formal": 56,
+    "total_paths": 62,
+    "controls": 139323,
+    "formal_components": {
+      "startup": 6,
+      "baseline": 25,
+      "first_training": 25
+    },
+    "first_training_successes": 8,
+    "first_training_standard_success": false,
+    "first_training_invalid": 1,
+    "first_training_invalid_seed": 769002,
+    "constructor_reset_shape_each": [
+      40,
+      50
+    ],
+    "all_saved_planned_equals_applied": true,
+    "smoke_formal_six_all_arrays_results_rng_exact": true,
+    "original_directory_bytes_sha_unchanged": true,
+    "completed_persisted_actor_updates": 0,
+    "completed_persisted_value_updates": 0,
+    "in_memory_progress_claimed": false,
+    "original_missing_MC_batch_actor_value_checkpoint1_candidate_not_recreated": true
+  },
+  "original_termination": {
+    "natural_exit_zero": false,
+    "standalone_smoke_exit_receipt_exists": false,
+    "smoke_exit_zero_evidence": "Original immutable launcher subprocess returncode-zero assertion followed by actual formal transition",
+    "formal_remaining_paths": 100,
+    "budget_closed": true,
+    "unused_budget_not_replayed": true
+  },
+  "readonly_preservation_receipt": {
+    "file": "interrupted_gate_repaired_20261011.json",
+    "server": "/data/shijinsheng/open_duck/tmp/getup_total_target_vmpo_r202_interrupted_gate_repaired_20261011.json",
+    "sha256": "dcb391e237d3590dc160e77c2ae03502114df2a465b362807a5af318d6170a21",
+    "full_decision_proof": false,
+    "archive_complete": false,
+    "publication_complete": false
+  },
+  "local_downloads": {
+    "files": 20,
+    "raw_bytes_original_preserved": true,
+    "all_SHA_local_server_exact": true,
+    "whole_text_read_and_JSON_leaf_traversed": true
+  },
+  "best": "R157 18/24",
+  "new_candidate": false,
+  "full_task_completed": false,
+  "hardware_readiness": false,
+  "storage_snapshot": {
+    "all_R202_dirs_including_new_b_and_external_files_bytes": 419508320,
+    "archive_git_extra_forecast_bytes": 1476395008,
+    "total_bytes": 1895903328,
+    "receipt_and_future_new_files_require_recount": true,
+    "latest_free_bytes": 35899576320
+  },
+  "next": "New independent read-only full-decision interruption verifier for 62 saved trajectories, then append-only archive and unique publication. Do not repeat numerical validation, smoke or formal. New structurally distinct direction only after closure publication.",
+  "automation": {
+    "id": "open-duck",
+    "fresh_status_preserved": "ACTIVE",
+    "interval_minutes": 30,
+    "notificationPolicy": null,
+    "prompt_stage_updated": true,
+    "old_prompt_preserved": "继续起身训练"
+  },
+  "unseen320_not_read": true,
+  "walker_physics_reward_acceptance_unchanged": true,
+  "private_key_not_read_or_exported": true,
+  "skill_usage": "OpenAI Docs used only to persist accurate automation stage while preserving fresh settings."
+}

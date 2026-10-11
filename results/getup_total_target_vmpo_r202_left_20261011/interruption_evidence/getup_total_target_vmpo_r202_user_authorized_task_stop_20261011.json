@@ -1,0 +1,173 @@
+{
+  "user_authorized_task_stop": true,
+  "reason": "original launcher skipped two full-interface tests because wrong capture environment variable; formal already began before stop check",
+  "targets": [
+    {
+      "pid": 2435938,
+      "ppid": 1,
+      "state": "T",
+      "starttime": "569243164",
+      "uid": 1028,
+      "cmdline": [
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/.venv/bin/python",
+        "-u",
+        "-m",
+        "diagnostics.launch_getup_total_target_vmpo_r202"
+      ]
+    },
+    {
+      "pid": 2438767,
+      "ppid": 2435938,
+      "state": "T",
+      "starttime": "569261067",
+      "uid": 1028,
+      "cmdline": [
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/.venv/bin/python",
+        "-u",
+        "-m",
+        "diagnostics.train_getup_total_target_vmpo_r202"
+      ]
+    },
+    {
+      "pid": 2438796,
+      "ppid": 2438767,
+      "state": "S",
+      "starttime": "569261245",
+      "uid": 1028,
+      "cmdline": [
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/.venv/bin/python",
+        "-c",
+        "from multiprocessing.resource_tracker import main;main(8)"
+      ]
+    },
+    {
+      "pid": 2438797,
+      "ppid": 2438767,
+      "state": "S",
+      "starttime": "569261256",
+      "uid": 1028,
+      "cmdline": [
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/.venv/bin/python",
+        "-c",
+        "from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=9, pipe_handle=13)",
+        "--multiprocessing-fork"
+      ]
+    },
+    {
+      "pid": 2438800,
+      "ppid": 2438767,
+      "state": "S",
+      "starttime": "569261256",
+      "uid": 1028,
+      "cmdline": [
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/.venv/bin/python",
+        "-c",
+        "from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=9, pipe_handle=15)",
+        "--multiprocessing-fork"
+      ]
+    },
+    {
+      "pid": 2438801,
+      "ppid": 2438767,
+      "state": "S",
+      "starttime": "569261256",
+      "uid": 1028,
+      "cmdline": [
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/.venv/bin/python",
+        "-c",
+        "from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=9, pipe_handle=17)",
+        "--multiprocessing-fork"
+      ]
+    },
+    {
+      "pid": 2439505,
+      "ppid": 2438767,
+      "state": "S",
+      "starttime": "569264517",
+      "uid": 1028,
+      "cmdline": [
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/.venv/bin/python",
+        "-c",
+        "from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=9, pipe_handle=19)",
+        "--multiprocessing-fork"
+      ]
+    },
+    {
+      "pid": 2439506,
+      "ppid": 2438767,
+      "state": "S",
+      "starttime": "569264517",
+      "uid": 1028,
+      "cmdline": [
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/.venv/bin/python",
+        "-c",
+        "from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=9, pipe_handle=21)",
+        "--multiprocessing-fork"
+      ]
+    },
+    {
+      "pid": 2439507,
+      "ppid": 2438767,
+      "state": "S",
+      "starttime": "569264517",
+      "uid": 1028,
+      "cmdline": [
+        "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/.venv/bin/python",
+        "-c",
+        "from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=9, pipe_handle=23)",
+        "--multiprocessing-fork"
+      ]
+    }
+  ],
+  "SIGTERM_SIGCONT_targets": [
+    2438767,
+    2438796,
+    2438797,
+    2438800,
+    2438801,
+    2439505,
+    2439506,
+    2439507,
+    2435938
+  ],
+  "remaining_proc_entries": [],
+  "natural_exit_zero_claim": false,
+  "formal_budget_consumed_not_restarted": true,
+  "dynamic_replay_authorized": false,
+  "protected_live_server_before": {
+    "pid": 2664890,
+    "ppid": 1,
+    "state": "S",
+    "starttime": "313851835",
+    "uid": 1028,
+    "cmdline": [
+      ".venv/bin/python",
+      "-u",
+      "-m",
+      "open_duck_agent.live_server",
+      "--host",
+      "127.0.0.1",
+      "--port",
+      "18766"
+    ]
+  },
+  "protected_live_server_after": {
+    "pid": 2664890,
+    "ppid": 1,
+    "state": "S",
+    "starttime": "313851835",
+    "uid": 1028,
+    "cmdline": [
+      ".venv/bin/python",
+      "-u",
+      "-m",
+      "open_duck_agent.live_server",
+      "--host",
+      "127.0.0.1",
+      "--port",
+      "18766"
+    ]
+  },
+  "deleted_files": 0,
+  "time_unix": 1791695948.546673
+}

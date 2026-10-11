@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/archive_getup_total_target_vmpo_interruption_r202.py", line 189, in <module>
+    prepare() if args.prepare else archive()
+    ^^^^^^^^^
+  File "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/archive_getup_total_target_vmpo_interruption_r202.py", line 80, in prepare
+    proof=completed_proof()
+          ^^^^^^^^^^^^^^^^^
+  File "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/archive_getup_total_target_vmpo_interruption_r202.py", line 49, in completed_proof
+    assert exit['natural_exit'] and exit['exit_code']==0 and exit['source_hash_unchanged'] and exit['proof_saved']
+                                                             ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'source_hash_unchanged'

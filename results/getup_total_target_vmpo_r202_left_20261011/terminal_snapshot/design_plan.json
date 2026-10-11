@@ -1,0 +1,133 @@
+{
+  "stage": "design_frozen_before_numeric_validation",
+  "method": "fresh on-policy finite V-MPO-style nonparametric E-step / parametric M-step policy iteration",
+  "seed": 302,
+  "primary": "https://arxiv.org/abs/1909.12238",
+  "structural_difference": "E-step stable top-half normalized advantages -> exponential sample weights with explicit KL-to-uniform dual solve; M-step weighted Gaussian log-likelihood fitting plus detached adaptive mean-KL multiplier. No PPO likelihood ratio/clipping, score-companion policy gradient, Fisher/CG/TRPO line search, Q/TD/replay/target actor, entropy regularization/SAC alpha, action-codebook/C51 or whole-policy perturbation/CEM. Not imitation of an old teacher or static interpolation/MSE. Fresh model, optimizer and RNG; old arrays only offline interface parity, never learning.",
+  "variant_limits": "Finite fixed-sigma separate actor/value, complete MC instead of n-step bootstrap, normalized advantages, deterministic bounded E-dual solve, 64 full-batch M-step attempts with whole-final-proposal reject when mean-KL bound or weighted-likelihood improvement fails. Not literal reproduction of original V-MPO, no convergence/monotonic improvement/physical-safety claim.",
+  "policy": {
+    "inputs": "tanh(current actual native50), tanh(causal initial native50), min(control/528,1)",
+    "dim": 101,
+    "actor": [
+      101,
+      32,
+      16,
+      10
+    ],
+    "value": [
+      101,
+      32,
+      16,
+      1
+    ],
+    "sigma": 0.0001,
+    "action": "controls1..528 reference+.18*tanh(latent), replaces ten old leg corrections; control0/head/home529+ unchanged",
+    "excluded": [
+      "case",
+      "seed",
+      "path",
+      "labels",
+      "actual root",
+      "qpos",
+      "qvel",
+      "teacher",
+      "future",
+      "lookup",
+      "private physics"
+    ]
+  },
+  "learning": {
+    "new_training_only": 50,
+    "rounds": 2,
+    "gamma": 0.9979919516614258,
+    "returns": "Complete original MC including home tail and original invalid terminal, no cross-reset bootstrap",
+    "advantage": "return minus pre-update value; active-only normalized once before actor/value updates",
+    "e_step": {
+      "top_half": "ceil(N/2), stable original-order ties",
+      "epsilon": 0.1,
+      "eta_range": [
+        0.000001,
+        1000000
+      ],
+      "log_bisection_steps": 80,
+      "weights_sum": 1
+    },
+    "m_step": {
+      "attempts_per_round": 64,
+      "lr": 1e-7,
+      "adam_globalnorm": 1,
+      "mean_kl_bound": 0.001,
+      "alpha_initial": 1,
+      "alpha_ascent_lr": 0.01,
+      "alpha_floor": 1e-8,
+      "full_active_batch": true,
+      "accept": "final finite mean KL<=.001 and weighted negative log-likelihood strictly below old; otherwise restore actor/actor Adam/alpha",
+      "all_proposals_gradients_adam_states_preserved": true
+    },
+    "value": {
+      "steps_per_round": 64,
+      "lr": 0.0001,
+      "batch": 512,
+      "replacement": true,
+      "globalnorm": 1
+    },
+    "total_actor_fit_attempts": 128,
+    "total_value_updates": 128,
+    "no_old_data": true
+  },
+  "dynamic_budget": {
+    "total_cap": 162,
+    "independent_smoke": 6,
+    "formal": 156,
+    "breakdown": {
+      "startup": 6,
+      "baseline": 25,
+      "training": 50,
+      "detcheck": 50,
+      "final": 25
+    },
+    "max_controls": 2279,
+    "max_duration_s": 45.58,
+    "not_independent_initial_states": true,
+    "invalid_original_early_exit": true,
+    "unused_budget_cannot_bypass_gate": true
+  },
+  "storage": {
+    "cap": 2147483648,
+    "start": 12884901888,
+    "reserve": 10737418240,
+    "live_cap": 671088640,
+    "archive_forecast": 671088640,
+    "git_increment_forecast": 671088640,
+    "extra_forecast": 134217728,
+    "include": "all numeric/preflight/launcher/smoke/formal outputs, external tmp/logs, new sources/receipts, future archive and Git increment; enforce actual plus forecast",
+    "free_snapshot": 36354363392,
+    "no_cleanup": true
+  },
+  "gates": {
+    "numeric_only_initial_stage": true,
+    "interface_regression_pending": true,
+    "full_independent_smoke_natural_exit0_pending": true,
+    "formal_after_all_gates_only": true,
+    "eligible": "Std/allvalid/preserve every R157 success/>18; common success/min original return/sum original return/earlier checkpoint else R157 fallback",
+    "development": "Std+24>=22 and>18/allvalid",
+    "expanded": "316>=36/40 better fixedzero/R102 allvalid",
+    "qualification": "UNREAD320 two nonoverlap20 each>=18/20 then larger perturbation/sensor/executiondelay/right/prone/supine",
+    "entry_s": 12,
+    "continuous_strict_s": 30,
+    "every_500hz_valid": true
+  },
+  "protected": {
+    "head": "9b4edd92c86f0c689f15f904c0298cae52f17b82",
+    "live_server": 2664890,
+    "old_budgets_closed": true,
+    "no_old_verify_archive_publish": true,
+    "simulation_only": true,
+    "no_hardware": true,
+    "walker_physics_reward_criteria_unchanged": true,
+    "before_request_full_IMU_double_gap_preserved": true,
+    "unread320_never_loaded": true,
+    "full_task_completed": false,
+    "hardware_readiness": false
+  }
+}

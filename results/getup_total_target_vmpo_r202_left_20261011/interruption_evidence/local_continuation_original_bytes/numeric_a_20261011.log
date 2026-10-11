@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/data/shijinsheng/open_duck/tmp/getup_total_target_vmpo_numeric_r202_20261011/validate_total_target_vmpo_numeric_r202.py", line 100, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/data/shijinsheng/open_duck/tmp/getup_total_target_vmpo_numeric_r202_20261011/validate_total_target_vmpo_numeric_r202.py", line 52, in main
+    shutil.copy2(plan,OUTPUT/plan.name);plan_sha=digest(plan)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/shijinsheng/open_duck/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/shutil.py", line 448, in copy2
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "/data/shijinsheng/open_duck/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/shutil.py", line 256, in copyfile
+    with open(src, 'rb') as fsrc:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/data/shijinsheng/open_duck/tmp/getup_total_target_vmpo_numeric_r202_20261011/GETUP_TOTAL_TARGET_TRPO_PLAN_R202_20261011.json'
