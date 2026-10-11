@@ -1,0 +1,159 @@
+{
+  "method": "R204 finite model-free Normalized Advantage Function continuous Q learner",
+  "date": "2026-10-11",
+  "stage": "synthetic_numeric_preparation_only",
+  "paper": "https://proceedings.mlr.press/v48/gu16.pdf",
+  "paper_scope": "Only model-free NAF section4 / Algorithm1 Q=V+quadratic advantage and target-value TD. No model-based acceleration, imagination rollouts, iLQG or paper performance claim. Softplus-plus-floor diagonal, bounded mean and finite round-only replay are declared local variants.",
+  "structural_difference": "Fresh nonlinear shared NAF Q network jointly learns V, bounded mean and full positive-definite state-dependent action curvature using a single TD objective and one Adam. No independent actor optimizer/policy gradient, entropy/alpha, Gaussian MLE, E-step, Fisher/CG/backtracking, categorical atoms/codebook, linear projected-Bellman solve/ridge, parameter-pair perturbation, teacher-action regression, learned dynamics or old recurrent readout. Not resuming or modifying R203 curvature/solve budget or any closed source.",
+  "online_inputs": {
+    "current": "actual current native50 tanh",
+    "initial": "causal initial native50 tanh",
+    "clock": "min(control/528,1)",
+    "features": 101,
+    "forbidden": [
+      "case",
+      "seed",
+      "path",
+      "label",
+      "root",
+      "qpos/qvel",
+      "teacher",
+      "future actual",
+      "lookup",
+      "private physics query"
+    ],
+    "frame_zaxis_not_body_gravity": true
+  },
+  "architecture": {
+    "seed": 304,
+    "shared_trunk": "101->32 tanh->16 tanh",
+    "shared_linear_output": 66,
+    "outputs": "V1, mean10, lower-triangle55",
+    "mean": "tanh(raw mean) inside [-1,1]",
+    "L": "strictly lower entries raw; diagonal softplus(raw)+1e-3",
+    "P": "L L^T",
+    "Q": "V-.5 ||(a-mean)^T L||^2",
+    "fresh_initialization": "fresh NumPy seed304 trunk/V random; mean columns/bias exactzero; L columns exactzero; diagonal raw bias log(expm1(.999)), other L bias0; target exact copy; single fresh Adam count0",
+    "sampling": "clip(mean+1e-4 iid normal10,-1,1); det consumes no RNG",
+    "clipped_density_not_claimed": true,
+    "greedy_analytically_mean_inside_box": true,
+    "seed_not_label": true
+  },
+  "control": {
+    "active": "control1..528",
+    "request": "reference14 with ten legs replaced by reference+.18*normalized boxrequest, after original postIMU/right saved double boundary; no addition of old leg feedback",
+    "control0_head_home529plus": "original unchanged",
+    "reference_joint_torque_slew_physics_reward_criteria_mesh_flags": "all unchanged",
+    "no_extra_wait_or_root_reset": true
+  },
+  "learning": {
+    "only_data": "current round 25 new complete training episodes, active requests/rewards/native observations; previous rounds and all old/smoke/baseline/check/final data excluded",
+    "gamma": ".99**.2",
+    "target": "original reward + gamma*(bootstrap*target_V(next_features)+full_original_home_tail)",
+    "bootstrap": "0 at original invalid terminal and recovery->home boundary; otherwise next active1..528 only; no reset crossing",
+    "home_tail": "full discounted original home rewards529+ at active528; not new reward or entropy shaping",
+    "loss": ".5 mean (Q(features,stored requested_action)-stop_gradient(target))^2",
+    "optimizer": "one joint Q Adam lr1e-4/globalnorm1, no actor optimizer or additional value optimizer",
+    "target_network": "exact initial copy, Polyak tau.005 AFTER each actual gradient update",
+    "updates_per_round": 64,
+    "total_updates": 128,
+    "minibatch": 512,
+    "sampling": "current-round indices with replacement using learning RNG; no next-policy noise/teacher target",
+    "finite_required": true,
+    "no_extra_fit_or_parameter_search": true
+  },
+  "evidence": {
+    "save": [
+      "full current-round replay / episode_offsets",
+      "complete original rewards / discounted home tails / terminals",
+      "before/after joint Q and target params",
+      "every minibatch indices / target values / predictions / residuals / loss / gradient norms / all gradient arrays",
+      "checkpoint params + target + Adam state/count raw msgpack",
+      "all path mean/raw mean/L/V/noise/proposal/boxrequest and sampling RNG",
+      "original source/model/asset hashes"
+    ],
+    "old_qpos_qvel": "raw original save and isolated equality only, never online feedback",
+    "original_gaps": "before-request/fullIMUdouble and first joint/slew independent planning gaps retained; no invented trace"
+  },
+  "risks": [
+    "Single-mode quadratic advantage restricts multimodal action values.",
+    "Tiny exploration may poorly identify curvature/mean; positive-definite P is representation only, not physical safety.",
+    "Partial native50/initial/clock does not establish Markov sufficiency.",
+    "Nonlinear bootstrapped TD can diverge; target updates/loss reduction do not imply monotonic success.",
+    "Box clipping has boundary atoms; requested action is not final joint-slew applied action.",
+    "No relabel of invalid/500Hz peaks from tiny action/cap/endpoints/shallow geometry, no visited-branch instantaneous counterfactual root cause."
+  ],
+  "dynamic_budget": {
+    "total_cap": 162,
+    "independent_smoke": 6,
+    "formal": 156,
+    "formal_startup": 6,
+    "baseline": 25,
+    "new_training": 50,
+    "det_check": 50,
+    "final": 25,
+    "rounds": 2,
+    "max_controls": 2279,
+    "max_seconds": 45.58,
+    "original_invalid_early_exit": true,
+    "no_old_budget_reuse": true
+  },
+  "storage_budget": {
+    "total_limit_bytes": 2147483648,
+    "live_upper_bytes": 671088640,
+    "future_archive_bytes": 671088640,
+    "future_git_bytes": 671088640,
+    "extra_bytes": 134217728,
+    "start_free_bytes": 12884901888,
+    "reserve_free_bytes": 10737418240,
+    "all_outputs_external_tmp_logs_sources_included": true,
+    "no_unknown_cleanup_no_old_sparse_restore": true
+  },
+  "required_before_dynamic": [
+    "strict complete actual causal scalar/init/loader/boundaries/planned==applied/firstR157/head/home/recursiveprev/joint-slew/full XML MJB/source tests naturalexit0 and zero skip",
+    "constructor40 and reset40 each40x50",
+    "one independent complete6 smoke realexit0 then strict formal regression naturalexit0, idle and fresh resources"
+  ],
+  "smoke_spec": [
+    {
+      "mode": "baseline",
+      "cases": [
+        null,
+        769000,
+        773004
+      ],
+      "all_old_fields_peaks_initHash_exact": true
+    },
+    {
+      "mode": "initial deterministic",
+      "cases": [
+        null
+      ],
+      "standard_success": true
+    },
+    {
+      "mode": "initial sample",
+      "cases": [
+        769002,
+        773004
+      ],
+      "all_original_valid_complete": true
+    }
+  ],
+  "selection": "common checkpoint Std/allvalid/preserve every baseline success/>18, choose earlier eligible; else full25 R157 fallback; no success-union or online oracle",
+  "qualification": "Original Std+24>=22 and >18 allvalid ->316>=36/40 better fixedzero/R102 allvalid -> UNREAD320 two disjoint20 each18/20 -> larger disturbance/sensor executiondelay/right/prone/supine; <=12s entry/continuousstrict30s/every500Hzvalid fixed",
+  "immutable_history": "R203 no improvement complete publication3b2a; R202 user interrupted/missing original traces remain; all old budgets closed, no reruns",
+  "simulation_only": true,
+  "protected_live_server": true,
+  "unread320_never_loaded": true,
+  "hardware_connected": false,
+  "hardware_enabled": false,
+  "full_task_completed": false,
+  "numeric_only": {
+    "fixed_tests": 24,
+    "no_simulator": true,
+    "no_old_data": true,
+    "no_production_checkpoint_reuse": true,
+    "no_dynamic_smoke_or_formal": true
+  }
+}

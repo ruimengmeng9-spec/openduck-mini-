@@ -1,0 +1,111 @@
+{
+  "stage": "R204_synthetic_NAF_numeric_validation_complete_only",
+  "actual_local_exec_session": 72737,
+  "actual_tool_natural_exit_code": 0,
+  "actual_wrapper_subprocess_exit_code": 0,
+  "wrapper_elapsed_seconds": 17.376653622835875,
+  "validator_elapsed_seconds": 15.345488427206874,
+  "full_regression_seconds": 15.127,
+  "tests_run": 24,
+  "skipped": 0,
+  "failures": 0,
+  "errors": 0,
+  "new_dynamic_attempts": 0,
+  "source_hashes_unchanged": true,
+  "source_sha256": {
+    "GETUP_TOTAL_TARGET_NAF_PLAN_R204_20261011": "7265ba9ab27334a0ec36f3c36f0e943b65ce574816f40e353a57eecfd1aa6db2",
+    "kernel": "6a718980ca2960a5b901d99331ffe6ec12867bc753677ab545300179b84023b4",
+    "tests": "49129a026e98ce3c4cce9bd16fdef3053fbacc53eb629690b7967ba2f25d187a",
+    "validator": "05be5273bfb8582a3c05eb488910bb039dbbfa503b80fc5212a1e806f19113c3",
+    "wrapper": "1c259583f08d04903aaed2e357981721191bc69324db790f97acf44c42f9f210"
+  },
+  "raw_downloads": [
+    {
+      "name": "numeric_exit_20261011",
+      "sha256": "a89c3502ec6709e28e392fdf561c0dd2d3a4137f112be4018d2c5dddbd72fd47",
+      "complete_read": true,
+      "characters": 993
+    },
+    {
+      "name": "numeric_result_20261011",
+      "sha256": "7b3d0d98b509e75dc1bb6fd2bc296ac3778e88a2de0e923d60377e9aab01fff9",
+      "complete_read": true,
+      "characters": 2087
+    },
+    {
+      "name": "numeric_full_regression_20261011",
+      "sha256": "f8f7ab0749b284220411586b95b631a295ecb9188f253b12423e91d71f582b3e",
+      "complete_read": true,
+      "characters": 2882
+    },
+    {
+      "name": "numeric_wrapper_full_20261011",
+      "sha256": "24c9294ae9b03e60e79c05fadebdd1840ebf3ce656e3d88346716c43b3ad2989",
+      "complete_read": true,
+      "characters": 1799
+    },
+    {
+      "name": "numeric_source_manifest_20261011",
+      "sha256": "22223c44fbc8e268d793278781f1871f65a3a74b2c131bdc6f0dc37ca897ff04",
+      "complete_read": true,
+      "characters": 228833
+    },
+    {
+      "name": "numeric_startup_source_manifest_20261011",
+      "sha256": "1318e5c1428604a9483d59a02b9d020637677fc35060ca48ca58873796f333f1",
+      "complete_read": true,
+      "characters": 227530
+    }
+  ],
+  "independent_all_original_copy_python_SHA_exact": true,
+  "startup_imported_python_sources": 902,
+  "additional_runtime_sources": 5,
+  "complete_imported_python_sources": 907,
+  "native_binary_snapshot": false,
+  "finite_difference_max_absolute_error": 3.1391245158829406e-10,
+  "synthetic_rounds": [
+    {
+      "updates": 64,
+      "independent_gradient_max_absolute_error": 0,
+      "independent_target_max_absolute_error": 0
+    },
+    {
+      "updates": 64,
+      "independent_gradient_max_absolute_error": 0,
+      "independent_target_max_absolute_error": 0
+    }
+  ],
+  "stored_gradient_Adam_Polyak_checkpoint_msgpack_exact": true,
+  "not_cross_implementation_bitwise_safety": true,
+  "synthetic_trace": "Current-round active replay, every batch indices/targets/predictions/errors/all gradient arrays/before-after Q+target params, raw state and RNG, synthetic initial/round1/round2 checkpoints saved on server. Not production initialization, robot learning, or actual decision proof.",
+  "fresh_terminal": {
+    "head": "3b2ae6dc6d745cf02f2ba57c7552251305c1c179",
+    "status": "",
+    "tasks": [
+      {
+        "pid": 2664890,
+        "cmd": ".venv/bin/python -u -m open_duck_agent.live_server --host 127.0.0.1 --port 18766"
+      }
+    ],
+    "live_bytes": 25236978,
+    "future_archive_git_extra_bytes": 1476395008,
+    "total_forecast_bytes": 1501631986,
+    "free_bytes": 33471164416,
+    "new_dynamic_attempts": 0
+  },
+  "local_readonly_formatting_error": "First readonly summary command used -Depth6 instead of -Depth 6; all bytes were read and hashes checked before formatting error. Corrected compact readonly query succeeded. No numeric regression, source or evidence failure/repair/rerun.",
+  "dynamic_main_implemented": false,
+  "interface_tests_implemented": false,
+  "launcher_implemented": false,
+  "interface_preflight_passed": false,
+  "smoke_run": false,
+  "formal_run": false,
+  "production_fullproof_run": false,
+  "archive_run": false,
+  "publisher_run": false,
+  "next": "New dynamic main and full causal/control/source interface tests + strict zero-skip launcher, only after fresh actual tasks, sources, clean HEAD and resources. No numeric rerun or executed-source modifications.",
+  "unread320_loaded": false,
+  "hardware_connected": false,
+  "best": "R15718/24",
+  "full_task_completed": false
+}

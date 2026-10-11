@@ -1,0 +1,64 @@
+{
+  "stage": "synthetic_numeric_validation_closed",
+  "tests_run": 24,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "passed": true,
+  "elapsed_s": 15.345488427206874,
+  "new_dynamic_attempts": 0,
+  "source_hashes_unchanged": true,
+  "plan_hash_unchanged": true,
+  "startup_imported_python_count": 902,
+  "complete_imported_python_source_count": 907,
+  "additional_runtime_python_count": 5,
+  "native_binary_snapshot": false,
+  "interface_preflight_passed": false,
+  "smoke_run": false,
+  "formal_run": false,
+  "production_initialization_not_claimed": true,
+  "actual_physics_not_checked": true,
+  "evidence": {
+    "finite_difference_max_error": 3.1391245158829406e-10,
+    "synthetic_round1": {
+      "independent_gradient_max_absolute_error": 0.0,
+      "independent_target_max_absolute_error": 0.0,
+      "stored_gradient_Adam_Polyak_and_msgpack_exact": true,
+      "independent_gradient_not_cross_implementation_bitwise_claim": true,
+      "updates": 64,
+      "changes": {
+        "q_w0": 0.2973764907656542,
+        "q_b0": 0.027908946795996627,
+        "q_w1": 0.12513592820394828,
+        "q_b1": 0.0164460217675611,
+        "q_w2": 0.1951300010969536,
+        "q_b2": 0.050577056361561006
+      }
+    },
+    "synthetic_round2": {
+      "independent_gradient_max_absolute_error": 0.0,
+      "independent_target_max_absolute_error": 0.0,
+      "stored_gradient_Adam_Polyak_and_msgpack_exact": true,
+      "independent_gradient_not_cross_implementation_bitwise_claim": true,
+      "updates": 64,
+      "changes": {
+        "q_b0": 0.03930119228999836,
+        "q_b1": 0.030765460901377623,
+        "q_b2": 0.04050683140731279,
+        "q_w0": 0.36708914309376256,
+        "q_w1": 0.12408882950266768,
+        "q_w2": 0.145421799469918
+      }
+    }
+  },
+  "resource": {
+    "live_bytes": 25232099,
+    "future_archive_git_extra_bytes": 1476395008,
+    "total_forecast_bytes": 1501627107,
+    "free_bytes": 33471184896,
+    "all_R204_outputs_external_tmp_logs_sources_counted": true,
+    "no_cleanup": true
+  },
+  "full_task_completed": false,
+  "hardware_readiness": false
+}

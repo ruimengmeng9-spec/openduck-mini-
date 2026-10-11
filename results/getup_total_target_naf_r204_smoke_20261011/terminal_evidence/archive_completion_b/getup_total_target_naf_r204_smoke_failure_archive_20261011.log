@@ -1,0 +1,19 @@
+R204_SMOKE_FAILED_TERMINAL_ARCHIVE_BEGIN 225360163
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/archive_getup_total_target_naf_smoke_failure_r204.py", line 211, in <module>
+    prepare() if args.prepare else archive()
+                                   ^^^^^^^^^
+  File "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/archive_getup_total_target_naf_smoke_failure_r204.py", line 178, in archive
+    for name in (TERMINAL,PLAN):target=REPO/name;copy(ROOT/'tmp'/name,target);add(target)
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/archive_getup_total_target_naf_smoke_failure_r204.py", line 132, in copy
+    assert not target.exists();shutil.copy2(source,target);assert digest(source)==digest(target)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/shijinsheng/open_duck/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/shutil.py", line 448, in copy2
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "/data/shijinsheng/open_duck/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/shutil.py", line 256, in copyfile
+    with open(src, 'rb') as fsrc:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/data/shijinsheng/open_duck/tmp/GETUP_TOTAL_TARGET_NAF_PLAN_R204_20261011.json'
