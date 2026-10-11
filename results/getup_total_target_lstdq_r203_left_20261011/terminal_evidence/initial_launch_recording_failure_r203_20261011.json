@@ -1,0 +1,68 @@
+{
+  "stage": "R203_initial_launcher_failed_before_dynamic",
+  "request_wrapper_tool_exit_code": 1,
+  "request_wrapper_error": "AttributeError: str object has no attribute read_bytes; after actual request and original stdout/stderr log saved, no request exit receipt written",
+  "original_request_exit_receipt_exists": false,
+  "launcher_actual_natural_exit_code": 1,
+  "launcher_elapsed_seconds": 3.7087564300745726,
+  "launcher_error": "TypeError: duplicate elapsed_seconds keyword when recording initial regression result",
+  "initial_regression_result": {
+    "tests_run": 16,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0
+  },
+  "original_regression_natural_exit_receipt_exists": false,
+  "smoke_exists": false,
+  "formal_exists": false,
+  "new_dynamic_attempts": 0,
+  "protected_live_server_only": true,
+  "actual_original_status": {
+    "files": {
+      "tmp/getup_total_target_lstdq_r203_launch_request_20261011.log": {
+        "exists": true,
+        "text": "{\"supervisor_pid\": 2512949, \"only_locator_not_natural_exit\": true, \"new_controller_not_yet_verified\": true}\n",
+        "sha256": "667569057bc6209095401d1d8c9ca41718eb5634aaa4e1dd7eec3e43d2a0d96e"
+      },
+      "tmp/getup_total_target_lstdq_r203_launch_request_exit_20261011.json": {
+        "exists": false
+      },
+      "tmp/getup_total_target_lstdq_r203_launcher_exit_20261011.json": {
+        "exists": true,
+        "text": "{\n  \"natural_exit\": true,\n  \"exit_code\": 1,\n  \"elapsed_seconds\": 3.7087564300745726,\n  \"actual_launcher_subprocess_return_observed\": true,\n  \"source_hashes_unchanged\": true,\n  \"source_hashes\": {\n    \"/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/launch_getup_total_target_lstdq_r203.py\": \"ffa6f3b357322a00e930958a4eb7b542b21a6f6457a8914013a983986d9f8029\",\n    \"/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/train_getup_total_target_lstdq_r203.py\": \"f5e5ff7162dabb6eb82d7e8ca47842b7e8ca1fef0f2a859a3c7f2deceb32b616\",\n    \"/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/total_target_lstdq_kernel_r203.py\": \"8977034b4441ef5d55bd3cf207465f919fd20ed91c672a307112ca473e40cb14\"\n  },\n  \"protected_live_server_not_operated\": true\n}",
+        "sha256": "8221325dfdff038b0c60dbd77c695796e99232e63e79fb22a86dc5c8bf0e2994"
+      },
+      "tmp/getup_total_target_lstdq_r203_launcher_20261011.log": {
+        "exists": true,
+        "text": "Traceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/launch_getup_total_target_lstdq_r203.py\", line 101, in <module>\n    else:assert not sys.argv[1:];main()\n                                 ^^^^^^\n  File \"/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/launch_getup_total_target_lstdq_r203.py\", line 62, in main\n    run.storage_gate(start=True);tests('initial');run.storage_gate()\n                                 ^^^^^^^^^^^^^^^^\n  File \"/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/launch_getup_total_target_lstdq_r203.py\", line 33, in tests\n    run.local.write_json(directory/'regression_natural_exit.json',dict(\n                                                                  ^^^^^\nTypeError: dict() got multiple values for keyword argument 'elapsed_seconds'\n",
+        "sha256": "9f1f7226ccf99266d4a7dd8520ecc0e5088739272b4835828f40489e5c02f5e6"
+      },
+      "outputs/getup_total_target_lstdq_launcher_r203_20261011/initial/interface_result.json": {
+        "exists": true,
+        "text": "{\n  \"tests_run\": 16,\n  \"skipped\": 0,\n  \"failures\": 0,\n  \"errors\": 0,\n  \"elapsed_seconds\": 2.0434762006625533,\n  \"source_hashes_unchanged\": true,\n  \"new_dynamic_attempts\": 0\n}",
+        "sha256": "003fbc17c7bb20535d8509800a6275359097964d5c75af8162735731e24829ea"
+      },
+      "outputs/getup_total_target_lstdq_launcher_r203_20261011/initial/regression_natural_exit.json": {
+        "exists": false
+      },
+      "outputs/getup_total_target_lstdq_launcher_r203_20261011/failure.json": {
+        "exists": true,
+        "text": "{\n  \"smoke_exit_code\": null,\n  \"formal_exit_code\": null,\n  \"traceback\": \"Traceback (most recent call last):\\n  File \\\"/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/launch_getup_total_target_lstdq_r203.py\\\", line 62, in main\\n    run.storage_gate(start=True);tests('initial');run.storage_gate()\\n                                 ^^^^^^^^^^^^^^^^\\n  File \\\"/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/launch_getup_total_target_lstdq_r203.py\\\", line 33, in tests\\n    run.local.write_json(directory/'regression_natural_exit.json',dict(\\n                                                                  ^^^^^\\nTypeError: dict() got multiple values for keyword argument 'elapsed_seconds'\\n\",\n  \"full_task_completed\": false,\n  \"hardware_readiness\": false\n}",
+        "sha256": "0614a9473001d1c6e5414608eb6a80fa85a996ac54baa494ca99e227098a183e"
+      },
+      "outputs/getup_total_target_lstdq_r203_smoke_20261011/results.json": {
+        "exists": false
+      },
+      "outputs/getup_total_target_lstdq_r203_smoke_20261011/failure.json": {
+        "exists": false
+      }
+    },
+    "tasks": [
+      "2664890 .venv/bin/python -u -m open_duck_agent.live_server --host 127.0.0.1 --port 18766"
+    ],
+    "smoke_exists": false,
+    "formal_exists": false,
+    "free_bytes": 35130798080
+  },
+  "repair_policy": "new b files only; unchanged numeric kernel/control/math/acceptance/budget; no old evidence/source overwritten"
+}

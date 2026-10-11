@@ -1,0 +1,360 @@
+{
+  "stage": "R203b_formal_running_after_true_smoke_and_zero_skip_gates",
+  "observed_at_utc": "2026-10-11 08:00:46 UTC",
+  "actual_final_snapshot": {
+    "status": {
+      "launcher_exit": null,
+      "launcher_result": null,
+      "launcher_failure": null,
+      "formal_failure": null,
+      "formal_results": null,
+      "formal_natural_exit": null,
+      "training_history": null
+    },
+    "formal_same6_full_arrays_result_rng": 6,
+    "isolated_qposqvel_equality_only": true,
+    "formal_main_source_count": 491,
+    "formal_worker_source_counts": [
+      497,
+      497,
+      497,
+      497,
+      497,
+      497
+    ],
+    "all_actual_source_copies_exact": true,
+    "completed_path_results": 57,
+    "tasks": [
+      "2515481 /data/shijinsheng/open_duck/projects/Open_Duck_Playground/.venv/bin/python -u -m diagnostics.launch_getup_total_target_lstdq_r203b --supervise",
+      "2515483 /data/shijinsheng/open_duck/projects/Open_Duck_Playground/.venv/bin/python -u -m diagnostics.launch_getup_total_target_lstdq_r203b",
+      "2517875 /data/shijinsheng/open_duck/projects/Open_Duck_Playground/.venv/bin/python -u -m diagnostics.train_getup_total_target_lstdq_r203b",
+      "2664890 .venv/bin/python -u -m open_duck_agent.live_server --host 127.0.0.1 --port 18766"
+    ],
+    "live_bytes": 412172213,
+    "forecast_bytes": 1476395008,
+    "total_with_forecast": 1888567221,
+    "free_bytes": 34774335488
+  },
+  "smoke_natural_exit": {
+    "natural_exit": true,
+    "exit_code": 0,
+    "elapsed_seconds": 165.457255913876,
+    "actual_subprocess_return_observed": true
+  },
+  "formal_preflight_natural_exit": {
+    "tests_run": 16,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0,
+    "elapsed_seconds": 2.1956166326999664,
+    "source_hashes_unchanged": true,
+    "new_dynamic_attempts": 0,
+    "natural_exit": true,
+    "exit_code": 0,
+    "subprocess_elapsed_seconds": 2.9590359227731824
+  },
+  "preflight_a": {
+    "natural_exit": true,
+    "exit_code": 0,
+    "elapsed_seconds": 2.7635834282264113,
+    "new_dynamic_attempts": 0,
+    "source_hashes_unchanged": true,
+    "source_hashes": {
+      "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/train_getup_total_target_lstdq_r203.py": "f5e5ff7162dabb6eb82d7e8ca47842b7e8ca1fef0f2a859a3c7f2deceb32b616",
+      "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/total_target_lstdq_kernel_r203.py": "8977034b4441ef5d55bd3cf207465f919fd20ed91c672a307112ca473e40cb14",
+      "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/test_getup_total_target_lstdq_r203.py": "80f8f7972f19df684151a45852c341e24e399294eb23e00178197f52129b288a",
+      "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/launch_getup_total_target_lstdq_r203.py": "ffa6f3b357322a00e930958a4eb7b542b21a6f6457a8914013a983986d9f8029"
+    },
+    "full_interface_regression_passed": true,
+    "tests": {
+      "tests_run": 16,
+      "skipped": 0,
+      "failures": 0,
+      "errors": 0,
+      "elapsed_seconds": 2.035781681537628,
+      "source_hashes_unchanged": true,
+      "new_dynamic_attempts": 0
+    },
+    "full_smoke_run": false,
+    "formal_run": false,
+    "resources_before": {
+      "live_bytes": 23052895,
+      "future_archive_git_extra_bytes": 1476395008,
+      "complete_actual_plus_forecast_bytes": 1499447903,
+      "free_bytes": 35191103488,
+      "external_tmp_logs_sources_included": true,
+      "all_R203_paths_included": true,
+      "no_cleanup": true
+    }
+  },
+  "preflight_b": {
+    "natural_exit": true,
+    "exit_code": 0,
+    "elapsed_seconds": 2.9514170717447996,
+    "new_dynamic_attempts": 0,
+    "source_hashes_unchanged": true,
+    "source_hashes": {
+      "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/train_getup_total_target_lstdq_r203b.py": "6abfa6a1a65cda726f5d5ba61cefe5ac0f334aabc4c8a89ac58a95d8e945aacd",
+      "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/total_target_lstdq_kernel_r203.py": "8977034b4441ef5d55bd3cf207465f919fd20ed91c672a307112ca473e40cb14",
+      "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/test_getup_total_target_lstdq_r203b.py": "abe2ea9566cf4ae2bfa1dd0b707d6131665769ba0d0cebc03178f49b71687d11",
+      "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/launch_getup_total_target_lstdq_r203b.py": "43e0e0fcf3db513ec460136e3f982ae93f78562801a445ead27403881a3c9ef4"
+    },
+    "full_interface_regression_passed": true,
+    "tests": {
+      "tests_run": 16,
+      "skipped": 0,
+      "failures": 0,
+      "errors": 0,
+      "elapsed_seconds": 2.203132441267371,
+      "source_hashes_unchanged": true,
+      "new_dynamic_attempts": 0
+    },
+    "full_smoke_run": false,
+    "formal_run": false,
+    "resources_before": {
+      "live_bytes": 77606752,
+      "future_archive_git_extra_bytes": 1476395008,
+      "complete_actual_plus_forecast_bytes": 1554001760,
+      "free_bytes": 35130642432,
+      "external_tmp_logs_sources_included": true,
+      "all_R203_paths_included": true,
+      "no_cleanup": true
+    }
+  },
+  "b_launch_request": {
+    "natural_exit": true,
+    "exit_code": 0,
+    "elapsed_seconds": 0.6834100028499961,
+    "source_hashes_unchanged": true,
+    "source_hashes": {
+      "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/train_getup_total_target_lstdq_r203b.py": "6abfa6a1a65cda726f5d5ba61cefe5ac0f334aabc4c8a89ac58a95d8e945aacd",
+      "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/total_target_lstdq_kernel_r203.py": "8977034b4441ef5d55bd3cf207465f919fd20ed91c672a307112ca473e40cb14",
+      "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/test_getup_total_target_lstdq_r203b.py": "abe2ea9566cf4ae2bfa1dd0b707d6131665769ba0d0cebc03178f49b71687d11",
+      "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/launch_getup_total_target_lstdq_r203b.py": "43e0e0fcf3db513ec460136e3f982ae93f78562801a445ead27403881a3c9ef4"
+    },
+    "stdout": "{\"supervisor_pid\": 2515481, \"only_locator_not_natural_exit\": true, \"new_controller_not_yet_verified\": true}\n",
+    "stderr": "",
+    "request_exit_not_launcher_or_smoke_completion": true
+  },
+  "original_failure_summary_file": "initial_launch_recording_failure_20261011.json",
+  "original_launch_request_a_exit_absent": true,
+  "original_launcher_a_true_exit1_before_dynamic": true,
+  "source_hashes_original": {
+    "launch_getup_total_target_lstdq_r203.py": "ffa6f3b357322a00e930958a4eb7b542b21a6f6457a8914013a983986d9f8029",
+    "GETUP_TOTAL_TARGET_LSTDQ_PLAN_R203_20261011.json": "04ca58b902422421df70c525db6479b670ea64636b41323d000a04824d17571a",
+    "preflight_wrapper_r203_20261011.py": "183468a920d07c46675947971abec40fbe3e83f811409a2e6a482219d7835017",
+    "train_getup_total_target_lstdq_r203.py": "f5e5ff7162dabb6eb82d7e8ca47842b7e8ca1fef0f2a859a3c7f2deceb32b616",
+    "total_target_lstdq_kernel_r203.py": "8977034b4441ef5d55bd3cf207465f919fd20ed91c672a307112ca473e40cb14",
+    "test_getup_total_target_lstdq_r203.py": "80f8f7972f19df684151a45852c341e24e399294eb23e00178197f52129b288a"
+  },
+  "source_hashes_b": {
+    "launch_wrapper_r203b_20261011.py": "c1679644074c7e1a6471a9acd1ecd3831d9fd6e413da0d894c4b28cc498db3e5",
+    "train_getup_total_target_lstdq_r203b.py": "6abfa6a1a65cda726f5d5ba61cefe5ac0f334aabc4c8a89ac58a95d8e945aacd",
+    "test_getup_total_target_lstdq_r203b.py": "abe2ea9566cf4ae2bfa1dd0b707d6131665769ba0d0cebc03178f49b71687d11",
+    "preflight_wrapper_r203b_20261011.py": "4fc99a3d739c8fd89103f27296341029569d724d320a1a4d9baaa9d3ff3087f1",
+    "launch_getup_total_target_lstdq_r203b.py": "43e0e0fcf3db513ec460136e3f982ae93f78562801a445ead27403881a3c9ef4"
+  },
+  "downloaded_original_files": {
+    "preflight_b_exit_20261011.json": {
+      "path": "/data/shijinsheng/open_duck/tmp/getup_total_target_lstdq_r203b_preflight_exit_20261011.json",
+      "sha256": "b944aecb7936d06126131064db0437b35519d1406f1d07d2f13d320ba6d63a2e",
+      "bytes": 1506
+    },
+    "interface_b_regression_20261011.log": {
+      "path": "/data/shijinsheng/open_duck/outputs/getup_total_target_lstdq_r203b_preflight_20261011/regression.log",
+      "sha256": "345e551ee5507ba95c02a2bd45633362c57bc492ed37fd8a7f6f0ead3ee2cbfa",
+      "bytes": 2059
+    },
+    "interface_b_result_20261011.json": {
+      "path": "/data/shijinsheng/open_duck/outputs/getup_total_target_lstdq_r203b_preflight_20261011/interface_result.json",
+      "sha256": "5e18c2324f50deaabb96b8e78d7eb4bba70be6315eedcf600c6e255bb7ff9870",
+      "bytes": 173
+    },
+    "interface_b_source_manifest_20261011.json": {
+      "path": "/data/shijinsheng/open_duck/outputs/getup_total_target_lstdq_r203b_preflight_20261011/source_manifest.json",
+      "sha256": "f62a8e7bcdfaed9f634c20b56499ba68396c3ed37f70d57c8e5e1ce5e0070d56",
+      "bytes": 123765
+    },
+    "initial_request_a_full_20261011.log": {
+      "path": "/data/shijinsheng/open_duck/tmp/getup_total_target_lstdq_r203_launch_request_20261011.log",
+      "sha256": "667569057bc6209095401d1d8c9ca41718eb5634aaa4e1dd7eec3e43d2a0d96e",
+      "bytes": 108
+    },
+    "launcher_a_exit_20261011.json": {
+      "path": "/data/shijinsheng/open_duck/tmp/getup_total_target_lstdq_r203_launcher_exit_20261011.json",
+      "sha256": "8221325dfdff038b0c60dbd77c695796e99232e63e79fb22a86dc5c8bf0e2994",
+      "bytes": 793
+    },
+    "launcher_a_full_20261011.log": {
+      "path": "/data/shijinsheng/open_duck/tmp/getup_total_target_lstdq_r203_launcher_20261011.log",
+      "sha256": "9f1f7226ccf99266d4a7dd8520ecc0e5088739272b4835828f40489e5c02f5e6",
+      "bytes": 977
+    },
+    "launcher_a_failure_20261011.json": {
+      "path": "/data/shijinsheng/open_duck/outputs/getup_total_target_lstdq_launcher_r203_20261011/failure.json",
+      "sha256": "0614a9473001d1c6e5414608eb6a80fa85a996ac54baa494ca99e227098a183e",
+      "bytes": 801
+    },
+    "launcher_a_initial_regression_20261011.log": {
+      "path": "/data/shijinsheng/open_duck/outputs/getup_total_target_lstdq_launcher_r203_20261011/initial/regression.log",
+      "sha256": "3e9c2e4d9ceb88ba939766b07070daf99d80bbdba6e92fdb58def0d9e7f39f9b",
+      "bytes": 2059
+    },
+    "launcher_a_initial_result_20261011.json": {
+      "path": "/data/shijinsheng/open_duck/outputs/getup_total_target_lstdq_launcher_r203_20261011/initial/interface_result.json",
+      "sha256": "003fbc17c7bb20535d8509800a6275359097964d5c75af8162735731e24829ea",
+      "bytes": 174
+    },
+    "launch_request_b_exit_20261011.json": {
+      "path": "/data/shijinsheng/open_duck/tmp/getup_total_target_lstdq_r203b_launch_request_exit_20261011.json",
+      "sha256": "bb9da5d7422584e05dde975455d25c3421e881edd41dd52a55c56eb9ac77d014",
+      "bytes": 1084
+    },
+    "launch_request_b_full_20261011.log": {
+      "path": "/data/shijinsheng/open_duck/tmp/getup_total_target_lstdq_r203b_launch_request_20261011.log",
+      "sha256": "f82b3c5539e6f17cf6c96f82719523aa65ba3e7b51a0e891bbc395951a17f7db",
+      "bytes": 108
+    },
+    "launcher_b_initial_exit_20261011.json": {
+      "path": "/data/shijinsheng/open_duck/outputs/getup_total_target_lstdq_launcher_r203b_20261011/initial/regression_natural_exit.json",
+      "sha256": "440ecab686307ca3cad28e1f708841f5a57e9d420e3388e0c51ade35dafdb42f",
+      "bytes": 268
+    },
+    "launcher_b_initial_regression_20261011.log": {
+      "path": "/data/shijinsheng/open_duck/outputs/getup_total_target_lstdq_launcher_r203b_20261011/initial/regression.log",
+      "sha256": "ec2635cd203c9c171d4b958e588cf138a85ac009b44ded77944bffa0e1e09ce2",
+      "bytes": 2059
+    },
+    "smoke_results_saved_20261011.json": {
+      "path": "/data/shijinsheng/open_duck/outputs/getup_total_target_lstdq_r203_smoke_20261011/results.json",
+      "sha256": "79906b18ef974104ebc350fcca93184bbe7f9d93260dad7ae434d5f1cd1e1b9e",
+      "bytes": 20566
+    }
+  },
+  "downloaded_four_completed_smoke_gate_files": {
+    "smoke_natural_exit_20261011.json": {
+      "path": "/data/shijinsheng/open_duck/outputs/getup_total_target_lstdq_launcher_r203b_20261011/smoke_natural_exit.json",
+      "sha256": "379a5c0ca44ac4d0bbe36dc3b9e3ab71bbd3e8bb0b35fcd43be15970578e7155",
+      "bytes": 128
+    },
+    "smoke_full_20261011.log": {
+      "path": "/data/shijinsheng/open_duck/outputs/getup_total_target_lstdq_r203_smoke_20261011.log",
+      "sha256": "dbd8b15ad3c5a5ff2aa68bb043ecf090fd2d84975ba9449fca78e7677c1b09f9",
+      "bytes": 245
+    },
+    "formal_preflight_natural_exit_20261011.json": {
+      "path": "/data/shijinsheng/open_duck/outputs/getup_total_target_lstdq_launcher_r203b_20261011/formal/regression_natural_exit.json",
+      "sha256": "85e476ee388fb0aad70ae1cd95bd27812f1bb2b749b5211cdd10974ce11c1ef3",
+      "bytes": 268
+    },
+    "formal_preflight_full_20261011.log": {
+      "path": "/data/shijinsheng/open_duck/outputs/getup_total_target_lstdq_launcher_r203b_20261011/formal/regression.log",
+      "sha256": "a48c21c2989f2cbedba1faf4982d423b7cfe56754e5c97a79bcfad71a75407fb",
+      "bytes": 2059
+    }
+  },
+  "all_19_downloaded_raw_bytes_sha_exact": true,
+  "smoke_rows": [
+    {
+      "group": "zero_parity",
+      "case": null,
+      "controls": 2279,
+      "valid": true,
+      "success": true,
+      "entry": 11.08,
+      "strict": 34.7,
+      "physics": "4b9f4a9167e1614c22f7e6f28dd8508f7ccabb61d909a6c47dd46e40b861c6ae",
+      "compiled_model": "53a24e16553a85c7e1ba354a692eca45094ba31d5d561f2d54f7a75e1d5914b3"
+    },
+    {
+      "group": "zero_parity",
+      "case": 769000,
+      "controls": 2279,
+      "valid": true,
+      "success": true,
+      "entry": 11.1,
+      "strict": 34.68,
+      "physics": "4b9f4a9167e1614c22f7e6f28dd8508f7ccabb61d909a6c47dd46e40b861c6ae",
+      "compiled_model": "53a24e16553a85c7e1ba354a692eca45094ba31d5d561f2d54f7a75e1d5914b3"
+    },
+    {
+      "group": "zero_parity",
+      "case": 773004,
+      "controls": 2279,
+      "valid": true,
+      "success": false,
+      "entry": null,
+      "strict": 0,
+      "physics": "4b9f4a9167e1614c22f7e6f28dd8508f7ccabb61d909a6c47dd46e40b861c6ae",
+      "compiled_model": "53a24e16553a85c7e1ba354a692eca45094ba31d5d561f2d54f7a75e1d5914b3"
+    },
+    {
+      "group": "initial_standard",
+      "case": null,
+      "controls": 2279,
+      "valid": true,
+      "success": true,
+      "entry": 11.1,
+      "strict": 34.68,
+      "physics": "4b9f4a9167e1614c22f7e6f28dd8508f7ccabb61d909a6c47dd46e40b861c6ae",
+      "compiled_model": "53a24e16553a85c7e1ba354a692eca45094ba31d5d561f2d54f7a75e1d5914b3"
+    },
+    {
+      "group": "initial_sample",
+      "case": 769002,
+      "controls": 2279,
+      "valid": true,
+      "success": false,
+      "entry": null,
+      "strict": 0,
+      "physics": "4b9f4a9167e1614c22f7e6f28dd8508f7ccabb61d909a6c47dd46e40b861c6ae",
+      "compiled_model": "53a24e16553a85c7e1ba354a692eca45094ba31d5d561f2d54f7a75e1d5914b3"
+    },
+    {
+      "group": "initial_sample",
+      "case": 773004,
+      "controls": 2279,
+      "valid": true,
+      "success": true,
+      "entry": 11.120000000000001,
+      "strict": 34.660000000000004,
+      "physics": "4b9f4a9167e1614c22f7e6f28dd8508f7ccabb61d909a6c47dd46e40b861c6ae",
+      "compiled_model": "53a24e16553a85c7e1ba354a692eca45094ba31d5d561f2d54f7a75e1d5914b3"
+    }
+  ],
+  "smoke_first_applied_independent_R157_count": 6,
+  "smoke_old_baseline_arrays_independent_exact": true,
+  "smoke_old_baseline_fields_compared": 42,
+  "formal_same6_all_new_old_arrays_result_rng_exact": 6,
+  "qpos_qvel_isolated_equality_only": true,
+  "not_independent_full_decision_proof": true,
+  "verifier_archive_publisher_not_implemented": true,
+  "numeric_not_reexecuted": true,
+  "pre_read_history": [
+    {
+      "characters": 102926,
+      "directory": "getup_r203_20261011",
+      "json_leaves": 898,
+      "old_dynamic_executed": false,
+      "full_file_count": 12
+    },
+    {
+      "characters": 4333714,
+      "directory": "getup_r202_20261011",
+      "json_leaves": 31191,
+      "old_dynamic_executed": false,
+      "full_file_count": 71
+    }
+  ],
+  "old_methods_closed": true,
+  "total_dynamic_cap": 162,
+  "no_budget_extension": true,
+  "best_R157": 18,
+  "no_qualification_or_hardware": true,
+  "tool_diagnostics_not_training_failures": [
+    "python absent on local PATH; bundled Python AST check succeeded",
+    "one tool output truncated and JSON.parse failed; compact query succeeded without test rerun",
+    "one readonly system-Python import lacked mujoco; same readonly query completed under original venv"
+  ],
+  "OpenAI_Docs_scope": "accurate heartbeat stage persistence only; no training authority expansion"
+}

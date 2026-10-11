@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/launch_getup_total_target_lstdq_r203.py", line 101, in <module>
+    else:assert not sys.argv[1:];main()
+                                 ^^^^^^
+  File "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/launch_getup_total_target_lstdq_r203.py", line 62, in main
+    run.storage_gate(start=True);tests('initial');run.storage_gate()
+                                 ^^^^^^^^^^^^^^^^
+  File "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/launch_getup_total_target_lstdq_r203.py", line 33, in tests
+    run.local.write_json(directory/'regression_natural_exit.json',dict(
+                                                                  ^^^^^
+TypeError: dict() got multiple values for keyword argument 'elapsed_seconds'

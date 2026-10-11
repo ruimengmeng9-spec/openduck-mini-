@@ -1,0 +1,164 @@
+{
+  "method": "R203 finite affine-offset LSTD-Q policy iteration",
+  "date": "2026-10-11",
+  "stage": "synthetic_numeric_preparation_only",
+  "paper": "https://jmlr.org/papers/volume4/lagoudakis03a/lagoudakis03a.pdf",
+  "paper_scope": "Only projected Bellman LSTD-Q and policy evaluation/improvement framework; continuous fixed-concavity affine-offset architecture is this finite experimental variant, not verbatim LSPI or robot guarantee.",
+  "structural_difference": "No actor network, policy gradient, Adam, value gradient, Gaussian MLE/E-step, Fisher/CG/KL/backtracking, categorical codebook, TD neural target, replay, learned dynamics, teacher-action regression, fixed recurrent readout, whole-policy perturbation. One nonsymmetric LSTD-Q projected Bellman linear solve per new training round, then analytic continuous box-greedy action.",
+  "online_inputs": {
+    "current": "actual native50 tanh",
+    "initial": "causal initial native50 tanh",
+    "clock": "min(control/528,1)",
+    "bias": 1,
+    "state_feature_count": 102,
+    "forbidden": [
+      "case",
+      "seed",
+      "path",
+      "labels",
+      "actual root",
+      "qpos/qvel",
+      "teacher",
+      "future actual",
+      "lookup",
+      "private physics query"
+    ]
+  },
+  "architecture": {
+    "state_coefficients": 102,
+    "cross_coefficients": [
+      102,
+      10
+    ],
+    "learned_parameters": 1122,
+    "fixed_action_curvature": 1,
+    "q": "phi*v + (phi*B) dot a - 0.5*||a||^2",
+    "greedy": "clip(phi*B,-1,1)",
+    "initial_theta": "exact fresh zero",
+    "seed": 303,
+    "seed_use": "sampling RNG only, no context or old RNG"
+  },
+  "sampling": {
+    "sigma": 0.0001,
+    "request": "clip(greedy+sigma*iid_normal10,-1,1)",
+    "saves": [
+      "greedy",
+      "noise",
+      "unclipped_proposal",
+      "clipped_request",
+      "sampling RNG"
+    ],
+    "clipped_density_not_claimed": true,
+    "deterministic_consumes_no_rng": true
+  },
+  "control": {
+    "active": "control1..528",
+    "active_request": "reference14 with ten legs replaced by reference+.18*boxrequest after original IMU/right double boundary",
+    "old_leg_feedback_added": false,
+    "control0_head_home529plus": "unchanged original",
+    "joint_torque_slew_physics_reward_acceptance": "unchanged",
+    "frame_zaxis_not_bodygravity": true
+  },
+  "learning": {
+    "training_data": "only current round of 25 new complete R203 training paths; no old or evaluation data",
+    "gamma": ".99**.2",
+    "last_active_home_backup": "original reward at528 plus gamma times complete original discounted home rewards529+",
+    "invalid_terminal": "original early terminal, no bootstrap/reset crossing",
+    "lstd": "A=mean psi*(psi-gamma*bootstrap*nextpsi)^T+1e-3 I; b=mean psi*(r_backup+gamma*bootstrap*c(nextaction)-c(action))",
+    "offset": "fixed action-quadratic Q architecture offset, NOT a changed original reward or action penalty",
+    "evaluation_policy": "frozen greedy from before solve, next observation arrives before offline target assembly",
+    "solves_per_round": 1,
+    "total_solves": 2,
+    "ridge": 0.001,
+    "blocks": 256,
+    "residual_bound": "finite solution and relative infinity norm <=1e-10",
+    "no_learning_rate_or_optimizer": true,
+    "no_extra_fit_or_hyperparameter_search": true
+  },
+  "risks": [
+    "Partial native50+initial+clock need not form a complete Markov state.",
+    "Fixed concave action curvature is restrictive, not learned physical response.",
+    "Tiny exploration plus ridge may make action cross coefficients poorly identified.",
+    "Projected Bellman solution need not converge or improve; continuous box greedy can saturate and produce invalid trajectories.",
+    "Clipped request has boundary atoms, not a Gaussian executed action density.",
+    "Control endpoints are not first 500Hz crossings; no invalid relabel or causal root-cause assertion."
+  ],
+  "dynamic_budget": {
+    "total_cap": 162,
+    "independent_smoke": 6,
+    "formal": 156,
+    "formal_startup": 6,
+    "baseline": 25,
+    "new_training": 50,
+    "det_check": 50,
+    "final": 25,
+    "rounds": 2,
+    "max_controls": 2279,
+    "max_seconds": 45.58,
+    "invalid_original_early_exit": true,
+    "no_independent_start_count_claim": true,
+    "closed_R202_remaining100_not_used": true
+  },
+  "storage_budget": {
+    "total_limit_bytes": 2147483648,
+    "live_upper_bytes": 671088640,
+    "future_archive_bytes": 671088640,
+    "future_git_bytes": 671088640,
+    "extra_bytes": 134217728,
+    "start_free_bytes": 12884901888,
+    "reserve_free_bytes": 10737418240,
+    "all_external_logs_sources_tmp_outputs_included": true,
+    "no_cleanup_or_old_sparse_restore": true
+  },
+  "required_before_dynamic": [
+    "actual causal scalar interface, frozen loader, full boundary/head/home/joint-slew recursiveprev/planned==applied tests",
+    "constructor40 and reset40 native50 evidence",
+    "full XML assets MJB and sources unchanged",
+    "strict complete regressions actual naturalexit0, zero skipped",
+    "one independent complete six-path smoke real naturalexit0 then strict formal regression naturalexit0 and idle"
+  ],
+  "smoke_spec": [
+    {
+      "mode": "baseline",
+      "cases": [
+        null,
+        769000,
+        773004
+      ],
+      "old_all_fields_parity": true
+    },
+    {
+      "mode": "deterministic",
+      "cases": [
+        null
+      ],
+      "nominal_success": true
+    },
+    {
+      "mode": "sample",
+      "cases": [
+        769002,
+        773004
+      ],
+      "all_original_valid_complete": true
+    }
+  ],
+  "selection": "Std/allvalid/preserve all baseline successes/>18 common checkpoint or complete25 R157fallback; do not claim fallback new improvement.",
+  "qualification": "Std+24>=22 and >18 allvalid ->316>=36/40 better fixedzero/R102 allvalid -> unread320 two disjoint20 each18/20 -> larger disturbance/sensor and execution delay/right/prone/supine; <=12s, continuousstrict30s, each500Hzvalid unchanged.",
+  "immutable_history": "R202 user interrupted, skips/failure/invalid and all missing original traces retained; R201 and every old method budget closed.",
+  "protected_live_server": true,
+  "simulation_only": true,
+  "unread320_never_loaded": true,
+  "hardware_connected": false,
+  "hardware_enabled": false,
+  "full_task_completed": false,
+  "numeric_only": {
+    "fixed_tests": 24,
+    "no_old_data": true,
+    "no_simulator": true,
+    "no_dynamic_smoke": true,
+    "no_dynamic_formal": true,
+    "no_production_checkpoint_reuse": true
+  }
+}
+

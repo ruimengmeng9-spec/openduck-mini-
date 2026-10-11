@@ -1,0 +1,536 @@
+{
+  "stage": "R203b complete formal natural exits and independent full saved-decision verification; archive publication pending",
+  "formal_exit": {
+    "natural_exit": true,
+    "exit_code": 0,
+    "elapsed_seconds": 570.2691964013502,
+    "actual_subprocess_return_observed": true
+  },
+  "launcher_exit": {
+    "natural_exit": true,
+    "exit_code": 0,
+    "elapsed_seconds": 742.7243429375812,
+    "actual_launcher_subprocess_return_observed": true,
+    "source_hashes_unchanged": true,
+    "source_hashes": {
+      "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/launch_getup_total_target_lstdq_r203b.py": "43e0e0fcf3db513ec460136e3f982ae93f78562801a445ead27403881a3c9ef4",
+      "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/train_getup_total_target_lstdq_r203b.py": "6abfa6a1a65cda726f5d5ba61cefe5ac0f334aabc4c8a89ac58a95d8e945aacd",
+      "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/total_target_lstdq_kernel_r203.py": "8977034b4441ef5d55bd3cf207465f919fd20ed91c672a307112ca473e40cb14"
+    },
+    "protected_live_server_not_operated": true
+  },
+  "summary": {
+    "baseline": {
+      "successes": 18,
+      "nominal_success": true,
+      "physical_failures": 0,
+      "return_sum": 1187.675118032883
+    },
+    "candidate": {
+      "successes": 18,
+      "nominal_success": true,
+      "physical_failures": 0,
+      "return_sum": 1187.675118032883
+    },
+    "selected": null,
+    "history": [
+      {
+        "iteration": 1,
+        "training": {
+          "successes": 8,
+          "nominal_success": true,
+          "physical_failures": 0,
+          "return_sum": 517.700937262033
+        },
+        "check": {
+          "successes": 4,
+          "nominal_success": false,
+          "physical_failures": 1,
+          "return_sum": 183.33125135304263
+        },
+        "eligible": false,
+        "solve_count": 1,
+        "relative_residual": 1.3877787807814457e-17,
+        "active_samples": 13200,
+        "complete_reward_samples": 56975,
+        "max_saved_action_change": 0.0037611761686002225,
+        "improvement_or_safety_not_implied_by_solve": true
+      },
+      {
+        "iteration": 2,
+        "training": {
+          "successes": 7,
+          "nominal_success": false,
+          "physical_failures": 1,
+          "return_sum": 384.66222731463455
+        },
+        "check": {
+          "successes": 4,
+          "nominal_success": false,
+          "physical_failures": 0,
+          "return_sum": 186.63022088799255
+        },
+        "eligible": false,
+        "solve_count": 2,
+        "relative_residual": 1.3877787807814457e-17,
+        "active_samples": 12975,
+        "complete_reward_samples": 55000,
+        "max_saved_action_change": 0.027359725488966757,
+        "improvement_or_safety_not_implied_by_solve": true
+      }
+    ],
+    "path_count": 156,
+    "saved_control_count": 365248,
+    "live_bytes": 632100997,
+    "future_bytes": 1476395008,
+    "free_bytes": 34553217024,
+    "HEAD": "8f19fcfb0ac6922818a4079f058d23cecd565e5c",
+    "status": "",
+    "files": {
+      "formal_results": {
+        "path": "/data/shijinsheng/open_duck/outputs/getup_total_target_lstdq_r203_left_20261011/results.json",
+        "exists": true,
+        "bytes": 494112,
+        "sha256": "77468026b115d113039be1d61203733073427a104b428bbe698678e5f30238bf"
+      },
+      "history": {
+        "path": "/data/shijinsheng/open_duck/outputs/getup_total_target_lstdq_r203_left_20261011/training_closed_history.json",
+        "exists": true,
+        "bytes": 312815,
+        "sha256": "2c87f6d6ea8797f8205a20d03616b07d04eb533a56a7197d12e667d713ac0c12"
+      },
+      "formal_after": {
+        "path": "/data/shijinsheng/open_duck/outputs/getup_total_target_lstdq_r203_left_20261011/input_hashes_after.json",
+        "exists": true,
+        "bytes": 6668,
+        "sha256": "58e3a1bb100eb6965deea347487f9e80aaa6b65de18aa35b4c55b0aed0d5587b"
+      },
+      "formal_full": {
+        "path": "/data/shijinsheng/open_duck/outputs/getup_total_target_lstdq_r203_left_20261011.log",
+        "exists": true,
+        "bytes": 6679,
+        "sha256": "1ec10f01c6f21a119914270f7ca85c16f74411bb4066821d7ad46fc75d929edd"
+      },
+      "launcher_exit": {
+        "path": "/data/shijinsheng/open_duck/tmp/getup_total_target_lstdq_r203b_launcher_exit_20261011.json",
+        "exists": true,
+        "bytes": 794,
+        "sha256": "369bc64dad71457176e66988aa338a9257af66c8dac584389e0f0759d26b1f60"
+      },
+      "formal_exit": {
+        "path": "/data/shijinsheng/open_duck/outputs/getup_total_target_lstdq_launcher_r203b_20261011/formal_natural_exit.json",
+        "exists": true,
+        "bytes": 129,
+        "sha256": "2958be66651baa66ee02c4f4b15e6a88577a2a3bbb33767b988304114cde5e6a"
+      },
+      "launcher_result": {
+        "path": "/data/shijinsheng/open_duck/outputs/getup_total_target_lstdq_launcher_r203b_20261011/result.json",
+        "exists": true,
+        "bytes": 293,
+        "sha256": "f834dad9045d3291133c8fcf4bc62d50f211fa6bb7163e31535ffba06462fffc"
+      },
+      "launcher_full": {
+        "path": "/data/shijinsheng/open_duck/tmp/getup_total_target_lstdq_r203b_launcher_20261011.log",
+        "exists": true,
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "update1": {
+        "path": "/data/shijinsheng/open_duck/outputs/getup_total_target_lstdq_r203_left_20261011/training_0001/lstdq_update.json",
+        "exists": true,
+        "bytes": 324,
+        "sha256": "a3e056c7cf9b5c80db913ec58d2703359708f1a66ece18cf0e2c066effcda283"
+      },
+      "update2": {
+        "path": "/data/shijinsheng/open_duck/outputs/getup_total_target_lstdq_r203_left_20261011/training_0002/lstdq_update.json",
+        "exists": true,
+        "bytes": 324,
+        "sha256": "3f2ec17da7fbbed9e3d5d1719d7454fa9aec0a5a0a9f86b99562019961dc980c"
+      },
+      "transition1": {
+        "path": "/data/shijinsheng/open_duck/outputs/getup_total_target_lstdq_r203_left_20261011/training_0001/transition_contract.json",
+        "exists": true,
+        "bytes": 319,
+        "sha256": "7f739d31d7ef6d4b45915a24661c46e101c6ff9063570b93f4214bdd5fb5e750"
+      },
+      "transition2": {
+        "path": "/data/shijinsheng/open_duck/outputs/getup_total_target_lstdq_r203_left_20261011/training_0002/transition_contract.json",
+        "exists": true,
+        "bytes": 319,
+        "sha256": "46fce1c57fd9e2f37542508879101e1fa046520fd9ed60864c5879354c2ac3bd"
+      }
+    }
+  },
+  "original_terminal_downloads": [
+    {
+      "sha256": "77468026b115d113039be1d61203733073427a104b428bbe698678e5f30238bf",
+      "characters": 494112,
+      "leaves": 10250,
+      "name": "formal_results"
+    },
+    {
+      "sha256": "2c87f6d6ea8797f8205a20d03616b07d04eb533a56a7197d12e667d713ac0c12",
+      "characters": 312815,
+      "leaves": 6532,
+      "name": "history"
+    },
+    {
+      "sha256": "58e3a1bb100eb6965deea347487f9e80aaa6b65de18aa35b4c55b0aed0d5587b",
+      "characters": 6668,
+      "leaves": 36,
+      "name": "formal_after"
+    },
+    {
+      "sha256": "1ec10f01c6f21a119914270f7ca85c16f74411bb4066821d7ad46fc75d929edd",
+      "characters": 6679,
+      "leaves": 0,
+      "name": "formal_full"
+    },
+    {
+      "sha256": "369bc64dad71457176e66988aa338a9257af66c8dac584389e0f0759d26b1f60",
+      "characters": 794,
+      "leaves": 9,
+      "name": "launcher_exit"
+    },
+    {
+      "sha256": "2958be66651baa66ee02c4f4b15e6a88577a2a3bbb33767b988304114cde5e6a",
+      "characters": 129,
+      "leaves": 4,
+      "name": "formal_exit"
+    },
+    {
+      "sha256": "f834dad9045d3291133c8fcf4bc62d50f211fa6bb7163e31535ffba06462fffc",
+      "characters": 293,
+      "leaves": 9,
+      "name": "launcher_result"
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "characters": 0,
+      "leaves": 0,
+      "name": "launcher_full"
+    },
+    {
+      "sha256": "a3e056c7cf9b5c80db913ec58d2703359708f1a66ece18cf0e2c066effcda283",
+      "characters": 324,
+      "leaves": 8,
+      "name": "update1"
+    },
+    {
+      "sha256": "3f2ec17da7fbbed9e3d5d1719d7454fa9aec0a5a0a9f86b99562019961dc980c",
+      "characters": 324,
+      "leaves": 8,
+      "name": "update2"
+    },
+    {
+      "sha256": "7f739d31d7ef6d4b45915a24661c46e101c6ff9063570b93f4214bdd5fb5e750",
+      "characters": 319,
+      "leaves": 9,
+      "name": "transition1"
+    },
+    {
+      "sha256": "46fce1c57fd9e2f37542508879101e1fa046520fd9ed60864c5879354c2ac3bd",
+      "characters": 319,
+      "leaves": 9,
+      "name": "transition2"
+    }
+  ],
+  "full_current_preread": [
+    {
+      "directory": "getup_r202_20261011",
+      "count": 71,
+      "characters": 4333714,
+      "leaves": 31191
+    },
+    {
+      "directory": "getup_r203_20261011",
+      "count": 49,
+      "characters": 518410,
+      "leaves": 3774
+    }
+  ],
+  "historical_preread": {
+    "count": 238,
+    "characters": 13644995,
+    "leaves": 148921
+  },
+  "new_verifier_source_sha256": "9d3bffaf392b185fd610aa3742f65e36d2c196695f933e590eee7604be4938ab",
+  "new_verifier_wrapper_sha256": "ee124fd3e063b71ee04007dbd949e45f028c8e8ee366a3189d5c24c6803a9bea",
+  "only_new_verification_exec_session": 75243,
+  "verification_complete": true,
+  "new_dynamic_attempts": 0,
+  "old_source_or_evidence_modified": false,
+  "no_R204_selected_or_started": true,
+  "full_task_completed": false,
+  "hardware_readiness": false,
+  "verification_actual_local_exec_natural_exit": {
+    "chunk_id": "0ae0a2",
+    "wall_time_seconds": 0.0000094,
+    "exit_code": 0,
+    "original_token_count": 150,
+    "output": "{\"natural_exit\": true, \"actual_subprocess_return_observed\": true, \"exit_code\": 0, \"elapsed_seconds\": 226.76077162381262, \"source_unchanged\": true, \"source_sha256\": \"9d3bffaf392b185fd610aa3742f65e36d2c196695f933e590eee7604be4938ab\", \"new_dynamic_attempts\": 0, \"proof_saved\": true, \"proof_sha256\": \"5b4e3ae3f4311fa9a5a89b958e98fd1f8ed3c9b6f2a611308d72e553822d697c\", \"log\": \"/data/shijinsheng/open_duck/tmp/getup_total_target_lstdq_r203_terminal_verification_20261011.log\", \"log_sha256\": \"57806894cdf067792cf86cdeb0f344992a0eb6f7a973e3dff078f5d35aeb5bd1\", \"protected_live_server_not_operated\": true}\n"
+  },
+  "verification_exit_receipt": {
+    "natural_exit": true,
+    "actual_subprocess_return_observed": true,
+    "exit_code": 0,
+    "elapsed_seconds": 226.76077162381262,
+    "source_unchanged": true,
+    "source_sha256": "9d3bffaf392b185fd610aa3742f65e36d2c196695f933e590eee7604be4938ab",
+    "new_dynamic_attempts": 0,
+    "proof_saved": true,
+    "proof_sha256": "5b4e3ae3f4311fa9a5a89b958e98fd1f8ed3c9b6f2a611308d72e553822d697c",
+    "log": "/data/shijinsheng/open_duck/tmp/getup_total_target_lstdq_r203_terminal_verification_20261011.log",
+    "log_sha256": "57806894cdf067792cf86cdeb0f344992a0eb6f7a973e3dff078f5d35aeb5bd1",
+    "protected_live_server_not_operated": true
+  },
+  "verification_files": {
+    "proof": {
+      "path": "/data/shijinsheng/open_duck/tmp/getup_total_target_lstdq_r203_terminal_verification_20261011.json",
+      "bytes": 1784188,
+      "sha256": "5b4e3ae3f4311fa9a5a89b958e98fd1f8ed3c9b6f2a611308d72e553822d697c",
+      "local": "C:/Users/86185/.codex/visualizations/2026/09/03/01a064da-da1b-7163-9ac6-b555b9e6d159/getup_r203_20261011/terminal_verification_proof_20261011.json"
+    },
+    "exit": {
+      "path": "/data/shijinsheng/open_duck/tmp/getup_total_target_lstdq_r203_terminal_verification_exit_20261011.json",
+      "bytes": 623,
+      "sha256": "218174edfe9f95c94856024930274718968827054f548b0ee84520302e5b846f",
+      "local": "C:/Users/86185/.codex/visualizations/2026/09/03/01a064da-da1b-7163-9ac6-b555b9e6d159/getup_r203_20261011/terminal_verification_exit_20261011.json"
+    },
+    "full": {
+      "path": "/data/shijinsheng/open_duck/tmp/getup_total_target_lstdq_r203_terminal_verification_20261011.log",
+      "bytes": 8941,
+      "sha256": "57806894cdf067792cf86cdeb0f344992a0eb6f7a973e3dff078f5d35aeb5bd1",
+      "local": "C:/Users/86185/.codex/visualizations/2026/09/03/01a064da-da1b-7163-9ac6-b555b9e6d159/getup_r203_20261011/terminal_verification_full_20261011.log"
+    }
+  },
+  "verification_complete_full_read": [
+    {
+      "characters": 1784188,
+      "leaves": 14509,
+      "sha256": "5b4e3ae3f4311fa9a5a89b958e98fd1f8ed3c9b6f2a611308d72e553822d697c",
+      "name": "proof"
+    },
+    {
+      "characters": 623,
+      "leaves": 12,
+      "sha256": "218174edfe9f95c94856024930274718968827054f548b0ee84520302e5b846f",
+      "name": "exit"
+    },
+    {
+      "characters": 8941,
+      "leaves": 0,
+      "sha256": "57806894cdf067792cf86cdeb0f344992a0eb6f7a973e3dff078f5d35aeb5bd1",
+      "name": "full"
+    }
+  ],
+  "verification_summary": {
+    "audit_complete": true,
+    "new_dynamic_attempts": 0,
+    "verifier_source_sha256": "9d3bffaf392b185fd610aa3742f65e36d2c196695f933e590eee7604be4938ab",
+    "closed_saved_paths": 162,
+    "controls": 365248,
+    "baseline_paths_all_original_fields_exact": 56,
+    "fresh_zero_initial_checkpoint": {
+      "solve_count": 0,
+      "theta": {
+        "shape": [
+          1122
+        ],
+        "dtype": "float64",
+        "sha256": "79cc318312a305e7c28682d99bd28ed540151db3862a2b8381809b6865370641"
+      },
+      "state_bytes_sha256": "53482de62caea80c2f8d4e5f22c09028f98e71e495e9c0d82c6eb0f62af57a5c",
+      "full_state_exact": true,
+      "actual_sampling_rng_records_exact": true,
+      "learner_RNG_absent": true
+    },
+    "all_causal102_greedy_iid_noise_unclipped_proposal_boxrequest_sampling_RNG_exact": true,
+    "det_no_RNG_consumption": true,
+    "selector_right_feedback_independently_exact": true,
+    "post_IMU_right_double_boundary_ten_leg_replacement_head_exact": true,
+    "planning_after_first_recursive_joint_slew_previous_exact": true,
+    "first_applied_R157_boundary_exact": true,
+    "all_planned_equals_applied": true,
+    "constructor_and_reset_each40x50": true,
+    "formal_independent_startup_full_arrays_results_rng_exact": true,
+    "final_fallback_full_25_arrays_old_fields_peaks_exact": true,
+    "baseline_successes": 18,
+    "candidate_R157_fallback_successes": 18,
+    "deterministic_check_successes": [
+      4,
+      4
+    ],
+    "deterministic_standard_successes": [
+      false,
+      false
+    ],
+    "common_eligible": [
+      false,
+      false
+    ],
+    "all_original_invalid_labels_peaks_retained": true,
+    "formal_and_launcher_actual_natural_exit_zero": true,
+    "original_launcher_a_recording_TypeError_and_request_AttributeError_preserved": true,
+    "no_original_request_exit_receipt_fabricated": true,
+    "source_evidence_hashes_unchanged": true,
+    "full_model_MJB_sha256": "53a24e16553a85c7e1ba354a692eca45094ba31d5d561f2d54f7a75e1d5914b3",
+    "original_physics_sha256": "4b9f4a9167e1614c22f7e6f28dd8508f7ccabb61d909a6c47dd46e40b861c6ae",
+    "original_before_request_full_IMU_double_reconstructed": false,
+    "first_joint_slew_planning_independently_reconstructed": false,
+    "environment_MjData_forward_integrate_contact_force_relabel_invoked": false,
+    "production_kernel_decision_or_update_functions_invoked": false,
+    "same_numpy_not_cross_implementation_bitwise_or_physical_safety_guarantee": true,
+    "all_existing_original_arrays_present_not_rewritten": true,
+    "independent_recomputed_full_arrays_compared_and_hashes_saved_without_duplicate_large_NPZ": true,
+    "dynamic_budget162_closed": true,
+    "additional_dynamic_budget_allowed": false,
+    "resources": {
+      "live_bytes": 642517793,
+      "future_archive_git_extra_bytes": 1476395008,
+      "additional_bound_bytes": 8388608,
+      "live_plus_forecast_and_additional_bytes": 2127301409,
+      "free_bytes": 34541572096
+    },
+    "archive_publisher_not_yet_implemented": true,
+    "best_remains_R157_18_of_24": true,
+    "full_task_completed": false,
+    "hardware_readiness": false,
+    "qualification_passed": false
+  },
+  "verification_source_manifest_counts": [
+    [
+      "/data/shijinsheng/open_duck/outputs/getup_total_target_lstdq_numeric_r203_20261011",
+      179
+    ],
+    [
+      "/data/shijinsheng/open_duck/outputs/getup_total_target_lstdq_launcher_r203_20261011",
+      491
+    ],
+    [
+      "/data/shijinsheng/open_duck/outputs/getup_total_target_lstdq_launcher_r203b_20261011",
+      491
+    ],
+    [
+      "/data/shijinsheng/open_duck/outputs/getup_total_target_lstdq_r203_smoke_20261011",
+      491
+    ],
+    [
+      "/data/shijinsheng/open_duck/outputs/getup_total_target_lstdq_r203_smoke_20261011/worker_source_manifest_2515716.json",
+      497
+    ],
+    [
+      "/data/shijinsheng/open_duck/outputs/getup_total_target_lstdq_r203_smoke_20261011/worker_source_manifest_2515720.json",
+      497
+    ],
+    [
+      "/data/shijinsheng/open_duck/outputs/getup_total_target_lstdq_r203_smoke_20261011/worker_source_manifest_2515719.json",
+      497
+    ],
+    [
+      "/data/shijinsheng/open_duck/outputs/getup_total_target_lstdq_r203_left_20261011",
+      491
+    ],
+    [
+      "/data/shijinsheng/open_duck/outputs/getup_total_target_lstdq_r203_left_20261011/worker_source_manifest_2517959.json",
+      497
+    ],
+    [
+      "/data/shijinsheng/open_duck/outputs/getup_total_target_lstdq_r203_left_20261011/worker_source_manifest_2518588.json",
+      497
+    ],
+    [
+      "/data/shijinsheng/open_duck/outputs/getup_total_target_lstdq_r203_left_20261011/worker_source_manifest_2518587.json",
+      497
+    ],
+    [
+      "/data/shijinsheng/open_duck/outputs/getup_total_target_lstdq_r203_left_20261011/worker_source_manifest_2517962.json",
+      497
+    ],
+    [
+      "/data/shijinsheng/open_duck/outputs/getup_total_target_lstdq_r203_left_20261011/worker_source_manifest_2518589.json",
+      497
+    ],
+    [
+      "/data/shijinsheng/open_duck/outputs/getup_total_target_lstdq_r203_left_20261011/worker_source_manifest_2517963.json",
+      497
+    ],
+    [
+      "/data/shijinsheng/open_duck/outputs/getup_total_target_lstdq_r203_preflight_20261011",
+      491
+    ],
+    [
+      "/data/shijinsheng/open_duck/outputs/getup_total_target_lstdq_r203_preflight_20261011/worker_fixture/worker_source_manifest_2511584.json",
+      492
+    ],
+    [
+      "/data/shijinsheng/open_duck/outputs/getup_total_target_lstdq_r203b_preflight_20261011",
+      491
+    ],
+    [
+      "/data/shijinsheng/open_duck/outputs/getup_total_target_lstdq_r203b_preflight_20261011/worker_fixture/worker_source_manifest_2514931.json",
+      492
+    ],
+    [
+      "/data/shijinsheng/open_duck/outputs/getup_total_target_lstdq_launcher_r203_20261011/initial",
+      491
+    ],
+    [
+      "/data/shijinsheng/open_duck/outputs/getup_total_target_lstdq_launcher_r203_20261011/initial/worker_fixture/worker_source_manifest_2513020.json",
+      492
+    ],
+    [
+      "/data/shijinsheng/open_duck/outputs/getup_total_target_lstdq_launcher_r203b_20261011/initial",
+      491
+    ],
+    [
+      "/data/shijinsheng/open_duck/outputs/getup_total_target_lstdq_launcher_r203b_20261011/initial/worker_fixture/worker_source_manifest_2515508.json",
+      492
+    ],
+    [
+      "/data/shijinsheng/open_duck/outputs/getup_total_target_lstdq_launcher_r203b_20261011/formal",
+      491
+    ],
+    [
+      "/data/shijinsheng/open_duck/outputs/getup_total_target_lstdq_launcher_r203b_20261011/formal/worker_fixture/worker_source_manifest_2517633.json",
+      492
+    ]
+  ],
+  "verification_learning_summary": [
+    {
+      "iteration": 1,
+      "active_samples": 13200,
+      "full_reward_samples": 56975,
+      "relative_residual": 1.3877787807814457e-17
+    },
+    {
+      "iteration": 2,
+      "active_samples": 12975,
+      "full_reward_samples": 55000,
+      "relative_residual": 1.3877787807814457e-17
+    }
+  ],
+  "latest_finite_readonly": {
+    "HEAD": "8f19fcfb0ac6922818a4079f058d23cecd565e5c",
+    "status": "",
+    "tasks": [
+      "2664890       1 .venv/bin/python -u -m open_duck_agent.live_server --host 127.0.0.1 --port 18766"
+    ],
+    "higher_actual_paths": {
+      "/data/shijinsheng/open_duck/outputs": [],
+      "/data/shijinsheng/open_duck/tmp": [],
+      "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics": []
+    },
+    "live_bytes_all_R203_outputs_external_tmp_logs_sources_verifier": 644302716,
+    "future_archive_git_extra_bytes": 1476395008,
+    "live_plus_future_bytes": 2120697724,
+    "free_bytes": 34539778048,
+    "proof_sha256": "5b4e3ae3f4311fa9a5a89b958e98fd1f8ed3c9b6f2a611308d72e553822d697c"
+  },
+  "archive_implemented": false,
+  "archive_executed": false,
+  "publisher_implemented": false,
+  "publisher_executed": false,
+  "original_failures_and_source_gaps_retained": true
+}
+
