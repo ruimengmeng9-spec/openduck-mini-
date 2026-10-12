@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/verify_getup_total_target_cacla_terminal_r205.py", line 369, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/verify_getup_total_target_cacla_terminal_r205.py", line 362, in main
+    result=verify();complete=capture(startup);new(DEST/'runtime_source_manifest.json',complete)
+           ^^^^^^^^
+  File "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/verify_getup_total_target_cacla_terminal_r205.py", line 247, in verify
+    source_evidence=provenance()
+                    ^^^^^^^^^^^^
+  File "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/verify_getup_total_target_cacla_terminal_r205.py", line 130, in provenance
+    c=read(contract);evidence.append([str(contract),source_check(c['sources'],folder/'executed_sources')])
+                                                                 ~^^^^^^^^^^^
+KeyError: 'sources'

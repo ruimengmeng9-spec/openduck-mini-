@@ -1,0 +1,100 @@
+{
+  "stage": "R205_storage_only_4GiB_authorized_new_verifier_pending",
+  "user_authorization_verbatim": "同意改为4gib",
+  "authorization_source": "direct human message in current chat on 2026-10-12 Asia/Shanghai",
+  "scope": "R205 new independent mathematical verification, evidence preservation, append-only archive and Git storage only",
+  "old_cap_bytes": 2147483648,
+  "new_cap_bytes": 4294967296,
+  "freshstart_free_min_bytes": 12884901888,
+  "reserve_free_min_bytes": 10737418240,
+  "all_inclusive_counting": "All R205 live outputs, external tmp/log/source/captures/proof/manifests/receipts, local continuations when uploaded, future archive and Git; no uncounted temporary storage",
+  "fixed_future_reservation_bytes": 1476395008,
+  "training_or_dynamic_budget_expanded": false,
+  "old_executed_source_modified_or_reexecuted": false,
+  "immutable_A_failure_retained": true,
+  "original_plan_not_rewritten": true,
+  "acceptance_or_physics_changed": false,
+  "hardware_authorized": false,
+  "credentials_or_publication_rules_changed": false,
+  "new_B_created_uploaded_executed": false,
+  "full_mathematical_verification_complete": false,
+  "archive_or_publication_started": false,
+  "R206_selected_or_started": false,
+  "actual_permission_context": "workspace-write granted by current developer instructions for the visualization root and E:/具身智能; protected .git/.agents/.codex/etc remain read-only; no permission configuration changed by assistant",
+  "fresh_readonly_server": {
+    "captured_utc": "2026-10-12T03:26:39.184982+00:00",
+    "head": "d485cfc1c8eb31a4762ad5b711f8ae4d6fde6866",
+    "status": "",
+    "task_processes_and_protected_locator_only": [
+      "2664890 .venv/bin/python -u -m open_duck_agent.live_server --host 127.0.0.1 --port 18766"
+    ],
+    "higher_scoped_paths": [],
+    "files": {
+      "/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/verify_getup_total_target_cacla_terminal_r205.py": {
+        "bytes": 30343,
+        "sha256": "50762e57d771e2fd0a540f57d00552ae358cfe814a62d8c60a8a9aa12ad39477"
+      },
+      "/data/shijinsheng/open_duck/tmp/terminal_verification_wrapper_r205_20261011.py": {
+        "bytes": 1851,
+        "sha256": "7e73cd7bf722afcdc4e64413809f31cd9a6e813eda5a898f16f7bb6c86a56968"
+      },
+      "/data/shijinsheng/open_duck/tmp/getup_total_target_cacla_r205_terminal_verification_exit_20261011.json": {
+        "bytes": 517,
+        "sha256": "f1ed4c84578469b044f0784eeaf777988679aa66fb078e154f44a6b46c847be3"
+      },
+      "/data/shijinsheng/open_duck/tmp/getup_total_target_cacla_r205_terminal_verification_20261011.log": {
+        "bytes": 1092,
+        "sha256": "86b641fe277ef254205becdeb0163d1392b1d568467f8e0a6e707aabf71b15f7"
+      },
+      "/data/shijinsheng/open_duck/outputs/getup_total_target_cacla_r205_terminal_verification_20261011/failure.json": {
+        "bytes": 950,
+        "sha256": "85c43e649a03e1b21f99be7ec8762b10907cbe6a91dd703dd48d0f40aab8cd1f"
+      },
+      "/data/shijinsheng/open_duck/outputs/getup_total_target_cacla_r205_terminal_verification_20261011/source_manifest.json": {
+        "bytes": 41243,
+        "sha256": "36cb24c384c052bf6456db42e43a4ed75906533c0e3bfd233ca843892a8fe45c"
+      }
+    },
+    "exit": {
+      "actual_subprocess_return_observed": true,
+      "natural_exit": true,
+      "exit_code": 1,
+      "elapsed_seconds": 2.4284304520115256,
+      "source_unchanged": true,
+      "source_sha256": "50762e57d771e2fd0a540f57d00552ae358cfe814a62d8c60a8a9aa12ad39477",
+      "wrapper_sha256": "7e73cd7bf722afcdc4e64413809f31cd9a6e813eda5a898f16f7bb6c86a56968",
+      "proof_saved": false,
+      "new_dynamic_attempts": 0,
+      "log_sha256": "86b641fe277ef254205becdeb0163d1392b1d568467f8e0a6e707aabf71b15f7",
+      "protected_live_server_not_operated": true
+    },
+    "full_log": "Traceback (most recent call last):\n  File \"/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/verify_getup_total_target_cacla_terminal_r205.py\", line 369, in <module>\n    if __name__=='__main__':main()\n                            ^^^^^^\n  File \"/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/verify_getup_total_target_cacla_terminal_r205.py\", line 362, in main\n    result=verify();complete=capture(startup);new(DEST/'runtime_source_manifest.json',complete)\n           ^^^^^^^^\n  File \"/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/verify_getup_total_target_cacla_terminal_r205.py\", line 247, in verify\n    source_evidence=provenance()\n                    ^^^^^^^^^^^^\n  File \"/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/verify_getup_total_target_cacla_terminal_r205.py\", line 130, in provenance\n    c=read(contract);evidence.append([str(contract),source_check(c['sources'],folder/'executed_sources')])\n                                                                 ~^^^^^^^^^^^\nKeyError: 'sources'\n",
+    "full_failure": {
+      "traceback": "Traceback (most recent call last):\n  File \"/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/verify_getup_total_target_cacla_terminal_r205.py\", line 362, in main\n    result=verify();complete=capture(startup);new(DEST/'runtime_source_manifest.json',complete)\n           ^^^^^^^^\n  File \"/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/verify_getup_total_target_cacla_terminal_r205.py\", line 247, in verify\n    source_evidence=provenance()\n                    ^^^^^^^^^^^^\n  File \"/data/shijinsheng/open_duck/projects/Open_Duck_Playground/diagnostics/verify_getup_total_target_cacla_terminal_r205.py\", line 130, in provenance\n    c=read(contract);evidence.append([str(contract),source_check(c['sources'],folder/'executed_sources')])\n                                                                 ~^^^^^^^^^^^\nKeyError: 'sources'\n",
+      "new_dynamic_attempts": 0,
+      "proof_saved": false
+    },
+    "verification_output_children": [
+      "failure.json",
+      "executed_sources",
+      "source_manifest.json"
+    ],
+    "resource": {
+      "live": 670441465,
+      "live_file_count": 10813,
+      "future_archive640MiB_git640MiB_extra128MiB": 1476395008,
+      "total": 2146836473,
+      "new_R205_only_cap_bytes": 4294967296,
+      "remaining": 2148130823,
+      "free": 32257982464
+    },
+    "new_b_source_exists": false,
+    "proof_exists": false,
+    "runtime_manifest_exists": false,
+    "server_written": false,
+    "old_code_executed": false,
+    "new_dynamic": 0
+  },
+  "next": "Fresh complete original evidence reading, actual contract-specific provenance inspection, source and resource gates before implementing a new independent verifier. Do not modify/reexecute A, production kernel decisions/gradients/Learner/update/train_round/old init_worker; no dynamic retraining. Complete proof/natural exit required before archive/publication.",
+  "receipt_local_only_not_uploaded": true
+}
